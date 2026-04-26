@@ -1,18 +1,18 @@
 self.__BUILD_MANIFEST = {
   "/": [
-    "static/chunks/0r.gkot_e-5y3.js"
+    "static/chunks/0sf7ytm1izhot.js"
   ],
   "/_error": [
     "static/chunks/03oiod7k2zw51.js"
   ],
   "/case-studies/designforge": [
-    "static/chunks/0pa72d48usmz6.js"
+    "static/chunks/015jix8_44lsc.js"
   ],
   "/case-studies/neuron": [
-    "static/chunks/0nlgl~bw_v2i9.js"
+    "static/chunks/0ytx18df~2b_g.js"
   ],
   "/case-studies/third-project": [
-    "static/chunks/0po1dd4sn3jyo.js"
+    "static/chunks/0_3_dmttpj9so.js"
   ],
   "__rewrites": {
     "afterFiles": [],
