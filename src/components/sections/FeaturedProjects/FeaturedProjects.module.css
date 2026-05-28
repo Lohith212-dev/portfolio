@@ -35,7 +35,6 @@
   --work-editorial-content-gap: clamp(1.25rem, 2.4vw, 2rem);
   --work-editorial-rule: 0.0625rem solid var(--color-ink-100);
   --work-editorial-name: clamp(2.25rem, 4vw, 3.75rem);
-  --work-editorial-title: clamp(1.75rem, 2.15vw, 2.3rem);
   --work-editorial-proof-padding: clamp(0.75rem, 1.8vw, 1.4rem);
   --work-editorial-avatar: clamp(3.4rem, 5vw, 4.5rem);
   --work-editorial-radius: 4px;
@@ -118,6 +117,23 @@
     box-shadow var(--work-card-hover-duration) var(--work-card-hover-ease);
 }
 
+.cardPrimaryLink {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.cardContent a {
+  pointer-events: auto;
+}
+
 .cardEditorialNormal {
   background: var(--color-surface-white);
   box-shadow: 0 1rem 3rem color-mix(in srgb, var(--color-ink-950) 8%, transparent);
@@ -129,11 +145,11 @@
 }
 
 .card:hover,
-.card:focus-visible {
+.card:focus-within {
   transform: translateY(var(--work-card-lift));
 }
 
-.card:focus-visible {
+.card:focus-within {
   outline: var(--work-focus-ring) solid var(--color-accent-orange);
   outline-offset: var(--work-focus-offset);
 }
@@ -166,7 +182,7 @@
 }
 
 .card:hover .editorialMediaSurface,
-.card:focus-visible .editorialMediaSurface {
+.card:focus-within .editorialMediaSurface {
   transform: scale(var(--work-media-hover-scale));
 }
 
@@ -249,7 +265,7 @@
 .editorialTitle {
   margin: 0;
   max-width: 30rem;
-  font-size: var(--work-editorial-title);
+  font-size: var(--heading-32);
   line-height: 1.04;
   letter-spacing: 0;
 }
@@ -296,6 +312,9 @@
   border-left: var(--work-editorial-rule);
   padding-left: clamp(1rem, 2.4vw, 1.65rem);
   padding-top: var(--work-editorial-proof-padding);
+  pointer-events: auto;
+  position: relative;
+  z-index: 3;
 }
 
 .editorialQuote {
@@ -342,6 +361,8 @@
   line-height: 0;
   color: inherit;
   text-decoration: none;
+  position: relative;
+  z-index: 3;
 }
 
 .editorialLinkedInIcon {
@@ -485,8 +506,13 @@
 }
 
 .card:hover .hoverCue,
-.card:focus-visible .hoverCue {
+.card:focus-within .hoverCue {
   opacity: 1;
+}
+
+.cardSuppressHoverCue:hover .hoverCue,
+.cardSuppressHoverCue:focus-within .hoverCue {
+  opacity: 0;
 }
 
 @media (hover: none), (pointer: coarse) {

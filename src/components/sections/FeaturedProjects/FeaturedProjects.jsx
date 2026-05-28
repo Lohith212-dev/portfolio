@@ -32,6 +32,7 @@ const projects = [
       person: 'Sanchari',
       role: 'Technical Lead, e-GMAT',
       image: '/images/testimonials/testimonial-sanchari-portrait.webp',
+      linkedinUrl: 'https://www.linkedin.com/in/shomesanchari/',
     },
     funSticker: 'The path finds the student.',
     media: {
@@ -76,7 +77,7 @@ const projects = [
   },
   {
     id: 'egmat-website',
-    slug: '#featured-projects',
+    slug: '/more-works/egmat-public-website',
     name: 'e-GMAT Website',
     funName: 'e-GMAT Website',
     headline: 'How I rebuilt the website to make product value easier to trust',
@@ -106,7 +107,7 @@ const projects = [
   },
   {
     id: 'neuron',
-    slug: '#featured-projects',
+    slug: '/more-works/neuron',
     name: 'Neuron',
     funName: 'Neuron',
     headline: 'How I turned scattered GMAT practice into guided learner momentum',
@@ -203,10 +204,14 @@ function AnimatedMetric({ value, isActive }) {
 function ProjectCard({ project, isFunMode }) {
   const videoRef = useRef(null);
   const cardRef = useRef(null);
+  const primaryLinkRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
   const [hasEntered, setHasEntered] = useState(false);
   const [playsByDefault, setPlaysByDefault] = useState(false);
-  const href = project.slug.startsWith('#') ? project.slug : `/case-studies/${project.slug}`;
+  const [isProofActive, setIsProofActive] = useState(false);
+  const href = project.slug.startsWith('#') || project.slug.startsWith('/')
+    ? project.slug
+    : `/case-studies/${project.slug}`;
   const hasPoster = Boolean(project.media?.poster);
   const hasVideo = Boolean(project.media?.mp4);
   const shouldPlayVideo = hasVideo && (isActive || playsByDefault);
@@ -283,104 +288,135 @@ function ProjectCard({ project, isFunMode }) {
   );
 
   return (
-    <Link
+    <article
       ref={cardRef}
-      href={href}
-      className={`${styles.card} ${isFunMode ? styles.cardEditorialFun : styles.cardEditorialNormal}`}
+      className={`${styles.card} ${isFunMode ? styles.cardEditorialFun : styles.cardEditorialNormal} ${isProofActive ? styles.cardSuppressHoverCue : ''}`}
       onMouseEnter={() => setIsActive(true)}
-      onMouseLeave={() => setIsActive(false)}
+      onMouseLeave={() => {
+        setIsActive(false);
+        setIsProofActive(false);
+      }}
       onFocus={() => setIsActive(true)}
-      onBlur={() => setIsActive(false)}
+      onBlur={event => {
+        if (!event.currentTarget.contains(event.relatedTarget)) {
+          setIsActive(false);
+          setIsProofActive(false);
+        }
+      }}
       onMouseMove={handlePointerMove}
     >
-      <div className={styles.editorialGrid}>
-        <div className={styles.editorialMediaPanel}>
-          <div className={styles.editorialMediaSurface}>
-            {mediaContent}
+      <Link
+        ref={primaryLinkRef}
+        href={href}
+        aria-label={`View ${project.name} case study`}
+        className={styles.cardPrimaryLink}
+      />
+
+      <div className={styles.cardContent}>
+        <div className={styles.editorialGrid}>
+          <div className={styles.editorialMediaPanel}>
+            <div className={styles.editorialMediaSurface}>
+              {mediaContent}
+            </div>
+
+            {isFunMode && (
+              <span className={`${styles.funSticker} font-caveat font-bold text-fun-ink-50`}>
+                {project.funSticker}
+              </span>
+            )}
           </div>
 
-          {isFunMode && (
-            <span className={`${styles.funSticker} font-caveat font-bold text-fun-ink-50`}>
-              {project.funSticker}
-            </span>
-          )}
-        </div>
-
-        <div className={styles.editorialContent}>
-          <header className={styles.editorialHeader}>
-            <h3 className={`${styles.editorialProjectName} ${isFunMode ? 'font-caveat font-bold text-fun-ink-50' : 'font-cabinet font-extrabold text-accent-orange'}`}>
-              {isFunMode ? project.funName : project.name}
-            </h3>
-            <div className={styles.editorialTagRow}>
-              {project.tags.map(tag => (
-                <span key={tag.label} className={`${styles.editorialTag} ${tag.tone ? styles[tag.tone] : ''} font-dm`}>
-                  {tag.tone && <span className={styles.tagDot} aria-hidden="true" />}
-                  {tag.label}
-                </span>
-              ))}
-            </div>
-          </header>
-
-          <div className={styles.editorialBody}>
-            <div className={styles.editorialMainCopy}>
-              <h4 className={`${styles.editorialTitle} ${isFunMode ? 'font-caveat font-bold text-fun-ink-50' : 'font-cabinet font-extrabold text-ink-950'}`}>
-                {project.headline}
-              </h4>
-              <p className={`${styles.editorialSummary} font-dm ${isFunMode ? 'text-fun-ink-300' : 'text-ink-700'}`}>
-                {project.summary}
-              </p>
-              <div className={styles.editorialMetrics}>
-                {project.metrics.map(metric => (
-                  <span key={`${metric.value}-${metric.label}`} className={styles.editorialMetric}>
-                    <strong className="font-cabinet font-extrabold">
-                      <AnimatedMetric value={metric.value} isActive={hasEntered} />
-                    </strong>
-                    {metric.label ? <span className="font-dm">{metric.label}</span> : null}
+          <div className={styles.editorialContent}>
+            <header className={styles.editorialHeader}>
+              <h3 className={`${styles.editorialProjectName} ${isFunMode ? 'font-caveat font-bold text-fun-ink-50' : 'font-cabinet font-extrabold text-accent-orange'}`}>
+                {isFunMode ? project.funName : project.name}
+              </h3>
+              <div className={styles.editorialTagRow}>
+                {project.tags.map(tag => (
+                  <span key={tag.label} className={`${styles.editorialTag} ${tag.tone ? styles[tag.tone] : ''} font-dm`}>
+                    {tag.tone && <span className={styles.tagDot} aria-hidden="true" />}
+                    {tag.label}
                   </span>
                 ))}
               </div>
+            </header>
 
-              <span className={`${styles.mobileCaseLink} font-dm font-extrabold`}>
-                View Case Study <span aria-hidden="true">{'\u2197'}</span>
-              </span>
-            </div>
+            <div className={styles.editorialBody}>
+              <div className={styles.editorialMainCopy}>
+                <h4 className={`${styles.editorialTitle} ${isFunMode ? 'font-caveat font-bold text-fun-ink-50' : 'font-cabinet font-extrabold text-ink-950'}`}>
+                  {project.headline}
+                </h4>
+                <p className={`${styles.editorialSummary} font-dm ${isFunMode ? 'text-fun-ink-300' : 'text-ink-700'}`}>
+                  {project.summary}
+                </p>
+                <div className={styles.editorialMetrics}>
+                  {project.metrics.map(metric => (
+                    <span key={`${metric.value}-${metric.label}`} className={styles.editorialMetric}>
+                      <strong className="font-cabinet font-extrabold">
+                        <AnimatedMetric value={metric.value} isActive={hasEntered} />
+                      </strong>
+                      {metric.label ? <span className="font-dm">{metric.label}</span> : null}
+                    </span>
+                  ))}
+                </div>
 
-            <aside className={styles.editorialProof} aria-label={`Proof from ${project.quote.person}`}>
-              <p className={`${styles.editorialQuote} font-dm ${isFunMode ? 'text-fun-ink-200' : 'text-ink-700'}`}>
-                "{project.quote.text}"
-              </p>
-              <span className={styles.editorialPerson}>
-                {project.quote.image && (
-                  <span className={styles.editorialAvatarFrame}>
-                    <Image
-                      src={project.quote.image}
-                      alt={`${project.quote.person} portrait`}
-                      width={320}
-                      height={320}
-                      sizes="56px"
-                      className={styles.editorialAvatar}
-                    />
-                  </span>
-                )}
-                <span className={styles.editorialPersonDetails}>
-                  {project.quote.linkedinUrl ? (
-                    <a
-                      href={project.quote.linkedinUrl}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={`${project.quote.person} LinkedIn profile`}
-                      className={styles.editorialLinkedInLink}
-                    >
-                      <SharedLinkedInIcon className={styles.editorialLinkedInIcon} />
-                    </a>
-                  ) : (
-                    <SharedLinkedInIcon className={styles.editorialLinkedInIcon} />
-                  )}
-                  <strong className="font-cabinet font-extrabold">{project.quote.person}</strong>
-                  <small className="font-dm">{project.quote.role}</small>
+                <span className={`${styles.mobileCaseLink} font-dm font-extrabold`}>
+                  View Case Study <span aria-hidden="true">{'\u2197'}</span>
                 </span>
-              </span>
-            </aside>
+              </div>
+
+              <aside
+                className={styles.editorialProof}
+                aria-label={`Proof from ${project.quote.person}`}
+                onMouseEnter={() => setIsProofActive(true)}
+                onMouseLeave={() => setIsProofActive(false)}
+                onFocus={() => setIsProofActive(true)}
+                onBlur={event => {
+                  if (!event.currentTarget.contains(event.relatedTarget)) {
+                    setIsProofActive(false);
+                  }
+                }}
+                onClick={event => {
+                  if (event.target.closest('a')) return;
+                  primaryLinkRef.current?.click();
+                }}
+              >
+                <p className={`${styles.editorialQuote} font-dm ${isFunMode ? 'text-fun-ink-200' : 'text-ink-700'}`}>
+                  "{project.quote.text}"
+                </p>
+                <span className={styles.editorialPerson}>
+                  {project.quote.image && (
+                    <span className={styles.editorialAvatarFrame}>
+                      <Image
+                        src={project.quote.image}
+                        alt={`${project.quote.person} portrait`}
+                        width={320}
+                        height={320}
+                        sizes="56px"
+                        className={styles.editorialAvatar}
+                      />
+                    </span>
+                  )}
+                  <span className={styles.editorialPersonDetails}>
+                    {project.quote.linkedinUrl ? (
+                      <a
+                        href={project.quote.linkedinUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        aria-label={`${project.quote.person} LinkedIn profile`}
+                        className={styles.editorialLinkedInLink}
+                      >
+                        <SharedLinkedInIcon className={styles.editorialLinkedInIcon} />
+                      </a>
+                    ) : (
+                      <SharedLinkedInIcon className={styles.editorialLinkedInIcon} />
+                    )}
+                    <strong className="font-cabinet font-extrabold">{project.quote.person}</strong>
+                    <small className="font-dm">{project.quote.role}</small>
+                  </span>
+                </span>
+              </aside>
+            </div>
           </div>
         </div>
       </div>
@@ -388,7 +424,7 @@ function ProjectCard({ project, isFunMode }) {
       <span className={`${styles.hoverCue} font-dm font-extrabold`} aria-hidden="true">
         View in detail <span>{'\uD83D\uDC40'}</span>
       </span>
-    </Link>
+    </article>
   );
 }
 

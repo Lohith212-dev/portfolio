@@ -6,15 +6,15 @@ import styles from './Hero.module.css';
 const normalProjects = [
   { num: '01', label: 'SAT LMS', sub: 'Adaptive learning app', href: '/case-studies/sat-lms' },
   { num: '02', label: 'S.P.A.R.K. Presenter', sub: 'Scalable learning content stack', href: '/case-studies/spark-presenter' },
-  { num: '03', label: 'e-GMAT Website', sub: 'Public marketing site', href: '#' },
-  { num: '04', label: 'NEURON', sub: 'GMAT practice platform', href: '#' },
+  { num: '03', label: 'e-GMAT Website', sub: 'Public marketing site', href: '/more-works/egmat-public-website' },
+  { num: '04', label: 'NEURON', sub: 'GMAT practice platform', href: '/more-works/neuron' },
 ];
 
 const funProjects = [
   { num: '01', label: 'SAT LMS', sub: 'Adaptive learning app', href: '/case-studies/sat-lms' },
   { num: '02', label: 'S.P.A.R.K. Presenter', sub: 'Scalable learning content stack', href: '/case-studies/spark-presenter' },
-  { num: '03', label: 'e-GMAT Website', sub: 'Public marketing site', href: '#' },
-  { num: '04', label: 'NEURON', sub: 'GMAT practice platform', href: '#' },
+  { num: '03', label: 'e-GMAT Website', sub: 'Public marketing site', href: '/more-works/egmat-public-website' },
+  { num: '04', label: 'NEURON', sub: 'GMAT practice platform', href: '/more-works/neuron' },
 ];
 
 export default function Hero() {

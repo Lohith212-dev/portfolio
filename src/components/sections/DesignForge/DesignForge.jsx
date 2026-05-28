@@ -104,8 +104,8 @@ const proofItems = [
 const productCards = [
   { name: 'SAT LMS', subtitle: 'Adaptive learning app', href: '/case-studies/sat-lms' },
   { name: 'S.P.A.R.K. Presenter', subtitle: 'Scalable learning content stack', href: '/case-studies/spark-presenter' },
-  { name: 'e-GMAT Website', subtitle: 'Public marketing site', href: '#featured-projects' },
-  { name: 'NEURON', subtitle: 'GMAT practice platform', href: '#featured-projects' },
+  { name: 'e-GMAT Website', subtitle: 'Public marketing site', href: '/more-works/egmat-public-website' },
+  { name: 'NEURON', subtitle: 'GMAT practice platform', href: '/more-works/neuron' },
 ];
 
 const inputRows = [

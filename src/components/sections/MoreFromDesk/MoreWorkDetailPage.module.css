@@ -1,0 +1,464 @@
+.page {
+  min-height: 100vh;
+  padding: clamp(7rem, 10vw, 8.5rem) 1.5rem clamp(4rem, 8vw, 6rem);
+  background: var(--color-surface-white);
+  color: var(--color-ink-950);
+}
+
+.hero,
+.bodyShell,
+.backRow {
+  width: min(100%, 72rem);
+  margin: 0 auto;
+}
+
+.hero {
+  display: grid;
+  gap: 2rem;
+  margin-bottom: clamp(3rem, 7vw, 5rem);
+}
+
+.heroCopy {
+  display: grid;
+  gap: 1rem;
+  max-width: 56rem;
+}
+
+.eyebrow,
+.sectionLabel,
+.groupEyebrow {
+  margin: 0;
+  color: color-mix(in srgb, var(--more-work-accent) 86%, var(--color-ink-950));
+  font-family: var(--font-dm);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.hero h1,
+.contentSection h2,
+.solutionGroup h3,
+.takeawayInfoCard h3,
+.proofCard h3,
+.objectiveCard h3 {
+  margin: 0;
+  color: var(--color-ink-950);
+  font-family: var(--font-cabinet);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.hero h1 {
+  max-width: 42rem;
+  font-size: clamp(3rem, 8vw, 5.25rem);
+  line-height: 0.9;
+}
+
+.hook {
+  max-width: 40rem;
+  margin: 0;
+  color: var(--color-ink-950);
+  font-family: var(--font-dm);
+  font-size: clamp(1.4rem, 2.8vw, 2rem);
+  font-weight: 800;
+  line-height: 1.05;
+}
+
+.intro,
+.sectionBody,
+.objectiveCard p,
+.pointCard p,
+.proofCard p,
+.takeawayInfoCard p,
+.evidenceCard p,
+.highlightList {
+  margin: 0;
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: var(--text-small);
+  line-height: 1.65;
+}
+
+.intro {
+  max-width: 42rem;
+}
+
+.metaRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.metaPill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--color-ink-100);
+  border-radius: 999px;
+  background: var(--color-surface-light);
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.heroStage {
+  border-radius: 1.75rem;
+  background:
+    radial-gradient(circle at 15% 20%, color-mix(in srgb, var(--more-work-soft) 72%, var(--color-surface-white)), transparent 18rem),
+    radial-gradient(circle at 88% 14%, color-mix(in srgb, var(--more-work-accent) 9%, transparent), transparent 16rem),
+    var(--color-surface-light);
+  padding: clamp(1.2rem, 2vw, 1.6rem);
+}
+
+.heroGallery {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(16rem, 0.65fr);
+  gap: 1rem;
+  align-items: stretch;
+}
+
+.heroGalleryPrimary {
+  margin: 0;
+  min-width: 0;
+}
+
+.heroGallerySecondary,
+.heroGalleryTertiary {
+  margin: 0;
+}
+
+.heroGallerySecondary {
+  align-self: stretch;
+}
+
+.heroGalleryTertiary {
+  display: none;
+}
+
+.heroGallerySecondary,
+.heroGalleryTertiary {
+  min-width: 0;
+}
+
+.heroGallerySecondary .heroImageShell,
+.heroGalleryTertiary .heroImageShell {
+  min-height: clamp(16rem, 28vw, 21rem);
+}
+
+.heroImageShell {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(18rem, 42vw, 34rem);
+  border-radius: 1.15rem;
+  background: var(--color-surface-white);
+  box-shadow: 0 1rem 2.5rem color-mix(in srgb, var(--color-ink-950) 10%, transparent);
+}
+
+.heroImage {
+  object-fit: contain;
+  object-position: center;
+}
+
+.previewPlaceholder {
+  min-height: 24rem;
+}
+
+.metricStrip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.metricCard,
+.impactMetricCard {
+  display: grid;
+  gap: 0.25rem;
+  padding-top: 0.25rem;
+}
+
+.metricCard strong,
+.impactMetricCard strong {
+  color: color-mix(in srgb, var(--more-work-accent) 88%, var(--color-ink-950));
+  font-family: var(--font-cabinet);
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  font-weight: 800;
+  line-height: 0.95;
+}
+
+.metricCard span,
+.impactMetricCard span {
+  color: var(--color-ink-500);
+  font-family: var(--font-dm);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.bodyShell {
+  display: grid;
+  grid-template-columns: 8rem minmax(0, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
+.sectionRail {
+  position: sticky;
+  top: 8rem;
+}
+
+.sectionRail nav {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.sectionRail a {
+  color: var(--color-ink-500);
+  font-family: var(--font-dm);
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: color 180ms ease;
+}
+
+.sectionRail a:hover,
+.sectionRail a:focus-visible {
+  color: var(--color-ink-950);
+}
+
+.contentStack {
+  display: grid;
+  gap: clamp(3rem, 7vw, 4.5rem);
+}
+
+.contentSection {
+  display: grid;
+  gap: 1rem;
+  padding-top: 0.15rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-ink-100) 78%, transparent);
+}
+
+.contentSection h2 {
+  max-width: 42rem;
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 0.96;
+}
+
+.pointGrid,
+.objectiveGrid,
+.evidenceGrid,
+.proofGrid,
+.takeawayGrid,
+.impactMetricGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+.pointGrid,
+.objectiveGrid,
+.evidenceGrid,
+.proofGrid,
+.takeawayGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.pointCard,
+.objectiveCard,
+.evidenceCard,
+.proofCard,
+.takeawayInfoCard {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1rem 1rem 1.1rem;
+  border-radius: 1.05rem;
+  background: var(--color-surface-light);
+}
+
+.pointCard span {
+  color: var(--color-ink-300);
+  font-family: var(--font-dm);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+.objectiveCard h3,
+.proofCard h3,
+.takeawayInfoCard h3 {
+  font-size: 1.1rem;
+  line-height: 1.02;
+}
+
+.solutionStack {
+  display: grid;
+  gap: 3rem;
+}
+
+.solutionGroup {
+  display: grid;
+  gap: 1rem;
+}
+
+.solutionHeader {
+  display: grid;
+  gap: 0.7rem;
+  max-width: 40rem;
+}
+
+.solutionGroup h3 {
+  font-size: clamp(1.65rem, 3vw, 2.5rem);
+  line-height: 1;
+}
+
+.visualPanel {
+  border-radius: 1.45rem;
+  background: var(--color-surface-light);
+  padding: 1rem;
+}
+
+.visualGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.9rem;
+}
+
+.visualCard {
+  display: grid;
+  gap: 0.6rem;
+  margin: 0;
+}
+
+.visualCardFeature {
+  grid-column: 1 / -1;
+}
+
+.visualMedia {
+  position: relative;
+  overflow: hidden;
+  min-height: clamp(15rem, 38vw, 30rem);
+  border-radius: 1rem;
+  background: var(--color-surface-white);
+}
+
+.visualCard:not(.visualCardFeature) .visualMedia {
+  min-height: clamp(12rem, 24vw, 18rem);
+}
+
+.visualImage {
+  object-fit: contain;
+  object-position: center;
+}
+
+.visualCaption {
+  display: grid;
+  gap: 0.2rem;
+  padding-inline: 0.1rem;
+}
+
+.visualCaption strong {
+  color: var(--color-ink-950);
+  font-family: var(--font-dm);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.visualCaption span {
+  color: var(--color-ink-500);
+  font-family: var(--font-dm);
+  font-size: 0.78rem;
+  line-height: 1.45;
+}
+
+.highlightList {
+  padding-left: 1.1rem;
+}
+
+.highlightList li + li {
+  margin-top: 0.45rem;
+}
+
+.impactMetricGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.backRow {
+  margin-top: 3rem;
+}
+
+.backRow a {
+  color: var(--color-ink-950);
+  font-family: var(--font-dm);
+  font-size: 0.85rem;
+  font-weight: 800;
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.25rem;
+}
+
+@media (min-width: 64rem) {
+  .heroGallery {
+    grid-template-columns: minmax(0, 1.2fr) minmax(14rem, 0.8fr);
+    grid-template-rows: repeat(2, minmax(0, 1fr));
+  }
+
+  .heroGalleryPrimary {
+    grid-row: 1 / span 2;
+  }
+
+  .heroGalleryTertiary {
+    display: block;
+  }
+}
+
+@media (max-width: 63.999rem) {
+  .bodyShell {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionRail {
+    display: none;
+  }
+
+  .heroGallery,
+  .metricStrip,
+  .pointGrid,
+  .objectiveGrid,
+  .evidenceGrid,
+  .proofGrid,
+  .takeawayGrid,
+  .impactMetricGrid,
+  .visualGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .visualCardFeature {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .page {
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.8rem, 16vw, 4.2rem);
+  }
+
+  .contentSection h2 {
+    font-size: clamp(1.9rem, 8vw, 2.6rem);
+  }
+
+  .metaRow {
+    gap: 0.45rem;
+  }
+
+  .metaPill {
+    width: fit-content;
+    max-width: 100%;
+  }
+}

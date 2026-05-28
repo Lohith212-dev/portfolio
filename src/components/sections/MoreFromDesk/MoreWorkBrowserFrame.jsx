@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import {
-  ExternalArrowIcon,
   VideoEnterFullscreenIcon,
   VideoExitFullscreenIcon,
 } from '../../icons/icons';
@@ -9,7 +8,8 @@ import styles from './MoreWorkBrowserFrame.module.css';
 export default function MoreWorkBrowserFrame({
   title,
   eyebrow,
-  externalUrl,
+  darkChrome = false,
+  hideFullscreenControl = false,
   children,
   closeLabel,
   onClose,
@@ -44,7 +44,7 @@ export default function MoreWorkBrowserFrame({
 
   return (
     <div ref={frameRef} className={`${styles.frame} ${className}`}>
-      <div className={styles.chrome}>
+      <div className={`${styles.chrome} ${darkChrome ? styles.chromeDark : ''}`}>
         <span className={styles.dots} aria-hidden="true">
           <span />
           <span />
@@ -55,25 +55,16 @@ export default function MoreWorkBrowserFrame({
           {title}
         </span>
         <span className={styles.controls}>
-          {externalUrl ? (
-            <a
-              href={externalUrl}
-              target="_blank"
-              rel="noopener noreferrer"
+          {!hideFullscreenControl ? (
+            <button
+              type="button"
               className={styles.controlButton}
-              aria-label={`Open ${title} in a new tab`}
+              aria-label={isFullscreen ? 'Exit fullscreen' : 'View fullscreen'}
+              onClick={toggleFullscreen}
             >
-              <ExternalArrowIcon />
-            </a>
+              {isFullscreen ? <VideoExitFullscreenIcon /> : <VideoEnterFullscreenIcon />}
+            </button>
           ) : null}
-          <button
-            type="button"
-            className={styles.controlButton}
-            aria-label={isFullscreen ? 'Exit fullscreen' : 'View fullscreen'}
-            onClick={toggleFullscreen}
-          >
-            {isFullscreen ? <VideoExitFullscreenIcon /> : <VideoEnterFullscreenIcon />}
-          </button>
           {onClose ? (
             <button
               type="button"
