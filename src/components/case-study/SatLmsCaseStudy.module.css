@@ -5239,3 +5239,66 @@
 /* Section 10 (closing block) — stakeholder cards stack on mobile via the base
    single-column grid. Tablet two-up layout preserved (verify on device that
    it doesn't feel cramped at the lower tablet range). */
+
+/* ----------------------------------------------------------------- */
+/* Audit Pass 2 — Tutor-Lens (section 6) StickyPhaseNumbers swap     */
+/* ----------------------------------------------------------------- */
+
+/* mobile/tablet show the sticky-numbers version; desktop hides it */
+.tutorDecisionsMobile {
+  margin-block-start: 3rem;
+}
+
+.tutorDecisionsMobile :global(.staggerText) {
+  /* nested headings inside mobile version inherit normal stagger reveal */
+}
+
+@media (min-width: 64rem) {
+  .tutorDecisionsMobile {
+    display: none;
+  }
+}
+
+@media (max-width: 63.999rem) {
+  .tutorDecisionDesktopOnly {
+    display: none;
+  }
+}
+
+/* ----------------------------------------------------------------- */
+/* Audit Pass 2 — DesignForge (section 8) StickyPhaseNumbers swap    */
+/* ----------------------------------------------------------------- */
+
+.processTrailMobile {
+  display: none;
+  margin-block-start: clamp(2rem, 4vw, 3rem);
+}
+
+@media (max-width: 63.999rem) {
+  .processTrailDesktopOnly {
+    display: none;
+  }
+
+  .processTrailMobile {
+    display: block;
+  }
+}
+
+/* the sticky-numbers version handles its own number column, so hide the
+   trail line and dot on the inner ProcessStep when used inside it */
+.processStepNoNumber {
+  padding-inline-start: 0;
+}
+
+.processStepNoNumber .processStepCopy::before {
+  content: none;
+}
+
+/* yellow highlight on "four weeks" — mirrors the hero highlight treatment */
+.processHighlightYellow {
+  padding-inline: calc(0.125rem * 2);
+  background-color: var(--color-accent-yellow);
+  color: var(--color-ink-950);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}

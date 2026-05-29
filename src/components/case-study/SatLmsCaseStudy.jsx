@@ -20,6 +20,7 @@ import {
 import ActivitySidebarDemo from './supporting-graphics/design-iteration-artifacts/ActivitySidebarDemo';
 import R2RemedialRowDesign from './supporting-graphics/design-iteration-artifacts/R2RemedialRowDesign';
 import R6DualPlacementDesign from './supporting-graphics/design-iteration-artifacts/R6DualPlacementDesign';
+import StickyPhaseNumbers from '../shared/StickyPhaseNumbers/StickyPhaseNumbers';
 import CaseStudyHero from './CaseStudyHero';
 import CaseStudyMetricStrip from './CaseStudyMetricStrip';
 import CaseStudyOutcome from './CaseStudyOutcome';
@@ -1222,12 +1223,14 @@ function ProcessSentence({ segments }) {
   );
 }
 
-function TutorDecision({ decision }) {
+function TutorDecisionBody({ decision, includeNumber = true }) {
   return (
     <article className={styles.tutorDecision}>
       <div className="grid gap-6 md:grid-cols-12 md:items-start">
-        <p className={`${styles.decisionNumber} font-cabinet text-5xl font-extrabold leading-none md:col-span-1`}>{decision.number}</p>
-        <div className="md:col-span-11">
+        {includeNumber ? (
+          <p className={`${styles.decisionNumber} font-cabinet text-5xl font-extrabold leading-none md:col-span-1`}>{decision.number}</p>
+        ) : null}
+        <div className={includeNumber ? 'md:col-span-11' : 'md:col-span-12'}>
           <h3 className={`${styles.decisionTitle} font-cabinet text-3xl font-extrabold leading-tight md:text-4xl`}>{decision.title}</h3>
           <div className={styles.decisionEvidenceTable}>
             <div className={styles.decisionEvidenceRow}>
@@ -1257,6 +1260,10 @@ function TutorDecision({ decision }) {
   );
 }
 
+function TutorDecision({ decision }) {
+  return <TutorDecisionBody decision={decision} includeNumber={true} />;
+}
+
 function DesignForgeProcessSection() {
   return (
     <ProcessTrail id="process" labelledBy="designforge-process-heading" className={styles.designForgeProcessSection}>
@@ -1265,7 +1272,7 @@ function DesignForgeProcessSection() {
           <div className={styles.processIntro}>
             <p className={styles.processEyebrow}>Process: the engine behind the speed</p>
             <h2 id="designforge-process-heading" className={styles.processHeading}>
-              Built with <span className={styles.processHighlight}>DesignForge</span> in four weeks
+              Built with <span className={styles.processHighlight}>DesignForge</span> in <span className={styles.processHighlightYellow}>four weeks</span>
             </h2>
             <p className={styles.processDescriptor}>
               DesignForge — my 6-phase AI + human methodology for shipping design and code together.
@@ -1310,10 +1317,21 @@ function DesignForgeProcessSection() {
             </p>
           </div>
 
-          <div className={styles.processTrail} aria-label="DesignForge process artifact trail">
+          <div className={`${styles.processTrail} ${styles.processTrailDesktopOnly}`} aria-label="DesignForge process artifact trail">
             {designForgeSteps.map((step) => (
               <ProcessStep key={step.id} step={step} />
             ))}
+          </div>
+
+          <div className={styles.processTrailMobile} aria-label="DesignForge process artifact trail">
+            <StickyPhaseNumbers
+              theme="light"
+              topOffset="5.5rem"
+              phases={designForgeSteps.map((step) => ({
+                number: step.number,
+                content: <ProcessStep step={step} hideNumber />,
+              }))}
+            />
           </div>
 
           <div className={styles.processOutcomeBlock}>
@@ -1376,13 +1394,13 @@ function WhyThisWorkedSection() {
   );
 }
 
-function ProcessStep({ step }) {
+function ProcessStep({ step, hideNumber = false }) {
   const ref = useScrollReveal();
 
   return (
-    <article ref={ref} className={`${styles.processStep} ${styles.processStepReveal}`}>
+    <article ref={ref} className={`${styles.processStep} ${styles.processStepReveal} ${hideNumber ? styles.processStepNoNumber : ''}`}>
       <div className={styles.processStepCopy}>
-        <p className={styles.processStepNumber}>{step.number}</p>
+        {hideNumber ? null : <p className={styles.processStepNumber}>{step.number}</p>}
         <p className={styles.processArtifactLabel}>{step.artifact}</p>
         <h4>{step.title}</h4>
         <p><ProcessSentence segments={step.body} /></p>
@@ -2264,29 +2282,44 @@ export default function SatLmsCaseStudy() {
           className={`${styles.decisionSection} ${styles.caseStudySection} px-6`}
           innerClassName="mx-auto max-w-5xl"
           header={(
-            <Reveal>
-              <CaseStudySectionHeader
-                eyebrow="Key design decisions"
-                eyebrowClassName={`${styles.decisionKicker} ${styles.caseStudyBrow} ${styles.caseStudyBrowGreen} mb-5`}
-                renderHeading={() => (
-                  <StaggeredText
-                    id="decisions-heading"
-                    className={`${styles.decisionHeading} max-w-4xl font-cabinet text-4xl font-extrabold leading-tight md:text-6xl`}
-                    segments={[
-                      { text: 'With the tutor lens on, I made', breakAfter: true },
-                      { text: '4 pivotal decisions', className: styles.decisionHighlight },
-                      { text: 'that made the LMS behave like a private tutor.' },
-                    ]}
-                  />
-                )}
-              />
-            </Reveal>
+            <>
+              <Reveal>
+                <CaseStudySectionHeader
+                  eyebrow="Key design decisions"
+                  eyebrowClassName={`${styles.decisionKicker} ${styles.caseStudyBrow} ${styles.caseStudyBrowGreen} mb-5`}
+                  renderHeading={() => (
+                    <StaggeredText
+                      id="decisions-heading"
+                      className={`${styles.decisionHeading} max-w-4xl font-cabinet text-4xl font-extrabold leading-tight md:text-6xl`}
+                      segments={[
+                        { text: 'With the tutor lens on, I made', breakAfter: true },
+                        { text: '4 pivotal decisions', className: styles.decisionHighlight },
+                        { text: 'that made the LMS behave like a private tutor.' },
+                      ]}
+                    />
+                  )}
+                />
+              </Reveal>
+
+              <div className={styles.tutorDecisionsMobile} aria-hidden={false}>
+                <StickyPhaseNumbers
+                  theme="dark"
+                  topOffset="5.5rem"
+                  phases={tutorDecisions.map((decision) => ({
+                    number: decision.number,
+                    content: <TutorDecisionBody decision={decision} includeNumber={false} />,
+                  }))}
+                />
+              </div>
+            </>
           )}
           decisions={tutorDecisions}
           renderDecision={(decision) => (
-            <Reveal key={decision.number}>
-              <TutorDecision decision={decision} />
-            </Reveal>
+            <div key={decision.number} className={styles.tutorDecisionDesktopOnly}>
+              <Reveal>
+                <TutorDecision decision={decision} />
+              </Reveal>
+            </div>
           )}
           summary={(
             <Reveal>
