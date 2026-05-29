@@ -198,6 +198,40 @@ function CaseStudyTimer() {
   );
 }
 
+function BackToTopPill() {
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+
+    const handleScroll = () => {
+      const trigger = window.innerHeight * 1.5;
+      setVisible(window.scrollY > trigger);
+    };
+
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const handleClick = () => {
+    if (typeof window === 'undefined') return;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  return (
+    <button
+      type="button"
+      onClick={handleClick}
+      aria-label="Back to top"
+      className={`${styles.backToTopPill} ${visible ? styles.backToTopPillVisible : ''}`}
+    >
+      <span aria-hidden="true">{'↑'}</span>
+      <span>Top</span>
+    </button>
+  );
+}
+
 function HomeFooter() {
   return (
     <footer id="footer" className={`${styles.footer} ${styles.homeFooter}`}>
@@ -220,6 +254,7 @@ function HomeFooter() {
 
         <FooterAvatar />
       </div>
+      <BackToTopPill />
     </footer>
   );
 }
