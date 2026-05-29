@@ -105,8 +105,8 @@
   align-items: center;
   justify-content: center;
   gap: 0.65rem;
-  min-height: 2.6rem;
-  padding: 0.65rem 0.85rem;
+  min-height: 2.75rem;
+  padding: 0.75rem 0.95rem;
   border: 1px solid color-mix(in srgb, var(--color-fun-ink-50) 12%, transparent);
   border-radius: 0.5rem;
   background:
