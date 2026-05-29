@@ -282,7 +282,9 @@ function ProjectCard({ project, isFunMode }) {
           className={styles.posterImage}
         />
       ) : (
-        <div className={styles.placeholderPreview} aria-hidden="true" />
+        <div className={styles.placeholderPreview} aria-hidden="true">
+          <span className={styles.placeholderLabel}>Preview coming soon</span>
+        </div>
       )}
     </>
   );
