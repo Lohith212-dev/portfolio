@@ -987,6 +987,38 @@
     padding-left: 1rem;
   }
 
+  /* Compact "spec card" sidebar on mobile: tighter blocks, 2-col fact layout, single bordered card. */
+  .sidebar {
+    padding: 1rem 1.1rem;
+    border: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
+    border-radius: 0.85rem;
+    background: var(--color-surface-light);
+  }
+
+  .sideSection {
+    padding-bottom: 0.95rem;
+    margin-bottom: 0.95rem;
+  }
+
+  .sideSection h3 {
+    margin-bottom: 0.55rem;
+    font-size: 0.95rem;
+  }
+
+  .factList {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem 1rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .factLabel {
+    font-size: 0.72rem;
+  }
+
+  .factValue {
+    font-size: 0.84rem;
+  }
+
   .screenTabs {
     gap: 0.5rem;
   }
