@@ -2,6 +2,7 @@ import Image from 'next/image';
 import { useState, useRef, useEffect } from 'react';
 import { useTheme } from '../../shared/ThemeContext';
 import arcData from '../../../content/skills-arcs.json';
+import MobileToolkitMagnetism from './MobileToolkitMagnetism';
 import styles from './Skills.module.css';
 
 // ── Normal mode clusters ──────────────────────────────────────────────────────
@@ -764,25 +765,11 @@ function MindMap() {
         ))}
       </div>
 
-      <div className={styles.mobileClusterStack}>
-      {clusters.map(cluster => (
-        <article key={cluster.id} className={styles.mobileClusterCard}>
-          <div className={`${styles.mobileClusterBubble} ${styles[cluster.tone]}`}>
-            <span className={styles.mobileClusterLabel}>
-              {cluster.label}
-            </span>
-          </div>
-          <div className={styles.mobileToolList}>
-            {cluster.tools.map(tool => (
-              <span key={tool.name} className={styles.mobileToolPill}>
-                <ToolLogo toolName={tool.name} />
-                <span>{toolPositions[tool.name]?.label || tool.name}{tool.level === 'learning' ? '*' : ''}</span>
-              </span>
-            ))}
-          </div>
-        </article>
-      ))}
-      </div>
+      <MobileToolkitMagnetism
+        clusters={clusters}
+        tools={tools}
+        ToolLogo={ToolLogo}
+      />
     </div>
   );
 }

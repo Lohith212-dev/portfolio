@@ -379,6 +379,118 @@
   display: none;
 }
 
+/* ── Mobile/Tablet tap-driven magnetism ── */
+
+.mobileMagnetStage {
+  display: none;
+  position: relative;
+  width: 100%;
+  padding: 1rem 0.25rem 1.5rem;
+  background-image: radial-gradient(circle, color-mix(in srgb, var(--color-ink-950) 6%, transparent) 1px, transparent 1px);
+  background-size: 22px 22px;
+  border-radius: 1.25rem;
+}
+
+.mobileMagnetSkillGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.85rem;
+  padding: 1rem 0.75rem;
+  position: relative;
+  z-index: 2;
+}
+
+.mobileMagnetBubble {
+  appearance: none;
+  border: 0;
+  aspect-ratio: 1 / 1;
+  min-height: 88px;
+  border-radius: 50%;
+  color: var(--color-surface-white);
+  font-family: var(--font-dm), sans-serif;
+  font-weight: 800;
+  font-size: 0.78rem;
+  line-height: 1.15;
+  letter-spacing: 0;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-shadow: 0 0.0625rem 0.125rem color-mix(in srgb, var(--color-ink-950) 24%, transparent);
+  box-shadow: 0 0.4rem 0.9rem color-mix(in srgb, var(--color-ink-950) 12%, transparent);
+  transition: box-shadow 0.22s ease;
+}
+
+.mobileMagnetBubbleLabel {
+  display: inline-block;
+  white-space: pre-line;
+}
+
+.mobileMagnetBubbleActive {
+  box-shadow:
+    0 0 1.4rem color-mix(in srgb, var(--skill-active-color) 45%, transparent),
+    0 0.5rem 1rem color-mix(in srgb, var(--color-ink-950) 18%, transparent);
+}
+
+.mobileMagnetToolStage {
+  position: relative;
+  min-height: 12rem;
+  padding: 0.5rem 0.75rem 0.25rem;
+}
+
+.mobileMagnetNeutral {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobileMagnetActive {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.mobileMagnetActiveCluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.9rem;
+  border: 1px dashed color-mix(in srgb, var(--color-ink-950) 18%, transparent);
+  border-radius: 1.25rem;
+  background: color-mix(in srgb, var(--color-surface-white) 65%, transparent);
+}
+
+.mobileMagnetInactiveCluster {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: center;
+  opacity: 0.35;
+}
+
+.mobileMagnetHint {
+  text-align: center;
+  font-family: var(--font-dm), sans-serif;
+  font-size: 0.8rem;
+  color: var(--color-ink-500);
+  margin: 0.25rem 0;
+}
+
+.mobileMagnetToolActive {
+  border-color: color-mix(in srgb, var(--color-ink-950) 35%, transparent);
+  box-shadow: 0 0.4rem 0.8rem color-mix(in srgb, var(--color-ink-950) 14%, transparent);
+}
+
+.mobileMagnetToolInactive {
+  font-size: 0.78rem;
+  padding: 0.3rem 0.7rem;
+}
+
 .mobileClusterCard {
   display: grid;
   grid-template-columns: 6rem minmax(0, 1fr);
@@ -582,9 +694,11 @@
   }
 
   .mobileClusterStack {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
+    display: none;
+  }
+
+  .mobileMagnetStage {
+    display: block;
   }
 
   .mobileToolPill {
@@ -639,9 +753,22 @@
   }
 
   .mobileClusterStack {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    display: none;
+  }
+
+  .mobileMagnetStage {
+    display: block;
+    max-width: 44rem;
+    margin: 0 auto;
+  }
+
+  .mobileMagnetSkillGrid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
     gap: 1rem;
+  }
+
+  .mobileMagnetBubble {
+    font-size: 0.85rem;
   }
 
   .mobileToolPill {
