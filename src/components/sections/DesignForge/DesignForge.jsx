@@ -13,6 +13,7 @@ import {
   EyeRevealIcon,
   JourneyFlowIcon,
 } from '../../icons/icons';
+import StickyPhaseNumbers from '../../shared/StickyPhaseNumbers/StickyPhaseNumbers';
 import styles from './DesignForge.module.css';
 
 const steps = [
@@ -331,9 +332,14 @@ function DialExperience() {
         </div>
       </section>
       <section className={styles.mobileSteps} aria-label="DesignForge process steps">
-        {steps.map((step) => (
-          <StepCard key={step.number} step={step} isMobile />
-        ))}
+        <StickyPhaseNumbers
+          theme="dark"
+          topOffset="5.5rem"
+          phases={steps.map((step) => ({
+            number: step.number,
+            content: <StepCard step={step} isMobile />,
+          }))}
+        />
       </section>
     </>
   );
