@@ -337,6 +337,16 @@
 
   .togglePill {
     gap: 0.375rem;
+    min-height: 44px;
+    padding: 0.5rem 0.25rem;
+  }
+
+  .hamburger {
+    min-width: 44px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .tooltip {
