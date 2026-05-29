@@ -1,0 +1,88 @@
+.trigger {
+  /* unstyled button — the wrapped content provides the visual */
+  display: block;
+  padding: 0;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  cursor: zoom-in;
+  font: inherit;
+  color: inherit;
+  width: 100%;
+  /* ensure 44px hit area on mobile even if the visual is smaller */
+  min-height: 44px;
+}
+
+.trigger:focus-visible {
+  outline: 0.125rem solid var(--color-accent-orange);
+  outline-offset: 0.25rem;
+  border-radius: 0.25rem;
+}
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 2rem);
+  background-color: color-mix(in srgb, var(--color-ink-950) 92%, transparent);
+  cursor: zoom-out;
+}
+
+.content {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  width: 100%;
+  overflow: auto;
+  border-radius: 0.75rem;
+  cursor: default;
+  /* enable native pinch-zoom + pan inside the content wrapper */
+  touch-action: pinch-zoom;
+  -webkit-overflow-scrolling: touch;
+}
+
+.content > * {
+  display: block;
+  max-width: none;
+  width: auto;
+  height: auto;
+  margin: 0 auto;
+}
+
+.content img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: none;
+}
+
+.closeButton {
+  position: fixed;
+  top: clamp(0.75rem, 2vw, 1.25rem);
+  right: clamp(0.75rem, 2vw, 1.25rem);
+  z-index: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+  border-radius: 9999px;
+  background-color: var(--color-surface-white);
+  color: var(--color-ink-950);
+  font-family: var(--font-cabinet), sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 0.5rem 1.5rem color-mix(in srgb, var(--color-ink-950) 40%, transparent);
+}
+
+.closeButton:focus-visible {
+  outline: 0.125rem solid var(--color-accent-orange);
+  outline-offset: 0.25rem;
+}
