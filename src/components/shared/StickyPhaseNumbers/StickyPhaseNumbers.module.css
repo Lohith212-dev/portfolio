@@ -1,0 +1,67 @@
+.root {
+  display: flex;
+  flex-direction: column;
+}
+
+.phaseBlock {
+  position: relative;
+  display: grid;
+  grid-template-columns: 4rem minmax(0, 1fr);
+  gap: 1.25rem;
+  align-items: start;
+  min-height: 80svh;
+  padding: 1.5rem 0;
+}
+
+.numberColumn {
+  position: relative;
+  height: 100%;
+}
+
+.number {
+  position: sticky;
+  top: var(--sticky-phase-top, 6rem);
+  display: block;
+  font-family: var(--font-cabinet), sans-serif;
+  font-weight: 800;
+  font-size: var(--text-h2);
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.numberLight {
+  color: var(--color-ink-950);
+}
+
+.numberDark {
+  color: var(--color-fun-ink-50);
+}
+
+.phaseBody {
+  min-width: 0;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .phaseBlock {
+    grid-template-columns: 6rem minmax(0, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .phaseBlock {
+    grid-template-columns: 8rem minmax(0, 1fr);
+    gap: 2.5rem;
+    padding: 2rem 0;
+  }
+
+  .number {
+    font-size: var(--text-h1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .number {
+    position: static;
+  }
+}
