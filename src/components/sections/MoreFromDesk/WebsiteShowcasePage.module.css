@@ -929,6 +929,14 @@
   .sidebar {
     position: static;
   }
+
+  /* Cap body paragraph measure on tablet so lines don't stretch beyond comfortable reading width. */
+  .mainSection p,
+  .paragraphStack p,
+  .approachIntro p,
+  .decisionText p {
+    max-width: 70ch;
+  }
 }
 
 @media (max-width: 47.999rem) {
