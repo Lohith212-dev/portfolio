@@ -5197,3 +5197,45 @@
     transform: translateX(3%);
   }
 }
+
+/* ----------------------------------------------------------------- */
+/* Audit Pass 1 — mobile/tablet responsive fixes                     */
+/* ----------------------------------------------------------------- */
+
+/* Section 6 (Tutor-Lens) — give the phase number more dominance on mobile */
+@media (max-width: 47.999rem) {
+  .decisionNumber {
+    font-size: var(--text-h2);
+    line-height: 1;
+  }
+}
+
+/* Section 8 (DesignForge process) — allow code snippets to scroll horizontally
+   on smaller screens so the readable font size is preserved. The pre elements
+   use `white-space: pre` and `width: max-content`; their parent .artifactBody
+   needs overflow-x: auto. */
+@media (max-width: 63.999rem) {
+  .processArtifactPreview .artifactBody,
+  .processArtifactPreview .artifactBodyJourney {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* visual affordance: subtle fade on the right edge to hint scrollability */
+  .processArtifactPreview .artifactWindow {
+    position: relative;
+  }
+}
+
+/* Section 9 (final outcome stats) — align metric labels at the bottom on mobile
+   by setting a min-height so the descriptor block lines up across all three. */
+@media (max-width: 47.999rem) {
+  .finalOutcomeSection .outcomeMetricLabel {
+    min-height: 3.25rem;
+    align-items: flex-start;
+  }
+}
+
+/* Section 10 (closing block) — stakeholder cards stack on mobile via the base
+   single-column grid. Tablet two-up layout preserved (verify on device that
+   it doesn't feel cramped at the lower tablet range). */
