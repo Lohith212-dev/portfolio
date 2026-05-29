@@ -314,6 +314,20 @@
   background-color: rgba(255, 255, 255, 0.12);
 }
 
+@keyframes navTogglePillWiggle {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-3px); }
+  40% { transform: translateX(3px); }
+  60% { transform: translateX(-2px); }
+  80% { transform: translateX(2px); }
+}
+
+@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
+  .togglePill {
+    animation: navTogglePillWiggle 600ms ease-in-out 2.4s 2;
+  }
+}
+
 @media (max-width: 767px) {
   .navOuter {
     padding: 0.5rem 0.75rem 0;
