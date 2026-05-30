@@ -656,7 +656,7 @@
 .bentoFeatured {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
   margin-bottom: 0.875rem;
 }
 
@@ -669,7 +669,7 @@
 .bentoPool {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 15px;
 }
 
 /* Remaining (secondary) pool while a skill is active reads at ~35% opacity. */
