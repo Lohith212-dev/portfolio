@@ -600,10 +600,24 @@
   }
 
   .editorialTagRow {
-    order: -1;
+    order: 0;
     flex-wrap: wrap;
     max-width: none;
     justify-content: flex-start;
+  }
+
+  /* Tag chip reads as a supporting label below the title, not a competing element */
+  .editorialTag {
+    min-height: 0;
+    padding: calc(var(--work-chip-padding-y) * 0.4) calc(var(--work-chip-padding-x) * 0.62);
+    font-size: calc(var(--work-label-text) * 0.62);
+    letter-spacing: 0.02em;
+  }
+
+  .editorialTag .tagDot {
+    width: 0.36rem;
+    height: 0.36rem;
+    margin-right: 0.32rem;
   }
 
   .editorialTitle,
