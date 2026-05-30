@@ -41,18 +41,18 @@ const BENTO = {
         aria-hidden="true"
         focusable="false"
       >
-        <rect x="16" y="16" width="130" height="100" rx="7" stroke="rgba(255,255,255,.12)" strokeWidth="1.8" />
-        <rect x="24" y="24" width="52" height="36" rx="4" fill="rgba(255,255,255,.08)" />
-        <rect x="82" y="24" width="56" height="14" rx="3" fill="rgba(255,255,255,.08)" />
-        <rect x="82" y="43" width="38" height="10" rx="2" fill="rgba(255,255,255,.06)" />
-        <rect x="24" y="68" width="114" height="8" rx="2" fill="rgba(255,255,255,.08)" />
-        <rect x="24" y="81" width="78" height="8" rx="2" fill="rgba(255,255,255,.06)" />
-        <line x1="16" y1="128" x2="188" y2="128" stroke="rgba(255,255,255,.1)" strokeWidth="1" strokeDasharray="5 4" />
-        <line x1="81" y1="16" x2="81" y2="230" stroke="rgba(255,255,255,.08)" strokeWidth="1" strokeDasharray="5 4" />
-        <path d="M152 148 L152 178 L159 171 L165 185 L169 183 L163 169 L172 169 Z" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.12)" strokeWidth=".8" />
-        <circle cx="24" cy="24" r="4.5" fill="rgba(255,255,255,.08)" />
-        <circle cx="146" cy="24" r="4.5" fill="rgba(255,255,255,.06)" />
-        <circle cx="24" cy="116" r="4.5" fill="rgba(255,255,255,.06)" />
+        <rect x="16" y="16" width="130" height="100" rx="7" stroke="rgba(255,255,255,.28)" strokeWidth="1.8" />
+        <rect x="24" y="24" width="52" height="36" rx="4" fill="rgba(255,255,255,.18)" />
+        <rect x="82" y="24" width="56" height="14" rx="3" fill="rgba(255,255,255,.18)" />
+        <rect x="82" y="43" width="38" height="10" rx="2" fill="rgba(255,255,255,.13)" />
+        <rect x="24" y="68" width="114" height="8" rx="2" fill="rgba(255,255,255,.18)" />
+        <rect x="24" y="81" width="78" height="8" rx="2" fill="rgba(255,255,255,.13)" />
+        <line x1="16" y1="128" x2="188" y2="128" stroke="rgba(255,255,255,.23)" strokeWidth="1" strokeDasharray="5 4" />
+        <line x1="81" y1="16" x2="81" y2="230" stroke="rgba(255,255,255,.18)" strokeWidth="1" strokeDasharray="5 4" />
+        <path d="M152 148 L152 178 L159 171 L165 185 L169 183 L163 169 L172 169 Z" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.28)" strokeWidth=".8" />
+        <circle cx="24" cy="24" r="4.5" fill="rgba(255,255,255,.18)" />
+        <circle cx="146" cy="24" r="4.5" fill="rgba(255,255,255,.13)" />
+        <circle cx="24" cy="116" r="4.5" fill="rgba(255,255,255,.13)" />
       </svg>
     ),
   },
@@ -69,18 +69,18 @@ const BENTO = {
         aria-hidden="true"
         focusable="false"
       >
-        <circle cx="24" cy="38" r="7" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" />
-        <circle cx="24" cy="68" r="7" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" />
-        <circle cx="24" cy="98" r="7" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" />
-        <circle cx="60" cy="50" r="9" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" />
-        <circle cx="60" cy="86" r="9" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" />
-        <circle cx="92" cy="68" r="8" fill="rgba(255,255,255,.08)" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" />
-        <line x1="31" y1="40" x2="51" y2="52" stroke="rgba(255,255,255,.1)" strokeWidth="1" />
-        <line x1="31" y1="68" x2="51" y2="52" stroke="rgba(255,255,255,.1)" strokeWidth="1" />
-        <line x1="31" y1="68" x2="51" y2="84" stroke="rgba(255,255,255,.1)" strokeWidth="1" />
-        <line x1="31" y1="96" x2="51" y2="84" stroke="rgba(255,255,255,.1)" strokeWidth="1" />
-        <line x1="69" y1="54" x2="84" y2="65" stroke="rgba(255,255,255,.12)" strokeWidth="1.2" />
-        <line x1="69" y1="82" x2="84" y2="71" stroke="rgba(255,255,255,.12)" strokeWidth="1.2" />
+        <circle cx="24" cy="38" r="7" stroke="rgba(255,255,255,.28)" strokeWidth="1.5" />
+        <circle cx="24" cy="68" r="7" stroke="rgba(255,255,255,.28)" strokeWidth="1.5" />
+        <circle cx="24" cy="98" r="7" stroke="rgba(255,255,255,.28)" strokeWidth="1.5" />
+        <circle cx="60" cy="50" r="9" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.28)" strokeWidth="1.5" />
+        <circle cx="60" cy="86" r="9" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.28)" strokeWidth="1.5" />
+        <circle cx="92" cy="68" r="8" fill="rgba(255,255,255,.18)" stroke="rgba(255,255,255,.28)" strokeWidth="1.5" />
+        <line x1="31" y1="40" x2="51" y2="52" stroke="rgba(255,255,255,.23)" strokeWidth="1" />
+        <line x1="31" y1="68" x2="51" y2="52" stroke="rgba(255,255,255,.23)" strokeWidth="1" />
+        <line x1="31" y1="68" x2="51" y2="84" stroke="rgba(255,255,255,.23)" strokeWidth="1" />
+        <line x1="31" y1="96" x2="51" y2="84" stroke="rgba(255,255,255,.23)" strokeWidth="1" />
+        <line x1="69" y1="54" x2="84" y2="65" stroke="rgba(255,255,255,.28)" strokeWidth="1.2" />
+        <line x1="69" y1="82" x2="84" y2="71" stroke="rgba(255,255,255,.28)" strokeWidth="1.2" />
       </svg>
     ),
   },
@@ -97,14 +97,14 @@ const BENTO = {
         aria-hidden="true"
         focusable="false"
       >
-        <rect x="8" y="8" width="88" height="66" rx="5" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" />
-        <line x1="8" y1="24" x2="96" y2="24" stroke="rgba(255,255,255,.1)" strokeWidth="1" />
-        <circle cx="17" cy="16" r="3" fill="rgba(255,255,255,.08)" />
-        <circle cx="26" cy="16" r="3" fill="rgba(255,255,255,.06)" />
-        <circle cx="35" cy="16" r="3" fill="rgba(255,255,255,.06)" />
-        <polyline points="28,52 18,45 28,38" stroke="rgba(255,255,255,.12)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
-        <line x1="46" y1="36" x2="40" y2="54" stroke="rgba(255,255,255,.1)" strokeWidth="2" strokeLinecap="round" />
-        <polyline points="52,38 62,45 52,52" stroke="rgba(255,255,255,.12)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <rect x="8" y="8" width="88" height="66" rx="5" stroke="rgba(255,255,255,.28)" strokeWidth="1.5" />
+        <line x1="8" y1="24" x2="96" y2="24" stroke="rgba(255,255,255,.23)" strokeWidth="1" />
+        <circle cx="17" cy="16" r="3" fill="rgba(255,255,255,.18)" />
+        <circle cx="26" cy="16" r="3" fill="rgba(255,255,255,.13)" />
+        <circle cx="35" cy="16" r="3" fill="rgba(255,255,255,.13)" />
+        <polyline points="28,52 18,45 28,38" stroke="rgba(255,255,255,.28)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+        <line x1="46" y1="36" x2="40" y2="54" stroke="rgba(255,255,255,.23)" strokeWidth="2" strokeLinecap="round" />
+        <polyline points="52,38 62,45 52,52" stroke="rgba(255,255,255,.28)" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
       </svg>
     ),
   },
@@ -121,17 +121,17 @@ const BENTO = {
         aria-hidden="true"
         focusable="false"
       >
-        <circle cx="38" cy="37" r="10" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" />
-        <circle cx="38" cy="37" r="22" stroke="rgba(255,255,255,.1)" strokeWidth="1.2" />
-        <circle cx="38" cy="37" r="34" stroke="rgba(255,255,255,.08)" strokeWidth="1" />
+        <circle cx="38" cy="37" r="10" stroke="rgba(255,255,255,.28)" strokeWidth="1.5" />
+        <circle cx="38" cy="37" r="22" stroke="rgba(255,255,255,.23)" strokeWidth="1.2" />
+        <circle cx="38" cy="37" r="34" stroke="rgba(255,255,255,.18)" strokeWidth="1" />
         <path
           d="M174 37 L177 28 L180 37 L189 37 L182 43 L185 52 L174 46 L163 52 L166 43 L159 37 Z"
-          fill="rgba(255,255,255,.08)"
-          stroke="rgba(255,255,255,.12)"
+          fill="rgba(255,255,255,.18)"
+          stroke="rgba(255,255,255,.28)"
           strokeWidth=".8"
           strokeLinejoin="round"
         />
-        <line x1="72" y1="37" x2="154" y2="37" stroke="rgba(255,255,255,.08)" strokeWidth="1" strokeDasharray="4 3" />
+        <line x1="72" y1="37" x2="154" y2="37" stroke="rgba(255,255,255,.18)" strokeWidth="1" strokeDasharray="4 3" />
       </svg>
     ),
   },
@@ -150,18 +150,18 @@ const BENTO = {
       >
         <path
           d="M52 18 C36 18 22 22 16 29 L16 60 C22 53 36 49 52 49 C68 49 82 53 88 60 L88 29 C82 22 68 18 52 18Z"
-          stroke="rgba(255,255,255,.12)"
+          stroke="rgba(255,255,255,.28)"
           strokeWidth="1.5"
-          fill="rgba(255,255,255,.06)"
+          fill="rgba(255,255,255,.13)"
           strokeLinejoin="round"
         />
-        <line x1="52" y1="18" x2="52" y2="49" stroke="rgba(255,255,255,.12)" strokeWidth="1.5" />
-        <line x1="26" y1="33" x2="48" y2="31" stroke="rgba(255,255,255,.1)" strokeWidth="1" />
-        <line x1="26" y1="40" x2="48" y2="38" stroke="rgba(255,255,255,.08)" strokeWidth="1" />
-        <line x1="26" y1="47" x2="42" y2="45" stroke="rgba(255,255,255,.08)" strokeWidth="1" />
-        <line x1="56" y1="31" x2="78" y2="33" stroke="rgba(255,255,255,.1)" strokeWidth="1" />
-        <line x1="56" y1="38" x2="78" y2="40" stroke="rgba(255,255,255,.08)" strokeWidth="1" />
-        <line x1="56" y1="45" x2="70" y2="47" stroke="rgba(255,255,255,.08)" strokeWidth="1" />
+        <line x1="52" y1="18" x2="52" y2="49" stroke="rgba(255,255,255,.28)" strokeWidth="1.5" />
+        <line x1="26" y1="33" x2="48" y2="31" stroke="rgba(255,255,255,.23)" strokeWidth="1" />
+        <line x1="26" y1="40" x2="48" y2="38" stroke="rgba(255,255,255,.18)" strokeWidth="1" />
+        <line x1="26" y1="47" x2="42" y2="45" stroke="rgba(255,255,255,.18)" strokeWidth="1" />
+        <line x1="56" y1="31" x2="78" y2="33" stroke="rgba(255,255,255,.23)" strokeWidth="1" />
+        <line x1="56" y1="38" x2="78" y2="40" stroke="rgba(255,255,255,.18)" strokeWidth="1" />
+        <line x1="56" y1="45" x2="70" y2="47" stroke="rgba(255,255,255,.18)" strokeWidth="1" />
       </svg>
     ),
   },
