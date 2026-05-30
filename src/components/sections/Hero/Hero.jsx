@@ -105,16 +105,18 @@ export default function Hero() {
               </p>
             ) : (
               <p className={`font-dm text-ink-800 ${styles.proofClaim}`}>
-                <strong className={styles.proofClaimLead}>Shipped 4 products in 6 months</strong>
-                {' '} - ~3x my pre-AI pace.
-                <br />
-                <br />
-                Built with{' '}
-                <a href="#designforge" className={styles.designForgeLink} onClick={handleDesignForgeClick}>
-                  DesignForge
-                  <span className={styles.designForgeArrow} aria-hidden="true">{'\u2193'}</span>
-                </a>
-                {' '} - a 6-phase AI + human methodology.
+                <span className={styles.proofClaimItem}>
+                  <strong className={styles.proofClaimLead}>Shipped 4 products in 6 months</strong>
+                  {' '} - ~3x my pre-AI pace.
+                </span>
+                <span className={styles.proofClaimItem}>
+                  Built with{' '}
+                  <a href="#designforge" className={styles.designForgeLink} onClick={handleDesignForgeClick}>
+                    DesignForge
+                    <span className={styles.designForgeArrow} aria-hidden="true">{'\u2193'}</span>
+                  </a>
+                  {' '} - a 6-phase AI + human methodology.
+                </span>
               </p>
             )}
             <WhiteSwirlyArrow className={styles.swirlyArrow} />

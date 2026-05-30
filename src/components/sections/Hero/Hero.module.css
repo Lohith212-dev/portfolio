@@ -122,6 +122,17 @@
   font-weight: 800;
 }
 
+/* Two bio items inside the proof claim. Stacked by default (mobile + desktop),
+   with the second item carrying the vertical gap that the old <br><br> created.
+   Switched to a single horizontal row at tablet only (see tablet media query). */
+.proofClaimItem {
+  display: block;
+}
+
+.proofClaimItem + .proofClaimItem {
+  margin-top: 1.4em;
+}
+
 /* DesignForge link — must read as a clear call-to-action */
 .designForgeLink {
   font-weight: 800;
@@ -759,7 +770,10 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
-  /* Tablet uses the mobile composition as its base, with a 2×2 Recent work grid */
+  /* Pass 4: tablet is a portrait-centered three-zone layout.
+     Zone 1 = full-width headline (in .h1Row, above .midRow).
+     Zone 2 = bio chips inline row (.zoneLeft, full-width top of .midRow).
+     Zone 3 = three-column cards + portrait grid (rest of .midRow). */
   .heroInner {
     padding: 7.5rem 2rem 5rem;
     min-height: auto;
@@ -768,8 +782,17 @@
 
   .h1Row {
     text-align: left;
-    min-height: 12rem;
+    min-height: 0;
     padding-right: 8rem;
+  }
+
+  /* Zone 1 — shrink the hero display so "Product Designer" stays on a single
+     line at both 768px and 1023px. Overrides the --text-hero-display token
+     locally (allowed: not a new token). nowrap guarantees no wrap; the clamp
+     is sized conservatively so it never overflows the 2rem-gutter container. */
+  .h1Normal {
+    font-size: clamp(2.75rem, 6.25vw, 4.25rem);
+    white-space: nowrap;
   }
 
   .kicker {
@@ -783,35 +806,56 @@
     padding: 0.35rem 0.65rem;
   }
 
+  /* Three-zone grid: bio row on top (full width), then a 1fr 1.6fr 1fr row
+     of left cards / portrait / right cards, vertically centered. */
   .midRow {
     flex: none;
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1.6fr 1fr;
     grid-template-rows: auto auto auto;
-    align-items: initial;
-    gap: 0.35rem;
+    grid-template-areas:
+      'bio      bio      bio'
+      'card1    portrait card2'
+      'card3    portrait card4';
+    align-items: center;
+    column-gap: 1.5rem;
+    row-gap: 1rem;
+    margin-top: 0.5rem;
   }
 
+  /* Zone 2 — bio chips as a single horizontal row above the portrait. */
   .zoneLeft {
-    order: 2;
+    grid-area: bio;
+    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: flex-start;
-    gap: 0.5rem;
-  }
-
-  .zoneCentre {
-    order: 1;
-    justify-content: center;
-    margin-top: -1.85rem;
     align-items: flex-start;
-  }
-
-  .zoneRight {
-    order: 3;
-    justify-content: flex-start;
-    margin-top: 1.5rem;
+    gap: 1.25rem;
   }
 
   .proofClaim {
     max-width: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem 1.25rem;
+  }
+
+  .proofClaimItem {
+    display: inline;
+  }
+
+  .proofClaimItem + .proofClaimItem {
+    margin-top: 0;
+  }
+
+  /* Zone 3 — portrait centerpiece, spans both card rows, vertically centered. */
+  .zoneCentre {
+    grid-area: portrait;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
   }
 
   .swirlyArrow {
@@ -841,21 +885,7 @@
   }
 
   .portraitFade {
-    position: absolute;
-    left: -0.5rem;
-    right: -0.5rem;
-    bottom: -0.85rem;
-    z-index: 4;
-    display: block;
-    height: 7rem;
-    pointer-events: none;
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      color-mix(in srgb, var(--portrait-fade-bg) 52%, transparent) 30%,
-      var(--portrait-fade-bg) 74%,
-      var(--portrait-fade-bg) 100%
-    );
+    display: none;
   }
 
   .experienceSticker {
@@ -864,40 +894,26 @@
     right: 1.25rem;
   }
 
-  .recentWorkTilted {
-    gap: 0.45rem;
-    margin-top: 0;
-    padding-left: 0;
-    color: var(--color-ink-950);
-    transform: none;
-  }
-
-  .recentWorkLabelText {
-    padding: 0.22rem 0.7rem 0.28rem;
-    border-radius: 0;
-    background: var(--color-surface-white);
-    box-shadow: none;
-    border: 1px solid color-mix(in srgb, var(--color-ink-950) 12%, transparent);
-  }
-
-  .recentWorkArrow {
-    margin-top: 0.2rem;
-    margin-left: 0.18rem;
-    transform: rotate(4deg) translateX(0.24rem);
-  }
-
-  /* Recent work list: 2×2 grid (two projects per row) at tablet only */
-  .workBlock {
-    max-width: none;
-  }
-
+  /* Zone 3 — dissolve the right-zone wrappers so each card <li> becomes a
+     direct grid item of .midRow, placed into the left / right columns. */
+  .zoneRight,
+  .workBlock,
   .roleList {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    column-gap: 2rem;
-    row-gap: 0.5rem;
-    max-width: none;
+    display: contents;
   }
+
+  /* Remove the "Recent work" label at tablet (kept for mobile/desktop). */
+  .workBlockIntro {
+    display: none;
+  }
+
+  /* Place the existing four cards around the portrait, preserving identity:
+     01 SAT LMS -> left top, 03 e-GMAT -> left bottom,
+     02 S.P.A.R.K. -> right top, 04 Neuron -> right bottom. */
+  .roleItem:nth-child(1) { grid-area: card1; }
+  .roleItem:nth-child(2) { grid-area: card2; }
+  .roleItem:nth-child(3) { grid-area: card3; }
+  .roleItem:nth-child(4) { grid-area: card4; }
 
   .roleLink {
     min-height: 44px;
