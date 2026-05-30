@@ -50,6 +50,7 @@ function PhaseBlock({ phase, theme, topOffset, compact }) {
           style={numberStyle}
           aria-hidden="true"
         >
+          {compact ? <span className={styles.stepKicker}>Step</span> : null}
           {phase.number}
         </motion.span>
       </div>
@@ -70,7 +71,7 @@ export default function StickyPhaseNumbers({
   }
 
   return (
-    <div className={`${styles.root} ${className}`}>
+    <div className={`${styles.root} ${compact ? styles.rootCompact : ''} ${className}`}>
       {phases.map((phase, index) => (
         <PhaseBlock
           key={phase.number ?? index}
