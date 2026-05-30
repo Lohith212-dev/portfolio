@@ -1,8 +1,20 @@
-import { useMemo, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
-import { motion, useMotionValueEvent, useScroll, useTransform } from 'motion/react';
+import {
+  AnimatePresence,
+  motion,
+  useMotionValueEvent,
+  useReducedMotion,
+  useScroll,
+  useTransform,
+} from 'motion/react';
 import { SharedLinkedInIcon } from '../../icons/icons';
 import styles from './Testimonials.module.css';
+
+// Auto-advance interval for the mobile/tablet carousel. Desktop is scroll-driven
+// (no fixed cadence), so per the pass-3 decision policy we pick a calm, reading-
+// friendly cadence for the quote-led cards.
+const MOBILE_AUTOPLAY_MS = 6500;
 
 const testimonials = [
   {
@@ -134,7 +146,17 @@ function MobileCard({ item }) {
 
   return (
     <article className={styles.mobileCard}>
-      <div className={styles.mobileTop}>
+      <h3 className={`${styles.cardTitle} ${styles.headlineTitle} ${styles.mobileHeadline}`}>
+        - {item.headlinePrefix}{' '}
+        <span className={`${styles.scriptHighlight} ${item.accentClass}`}>
+          {firstWord}
+        </span>{' '}
+        {rest}
+      </h3>
+
+      <p className={`${styles.quote} ${styles.mobileQuote}`}>&ldquo;{item.quote}&rdquo;</p>
+
+      <div className={styles.mobileAttribution}>
         <div className={styles.mobilePersonWrap}>
           <div className={`${styles.mobilePersonHalo} ${item.accentClass}`} />
           <Image
@@ -156,17 +178,116 @@ function MobileCard({ item }) {
           <p className={`${styles.meta} ${styles.metaSubtle}`}>{item.relation}</p>
         </div>
       </div>
-
-      <h3 className={`${styles.cardTitle} ${styles.headlineTitle} ${styles.mobileHeadline}`}>
-        - {item.headlinePrefix}{' '}
-        <span className={`${styles.scriptHighlight} ${item.accentClass}`}>
-          {firstWord}
-        </span>{' '}
-        {rest}
-      </h3>
-
-      <p className={`${styles.quote} ${styles.mobileQuote}`}>&ldquo;{item.quote}&rdquo;</p>
     </article>
+  );
+}
+
+function MobileCarousel({ items }) {
+  const total = items.length;
+  const prefersReducedMotion = useReducedMotion();
+  const [index, setIndex] = useState(0);
+  const [direction, setDirection] = useState(1);
+  const [paused, setPaused] = useState(false);
+
+  const goTo = useCallback(
+    (next) => {
+      const wrapped = ((next % total) + total) % total;
+      setDirection(wrapped >= index ? 1 : -1);
+      setIndex(wrapped);
+    },
+    [index, total],
+  );
+
+  const advance = useCallback(
+    (step) => {
+      setDirection(step);
+      setIndex((current) => ((current + step) % total + total) % total);
+    },
+    [total],
+  );
+
+  // Auto-advance, paused on touch/drag interaction or when reduced motion is requested.
+  useEffect(() => {
+    if (prefersReducedMotion || paused || total <= 1) return undefined;
+
+    const timer = window.setInterval(() => {
+      setDirection(1);
+      setIndex((current) => (current + 1) % total);
+    }, MOBILE_AUTOPLAY_MS);
+
+    return () => window.clearInterval(timer);
+  }, [prefersReducedMotion, paused, total]);
+
+  const handleDragEnd = (_event, info) => {
+    const swipe = info.offset.x;
+    const velocity = info.velocity.x;
+
+    if (swipe < -60 || velocity < -400) {
+      advance(1);
+    } else if (swipe > 60 || velocity > 400) {
+      advance(-1);
+    }
+
+    setPaused(false);
+  };
+
+  const slideVariants = {
+    enter: (dir) => ({ opacity: 0, x: prefersReducedMotion ? 0 : dir * 48 }),
+    center: { opacity: 1, x: 0 },
+    exit: (dir) => ({ opacity: 0, x: prefersReducedMotion ? 0 : dir * -48 }),
+  };
+
+  const activeItem = items[index];
+
+  return (
+    <div className={styles.mobileCarousel}>
+      <div
+        className={styles.mobileTrack}
+        onPointerDown={() => setPaused(true)}
+        onPointerUp={() => setPaused(false)}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+      >
+        <AnimatePresence initial={false} custom={direction} mode="wait">
+          <motion.div
+            key={activeItem.id}
+            className={styles.mobileSlide}
+            custom={direction}
+            variants={slideVariants}
+            initial="enter"
+            animate="center"
+            exit="exit"
+            transition={{ duration: prefersReducedMotion ? 0 : 0.32, ease: 'easeInOut' }}
+            drag={total > 1 ? 'x' : false}
+            dragSnapToOrigin
+            dragElastic={0.18}
+            dragConstraints={{ left: 0, right: 0 }}
+            onDragStart={() => setPaused(true)}
+            onDragEnd={handleDragEnd}
+          >
+            <MobileCard item={activeItem} />
+          </motion.div>
+        </AnimatePresence>
+      </div>
+
+      <div className={styles.mobileControls}>
+        <div className={styles.dots} aria-label="Choose testimonial slide">
+          {items.map((item, dotIndex) => (
+            <button
+              key={item.id}
+              type="button"
+              className={`${styles.dotButton} ${index === dotIndex ? styles.dotButtonActive : ''}`}
+              aria-label={`Go to testimonial ${dotIndex + 1}: ${item.name}`}
+              aria-current={index === dotIndex ? 'true' : undefined}
+              onClick={() => goTo(dotIndex)}
+            />
+          ))}
+        </div>
+        <p className={styles.mobileCounter} aria-live="polite">
+          {index + 1} / {total}
+        </p>
+      </div>
+    </div>
   );
 }
 
@@ -248,9 +369,7 @@ export default function Testimonials() {
         </div>
 
         <div className={styles.mobileList}>
-          {testimonials.map((item) => (
-            <MobileCard key={item.id} item={item} />
-          ))}
+          <MobileCarousel items={testimonials} />
         </div>
       </div>
     </section>
