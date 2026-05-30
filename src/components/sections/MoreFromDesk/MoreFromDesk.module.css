@@ -522,6 +522,14 @@
 }
 
 @media (max-width: 63.999rem) {
+  .section {
+    overflow-x: hidden;
+  }
+
+  .inner {
+    overflow-x: clip;
+  }
+
   .stage {
     min-height: auto;
   }
@@ -542,6 +550,7 @@
   }
 
   .overviewLayer {
+    display: none;
     grid-template-columns: 1fr;
     margin-bottom: 2rem;
   }
