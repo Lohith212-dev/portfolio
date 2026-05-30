@@ -852,6 +852,18 @@ function HatSelector({ isFunMode }) {
 export default function Skills() {
   const { isFunMode } = useTheme();
 
+  // Default to desktop copy for SSR; correct after mount so mobile/tablet
+  // (<=1023px) shows the tap instruction. Desktop copy is unchanged.
+  const [isDesktop, setIsDesktop] = useState(true);
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+    const mq = window.matchMedia('(min-width: 1024px)');
+    const update = () => setIsDesktop(mq.matches);
+    update();
+    mq.addEventListener('change', update);
+    return () => mq.removeEventListener('change', update);
+  }, []);
+
   const sectionBg = isFunMode ? 'bg-fun-surface-black' : 'bg-surface-white';
   const headlineColor = isFunMode ? 'text-fun-ink-50' : 'text-ink-950';
 
@@ -877,7 +889,8 @@ export default function Skills() {
                 The Full <span className={styles.scriptKeyword}>Toolkit!</span>
               </h2>
               <p className={`font-dm text-body text-ink-700 ${styles.headlineDesc}`}>
-                Five disciplines I work across, and the kit that earns its place under each. Hover a circle — the rest will follow.
+                Five disciplines I work across, and the kit that earns its place under each.{' '}
+                {isDesktop ? 'Hover a circle — the rest will follow.' : 'Tap a tile — the rest will follow.'}
               </p>
             </>
           )}
