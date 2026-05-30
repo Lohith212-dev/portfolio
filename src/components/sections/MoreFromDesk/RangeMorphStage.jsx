@@ -38,7 +38,11 @@ function useStickyStageProgress(ref, triggerOffset = 96, morphDistance = 780) {
   return progress;
 }
 
-function useIsPhoneLayout(breakpoint = '(max-width: 39.999rem)') {
+// Covers the full mobile + tablet path (matches the CSS `max-width: 63.999rem`
+// query). At/below this width the scroll-driven morph + per-lane fade are
+// disabled so the section renders fully visible the moment it enters view.
+// Desktop (>= 64rem / 1024px) keeps the scroll-driven animation unchanged.
+function useIsPhoneLayout(breakpoint = '(max-width: 63.999rem)') {
   const [isPhoneLayout, setIsPhoneLayout] = useState(false);
 
   useEffect(() => {

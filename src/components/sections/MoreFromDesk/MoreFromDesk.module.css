@@ -541,7 +541,8 @@
   }
 
   .overviewLayer,
-  .lanesLayer {
+  .lanesLayer,
+  .laneRow {
     position: relative;
     inset: auto;
     opacity: 1 !important;
@@ -599,13 +600,21 @@
 }
 
 @media (max-width: 39.999rem) {
+  /* Remove the outer horizontal gutter so the colored category blocks can
+     bleed to the left + right viewport edges. The 1.25rem inset moves onto
+     the content containers inside each block instead. overflow-x:hidden on
+     .section (set in the tablet query) still prevents any page h-scroll. */
   .section {
-    padding-right: 1rem;
-    padding-left: 1rem;
+    padding-right: 0;
+    padding-left: 0;
   }
 
+  /* Section heading regains its own horizontal inset (the outer gutter is
+     gone) and sits 2rem above the first category block. */
   .headline {
-    margin-bottom: 0.9rem;
+    margin-bottom: 2rem;
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
   }
 
   .overviewLayer {
@@ -617,12 +626,36 @@
     font-size: 2.35rem;
   }
 
+  /* Colored category block: full-bleed background (peach / lilac / mint per
+     lane via --more-work-soft), inner content inset 1.25rem. 1.5rem gap
+     between blocks comes from the top margin on every block after the first. */
   .laneRow {
-    padding: 3.1rem 0;
+    overflow-x: clip;
+    padding: 1.75rem 0;
+    background: var(--more-work-soft);
+  }
+
+  .laneRow + .laneRow {
+    margin-top: 1.5rem;
   }
 
   .laneRow:first-child {
-    padding-top: 1.15rem;
+    padding-top: 1.75rem;
+  }
+
+  .laneDivider {
+    display: none;
+  }
+
+  .laneCopy,
+  .marqueeViewport {
+    padding-right: 1.25rem;
+    padding-left: 1.25rem;
+  }
+
+  /* Category heading -> its card grid: 1rem (single-column stack on mobile). */
+  .laneGrid {
+    gap: 1rem;
   }
 
   .workCard {
