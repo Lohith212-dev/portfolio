@@ -43,6 +43,8 @@
 
 .phaseBlockCompact {
   grid-template-columns: 2.75rem minmax(0, 1fr);
+  min-height: 0;
+  padding: 0;
 }
 
 .numberCompact {
