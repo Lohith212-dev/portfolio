@@ -626,13 +626,12 @@
     font-size: 2.35rem;
   }
 
-  /* Colored category block: full-bleed background (peach / lilac / mint per
-     lane via --more-work-soft), inner content inset 1.25rem. 1.5rem gap
-     between blocks comes from the top margin on every block after the first. */
+  /* Category block: no color fill on mobile (per Pass 5 — the lane rows are
+     transparent). Inner content keeps its 1.25rem inset; 1.5rem gap between
+     blocks comes from the top margin on every block after the first. */
   .laneRow {
     overflow-x: clip;
     padding: 1.75rem 0;
-    background: var(--more-work-soft);
   }
 
   .laneRow + .laneRow {
