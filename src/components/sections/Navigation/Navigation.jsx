@@ -104,7 +104,7 @@ export default function Navigation({
               />
             </Link>
 
-            <ul className={`${styles.desktopLinks} hidden md:flex`}>
+            <ul className={`${styles.desktopLinks} hidden lg:flex`}>
               {activeLinks.map(link => (
                 <li key={link.href}>
                   <a
@@ -180,7 +180,7 @@ export default function Navigation({
               )}
 
               <button
-                className={`md:hidden ${styles.hamburger}`}
+                className={`lg:hidden ${styles.hamburger}`}
                 onClick={() => setMenuOpen(prev => !prev)}
                 aria-label={menuOpen ? 'Close menu' : 'Open menu'}
                 aria-expanded={menuOpen}
