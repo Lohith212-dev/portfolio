@@ -759,49 +759,149 @@
 }
 
 @media (min-width: 768px) and (max-width: 1023px) {
+  /* Tablet uses the mobile composition as its base, with a 2×2 Recent work grid */
   .heroInner {
-    padding: 6.75rem 2rem 4rem;
+    padding: 7.5rem 2rem 5rem;
+    min-height: auto;
+    gap: 1.75rem;
   }
 
   .h1Row {
-    padding-right: 7.5rem;
+    text-align: left;
+    min-height: 12rem;
+    padding-right: 8rem;
+  }
+
+  .kicker {
+    max-width: 100%;
+    margin: 0 0 0.5rem 0;
+    line-height: 1.4;
+  }
+
+  .roleStrip {
+    margin: 0.5rem 0 0 0;
+    padding: 0.35rem 0.65rem;
+  }
+
+  .midRow {
+    flex: none;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    align-items: initial;
+    gap: 0.35rem;
+  }
+
+  .zoneLeft {
+    order: 2;
+    justify-content: flex-start;
+    gap: 0.5rem;
   }
 
   .zoneCentre {
-    margin-top: -7rem;
+    order: 1;
+    justify-content: center;
+    margin-top: -1.85rem;
+    align-items: flex-start;
   }
 
-  .portraitWrap {
-    width: 460px;
-    height: 460px;
+  .zoneRight {
+    order: 3;
+    justify-content: flex-start;
+    margin-top: 1.5rem;
   }
 
-  .gridPaper {
-    width: 380px;
-  }
-
-  .tape {
-    width: 120px;
-  }
-
-  .portraitImg {
-    width: 460px;
+  .proofClaim {
+    max-width: none;
   }
 
   .swirlyArrow {
-    width: 140px;
-    margin-right: -1.5rem;
+    display: none;
+  }
+
+  .portraitWrap {
+    width: 340px;
+    height: 300px;
+  }
+
+  .gridPaper {
+    width: 280px;
+  }
+
+  .tape {
+    width: 110px;
+  }
+
+  .tapeWrap {
+    top: 88px;
+    left: 18px;
+  }
+
+  .portraitImg {
+    width: 320px;
+  }
+
+  .portraitFade {
+    position: absolute;
+    left: -0.5rem;
+    right: -0.5rem;
+    bottom: -0.85rem;
+    z-index: 4;
+    display: block;
+    height: 7rem;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      color-mix(in srgb, var(--portrait-fade-bg) 52%, transparent) 30%,
+      var(--portrait-fade-bg) 74%,
+      var(--portrait-fade-bg) 100%
+    );
   }
 
   .experienceSticker {
     width: 116px;
-    top: -0.1rem;
+    top: 0.6rem;
     right: 1.25rem;
   }
 
-  .tapeWrap {
-    top: 96px;
-    left: 20px;
+  .recentWorkTilted {
+    gap: 0.45rem;
+    margin-top: 0;
+    padding-left: 0;
+    color: var(--color-ink-950);
+    transform: none;
+  }
+
+  .recentWorkLabelText {
+    padding: 0.22rem 0.7rem 0.28rem;
+    border-radius: 0;
+    background: var(--color-surface-white);
+    box-shadow: none;
+    border: 1px solid color-mix(in srgb, var(--color-ink-950) 12%, transparent);
+  }
+
+  .recentWorkArrow {
+    margin-top: 0.2rem;
+    margin-left: 0.18rem;
+    transform: rotate(4deg) translateX(0.24rem);
+  }
+
+  /* Recent work list: 2×2 grid (two projects per row) at tablet only */
+  .workBlock {
+    max-width: none;
+  }
+
+  .roleList {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 2rem;
+    row-gap: 0.5rem;
+    max-width: none;
+  }
+
+  .roleLink {
+    min-height: 44px;
+    padding: 0.625rem 0;
   }
 
   .headlineStack {
