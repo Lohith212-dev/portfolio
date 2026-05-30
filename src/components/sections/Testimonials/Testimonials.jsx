@@ -146,36 +146,35 @@ function MobileCard({ item }) {
 
   return (
     <article className={styles.mobileCard}>
-      <h3 className={`${styles.cardTitle} ${styles.headlineTitle} ${styles.mobileHeadline}`}>
+      {/* Headline = PRIMARY: largest, boldest. Badge words highlighted GREEN. */}
+      <h3 className={styles.mobileHeadline}>
         - {item.headlinePrefix}{' '}
-        <span className={`${styles.scriptHighlight} ${item.accentClass}`}>
-          {firstWord}
-        </span>{' '}
+        <span className={styles.mobileBadge}>{firstWord}</span>{' '}
         {rest}
       </h3>
 
-      <p className={`${styles.quote} ${styles.mobileQuote}`}>&ldquo;{item.quote}&rdquo;</p>
+      {/* Quote = SECONDARY: smaller supporting text. */}
+      <p className={styles.mobileQuote}>&ldquo;{item.quote}&rdquo;</p>
 
+      {/* Attribution: small circular photo + name + role, divided by top border. */}
       <div className={styles.mobileAttribution}>
         <div className={styles.mobilePersonWrap}>
-          <div className={`${styles.mobilePersonHalo} ${item.accentClass}`} />
           <Image
             src={item.avatar}
             alt={item.name}
             fill
             className={styles.mobilePerson}
-            sizes="120px"
+            sizes="44px"
             unoptimized
           />
         </div>
 
         <div className={styles.mobileIdentity}>
           <div className={styles.nameRow}>
-            <h3 className={styles.cardTitle}>{item.name}</h3>
+            <h4 className={styles.mobileName}>{item.name}</h4>
             <LinkedInIconLink href={item.linkedin} name={item.name} />
           </div>
-          <p className={styles.meta}>{item.role}</p>
-          <p className={`${styles.meta} ${styles.metaSubtle}`}>{item.relation}</p>
+          <p className={styles.mobileRole}>{item.role}</p>
         </div>
       </div>
     </article>
@@ -232,15 +231,62 @@ function MobileCarousel({ items }) {
   };
 
   const slideVariants = {
-    enter: (dir) => ({ opacity: 0, x: prefersReducedMotion ? 0 : dir * 48 }),
+    enter: (dir) => ({ opacity: 0, x: prefersReducedMotion ? 0 : dir * 56 }),
     center: { opacity: 1, x: 0 },
-    exit: (dir) => ({ opacity: 0, x: prefersReducedMotion ? 0 : dir * -48 }),
+    exit: (dir) => ({ opacity: 0, x: prefersReducedMotion ? 0 : dir * -56 }),
   };
 
   const activeItem = items[index];
 
   return (
     <div className={styles.mobileCarousel}>
+      {/* Top nav row: prev arrow · avatar thumbnails · next arrow. */}
+      <div className={styles.mobileNav}>
+        <button
+          type="button"
+          className={styles.mobileArrow}
+          aria-label="Previous testimonial"
+          onClick={() => advance(-1)}
+        >
+          <span aria-hidden="true">&larr;</span>
+        </button>
+
+        <div className={styles.mobileAvatars} role="tablist" aria-label="Choose testimonial">
+          {items.map((item, avatarIndex) => (
+            <button
+              key={item.id}
+              type="button"
+              role="tab"
+              className={`${styles.mobileAvatarBtn} ${index === avatarIndex ? styles.mobileAvatarActive : ''}`}
+              aria-label={`Show testimonial from ${item.name}`}
+              aria-selected={index === avatarIndex ? 'true' : 'false'}
+              onClick={() => goTo(avatarIndex)}
+            >
+              <span className={styles.mobileAvatarImgWrap}>
+                <Image
+                  src={item.avatar}
+                  alt=""
+                  fill
+                  className={styles.mobileAvatarImg}
+                  sizes="44px"
+                  unoptimized
+                />
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <button
+          type="button"
+          className={styles.mobileArrow}
+          aria-label="Next testimonial"
+          onClick={() => advance(1)}
+        >
+          <span aria-hidden="true">&rarr;</span>
+        </button>
+      </div>
+
+      {/* Card stack: active card in front, ghost cards peeking behind. */}
       <div
         className={styles.mobileTrack}
         onPointerDown={() => setPaused(true)}
@@ -248,6 +294,9 @@ function MobileCarousel({ items }) {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
+        <div className={styles.mobileGhost} aria-hidden="true" data-depth="2" />
+        <div className={styles.mobileGhost} aria-hidden="true" data-depth="1" />
+
         <AnimatePresence initial={false} custom={direction} mode="wait">
           <motion.div
             key={activeItem.id}
@@ -257,7 +306,7 @@ function MobileCarousel({ items }) {
             initial="enter"
             animate="center"
             exit="exit"
-            transition={{ duration: prefersReducedMotion ? 0 : 0.32, ease: 'easeInOut' }}
+            transition={{ duration: prefersReducedMotion ? 0 : 0.3, ease: 'easeInOut' }}
             drag={total > 1 ? 'x' : false}
             dragSnapToOrigin
             dragElastic={0.18}
@@ -268,24 +317,6 @@ function MobileCarousel({ items }) {
             <MobileCard item={activeItem} />
           </motion.div>
         </AnimatePresence>
-      </div>
-
-      <div className={styles.mobileControls}>
-        <div className={styles.dots} aria-label="Choose testimonial slide">
-          {items.map((item, dotIndex) => (
-            <button
-              key={item.id}
-              type="button"
-              className={`${styles.dotButton} ${index === dotIndex ? styles.dotButtonActive : ''}`}
-              aria-label={`Go to testimonial ${dotIndex + 1}: ${item.name}`}
-              aria-current={index === dotIndex ? 'true' : undefined}
-              onClick={() => goTo(dotIndex)}
-            />
-          ))}
-        </div>
-        <p className={styles.mobileCounter} aria-live="polite">
-          {index + 1} / {total}
-        </p>
       </div>
     </div>
   );
