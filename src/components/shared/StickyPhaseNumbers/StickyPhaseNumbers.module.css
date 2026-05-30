@@ -41,10 +41,22 @@
   min-width: 0;
 }
 
+.phaseBlockCompact {
+  grid-template-columns: 2.75rem minmax(0, 1fr);
+}
+
+.numberCompact {
+  font-size: var(--text-h3);
+}
+
 @media (min-width: 768px) and (max-width: 1023px) {
   .phaseBlock {
     grid-template-columns: 6rem minmax(0, 1fr);
     gap: 1.75rem;
+  }
+
+  .phaseBlockCompact {
+    grid-template-columns: 3.5rem minmax(0, 1fr);
   }
 }
 

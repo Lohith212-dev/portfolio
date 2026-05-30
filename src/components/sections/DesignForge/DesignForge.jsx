@@ -335,6 +335,7 @@ function DialExperience() {
         <StickyPhaseNumbers
           theme="dark"
           topOffset="5.5rem"
+          compact
           phases={steps.map((step) => ({
             number: step.number,
             content: <StepCard step={step} isMobile />,

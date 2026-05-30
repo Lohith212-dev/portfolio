@@ -13,13 +13,15 @@ import styles from './StickyPhaseNumbers.module.css';
  *   phases: Array<{ number: string, content: ReactNode }>
  *   theme:  'light' | 'dark'  (default 'light')
  *   topOffset: optional CSS length string for the sticky top offset (default '6rem')
+ *   compact: when true, shrinks the number size and narrows the number column
+ *            at mobile/tablet (default false; desktop layout is unaffected)
  *   className: optional className for the outer container
  *
  * The component renders only the number-column sticky behaviour and the layout
  * scaffolding; the caller supplies the body content for each phase (title,
  * copy, artifact, etc.) so per-page styling stays in the calling section.
  */
-function PhaseBlock({ phase, theme, topOffset }) {
+function PhaseBlock({ phase, theme, topOffset, compact }) {
   const blockRef = useRef(null);
   const prefersReducedMotion = useReducedMotion();
   const { scrollYProgress } = useScroll({
@@ -41,10 +43,10 @@ function PhaseBlock({ phase, theme, topOffset }) {
   }
 
   return (
-    <div ref={blockRef} className={styles.phaseBlock}>
+    <div ref={blockRef} className={`${styles.phaseBlock} ${compact ? styles.phaseBlockCompact : ''}`}>
       <div className={styles.numberColumn}>
         <motion.span
-          className={`${styles.number} ${theme === 'dark' ? styles.numberDark : styles.numberLight}`}
+          className={`${styles.number} ${theme === 'dark' ? styles.numberDark : styles.numberLight} ${compact ? styles.numberCompact : ''}`}
           style={numberStyle}
           aria-hidden="true"
         >
@@ -60,6 +62,7 @@ export default function StickyPhaseNumbers({
   phases,
   theme = 'light',
   topOffset = '6rem',
+  compact = false,
   className = '',
 }) {
   if (!Array.isArray(phases) || phases.length === 0) {
@@ -74,6 +77,7 @@ export default function StickyPhaseNumbers({
           phase={phase}
           theme={theme}
           topOffset={topOffset}
+          compact={compact}
         />
       ))}
     </div>
