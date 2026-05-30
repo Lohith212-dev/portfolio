@@ -579,7 +579,8 @@
 
   .editorialMediaSurface {
     height: auto;
-    aspect-ratio: 16 / 9;
+    /* Tablet: wide cinematic preview so the media doesn't dominate the card */
+    aspect-ratio: 3 / 1;
   }
 
   .editorialContent {
@@ -688,6 +689,8 @@
 
   .editorialContent {
     gap: 1.1rem;
+    /* Mobile: comfortable reading unit — more inner breathing room */
+    padding: 1.5rem 1.25rem;
   }
 
   .editorialMainCopy {
