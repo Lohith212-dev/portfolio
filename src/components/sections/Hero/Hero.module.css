@@ -776,17 +776,26 @@
      Zone 3 = three-column cards + portrait grid (rest of .midRow). */
   /* Trim the trailing bottom padding so the hero band ends cleanly right after
      the avatar + recent-work cards (removes the large empty gap that the 5rem
-     bottom padding produced under the portrait/cards grid at tablet). */
+     bottom padding produced under the portrait/cards grid at tablet). The base
+     .hero / .heroInner force min-height: calc(100vh - 64px); on tall tablet
+     viewports that left a big empty yellow gap BELOW the content. Let both fit
+     their content at tablet so the band ends right after the portrait + cards. */
+  .hero {
+    min-height: auto;
+  }
+
   .heroInner {
     padding: 7.5rem 2rem 1.5rem;
     min-height: auto;
     gap: 1.75rem;
   }
 
+  /* Headline spans the FULL band width — stamp overlap is accepted, so the
+     8rem right reserve is removed and the title is sized much larger. */
   .h1Row {
     text-align: left;
     min-height: 0;
-    padding-right: 8rem;
+    padding-right: 0;
   }
 
   /* Zone 1 — size the hero display so "Product Designer" spans the full hero
@@ -796,7 +805,10 @@
      fills the available width (container minus the 2rem gutters) at both bounds
      without overflowing the yellow band or causing horizontal scroll. */
   .h1Normal {
-    font-size: clamp(3.5rem, 9.5vw, 5.5rem);
+    /* Much larger — fills the full band width on one line. The vw term + caps
+       are tuned so "Product Designer" fills nearly the whole container at both
+       768px and 1023px without overflowing (no horizontal scroll). */
+    font-size: clamp(5rem, 11vw, 7.25rem);
     white-space: nowrap;
   }
 
@@ -817,12 +829,15 @@
     flex: none;
     display: grid;
     grid-template-columns: 1fr 1.6fr 1fr;
-    grid-template-rows: auto auto auto;
+    /* Two EQUAL card rows (1fr 1fr) — the portrait spans both, so each row is
+       half the portrait height and every card stretches to the same height
+       regardless of how many lines its label wraps to. */
+    grid-template-rows: auto 1fr 1fr;
     grid-template-areas:
       'bio      bio      bio'
       'card1    portrait card2'
       'card3    portrait card4';
-    align-items: center;
+    align-items: stretch;
     column-gap: 1.5rem;
     row-gap: 1rem;
     margin-top: 0.5rem;
@@ -927,6 +942,7 @@
   .roleItem {
     position: relative;
     z-index: 5;
+    display: flex;
     background: rgb(255 255 255 / 32%);
     -webkit-backdrop-filter: blur(12px) saturate(125%);
     backdrop-filter: blur(12px) saturate(125%);
@@ -953,7 +969,11 @@
 
   /* The whole card is the tap target; pad the link to fill the glass surface
      and guarantee >=44px tap height. */
+  /* Fill the stretched glass card so all four links occupy equal height, with
+     the number + label + arrow vertically centred. */
   .roleLink {
+    flex: 1;
+    height: 100%;
     min-height: 44px;
     gap: 0.65rem;
     padding: 0.75rem 0.9rem;
