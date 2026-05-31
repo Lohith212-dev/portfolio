@@ -389,12 +389,6 @@
   fill: var(--role-arrow-fg);
 }
 
-/* Tablet-only connector arrows between each tile pair — hidden elsewhere. */
-.tileConnectorLeft,
-.tileConnectorRight {
-  display: none;
-}
-
 /* Hover state — snap, no easing. Label group shifts; arrow inverts. */
 .roleLink:hover .roleLabelGroup {
   transform: translateX(8px);
@@ -536,6 +530,20 @@
   }
 }
 
+/* Gentle continuous float for the tablet glass cards (layered on top of the
+   heroFadeInRight entrance via a multi-animation shorthand). Amplitude ~±5px. */
+@keyframes heroCardFloat {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
 @keyframes scrapbookGridLift {
   0% {
     opacity: 0;
@@ -585,8 +593,17 @@
   .tapeWrap,
   .portraitImgWrap,
   .workBlockIntro,
-  .roleItem {
-    animation: none;
+  .roleItem,
+  /* nth-child selectors needed to outrank the tablet per-card combined
+     entrance+float shorthand (which is also nth-child specificity). Disables
+     both the entrance and the continuous float for reduced-motion users. */
+  .roleItem:nth-child(1),
+  .roleItem:nth-child(2),
+  .roleItem:nth-child(3),
+  .roleItem:nth-child(4) {
+    /* !important so this accessibility override beats the equal-specificity
+       tablet per-card shorthand that is declared later in source order. */
+    animation: none !important;
   }
 }
 
@@ -839,16 +856,15 @@
     /* Two EQUAL card rows (1fr 1fr) — the portrait spans both, so each row is
        half the portrait height and every card stretches to the same height
        regardless of how many lines its label wraps to. */
-    /* Each side column is a TIGHT pair (tile · connector arrow · tile) clustered
-       on the portrait's vertical midline. The portrait spans rows 2–6; the two
-       1fr spacer rows absorb the leftover height so the pair sits centred and
-       reads as one group (proximity), overlapping the portrait. */
-    grid-template-rows: auto 1fr auto auto auto 1fr;
+    /* Each side column is a TIGHT pair (tile · tile) clustered on the portrait's
+       vertical midline. The portrait spans rows 2–5; the two 1fr spacer rows
+       absorb the leftover height so the pair sits centred and reads as one group
+       (proximity), overlapping the portrait. */
+    grid-template-rows: auto 1fr auto auto 1fr;
     grid-template-areas:
       'bio    bio      bio'
       '.      portrait .'
       'card1  portrait card2'
-      'connL  portrait connR'
       'card3  portrait card4'
       '.      portrait .';
     align-items: center;
@@ -892,8 +908,25 @@
     margin-top: 0;
   }
 
+  /* Tablet: a single white swirly arrow bridging the bio text ("…AI + human
+     methodology.") down-and-right toward the S.P.A.R.K. Presenter card (card2,
+     top-right). Absolutely positioned inside .zoneLeft (grid area `bio`, which is
+     position: relative), tucked into the empty space at the bio's lower-right so
+     it never overlaps the headline or the bio copy. Rotated ~58deg so the base
+     right-pointing arrow reads as pointing down-and-right toward the card.
+     NOTE: exact right/bottom offset + rotation may need a per-device tweak. */
   .swirlyArrow {
-    display: none;
+    display: block;
+    position: absolute;
+    right: 6rem;
+    bottom: -2.75rem;
+    width: 4.5rem;
+    align-self: auto;
+    margin: 0;
+    transform: rotate(58deg);
+    transform-origin: center;
+    pointer-events: none;
+    z-index: 5;
   }
 
   .portraitWrap {
@@ -1005,34 +1038,15 @@
     display: none;
   }
 
-  /* White swirly connector arrow between each clustered tile pair. Nudged
-     toward the portrait so it sits under the tiles' overlapped centre. */
-  .tileConnectorLeft,
-  .tileConnectorRight {
-    display: block;
-    width: 2.4rem;
-    height: auto;
-    align-self: center;
-    justify-self: center;
-    z-index: 5;
-    pointer-events: none;
-  }
-
-  .tileConnectorLeft {
-    grid-area: connL;
-    transform: translateX(1.25rem) rotate(90deg);
-  }
-
-  .tileConnectorRight {
-    grid-area: connR;
-    transform: translateX(-1.25rem) rotate(90deg) scaleX(-1);
-  }
-
-  /* Tappable affordance: lift + brighten on hover/active (touch + pointer). */
+  /* Tappable affordance: brighten + deepen shadow and PAUSE the float on
+     hover/active (touch + pointer). We pause rather than translateY(-2px) here
+     because the card runs a continuous float animation on `transform` at tablet
+     (see below) — a static transform would be overridden by the animation, so
+     pausing the float gives a clear "held" affordance instead. */
   .roleItem:hover,
   .roleItem:active {
     background: rgb(255 255 255 / 44%);
-    transform: translateY(-2px);
+    animation-play-state: paused, paused;
     box-shadow:
       0 12px 30px rgb(0 0 0 / 16%),
       inset 0 1px 0 rgb(255 255 255 / 55%);
@@ -1064,28 +1078,51 @@
     animation-delay: 1.2s;
   }
 
+  /* Disable the desktop/base entrance on the swirly arrow at tablet: its
+     heroFloatIn keyframes hardcode rotate(20deg) and would clobber the tablet
+     rotate(58deg) bridge transform above. The arrow simply appears in place. */
   .swirlyArrow {
-    animation-delay: 1.34s;
+    animation: none;
   }
 
   .workBlockIntro {
     animation-delay: 1.42s;
   }
 
+  /* Each card layers TWO animations: the heroFadeInRight entrance (runs once,
+     fill `both`) + the heroCardFloat continuous loop. The float is listed last
+     so it owns `transform` once it starts; its fill mode is the default `none`,
+     so during the entrance/pre-delay window it applies nothing and the entrance
+     transform is untouched. The float's animation-delay is set AFTER each card's
+     entrance finishes (entrance delay + 0.72s duration) so the card settles
+     before it begins drifting. Per-card delay + duration differ so the four are
+     out of phase. The two-value animation-delay = (entranceDelay, floatDelay). */
   .roleItem:nth-child(1) {
-    animation-delay: 1.56s;
+    animation:
+      heroFadeInRight 0.72s cubic-bezier(0.22, 1, 0.36, 1) both,
+      heroCardFloat 4.2s ease-in-out infinite;
+    animation-delay: 1.56s, 2.3s;
   }
 
   .roleItem:nth-child(2) {
-    animation-delay: 1.7s;
+    animation:
+      heroFadeInRight 0.72s cubic-bezier(0.22, 1, 0.36, 1) both,
+      heroCardFloat 4.8s ease-in-out infinite;
+    animation-delay: 1.7s, 2.7s;
   }
 
   .roleItem:nth-child(3) {
-    animation-delay: 1.84s;
+    animation:
+      heroFadeInRight 0.72s cubic-bezier(0.22, 1, 0.36, 1) both,
+      heroCardFloat 4.5s ease-in-out infinite;
+    animation-delay: 1.84s, 2.5s;
   }
 
   .roleItem:nth-child(4) {
-    animation-delay: 1.98s;
+    animation:
+      heroFadeInRight 0.72s cubic-bezier(0.22, 1, 0.36, 1) both,
+      heroCardFloat 5.1s ease-in-out infinite;
+    animation-delay: 1.98s, 3s;
   }
 }
 
