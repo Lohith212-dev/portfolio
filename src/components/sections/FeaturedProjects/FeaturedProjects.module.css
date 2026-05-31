@@ -580,7 +580,7 @@
   .editorialMediaSurface {
     height: auto;
     /* Tablet: wide cinematic preview so the media doesn't dominate the card */
-    aspect-ratio: 3 / 1;
+    aspect-ratio: 2.5 / 1;
   }
 
   .editorialContent {
@@ -644,6 +644,18 @@
   .editorialMetric {
     flex: 1 1 0;
     min-width: 0;
+    /* Tablet: keep both metrics identical — big number, label beside it.
+       Number column hugs its content; label takes the rest and aligns to the
+       number's top edge so the pairing reads consistently regardless of how
+       wide the stat or how long the label is. */
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+  }
+
+  .editorialMetric strong {
+    /* Anchor the big number to the top so the beside-label stays aligned
+       even when the label wraps to two lines. */
+    align-self: start;
   }
 
   .editorialProof {
