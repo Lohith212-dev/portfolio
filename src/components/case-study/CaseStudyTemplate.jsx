@@ -4,6 +4,8 @@ export default function CaseStudyTemplate({
   navigationLinks,
   backHref = '/',
   backLabel = 'Back',
+  showMobileMenu = true,
+  secondaryNav = null,
   children,
 }) {
   return (
@@ -11,6 +13,8 @@ export default function CaseStudyTemplate({
       links={navigationLinks}
       backHref={backHref}
       backLabel={backLabel}
+      showMobileMenu={showMobileMenu}
+      secondaryNav={secondaryNav}
     >
       {children}
     </CaseStudyPageShell>

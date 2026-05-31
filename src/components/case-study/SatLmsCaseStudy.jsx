@@ -26,6 +26,7 @@ import CaseStudyMetricStrip from './CaseStudyMetricStrip';
 import CaseStudyOutcome from './CaseStudyOutcome';
 import CaseStudySectionHeader from './CaseStudySectionHeader';
 import CaseStudyTemplate from './CaseStudyTemplate';
+import CaseStudySecondaryNav from './CaseStudySecondaryNav';
 import CaseStudyVideoFrame from './CaseStudyVideoFrame';
 import DecisionEvidenceSection from './DecisionEvidenceSection';
 import NextCaseBridge from './NextCaseBridge';
@@ -1272,7 +1273,7 @@ function DesignForgeProcessSection() {
           <div className={styles.processIntro}>
             <p className={styles.processEyebrow}>Process: the engine behind the speed</p>
             <h2 id="designforge-process-heading" className={styles.processHeading}>
-              Built with <span className={styles.processHighlight}>DesignForge</span> in <span className={styles.processHighlightYellow}>four weeks</span>
+              Built with <span className={styles.processHighlight}>DesignForge</span> in four weeks
             </h2>
             <p className={styles.processDescriptor}>
               DesignForge — my 6-phase AI + human methodology for shipping design and code together.
@@ -1326,7 +1327,8 @@ function DesignForgeProcessSection() {
           <div className={styles.processTrailMobile} aria-label="DesignForge process artifact trail">
             <StickyPhaseNumbers
               theme="light"
-              topOffset="5.5rem"
+              topOffset="8.75rem"
+              compact
               phases={designForgeSteps.map((step) => ({
                 number: step.number,
                 content: <ProcessStep step={step} hideNumber />,
@@ -2129,7 +2131,7 @@ function NextCaseStudyPreview() {
 
 export default function SatLmsCaseStudy() {
   return (
-    <CaseStudyTemplate navigationLinks={caseStudyLinks}>
+    <CaseStudyTemplate navigationLinks={caseStudyLinks} showMobileMenu={false}>
       <CaseStudyHero
         className={styles.heroGrid}
         eyebrow="SAT LMS"
@@ -2159,6 +2161,8 @@ export default function SatLmsCaseStudy() {
         contentWrapper={(content) => <Reveal>{content}</Reveal>}
       />
 
+        <CaseStudySecondaryNav links={caseStudyLinks} />
+
         <section id="tldr" className={`${styles.caseStudySection} bg-surface-white px-6`}>
           <div className="mx-auto max-w-5xl">
             <Reveal>
@@ -2171,7 +2175,7 @@ export default function SatLmsCaseStudy() {
                 ]}
               />
 
-              <div className="mx-auto mt-12 max-w-5xl">
+              <div className="mx-auto mt-12 max-w-[280px] md:max-w-[400px] lg:max-w-5xl">
                 <Image
                   src="/images/case-studies/sat-lms/lms-central-graphic.svg"
                   alt="Learning management system transforms confused SAT learners into clear and confident students"
@@ -2304,7 +2308,8 @@ export default function SatLmsCaseStudy() {
               <div className={styles.tutorDecisionsMobile} aria-hidden={false}>
                 <StickyPhaseNumbers
                   theme="dark"
-                  topOffset="5.5rem"
+                  topOffset="8.75rem"
+                  compact
                   phases={tutorDecisions.map((decision) => ({
                     number: decision.number,
                     content: <TutorDecisionBody decision={decision} includeNumber={false} />,

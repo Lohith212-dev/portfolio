@@ -34,6 +34,7 @@ const funLinks = [
 export default function Navigation({
   links,
   showToggle = true,
+  showMobileMenu = true,
   backHref,
   backLabel = 'Back',
 }) {
@@ -179,47 +180,51 @@ export default function Navigation({
                 </button>
               )}
 
-              <button
-                className={`lg:hidden ${styles.hamburger}`}
-                onClick={() => setMenuOpen(prev => !prev)}
-                aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-                aria-expanded={menuOpen}
-                aria-controls="mobile-nav-menu"
-              >
-                {menuOpen
-                  ? <CloseIcon color={isFunMode ? '#EEEFEB' : '#1C1D1E'} />
-                  : <HamburgerIcon color={isFunMode ? '#EEEFEB' : '#1C1D1E'} />
-                }
-              </button>
+              {showMobileMenu && (
+                <button
+                  className={`lg:hidden ${styles.hamburger}`}
+                  onClick={() => setMenuOpen(prev => !prev)}
+                  aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+                  aria-expanded={menuOpen}
+                  aria-controls="mobile-nav-menu"
+                >
+                  {menuOpen
+                    ? <CloseIcon color={isFunMode ? '#EEEFEB' : '#1C1D1E'} />
+                    : <HamburgerIcon color={isFunMode ? '#EEEFEB' : '#1C1D1E'} />
+                  }
+                </button>
+              )}
             </div>
           </div>
         </div>
 
-        <div
-          id="mobile-nav-menu"
-          className={`${styles.mobileMenuShell} ${menuOpen ? styles.mobileMenuShellOpen : ''} ${isFunMode ? styles.mobileMenuShellFun : styles.mobileMenuShellNormal}`}
-          aria-hidden={!menuOpen}
-        >
-          <ul className={styles.mobileMenu}>
-            {activeLinks.map(link => (
-              <li key={link.href}>
-                <a
-                  href={link.href}
-                  target={link.external ? '_blank' : undefined}
-                  rel={link.external ? 'noopener noreferrer' : undefined}
-                  onClick={(event) => {
-                    handleNavLinkClick(event, link.href);
-                    setMenuOpen(false);
-                  }}
-                  className={`${styles.mobileLink} ${isFunMode ? styles.mobileLinkFun : styles.mobileLinkNormal}`}
-                >
-                  {link.Icon && <link.Icon size={20} />}
-                  {link.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
+        {showMobileMenu && (
+          <div
+            id="mobile-nav-menu"
+            className={`${styles.mobileMenuShell} ${menuOpen ? styles.mobileMenuShellOpen : ''} ${isFunMode ? styles.mobileMenuShellFun : styles.mobileMenuShellNormal}`}
+            aria-hidden={!menuOpen}
+          >
+            <ul className={styles.mobileMenu}>
+              {activeLinks.map(link => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    target={link.external ? '_blank' : undefined}
+                    rel={link.external ? 'noopener noreferrer' : undefined}
+                    onClick={(event) => {
+                      handleNavLinkClick(event, link.href);
+                      setMenuOpen(false);
+                    }}
+                    className={`${styles.mobileLink} ${isFunMode ? styles.mobileLinkFun : styles.mobileLinkNormal}`}
+                  >
+                    {link.Icon && <link.Icon size={20} />}
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </nav>
   );

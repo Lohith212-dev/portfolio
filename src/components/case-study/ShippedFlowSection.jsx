@@ -638,10 +638,6 @@ export default function ShippedFlowSection() {
         <article className={styles.liveCard}>
           <div className={styles.liveCardMain}>
             <div>
-              <span className={styles.livePill} aria-label="Live product">
-                <span className={styles.livePillDot} aria-hidden="true" />
-                Live
-              </span>
               <h3>
                 <span className={styles.staggerWord} style={{ '--word-index': 0 }}>Try</span>{' '}
                 <span className={styles.staggerWord} style={{ '--word-index': 1 }}>the</span>{' '}

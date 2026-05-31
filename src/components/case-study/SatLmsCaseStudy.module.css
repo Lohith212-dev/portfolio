@@ -5227,12 +5227,17 @@
   }
 }
 
-/* Section 9 (final outcome stats) — align metric labels at the bottom on mobile
-   by setting a min-height so the descriptor block lines up across all three. */
+/* Section 9 (final outcome stats) — Pass 3: the bold label and its "up from X%"
+   body line belong together as one unit. Drop the earlier min-height (it forced
+   a large gap between the two) and tighten the row gap so they read as grouped. */
 @media (max-width: 47.999rem) {
   .finalOutcomeSection .outcomeMetricLabel {
-    min-height: 3.25rem;
-    align-items: flex-start;
+    min-height: 0;
+    align-items: center;
+  }
+
+  .finalOutcomeSection .outcomeMetric {
+    gap: 0.35rem;
   }
 }
 
@@ -5294,11 +5299,60 @@
   content: none;
 }
 
-/* yellow highlight on "four weeks" — mirrors the hero highlight treatment */
-.processHighlightYellow {
-  padding-inline: calc(0.125rem * 2);
-  background-color: var(--color-accent-yellow);
-  color: var(--color-ink-950);
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;
+/* ----------------------------------------------------------------- */
+/* Audit Pass 3 fixes                                                 */
+/* ----------------------------------------------------------------- */
+
+/* Section 5 — DesignForge recap: the artifact previews are animated, diagonally
+   stacked, dimmed compositions tuned for the wide desktop trail. Reused inside
+   the mobile/tablet StickyPhaseNumbers they overlap, dim, and overflow to the
+   right. Flatten them into a clean static, full-opacity vertical list so each
+   phase shows its own snippet(s) directly within its block. The horizontal
+   scroll inside each snippet (.artifactBody overflow-x) is preserved above. */
+@media (max-width: 63.999rem) {
+  .processTrailMobile .inputSpecStackStage,
+  .processTrailMobile .sandboxArtifactStage,
+  .processTrailMobile .gapAnalysisStackStage,
+  .processTrailMobile .designIterationStage,
+  .processTrailMobile .sandboxIntegrationStage,
+  .processTrailMobile .productionMigrationStage {
+    position: static;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 0;
+    padding-block-end: 0;
+    overflow: visible;
+  }
+
+  .processTrailMobile .artifactWindow,
+  .processTrailMobile .designIterationCard {
+    position: static;
+    inset: auto;
+    top: auto;
+    left: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    min-height: 0;
+    margin: 0;
+    opacity: 1;
+    transform: none;
+    animation: none;
+  }
+
+  .processTrailMobile .inputSpecFocusVeil {
+    display: none;
+  }
+}
+
+/* Section 7 — NextCaseBridge: the avatar points horizontally at the next-case
+   card, but on mobile the two stack vertically and the gesture breaks. Hide the
+   avatar on mobile only; tablet keeps it (room for a horizontal arrangement). */
+@media (max-width: 47.999rem) {
+  .nextCasePointer {
+    display: none;
+  }
 }

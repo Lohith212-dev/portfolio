@@ -1,0 +1,61 @@
+/* Secondary in-page nav — mobile/tablet only (≤1023px). Hidden on desktop,
+   where the global Navigation already shows the section links. */
+.secondaryNav {
+  display: none;
+}
+
+@media (max-width: 63.999rem) {
+  .secondaryNav {
+    position: sticky;
+    top: 4.75rem; /* clears the fixed global nav island */
+    z-index: 40;  /* below the global nav (z-index: 50) */
+    display: block;
+    background-color: color-mix(in srgb, var(--color-surface-white) 90%, transparent);
+    -webkit-backdrop-filter: blur(12px) saturate(140%);
+    backdrop-filter: blur(12px) saturate(140%);
+    border-block-end: 1px solid var(--color-ink-100);
+    box-shadow: 0 6px 18px color-mix(in srgb, var(--color-ink-950) 6%, transparent);
+  }
+
+  .track {
+    display: flex;
+    gap: 0.25rem;
+    overflow-x: auto;
+    padding: 0.45rem 1rem;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .track::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    display: inline-flex;
+    align-items: center;
+    flex: 0 0 auto;
+    min-height: 44px; /* touch target */
+    padding: 0.45rem 0.9rem;
+    border-radius: 9999px;
+    font-family: var(--font-dm);
+    font-size: var(--text-small);
+    font-weight: 600;
+    line-height: 1;
+    white-space: nowrap;
+    color: var(--color-ink-700);
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  .tabActive {
+    background-color: var(--color-ink-950);
+    color: var(--color-surface-white);
+  }
+}
+
+@media (max-width: 63.999rem) and (prefers-reduced-motion: reduce) {
+  .track {
+    scroll-behavior: auto;
+  }
+}
