@@ -785,7 +785,8 @@
   }
 
   .heroInner {
-    padding: 7.5rem 2rem 1.5rem;
+    /* Bottom padding 0 so the portrait touches the band's bottom edge. */
+    padding: 7.5rem 2rem 0;
     min-height: auto;
     gap: 1.75rem;
   }
@@ -837,7 +838,7 @@
       'bio      bio      bio'
       'card1    portrait card2'
       'card3    portrait card4';
-    align-items: stretch;
+    align-items: center;
     column-gap: 1.5rem;
     row-gap: 1rem;
     margin-top: 0.5rem;
@@ -910,8 +911,8 @@
 
   .experienceSticker {
     width: 116px;
-    top: 0.6rem;
-    right: 1.25rem;
+    top: -2rem;
+    right: -1rem;
   }
 
   /* Zone 3 — dissolve the right-zone wrappers so each card <li> becomes a
@@ -943,6 +944,8 @@
     position: relative;
     z-index: 5;
     display: flex;
+    /* Shorter tiles — the number is hidden so no label wraps to 3 lines. */
+    min-height: 4.5rem;
     background: rgb(255 255 255 / 32%);
     -webkit-backdrop-filter: blur(12px) saturate(125%);
     backdrop-filter: blur(12px) saturate(125%);
@@ -959,12 +962,12 @@
      stays the clear centerpiece. */
   .roleItem:nth-child(1),
   .roleItem:nth-child(3) {
-    margin-right: -1.5rem;
+    margin-right: -2.5rem;
   }
 
   .roleItem:nth-child(2),
   .roleItem:nth-child(4) {
-    margin-left: -1.5rem;
+    margin-left: -2.5rem;
   }
 
   /* The whole card is the tap target; pad the link to fill the glass surface
@@ -973,16 +976,19 @@
      the number + label + arrow vertically centred. */
   .roleLink {
     flex: 1;
-    height: 100%;
     min-height: 44px;
     gap: 0.65rem;
-    padding: 0.75rem 0.9rem;
+    padding: 0.6rem 0.9rem;
     border-radius: 16px;
   }
 
-  /* Hide the one-line description at tablet (kept in DOM for mobile/desktop).
-     Cards keep number + name + arrow. */
+  /* Hide the one-line description at tablet (kept in DOM for mobile/desktop). */
   .roleSub {
+    display: none;
+  }
+
+  /* Hide the number at tablet — frees label width so no tile wraps to 3 lines. */
+  .roleNumber {
     display: none;
   }
 
