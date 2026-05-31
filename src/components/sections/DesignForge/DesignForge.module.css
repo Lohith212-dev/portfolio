@@ -825,52 +825,86 @@
   animation-delay: -8s;
 }
 
-.cycleProgress {
+/* Per-card focus/dwell bar — one sits inside each card of a stacked-pair
+   artifact (base window + overlay window). The base bar fills 0->100 while the
+   base card is in focus, then the overlay card reveals and its bar fills
+   0->100, then the cycle loops. Both phase-locked to stackedPairOverlayReveal
+   (18s loop, delay -8s). */
+.cardFocusBar {
   position: absolute;
-  z-index: 4;
-  left: 0;
-  bottom: 0;
-  width: 100%;
+  z-index: 6;
+  left: 0.6rem;
+  right: 0.6rem;
+  bottom: 0.5rem;
   height: 0.2rem;
   overflow: hidden;
   border-radius: 9999px;
   background-color: color-mix(in srgb, var(--color-surface-white) 12%, transparent);
 }
 
-.cycleProgressFill {
+.cardFocusFill {
   display: block;
   width: 100%;
   height: 100%;
   transform-origin: left center;
+  transform: scaleX(0);
   border-radius: inherit;
   background-color: var(--color-accent-yellow);
   box-shadow: 0 0 0.6rem color-mix(in srgb, var(--color-accent-yellow) 45%, transparent);
-  /* Phase-locked to stackedPairOverlayReveal (18s loop, delay -8s): fill grows
-     across the pre-reveal window, holds while the overlay card is visible,
-     then resets as the cycle restarts. */
-  transform: scaleX(0);
-  animation: cycleProgressFill 18s ease-in-out infinite both;
-  animation-delay: -8s;
   will-change: transform;
 }
 
-@keyframes cycleProgressFill {
+.cardFocusFillBase {
+  /* Visible + filling while the base card is the sole focus (0-38% of the
+     cycle, before the overlay reveals), then hidden while the overlay is up. */
+  animation: cardFocusBaseFill 18s ease-in-out infinite both;
+  animation-delay: -8s;
+}
+
+.cardFocusFillOverlay {
+  /* Fills while the overlay card is in focus (44-94%). The overlay card itself
+     is invisible (opacity 0) outside that window, so the bar is only seen then. */
+  animation: cardFocusOverlayFill 18s ease-in-out infinite both;
+  animation-delay: -8s;
+}
+
+@keyframes cardFocusBaseFill {
   0% {
+    opacity: 1;
     transform: scaleX(0);
   }
 
   38% {
+    opacity: 1;
     transform: scaleX(1);
   }
 
-  44%,
-  94% {
+  42%,
+  96% {
+    opacity: 0;
     transform: scaleX(1);
   }
 
-  98%,
-  100% {
+  99% {
+    opacity: 0;
     transform: scaleX(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes cardFocusOverlayFill {
+  0%,
+  44% {
+    transform: scaleX(0);
+  }
+
+  94%,
+  100% {
+    transform: scaleX(1);
   }
 }
 
@@ -1836,13 +1870,14 @@
   .launchBadge::after,
   .marker,
   .markerInner,
-  .cycleProgressFill {
+  .cardFocusFill {
     transition: none;
     animation: none;
   }
 
-  .cycleProgressFill {
+  .cardFocusFill {
     /* Static, filled indicator when motion is reduced. */
+    opacity: 1;
     transform: scaleX(1);
   }
 }

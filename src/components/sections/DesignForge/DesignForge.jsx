@@ -447,7 +447,7 @@ function ArtifactPreview({ type }) {
   return <TextArtifact title="Input specification | Remedials" rows={inputRows} />;
 }
 
-function ArtifactShell({ title, children, className = '', bodyClassName = '' }) {
+function ArtifactShell({ title, children, className = '', bodyClassName = '', footer = null }) {
   const bodyClasses = bodyClassName ? `${styles.artifactBody} ${bodyClassName}` : styles.artifactBody;
 
   return (
@@ -462,6 +462,7 @@ function ArtifactShell({ title, children, className = '', bodyClassName = '' }) 
         <i aria-hidden="true" />
       </div>
       <div className={bodyClasses}>{children}</div>
+      {footer}
     </div>
   );
 }
@@ -504,15 +505,19 @@ function JourneyArtifact() {
   );
 }
 
-function ArtifactCycleProgress() {
-  // The stacked-pair artifacts cycle via the CSS `stackedPairOverlayReveal`
-  // keyframe (18s loop, delay -8s). This bar mirrors that exact timing as a
-  // pure-CSS width animation so it stays in sync without a JS timer, giving a
-  // visible "next card is coming" cue before the overlay reveals.
+function CardFocusBar({ phase }) {
+  // One focus/dwell bar lives INSIDE each card of a stacked-pair artifact.
+  // The `base` bar fills 0->100 while the base card is in focus (the first part
+  // of the CSS `stackedPairOverlayReveal` cycle, before the overlay reveals),
+  // then hides; the `overlay` bar fills 0->100 while the overlay card is in
+  // focus, then the cycle loops. Both are phase-locked to that 18s/-8s keyframe,
+  // so each card visibly runs its own 0->100 bar before the next card appears.
+  const fillClass = phase === 'overlay' ? styles.cardFocusFillOverlay : styles.cardFocusFillBase;
+
   return (
-    <div className={styles.cycleProgress} aria-hidden="true">
-      <span className={styles.cycleProgressFill} />
-    </div>
+    <span className={styles.cardFocusBar} aria-hidden="true">
+      <span className={`${styles.cardFocusFill} ${fillClass}`} />
+    </span>
   );
 }
 
@@ -523,14 +528,14 @@ function SandboxRequirementArtifact() {
         title="02-sandbox-requirement-remedials.md"
         className={styles.sandboxBaseWindow}
         bodyClassName={styles.sandboxArtifactBody}
+        footer={<CardFocusBar phase="base" />}
       >
         <pre className={styles.sandboxTreeCode}>{sandboxFileStructureExcerpt}</pre>
       </ArtifactShell>
 
-      <ArtifactCycleProgress />
-
       <div className={styles.sandboxRoutingCard} aria-label="Routing setup artifact">
         <SandboxRoutingCode />
+        <CardFocusBar phase="overlay" />
       </div>
     </div>
   );
@@ -555,11 +560,11 @@ function SandboxRoutingCode() {
 function GapAnalysisArtifact() {
   return (
     <div className={styles.gapAnalysisStackStage}>
-      <ArtifactCycleProgress />
       <ArtifactShell
         title="gap-analysis-summary-remedials.md"
         className={styles.gapAnalysisBaseWindow}
         bodyClassName={styles.gapAnalysisBody}
+        footer={<CardFocusBar phase="base" />}
       >
         <p className={styles.gapAnalysisHeading}>### Q4: How do R6 Notice and R1 Modal integrate with Activity Results?</p>
         <p className={styles.gapAnalysisMeta}>
@@ -595,6 +600,7 @@ function GapAnalysisArtifact() {
         title="backend-gap-analysis-remedials.md"
         className={styles.gapAnalysisDetailWindow}
         bodyClassName={styles.gapAnalysisBody}
+        footer={<CardFocusBar phase="overlay" />}
       >
         <p className={styles.gapAnalysisHeading}>### Fields Required in Remedial Children</p>
         <table className={`${styles.gapAnalysisTable} ${styles.gapAnalysisFieldTable}`}>
