@@ -585,13 +585,19 @@
     max-width: 34rem;
   }
 
+  /* The marquee track is animated via JS translate3d (see MarqueeTrack.jsx),
+     not native scroll — so the viewport does NOT need overflow-x: auto.
+     overflow-x: hidden removes the unwanted horizontal scrollbar on the
+     marquee parent while the JS animation still moves the cards exactly as
+     before. Vertical padding (1.25rem) gives the work cards' drop shadow
+     room so its top/bottom is not cropped by the clip; the matching negative
+     margin keeps the lane layout unchanged. (scroll-snap removed: it only
+     functions with a native scroll container, which no longer exists.) */
   .marqueeViewport {
-    overflow-x: auto;
+    overflow-x: hidden;
     overflow-y: hidden;
-    overscroll-behavior-inline: contain;
-    scroll-snap-type: x proximity;
-    padding: 1.4rem 0.4rem;
-    margin: -1.4rem 0;
+    padding: 1.25rem 0.4rem;
+    margin: -1.25rem 0;
   }
 
   /* Tablet + mobile: replicate the desktop edge fade-to-background so the
@@ -599,15 +605,11 @@
      its left/right ends instead of a hard cut at the padding edge. Same
      mechanism as desktop (the two absolutely-positioned .marqueeFade spans
      fading to --color-surface-light, the section bg), just a narrower width
-     tuned for the smaller viewport. The viewport scrolls internally
-     (overflow-x: auto) so no horizontal PAGE scroll is introduced. */
+     tuned for the smaller viewport. The viewport clips internally
+     (overflow-x: hidden) so no scrollbar and no horizontal PAGE scroll. */
   .marqueeFade {
     display: block;
     width: 2.5rem;
-  }
-
-  .workCard {
-    scroll-snap-align: start;
   }
 
   .modalContent {
