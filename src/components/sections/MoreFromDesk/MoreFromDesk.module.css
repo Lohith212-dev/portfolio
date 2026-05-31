@@ -540,6 +540,30 @@
     min-height: auto;
   }
 
+  /* Tablet: the section/inner clip horizontally (overflow-x), so a glow that
+     sits at a negative offset or hard against an edge gets sliced into a hard
+     rectangular cut. Pull both ambient glows fully inside the visible bounds
+     and widen the blur so the falloff reads as a soft ambient shade rather
+     than a cropped circle. Desktop offsets/sizes are untouched. */
+  .stageGlow {
+    filter: blur(4.5rem);
+    opacity: 0.85;
+  }
+
+  .stageGlowOrange {
+    left: 0.5rem;
+    top: 1.5rem;
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .stageGlowLavender {
+    right: 0.5rem;
+    top: 5rem;
+    width: 15rem;
+    height: 15rem;
+  }
+
   .overviewLayer,
   .lanesLayer,
   .laneRow {
@@ -619,6 +643,28 @@
 
   .overviewLayer {
     display: none;
+  }
+
+  /* Mobile: keep the ambient glows exactly as before this tablet de-clip pass
+     (the de-clip reposition/blur is scoped to tablet only — mobile rendering
+     is unchanged). */
+  .stageGlow {
+    filter: blur(3rem);
+    opacity: 1;
+  }
+
+  .stageGlowOrange {
+    left: -4rem;
+    top: 2.5rem;
+    width: 12rem;
+    height: 12rem;
+  }
+
+  .stageGlowLavender {
+    right: 2rem;
+    top: 6rem;
+    width: 13rem;
+    height: 13rem;
   }
 
   .overviewTitle,
