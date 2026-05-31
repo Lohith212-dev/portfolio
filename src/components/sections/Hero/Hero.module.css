@@ -869,7 +869,7 @@
       '.      portrait .';
     align-items: center;
     column-gap: 1.5rem;
-    row-gap: 0.55rem;
+    row-gap: 1.5rem;
     margin-top: 0.5rem;
   }
 
@@ -923,7 +923,7 @@
     width: 4.5rem;
     align-self: auto;
     margin: 0;
-    transform: rotate(58deg);
+    transform: rotate(58deg) scaleX(-1);
     transform-origin: center;
     pointer-events: none;
     z-index: 5;
@@ -1008,12 +1008,12 @@
      stays the clear centerpiece. */
   .roleItem:nth-child(1),
   .roleItem:nth-child(3) {
-    margin-right: -2.5rem;
+    margin-right: -3.75rem;
   }
 
   .roleItem:nth-child(2),
   .roleItem:nth-child(4) {
-    margin-left: -2.5rem;
+    margin-left: -3.75rem;
   }
 
   /* The whole card is the tap target; pad the link to fill the glass surface
