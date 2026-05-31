@@ -474,7 +474,6 @@
     border-radius: 999px;
     background: var(--color-surface-white);
     color: var(--color-ink-950);
-    font-size: 1.25rem;
     line-height: 1;
     cursor: pointer;
     transition: background 180ms ease, transform 180ms ease, border-color 180ms ease;
@@ -482,6 +481,7 @@
 
   .mobileArrow:hover {
     background: var(--color-ink-100);
+    border-color: var(--color-ink-300);
   }
 
   .mobileArrow:active {
@@ -491,6 +491,12 @@
   .mobileArrow:focus-visible {
     outline: 2px solid var(--color-accent-green);
     outline-offset: 2px;
+  }
+
+  /* Chevron glyph inside the 44px circular tap target. */
+  .mobileArrowIcon {
+    width: 22px;
+    height: 22px;
   }
 
   .mobileAvatars {
@@ -532,15 +538,17 @@
     /* Inactive default: grayscale + dimmed. */
     filter: grayscale(1);
     opacity: 0.5;
-    box-shadow: 0 0 0 2px transparent;
-    transition: filter 200ms ease, opacity 200ms ease, box-shadow 200ms ease;
+    transform: scale(0.92);
+    transition: filter 200ms ease, opacity 200ms ease, background 200ms ease, transform 200ms ease;
   }
 
-  /* Active avatar: full colour + green ring + full opacity. */
+  /* Active avatar: GREEN background circle behind the bust + full colour + full
+     opacity + slight scale-up so it reads as the selected, prominent avatar. */
   .mobileAvatarActive .mobileAvatarImgWrap {
     filter: none;
     opacity: 1;
-    box-shadow: 0 0 0 2px var(--color-surface-white), 0 0 0 4px var(--color-accent-green);
+    transform: scale(1);
+    background: var(--color-accent-green);
   }
 
   .mobileAvatarImg {
@@ -548,56 +556,50 @@
     object-position: center top;
   }
 
-  /* --- Card stack --- */
+  /* --- Card stack ---
+     All layers occupy the SAME grid cell so they overlap; the track auto-sizes
+     to the tallest layer (the front card). motion drives each layer's depth
+     (translateY / scale / rotate / shadow / opacity), so a card physically lifts
+     away while the one behind scales forward — real depth, not a surface slide.
+     Extra bottom padding leaves room for the lowest ghost peeking out. */
   .mobileTrack {
     position: relative;
+    display: grid;
+    grid-template-areas: "stack";
     touch-action: pan-y;
-    /* Room for the ghost cards peeking below the active card. */
-    padding-bottom: 18px;
-  }
-
-  /* Faux/ghost cards behind the active card — convey a physical stack. */
-  .mobileGhost {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 18px;
-    border-radius: 1rem;
-    background: var(--color-surface-white);
-    border: 1px solid var(--color-ink-100);
-  }
-
-  .mobileGhost[data-depth="1"] {
-    transform: translateY(9px) scale(0.965);
-    box-shadow: 0 2px 10px rgb(0 0 0 / 5%);
-    z-index: 1;
-  }
-
-  .mobileGhost[data-depth="2"] {
-    transform: translateY(18px) scale(0.93);
-    box-shadow: 0 2px 8px rgb(0 0 0 / 4%);
-    opacity: 0.75;
-    z-index: 0;
+    padding-bottom: 30px;
   }
 
   .mobileSlide {
-    position: relative;
-    z-index: 2;
+    grid-area: stack;
     cursor: grab;
+    border-radius: 1rem;
+    /* origin at the bottom so ghosts scale down toward the back of the stack */
+    transform-origin: 50% 85%;
+    will-change: transform, opacity;
   }
 
   .mobileSlide:active {
     cursor: grabbing;
   }
 
-  /* Card surface: solid border + radius + soft shadow on white page. */
+  /* Inert silhouette rendered for ghost (non-front) layers. Fills its layer so
+     the depth/tilt of the card behind is visible peeking out from the front. */
+  .mobileGhostCard {
+    height: 100%;
+    min-height: 180px;
+    border-radius: 1rem;
+    background: var(--color-surface-white);
+    border: 1px solid var(--color-ink-100);
+  }
+
+  /* Card surface: solid border + radius. The drop shadow lives on the motion
+     slide wrapper so it can animate per depth layer (real stack elevation). */
   .mobileCard {
     overflow: hidden;
     border-radius: 1rem;
     border: 1px solid var(--color-ink-100);
     background: var(--color-surface-white);
-    box-shadow: 0 6px 22px rgb(0 0 0 / 9%);
     padding: 1.5rem;
   }
 
@@ -705,7 +707,10 @@
   .face,
   .card,
   .dotButton,
-  .linkedin {
+  .linkedin,
+  .mobileSlide,
+  .mobileArrow,
+  .mobileAvatarImgWrap {
     transition: none;
   }
 }

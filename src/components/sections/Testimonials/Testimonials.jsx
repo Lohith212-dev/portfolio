@@ -1,14 +1,13 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import {
-  AnimatePresence,
   motion,
   useMotionValueEvent,
   useReducedMotion,
   useScroll,
   useTransform,
 } from 'motion/react';
-import { SharedLinkedInIcon } from '../../icons/icons';
+import { ChevronLeft, ChevronRight, SharedLinkedInIcon } from '../../icons/icons';
 import styles from './Testimonials.module.css';
 
 // Auto-advance interval for the mobile/tablet carousel. Desktop is scroll-driven
@@ -181,25 +180,41 @@ function MobileCard({ item }) {
   );
 }
 
+// How many layers (active + ghosts) the stack renders. 3 = front + 2 behind.
+const STACK_DEPTH = 3;
+
+// Per-depth target geometry for each layer in the stack. depth 0 = front (active),
+// depth 1 = first ghost behind, depth 2 = second ghost behind. The depth props
+// animate between these as the active index changes, so the layer physically
+// scales/lifts forward instead of one surface element sliding.
+const DEPTH_STATES = [
+  { y: 0, scale: 1, opacity: 1, rotate: 0 },
+  { y: 14, scale: 0.95, opacity: 1, rotate: -3 },
+  { y: 28, scale: 0.9, opacity: 0.85, rotate: 4 },
+];
+
+const DEPTH_SHADOWS = [
+  '0 6px 22px rgb(0 0 0 / 9%)',
+  '0 2px 10px rgb(0 0 0 / 5%)',
+  '0 2px 8px rgb(0 0 0 / 4%)',
+];
+
 function MobileCarousel({ items }) {
   const total = items.length;
   const prefersReducedMotion = useReducedMotion();
   const [index, setIndex] = useState(0);
-  const [direction, setDirection] = useState(1);
   const [paused, setPaused] = useState(false);
 
   const goTo = useCallback(
     (next) => {
       const wrapped = ((next % total) + total) % total;
-      setDirection(wrapped >= index ? 1 : -1);
       setIndex(wrapped);
     },
-    [index, total],
+    [total],
   );
 
   const advance = useCallback(
     (step) => {
-      setDirection(step);
       setIndex((current) => ((current + step) % total + total) % total);
     },
     [total],
@@ -210,7 +225,6 @@ function MobileCarousel({ items }) {
     if (prefersReducedMotion || paused || total <= 1) return undefined;
 
     const timer = window.setInterval(() => {
-      setDirection(1);
       setIndex((current) => (current + 1) % total);
     }, MOBILE_AUTOPLAY_MS);
 
@@ -230,13 +244,16 @@ function MobileCarousel({ items }) {
     setPaused(false);
   };
 
-  const slideVariants = {
-    enter: (dir) => ({ opacity: 0, x: prefersReducedMotion ? 0 : dir * 56 }),
-    center: { opacity: 1, x: 0 },
-    exit: (dir) => ({ opacity: 0, x: prefersReducedMotion ? 0 : dir * -56 }),
-  };
-
-  const activeItem = items[index];
+  // Build the visible stack: the active item in front, followed by the next
+  // items wrapping around. Each entry carries its depth (0 = front). Keyed by
+  // item id so motion animates a layer's depth props as it moves forward.
+  const visibleLayers = useMemo(() => {
+    const depth = Math.min(STACK_DEPTH, total);
+    return Array.from({ length: depth }, (_, offset) => {
+      const itemIndex = (index + offset) % total;
+      return { item: items[itemIndex], depth: offset };
+    });
+  }, [index, items, total]);
 
   return (
     <div className={styles.mobileCarousel}>
@@ -248,7 +265,7 @@ function MobileCarousel({ items }) {
           aria-label="Previous testimonial"
           onClick={() => advance(-1)}
         >
-          <span aria-hidden="true">&larr;</span>
+          <ChevronLeft className={styles.mobileArrowIcon} color="currentColor" />
         </button>
 
         <div className={styles.mobileAvatars} role="tablist" aria-label="Choose testimonial">
@@ -282,11 +299,13 @@ function MobileCarousel({ items }) {
           aria-label="Next testimonial"
           onClick={() => advance(1)}
         >
-          <span aria-hidden="true">&rarr;</span>
+          <ChevronRight className={styles.mobileArrowIcon} color="currentColor" />
         </button>
       </div>
 
-      {/* Card stack: active card in front, ghost cards peeking behind. */}
+      {/* Card stack: real layered cards whose depth (scale/y/opacity/rotate/shadow)
+          animates as the index changes — the front card lifts away while the card
+          behind scales forward into the front position. */}
       <div
         className={styles.mobileTrack}
         onPointerDown={() => setPaused(true)}
@@ -294,29 +313,45 @@ function MobileCarousel({ items }) {
         onMouseEnter={() => setPaused(true)}
         onMouseLeave={() => setPaused(false)}
       >
-        <div className={styles.mobileGhost} aria-hidden="true" data-depth="2" />
-        <div className={styles.mobileGhost} aria-hidden="true" data-depth="1" />
+        {visibleLayers.map(({ item, depth }) => {
+          const isFront = depth === 0;
+          const state = prefersReducedMotion
+            ? DEPTH_STATES[0]
+            : (DEPTH_STATES[depth] ?? DEPTH_STATES[DEPTH_STATES.length - 1]);
 
-        <AnimatePresence initial={false} custom={direction} mode="wait">
-          <motion.div
-            key={activeItem.id}
-            className={styles.mobileSlide}
-            custom={direction}
-            variants={slideVariants}
-            initial="enter"
-            animate="center"
-            exit="exit"
-            transition={{ duration: prefersReducedMotion ? 0 : 0.3, ease: 'easeInOut' }}
-            drag={total > 1 ? 'x' : false}
-            dragSnapToOrigin
-            dragElastic={0.18}
-            dragConstraints={{ left: 0, right: 0 }}
-            onDragStart={() => setPaused(true)}
-            onDragEnd={handleDragEnd}
-          >
-            <MobileCard item={activeItem} />
-          </motion.div>
-        </AnimatePresence>
+          return (
+            <motion.div
+              key={item.id}
+              className={styles.mobileSlide}
+              aria-hidden={isFront ? undefined : 'true'}
+              initial={false}
+              animate={{
+                y: state.y,
+                scale: state.scale,
+                opacity: state.opacity,
+                rotate: prefersReducedMotion ? 0 : state.rotate,
+                boxShadow: DEPTH_SHADOWS[depth] ?? DEPTH_SHADOWS[DEPTH_SHADOWS.length - 1],
+              }}
+              transition={{ duration: prefersReducedMotion ? 0 : 0.38, ease: [0.22, 1, 0.36, 1] }}
+              style={{ zIndex: STACK_DEPTH - depth }}
+              drag={isFront && total > 1 ? 'x' : false}
+              dragSnapToOrigin
+              dragElastic={0.18}
+              dragConstraints={{ left: 0, right: 0 }}
+              onDragStart={() => setPaused(true)}
+              onDragEnd={isFront ? handleDragEnd : undefined}
+            >
+              {/* Only the front card renders interactive content; ghosts behind
+                  are inert silhouettes so screen readers / focus stay on the
+                  active testimonial. */}
+              {isFront ? (
+                <MobileCard item={item} />
+              ) : (
+                <div className={styles.mobileGhostCard} />
+              )}
+            </motion.div>
+          );
+        })}
       </div>
     </div>
   );
