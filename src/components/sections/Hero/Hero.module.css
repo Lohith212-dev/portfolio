@@ -341,46 +341,9 @@
   display: block;
 }
 
-/* ── Liquid-glass recent-work cards (NORMAL MODE ONLY) ──
-   Scoped to the yellow hero band via the section's global utility class
-   (`bg-accent-yellow` in normal mode, `bg-fun-surface-black` in fun mode), so
-   fun-mode card styling is left untouched. A single unified treatment that is
-   applied identically at mobile, tablet, and desktop so the cards match.
-   The fill is kept clearly TRANSLUCENT (18%) so the yellow band — and, where
-   the cards overlap it, the portrait — reads through the frost rather than as a
-   solid panel. backdrop-filter samples the page backdrop root: no ancestor of
-   .roleItem (.roleList/.workBlock/.zoneRight/.midRow/.heroInner/.hero) sets
-   filter/transform/perspective/contain/opacity<1, and the portrait paints
-   behind (portrait z-index 3) within that same root, with the cards above
-   (z-index 5), so the blur samples band + portrait. The .roleItem's OWN
-   tablet float transform does not break its own backdrop-filter. */
-:global(.bg-accent-yellow) .roleItem {
-  position: relative;
-  z-index: 5;
-  background: rgb(255 255 255 / 18%);
-  -webkit-backdrop-filter: blur(14px) saturate(140%);
-  backdrop-filter: blur(14px) saturate(140%);
-  border: 1px solid rgb(255 255 255 / 45%);
-  border-radius: 16px;
-  box-shadow:
-    0 8px 24px rgb(0 0 0 / 10%),
-    inset 0 1px 0 rgb(255 255 255 / 35%);
-  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
-}
-
-:global(.bg-accent-yellow) .roleLink {
-  border-radius: 16px;
-  padding: 0.6rem 0.9rem;
-}
-
-/* Held/hover affordance — brighten the frost slightly. */
-:global(.bg-accent-yellow) .roleItem:hover,
-:global(.bg-accent-yellow) .roleItem:active {
-  background: rgb(255 255 255 / 28%);
-  box-shadow:
-    0 12px 30px rgb(0 0 0 / 14%),
-    inset 0 1px 0 rgb(255 255 255 / 45%);
-}
+/* Liquid-glass recent-work cards are TABLET ONLY — the glass paint lives in the
+   tablet media query (scoped to normal mode). Mobile and desktop keep the plain
+   (non-glass) recent-work list. */
 
 .roleLink {
   display: flex;
@@ -964,7 +927,7 @@
     width: 4.5rem;
     align-self: auto;
     margin: 0;
-    transform: rotate(255deg);
+    transform: scaleX(-1);
     transform-origin: center;
     pointer-events: none;
     z-index: 5;
@@ -1023,17 +986,30 @@
   .roleItem:nth-child(3) { grid-area: card3; }
   .roleItem:nth-child(4) { grid-area: card4; }
 
-  /* Tablet card LAYOUT only — flex row, fixed tile height, grid placement.
-     The liquid-glass PAINT (translucent fill, backdrop blur, border, shadow,
-     rounded corners) now comes from the unified normal-mode rule
-     `:global(.bg-accent-yellow) .roleItem` above, so the same glass renders at
-     mobile/tablet/desktop and fun mode is left untouched. Cards float above the
-     portrait (z-index 5 > portrait z-index 3) so the overlap reads as glass
-     over the avatar edges. */
+  /* Liquid-glass cards — TABLET ONLY. Translucent (18%) fill + backdrop blur so
+     the yellow band and (where the cards overlap it) the portrait read through
+     the frost. Cards float above the portrait (z-index 5 > portrait z-index 3)
+     so the overlap reads as glass over the avatar edges. (Mobile and desktop
+     keep the plain recent-work list — no glass.) */
   .roleItem {
     display: flex;
     /* Shorter tiles — the number is hidden so no label wraps to 3 lines. */
     min-height: 4.5rem;
+    position: relative;
+    z-index: 5;
+    background: rgb(255 255 255 / 18%);
+    -webkit-backdrop-filter: blur(14px) saturate(140%);
+    backdrop-filter: blur(14px) saturate(140%);
+    border: 1px solid rgb(255 255 255 / 45%);
+    border-radius: 16px;
+    box-shadow:
+      0 8px 24px rgb(0 0 0 / 10%),
+      inset 0 1px 0 rgb(255 255 255 / 35%);
+  }
+
+  .roleItem:hover,
+  .roleItem:active {
+    background: rgb(255 255 255 / 28%);
   }
 
   /* Slight controlled overlap onto the center portrait column: left-column
