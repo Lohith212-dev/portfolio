@@ -341,6 +341,47 @@
   display: block;
 }
 
+/* ── Liquid-glass recent-work cards (NORMAL MODE ONLY) ──
+   Scoped to the yellow hero band via the section's global utility class
+   (`bg-accent-yellow` in normal mode, `bg-fun-surface-black` in fun mode), so
+   fun-mode card styling is left untouched. A single unified treatment that is
+   applied identically at mobile, tablet, and desktop so the cards match.
+   The fill is kept clearly TRANSLUCENT (18%) so the yellow band — and, where
+   the cards overlap it, the portrait — reads through the frost rather than as a
+   solid panel. backdrop-filter samples the page backdrop root: no ancestor of
+   .roleItem (.roleList/.workBlock/.zoneRight/.midRow/.heroInner/.hero) sets
+   filter/transform/perspective/contain/opacity<1, and the portrait paints
+   behind (portrait z-index 3) within that same root, with the cards above
+   (z-index 5), so the blur samples band + portrait. The .roleItem's OWN
+   tablet float transform does not break its own backdrop-filter. */
+:global(.bg-accent-yellow) .roleItem {
+  position: relative;
+  z-index: 5;
+  background: rgb(255 255 255 / 18%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid rgb(255 255 255 / 45%);
+  border-radius: 16px;
+  box-shadow:
+    0 8px 24px rgb(0 0 0 / 10%),
+    inset 0 1px 0 rgb(255 255 255 / 35%);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+}
+
+:global(.bg-accent-yellow) .roleLink {
+  border-radius: 16px;
+  padding: 0.6rem 0.9rem;
+}
+
+/* Held/hover affordance — brighten the frost slightly. */
+:global(.bg-accent-yellow) .roleItem:hover,
+:global(.bg-accent-yellow) .roleItem:active {
+  background: rgb(255 255 255 / 28%);
+  box-shadow:
+    0 12px 30px rgb(0 0 0 / 14%),
+    inset 0 1px 0 rgb(255 255 255 / 45%);
+}
+
 .roleLink {
   display: flex;
   align-items: center;
@@ -918,12 +959,12 @@
   .swirlyArrow {
     display: block;
     position: absolute;
-    right: 6rem;
+    right: 4rem;
     bottom: -2.75rem;
     width: 4.5rem;
     align-self: auto;
     margin: 0;
-    transform: rotate(58deg) scaleX(-1);
+    transform: rotate(255deg);
     transform-origin: center;
     pointer-events: none;
     z-index: 5;
@@ -982,25 +1023,17 @@
   .roleItem:nth-child(3) { grid-area: card3; }
   .roleItem:nth-child(4) { grid-area: card4; }
 
-  /* Liquid glass-morphic cards (tablet only). Translucent white over the yellow
-     band + backdrop blur, hairline translucent border, soft shadow, rounded
-     corners. Cards float above the portrait (z-index 5 > portrait z-index 3) so
-     the slight overlap reads as glass over the avatar edges. */
+  /* Tablet card LAYOUT only — flex row, fixed tile height, grid placement.
+     The liquid-glass PAINT (translucent fill, backdrop blur, border, shadow,
+     rounded corners) now comes from the unified normal-mode rule
+     `:global(.bg-accent-yellow) .roleItem` above, so the same glass renders at
+     mobile/tablet/desktop and fun mode is left untouched. Cards float above the
+     portrait (z-index 5 > portrait z-index 3) so the overlap reads as glass
+     over the avatar edges. */
   .roleItem {
-    position: relative;
-    z-index: 5;
     display: flex;
     /* Shorter tiles — the number is hidden so no label wraps to 3 lines. */
     min-height: 4.5rem;
-    background: rgb(255 255 255 / 32%);
-    -webkit-backdrop-filter: blur(12px) saturate(125%);
-    backdrop-filter: blur(12px) saturate(125%);
-    border: 1px solid rgb(255 255 255 / 55%);
-    border-radius: 16px;
-    box-shadow:
-      0 8px 24px rgb(0 0 0 / 12%),
-      inset 0 1px 0 rgb(255 255 255 / 45%);
-    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
   }
 
   /* Slight controlled overlap onto the center portrait column: left-column
@@ -1038,18 +1071,16 @@
     display: none;
   }
 
-  /* Tappable affordance: brighten + deepen shadow and PAUSE the float on
-     hover/active (touch + pointer). We pause rather than translateY(-2px) here
-     because the card runs a continuous float animation on `transform` at tablet
-     (see below) — a static transform would be overridden by the animation, so
-     pausing the float gives a clear "held" affordance instead. */
+  /* Tappable affordance: PAUSE the float on hover/active (touch + pointer). We
+     pause rather than translateY(-2px) because the card runs a continuous float
+     animation on `transform` at tablet (see below) — a static transform would
+     be overridden by the animation, so pausing the float gives a clear "held"
+     affordance. The brighten-frost paint is handled by the unified scoped hover
+     rule above (`:global(.bg-accent-yellow) .roleItem:hover/:active`), so fun
+     mode is left untouched here. */
   .roleItem:hover,
   .roleItem:active {
-    background: rgb(255 255 255 / 44%);
     animation-play-state: paused, paused;
-    box-shadow:
-      0 12px 30px rgb(0 0 0 / 16%),
-      inset 0 1px 0 rgb(255 255 255 / 55%);
   }
 
   .headlineStack {
