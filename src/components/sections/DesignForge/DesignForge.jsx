@@ -746,7 +746,6 @@ function ProductProof() {
         unoptimized
         className={styles.confidentAvatar}
       />
-      <DesignForgeStarMark className={styles.starMark} />
       <div className={styles.productCards}>
         {productCards.map((product, index) => (
           <Link key={product.name} href={product.href} className={`${styles.productCard} ${styles[`productCard${index}`]}`}>
@@ -760,7 +759,10 @@ function ProductProof() {
           </Link>
         ))}
       </div>
-      <p>4 production apps. 6 months. Same designer, spec to shipped.</p>
+      <div className={styles.proofConclusion}>
+        <DesignForgeStarMark className={styles.starMark} />
+        <p>4 production apps. 6 months. Same designer, spec to shipped.</p>
+      </div>
     </div>
   );
 }
@@ -785,8 +787,10 @@ function ChaosProof() {
         unoptimized
         className={styles.confusedAvatar}
       />
-      <DesignForgeWarningMark className={styles.warningMark} />
-      <p>No clarity, confusion gets amplified, rework follows.</p>
+      <div className={styles.proofConclusion}>
+        <DesignForgeWarningMark className={styles.warningMark} />
+        <p>No clarity, confusion gets amplified, rework follows.</p>
+      </div>
     </div>
   );
 }
