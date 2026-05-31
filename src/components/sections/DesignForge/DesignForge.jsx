@@ -327,7 +327,10 @@ function DialExperience() {
         <div className={styles.dialSticky}>
           <div className={styles.dialInner}>
             <Dial activeIndex={activeStep} dialProgress={dialProgress} />
-            <StepCard step={steps[activeStep]} />
+            <StepCard
+              step={steps[activeStep]}
+              showSticker={activeStep === 0 || steps[activeStep].sticker !== steps[activeStep - 1].sticker}
+            />
           </div>
         </div>
       </section>
@@ -336,9 +339,15 @@ function DialExperience() {
           theme="dark"
           topOffset="5.5rem"
           compact
-          phases={steps.map((step) => ({
+          phases={steps.map((step, index) => ({
             number: step.number,
-            content: <StepCard step={step} isMobile />,
+            content: (
+              <StepCard
+                step={step}
+                isMobile
+                showSticker={index === 0 || step.sticker !== steps[index - 1].sticker}
+              />
+            ),
           }))}
         />
       </section>
@@ -404,10 +413,10 @@ function DialMarker({ step, index, activeIndex, dialProgress }) {
   );
 }
 
-function StepCard({ step, isMobile = false }) {
+function StepCard({ step, isMobile = false, showSticker = true }) {
   const content = (
     <article className={`${styles.stepCard} ${isMobile ? styles.stepCardMobile : ''}`}>
-      <span className={styles.stepSticker}>{step.sticker}</span>
+      {showSticker && <span className={styles.stepSticker}>{step.sticker}</span>}
       <ArtifactPreview type={step.artifactType} />
       <div className={styles.stepCopy}>
         <h3>{step.title}</h3>
