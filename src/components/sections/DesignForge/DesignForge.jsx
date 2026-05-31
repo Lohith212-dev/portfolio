@@ -504,6 +504,18 @@ function JourneyArtifact() {
   );
 }
 
+function ArtifactCycleProgress() {
+  // The stacked-pair artifacts cycle via the CSS `stackedPairOverlayReveal`
+  // keyframe (18s loop, delay -8s). This bar mirrors that exact timing as a
+  // pure-CSS width animation so it stays in sync without a JS timer, giving a
+  // visible "next card is coming" cue before the overlay reveals.
+  return (
+    <div className={styles.cycleProgress} aria-hidden="true">
+      <span className={styles.cycleProgressFill} />
+    </div>
+  );
+}
+
 function SandboxRequirementArtifact() {
   return (
     <div className={styles.sandboxArtifactStage}>
@@ -514,6 +526,8 @@ function SandboxRequirementArtifact() {
       >
         <pre className={styles.sandboxTreeCode}>{sandboxFileStructureExcerpt}</pre>
       </ArtifactShell>
+
+      <ArtifactCycleProgress />
 
       <div className={styles.sandboxRoutingCard} aria-label="Routing setup artifact">
         <SandboxRoutingCode />
@@ -541,6 +555,7 @@ function SandboxRoutingCode() {
 function GapAnalysisArtifact() {
   return (
     <div className={styles.gapAnalysisStackStage}>
+      <ArtifactCycleProgress />
       <ArtifactShell
         title="gap-analysis-summary-remedials.md"
         className={styles.gapAnalysisBaseWindow}

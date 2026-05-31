@@ -825,6 +825,55 @@
   animation-delay: -8s;
 }
 
+.cycleProgress {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 0.2rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  background-color: color-mix(in srgb, var(--color-surface-white) 12%, transparent);
+}
+
+.cycleProgressFill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  border-radius: inherit;
+  background-color: var(--color-accent-yellow);
+  box-shadow: 0 0 0.6rem color-mix(in srgb, var(--color-accent-yellow) 45%, transparent);
+  /* Phase-locked to stackedPairOverlayReveal (18s loop, delay -8s): fill grows
+     across the pre-reveal window, holds while the overlay card is visible,
+     then resets as the cycle restarts. */
+  transform: scaleX(0);
+  animation: cycleProgressFill 18s ease-in-out infinite both;
+  animation-delay: -8s;
+  will-change: transform;
+}
+
+@keyframes cycleProgressFill {
+  0% {
+    transform: scaleX(0);
+  }
+
+  38% {
+    transform: scaleX(1);
+  }
+
+  44%,
+  94% {
+    transform: scaleX(1);
+  }
+
+  98%,
+  100% {
+    transform: scaleX(0);
+  }
+}
+
 @keyframes stackedPairBaseDim {
   0%,
   38% {
@@ -1492,14 +1541,37 @@
     display: none;
   }
 
+  /* Fix 1 + 2: graphic is hidden at tablet, so collapse the reserved second
+     column and let the intro copy flow to full width; tighten the section's
+     top/bottom + min-height so it reads dense, not spacious. */
+  .heroIntro {
+    grid-template-columns: minmax(0, 1fr);
+    min-height: 0;
+    padding: clamp(2.5rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem) clamp(1.25rem, 3vw, 2rem);
+  }
+
+  .heroTitle {
+    max-width: none;
+  }
+
+  .heroBody {
+    max-width: none;
+  }
+
+  /* Fix 3: trim the gap between the intro block and the first step card. */
   .mobileSteps {
     gap: 1.5rem;
-    padding: 0.5rem clamp(1.5rem, 4vw, 3rem) clamp(2rem, 4vw, 2.75rem);
+    padding: 0 clamp(1.5rem, 4vw, 3rem) clamp(2rem, 4vw, 2.75rem);
   }
 
   .stepCardMobile {
     grid-template-columns: 1fr;
     margin-inline: auto;
+  }
+
+  /* Fix 4: a bit more internal padding inside each step card. */
+  .stepCard {
+    padding: clamp(1.4rem, 2.6vw, 1.85rem);
   }
 
   .artifactBody {
@@ -1518,39 +1590,64 @@
     margin-block-end: clamp(1.5rem, 3vw, 2.5rem);
   }
 
-  .chaosProof {
-    overflow: hidden;
-  }
-
+  /* Fix 5 + 6: linearize the proof block into a natural flex column (matching
+     the mobile Pass 5 approach) so the absolute avatar can no longer overlap
+     the project cards, and the decorative mark sits tight to its conclusion.
+     Order: cards -> avatar -> mark -> conclusion. */
   .productProof,
   .chaosProof {
     position: relative;
     z-index: 1;
-    min-height: 44rem;
-    align-items: end;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     padding-block-end: 1rem;
+    overflow: hidden;
   }
 
   .confidentAvatar,
   .confusedAvatar {
-    bottom: 9rem;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    order: 2;
+    width: min(20rem, 46vw);
+    transform: none;
+  }
+
+  .successGlow {
+    top: 2rem;
   }
 
   .starMark,
   .warningMark {
-    bottom: 10rem;
+    position: relative;
+    bottom: auto;
+    left: auto;
+    order: 3;
+    margin-block-start: 0.75rem;
+    margin-block-end: 0.25rem;
+    transform: none;
   }
 
   .productCards {
     position: relative;
     inset: auto;
+    order: 1;
     z-index: 4;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.85rem;
     width: 100%;
-    align-self: start;
-    margin-block-start: 1rem;
+    margin-block-start: 0;
+    margin-block-end: 0.5rem;
+  }
+
+  .productProof > p,
+  .chaosProof > p {
+    order: 4;
+    margin-block-start: 0.25rem;
   }
 
   .productCard,
@@ -1738,8 +1835,14 @@
   .launchBadge,
   .launchBadge::after,
   .marker,
-  .markerInner {
+  .markerInner,
+  .cycleProgressFill {
     transition: none;
     animation: none;
+  }
+
+  .cycleProgressFill {
+    /* Static, filled indicator when motion is reduced. */
+    transform: scaleX(1);
   }
 }
