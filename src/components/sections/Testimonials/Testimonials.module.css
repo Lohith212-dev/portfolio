@@ -591,16 +591,22 @@
     border-radius: 1rem;
     background: var(--color-surface-white);
     border: 1px solid var(--color-ink-100);
+    /* Faint, static elevation so ghosts read as depth without the jank of an
+       animated box-shadow interpolating between layers. */
+    box-shadow: 0 4px 14px rgb(0 0 0 / 5%);
   }
 
-  /* Card surface: solid border + radius. The drop shadow lives on the motion
-     slide wrapper so it can animate per depth layer (real stack elevation). */
+  /* Card surface: solid border + radius + a clean static drop shadow. The shadow
+     is intentionally NOT animated per layer — animating box-shadow between depth
+     states produced a dark flash mid-transition. Depth now reads from the
+     scale/y/rotate/opacity motion; the shadow stays constant on the front card. */
   .mobileCard {
     overflow: hidden;
     border-radius: 1rem;
     border: 1px solid var(--color-ink-100);
     background: var(--color-surface-white);
     padding: 1.5rem;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 8%);
   }
 
   /* 1 — Headline = PRIMARY: largest, boldest, ink-950. */

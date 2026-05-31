@@ -193,12 +193,6 @@ const DEPTH_STATES = [
   { y: 28, scale: 0.9, opacity: 0.85, rotate: 4 },
 ];
 
-const DEPTH_SHADOWS = [
-  '0 6px 22px rgb(0 0 0 / 9%)',
-  '0 2px 10px rgb(0 0 0 / 5%)',
-  '0 2px 8px rgb(0 0 0 / 4%)',
-];
-
 function MobileCarousel({ items }) {
   const total = items.length;
   const prefersReducedMotion = useReducedMotion();
@@ -330,7 +324,6 @@ function MobileCarousel({ items }) {
                 scale: state.scale,
                 opacity: state.opacity,
                 rotate: prefersReducedMotion ? 0 : state.rotate,
-                boxShadow: DEPTH_SHADOWS[depth] ?? DEPTH_SHADOWS[DEPTH_SHADOWS.length - 1],
               }}
               transition={{ duration: prefersReducedMotion ? 0 : 0.38, ease: [0.22, 1, 0.36, 1] }}
               style={{ zIndex: STACK_DEPTH - depth }}
