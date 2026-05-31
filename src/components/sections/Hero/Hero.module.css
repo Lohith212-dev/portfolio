@@ -389,6 +389,12 @@
   fill: var(--role-arrow-fg);
 }
 
+/* Tablet-only connector arrows between each tile pair — hidden elsewhere. */
+.tileConnectorLeft,
+.tileConnectorRight {
+  display: none;
+}
+
 /* Hover state — snap, no easing. Label group shifts; arrow inverts. */
 .roleLink:hover .roleLabelGroup {
   transform: translateX(8px);
@@ -833,14 +839,21 @@
     /* Two EQUAL card rows (1fr 1fr) — the portrait spans both, so each row is
        half the portrait height and every card stretches to the same height
        regardless of how many lines its label wraps to. */
-    grid-template-rows: auto 1fr 1fr;
+    /* Each side column is a TIGHT pair (tile · connector arrow · tile) clustered
+       on the portrait's vertical midline. The portrait spans rows 2–6; the two
+       1fr spacer rows absorb the leftover height so the pair sits centred and
+       reads as one group (proximity), overlapping the portrait. */
+    grid-template-rows: auto 1fr auto auto auto 1fr;
     grid-template-areas:
-      'bio      bio      bio'
-      'card1    portrait card2'
-      'card3    portrait card4';
+      'bio    bio      bio'
+      '.      portrait .'
+      'card1  portrait card2'
+      'connL  portrait connR'
+      'card3  portrait card4'
+      '.      portrait .';
     align-items: center;
     column-gap: 1.5rem;
-    row-gap: 1rem;
+    row-gap: 0.55rem;
     margin-top: 0.5rem;
   }
 
@@ -990,6 +1003,29 @@
   /* Hide the number at tablet — frees label width so no tile wraps to 3 lines. */
   .roleNumber {
     display: none;
+  }
+
+  /* White swirly connector arrow between each clustered tile pair. Nudged
+     toward the portrait so it sits under the tiles' overlapped centre. */
+  .tileConnectorLeft,
+  .tileConnectorRight {
+    display: block;
+    width: 2.4rem;
+    height: auto;
+    align-self: center;
+    justify-self: center;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  .tileConnectorLeft {
+    grid-area: connL;
+    transform: translateX(1.25rem) rotate(90deg);
+  }
+
+  .tileConnectorRight {
+    grid-area: connR;
+    transform: translateX(-1.25rem) rotate(90deg) scaleX(-1);
   }
 
   /* Tappable affordance: lift + brighten on hover/active (touch + pointer). */

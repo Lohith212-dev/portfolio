@@ -210,6 +210,15 @@ export default function Hero() {
                   </li>
                 ))}
               </ul>
+              {/* Tablet-only: white swirly connector arrows between each column's
+                  tile pair (left = SAT LMS↘e-GMAT, right = S.P.A.R.K.↘NEURON),
+                  reinforcing the grouping. Hidden on mobile/desktop via CSS. */}
+              {!isFunMode && (
+                <>
+                  <WhiteSwirlyArrow className={styles.tileConnectorLeft} />
+                  <WhiteSwirlyArrow className={styles.tileConnectorRight} />
+                </>
+              )}
             </div>
           </div>
         </div>
