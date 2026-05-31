@@ -774,8 +774,11 @@
      Zone 1 = full-width headline (in .h1Row, above .midRow).
      Zone 2 = bio chips inline row (.zoneLeft, full-width top of .midRow).
      Zone 3 = three-column cards + portrait grid (rest of .midRow). */
+  /* Trim the trailing bottom padding so the hero band ends cleanly right after
+     the avatar + recent-work cards (removes the large empty gap that the 5rem
+     bottom padding produced under the portrait/cards grid at tablet). */
   .heroInner {
-    padding: 7.5rem 2rem 5rem;
+    padding: 7.5rem 2rem 1.5rem;
     min-height: auto;
     gap: 1.75rem;
   }
@@ -786,12 +789,14 @@
     padding-right: 8rem;
   }
 
-  /* Zone 1 — shrink the hero display so "Product Designer" stays on a single
-     line at both 768px and 1023px. Overrides the --text-hero-display token
-     locally (allowed: not a new token). nowrap guarantees no wrap; the clamp
-     is sized conservatively so it never overflows the 2rem-gutter container. */
+  /* Zone 1 — size the hero display so "Product Designer" spans the full hero
+     width on a single line at both 768px and 1023px. Overrides the
+     --text-hero-display token locally (allowed: not a new token; desktop token
+     unchanged). nowrap guarantees one line; the clamp is tuned so the title
+     fills the available width (container minus the 2rem gutters) at both bounds
+     without overflowing the yellow band or causing horizontal scroll. */
   .h1Normal {
-    font-size: clamp(2.75rem, 6.25vw, 4.25rem);
+    font-size: clamp(3.5rem, 9.5vw, 5.5rem);
     white-space: nowrap;
   }
 
@@ -915,9 +920,60 @@
   .roleItem:nth-child(3) { grid-area: card3; }
   .roleItem:nth-child(4) { grid-area: card4; }
 
+  /* Liquid glass-morphic cards (tablet only). Translucent white over the yellow
+     band + backdrop blur, hairline translucent border, soft shadow, rounded
+     corners. Cards float above the portrait (z-index 5 > portrait z-index 3) so
+     the slight overlap reads as glass over the avatar edges. */
+  .roleItem {
+    position: relative;
+    z-index: 5;
+    background: rgb(255 255 255 / 32%);
+    -webkit-backdrop-filter: blur(12px) saturate(125%);
+    backdrop-filter: blur(12px) saturate(125%);
+    border: 1px solid rgb(255 255 255 / 55%);
+    border-radius: 16px;
+    box-shadow:
+      0 8px 24px rgb(0 0 0 / 12%),
+      inset 0 1px 0 rgb(255 255 255 / 45%);
+    transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+  }
+
+  /* Slight controlled overlap onto the center portrait column: left-column
+     cards encroach rightward, right-column cards encroach leftward. Portrait
+     stays the clear centerpiece. */
+  .roleItem:nth-child(1),
+  .roleItem:nth-child(3) {
+    margin-right: -1.5rem;
+  }
+
+  .roleItem:nth-child(2),
+  .roleItem:nth-child(4) {
+    margin-left: -1.5rem;
+  }
+
+  /* The whole card is the tap target; pad the link to fill the glass surface
+     and guarantee >=44px tap height. */
   .roleLink {
     min-height: 44px;
-    padding: 0.625rem 0;
+    gap: 0.65rem;
+    padding: 0.75rem 0.9rem;
+    border-radius: 16px;
+  }
+
+  /* Hide the one-line description at tablet (kept in DOM for mobile/desktop).
+     Cards keep number + name + arrow. */
+  .roleSub {
+    display: none;
+  }
+
+  /* Tappable affordance: lift + brighten on hover/active (touch + pointer). */
+  .roleItem:hover,
+  .roleItem:active {
+    background: rgb(255 255 255 / 44%);
+    transform: translateY(-2px);
+    box-shadow:
+      0 12px 30px rgb(0 0 0 / 16%),
+      inset 0 1px 0 rgb(255 255 255 / 55%);
   }
 
   .headlineStack {
