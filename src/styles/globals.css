@@ -21,6 +21,8 @@
   --text-body: clamp(1.125rem, 0.221vw + 1.073rem, 1.25rem);
   /* 18 → 20px — DM Sans body (both modes) */
   --text-small: 1rem;
+  --text-caption: 0.75rem;
+  /* 12px — smallest type step (badges/captions) */
   --heading-32: 2rem;
   /* 16px — DM Sans small meta/decorative labels (both modes, fixed) */
   --text-fun-h1: clamp(3.25rem, 1.436vw + 2.913rem, 4.0625rem);
