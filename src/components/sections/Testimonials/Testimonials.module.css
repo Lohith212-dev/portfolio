@@ -613,7 +613,7 @@
   .mobileHeadline {
     margin: 0;
     font-family: var(--font-bricolage);
-    font-size: 1.5rem;
+    font-size: 1.85rem;
     font-weight: 800;
     line-height: 1.15;
     color: var(--color-ink-950);
@@ -635,13 +635,8 @@
     color: var(--color-ink-700);
   }
 
-  /* Modest decorative opening quote mark — does not compete with headline. */
-  .mobileQuote::first-letter {
-    font-size: 1.4rem;
-    font-weight: 700;
-    line-height: 0;
-    color: var(--color-ink-300);
-  }
+  /* Opening quote mark matches the closing quote — same size/weight/color as the
+     surrounding quote text (no special ::first-letter treatment). */
 
   /* 3 — Attribution: divider above, circular ~40px photo + name + role. */
   .mobileAttribution {
@@ -660,7 +655,8 @@
     flex: 0 0 auto;
     overflow: hidden;
     border-radius: 999px;
-    background: var(--color-ink-100);
+    /* Green circle behind the bust, matching the active avatar in the top header. */
+    background: var(--color-accent-green);
   }
 
   .mobilePerson {
@@ -700,7 +696,7 @@
   }
 
   .mobileHeadline {
-    font-size: 1.35rem;
+    font-size: 1.6rem;
   }
 
   .mobileAvatars {

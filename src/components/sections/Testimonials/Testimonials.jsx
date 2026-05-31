@@ -147,7 +147,7 @@ function MobileCard({ item }) {
     <article className={styles.mobileCard}>
       {/* Headline = PRIMARY: largest, boldest. Badge words highlighted GREEN. */}
       <h3 className={styles.mobileHeadline}>
-        - {item.headlinePrefix}{' '}
+        {item.headlinePrefix}{' '}
         <span className={styles.mobileBadge}>{firstWord}</span>{' '}
         {rest}
       </h3>
