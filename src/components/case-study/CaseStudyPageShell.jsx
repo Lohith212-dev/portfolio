@@ -1,5 +1,6 @@
 import Footer from '../sections/Footer/Footer';
 import Navigation from '../sections/Navigation/Navigation';
+import BackToTopPill from '../shared/BackToTopPill/BackToTopPill';
 
 export default function CaseStudyPageShell({
   links,
@@ -22,6 +23,7 @@ export default function CaseStudyPageShell({
 
       <main>{children}</main>
       <Footer variant="caseStudy" />
+      <BackToTopPill raised hideWhenFooterVisible />
     </div>
   );
 }

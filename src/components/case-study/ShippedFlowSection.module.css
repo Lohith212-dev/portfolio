@@ -1312,6 +1312,24 @@
   color: var(--color-ink-950);
 }
 
+/* Circular CTA: desktop shows the original (r=55) curved text; the wide-radius
+   (r=62) variant is hidden until the ≤64rem media query swaps them. */
+.liveCtaTextMobile {
+  display: none;
+}
+
+/* Demo label — surfaces the embed as an interactive demo; shown at ≤64rem. */
+.demoLabel {
+  display: none;
+  margin: 0 0 0.85rem;
+  font-family: var(--font-cabinet);
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: var(--color-ink-950);
+}
+
 @media (max-width: 64rem) {
   .demoLayoutGuideOpen {
     display: grid;
@@ -1410,19 +1428,53 @@
     width: fit-content;
   }
 
-  /* Pass 3: re-center the circular "Experience now" text ring around the green
-     arrow and shrink the arrow so the curved text clears it with a clean gap. */
-  .liveCtaCluster {
-    width: clamp(9rem, 32vw, 10.5rem);
+  /* Pass 4: the circular "Experience now" text now rides a wider radius path
+     (r=62 vs the desktop r=55) so it clears the full-size green arrow with a
+     comfortable gap. The arrow returns to its normal size (Pass 3's 60% shrink
+     is reverted by simply not overriding its width here). */
+  .liveCtaTextDesktop {
+    display: none;
   }
 
-  .liveCta {
-    width: 60%;
+  .liveCtaTextMobile {
+    display: inline;
+  }
+
+  .liveCtaTextRing {
+    overflow: visible;
   }
 
   .liveCtaTextRing text {
-    font-size: 0.74rem;
-    letter-spacing: 0.1em;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+  }
+
+  /* Product demo (Pass 4): hide the user-flow / guide toggle button — keep only
+     fullscreen. Desktop keeps the guide (the side-panel walkthrough is useful
+     there). */
+  .demoControlButtonGuide {
+    display: none;
+  }
+
+  /* Product demo (Pass 4): make the demo a visually distinct surface with a
+     gutter so edge swipes scroll the page, not the demo's inner scroll. */
+  .panel {
+    background-color: var(--color-surface-light);
+    border: 1px solid var(--color-ink-100);
+    border-radius: 1.5rem;
+    padding: 0.85rem;
+  }
+
+  .demoLabel {
+    display: block;
+  }
+}
+
+/* Mobile only (≤767px): hide the demo / behavior-map tab toggle — only the
+   interactive demo renders. Tablet keeps the toggle (room for both). */
+@media (max-width: 47.999rem) {
+  .toggleWrap {
+    display: none;
   }
 }
 

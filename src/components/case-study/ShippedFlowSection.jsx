@@ -281,7 +281,7 @@ export default function ShippedFlowSection() {
     >
       <button
         type="button"
-        className={`${styles.demoControlButton} ${isGuideOpen ? styles.demoControlButtonActive : ''}`}
+        className={`${styles.demoControlButton} ${styles.demoControlButtonGuide} ${isGuideOpen ? styles.demoControlButtonActive : ''}`}
         aria-label={isGuideOpen ? 'Hide guide' : 'Show guide'}
         onClick={handleGuideToggle}
       >
@@ -491,6 +491,8 @@ export default function ShippedFlowSection() {
           </div>
         </div>
 
+        <p className={styles.demoLabel}>Interactive demo</p>
+
         <div className={`${styles.panel} ${shouldBreakout ? styles.panelBreakout : ''}`}>
           <div className={`${styles.demoLayout} ${shouldBreakout ? styles.demoLayoutGuideOpen : ''}`}>
             <div className={styles.demoStageShell}>
@@ -659,9 +661,15 @@ export default function ShippedFlowSection() {
               <svg className={styles.liveCtaTextRing} viewBox="0 0 144 144" aria-hidden="true">
                 <defs>
                   <path id="liveProductTextPath" d="M72 72m-55 0a55 55 0 1 1 110 0a55 55 0 1 1-110 0" />
+                  <path id="liveProductTextPathWide" d="M72 72m-62 0a62 62 0 1 1 124 0a62 62 0 1 1-124 0" />
                 </defs>
-                <text>
+                <text className={styles.liveCtaTextDesktop}>
                   <textPath href="#liveProductTextPath" startOffset="0">
+                    Experience now
+                  </textPath>
+                </text>
+                <text className={styles.liveCtaTextMobile}>
+                  <textPath href="#liveProductTextPathWide" startOffset="0">
                     Experience now
                   </textPath>
                 </text>

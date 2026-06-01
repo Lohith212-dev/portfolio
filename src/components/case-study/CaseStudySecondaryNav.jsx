@@ -4,21 +4,23 @@ import styles from './CaseStudySecondaryNav.module.css';
 /**
  * CaseStudySecondaryNav
  *
- * A horizontally scrollable in-page tab strip for case studies, shown only at
- * mobile/tablet (≤1023px). It pins sticky to the top once the visitor scrolls
- * past the page title, sits below the global Navigation, and highlights the
- * active section based on scroll position (scroll-spy).
+ * A bottom-sticky section nav for case studies, shown only at mobile/tablet
+ * (≤1023px). Renders as a frosted pill bar floating ~0.85rem from the bottom
+ * edges (same aesthetic as the global pill nav). Horizontally scrollable with
+ * snap, active tab tracks scroll position (scroll-spy), and the whole bar slides
+ * down off-screen once the page footer enters the viewport.
  *
  * Props:
  *   links: Array<{ href: '#section-id', label: string }>
+ *   footerId: id of the footer element that triggers the hide (default 'footer')
  */
-export default function CaseStudySecondaryNav({ links = [] }) {
+export default function CaseStudySecondaryNav({ links = [], footerId = 'footer' }) {
   const [activeHref, setActiveHref] = useState(links[0]?.href ?? null);
-  const navRef = useRef(null);
+  const [hidden, setHidden] = useState(false);
   const trackRef = useRef(null);
   const tabRefs = useRef({});
 
-  // Scroll-spy: highlight the section currently sitting just below the strip.
+  // Scroll-spy: highlight the section currently in the active band.
   useEffect(() => {
     if (typeof window === 'undefined' || links.length === 0) {
       return undefined;
@@ -34,7 +36,6 @@ export default function CaseStudySecondaryNav({ links = [] }) {
     }
 
     const visible = new Set();
-
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -44,24 +45,34 @@ export default function CaseStudySecondaryNav({ links = [] }) {
             visible.delete(entry.target.id);
           }
         });
-
-        // pick the first section (in document order) inside the active band
         const activeId = ids.find((id) => visible.has(id));
         if (activeId) {
           setActiveHref(`#${activeId}`);
         }
       },
-      {
-        // active band = a thin strip near the top of the viewport, just under
-        // the pinned global nav + secondary nav
-        rootMargin: '-30% 0px -60% 0px',
-        threshold: [0, 0.25, 0.5, 1],
-      }
+      { rootMargin: '-30% 0px -60% 0px', threshold: [0, 0.25, 0.5, 1] }
     );
 
     sections.forEach((section) => observer.observe(section));
     return () => observer.disconnect();
   }, [links]);
+
+  // Hide the bar as soon as the footer enters the viewport.
+  useEffect(() => {
+    if (typeof window === 'undefined' || !('IntersectionObserver' in window)) {
+      return undefined;
+    }
+    const footer = document.getElementById(footerId);
+    if (!footer) {
+      return undefined;
+    }
+    const observer = new IntersectionObserver(
+      ([entry]) => setHidden(entry.isIntersecting),
+      { threshold: 0.01 }
+    );
+    observer.observe(footer);
+    return () => observer.disconnect();
+  }, [footerId]);
 
   // Keep the active tab scrolled into horizontal view (no page jump).
   useEffect(() => {
@@ -77,15 +88,14 @@ export default function CaseStudySecondaryNav({ links = [] }) {
     if (!href?.startsWith('#') || typeof window === 'undefined') {
       return;
     }
-
     const target = document.getElementById(href.slice(1));
     if (!target) {
       return;
     }
-
     event.preventDefault();
-    const stripBottom = navRef.current?.getBoundingClientRect().bottom ?? 0;
-    const offset = stripBottom + 12;
+    // offset by the fixed global nav at the top so the section lands below it
+    const navBottom = document.querySelector('[data-nav-island]')?.getBoundingClientRect().bottom ?? 0;
+    const offset = navBottom + 12;
     const top = target.getBoundingClientRect().top + window.scrollY - offset;
     window.history.replaceState(null, '', href);
     window.scrollTo({ top: Math.max(top, 0), behavior: 'smooth' });
@@ -97,7 +107,10 @@ export default function CaseStudySecondaryNav({ links = [] }) {
   }
 
   return (
-    <nav ref={navRef} className={styles.secondaryNav} aria-label="Case study sections">
+    <nav
+      className={`${styles.bottomNav} ${hidden ? styles.hidden : ''}`}
+      aria-label="Case study sections"
+    >
       <div ref={trackRef} className={styles.track}>
         {links.map((link) => (
           <a

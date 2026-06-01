@@ -2175,7 +2175,7 @@ export default function SatLmsCaseStudy() {
                 ]}
               />
 
-              <div className="mx-auto mt-12 max-w-[280px] md:max-w-[400px] lg:max-w-5xl">
+              <div className="mx-auto mt-12 w-full lg:max-w-5xl">
                 <Image
                   src="/images/case-studies/sat-lms/lms-central-graphic.svg"
                   alt="Learning management system transforms confused SAT learners into clear and confident students"
@@ -2306,15 +2306,15 @@ export default function SatLmsCaseStudy() {
               </Reveal>
 
               <div className={styles.tutorDecisionsMobile} aria-hidden={false}>
-                <StickyPhaseNumbers
-                  theme="dark"
-                  topOffset="8.75rem"
-                  compact
-                  phases={tutorDecisions.map((decision) => ({
-                    number: decision.number,
-                    content: <TutorDecisionBody decision={decision} includeNumber={false} />,
-                  }))}
-                />
+                {tutorDecisions.map((decision) => (
+                  <div key={decision.number} className={styles.tutorDecisionInline}>
+                    <p className={styles.tutorDecisionInlineNumber}>
+                      <span className={styles.tutorDecisionInlineKicker}>Decision</span>
+                      {decision.number}
+                    </p>
+                    <TutorDecisionBody decision={decision} includeNumber={false} />
+                  </div>
+                ))}
               </div>
             </>
           )}

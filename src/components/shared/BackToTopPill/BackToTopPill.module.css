@@ -1,0 +1,50 @@
+.backToTopPill {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 41; /* above the bottom-sticky section nav (z-index: 40) */
+  display: none;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 44px;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--color-ink-950) 14%, transparent);
+  border-radius: 9999px;
+  background-color: var(--color-surface-white);
+  color: var(--color-ink-950);
+  font-family: var(--font-dm), sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 0.75rem 1.75rem color-mix(in srgb, var(--color-ink-950) 16%, transparent);
+  opacity: 0;
+  transform: translateY(0.4rem);
+  transition: opacity 0.22s ease, transform 0.22s ease;
+}
+
+/* Lift above the bottom-sticky section nav so the two don't overlap. */
+.backToTopPillRaised {
+  bottom: 4.85rem;
+}
+
+.backToTopPillVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (max-width: 1023px) {
+  .backToTopPill {
+    display: inline-flex;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .backToTopPill {
+    transition: opacity 0.22s ease;
+  }
+
+  .backToTopPillVisible {
+    transform: none;
+  }
+}

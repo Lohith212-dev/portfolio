@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { FooterDownloadIcon, FooterLinkedInIcon, FooterMailIcon } from '../../icons/icons';
+import BackToTopPill from '../../shared/BackToTopPill/BackToTopPill';
 import styles from './Footer.module.css';
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/lohith-savala';
@@ -195,40 +196,6 @@ function CaseStudyTimer() {
 
   return (
     <span className={styles.timerValue}>{formatTime(secondsSpent)}</span>
-  );
-}
-
-function BackToTopPill() {
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    if (typeof window === 'undefined') return undefined;
-
-    const handleScroll = () => {
-      const trigger = window.innerHeight * 1.5;
-      setVisible(window.scrollY > trigger);
-    };
-
-    handleScroll();
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
-  const handleClick = () => {
-    if (typeof window === 'undefined') return;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
-
-  return (
-    <button
-      type="button"
-      onClick={handleClick}
-      aria-label="Back to top"
-      className={`${styles.backToTopPill} ${visible ? styles.backToTopPillVisible : ''}`}
-    >
-      <span aria-hidden="true">{'↑'}</span>
-      <span>Top</span>
-    </button>
   );
 }
 
