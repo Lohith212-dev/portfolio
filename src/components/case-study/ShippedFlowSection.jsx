@@ -570,7 +570,7 @@ export default function ShippedFlowSection() {
                     <div id="shipped-flow-demo" role="tabpanel" className={styles.demoFramePanel}>
                       <div className={`${styles.fullscreenSplitLayout} ${showGuideAlongsideFullscreen ? styles.fullscreenSplitLayoutOpen : ''}`}>
                         <div className={styles.demoAppShell}>
-                          {isDemoFullscreen && !isGuideOpen ? renderControlDock('fullscreen') : null}
+                          {isDemoFullscreen ? renderControlDock('fullscreen') : null}
                           <div className={styles.demoScaleShellWrap}>
                             <div className={`${styles.demoScaleShell} ${isDemoFullscreen ? styles.demoScaleShellFullscreen : ''}`}>
                               <SatLmsDemo
@@ -597,7 +597,6 @@ export default function ShippedFlowSection() {
                               onPointerDown={handleGuideResizeStart}
                               onKeyDown={handleGuideResizeKeyDown}
                             />
-                            {renderControlDock('guide')}
                             {renderGuidePanel()}
                           </div>
                         ) : null}

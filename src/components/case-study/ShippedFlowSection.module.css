@@ -263,10 +263,16 @@
   }
 }
 
+/* Fullscreen: dock tabs are attached to the inside right edge of the surface —
+   rounded on the left, sharp/flush on the right. */
 .controlDockAttachedToFullscreen {
   top: 1rem;
   right: 0;
-  transform: translateX(-0.35rem);
+  transform: none;
+}
+
+.controlDockAttachedToFullscreen .demoControlButton {
+  border-radius: 0.8rem 0 0 0.8rem;
 }
 
 .controlDockAttachedToGuide {
