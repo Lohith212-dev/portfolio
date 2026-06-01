@@ -17,8 +17,27 @@ import styles from './CaseStudySecondaryNav.module.css';
 export default function CaseStudySecondaryNav({ links = [], footerId = 'footer' }) {
   const [activeHref, setActiveHref] = useState(links[0]?.href ?? null);
   const [hidden, setHidden] = useState(false);
+  const [edges, setEdges] = useState({ left: false, right: false });
   const trackRef = useRef(null);
   const tabRefs = useRef({});
+
+  // Fade the edge(s) of the tab strip that have more tabs scrolled off-screen,
+  // so it reads as horizontally scrollable.
+  const updateEdges = () => {
+    const el = trackRef.current;
+    if (!el) return;
+    const left = el.scrollLeft > 2;
+    const right = el.scrollLeft < el.scrollWidth - el.clientWidth - 2;
+    setEdges((prev) => (prev.left === left && prev.right === right ? prev : { left, right }));
+  };
+
+  useEffect(() => {
+    updateEdges();
+    if (typeof window === 'undefined') return undefined;
+    window.addEventListener('resize', updateEdges);
+    return () => window.removeEventListener('resize', updateEdges);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [links]);
 
   // Scroll-spy: highlight the section currently in the active band.
   useEffect(() => {
@@ -111,7 +130,13 @@ export default function CaseStudySecondaryNav({ links = [], footerId = 'footer' 
       className={`${styles.bottomNav} ${hidden ? styles.hidden : ''}`}
       aria-label="Case study sections"
     >
-      <div ref={trackRef} className={styles.track}>
+      <div
+        ref={trackRef}
+        className={styles.track}
+        data-fade-left={edges.left ? 'true' : 'false'}
+        data-fade-right={edges.right ? 'true' : 'false'}
+        onScroll={updateEdges}
+      >
         {links.map((link) => (
           <a
             key={link.href}

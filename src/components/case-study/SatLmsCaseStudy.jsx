@@ -382,16 +382,19 @@ const inputSpecStackCards = [
     title: '01-context-and-business-rules-remedials.md',
     excerpt: businessRulesCardExcerpt,
     className: 'inputSpecOverlayCardBusiness',
+    barClass: 'cardBarB',
   },
   {
     title: '03-user-journey-map-remedials.md',
     excerpt: journeyMapCardExcerpt,
     className: 'inputSpecOverlayCardJourney',
+    barClass: 'cardBarC',
   },
   {
     title: '07-backend-specification-remedials.md',
     variant: 'sql',
     className: 'inputSpecOverlayCardBackend',
+    barClass: 'cardBarD',
   },
 ];
 
@@ -1415,7 +1418,7 @@ function ProcessStep({ step, hideNumber = false }) {
   );
 }
 
-function CardFocusBar({ phase }) {
+function CardFocusBar({ phase, fillClass }) {
   // One focus/dwell bar lives INSIDE each card of a stacked-pair artifact.
   // The `base` bar fills 0->100 while the base card is in focus (the first part
   // of the reveal cycle, before the overlay reveals), then hides; the `overlay`
@@ -1425,16 +1428,12 @@ function CardFocusBar({ phase }) {
   // card appears.
   // `cycle` is a single continuous 0->100 bar for multi-card artifacts (where a
   // base/overlay split doesn't map cleanly) — one progress bar per artifact.
-  const isCycle = phase === 'cycle';
-  const fillClass = phase === 'overlay'
-    ? styles.cardFocusFillOverlay
-    : isCycle
-      ? styles.cardFocusFillCycle
-      : styles.cardFocusFillBase;
+  const cls = fillClass
+    || (phase === 'overlay' ? styles.cardFocusFillOverlay : styles.cardFocusFillBase);
 
   return (
-    <span className={isCycle ? styles.artifactCycleBar : styles.cardFocusBar} aria-hidden="true">
-      <span className={`${styles.cardFocusFill} ${fillClass}`} />
+    <span className={styles.cardFocusBar} aria-hidden="true">
+      <span className={`${styles.cardFocusFill} ${cls}`} />
     </span>
   );
 }
@@ -1479,6 +1478,7 @@ function InputSpecBusinessRulesStack() {
             ))}
           </div>
           <span className={styles.inputSpecFocusVeil} aria-hidden="true" />
+          <CardFocusBar fillClass={styles.cardBarA} />
         </div>
 
         {inputSpecStackCards.map((card) => (
@@ -1499,10 +1499,10 @@ function InputSpecBusinessRulesStack() {
               )}
             </div>
             <span className={styles.inputSpecFocusVeil} aria-hidden="true" />
+            <CardFocusBar fillClass={styles[card.barClass]} />
           </div>
         ))}
       </div>
-      <CardFocusBar phase="cycle" />
     </div>
   );
 }
@@ -1679,19 +1679,21 @@ function DesignIterationArtifact() {
           <div className={`${styles.designIterationCanvas} ${styles.designIterationCanvasSidebar}`}>
             <ActivitySidebarDemo />
           </div>
+          <CardFocusBar fillClass={styles.cardBarA} />
         </div>
         <div className={`${styles.designIterationCard} ${styles.designIterationOverlayCard}`}>
           <div className={`${styles.designIterationCanvas} ${styles.designIterationCanvasR2}`}>
             <R2RemedialRowDesign />
           </div>
+          <CardFocusBar fillClass={styles.cardBarB} />
         </div>
         <div className={`${styles.designIterationCard} ${styles.designIterationFinalCard}`}>
           <div className={`${styles.designIterationCanvas} ${styles.designIterationCanvasR6}`}>
             <R6DualPlacementDesign />
           </div>
+          <CardFocusBar fillClass={styles.cardBarCD} />
         </div>
       </div>
-      <CardFocusBar phase="cycle" />
     </div>
   );
 }
@@ -1797,6 +1799,7 @@ function ProductionMigrationArtifact() {
             <pre className={styles.productionTreeCode}>{migrationFolderTree}</pre>
           </div>
           <span className={styles.inputSpecFocusVeil} aria-hidden="true" />
+          <CardFocusBar fillClass={styles.cardBarA} />
         </div>
 
         <div className={`${styles.artifactWindow} ${styles.productionFlowWindow}`}>
@@ -1810,6 +1813,7 @@ function ProductionMigrationArtifact() {
             <pre className={styles.inputSpecOverlayCode}>{migrationFlowchart}</pre>
           </div>
           <span className={styles.inputSpecFocusVeil} aria-hidden="true" />
+          <CardFocusBar fillClass={styles.cardBarB} />
         </div>
 
         <div className={`${styles.artifactWindow} ${styles.productionAuditWindow}`}>
@@ -1840,9 +1844,9 @@ function ProductionMigrationArtifact() {
               </tbody>
             </table>
           </div>
+          <CardFocusBar fillClass={styles.cardBarCD} />
         </div>
       </div>
-      <CardFocusBar phase="cycle" />
     </div>
   );
 }

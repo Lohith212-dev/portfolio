@@ -2012,35 +2012,60 @@
   will-change: transform;
 }
 
-/* Multi-card artifacts: one continuous progress bar per artifact, in normal
-   flow just below the card stack (the base/overlay split doesn't map to 3-4
-   cards). The yellow fill sweeps 0->100 over the same 18s reveal cycle. */
-.artifactCycleBar {
-  display: block;
-  width: 100%;
-  height: 0.2rem;
-  margin-block-start: 0.95rem;
-  overflow: hidden;
-  border-radius: 9999px;
-  background-color: color-mix(in srgb, var(--color-ink-950) 10%, transparent);
+/* Multi-card artifacts (InputSpec / Production / DesignIteration): one progress
+   bar INSIDE each card, phase-locked to that card's "front" window (the time it
+   sits on top before the next card reveals over it). The card stacking covers a
+   card's bar once the next reveals, so each bar visibly fills 0->100 during its
+   own turn. Front windows of the 18s reveal cycle: A 0-16% (base), B 16-44%,
+   C 44-72%, D 72-94% (4-card), CD 44-94% (last card of a 3-card stack). */
+.cardBarA {
+  animation: cardBarFillA 18s ease-in-out infinite both;
 }
 
-.cardFocusFillCycle {
-  animation: cardFocusCycle 18s linear infinite both;
+.cardBarB {
+  animation: cardBarFillB 18s ease-in-out infinite both;
 }
 
-@keyframes cardFocusCycle {
-  0% {
-    transform: scaleX(0);
-  }
+.cardBarC {
+  animation: cardBarFillC 18s ease-in-out infinite both;
+}
 
-  92% {
-    transform: scaleX(1);
-  }
+.cardBarD {
+  animation: cardBarFillD 18s ease-in-out infinite both;
+}
 
-  100% {
-    transform: scaleX(1);
-  }
+.cardBarCD {
+  animation: cardBarFillCD 18s ease-in-out infinite both;
+}
+
+@keyframes cardBarFillA {
+  0% { transform: scaleX(0); }
+  15% { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes cardBarFillB {
+  0%, 16% { transform: scaleX(0); }
+  43% { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes cardBarFillC {
+  0%, 44% { transform: scaleX(0); }
+  71% { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes cardBarFillD {
+  0%, 72% { transform: scaleX(0); }
+  93% { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
+}
+
+@keyframes cardBarFillCD {
+  0%, 44% { transform: scaleX(0); }
+  92% { transform: scaleX(1); }
+  100% { transform: scaleX(1); }
 }
 
 .cardFocusFillBase {

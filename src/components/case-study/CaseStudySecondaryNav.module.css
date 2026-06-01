@@ -46,6 +46,23 @@
     display: none;
   }
 
+  /* Fade the edge(s) with more tabs scrolled off-screen, signalling that the
+     strip scrolls horizontally and there are more items that way. */
+  .track[data-fade-right="true"] {
+    -webkit-mask-image: linear-gradient(to right, #000 calc(100% - 1.5rem), transparent);
+    mask-image: linear-gradient(to right, #000 calc(100% - 1.5rem), transparent);
+  }
+
+  .track[data-fade-left="true"] {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 1.5rem);
+    mask-image: linear-gradient(to right, transparent, #000 1.5rem);
+  }
+
+  .track[data-fade-left="true"][data-fade-right="true"] {
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 1.5rem, #000 calc(100% - 1.5rem), transparent);
+    mask-image: linear-gradient(to right, transparent, #000 1.5rem, #000 calc(100% - 1.5rem), transparent);
+  }
+
   .tab {
     display: inline-flex;
     align-items: center;
