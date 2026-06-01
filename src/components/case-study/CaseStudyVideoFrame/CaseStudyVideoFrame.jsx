@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import ControlledVideo from './ControlledVideo';
+import ControlledVideo from '../ControlledVideo';
 
 function BrowserChrome() {
   return (

@@ -1,4 +1,4 @@
-import CaseStudyPageShell from './CaseStudyPageShell';
+import CaseStudyPageShell from '../CaseStudyPageShell';
 
 export default function CaseStudyTemplate({
   navigationLinks,

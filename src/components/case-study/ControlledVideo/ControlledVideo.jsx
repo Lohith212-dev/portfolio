@@ -4,7 +4,7 @@ import {
   VideoExitFullscreenIcon,
   VideoPauseIcon,
   VideoPlayIcon,
-} from '../icons/icons';
+} from '../../icons/icons';
 import styles from './ControlledVideo.module.css';
 
 const ControlledVideo = forwardRef(function ControlledVideo({

@@ -11,24 +11,24 @@ import {
   ShippedResultsIcon,
   VideoEnterFullscreenIcon,
   VideoExitFullscreenIcon,
-} from '../icons/icons';
-import { SatLmsDemo } from './sat-lms-demo';
+} from '../../icons/icons';
+import { SatLmsDemo } from '../sat-lms-demo';
 import {
   ArrowLeftIcon,
   CheckCircleIcon,
   ChevronRightIcon,
   RefreshIcon,
-} from './sat-lms-demo/components/icons/DemoIcons';
+} from '../sat-lms-demo/components/icons/DemoIcons';
 import {
   FLOW_ORDER,
   DEMO_FLOWS,
   getFlowStepIds,
   getStep,
   getStepPosition,
-} from './sat-lms-demo/data/demoSteps';
-import DesktopFrame from './device-frames/DesktopFrame';
-import TabletFrame from './device-frames/TabletFrame';
-import PhoneFrame from './device-frames/PhoneFrame';
+} from '../sat-lms-demo/data/demoSteps';
+import DesktopFrame from '../device-frames/DesktopFrame';
+import TabletFrame from '../device-frames/TabletFrame';
+import PhoneFrame from '../device-frames/PhoneFrame';
 import styles from './ShippedFlowSection.module.css';
 
 const liveProductUrl = 'https://prismlearning.academy/sat/prep/course/sentence_foundations';
