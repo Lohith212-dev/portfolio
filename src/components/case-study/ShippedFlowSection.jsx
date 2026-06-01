@@ -418,7 +418,7 @@ export default function ShippedFlowSection() {
               aria-label="Back to flow list"
               onClick={handleGuideBack}
             >
-              <ArrowLeftIcon size={14} />
+              <ArrowLeftIcon size={16} />
             </button>
             <button
               type="button"
@@ -668,7 +668,7 @@ export default function ShippedFlowSection() {
                 className={styles.normalGuideShell}
                 style={{
                   width: `${guideWidth}px`,
-                  height: `${guideMetrics.height}px`,
+                  maxHeight: `${guideMetrics.height}px`,
                   marginTop: `${guideMetrics.top}px`,
                 }}
               >
