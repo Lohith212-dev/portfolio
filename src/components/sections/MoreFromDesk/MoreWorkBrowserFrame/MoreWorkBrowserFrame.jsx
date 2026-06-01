@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import {
   VideoEnterFullscreenIcon,
   VideoExitFullscreenIcon,
-} from '../../icons/icons';
+} from '../../../icons/icons';
 import styles from './MoreWorkBrowserFrame.module.css';
 
 export default function MoreWorkBrowserFrame({

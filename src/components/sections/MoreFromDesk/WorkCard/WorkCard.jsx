@@ -1,7 +1,7 @@
 import Link from 'next/link';
-import { ExternalArrowIcon } from '../../icons/icons';
-import MiniMock from './MiniMock';
-import styles from './MoreFromDesk.module.css';
+import { ExternalArrowIcon } from '../../../icons/icons';
+import MiniMock from '../MiniMock';
+import styles from '../MoreFromDesk.module.css';
 
 export default function WorkCard({ item, lane, index, onOpenModal, tabIndex = 0 }) {
   const cardContent = (

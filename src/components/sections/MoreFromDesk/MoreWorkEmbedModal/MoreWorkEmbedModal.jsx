@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { CloseIcon } from '../../icons/icons';
+import { CloseIcon } from '../../../icons/icons';
 import styles from './MoreWorkEmbedModal.module.css';
 
 export default function MoreWorkEmbedModal({ modal, onClose }) {

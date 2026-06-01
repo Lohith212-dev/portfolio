@@ -1,8 +1,8 @@
 import { useEffect, useRef } from 'react';
-import MiniMock from './MiniMock';
-import MoreWorkBrowserFrame from './MoreWorkBrowserFrame';
-import { getLaneStyle } from './moreWorksUtils';
-import styles from './MoreFromDesk.module.css';
+import MiniMock from '../MiniMock';
+import MoreWorkBrowserFrame from '../MoreWorkBrowserFrame';
+import { getLaneStyle } from '../moreWorksUtils';
+import styles from '../MoreFromDesk.module.css';
 
 export default function MoreWorkImageModal({ activeItem, onClose }) {
   const modalRef = useRef(null);

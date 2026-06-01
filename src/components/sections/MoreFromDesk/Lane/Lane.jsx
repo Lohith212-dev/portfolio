@@ -1,6 +1,6 @@
-import MarqueeTrack from './MarqueeTrack';
-import { clamp, getLaneStyle, smoothstep } from './moreWorksUtils';
-import styles from './MoreFromDesk.module.css';
+import MarqueeTrack from '../MarqueeTrack';
+import { clamp, getLaneStyle, smoothstep } from '../moreWorksUtils';
+import styles from '../MoreFromDesk.module.css';
 
 export default function Lane({ lane, index, reveal, onOpenModal }) {
   const laneReveal = smoothstep(clamp((reveal - index * 0.08) / 0.78));

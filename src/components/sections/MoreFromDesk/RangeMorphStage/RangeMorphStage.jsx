@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
-import Lane from './Lane';
-import OverviewCard from './OverviewCard';
-import { clamp, smoothstep } from './moreWorksUtils';
-import styles from './MoreFromDesk.module.css';
+import Lane from '../Lane';
+import OverviewCard from '../OverviewCard';
+import { clamp, smoothstep } from '../moreWorksUtils';
+import styles from '../MoreFromDesk.module.css';
 
 function useStickyStageProgress(ref, triggerOffset = 96, morphDistance = 780) {
   const [progress, setProgress] = useState(0);

@@ -1,4 +1,4 @@
-import styles from './MoreFromDesk.module.css';
+import styles from '../MoreFromDesk.module.css';
 
 export default function MiniMock({ laneId }) {
   return (

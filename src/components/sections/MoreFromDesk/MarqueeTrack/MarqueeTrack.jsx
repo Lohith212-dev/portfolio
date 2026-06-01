@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
-import WorkCard from './WorkCard';
-import styles from './MoreFromDesk.module.css';
+import WorkCard from '../WorkCard';
+import styles from '../MoreFromDesk.module.css';
 
 export default function MarqueeTrack({ lane, index, onOpenModal }) {
   const trackRef = useRef(null);

@@ -1,5 +1,5 @@
-import { getLaneStyle } from './moreWorksUtils';
-import styles from './MoreFromDesk.module.css';
+import { getLaneStyle } from '../moreWorksUtils';
+import styles from '../MoreFromDesk.module.css';
 
 export default function OverviewCard({ lane, index, morphOut }) {
   const baseTilt = index === 0 ? -1.5 : index === 1 ? 1 : -0.5;

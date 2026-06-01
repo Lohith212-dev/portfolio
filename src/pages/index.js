@@ -5,7 +5,7 @@ import BatReveal from '../components/shared/BatReveal';
 import Navigation from '../components/shared/Navigation';
 import Hero from '../components/sections/Hero';
 import FeaturedProjects from '../components/sections/FeaturedProjects';
-import MoreFromDesk from '../components/sections/MoreFromDesk/MoreFromDesk';
+import MoreFromDesk from '../components/sections/MoreFromDesk';
 import DesignForge from '../components/sections/DesignForge';
 import Skills from '../components/sections/Skills';
 import Testimonials from '../components/sections/Testimonials';
