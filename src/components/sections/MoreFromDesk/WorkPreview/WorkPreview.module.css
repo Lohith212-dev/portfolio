@@ -1,0 +1,72 @@
+.previewFrameBody {
+  height: min(68vh, 46rem);
+  max-height: calc(100svh - 11rem);
+  min-height: 28rem;
+  overflow: hidden;
+  background: var(--color-surface-white);
+}
+
+.walkthroughNote {
+  margin: 1rem 0 0;
+  color: var(--color-ink-500);
+  font-family: var(--font-dm);
+  font-size: 0.82rem;
+  line-height: 1.6;
+}
+
+.walkthroughButton {
+  border: 0;
+  background: transparent;
+  color: var(--color-accent-orange);
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-decoration: none;
+}
+
+.walkthroughButton:hover,
+.walkthroughButton:focus-visible {
+  text-decoration: underline;
+}
+
+.previewEmbedViewport {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-surface-white);
+}
+
+.previewEmbedScaler {
+  width: 125%;
+  height: 125%;
+  transform: scale(0.8);
+  transform-origin: top left;
+}
+
+.previewEmbedViewportFullscreen .previewEmbedScaler {
+  width: 100%;
+  height: 100%;
+  transform: none;
+}
+
+.previewEmbed {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: var(--color-surface-white);
+}
+
+@media (max-width: 39.999rem) {
+  .previewEmbedScaler {
+    width: 100%;
+    height: 100%;
+    transform: none;
+  }
+
+  .previewFrameBody {
+    min-height: 22rem;
+    height: min(58vh, 32rem);
+    max-height: calc(100svh - 9rem);
+  }
+}

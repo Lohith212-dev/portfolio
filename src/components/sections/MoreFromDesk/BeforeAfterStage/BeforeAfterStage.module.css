@@ -1,0 +1,221 @@
+.compareStage {
+  margin-left: 0;
+  display: grid;
+  gap: 0.9rem;
+}
+
+.compareHint {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  width: fit-content;
+  color: var(--color-ink-500);
+  font-family: var(--font-dm);
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.compareHintIcon {
+  display: inline-flex;
+  width: 0.85rem;
+  height: 0.85rem;
+  flex: 0 0 auto;
+  color: var(--color-ink-500);
+}
+
+.compareStack {
+  position: relative;
+  min-height: clamp(26rem, 60vw, 38rem);
+}
+
+.comparePanel {
+  position: absolute;
+  top: 0;
+  will-change: transform;
+  transition:
+    left 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    top 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    width 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.28s cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.comparePanelBefore.comparePanelActive,
+.comparePanelAfter.comparePanelActive {
+  top: 2.65rem;
+  width: min(82%, 54rem);
+  z-index: 2;
+}
+
+.comparePanelBefore.comparePanelActive {
+  left: clamp(3.75rem, 10%, 6rem);
+  transform: rotate(-0.75deg);
+}
+
+.comparePanelBefore.comparePanelInactive,
+.comparePanelAfter.comparePanelInactive {
+  top: 0;
+  width: min(42%, 23rem);
+  z-index: 1;
+}
+
+.comparePanelBefore.comparePanelInactive {
+  left: 0;
+  transform: rotate(-2.5deg);
+}
+
+.comparePanelAfter.comparePanelActive {
+  left: clamp(1.5rem, 4%, 3rem);
+  transform: rotate(0.35deg);
+}
+
+.comparePanelAfter.comparePanelInactive {
+  left: clamp(18rem, 48%, 30rem);
+  transform: rotate(0deg);
+}
+
+.compareCard {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
+  border-radius: 0.8rem;
+  background: var(--color-surface-white);
+  box-shadow: 0 1rem 2.6rem color-mix(in srgb, var(--color-ink-950) 12%, transparent);
+}
+
+.compareCardHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.7rem 0.85rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
+  background: color-mix(in srgb, var(--color-surface-white) 92%, transparent);
+}
+
+.compareAnnotation {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.34rem 0.8rem;
+  border-radius: 999px;
+  font-family: var(--font-dm);
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.compareAnnotationBefore {
+  background: var(--color-surface-light);
+  color: var(--color-ink-950);
+}
+
+.compareAnnotationAfter {
+  background: var(--color-accent-green);
+  color: var(--color-surface-white);
+}
+
+.compareControls {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.glassButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.6rem;
+  height: 2.6rem;
+  border: 1px solid color-mix(in srgb, var(--color-surface-white) 46%, transparent);
+  border-radius: 999px;
+  background:
+    linear-gradient(color-mix(in srgb, var(--color-surface-white) 28%, transparent), color-mix(in srgb, var(--color-surface-white) 16%, transparent));
+  box-shadow: 0 0.8rem 2rem color-mix(in srgb, var(--color-ink-950) 12%, transparent);
+  backdrop-filter: blur(0.75rem);
+  -webkit-backdrop-filter: blur(0.75rem);
+  color: var(--color-ink-950);
+  transition:
+    border-color 0.16s ease,
+    transform 0.16s ease;
+}
+
+.glassButton:hover,
+.glassButton:focus-visible {
+  border-color: color-mix(in srgb, var(--color-accent-green) 52%, transparent);
+  transform: translateY(-1px);
+}
+
+.glassButton svg {
+  width: 1.05rem;
+  height: 1.05rem;
+}
+
+.fullscreenExitButton {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  z-index: 4;
+}
+
+.comparePanel:fullscreen {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  background: var(--color-surface-white);
+  transform: none;
+}
+
+.comparePanel:fullscreen .compareCardHeader {
+  display: none;
+}
+
+.comparePanel:fullscreen .compareCard {
+  height: 100%;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+
+@media (max-width: 47.999rem) {
+  .compareStack {
+    min-height: clamp(27rem, 96vw, 36rem);
+  }
+
+  .comparePanelBefore.comparePanelActive,
+  .comparePanelAfter.comparePanelActive {
+    width: min(86%, 30rem);
+  }
+
+  .comparePanelBefore.comparePanelInactive,
+  .comparePanelAfter.comparePanelInactive {
+    width: min(46%, 16rem);
+  }
+
+  .comparePanelAfter.comparePanelInactive {
+    left: 48%;
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .compareStack {
+    display: grid;
+    gap: 1.2rem;
+    min-height: 0;
+  }
+
+  .comparePanel,
+  .comparePanelBefore.comparePanelActive,
+  .comparePanelBefore.comparePanelInactive,
+  .comparePanelAfter.comparePanelActive,
+  .comparePanelAfter.comparePanelInactive {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    transform: none;
+  }
+}

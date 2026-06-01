@@ -1,0 +1,102 @@
+.carousel {
+  display: grid;
+  gap: 0.9rem;
+}
+
+.tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+}
+
+.tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.55rem 0.95rem;
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
+  border-radius: 999px;
+  background: var(--color-surface-white);
+  color: var(--color-ink-600);
+  cursor: pointer;
+  font-family: var(--font-dm);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.2;
+  transition:
+    border-color 0.16s ease,
+    background 0.16s ease,
+    color 0.16s ease,
+    transform 0.16s ease;
+}
+
+.tab:hover,
+.tab:focus-visible {
+  border-color: color-mix(in srgb, var(--color-accent-green) 32%, var(--color-ink-100));
+  transform: translateY(-1px);
+}
+
+.tabActive {
+  border-color: color-mix(in srgb, var(--color-accent-green) 36%, transparent);
+  background: color-mix(in srgb, var(--color-accent-green) 10%, var(--color-surface-white));
+  color: var(--color-ink-950);
+}
+
+.frame {
+  overflow: hidden;
+}
+
+.frameBody {
+  min-height: clamp(25rem, 70vh, 42rem);
+  height: clamp(25rem, 70vh, 42rem);
+  background: var(--color-surface-light);
+}
+
+.frameInner {
+  width: 100%;
+  height: 100%;
+}
+
+.viewport {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background: var(--color-surface-white);
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.caption {
+  margin: 0;
+  color: var(--color-ink-500);
+  font-family: var(--font-dm);
+  font-size: 0.82rem;
+  line-height: 1.55;
+}
+
+.frame:fullscreen .frameBody {
+  height: 100%;
+  min-height: 0;
+}
+
+@media (max-width: 47.999rem) {
+  .frameBody {
+    min-height: clamp(21rem, 66vh, 34rem);
+    height: clamp(21rem, 66vh, 34rem);
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .tabs {
+    gap: 0.5rem;
+  }
+
+  .tab {
+    padding: 0.52rem 0.82rem;
+    font-size: 0.75rem;
+  }
+}

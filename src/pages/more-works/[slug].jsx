@@ -1,8 +1,7 @@
 import MetaTags from '../../components/shared/MetaTags';
 import Navigation from '../../components/sections/Navigation/Navigation';
 import Footer from '../../components/sections/Footer/Footer';
-import MoreWorkDetailContent from '../../components/sections/MoreFromDesk/MoreWorkDetailPage';
-import WebsiteShowcasePage from '../../components/sections/MoreFromDesk/WebsiteShowcasePage';
+import ShowcaseTemplate from '../../components/sections/MoreFromDesk/ShowcaseTemplate';
 import {
   getMoreWorkBySlug,
   getMoreWorkDetailItems,
@@ -12,20 +11,15 @@ import {
 
 export default function MoreWorkDetailPage({ item }) {
   const detail = getMoreWorkDetailContent(item);
-  const isWebsiteShowcase = detail.template === 'website-showcase';
   const laneProjects = getMoreWorkLaneCards(item.laneId);
-  const leanPageLinks = isWebsiteShowcase
-    ? (detail.websiteNavLinks?.length
-      ? detail.websiteNavLinks
-      : [
-        { href: '#context', label: 'Context' },
-        { href: '#shipped', label: 'Approach' },
-        { href: '#shift', label: 'The Shift' },
-      ])
+  const leanPageLinks = detail.websiteNavLinks?.length
+    ? detail.websiteNavLinks
     : [
-      { href: '#overview', label: 'Overview' },
-      { href: '#product-preview', label: 'Product preview' },
-    ];
+      detail.overviewCard ? { href: '#context', label: 'Context' } : null,
+      detail.notesCard ? { href: '#shipped', label: 'Approach' } : null,
+      detail.notesCard?.shift ? { href: '#shift', label: 'The Shift' } : null,
+      detail.testimonials ? { href: '#testimonials', label: detail.testimonials.title || 'Testimonials' } : null,
+    ].filter(Boolean);
 
   return (
     <>
@@ -39,11 +33,7 @@ export default function MoreWorkDetailPage({ item }) {
         backHref="/#more-from-desk"
         backLabel="Back to range"
       />
-      {isWebsiteShowcase ? (
-        <WebsiteShowcasePage item={item} detail={detail} relatedProjects={laneProjects} />
-      ) : (
-        <MoreWorkDetailContent item={item} detail={detail} />
-      )}
+      <ShowcaseTemplate item={item} detail={detail} relatedProjects={laneProjects} />
       <Footer variant="lean" />
     </>
   );

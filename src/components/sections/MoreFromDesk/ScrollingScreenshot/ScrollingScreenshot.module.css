@@ -1,0 +1,53 @@
+.compareViewport {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: var(--color-surface-light);
+}
+
+.compareViewportScrollable {
+  height: 100vh;
+  aspect-ratio: auto;
+  overflow: auto;
+  background: var(--color-surface-white);
+}
+
+.screenshotTrack {
+  width: 100%;
+}
+
+.screenshotTrackAnimating {
+  animation: showcase-scroll var(--scroll-duration) linear infinite;
+}
+
+.screenshotImage {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/*
+ * Pause the auto-scroll animation while the screenshot is shown fullscreen.
+ * In the original single-stylesheet template this was scoped as
+ * `.comparePanel:fullscreen .screenshotTrack`. Because CSS Modules scope
+ * `.comparePanel` (owned by BeforeAfterStage) and `.screenshotTrack` (owned
+ * here) into separate hashed names across files, the cross-file descendant
+ * selector can no longer match. The screenshot is only ever rendered inside
+ * the compare panel, which is the only fullscreen ancestor it can have, so
+ * matching on any `:fullscreen` ancestor is behavior-equivalent. Flagged in
+ * the report as a deviation from a verbatim selector copy.
+ */
+:fullscreen .screenshotTrack,
+:fullscreen .screenshotTrackAnimating {
+  animation: none;
+}
+
+@keyframes showcase-scroll {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(calc(-1 * var(--scroll-distance)));
+  }
+}

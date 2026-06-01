@@ -1,0 +1,176 @@
+.sidebar {
+  position: sticky;
+  top: 8rem;
+}
+
+.sideSection {
+  padding-bottom: 1.75rem;
+  margin-bottom: 1.75rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
+}
+
+.sideSection:last-child {
+  border-bottom: 0;
+}
+
+.sideSection h3 {
+  margin: 0;
+  color: var(--color-ink-950);
+  font-family: var(--font-dm);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.95rem;
+  font-size: var(--text-h3);
+  line-height: 1.15;
+}
+
+.chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.82rem;
+  border-radius: 999px;
+  background: var(--color-surface-light);
+  color: var(--color-ink-950);
+  font-family: var(--font-dm);
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.factList {
+  display: grid;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.factRow {
+  display: grid;
+  gap: 0.22rem;
+}
+
+.factLabel,
+.factValue {
+  margin: 0;
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: var(--text-small);
+  line-height: 1.8;
+}
+
+.factLabel {
+  color: var(--color-ink-500);
+  font-size: 0.78rem;
+  line-height: 1.3;
+}
+
+.factValue {
+  color: var(--color-ink-950);
+  font-weight: 500;
+  text-align: left;
+}
+
+.projectChipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 0.7rem;
+}
+
+.projectChip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.4rem 0.82rem;
+  border-radius: 999px;
+  background: var(--color-surface-light);
+  color: var(--color-ink-950);
+  font-family: var(--font-dm);
+  font-size: 0.84rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.projectChipActive {
+  background: color-mix(in srgb, var(--color-accent-green) 14%, var(--color-surface-white));
+}
+
+.projectChipDot {
+  width: 0.42rem;
+  height: 0.42rem;
+  border-radius: 9999px;
+  background: var(--color-accent-green);
+  animation: statusPulse 1.6s ease-in-out infinite;
+}
+
+.projectChipLogo {
+  width: 1.2rem;
+  height: 1.2rem;
+  object-fit: contain;
+}
+
+.projectDisclaimer {
+  margin: 0;
+  width: fit-content;
+  color: var(--color-ink-500);
+  font-family: var(--font-dm);
+  font-size: 0.82rem;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+@keyframes statusPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--color-accent-green) 38%, transparent);
+  }
+
+  50% {
+    box-shadow: 0 0 0 0.35rem color-mix(in srgb, var(--color-accent-green) 0%, transparent);
+  }
+}
+
+@media (max-width: 63.999rem) {
+  .sidebar {
+    position: static;
+  }
+}
+
+@media (max-width: 39.999rem) {
+  /* Compact "spec card" sidebar on mobile: tighter blocks, 2-col fact layout, single bordered card. */
+  .sidebar {
+    padding: 1rem 1.1rem;
+    border: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
+    border-radius: 0.85rem;
+    background: var(--color-surface-light);
+  }
+
+  .sideSection {
+    padding-bottom: 0.95rem;
+    margin-bottom: 0.95rem;
+  }
+
+  .sideSection h3 {
+    margin-bottom: 0.55rem;
+    font-size: 0.95rem;
+  }
+
+  .factList {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.7rem 1rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .factLabel {
+    font-size: 0.72rem;
+  }
+
+  .factValue {
+    font-size: 0.84rem;
+  }
+}

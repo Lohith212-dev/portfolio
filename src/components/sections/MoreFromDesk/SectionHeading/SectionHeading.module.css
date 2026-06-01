@@ -1,0 +1,35 @@
+.sectionHeading {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.sectionNumber {
+  color: var(--color-accent-green);
+  font-family: var(--font-cabinet);
+  font-size: var(--heading-32);
+  font-weight: 800;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+
+.sectionHeading h2 {
+  margin: 0;
+  color: var(--color-ink-950);
+  font-family: var(--font-cabinet);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  font-size: var(--heading-32);
+  line-height: 1.05;
+}
+
+@media (max-width: 39.999rem) {
+  .sectionHeading {
+    gap: 0.7rem;
+  }
+
+  .sectionNumber {
+    font-size: var(--text-h3);
+  }
+}
