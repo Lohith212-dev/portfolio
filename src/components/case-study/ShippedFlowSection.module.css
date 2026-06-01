@@ -1482,10 +1482,8 @@
     grid-template-columns: 1fr;
   }
 
-  .liveCta {
-    justify-self: start;
-  }
-
+  /* the arrow stays centered within the cluster (place-items: center) so its
+     center matches the circular text ring; only the cluster left-aligns */
   .liveCtaCluster {
     justify-self: start;
   }

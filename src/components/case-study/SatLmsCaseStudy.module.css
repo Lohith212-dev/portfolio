@@ -2012,6 +2012,37 @@
   will-change: transform;
 }
 
+/* Multi-card artifacts: one continuous progress bar per artifact, in normal
+   flow just below the card stack (the base/overlay split doesn't map to 3-4
+   cards). The yellow fill sweeps 0->100 over the same 18s reveal cycle. */
+.artifactCycleBar {
+  display: block;
+  width: 100%;
+  height: 0.2rem;
+  margin-block-start: 0.95rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  background-color: color-mix(in srgb, var(--color-ink-950) 10%, transparent);
+}
+
+.cardFocusFillCycle {
+  animation: cardFocusCycle 18s linear infinite both;
+}
+
+@keyframes cardFocusCycle {
+  0% {
+    transform: scaleX(0);
+  }
+
+  92% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(1);
+  }
+}
+
 .cardFocusFillBase {
   /* Visible + filling while the base card is the sole focus (0-38% of the
      cycle, before the overlay reveals), then hidden while the overlay is up. */
@@ -4915,6 +4946,14 @@
   }
 }
 
+/* Tablet: even 50/50 columns so the question column isn't squeezed by the
+   options' min-width (desktop keeps its tighter ratio). */
+@media (min-width: 48rem) and (max-width: 63.999rem) {
+  .outcomePoll {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
 .nextCaseBridge {
   position: relative;
   display: flex;
@@ -5316,11 +5355,6 @@
     overflow-x: auto;
     -webkit-overflow-scrolling: touch;
   }
-
-  /* visual affordance: subtle fade on the right edge to hint scrollability */
-  .processArtifactPreview .artifactWindow {
-    position: relative;
-  }
 }
 
 /* Section 9 (final outcome stats) — Pass 3: the bold label and its "up from X%"
@@ -5454,6 +5488,31 @@
   .processTrailMobile .processStepReveal {
     opacity: 1;
     transform: none;
+  }
+
+  /* DesignForge intro read as a flat "manual" on mobile/tablet because every
+     block had similar spacing. Tighten the title group (eyebrow → heading →
+     descriptor) and add clear separation before the thesis line and before the
+     story copy, so the grouping is legible. */
+  .processEyebrow {
+    margin-block-end: 0.6rem;
+  }
+
+  .processDescriptor {
+    margin-block-start: 0.75rem;
+  }
+
+  .processSubline {
+    margin-block-start: 1.6rem;
+  }
+
+  .processIntro {
+    margin-block-end: 2.25rem;
+  }
+
+  .processStoryGrid {
+    gap: 1.1rem;
+    margin-block-end: 2.5rem;
   }
 }
 

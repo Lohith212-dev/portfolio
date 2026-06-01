@@ -1423,10 +1423,17 @@ function CardFocusBar({ phase }) {
   // Both are phase-locked to the same 18s/-8s keyframe as the artifact reveal
   // animations, so each card visibly runs its own 0->100 bar before the next
   // card appears.
-  const fillClass = phase === 'overlay' ? styles.cardFocusFillOverlay : styles.cardFocusFillBase;
+  // `cycle` is a single continuous 0->100 bar for multi-card artifacts (where a
+  // base/overlay split doesn't map cleanly) — one progress bar per artifact.
+  const isCycle = phase === 'cycle';
+  const fillClass = phase === 'overlay'
+    ? styles.cardFocusFillOverlay
+    : isCycle
+      ? styles.cardFocusFillCycle
+      : styles.cardFocusFillBase;
 
   return (
-    <span className={styles.cardFocusBar} aria-hidden="true">
+    <span className={isCycle ? styles.artifactCycleBar : styles.cardFocusBar} aria-hidden="true">
       <span className={`${styles.cardFocusFill} ${fillClass}`} />
     </span>
   );
@@ -1495,6 +1502,7 @@ function InputSpecBusinessRulesStack() {
           </div>
         ))}
       </div>
+      <CardFocusBar phase="cycle" />
     </div>
   );
 }
@@ -1683,6 +1691,7 @@ function DesignIterationArtifact() {
           </div>
         </div>
       </div>
+      <CardFocusBar phase="cycle" />
     </div>
   );
 }
@@ -1833,6 +1842,7 @@ function ProductionMigrationArtifact() {
           </div>
         </div>
       </div>
+      <CardFocusBar phase="cycle" />
     </div>
   );
 }

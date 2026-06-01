@@ -590,8 +590,29 @@
     flex-direction: column;
   }
 
+  .leanPromptRow {
+    gap: 0.8rem;
+  }
+}
+
+/* Case study footer on mobile + tablet: single column, centered (like the
+   homepage footer), with the homepage's roomier spacing. Content unchanged. */
+@media (max-width: 1023px) {
+  .caseFooter {
+    padding-block: clamp(3rem, 7vw, 4.25rem) clamp(2.25rem, 5vw, 3rem);
+  }
+
   .caseInner {
     grid-template-columns: 1fr;
+    row-gap: clamp(2.5rem, 6vw, 3.25rem);
+  }
+
+  .caseTimerBlock {
+    text-align: center;
+  }
+
+  .timerLine {
+    justify-content: center;
   }
 
   .caseContactWrap {
@@ -599,28 +620,8 @@
     width: 100%;
   }
 
-  .caseTimerBlock {
-    text-align: left;
-  }
-
   .caseAvatar {
     right: 0.75rem;
-  }
-
-  .leanPromptRow {
-    gap: 0.8rem;
-  }
-}
-
-/* Pass 4 — case study footer: match the homepage footer's roomier rhythm on
-   mobile/tablet. Content is unchanged; only spacing increases. */
-@media (max-width: 1023px) {
-  .caseFooter {
-    padding-block: clamp(3rem, 7vw, 4.25rem) clamp(2.25rem, 5vw, 3rem);
-  }
-
-  .caseInner {
-    row-gap: clamp(2.5rem, 6vw, 3.25rem);
   }
 
   .caseContactCard h2 {
@@ -633,6 +634,7 @@
 
   .caseCopyright {
     margin-block-start: 0.5rem;
+    text-align: center;
   }
 }
 
