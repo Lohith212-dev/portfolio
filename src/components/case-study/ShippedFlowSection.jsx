@@ -83,6 +83,14 @@ function DemoGuideIcon({ className = '' }) {
 const FRAME_CAP = { desktop: 1040, tablet: 560, phone: 290 };
 const FRAME_FALLBACK = { desktop: 960, tablet: 520, phone: 270 };
 
+// Case-study presentation copy for the flow picker — each path reads as a
+// step-by-step user flow with arrows, per the approved guide design.
+const FLOW_PICKER_COPY = {
+  happy: 'Attempt the diagnostic quiz → Review quiz results → PACE personalizes course → Start learning in personalized learning path',
+  reinforcement: 'User starts learning in personalized learning path → performed poorly in a concept → Remedial activity is created → User attempts the remedial and fixes the gap',
+  bad_behavior: 'User tries to attempt the course without personalizing → system advises against it',
+};
+
 function DeviceFrame({ kind, width, className, children }) {
   if (kind === 'tablet') {
     return <TabletFrame width={width} className={className}>{children}</TabletFrame>;
@@ -321,7 +329,7 @@ export default function ShippedFlowSection() {
   );
   const shouldBreakout = activeTab === 'demo' && isGuideOpen && !isDemoFullscreen;
   const showGuideAlongsideFullscreen = activeTab === 'demo' && isDemoFullscreen && isGuideOpen;
-  const showStageControlDock = activeTab === 'demo' && !isGuideOpen;
+  const showStageControlDock = activeTab === 'demo' && !isDemoFullscreen;
   const frameWidth = shellWidth > 0
     ? Math.min(shellWidth, FRAME_CAP[deviceKind])
     : FRAME_FALLBACK[deviceKind];
@@ -384,7 +392,7 @@ export default function ShippedFlowSection() {
                   </button>
                 </div>
                 <div className={styles.flowPickerCopy}>
-                  <p>{flow.description}</p>
+                  <p>{FLOW_PICKER_COPY[flow.id] ?? flow.description}</p>
                 </div>
               </article>
             );
@@ -664,19 +672,6 @@ export default function ShippedFlowSection() {
                   marginTop: `${guideMetrics.top}px`,
                 }}
               >
-                <div
-                  className={styles.guideResizeHandle}
-                  role="separator"
-                  tabIndex={0}
-                  aria-label="Resize demo guide panel"
-                  aria-orientation="vertical"
-                  aria-valuemin={GUIDE_WIDTH_MIN}
-                  aria-valuemax={GUIDE_WIDTH_MAX}
-                  aria-valuenow={Math.round(guideWidth)}
-                  onPointerDown={handleGuideResizeStart}
-                  onKeyDown={handleGuideResizeKeyDown}
-                />
-                {renderControlDock('guide')}
                 {renderGuidePanel()}
               </div>
             ) : null}
