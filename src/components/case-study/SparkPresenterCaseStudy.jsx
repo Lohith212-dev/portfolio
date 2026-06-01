@@ -1374,7 +1374,7 @@ function NextCaseStudyPreview() {
 
 export default function SparkPresenterCaseStudy() {
   return (
-    <CaseStudyTemplate navigationLinks={caseStudyLinks}>
+    <CaseStudyTemplate navigationLinks={caseStudyLinks} secondaryNavLinks={caseStudyLinks}>
       <CaseStudyHero
         className={lmsStyles.heroGrid}
         eyebrow="S.P.A.R.K. Content Presenter"

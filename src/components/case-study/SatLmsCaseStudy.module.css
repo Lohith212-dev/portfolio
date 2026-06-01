@@ -1128,7 +1128,13 @@
 .designForgeProcessSection {
   position: relative;
   isolation: isolate;
-  overflow: hidden;
+  /* Clip only the horizontal axis (keeps artifact bleed contained) while
+     leaving the block axis visible. A block-axis `overflow: hidden/clip/auto`
+     on any ancestor silently breaks `position: sticky` for descendants — which
+     is why the mobile/tablet StickyPhaseNumbers did not pin. overflow-x: clip
+     with overflow-y: visible keeps the sticky numbers working. */
+  overflow-x: clip;
+  overflow-y: visible;
   padding-block: clamp(4rem, 7vw, 5.5rem);
   padding-inline: 1.5rem;
   background-color: var(--color-surface-light);
@@ -1972,6 +1978,89 @@
   100% {
     opacity: 0;
     transform: translateY(0) scale(1);
+  }
+}
+
+/* Per-card focus/dwell bar — one sits inside each card of a stacked-pair
+   artifact (base window + overlay window). The base bar fills 0->100 while the
+   base card is the sole focus, then the overlay card reveals and its bar fills
+   0->100, then the cycle loops. Both are phase-locked to the LMS
+   stackedPairBaseDim / stackedPairOverlayReveal timing (18s loop, NO delay —
+   the LMS stacked-pair animations run with no animation-delay), so the base bar
+   completes before the overlay reveals at 38-44%. */
+.cardFocusBar {
+  position: absolute;
+  z-index: 6;
+  left: 0.6rem;
+  right: 0.6rem;
+  bottom: 0.5rem;
+  height: 0.2rem;
+  overflow: hidden;
+  border-radius: 9999px;
+  background-color: color-mix(in srgb, var(--color-surface-white) 12%, transparent);
+}
+
+.cardFocusFill {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform-origin: left center;
+  transform: scaleX(0);
+  border-radius: inherit;
+  background-color: var(--color-accent-yellow);
+  box-shadow: 0 0 0.6rem color-mix(in srgb, var(--color-accent-yellow) 45%, transparent);
+  will-change: transform;
+}
+
+.cardFocusFillBase {
+  /* Visible + filling while the base card is the sole focus (0-38% of the
+     cycle, before the overlay reveals), then hidden while the overlay is up. */
+  animation: cardFocusBaseFill 18s ease-in-out infinite both;
+}
+
+.cardFocusFillOverlay {
+  /* Fills while the overlay card is in focus (44-94%). The overlay card itself
+     is invisible (opacity 0) outside that window, so the bar is only seen then. */
+  animation: cardFocusOverlayFill 18s ease-in-out infinite both;
+}
+
+@keyframes cardFocusBaseFill {
+  0% {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+
+  34% {
+    opacity: 1;
+    transform: scaleX(1);
+  }
+
+  38%,
+  96% {
+    opacity: 0;
+    transform: scaleX(1);
+  }
+
+  99% {
+    opacity: 0;
+    transform: scaleX(0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scaleX(0);
+  }
+}
+
+@keyframes cardFocusOverlayFill {
+  0%,
+  44% {
+    transform: scaleX(0);
+  }
+
+  94%,
+  100% {
+    transform: scaleX(1);
   }
 }
 
@@ -3820,6 +3909,13 @@
   .problemEvidenceCard {
     transition: none;
   }
+
+  .cardFocusFill {
+    /* Static, filled indicator when motion is reduced. */
+    animation: none;
+    opacity: 1;
+    transform: scaleX(1);
+  }
 }
 
 /* ── Insight card with hover lift ─────────────────────────── */
@@ -5331,62 +5427,25 @@
 }
 
 /* ----------------------------------------------------------------- */
-/* Audit Pass 3 fixes                                                 */
+/* Audit Pass 3 / Pass 5 — DesignForge recap mobile/tablet trail      */
 /* ----------------------------------------------------------------- */
 
-/* Section 5 — DesignForge recap: the artifact previews are animated, diagonally
-   stacked, dimmed compositions tuned for the wide desktop trail. Reused inside
-   the mobile/tablet StickyPhaseNumbers they overlap, dim, and overflow to the
-   right. Flatten them into a clean static, full-opacity vertical list so each
-   phase shows its own snippet(s) directly within its block. The horizontal
-   scroll inside each snippet (.artifactBody overflow-x) is preserved above. */
+/* Pass 5: the earlier Pass-3 "flatten" override (which forced every artifact
+   stage + window to position:static / flex-column / animation:none, un-stacking
+   the overlapping animated cards into a tall vertical column) has been REMOVED.
+   The artifacts now keep their overlapping, fixed-height stacked-pair stages and
+   time-based reveal animations on mobile/tablet exactly like desktop — matching
+   the homepage DesignForge, where the trail never flattens. Each artifact also
+   carries a per-card focus bar (.cardFocusBar). The horizontal code scroll
+   (.processArtifactPreview .artifactBody overflow-x) from Pass 1 is preserved.
+
+   The Pass-4 reveal overrides below are KEPT intentionally. The whole DesignForge
+   section is wrapped in one scroll-reveal <Reveal>; forcing it (and each mobile
+   ProcessStep) visible guarantees the section can never render blank on
+   mobile/tablet. The pinned phase number provides the scroll affordance, so
+   skipping the reveal animation here costs nothing while keeping the section
+   reliably visible. */
 @media (max-width: 63.999rem) {
-  .processTrailMobile .inputSpecStackStage,
-  .processTrailMobile .sandboxArtifactStage,
-  .processTrailMobile .gapAnalysisStackStage,
-  .processTrailMobile .designIterationStage,
-  .processTrailMobile .sandboxIntegrationStage,
-  .processTrailMobile .productionMigrationStage {
-    position: static;
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    min-height: 0;
-    padding-block-end: 0;
-    overflow: visible;
-  }
-
-  .processTrailMobile .artifactWindow,
-  .processTrailMobile .designIterationCard {
-    position: static;
-    inset: auto;
-    top: auto;
-    left: auto;
-    right: auto;
-    bottom: auto;
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-    min-height: 0;
-    margin: 0;
-    opacity: 1;
-    transform: none;
-    animation: none;
-  }
-
-  .processTrailMobile .inputSpecFocusVeil {
-    display: none;
-  }
-
-  /* Pass 4 — blank-page regression fix. Two layers caused the blank render once
-     the artifacts were flattened (Pass 3):
-     1. The whole DesignForge section is wrapped in one scroll-reveal <Reveal>.
-        Flattening made that wrapper ~19000px tall, so its IntersectionObserver
-        (threshold 0.1) can never reach 10% visibility — `revealVisible` is never
-        added and the wrapper stays opacity:0, hiding everything. Force it visible.
-     2. Each flattened step is itself far taller than the viewport, so its own
-        scroll-reveal often never fires either. Show the steps unconditionally;
-        the pinned phase number already provides the scroll affordance here. */
   .designForgeProcessSection .reveal {
     opacity: 1;
     transform: none;

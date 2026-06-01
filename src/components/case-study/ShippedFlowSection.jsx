@@ -460,9 +460,6 @@ export default function ShippedFlowSection() {
           <p className={styles.intro}>
             Below is a <strong>recreated interactive demo</strong> of the shipped flow, using mock data and content. It preserves the case-study experience even as the live product evolves.
           </p>
-          <p className={styles.helper}>
-            Explore the flow as an interactive demo, or switch to a behavior map to see the full learning journey.
-          </p>
         </header>
 
         <div className={styles.toggleWrap}>
@@ -490,8 +487,6 @@ export default function ShippedFlowSection() {
             </button>
           </div>
         </div>
-
-        <p className={styles.demoLabel}>Interactive demo</p>
 
         <div className={`${styles.panel} ${shouldBreakout ? styles.panelBreakout : ''}`}>
           <div className={`${styles.demoLayout} ${shouldBreakout ? styles.demoLayoutGuideOpen : ''}`}>
@@ -667,9 +662,15 @@ export default function ShippedFlowSection() {
                   <textPath href="#liveProductTextPath" startOffset="0">
                     Experience now
                   </textPath>
+                  <textPath href="#liveProductTextPath" startOffset="50%" className={styles.liveCtaTextTwin} aria-hidden="true">
+                    Experience now
+                  </textPath>
                 </text>
                 <text className={styles.liveCtaTextMobile}>
                   <textPath href="#liveProductTextPathWide" startOffset="0">
+                    Experience now
+                  </textPath>
+                  <textPath href="#liveProductTextPathWide" startOffset="50%" className={styles.liveCtaTextTwin} aria-hidden="true">
                     Experience now
                   </textPath>
                 </text>

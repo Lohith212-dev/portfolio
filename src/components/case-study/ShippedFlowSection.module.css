@@ -99,15 +99,6 @@
   color: var(--color-ink-950);
 }
 
-.helper {
-  max-width: 51rem;
-  margin: 1rem 0 0;
-  font-family: var(--font-dm);
-  font-size: var(--text-small);
-  line-height: var(--leading-subpitch);
-  color: var(--color-ink-500);
-}
-
 .toggleWrap {
   display: flex;
   justify-content: center;
@@ -1234,6 +1225,13 @@
   letter-spacing: 0.12em;
 }
 
+/* Decorative opposite-side twin: balances the curved word around the full
+   circumference so the rotating ring's visual center coincides with the
+   geometric center (the arrow's center). Kept invisible. */
+.liveCtaTextTwin {
+  fill-opacity: 0;
+}
+
 .liveCtaCluster:hover .liveCtaTextRing,
 .liveCtaCluster:focus-within .liveCtaTextRing {
   animation-play-state: paused;
@@ -1316,18 +1314,6 @@
    (r=62) variant is hidden until the ≤64rem media query swaps them. */
 .liveCtaTextMobile {
   display: none;
-}
-
-/* Demo label — surfaces the embed as an interactive demo; shown at ≤64rem. */
-.demoLabel {
-  display: none;
-  margin: 0 0 0.85rem;
-  font-family: var(--font-cabinet);
-  font-size: 1.25rem;
-  font-weight: 800;
-  line-height: 1.1;
-  letter-spacing: 0;
-  color: var(--color-ink-950);
 }
 
 @media (max-width: 64rem) {
@@ -1463,10 +1449,6 @@
     border: 1px solid var(--color-ink-100);
     border-radius: 1.5rem;
     padding: 0.85rem;
-  }
-
-  .demoLabel {
-    display: block;
   }
 }
 

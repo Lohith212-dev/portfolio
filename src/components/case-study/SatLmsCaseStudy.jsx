@@ -26,7 +26,6 @@ import CaseStudyMetricStrip from './CaseStudyMetricStrip';
 import CaseStudyOutcome from './CaseStudyOutcome';
 import CaseStudySectionHeader from './CaseStudySectionHeader';
 import CaseStudyTemplate from './CaseStudyTemplate';
-import CaseStudySecondaryNav from './CaseStudySecondaryNav';
 import CaseStudyVideoFrame from './CaseStudyVideoFrame';
 import DecisionEvidenceSection from './DecisionEvidenceSection';
 import NextCaseBridge from './NextCaseBridge';
@@ -1416,6 +1415,23 @@ function ProcessStep({ step, hideNumber = false }) {
   );
 }
 
+function CardFocusBar({ phase }) {
+  // One focus/dwell bar lives INSIDE each card of a stacked-pair artifact.
+  // The `base` bar fills 0->100 while the base card is in focus (the first part
+  // of the reveal cycle, before the overlay reveals), then hides; the `overlay`
+  // bar fills 0->100 while the overlay card is in focus, then the cycle loops.
+  // Both are phase-locked to the same 18s/-8s keyframe as the artifact reveal
+  // animations, so each card visibly runs its own 0->100 bar before the next
+  // card appears.
+  const fillClass = phase === 'overlay' ? styles.cardFocusFillOverlay : styles.cardFocusFillBase;
+
+  return (
+    <span className={styles.cardFocusBar} aria-hidden="true">
+      <span className={`${styles.cardFocusFill} ${fillClass}`} />
+    </span>
+  );
+}
+
 function ArtifactPreview({ type }) {
   if (type === 'inputTree') {
     return <InputSpecBusinessRulesStack />;
@@ -1516,10 +1532,12 @@ function SandboxRequirementArtifact() {
           <div className={`${styles.artifactBody} ${styles.sandboxArtifactBody}`}>
             <pre className={styles.sandboxTreeCode}>{sandboxFileStructureExcerpt}</pre>
           </div>
+          <CardFocusBar phase="base" />
         </div>
 
         <div className={styles.sandboxRoutingCard} aria-label="Routing setup artifact">
           <SandboxRoutingCode />
+          <CardFocusBar phase="overlay" />
         </div>
       </div>
     </div>
@@ -1599,6 +1617,7 @@ function GapAnalysisArtifact() {
             </table>
           </div>
           <span className={styles.inputSpecFocusVeil} aria-hidden="true" />
+          <CardFocusBar phase="base" />
         </div>
 
         <div className={`${styles.artifactWindow} ${styles.gapAnalysisDetailWindow}`}>
@@ -1637,6 +1656,7 @@ function GapAnalysisArtifact() {
               <li>Render each remedial as a separate card immediately after its parent activity</li>
             </ol>
           </div>
+          <CardFocusBar phase="overlay" />
         </div>
       </div>
     </div>
@@ -1689,6 +1709,7 @@ function SandboxIntegrationArtifact() {
             <p className={styles.gapAnalysisSubheading}>Integration rule:</p>
             <p className={styles.gapAnalysisMeta}>Use production tokens, follow existing component patterns, document non-obvious behavior, and test components together, not in isolation.</p>
           </div>
+          <CardFocusBar phase="base" />
         </div>
 
         <div className={`${styles.artifactWindow} ${styles.sandboxIntegrationFolderWindow}`}>
@@ -1701,6 +1722,7 @@ function SandboxIntegrationArtifact() {
               <span key={row}>{row}</span>
             ))}
           </div>
+          <CardFocusBar phase="overlay" />
         </div>
       </div>
     </div>
@@ -2131,7 +2153,7 @@ function NextCaseStudyPreview() {
 
 export default function SatLmsCaseStudy() {
   return (
-    <CaseStudyTemplate navigationLinks={caseStudyLinks} showMobileMenu={false}>
+    <CaseStudyTemplate navigationLinks={caseStudyLinks} secondaryNavLinks={caseStudyLinks}>
       <CaseStudyHero
         className={styles.heroGrid}
         eyebrow="SAT LMS"
@@ -2160,8 +2182,6 @@ export default function SatLmsCaseStudy() {
         media={<HeroVideo />}
         contentWrapper={(content) => <Reveal>{content}</Reveal>}
       />
-
-        <CaseStudySecondaryNav links={caseStudyLinks} />
 
         <section id="tldr" className={`${styles.caseStudySection} bg-surface-white px-6`}>
           <div className="mx-auto max-w-5xl">
