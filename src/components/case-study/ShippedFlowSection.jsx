@@ -26,6 +26,9 @@ import {
   getStep,
   getStepPosition,
 } from './sat-lms-demo/data/demoSteps';
+import DesktopFrame from './device-frames/DesktopFrame';
+import TabletFrame from './device-frames/TabletFrame';
+import PhoneFrame from './device-frames/PhoneFrame';
 import styles from './ShippedFlowSection.module.css';
 
 const liveProductUrl = 'https://prismlearning.academy/sat/prep/course/sentence_foundations';
@@ -73,6 +76,23 @@ function DemoGuideIcon({ className = '' }) {
   );
 }
 
+// Liquid-glass device frames replace the old Mac-PNG (desktop) and CSS chrome
+// (tablet/mobile). The embedded demo is responsive, so each breakpoint shows
+// the matching device: desktop monitor / tablet / phone. Widths are capped per
+// device and otherwise fill the available container width.
+const FRAME_CAP = { desktop: 1040, tablet: 560, phone: 380 };
+const FRAME_FALLBACK = { desktop: 960, tablet: 520, phone: 340 };
+
+function DeviceFrame({ kind, width, className, children }) {
+  if (kind === 'tablet') {
+    return <TabletFrame width={width} className={className}>{children}</TabletFrame>;
+  }
+  if (kind === 'phone') {
+    return <PhoneFrame width={width} className={className}>{children}</PhoneFrame>;
+  }
+  return <DesktopFrame width={width} showStand className={className}>{children}</DesktopFrame>;
+}
+
 export default function ShippedFlowSection() {
   const [activeTab, setActiveTab] = useState('demo');
   const [isDemoFullscreen, setIsDemoFullscreen] = useState(false);
@@ -91,6 +111,42 @@ export default function ShippedFlowSection() {
   const demoViewportRef = useRef(null);
   const pageScrollTopRef = useRef(0);
   const resizeCleanupRef = useRef(null);
+  const stageShellRef = useRef(null);
+  const [shellWidth, setShellWidth] = useState(0);
+  const [deviceKind, setDeviceKind] = useState('desktop');
+
+  // Track the available width so the device frame fills its container (capped).
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+    const node = stageShellRef.current;
+    if (!node) return undefined;
+    const update = () => setShellWidth(node.clientWidth);
+    update();
+    if (typeof ResizeObserver === 'undefined') {
+      window.addEventListener('resize', update);
+      return () => window.removeEventListener('resize', update);
+    }
+    const observer = new ResizeObserver(update);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  // Pick the device frame to match the breakpoint (the demo is responsive).
+  useEffect(() => {
+    if (typeof window === 'undefined') return undefined;
+    const mqDesktop = window.matchMedia('(min-width: 1024px)');
+    const mqTablet = window.matchMedia('(min-width: 768px) and (max-width: 1023.98px)');
+    const update = () => {
+      setDeviceKind(mqDesktop.matches ? 'desktop' : mqTablet.matches ? 'tablet' : 'phone');
+    };
+    update();
+    mqDesktop.addEventListener('change', update);
+    mqTablet.addEventListener('change', update);
+    return () => {
+      mqDesktop.removeEventListener('change', update);
+      mqTablet.removeEventListener('change', update);
+    };
+  }, []);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
@@ -266,6 +322,9 @@ export default function ShippedFlowSection() {
   const shouldBreakout = activeTab === 'demo' && isGuideOpen && !isDemoFullscreen;
   const showGuideAlongsideFullscreen = activeTab === 'demo' && isDemoFullscreen && isGuideOpen;
   const showStageControlDock = activeTab === 'demo' && !isGuideOpen;
+  const frameWidth = shellWidth > 0
+    ? Math.min(shellWidth, FRAME_CAP[deviceKind])
+    : FRAME_FALLBACK[deviceKind];
 
   const renderControlDock = (position) => (
     <div
@@ -490,10 +549,11 @@ export default function ShippedFlowSection() {
 
         <div className={`${styles.panel} ${shouldBreakout ? styles.panelBreakout : ''}`}>
           <div className={`${styles.demoLayout} ${shouldBreakout ? styles.demoLayoutGuideOpen : ''}`}>
-            <div className={styles.demoStageShell}>
-              <div ref={demoStageRef} className={styles.demoStage}>
+            <div ref={stageShellRef} className={styles.demoStageShell}>
+              <div ref={demoStageRef} className={styles.demoStageOuter}>
                 {showStageControlDock ? renderControlDock('stage') : null}
 
+                <DeviceFrame kind={deviceKind} width={frameWidth} className={styles.deviceFrame}>
                 <div
                   ref={demoViewportRef}
                   className={`${styles.demoViewport} ${activeTab === 'demo' ? styles.demoViewportInteractive : ''}`}
@@ -591,16 +651,7 @@ export default function ShippedFlowSection() {
                     </div>
                   )}
                 </div>
-
-                <Image
-                  src="/images/case-studies/sat-lms/shipped-flow-mac-frame.png"
-                  alt=""
-                  fill
-                  unoptimized
-                  sizes="(min-width: 1280px) 1120px, 120vw"
-                  className={styles.frameImage}
-                  aria-hidden="true"
-                />
+                </DeviceFrame>
               </div>
             </div>
 

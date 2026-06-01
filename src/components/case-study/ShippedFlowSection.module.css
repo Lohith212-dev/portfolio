@@ -206,13 +206,18 @@
   flex: 1 1 auto;
 }
 
-.demoStage {
+/* Wrapper around the liquid-glass device frame. Holds demoStageRef (used for
+   guide-panel metrics) and the floating control dock. */
+.demoStageOuter {
   position: relative;
-  width: min(100%, 69.5rem);
+  display: inline-flex;
+  max-width: 100%;
   margin-inline: auto;
-  aspect-ratio: 1121 / 757;
-  overflow: visible;
   flex: 0 1 auto;
+}
+
+.deviceFrame {
+  max-width: 100%;
 }
 
 .demoControlButton,
@@ -237,8 +242,9 @@
 }
 
 .controlDockAttachedToStage {
-  right: 0;
-  transform: translateX(100%);
+  top: 1rem;
+  right: 1rem;
+  transform: none;
 }
 
 .controlDockAttachedToFullscreen {
@@ -281,14 +287,14 @@
   outline-offset: 3px;
 }
 
+/* Fills the device frame's screen area; the frame provides the bezel + rounding. */
 .demoViewport {
-  position: absolute;
-  inset: 1.05% 0.72% 13.4%;
+  position: relative;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   overflow: hidden;
-  border-radius: clamp(1.35rem, 3vw, 2.45rem);
   background-color: var(--color-surface-white);
-  box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--color-surface-white) 80%, transparent);
   isolation: isolate;
 }
 
@@ -688,12 +694,6 @@
 
 .guideSubstep:not(.guideSubstepActive):not(.guideSubstepDone) .guideSubstepTitleButton {
   color: var(--color-ink-300);
-}
-
-.frameImage {
-  z-index: 2;
-  pointer-events: none;
-  object-fit: contain;
 }
 
 .mockApp {
@@ -1323,63 +1323,6 @@
     gap: 0.85rem;
   }
 
-  /* Pass 3: drop the laptop mockup frame on mobile/tablet, enlarge the embed,
-     and wrap it in a simple rounded device chrome with a minimal top bar. The
-     old 124vw/150vw bleed was the page's horizontal-overflow culprit. */
-  .demoStage {
-    width: 100%;
-    margin-inline: 0;
-    aspect-ratio: auto;
-    height: min(80vh, 42rem);
-    padding-block-start: 2.25rem; /* room for the chrome top bar */
-    border: 1px solid var(--color-ink-100);
-    border-radius: 1.25rem;
-    overflow: hidden;
-    background-color: var(--color-surface-white);
-    box-shadow: 0 1.25rem 3rem color-mix(in srgb, var(--color-ink-950) 12%, transparent);
-  }
-
-  .demoStage::before {
-    content: "";
-    position: absolute;
-    inset-block-start: 0;
-    inset-inline: 0;
-    height: 2.25rem;
-    background-color: var(--color-surface-light);
-    border-block-end: 1px solid var(--color-ink-100);
-    z-index: 3;
-  }
-
-  .demoStage::after {
-    content: "";
-    position: absolute;
-    inset-block-start: 0.9rem;
-    inset-inline-start: 1rem;
-    width: 0.5rem;
-    height: 0.5rem;
-    border-radius: 9999px;
-    background-color: var(--color-ink-300);
-    box-shadow:
-      0.75rem 0 0 var(--color-ink-300),
-      1.5rem 0 0 var(--color-ink-300);
-    z-index: 4;
-  }
-
-  .frameImage {
-    display: none;
-  }
-
-  .demoViewport {
-    inset: 2.25rem 0 0 0;
-    border-radius: 0;
-    box-shadow: none;
-  }
-
-  .controlDockAttachedToStage {
-    right: 0.75rem;
-    transform: none;
-  }
-
   .normalGuideShell .guidePanel {
     height: auto;
     max-height: none;
@@ -1442,13 +1385,11 @@
     display: none;
   }
 
-  /* Product demo (Pass 4): make the demo a visually distinct surface with a
-     gutter so edge swipes scroll the page, not the demo's inner scroll. */
+  /* Product demo: a little horizontal gutter so edge swipes scroll the page,
+     not the demo's inner scroll. The device frame itself now provides the
+     visual distinctness (it sits over the sky background). */
   .panel {
-    background-color: var(--color-surface-light);
-    border: 1px solid var(--color-ink-100);
-    border-radius: 1.5rem;
-    padding: 0.85rem;
+    padding-inline: 0.5rem;
   }
 }
 
@@ -1473,12 +1414,6 @@
   .demoLayoutGuideOpen {
     display: grid;
     grid-template-columns: 1fr;
-  }
-
-  /* keep the full-width device chrome from the ≤64rem block; just trim the
-     height a touch for phones */
-  .demoStage {
-    height: min(78vh, 38rem);
   }
 
   .controlDockAttachedToFullscreen {
