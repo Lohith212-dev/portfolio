@@ -13,7 +13,7 @@ import DecisionEvidenceSection from './DecisionEvidenceSection';
 import NextCaseBridge from './NextCaseBridge';
 import ProcessTrail from './ProcessTrail';
 import Tooltip from '../shared/Tooltip';
-import lmsStyles from './SatLmsCaseStudy.module.css';
+import lmsStyles from './SatLmsCaseStudy/SatLmsCaseStudy.module.css';
 import styles from './SparkPresenterCaseStudy.module.css';
 
 const liveActivityUrl = '';
