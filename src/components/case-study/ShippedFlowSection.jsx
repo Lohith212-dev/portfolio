@@ -80,8 +80,8 @@ function DemoGuideIcon({ className = '' }) {
 // (tablet/mobile). The embedded demo is responsive, so each breakpoint shows
 // the matching device: desktop monitor / tablet / phone. Widths are capped per
 // device and otherwise fill the available container width.
-const FRAME_CAP = { desktop: 1040, tablet: 560, phone: 380 };
-const FRAME_FALLBACK = { desktop: 960, tablet: 520, phone: 340 };
+const FRAME_CAP = { desktop: 1040, tablet: 560, phone: 290 };
+const FRAME_FALLBACK = { desktop: 960, tablet: 520, phone: 270 };
 
 function DeviceFrame({ kind, width, className, children }) {
   if (kind === 'tablet') {
