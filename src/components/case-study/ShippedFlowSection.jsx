@@ -340,19 +340,19 @@ export default function ShippedFlowSection() {
     >
       <button
         type="button"
-        className={`${styles.demoControlButton} ${styles.demoControlButtonGuide} ${isGuideOpen ? styles.demoControlButtonActive : ''}`}
-        aria-label={isGuideOpen ? 'Hide guide' : 'Show guide'}
-        onClick={handleGuideToggle}
-      >
-        <DemoGuideIcon />
-      </button>
-      <button
-        type="button"
         className={styles.demoControlButton}
         aria-label={isDemoFullscreen ? 'Exit fullscreen' : 'View fullscreen'}
         onClick={toggleDemoFullscreen}
       >
         {isDemoFullscreen ? <VideoExitFullscreenIcon /> : <VideoEnterFullscreenIcon />}
+      </button>
+      <button
+        type="button"
+        className={`${styles.demoControlButton} ${styles.demoControlButtonGuide} ${isGuideOpen ? styles.demoControlButtonActive : ''}`}
+        aria-label={isGuideOpen ? 'Hide guide' : 'Show guide'}
+        onClick={handleGuideToggle}
+      >
+        <DemoGuideIcon />
       </button>
     </div>
   );

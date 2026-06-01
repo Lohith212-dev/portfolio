@@ -241,10 +241,25 @@
   gap: 0.5rem;
 }
 
+/* Mobile: dock sits inside the frame (no room outside). */
 .controlDockAttachedToStage {
   top: 1rem;
   right: 1rem;
   transform: none;
+}
+
+/* Desktop + tablet: the control buttons float just outside the frame's right
+   edge — tabbed onto it like sticky notes (flush/straight on the left, rounded
+   on the right). No frame width is reserved; the buttons overhang outward. */
+@media (min-width: 48rem) {
+  .controlDockAttachedToStage {
+    left: 100%;
+    right: auto;
+  }
+
+  .controlDockAttachedToStage .demoControlButton {
+    border-radius: 0 0.8rem 0.8rem 0;
+  }
 }
 
 .controlDockAttachedToFullscreen {
