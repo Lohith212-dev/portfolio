@@ -20,7 +20,7 @@ import {
 import ActivitySidebarDemo from './supporting-graphics/design-iteration-artifacts/ActivitySidebarDemo';
 import R2RemedialRowDesign from './supporting-graphics/design-iteration-artifacts/R2RemedialRowDesign';
 import R6DualPlacementDesign from './supporting-graphics/design-iteration-artifacts/R6DualPlacementDesign';
-import StickyPhaseNumbers from '../shared/StickyPhaseNumbers/StickyPhaseNumbers';
+import StickyPhaseNumbers from '../shared/StickyPhaseNumbers';
 import CaseStudyHero from './CaseStudyHero';
 import CaseStudyMetricStrip from './CaseStudyMetricStrip';
 import CaseStudyOutcome from './CaseStudyOutcome';

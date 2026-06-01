@@ -1,8 +1,8 @@
 import { useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
-import Tooltip from '../../shared/Tooltip';
-import { useTheme } from '../../shared/ThemeContext';
+import Tooltip from '../Tooltip';
+import { useTheme } from '../ThemeContext';
 import {
   NavIconWork,
   NavIconSkills,

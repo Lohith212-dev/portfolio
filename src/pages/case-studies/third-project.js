@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import Navigation from '../../components/sections/Navigation/Navigation';
+import Navigation from '../../components/shared/Navigation';
 
 export default function ThirdProjectCaseStudy() {
   return (

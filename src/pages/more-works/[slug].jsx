@@ -1,6 +1,6 @@
 import MetaTags from '../../components/shared/MetaTags';
-import Navigation from '../../components/sections/Navigation/Navigation';
-import Footer from '../../components/sections/Footer/Footer';
+import Navigation from '../../components/shared/Navigation';
+import Footer from '../../components/shared/Footer';
 import ShowcaseTemplate from '../../components/sections/MoreFromDesk/ShowcaseTemplate';
 import {
   getMoreWorkBySlug,
@@ -9,7 +9,7 @@ import {
   getMoreWorkLaneCards,
 } from '../../components/sections/MoreFromDesk/moreWorksData';
 
-export default function MoreWorkDetailPage({ item }) {
+export default function MoreWorkPage({ item }) {
   const detail = getMoreWorkDetailContent(item);
   const laneProjects = getMoreWorkLaneCards(item.laneId);
   const leanPageLinks = detail.websiteNavLinks?.length

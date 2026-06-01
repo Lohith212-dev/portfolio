@@ -1,4 +1,4 @@
-import InfoIcon from '../InfoIcon';
+import { InfoIcon } from '../../../icons/icons';
 import styles from './ShowcaseHero.module.css';
 
 export default function ShowcaseHero({ title, note, summary }) {

@@ -1,6 +1,6 @@
-import Footer from '../sections/Footer/Footer';
-import Navigation from '../sections/Navigation/Navigation';
-import BackToTopPill from '../shared/BackToTopPill/BackToTopPill';
+import Footer from '../shared/Footer';
+import Navigation from '../shared/Navigation';
+import BackToTopPill from '../shared/BackToTopPill';
 import CaseStudySecondaryNav from './CaseStudySecondaryNav';
 
 export default function CaseStudyPageShell({

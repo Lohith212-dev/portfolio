@@ -13,7 +13,7 @@ import {
   EyeRevealIcon,
   JourneyFlowIcon,
 } from '../../icons/icons';
-import StickyPhaseNumbers from '../../shared/StickyPhaseNumbers/StickyPhaseNumbers';
+import StickyPhaseNumbers from '../../shared/StickyPhaseNumbers';
 import styles from './DesignForge.module.css';
 
 const steps = [

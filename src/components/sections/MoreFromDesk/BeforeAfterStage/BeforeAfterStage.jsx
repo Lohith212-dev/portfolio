@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import {
+  InfoIcon,
   VideoPauseIcon,
   VideoEnterFullscreenIcon,
   VideoExitFullscreenIcon,
   VideoPlayIcon,
 } from '../../../icons/icons';
-import InfoIcon from '../InfoIcon';
 import ScrollingScreenshot from '../ScrollingScreenshot';
 import styles from './BeforeAfterStage.module.css';
 

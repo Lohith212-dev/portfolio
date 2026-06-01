@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { FooterDownloadIcon, FooterLinkedInIcon, FooterMailIcon } from '../../icons/icons';
-import BackToTopPill from '../../shared/BackToTopPill/BackToTopPill';
+import BackToTopPill from '../BackToTopPill';
 import styles from './Footer.module.css';
 
 const LINKEDIN_URL = 'https://www.linkedin.com/in/lohith-savala';
