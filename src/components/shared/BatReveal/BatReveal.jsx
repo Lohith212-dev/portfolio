@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react';
 import { motion } from 'motion/react';
-import { useTheme } from './ThemeContext';
-import { Bat } from '../icons/icons';
+import { useTheme } from '../ThemeContext';
+import { Bat } from '../../icons/icons';
 import styles from './BatReveal.module.css';
 
 const BAT_COUNT = 80;

@@ -1,6 +1,6 @@
 import { useState, useMemo, useCallback } from 'react';
 import { motion, useReducedMotion } from 'motion/react';
-import styles from './Skills.module.css';
+import styles from '../Skills.module.css';
 
 /**
  * MobileToolkitMagnetism (Pass 3 — Bento layout)

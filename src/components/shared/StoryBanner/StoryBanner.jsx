@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useTheme } from './ThemeContext';
+import { useTheme } from '../ThemeContext';
 import styles from './StoryBanner.module.css';
 
 const AUTO_DISMISS_MS = 3600;
