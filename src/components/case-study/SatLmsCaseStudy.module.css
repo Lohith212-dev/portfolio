@@ -2038,34 +2038,52 @@
   animation: cardBarFillCD 18s ease-in-out infinite both;
 }
 
+/* Each bar is visible + filling ONLY during its own card's front window (the
+   span where that card is the topmost/focused one), then fades out before the
+   next card reveals. Without the opacity gate a bar would reach scaleX(1) and
+   sit there full — visible the whole rest of the cycle since the next card
+   doesn't cover the previous card's bottom edge — reading as "stuck full".
+   Front windows: A 0-16% (base), B 16-44%, C 44-72%, D 72-94% (4-card);
+   CD 44-94% (last card of a 3-card stack). */
 @keyframes cardBarFillA {
-  0% { transform: scaleX(0); }
-  15% { transform: scaleX(1); }
-  100% { transform: scaleX(1); }
+  0% { opacity: 1; transform: scaleX(0); }
+  15% { opacity: 1; transform: scaleX(1); }
+  16% { opacity: 1; transform: scaleX(1); }
+  18%, 96% { opacity: 0; transform: scaleX(1); }
+  99% { opacity: 0; transform: scaleX(0); }
+  100% { opacity: 1; transform: scaleX(0); }
 }
 
 @keyframes cardBarFillB {
-  0%, 16% { transform: scaleX(0); }
-  43% { transform: scaleX(1); }
-  100% { transform: scaleX(1); }
+  0%, 15% { opacity: 0; transform: scaleX(0); }
+  16% { opacity: 1; transform: scaleX(0); }
+  43% { opacity: 1; transform: scaleX(1); }
+  44% { opacity: 1; transform: scaleX(1); }
+  46%, 100% { opacity: 0; transform: scaleX(1); }
 }
 
 @keyframes cardBarFillC {
-  0%, 44% { transform: scaleX(0); }
-  71% { transform: scaleX(1); }
-  100% { transform: scaleX(1); }
+  0%, 43% { opacity: 0; transform: scaleX(0); }
+  44% { opacity: 1; transform: scaleX(0); }
+  71% { opacity: 1; transform: scaleX(1); }
+  72% { opacity: 1; transform: scaleX(1); }
+  74%, 100% { opacity: 0; transform: scaleX(1); }
 }
 
 @keyframes cardBarFillD {
-  0%, 72% { transform: scaleX(0); }
-  93% { transform: scaleX(1); }
-  100% { transform: scaleX(1); }
+  0%, 71% { opacity: 0; transform: scaleX(0); }
+  72% { opacity: 1; transform: scaleX(0); }
+  93% { opacity: 1; transform: scaleX(1); }
+  94% { opacity: 1; transform: scaleX(1); }
+  96%, 100% { opacity: 0; transform: scaleX(1); }
 }
 
 @keyframes cardBarFillCD {
-  0%, 44% { transform: scaleX(0); }
-  92% { transform: scaleX(1); }
-  100% { transform: scaleX(1); }
+  0%, 43% { opacity: 0; transform: scaleX(0); }
+  44% { opacity: 1; transform: scaleX(0); }
+  92% { opacity: 1; transform: scaleX(1); }
+  94% { opacity: 1; transform: scaleX(1); }
+  96%, 100% { opacity: 0; transform: scaleX(1); }
 }
 
 .cardFocusFillBase {
