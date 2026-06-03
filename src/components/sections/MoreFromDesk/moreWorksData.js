@@ -995,6 +995,10 @@ export function getMoreWorkDetailContent(item) {
     contribution: details.contribution || '',
     tools: details.tools || [],
     embedUrl: item.embedUrl || details.embedUrl || '',
+    // Handwritten "live embed" annotation pointing at the preview frame.
+    // Defaults to 'live embed' when an embed exists; set details.liveBadge to a
+    // custom string, or to false, when the embed is not a live product.
+    liveBadge: details.liveBadge ?? ((item.embedUrl || details.embedUrl) ? 'live embed' : null),
     externalUrl: item.externalUrl || details.externalUrl || '',
     overviewCard: details.overviewCard || null,
     notesCard: details.notesCard || null,

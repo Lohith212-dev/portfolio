@@ -1102,6 +1102,24 @@ export function SquiggleArrow({ className = '', color = '#000000' }) {
   );
 }
 
+export function LiveEmbedArrow({ className = '', color = 'currentColor' }) {
+  return (
+    <svg
+      height="156"
+      viewBox="0 0 156 156"
+      width="156"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <g fill={color}>
+        <path d="m99 32.11c-25.22-10.36-50.8 2-62.67 25.2-12.08 23.62-10.59 54.9 2.06 77.91 2.64 4.79 9.33.59 7.19-4.2-9.34-20.93-11.15-45.7-2-67a47.94 47.94 0 0 1 19.26-22.3c11.25-6.91 23-5.86 35.47-4.79 3 .26 2.99-3.86.69-4.82z" />
+        <path d="m126.56 36.18c-10.17-6.91-21-15.32-33.42-17.48a1.75 1.75 0 0 0 -.93 3.37c10.44 4.1 19.32 10.16 28.2 16.77-5.64 4.49-12.15 8.18-17 13.46a2.71 2.71 0 0 0 3.27 4.23 92.87 92.87 0 0 0 20.44-15.75 3 3 0 0 0 -.56-4.6z" />
+      </g>
+    </svg>
+  );
+}
+
 export function WhiteSwirlyArrow({ className = '', color = '#ffffff' }) {
   return (
     <svg

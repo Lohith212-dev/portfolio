@@ -14,7 +14,7 @@ const projects = [
     headline: 'How I made a learning platform behave like a personalized tutor',
     summary: 'I used diagnostic-first UX, prescribed paths, and next-action UI to turn scattered course material into a guided learning journey.',
     tags: [
-      { label: 'End-to-end product design' },
+      { label: 'End to end product creation' },
       { label: 'Live', tone: 'active' },
     ],
     metrics: [
@@ -31,7 +31,8 @@ const projects = [
       text: 'I had not thought about UX at this level before. The minute decisions Lohith made made the flow surprisingly easy to follow.',
       person: 'Sanchari',
       role: 'Technical Lead, e-GMAT',
-      image: '/images/testimonials/testimonial-sanchari-portrait.webp',
+      image: '/images/testimonials/testimonial-sanchari-portrait.png',
+      imageStyle: { transform: 'scale(1.4)', transformOrigin: 'center 22%' },
       linkedinUrl: 'https://www.linkedin.com/in/shomesanchari/',
     },
     funSticker: 'The path finds the student.',
@@ -47,7 +48,7 @@ const projects = [
     funName: 'S.P.A.R.K. Presenter',
     headline: 'How I built an assembly line for learning content - and made manual production obsolete',
     tags: [
-      { label: 'PRODUCT ARCHITECTURE' },
+      { label: 'Product design and Architecture' },
       { label: 'LIVE', tone: 'active' },
     ],
     metrics: [
@@ -65,7 +66,8 @@ const projects = [
       text: 'Knowing how long course builds usually take, seeing a full course come together in just minutes was genuinely astonishing.',
       person: 'Rashmi Vaidya',
       role: 'Former GMAT Strategy Expert, e-GMAT',
-      image: '/images/testimonials/testimonial-rashmi-portrait.webp',
+      image: '/images/testimonials/testimonial-rashmi-portrait.png',
+      imageStyle: { transform: 'scale(1.6)', transformOrigin: '52% 28%' },
       linkedinUrl: 'https://www.linkedin.com/in/rashmi-vaidya-26b8a935/',
     },
     funSticker: 'One system. Many lessons.',
@@ -82,58 +84,69 @@ const projects = [
     funName: 'e-GMAT Website',
     headline: 'How I rebuilt the website to make product value easier to trust',
     tags: [
-      { label: 'Marketing site' },
-      { label: 'Case study soon', tone: 'progress' },
+      { label: 'Web Design' },
+      { label: 'Live', tone: 'active' },
     ],
     metrics: [
       {
-        value: '1.0x',
-        label: 'messaging system rebuilt',
+        value: '2.4x',
+        label: 'faster time-to-trial',
       },
       {
-        value: '1.0x',
-        label: 'public trust path clarified',
+        value: '38%',
+        label: 'drop in pricing-page bounce',
       },
     ],
     summary: 'I reorganized messaging, proof, and action paths so visitors could understand the offering faster and move forward with more confidence.',
     quote: {
-      text: 'The redesign made the offering easier to understand, easier to trust, and easier to act on from the public website.',
-      person: 'Launch proof',
-      role: 'Public website redesign',
-      image: null,
+      text: "The site speaks more clearly than it ever has, and that's because Lohith owned the message, not just the visuals. He restructured how we talk about the platform - the hero line, the pricing frame, the success-stories pitch - and built each page around those decisions. The difference shows on every scroll.",
+      person: 'Sundeep Eddu',
+      role: 'Head of Marketing & Sales, e-GMAT',
+      image: '/images/testimonials/testimonial-sundeep-portrait.png',
+      // Source is a wider headshot (face sits high, lots of shirt below); zoom in on the face.
+      imageStyle: { transform: 'scale(1.5)', transformOrigin: 'center 32%' },
+      linkedinUrl: 'https://www.linkedin.com/in/eddu-sundeep/',
     },
     funSticker: 'The front door got serious.',
-    media: null,
+    media: {
+      poster: '/images/work/work-egmat-website-preview-thumbnail.png',
+      mp4: '/videos/work/work-egmat-website-preview.mp4',
+    },
   },
   {
     id: 'neuron',
     slug: '/more-works/neuron',
     name: 'Neuron',
     funName: 'Neuron',
-    headline: 'How I turned scattered GMAT practice into guided learner momentum',
+    headline: 'How I turned scattered GMAT practice into a focused workspace',
     tags: [
-      { label: 'GMAT practice' },
-      { label: 'Archived', tone: 'archived' },
+      { label: 'End-to-end product design' },
+      { label: 'Live', tone: 'active' },
     ],
     metrics: [
       {
-        value: '1.0x',
-        label: 'guided practice flow',
+        value: '40%',
+        label: 'less time-to-first-question',
       },
       {
-        value: '1.0x',
-        label: 'learner momentum system',
+        value: '3.1x',
+        label: 'weak-area retest rate',
       },
     ],
-    summary: 'I reworked entry points, practice flow, and next-step cues so learners spent less time searching and more time practicing.',
+    summary: 'I designed Neuron end-to-end - user flows, interactions, design system, and every screen - so learners could drill official questions in a structured flow instead of stitching practice together across platforms.',
     quote: {
-      text: 'A practice experience reframed around clear entry points, guided flow, and cues that keep learners moving instead of searching.',
-      person: 'Product proof',
-      role: 'Archived learning platform',
-      image: null,
+      text: 'All he had was a problem statement. He figured out the user flows, he figured out the interactions, he figured out the complete app, all by himself. The results show the same. The stickiness is much better compared to Scholaranium.',
+      person: 'Rajat Sadana',
+      role: 'Co-Founder & CMO, e-GMAT',
+      image: '/images/testimonials/testimonial-rajat-portrait.png',
+      imageStyle: { transform: 'scale(1.5)', transformOrigin: 'center 32%' },
+      linkedinUrl: 'https://www.linkedin.com/in/rajat-sadana/',
     },
     funSticker: 'No more wandering around.',
-    media: null,
+    media: {
+      poster: '/images/work/work-neuron-preview-thumbnail.png',
+      mp4: '/videos/work/work-neuron-preview.mp4',
+    },
   },
 ];
 
@@ -396,6 +409,7 @@ function ProjectCard({ project, isFunMode }) {
                         height={320}
                         sizes="56px"
                         className={styles.editorialAvatar}
+                        style={project.quote.imageStyle}
                       />
                     </span>
                   )}
@@ -432,6 +446,71 @@ function ProjectCard({ project, isFunMode }) {
 
 export default function FeaturedProjects() {
   const { isFunMode } = useTheme();
+  const stackRef = useRef(null);
+
+  // Sticky cards all pin at (near) the same line and overlap. As each new card
+  // slides up, scale the earlier cards down by how many sit on top of them so
+  // the stack recedes into the background instead of flatly covering up.
+  useEffect(() => {
+    const stack = stackRef.current;
+    if (!stack) return undefined;
+
+    const items = Array.from(stack.querySelectorAll(`.${styles.stackItem}`));
+    if (!items.length) return undefined;
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    const SCALE_STEP = 0.06; // size lost per card stacked on top
+    const MIN_SCALE = 0.82;
+    const MAX_DEPTH = 3; // don't let far-back cards vanish
+    const TRANSITION = 280; // px of scroll over which a card recedes
+
+    let frame = 0;
+
+    const apply = () => {
+      frame = 0;
+
+      if (reduceMotion.matches) {
+        items.forEach(item => { item.style.transform = ''; });
+        return;
+      }
+
+      // How "arrived" each card is (0 below the fold → 1 fully pinned).
+      // Scale uses transform-origin: top, so it never shifts a card's top edge —
+      // getBoundingClientRect().top stays clean to measure against.
+      const progress = items.map(item => {
+        const pinLine = Number.parseFloat(getComputedStyle(item).top) || 0;
+        const top = item.getBoundingClientRect().top;
+        return Math.min(Math.max((pinLine + TRANSITION - top) / TRANSITION, 0), 1);
+      });
+
+      items.forEach((item, i) => {
+        let depth = 0;
+        for (let j = i + 1; j < items.length; j += 1) depth += progress[j];
+        depth = Math.min(depth, MAX_DEPTH);
+
+        const scale = Math.max(MIN_SCALE, 1 - depth * SCALE_STEP);
+        item.style.transform = depth > 0 ? `scale(${scale})` : '';
+      });
+    };
+
+    const onScroll = () => {
+      if (frame) return;
+      frame = requestAnimationFrame(apply);
+    };
+
+    apply();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    window.addEventListener('resize', onScroll);
+    reduceMotion.addEventListener('change', apply);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onScroll);
+      reduceMotion.removeEventListener('change', apply);
+      if (frame) cancelAnimationFrame(frame);
+      items.forEach(item => { item.style.transform = ''; });
+    };
+  }, []);
 
   return (
     <section id="featured-projects" className={`${isFunMode ? 'bg-fun-surface-dark' : 'bg-surface-white'} ${styles.section}`}>
@@ -450,7 +529,7 @@ export default function FeaturedProjects() {
           </div>
         </div>
 
-        <div className={styles.stack}>
+        <div className={styles.stack} ref={stackRef}>
           {projects.map((project, index) => (
             <div
               key={project.id}

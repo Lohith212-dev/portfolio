@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import { ChevronRight } from '../../../icons/icons';
 import MoreWorkEmbedModal from '../MoreWorkEmbedModal';
 import ShowcaseHero from '../ShowcaseHero';
@@ -43,6 +44,7 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
   const comingSoonNote = detail.heroNote || 'This is just a display page and the full case study is coming soon.';
   const [activeEmbedModal, setActiveEmbedModal] = useState(null);
 
+  const hasEmbed = Boolean(detail.embedUrl);
   const hasPreview = Boolean(detail.embedUrl || screenshots?.length);
 
   const sectionOrder = [
@@ -57,21 +59,50 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
 
   return (
     <main className={styles.page}>
-      <section className={styles.hero}>
-        <ShowcaseHero title={detail.title} note={comingSoonNote} summary={summary} />
-      </section>
-
-      {hasPreview ? (
-        <section id="website-preview" className={styles.previewSection}>
-          <WorkPreview
-            title={detail.previewTitle || detail.title}
-            embedUrl={detail.embedUrl}
-            screenshots={screenshots}
-            walkthroughNote={walkthroughNote}
-            onOpenWalkthrough={setActiveEmbedModal}
+      {hasEmbed ? (
+        <section id="website-preview" className={styles.heroBand}>
+          <Image
+            src="/images/case-studies/sat-lms/shipped-flow-sky-background.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className={styles.skyImage}
+            aria-hidden="true"
           />
+          <div className={styles.skyWash} aria-hidden="true" />
+          <div className={styles.skySheen} aria-hidden="true" />
+          <div className={styles.skyGlow} aria-hidden="true" />
+
+          <div className={styles.heroBandInner}>
+            <ShowcaseHero title={detail.title} note={comingSoonNote} summary={summary} />
+            <WorkPreview
+              title={detail.previewTitle || detail.title}
+              embedUrl={detail.embedUrl}
+              liveBadge={detail.liveBadge}
+              walkthroughNote={walkthroughNote}
+              onOpenWalkthrough={setActiveEmbedModal}
+            />
+          </div>
         </section>
-      ) : null}
+      ) : (
+        <>
+          <section className={styles.hero}>
+            <ShowcaseHero title={detail.title} note={comingSoonNote} summary={summary} />
+          </section>
+
+          {hasPreview ? (
+            <section id="website-preview" className={styles.previewSection}>
+              <WorkPreview
+                title={detail.previewTitle || detail.title}
+                embedUrl={detail.embedUrl}
+                screenshots={screenshots}
+                walkthroughNote={walkthroughNote}
+                onOpenWalkthrough={setActiveEmbedModal}
+              />
+            </section>
+          ) : null}
+        </>
+      )}
 
       <div className={styles.bodyShell}>
         <div className={styles.contentColumn}>

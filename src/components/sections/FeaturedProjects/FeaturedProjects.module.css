@@ -8,6 +8,7 @@
   --work-stack-gap: clamp(6rem, 12vw, 10rem);
   --work-stack-gap-mobile: clamp(3rem, 8vw, 4.5rem);
   --work-stack-exit-space: clamp(0.75rem, 2vw, 1.5rem);
+  --work-stack-peek: 1.5rem;
   --work-sticky-top: clamp(5rem, 8vw, 7rem);
   --work-card-border: 0.0625rem;
   --work-card-lift: -0.375rem;
@@ -95,7 +96,11 @@
 
 .stackItem {
   position: sticky;
-  top: var(--work-sticky-top);
+  /* Each successive card pins a touch lower so the earlier cards' top edges
+     peek above it — the visible "deck". JS layers a depth-based scale on top. */
+  top: calc(var(--work-sticky-top) + var(--stack-index, 0) * var(--work-stack-peek));
+  transform-origin: center top;
+  will-change: transform;
 }
 
 .mobileCaseLink {
@@ -136,12 +141,18 @@
 
 .cardEditorialNormal {
   background: var(--color-surface-white);
-  box-shadow: 0 1rem 3rem color-mix(in srgb, var(--color-ink-950) 8%, transparent);
+  /* Upward-cast shadow separates the covering card from the one peeking above it
+     as the stack recedes; the larger downward shadow grounds the card. */
+  box-shadow:
+    0 -0.5rem 1.25rem color-mix(in srgb, var(--color-ink-950) 5%, transparent),
+    0 1rem 3rem color-mix(in srgb, var(--color-ink-950) 8%, transparent);
 }
 
 .cardEditorialFun {
   background: var(--color-fun-surface-black);
-  box-shadow: 0 1rem 3rem color-mix(in srgb, var(--color-fun-surface-black) 38%, transparent);
+  box-shadow:
+    0 -0.5rem 1.25rem color-mix(in srgb, var(--color-fun-surface-black) 28%, transparent),
+    0 1rem 3rem color-mix(in srgb, var(--color-fun-surface-black) 38%, transparent);
 }
 
 .card:hover,
@@ -553,7 +564,7 @@
 
 @media (max-width: 1099px) {
   .stackItem {
-    top: clamp(5rem, 8vw, 6rem);
+    top: calc(clamp(5rem, 8vw, 6rem) + var(--stack-index, 0) * var(--work-stack-peek));
   }
 
   .card {

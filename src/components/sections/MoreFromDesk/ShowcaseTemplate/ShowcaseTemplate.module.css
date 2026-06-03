@@ -3,6 +3,9 @@
   padding: clamp(7rem, 10vw, 8.5rem) 1.5rem clamp(5rem, 9vw, 7rem);
   background: var(--color-surface-white);
   color: var(--color-ink-950);
+  /* Guard the full-bleed hero band's 100vw breakout against a stray
+     horizontal scrollbar (clip, not hidden, so nothing sticky is trapped). */
+  overflow-x: clip;
 }
 
 .hero,
@@ -10,6 +13,111 @@
 .bodyShell {
   width: min(100%, 64rem);
   margin: 0 auto;
+}
+
+/* ---- Full-bleed sky hero band (live-embed pages) ----
+   Matches the LMS product-demo section background so the liquid-glass device
+   frame reads as glass: it refracts the colourful, moving sky behind it. */
+.heroBand {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  width: 100vw;
+  margin-inline: calc(50% - 50vw);
+  /* Pull up to eat the page's top padding so the sky reaches the very top
+     under the floating nav, then re-add the clearance internally. */
+  margin-top: calc(-1 * clamp(7rem, 10vw, 8.5rem));
+  margin-bottom: clamp(3.5rem, 6vw, 5rem);
+  padding: clamp(7.5rem, 11vw, 9.5rem) clamp(1.5rem, 4vw, 3rem) clamp(3rem, 6vw, 4.5rem);
+  background-color: var(--color-surface-white);
+}
+
+.heroBandInner {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 64rem);
+  margin-inline: auto;
+  display: grid;
+  gap: clamp(2rem, 4vw, 3rem);
+}
+
+.skyImage {
+  z-index: 0;
+  object-fit: cover;
+  object-position: center bottom;
+  transform: translate3d(-3%, 0, 0) scale(1.08);
+  animation: showcaseSkyDrift 72s linear infinite;
+}
+
+.skyWash,
+.skyGlow,
+.skySheen {
+  position: absolute;
+  inset-inline: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.skyWash {
+  inset-block: 0;
+  background:
+    linear-gradient(to bottom, var(--color-surface-white) 0%, color-mix(in srgb, var(--color-surface-white) 70%, transparent) 26%, transparent 64%),
+    radial-gradient(circle at 50% 30%, color-mix(in srgb, var(--color-surface-white) 72%, transparent), transparent 38%);
+}
+
+/* Slow-drifting light layer — moves behind the glass to give the frame a
+   living, refracting feel. */
+.skySheen {
+  inset-block: 0;
+  background:
+    radial-gradient(42% 60% at 22% 28%, color-mix(in srgb, var(--color-surface-white) 55%, transparent), transparent 70%),
+    radial-gradient(46% 56% at 80% 68%, color-mix(in srgb, var(--color-accent-sky) 28%, transparent), transparent 72%);
+  mix-blend-mode: screen;
+  animation: showcaseSkySheen 18s ease-in-out infinite;
+}
+
+.skyGlow {
+  inset-block-end: 0;
+  height: 46%;
+  background: radial-gradient(ellipse at center bottom, color-mix(in srgb, var(--color-accent-sky) 30%, transparent), transparent 68%);
+}
+
+@keyframes showcaseSkyDrift {
+  0% {
+    transform: translate3d(-3%, 0, 0) scale(1.08);
+  }
+
+  50% {
+    transform: translate3d(3%, 0, 0) scale(1.08);
+  }
+
+  100% {
+    transform: translate3d(-3%, 0, 0) scale(1.08);
+  }
+}
+
+@keyframes showcaseSkySheen {
+  0% {
+    transform: translate3d(-2%, -1%, 0) scale(1.04);
+    opacity: 0.5;
+  }
+
+  50% {
+    transform: translate3d(2%, 1%, 0) scale(1.12);
+    opacity: 0.85;
+  }
+
+  100% {
+    transform: translate3d(-2%, -1%, 0) scale(1.04);
+    opacity: 0.5;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skyImage,
+  .skySheen {
+    animation: none;
+  }
 }
 
 .hero {
