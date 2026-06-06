@@ -1,0 +1,48 @@
+.contextGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.contextCard {
+  display: grid;
+  gap: 0.85rem;
+  padding: 1.5rem 1.55rem;
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
+  border-radius: 0.85rem;
+  background: var(--color-surface-white);
+}
+
+.contextEyebrow {
+  color: var(--color-accent-orange);
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.contextCard h3 {
+  margin: 0;
+  color: var(--color-ink-950);
+  font-family: var(--font-cabinet);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: var(--text-h3);
+  line-height: 1.15;
+}
+
+.contextCard p {
+  margin: 0;
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: var(--text-small);
+  line-height: 1.8;
+}
+
+@media (max-width: 63.999rem) {
+  .contextGrid {
+    grid-template-columns: 1fr;
+  }
+}

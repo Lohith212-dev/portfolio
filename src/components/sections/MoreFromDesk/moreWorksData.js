@@ -11,24 +11,6 @@ export const moreWorkLanes = [
     description: 'Shaping messy product logic into clear decisions, usable flows, and shipped interfaces.',
     cards: [
       {
-        slug: 'sk-studies',
-        title: 'SK Studies',
-        tag: 'Study workflow',
-        note: 'Structured learning journeys with clearer next steps.',
-        actionType: 'internal-route',
-        details: {
-          eyebrow: 'Product Systems',
-          title: 'SK Studies',
-          role: 'Product design, learning workflow',
-          year: '2024',
-          context: 'A study workflow shaped around clearer learning momentum.',
-          description: 'A lean product context for the SK Studies work, showing how structured learning journeys, visible next steps, and repeatable study behavior came together.',
-          outcome: 'Made the study path easier to understand before final assets are added.',
-          tools: ['Product logic', 'UX flows', 'Interface design'],
-          stats: ['Study workflow', 'Learning journeys', 'Next-step clarity'],
-        },
-      },
-      {
         slug: 'personalized-study-planner',
         title: 'Personalized Study Planner',
         tag: 'Planning system',
@@ -320,24 +302,6 @@ export const moreWorkLanes = [
           stats: ['Effort visible', 'Gap tracking', 'Next actions'],
         },
       },
-      {
-        slug: 'climatics',
-        title: 'Climatics',
-        tag: 'Side product',
-        note: 'Weather app experiment focused on clean utility and visual hierarchy.',
-        actionType: 'internal-route',
-        details: {
-          eyebrow: 'Product Systems',
-          title: 'Climatics',
-          role: 'Side product experiment',
-          year: '2023',
-          context: 'A compact weather app experiment built around everyday utility.',
-          description: 'A side product focused on clean hierarchy, useful weather states, and a fast read of what matters right now.',
-          outcome: 'Explored how utility apps can feel simpler without feeling thin.',
-          tools: ['Product UI', 'Visual hierarchy', 'Utility design'],
-          stats: ['Weather utility', 'Fast scan', 'Side product'],
-        },
-      },
     ],
   },
   {
@@ -351,132 +315,6 @@ export const moreWorkLanes = [
     proof: 'Content structure, page design, interaction logic, and implementation-ready layouts.',
     description: 'Marketing sites, landing pages, blogs, explainers, and conversion journeys built end to end.',
     cards: [
-      {
-        slug: 'egmat-public-website',
-        title: 'e-GMAT Public Website',
-        tag: 'Public website',
-        note: 'A public-facing website that introduces a dense GMAT prep ecosystem with a clearer first read.',
-        actionType: 'internal-route',
-        embedUrl: 'https://e-gmat.com/',
-        externalUrl: 'https://e-gmat.com/',
-        details: {
-          template: 'website-showcase',
-          eyebrow: 'Web Services',
-          title: 'e-GMAT website revamp',
-          hook: 'A marketing-site redesign that traded aspirational claims for legible structure and verifiable proof.',
-          summary: 'e-GMAT is a GMAT-prep platform with one of the strongest track records in the category. I led an end-to-end redesign of the marketing site and built a new success-stories layer so prospective students can find themselves in the product, the proof, and the price.',
-          heroNote: 'This is just a display page and the full case study is coming soon.',
-          roleParagraph: 'I led the redesign end-to-end - repositioning, information architecture, content system, and visual design - across three surfaces: the homepage, the pricing page, and a new success-stories section that did not exist before.',
-          role: 'Lead Product Designer',
-          year: '2023-2025',
-          context: 'A public-facing redesign across the homepage, pricing, and success stories layer.',
-          description: 'A marketing-site redesign that makes the platform easier to understand, trust, and compare.',
-          status: 'Live',
-          projectType: 'Marketing site redesign',
-          embedUrl: 'https://e-gmat.com/',
-          externalUrl: 'https://e-gmat.com/',
-          websiteNavLinks: [
-            { href: '#context', label: 'Context' },
-            { href: '#shipped', label: 'Approach' },
-            { href: '#shift', label: 'The Shift' },
-          ],
-          overviewCard: {
-            eyebrow: 'Overview',
-            headline: 'The platform had the substance. The surface wasn\'t doing it justice.',
-            paragraphs: [
-              'e-GMAT is a GMAT-prep platform with one of the strongest track records in the category. But the marketing site spoke past anyone not already in the top tier — the hero opened with "We coach achievers," pricing offered six overlapping options, and proof leaned on aspirational claims more than on stories visitors could verify or identify with.',
-              'I led an end-to-end redesign across three surfaces — the homepage, the pricing page, and a new success-stories section that didn\'t exist before — so the site explains who it\'s for, what it does, and what it costs without making a student work to figure it out.',
-            ],
-          },
-          notesCard: {
-            eyebrow: 'Notes',
-            headline: 'Five decisions, one through-line.',
-            intro: 'The redesign isn\'t five separate improvements. It\'s a single shift carried across surfaces: from asking visitors to trust claims, to showing them structure, faces, and verifiable numbers.',
-            decisions: [
-              {
-                number: '01',
-                title: 'Repositioned the hero from gatekeeping to inclusive',
-                body: '"We coach achievers" became "Transform your GMAT score, no matter where you begin." Real student score cards moved into the first viewport — so visitors see faces and scores they can identify with before they see a feature.',
-                pair: {
-                  beforeLabel: 'Old hero',
-                  afterLabel: 'New hero with score cards',
-                },
-              },
-              {
-                number: '02',
-                title: 'Restructured the homepage into six clear pillars',
-                body: 'A loose feature list became Planning, Learning, Tracking, Practice, Analytics, and Mocks. Each pillar gets a focused section with a real product screenshot, so visitors can map their concern to a feature without scanning the whole page.',
-              },
-              {
-                number: '03',
-                title: 'Collapsed pricing from six options to three',
-                body: 'Two formats × three durations became one course × three durations, reframed as "Same course, different durations." Added a 7-day money-back guarantee in the same band.',
-                pair: {
-                  beforeLabel: 'Old pricing — 6 SKUs',
-                  afterLabel: 'New pricing — 3 durations',
-                },
-              },
-              {
-                number: '04',
-                title: 'Built a new browsable success-stories layer',
-                body: 'Created a filterable index by scorer profile — 100th percentile, 705+, starting below 535, sub-60-day improvements, 150+ point gains, sectional wins — with a dedicated page per student (video, strategy breakdown, similar journeys). "Trust us" became "here\'s someone like you."',
-                pair: {
-                  beforeLabel: 'Did not exist',
-                  afterLabel: 'Browsable success-stories index',
-                },
-              },
-              {
-                number: '05',
-                title: 'Rebuilt proof from aspirational to verifiable',
-                body: 'Replaced broad claims like "$200M+ in scholarships" with specifics the site can show: "70% Record Verified," "675+ scores reported in 2025," and #1 ratings on GMAT Club, YouTube, and Reddit. Credibility now rests on what can be demonstrated, not what can be asserted.',
-              },
-            ],
-            shift: {
-              eyebrow: 'The shift',
-              headline: 'From asking for trust to showing it.',
-              rows: [
-                {
-                  before: '"We coach achievers"',
-                  after: '"No matter where you begin"',
-                },
-                {
-                  before: 'Loose feature list',
-                  after: 'Six structured pillars',
-                },
-                {
-                  before: 'Six pricing SKUs',
-                  after: 'Three durations of one course',
-                },
-                {
-                  before: 'Aspirational claims',
-                  after: 'Verifiable proof + platform ratings',
-                },
-                {
-                  before: 'No success-story layer',
-                  after: 'Browsable index, page per student',
-                },
-              ],
-            },
-          },
-          sidebar: {
-            categories: ['Marketing site', 'Edtech'],
-            facts: [
-              { label: 'Role', value: 'Principal Product Designer & Frontend Developer' },
-              { label: 'Timeline', value: 'October 2025' },
-              { label: 'Status', value: 'Live' },
-            ],
-            factsVisibleCount: 2,
-            projectChips: [
-              { label: 'Live', active: true, dot: true },
-              {
-                label: 'e-gmat.com',
-                logo: '/images/case-studies/sat-lms/e-gmat.png',
-              },
-            ],
-            projectDisclaimer: 'Logos are the properties of the respective companies.',
-          },
-        },
-      },
       {
         slug: 'egmat-blogs',
         title: 'e-GMAT Blogs',
@@ -713,6 +551,191 @@ export const moreWorkLanes = [
 ];
 
 const standaloneMoreWorkDetails = [
+  {
+    slug: 'egmat-public-website',
+    title: 'e-GMAT Public Website',
+    tag: 'Public website',
+    note: 'A public-facing website that introduces a dense GMAT prep ecosystem with a clearer first read.',
+    actionType: 'internal-route',
+    laneId: 'web',
+    laneTitle: 'Web Design & Build',
+    accentVar: '--color-accent-lavender',
+    softVar: '--color-surface-lilac',
+    embedUrl: 'https://e-gmat.com/',
+    externalUrl: 'https://e-gmat.com/',
+    details: {
+      template: 'website-showcase',
+      eyebrow: 'Web Services',
+      title: 'e-GMAT website revamp',
+      hook: 'A marketing-site redesign that traded aspirational claims for legible structure and verifiable proof.',
+      summary: 'e-GMAT is a GMAT-prep platform with one of the strongest track records in the category. I led an end-to-end redesign of the marketing site and built a new success-stories layer so prospective students can find themselves in the product, the proof, and the price.',
+      heroNote: 'This is just a display page and the full case study is coming soon.',
+      roleParagraph: 'I led the redesign end-to-end - repositioning, information architecture, content system, copywriting, and visual design - across three surfaces: the homepage, the pricing page, and a new success-stories section that did not exist before.',
+      role: 'Lead Product Designer',
+      year: '2023-2025',
+      context: 'A public-facing redesign across the homepage, pricing, and success stories layer.',
+      description: 'A marketing-site redesign that makes the platform easier to understand, trust, and compare.',
+      status: 'Live',
+      projectType: 'Marketing site redesign',
+      embedUrl: 'https://e-gmat.com/',
+      externalUrl: 'https://e-gmat.com/',
+      websiteNavLinks: [
+        { href: '#context', label: 'Context' },
+        { href: '#objectives', label: 'Objectives' },
+        { href: '#shipped', label: 'Approach' },
+        { href: '#shift', label: 'The Shift' },
+      ],
+      contextCards: [
+        {
+          eyebrow: 'The opportunity',
+          title: 'Why this site had to be rebuilt',
+          body: 'e-GMAT had a 12-year track record and one of the strongest results catalogues in GMAT prep. But the marketing site was speaking to people who already knew the brand. First-time visitors — the people the business needed to reach next — were landing on a page that asked them to translate aspirational language and a six-option price grid into a buying decision on their own.',
+        },
+        {
+          eyebrow: 'Problem statement',
+          title: 'Visitors couldn\'t find themselves on the page',
+          body: 'The site didn\'t answer the four questions a prospective student arrives with: is this for someone at my level, what does it actually cost, can I trust these claims, and what do I do next. The substance was there. The surface forced visitors to work for it — or to leave and wait for a sales call.',
+        },
+      ],
+      solutionObjectives: {
+        items: [
+          {
+            title: 'Welcome before you sell',
+            body: 'Make the first viewport reach a student at any starting point, not just one who already identifies as a high-achiever. Show faces and scores that look like their own future.',
+          },
+          {
+            title: 'Verify, don\'t claim',
+            body: 'Replace aspirational stats with specifics visitors can verify on platforms they already trust — GMAT Club, YouTube, Reddit. Credibility shifts from rhetoric to evidence.',
+          },
+          {
+            title: 'Decide, don\'t compare',
+            body: 'Collapse six pricing SKUs into three durations of one course. Reduce decision fatigue at the moment intent is highest, without hiding what\'s being bought.',
+          },
+        ],
+        thesis: 'I began thinking of the marketing site not as a brochure to scroll, but as the conversation sales used to have.',
+      },
+      notesCard: {
+        eyebrow: 'Notes',
+        headline: 'Five decisions, one through-line.',
+        intro: 'The redesign isn\'t five separate improvements. It\'s a single shift carried across surfaces: from asking visitors to trust claims, to showing them structure, faces, and verifiable numbers.',
+        decisions: [
+          {
+            number: '01',
+            title: 'Repositioned the hero from gatekeeping to inclusive',
+            body: '"We coach achievers" became "Transform your GMAT score, no matter where you begin." Real student score cards moved into the first viewport — so visitors see faces and scores they can identify with before they see a feature.',
+            compare: {
+              beforeSrc: '/images/case-studies/website/home-old.png',
+              afterSrc: '/images/case-studies/website/home-new.png',
+              beforeAlt: 'Original e-GMAT homepage screenshot.',
+              afterAlt: 'Redesigned e-GMAT homepage screenshot.',
+              ariaLabel: 'Comparison of homepage hero before and after redesign',
+            },
+          },
+          {
+            number: '02',
+            title: 'Restructured the homepage into six clear pillars',
+            body: 'A loose feature list became Planning, Learning, Tracking, Practice, Analytics, and Mocks. Each pillar gets a focused section with a real product screenshot, so visitors can map their concern to a feature without scanning the whole page.',
+            stat: {
+              figure: '25%',
+              baseline: 'up from 15%',
+              eyebrow: 'Post-\nlaunch',
+              label: 'Visitor return rate climbed — visitors had a reason to come back when they could find specific information instead of re-scanning the same wall.',
+              icon: 'returnLoop',
+            },
+          },
+          {
+            number: '03',
+            title: 'Collapsed pricing from six options to three',
+            body: 'Two formats × three durations became one course × three durations, reframed as "Same course, different durations." Added a 7-day money-back guarantee in the same band.',
+            compare: {
+              beforeSrc: '/images/case-studies/website/pricing-old.png',
+              afterSrc: '/images/case-studies/website/pricing-new.png',
+              beforeAlt: 'Original e-GMAT pricing page screenshot.',
+              afterAlt: 'Redesigned e-GMAT pricing page screenshot.',
+              ariaLabel: 'Comparison of pricing layout before and after redesign',
+            },
+            stat: {
+              figure: '50%',
+              baseline: 'up from 45%',
+              eyebrow: 'Post-\nlaunch',
+              label: 'Cart-to-purchase rate lifted — by the time visitors added a course to their cart, the messaging had done the convincing. The price card no longer had to carry the whole argument.',
+              icon: 'cartCheck',
+            },
+          },
+          {
+            number: '04',
+            title: 'Built a new browsable success-stories layer',
+            body: 'Created a filterable index by scorer profile — 100th percentile, 705+, starting below 535, sub-60-day improvements, 150+ point gains, sectional wins — with a dedicated page per student (video, strategy breakdown, similar journeys). "Trust us" became "here\'s someone like you."',
+            compare: {
+              beforeSrc: '/images/case-studies/website/success-story-opened-old.png',
+              afterSrc: '/images/case-studies/website/success-story-opened-new.png',
+              beforeAlt: 'Original e-GMAT success story modal screenshot.',
+              afterAlt: 'Redesigned e-GMAT success story page screenshot.',
+              ariaLabel: 'Comparison of success-stories layer before and after',
+            },
+          },
+          {
+            number: '05',
+            title: 'Rebuilt proof from aspirational to verifiable',
+            body: 'Replaced broad claims like "$200M+ in scholarships" with specifics the site can show: "70% Record Verified," "675+ scores reported in 2025," and #1 ratings on GMAT Club, YouTube, and Reddit. Credibility now rests on what can be demonstrated, not what can be asserted.',
+          },
+        ],
+        shift: {
+          eyebrow: 'The shift',
+          headline: 'From asking for trust to showing it.',
+          rows: [
+            {
+              before: '"We coach achievers"',
+              after: '"No matter where you begin"',
+            },
+            {
+              before: 'Loose feature list',
+              after: 'Six structured pillars',
+            },
+            {
+              before: 'Six pricing SKUs',
+              after: 'Three durations of one course',
+            },
+            {
+              before: 'Aspirational claims',
+              after: 'Verifiable proof + platform ratings',
+            },
+            {
+              before: 'No success-story layer',
+              after: 'Browsable index, page per student',
+            },
+          ],
+        },
+      },
+      // Closing testimonial — same person and quote as the home page's
+      // featured-projects card for this project.
+      testimonial: {
+        name: 'Sundeep Eddu',
+        initials: 'S',
+        role: 'Head of Marketing & Sales, e-GMAT',
+        image: '/images/work/work-sundeep-portrait.png',
+        linkedin: 'https://www.linkedin.com/in/eddu-sundeep/',
+        quote: "The site speaks more clearly than it ever has, and that's because Lohith owned the message, not just the visuals. He restructured how we talk about the platform - the hero line, the pricing frame, the success-stories pitch - and built each page around those decisions. The difference shows on every scroll.",
+      },
+      sidebar: {
+        categories: ['Marketing site', 'Edtech'],
+        facts: [
+          { label: 'Role', value: 'Principal Product Designer & Frontend Developer' },
+          { label: 'Timeline', value: 'October 2025' },
+          { label: 'Status', value: 'Live' },
+        ],
+        factsVisibleCount: 2,
+        projectChips: [
+          { label: 'Live', active: true, dot: true },
+          {
+            label: 'e-gmat.com',
+            logo: '/images/case-studies/sat-lms/e-gmat.png',
+          },
+        ],
+        projectDisclaimer: 'Logos are the properties of the respective companies.',
+      },
+    },
+  },
   {
     slug: 'neuron',
     title: 'Neuron',
@@ -1001,7 +1024,10 @@ export function getMoreWorkDetailContent(item) {
     liveBadge: details.liveBadge ?? ((item.embedUrl || details.embedUrl) ? 'live embed' : null),
     externalUrl: item.externalUrl || details.externalUrl || '',
     overviewCard: details.overviewCard || null,
+    contextCards: details.contextCards || null,
+    solutionObjectives: details.solutionObjectives || null,
     notesCard: details.notesCard || null,
+    testimonial: details.testimonial || null,
     sidebar: details.sidebar || null,
     heroNote: details.heroNote || '',
     roleParagraph: details.roleParagraph || '',

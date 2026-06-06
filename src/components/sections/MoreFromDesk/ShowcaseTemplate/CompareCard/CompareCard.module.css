@@ -1,0 +1,208 @@
+.compareViewActions {
+  display: flex;
+  gap: 0.55rem;
+  flex-wrap: wrap;
+}
+
+.viewButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  border: none;
+  border-radius: 0.45rem;
+  background: var(--color-surface-light);
+  color: var(--color-ink-950);
+  font-family: var(--font-dm);
+  font-weight: 500;
+  font-size: 0.82rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.viewButton:hover {
+  background: var(--color-ink-100);
+}
+
+.viewButtonIcon {
+  width: 0.85rem;
+  height: 0.85rem;
+  color: var(--color-ink-700);
+}
+
+.compareHint {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  margin: 0;
+  padding: 0.6rem 0.85rem;
+  background: var(--color-surface-light);
+  border-radius: 0.45rem;
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: 0.78rem;
+  line-height: 1.5;
+}
+
+.hintIcon {
+  width: 0.95rem;
+  height: 0.95rem;
+  color: var(--color-ink-500);
+  flex-shrink: 0;
+  margin-top: 0.15rem;
+}
+
+/* --reveal must inherit: the animation runs on .compareFrame, and the clipped
+   Before layer, divider, and handle all read var(--reveal) from it. With
+   inherits: false the children never see the animated value and the wipe
+   appears stuck at 50%. */
+@property --reveal {
+  syntax: '<percentage>';
+  inherits: true;
+  initial-value: 50%;
+}
+
+.compareFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border-radius: 0.95rem;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 70%, transparent);
+  background: var(--color-ink-100);
+  --reveal: 50%;
+  user-select: none;
+  /* Stop touch scrolling from intercepting drags; Pointer Events handle
+     mouse + touch uniformly. */
+  touch-action: none;
+}
+
+.compareLayer {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.compareAfter {
+  z-index: 1;
+}
+
+.compareBefore {
+  z-index: 2;
+  clip-path: inset(0 calc(100% - var(--reveal)) 0 0);
+}
+
+.compareLayer img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+}
+
+.compareLabel {
+  position: absolute;
+  top: 0.95rem;
+  z-index: 4;
+  padding: 0.45rem 0.85rem;
+  border-radius: 0.4rem;
+  font-family: var(--font-dm);
+  font-weight: 700;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  pointer-events: none;
+  /* Component-local shadow — lifts the label off the page screenshot. */
+  box-shadow: 0 0.2rem 0.6rem rgba(0, 0, 0, 0.18);
+}
+
+.compareLabelBefore {
+  left: 0.95rem;
+  background: var(--color-surface-white);
+  color: var(--color-ink-950);
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 60%, transparent);
+}
+
+.compareLabelAfter {
+  right: 0.95rem;
+  background: var(--color-accent-green);
+  color: var(--color-ink-950);
+}
+
+.compareDivider {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--reveal);
+  width: 2px;
+  background: rgba(255, 255, 255, 0.96);
+  transform: translateX(-50%);
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.18);
+  pointer-events: none;
+  z-index: 3;
+}
+
+.compareDividerHandle {
+  position: absolute;
+  top: 50%;
+  left: var(--reveal);
+  transform: translate(-50%, -50%);
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: var(--color-surface-white);
+  border: 1px solid var(--color-ink-300);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: ew-resize;
+  z-index: 5;
+  box-shadow: 0 0.35rem 1rem rgba(0, 0, 0, 0.18);
+  padding: 0;
+  transition: box-shadow 0.2s ease;
+}
+
+.compareDividerHandle:hover {
+  box-shadow: 0 0.5rem 1.4rem rgba(0, 0, 0, 0.24);
+}
+
+.handleIcon {
+  width: 1.1rem;
+  height: 1.1rem;
+  color: var(--color-ink-700);
+  pointer-events: none;
+}
+
+/* Seamless loop: 100% matches 0%, with holds at each end. Returning to 50%
+   between cycles reads as a stall at the midpoint — don't. */
+@keyframes compareSweep {
+  0% {
+    --reveal: 0%;
+  }
+
+  15% {
+    --reveal: 0%;
+  }
+
+  50% {
+    --reveal: 100%;
+  }
+
+  65% {
+    --reveal: 100%;
+  }
+
+  100% {
+    --reveal: 0%;
+  }
+}
+
+.autoplay {
+  animation: compareSweep 9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .autoplay {
+    animation: none;
+  }
+}

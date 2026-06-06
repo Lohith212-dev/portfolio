@@ -1795,3 +1795,183 @@ export function InfoIcon({ className = '', ...props }) {
     </svg>
   );
 }
+
+export function CircleTickIcon({ className = '' }) {
+  return (
+    <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+      <circle cx="10" cy="10" r="9" fill="var(--color-accent-green)" />
+      <polyline
+        points="6 10.5 9 13.5 14.5 7.5"
+        fill="none"
+        stroke="var(--color-surface-white)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+    </svg>
+  );
+}
+
+export function CompareHandleIcon({ className = '' }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      <polyline points="9 6 3 12 9 18" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
+      <polyline points="15 6 21 12 15 18" stroke="currentColor" strokeWidth="2.25" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export const StatIconReturnLoop = forwardRef(function StatIconReturnLoop(
+  { className = '', size = 20, duration = 1, isAnimated = true, ...props },
+  ref,
+) {
+  const controls = useAnimation();
+  const reduced = useReducedMotion();
+  const isControlled = useRef(false);
+  const internalRef = useRef(null);
+  const hasParentBinding = useRef(false);
+
+  useImperativeHandle(ref, () => {
+    isControlled.current = true;
+    return {
+      startAnimation: () => reduced ? controls.start('normal') : controls.start('animate'),
+      stopAnimation: () => controls.start('normal'),
+    };
+  });
+
+  const handleEnter = useCallback(() => {
+    if (!isAnimated || reduced || hasParentBinding.current) return;
+    if (!isControlled.current) controls.start('animate');
+  }, [controls, reduced, isAnimated]);
+
+  const handleLeave = useCallback(() => {
+    if (hasParentBinding.current) return;
+    if (!isControlled.current) controls.start('normal');
+  }, [controls]);
+
+  /* Two full rotations per burst — the stat card retriggers the burst on its
+     own animate / pause cycle. */
+  const spinVariants = {
+    normal: { rotate: 0, transition: { duration: 0 } },
+    animate: {
+      rotate: [0, 360, 720],
+      transition: { duration: 2.2 * duration, ease: 'easeInOut' },
+    },
+  };
+
+  return (
+    <motion.div
+      className={className}
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+      style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+      {...props}
+    >
+      <motion.svg
+        ref={internalRef}
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        initial="normal"
+        animate={controls}
+        variants={spinVariants}
+        style={{ transformOrigin: 'center' }}
+      >
+        <path d="M21 12a9 9 0 1 1-3.05-6.74" />
+        <path d="M21 4v5h-5" />
+      </motion.svg>
+    </motion.div>
+  );
+});
+
+export const StatIconCartCheck = forwardRef(function StatIconCartCheck(
+  { className = '', size = 20, duration = 1, isAnimated = true, ...props },
+  ref,
+) {
+  const controls = useAnimation();
+  const reduced = useReducedMotion();
+  const isControlled = useRef(false);
+  const internalRef = useRef(null);
+  const hasParentBinding = useRef(false);
+
+  useImperativeHandle(ref, () => {
+    isControlled.current = true;
+    return {
+      startAnimation: () => reduced ? controls.start('normal') : controls.start('animate'),
+      stopAnimation: () => controls.start('normal'),
+    };
+  });
+
+  const handleEnter = useCallback(() => {
+    if (!isAnimated || reduced || hasParentBinding.current) return;
+    if (!isControlled.current) controls.start('animate');
+  }, [controls, reduced, isAnimated]);
+
+  const handleLeave = useCallback(() => {
+    if (hasParentBinding.current) return;
+    if (!isControlled.current) controls.start('normal');
+  }, [controls]);
+
+  /* Cart rocks twice while the checkmark redraws — one burst. */
+  const cartVariants = {
+    normal: { rotate: 0, y: 0, transition: { duration: 0 } },
+    animate: {
+      rotate: [0, -6, 5, -3, 0, 0, -6, 5, -3, 0],
+      y: [0, -1.5, 0, -0.5, 0, 0, -1.5, 0, -0.5, 0],
+      transition: { duration: 2.2 * duration, ease: 'easeInOut' },
+    },
+  };
+
+  const tickVariants = {
+    normal: { pathLength: 1, opacity: 1, transition: { duration: 0 } },
+    animate: {
+      pathLength: [0, 1, 1, 0, 1, 1],
+      opacity: [0, 1, 1, 0, 1, 1],
+      transition: { duration: 2.2 * duration, ease: 'easeInOut' },
+    },
+  };
+
+  return (
+    <motion.div
+      className={className}
+      onMouseEnter={handleEnter}
+      onMouseLeave={handleLeave}
+      style={{ display: 'inline-flex', alignItems: 'center', justifyContent: 'center' }}
+      {...props}
+    >
+      <motion.svg
+        ref={internalRef}
+        xmlns="http://www.w3.org/2000/svg"
+        width={size}
+        height={size}
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        initial="normal"
+        animate={controls}
+        variants={cartVariants}
+        style={{ transformOrigin: 'center bottom' }}
+      >
+        <circle cx="9" cy="20" r="1.25" fill="currentColor" />
+        <circle cx="18" cy="20" r="1.25" fill="currentColor" />
+        <path d="M3 4h2l2 12h12l2-8H7" />
+        <motion.path d="M9 11l2 2 4-4" strokeWidth="2" variants={tickVariants} />
+      </motion.svg>
+    </motion.div>
+  );
+});

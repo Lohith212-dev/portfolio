@@ -1,0 +1,39 @@
+.objectivesGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.85rem;
+  margin-top: 0.5rem;
+}
+
+.objectiveCard {
+  display: grid;
+  gap: 0.7rem;
+  padding: 1.35rem 1.4rem 1.5rem;
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
+  border-radius: 0.85rem;
+  background: var(--color-surface-white);
+}
+
+.objectiveCard h3 {
+  margin: 0;
+  color: var(--color-ink-950);
+  font-family: var(--font-cabinet);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  font-size: var(--text-h4);
+  line-height: 1.2;
+}
+
+.objectiveCard p {
+  margin: 0;
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: 0.94rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 63.999rem) {
+  .objectivesGrid {
+    grid-template-columns: 1fr;
+  }
+}

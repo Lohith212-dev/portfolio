@@ -1,0 +1,91 @@
+/* The after column reads as a single white card lifted by a soft shadow.
+   The card is a pseudo-element on the wrap; left: 50% matches the 50/50
+   column split — change both together if the ratio ever changes. The wrap
+   padding gives the shadow room to render without clipping. */
+.shiftWrap {
+  position: relative;
+  padding: 0.5rem 0.5rem 1.25rem;
+}
+
+.shiftWrap::before {
+  content: '';
+  position: absolute;
+  top: 0.5rem;
+  bottom: 1.25rem;
+  left: 50%;
+  right: 0.5rem;
+  background: var(--color-surface-white);
+  border-radius: 0.75rem;
+  /* Component-local shadow values — not worth tokens. */
+  box-shadow:
+    0 1rem 2.6rem rgba(0, 0, 0, 0.08),
+    0 0.25rem 0.65rem rgba(0, 0, 0, 0.05);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.shiftTable {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--font-dm);
+  table-layout: fixed;
+}
+
+col.before,
+col.after {
+  width: 50%;
+}
+
+.shiftTable th,
+.shiftTable td {
+  text-align: left;
+  vertical-align: top;
+}
+
+.shiftTable thead th {
+  padding: 0.9rem 1.15rem;
+  font-family: var(--font-dm);
+  font-weight: 700;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--color-ink-500);
+  background: transparent;
+}
+
+.shiftTable thead th.after {
+  color: var(--color-accent-green);
+}
+
+.shiftTable tbody td {
+  padding: 1.05rem 1.15rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--color-ink-800);
+  border-top: 1px solid var(--color-ink-100);
+  background: transparent;
+}
+
+.shiftTable tbody td.after {
+  color: var(--color-ink-950);
+  font-weight: 500;
+}
+
+.afterCell {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.checkIcon {
+  flex-shrink: 0;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: 0.08rem;
+}
+
+/* The 2-column table layout holds at all widths; narrow screens wrap cell
+   text onto multiple lines. No stacked-card fallback — confirmed correct. */

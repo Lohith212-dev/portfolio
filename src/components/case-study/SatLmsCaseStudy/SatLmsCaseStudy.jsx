@@ -23,7 +23,7 @@ import HeroVideo from './HeroVideo';
 import NextCaseStudyPreview from './NextCaseStudyPreview';
 import OutcomeMetric from './OutcomeMetric';
 import OutcomePoll from './OutcomePoll';
-import StakeholderQuoteCard from './StakeholderQuoteCard';
+import StakeholderQuoteCard from '../../shared/StakeholderQuoteCard';
 import TutorDecision, { TutorDecisionBody } from './TutorDecision';
 import styles from './SatLmsCaseStudy.module.css';
 

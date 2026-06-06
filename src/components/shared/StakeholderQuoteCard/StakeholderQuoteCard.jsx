@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { SharedLinkedInIcon, TrustTickIcon } from '../../../icons/icons';
-import styles from '../SatLmsCaseStudy.module.css';
+import { SharedLinkedInIcon, TrustTickIcon } from '../../icons/icons';
+import styles from './StakeholderQuoteCard.module.css';
 
 export default function StakeholderQuoteCard({ quote }) {
   return (
@@ -16,6 +16,7 @@ export default function StakeholderQuoteCard({ quote }) {
               sizes="(min-width: 768px) 52px, 44px"
               className={styles.stakeholderAvatar}
               data-person={quote.initials.toLowerCase()}
+              style={quote.imageStyle}
             />
           </span>
           <span className={styles.stakeholderDetails}>

@@ -1,0 +1,134 @@
+/* Extracted from SatLmsCaseStudy.module.css when the card moved to shared/
+   (second consumer: the lean showcase wrapper's closing testimonial). */
+.stakeholderQuoteCard {
+  position: relative;
+  display: grid;
+  align-content: start;
+  gap: calc(clamp(1.5rem, 3vw, 2rem) * 0.78);
+  min-height: calc(30rem * 0.52);
+  padding: calc(clamp(1.5rem, 3vw, 2rem) * 0.92);
+  overflow: hidden;
+  border: 0;
+  border-radius: 1rem;
+  background-color: var(--color-surface-white);
+  box-shadow: 0 1rem 3rem color-mix(in srgb, var(--color-ink-950) 8%, transparent);
+}
+
+.stakeholderQuoteHeader {
+  display: flex;
+  gap: calc(1rem * 0.75);
+  align-items: center;
+  justify-content: space-between;
+}
+
+.stakeholderIdentity {
+  display: flex;
+  min-width: 0;
+  gap: calc(1rem * 0.72);
+  align-items: center;
+}
+
+.stakeholderDetails {
+  display: grid;
+  gap: calc(1rem * 0.25);
+  min-width: 0;
+}
+
+.stakeholderNameLine {
+  display: flex;
+  gap: calc(1rem * 0.35);
+  align-items: center;
+  min-width: 0;
+}
+
+.stakeholderAvatarFrame {
+  display: block;
+  width: clamp(2.75rem, 4vw, 3.25rem);
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  overflow: hidden;
+  border-radius: 9999px;
+  background: none;
+}
+
+.stakeholderAvatar {
+  display: block;
+  width: 145%;
+  height: 145%;
+  max-width: none;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Per-person portrait framing inside the zoomed circular crop. */
+.stakeholderAvatar[data-person="s"] {
+  transform: translate(-15%, -14%);
+}
+
+.stakeholderAvatar[data-person="a"] {
+  transform: translate(-15%, -18%);
+}
+
+.stakeholderNameLine span,
+.stakeholderDetails small {
+  font-family: var(--font-dm);
+  line-height: 1.1;
+}
+
+.stakeholderNameLine span {
+  overflow: hidden;
+  font-size: var(--text-body);
+  font-weight: 700;
+  color: var(--color-ink-950);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.stakeholderDetails small {
+  font-size: var(--text-small);
+  color: var(--color-ink-700);
+}
+
+.stakeholderTrustIcon {
+  width: calc(1rem * 1.15);
+  height: calc(1rem * 1.15);
+  flex: 0 0 auto;
+  color: var(--color-accent-sky);
+}
+
+.stakeholderLinkedIn {
+  display: inline-flex;
+  width: calc(1rem * 1.45);
+  aspect-ratio: 1;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-brand-linkedin);
+  text-decoration: none;
+  transition: transform 160ms ease;
+}
+
+.stakeholderLinkedIn:hover,
+.stakeholderLinkedIn:focus-visible {
+  transform: translateY(calc(0.125rem * -1));
+}
+
+.stakeholderLinkedIn:focus-visible {
+  outline: 0.125rem solid var(--color-brand-linkedin);
+  outline-offset: calc(0.125rem * 2);
+}
+
+.stakeholderLinkedInIcon {
+  width: 100%;
+  height: 100%;
+}
+
+.stakeholderQuoteText {
+  margin: 0;
+  padding-block-start: 0;
+  font-family: var(--font-dm);
+  font-size: var(--text-body);
+  font-weight: 500;
+  line-height: var(--leading-subpitch);
+  color: var(--color-ink-950);
+}

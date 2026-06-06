@@ -151,9 +151,7 @@
 }
 
 .mainSection p,
-.decisionText p,
-.shiftBefore,
-.shiftAfter {
+.decisionText p {
   margin: 0;
   color: var(--color-ink-700);
   font-family: var(--font-dm);
@@ -204,43 +202,10 @@
   line-height: 1.15;
 }
 
-.shiftCard {
-  margin-top: 0.25rem;
-  padding: 0.35rem 0;
-}
-
-.shiftRow {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
-  gap: 0.9rem;
-  align-items: center;
-  padding: 1rem 0;
-  border-bottom: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
-}
-
-.shiftRow:first-child {
-  border-top: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
-}
-
-.shiftBefore {
-  color: var(--color-ink-500);
-}
-
-.shiftAfter {
-  color: var(--color-ink-950);
-  font-weight: 500;
-}
-
-.shiftArrow {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-accent-green);
-}
-
-.shiftArrow svg {
-  width: 1rem;
-  height: 1rem;
+/* The closing testimonial card stands alone — the content column's 4rem grid
+   gap is its breathing room; no section chrome around it. */
+.loneTestimonial {
+  display: block;
 }
 
 .sourceNote {
@@ -266,18 +231,6 @@
   .approachIntro p,
   .decisionText p {
     max-width: 70ch;
-  }
-}
-
-@media (max-width: 47.999rem) {
-  .shiftRow {
-    grid-template-columns: 1fr;
-    gap: 0.35rem;
-  }
-
-  .shiftArrow {
-    transform: rotate(90deg);
-    justify-self: start;
   }
 }
 

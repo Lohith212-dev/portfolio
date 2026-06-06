@@ -1,0 +1,16 @@
+.thesisCallout {
+  margin-top: 0.85rem;
+  padding: 1.45rem 1.7rem;
+  border-radius: 0.85rem;
+  background: var(--color-surface-peach);
+}
+
+.thesisCallout p {
+  margin: 0;
+  color: var(--color-ink-950);
+  font-family: var(--font-cabinet);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  font-size: var(--text-h3);
+  line-height: 1.35;
+}
