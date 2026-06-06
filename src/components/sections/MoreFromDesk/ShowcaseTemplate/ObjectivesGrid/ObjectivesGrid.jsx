@@ -1,4 +1,10 @@
-import { ObjectiveDecideIcon, ObjectiveVerifyIcon, ObjectiveWelcomeIcon } from '../../../../icons/icons';
+import {
+  ObjectiveDecideIcon,
+  ObjectiveDoubtIcon,
+  ObjectiveLoopIcon,
+  ObjectiveVerifyIcon,
+  ObjectiveWelcomeIcon,
+} from '../../../../icons/icons';
 import styles from './ObjectivesGrid.module.css';
 
 /* Icon registry: objective data stays plain strings — same pattern as
@@ -7,6 +13,8 @@ const OBJECTIVE_ICONS = {
   welcome: ObjectiveWelcomeIcon,
   verify: ObjectiveVerifyIcon,
   decide: ObjectiveDecideIcon,
+  loop: ObjectiveLoopIcon,
+  doubt: ObjectiveDoubtIcon,
 };
 
 export default function ObjectivesGrid({ items }) {

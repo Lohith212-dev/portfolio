@@ -8,6 +8,7 @@ import ScreenSetShowcase from '../ScreenSetShowcase';
 import ShowcaseSidebar from '../ShowcaseSidebar';
 import TestimonialMarquee from '../TestimonialMarquee';
 import StakeholderQuoteCard from '../../../shared/StakeholderQuoteCard';
+import TestimonialCard from '../../../shared/TestimonialCard';
 import ContextCardGrid from './ContextCardGrid';
 import ObjectivesGrid from './ObjectivesGrid';
 import ThesisCallout from './ThesisCallout';
@@ -180,6 +181,17 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                         <ScreenSetShowcase
                           screenSet={decision.screenSet}
                           sectionTitle={decision.title}
+                        />
+                      ) : null}
+
+                      {decision.inlineQuote ? (
+                        /* Same card as the public-reception marquee, just
+                           standalone and full-width — the decision grid
+                           stretches it; no marquee sizing class. */
+                        <TestimonialCard
+                          item={decision.inlineQuote}
+                          sourceBrand={testimonials?.sourceBrand}
+                          onOpenSource={setActiveEmbedModal}
                         />
                       ) : null}
                     </article>

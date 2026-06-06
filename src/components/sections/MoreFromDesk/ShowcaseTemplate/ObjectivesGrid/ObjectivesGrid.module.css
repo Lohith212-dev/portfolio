@@ -1,6 +1,8 @@
 .objectivesGrid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  /* Columns follow the card count (3 on e-GMAT, 2 on Neuron) — a fixed
+     repeat(3) leaves an empty slot when a page has two objectives. */
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
   gap: 0.85rem;
   margin-top: 0.5rem;
 }
@@ -35,8 +37,10 @@
   font-family: var(--font-cabinet);
   font-weight: 800;
   letter-spacing: -0.02em;
-  font-size: var(--text-h4);
-  line-height: 1.2;
+  /* Same step as the context-card headings — the two card families sit at
+     the same hierarchy level across showcase pages. */
+  font-size: var(--text-h3);
+  line-height: 1.15;
 }
 
 .objectiveCard p {

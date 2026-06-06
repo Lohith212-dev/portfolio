@@ -1,0 +1,157 @@
+/* Card chrome only — extracted verbatim from TestimonialMarquee so the
+   marquee and inline decision quotes render the same source. Sizing (width,
+   flex basis, min-height) stays with the consumer. */
+.testimonialCard {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 1.05rem;
+  border-radius: 1rem;
+  border: 1px solid color-mix(in srgb, var(--color-accent-yellow) 16%, var(--color-ink-100));
+  background:
+    linear-gradient(180deg, color-mix(in srgb, var(--color-accent-yellow) 11%, var(--color-surface-white)) 0%, var(--color-surface-white) 50%),
+    var(--color-surface-white);
+  box-shadow: 0 1.25rem 3rem color-mix(in srgb, var(--color-ink-950) 12%, transparent);
+  padding: 1.45rem 1.45rem 1.3rem;
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+
+.testimonialCard:hover,
+.testimonialCard:focus-within {
+  transform: translateY(-2px);
+  box-shadow: 0 1.3rem 3rem color-mix(in srgb, var(--color-ink-950) 13%, transparent);
+}
+
+.testimonialCardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.testimonialQuoteMark {
+  height: 1.8rem;
+  color: var(--color-accent-yellow);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 3.8rem;
+  line-height: 0.6;
+}
+
+.testimonialSourceBrand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: transform 0.16s ease;
+}
+
+.testimonialSourceBrand:hover,
+.testimonialSourceBrand:focus-visible {
+  transform: translateY(-1px);
+}
+
+.testimonialSourceLogo {
+  width: 4.4rem;
+  height: auto;
+}
+
+.testimonialQuote {
+  margin: 0;
+  flex: 1;
+  color: var(--color-ink-950);
+  font-family: var(--font-cabinet);
+  font-size: 1.16rem;
+  font-weight: 700;
+  line-height: 1.52;
+}
+
+.testimonialQuote mark {
+  background: var(--color-accent-yellow);
+  color: var(--color-ink-950);
+  font-weight: 700;
+  padding: 0.05rem 0.28rem;
+  border-radius: 0.26rem;
+}
+
+.testimonialFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  border-top: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
+  padding-top: 0.95rem;
+}
+
+.testimonialIdentity {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.testimonialAvatar {
+  display: inline-flex;
+  width: 2.55rem;
+  height: 2.55rem;
+  flex: 0 0 auto;
+  color: color-mix(in srgb, var(--color-accent-yellow) 76%, var(--color-ink-950));
+}
+
+.testimonialAvatar svg {
+  width: 100%;
+  height: 100%;
+}
+
+.testimonialIdentityCopy {
+  display: grid;
+  gap: 0.18rem;
+}
+
+.testimonialAuthor {
+  color: var(--color-ink-950);
+  font-family: var(--font-dm);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.testimonialMeta {
+  color: var(--color-ink-500);
+  font-family: var(--font-dm);
+  font-size: 0.76rem;
+  line-height: 1.5;
+}
+
+.testimonialSource {
+  margin-top: 0.15rem;
+  color: color-mix(in srgb, var(--color-accent-yellow) 55%, var(--color-ink-950));
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  font-family: var(--font-dm);
+  font-size: 0.78rem;
+  font-weight: 600;
+  line-height: 1.4;
+  padding: 0;
+  text-decoration: none;
+  width: fit-content;
+}
+
+.testimonialSource:hover,
+.testimonialSource:focus-visible {
+  text-decoration: underline;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .testimonialCard {
+    transition: none;
+  }
+
+  .testimonialCard:hover,
+  .testimonialCard:focus-within {
+    transform: none;
+  }
+}

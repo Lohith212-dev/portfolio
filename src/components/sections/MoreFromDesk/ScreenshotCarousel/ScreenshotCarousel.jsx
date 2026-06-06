@@ -56,7 +56,6 @@ export default function ScreenshotCarousel({ title, screenshots }) {
 
       <MoreWorkBrowserFrame
         title={title}
-        darkChrome
         className={styles.frame}
         bodyClassName={styles.frameBody}
       >

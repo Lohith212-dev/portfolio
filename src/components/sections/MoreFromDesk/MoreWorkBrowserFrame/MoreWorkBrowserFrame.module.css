@@ -6,58 +6,30 @@
   box-shadow: 0 1.5rem 4rem color-mix(in srgb, var(--color-ink-950) 16%, transparent);
 }
 
+/* Light chrome — same surface, hairline, and dot treatment as the LMS
+   case study's BrowserChrome, so every UI frame on the site reads as the
+   same browser. */
 .chrome {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
-  gap: 0.9rem;
-  min-height: 3.45rem;
+  gap: 0.8rem;
+  min-height: 2.3rem;
   border-bottom: 1px solid var(--color-ink-100);
   background: var(--color-surface-white);
-  padding: 0.7rem 0.85rem 0.7rem 1rem;
-}
-
-.chromeDark {
-  border-bottom-color: color-mix(in srgb, var(--color-surface-white) 10%, transparent);
-  background: var(--color-ink-950);
-}
-
-.chromeDark .dots span {
-  background: color-mix(in srgb, var(--color-surface-white) 22%, transparent);
-}
-
-.chromeDark .chromeTitle {
-  color: var(--color-surface-white);
-}
-
-.chromeDark .chromeTitle span {
-  color: color-mix(in srgb, var(--color-surface-white) 56%, transparent);
-}
-
-.chromeDark .controlButton {
-  border-color: color-mix(in srgb, var(--color-surface-white) 12%, transparent);
-  background:
-    linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--color-surface-white) 16%, transparent),
-      color-mix(in srgb, var(--color-surface-white) 5%, transparent)
-    ),
-    color-mix(in srgb, var(--color-surface-white) 12%, var(--color-ink-950));
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, var(--color-surface-white) 18%, transparent),
-    0 0.6rem 1.5rem color-mix(in srgb, var(--color-ink-950) 22%, transparent);
+  padding: 0.35rem 0.55rem 0.35rem 0.85rem;
 }
 
 .dots {
   display: inline-flex;
   align-items: center;
-  gap: 0.45rem;
+  gap: 0.35rem;
 }
 
 .dots span {
   display: block;
-  width: 0.72rem;
-  height: 0.72rem;
+  width: 0.5rem;
+  height: 0.5rem;
   border-radius: 9999px;
   background: var(--color-ink-100);
 }
@@ -67,7 +39,7 @@
   overflow: hidden;
   color: var(--color-ink-700);
   font-family: var(--font-dm);
-  font-size: 0.8rem;
+  font-size: 0.75rem;
   font-weight: 800;
   line-height: 1.2;
   text-overflow: ellipsis;
@@ -86,45 +58,27 @@
   gap: 0.45rem;
 }
 
+/* Quiet control on a light bar — same family as the fullscreen view
+   buttons above the compare stages. */
 .controlButton {
   display: grid;
-  width: clamp(2.05rem, 3.6vw, 2.6rem);
-  height: clamp(2.05rem, 3.6vw, 2.6rem);
+  width: 1.7rem;
+  height: 1.7rem;
   place-items: center;
-  border: 1px solid color-mix(in srgb, var(--color-surface-white) 24%, transparent);
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
   border-radius: 9999px;
-  background:
-    linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--color-surface-white) 22%, transparent),
-      color-mix(in srgb, var(--color-surface-white) 7%, transparent)
-    ),
-    color-mix(in srgb, var(--color-ink-950) 34%, transparent);
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, var(--color-surface-white) 30%, transparent),
-    0 0.6rem 1.5rem color-mix(in srgb, var(--color-ink-950) 13%, transparent);
-  color: var(--color-surface-white);
+  background: var(--color-surface-white);
+  color: var(--color-ink-700);
   cursor: pointer;
   text-decoration: none;
-  backdrop-filter: blur(14px) saturate(1.4);
   transition:
-    background 0.18s ease,
-    box-shadow 0.18s ease,
+    background 0.2s ease,
     transform 0.18s ease;
 }
 
 .controlButton:hover,
 .controlButton:focus-visible {
-  background:
-    linear-gradient(
-      135deg,
-      color-mix(in srgb, var(--color-surface-white) 32%, transparent),
-      color-mix(in srgb, var(--color-surface-white) 12%, transparent)
-    ),
-    color-mix(in srgb, var(--color-ink-950) 40%, transparent);
-  box-shadow:
-    inset 0 1px 0 color-mix(in srgb, var(--color-surface-white) 38%, transparent),
-    0 0.7rem 1.65rem color-mix(in srgb, var(--color-ink-950) 16%, transparent);
+  background: var(--color-surface-light);
   transform: translateY(-1px);
 }
 
@@ -140,7 +94,7 @@
 
 .controlButton span {
   font-family: var(--font-dm);
-  font-size: 1.3rem;
+  font-size: 1rem;
   font-weight: 900;
   line-height: 1;
 }

@@ -1848,6 +1848,29 @@ export function ObjectiveDecideIcon({ className = '' }) {
   );
 }
 
+export function ObjectiveLoopIcon({ className = '' }) {
+  /* Two arrows chasing each other — practice, review, retry as one loop. */
+  return (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+      <path d="M20 12a8 8 0 0 0-8-8c-2.4 0-4.6.95-6.2 2.5L4 8" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4 3.5V8h4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M4 12a8 8 0 0 0 8 8c2.4 0 4.6-.95 6.2-2.5L20 16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M20 20.5V16h-4.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function ObjectiveDoubtIcon({ className = '' }) {
+  /* Speech bubble with a question mark — doubts resolved where they arise. */
+  return (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+      <path d="M19 4.5H5A2.5 2.5 0 0 0 2.5 7v7.5A2.5 2.5 0 0 0 5 17h2.5v4l5-4H19a2.5 2.5 0 0 0 2.5-2.5V7A2.5 2.5 0 0 0 19 4.5z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <path d="M9.3 8.6a2.6 2.6 0 0 1 5.05.87c0 1.74-2.6 2.6-2.6 2.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="11.75" cy="14.4" r="0.9" fill="currentColor" />
+    </svg>
+  );
+}
+
 export function CompareHandleIcon({ className = '' }) {
   return (
     <svg

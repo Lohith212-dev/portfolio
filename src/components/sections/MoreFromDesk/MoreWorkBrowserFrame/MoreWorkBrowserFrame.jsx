@@ -8,7 +8,6 @@ import styles from './MoreWorkBrowserFrame.module.css';
 export default function MoreWorkBrowserFrame({
   title,
   eyebrow,
-  darkChrome = false,
   hideFullscreenControl = false,
   children,
   closeLabel,
@@ -44,7 +43,7 @@ export default function MoreWorkBrowserFrame({
 
   return (
     <div ref={frameRef} className={`${styles.frame} ${className}`}>
-      <div className={`${styles.chrome} ${darkChrome ? styles.chromeDark : ''}`}>
+      <div className={styles.chrome}>
         <span className={styles.dots} aria-hidden="true">
           <span />
           <span />

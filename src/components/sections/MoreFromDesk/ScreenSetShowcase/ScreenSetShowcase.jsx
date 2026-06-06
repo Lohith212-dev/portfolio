@@ -37,7 +37,6 @@ export default function ScreenSetShowcase({ screenSet, sectionTitle }) {
 
       <MoreWorkBrowserFrame
         title={screenSet.frameTitle || sectionTitle}
-        darkChrome
         className={styles.screenFrame}
         bodyClassName={styles.screenFrameBody}
       >

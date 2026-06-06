@@ -781,13 +781,36 @@ const standaloneMoreWorkDetails = [
       websiteNavLinks: [
         { href: '#website-preview', label: 'Product preview' },
         { href: '#context', label: 'Context' },
+        { href: '#objectives', label: 'Objectives' },
         { href: '#shipped', label: 'Approach' },
         { href: '#testimonials', label: 'Testimonials' },
       ],
-      overviewCard: {
-        paragraphs: [
-          'Neuron is e-GMAT\'s official-question practice platform. It gives students a focused workspace to solve real GMAT questions - timed, filtered by topic and difficulty, with analytics and e-GMAT-format solutions all in one place. Before Neuron, students were stitching this experience together across multiple sites and apps.',
+      contextCards: [
+        {
+          eyebrow: 'The opportunity',
+          title: 'Why this product had to exist',
+          body: 'Students preparing for the GMAT need to practice on official questions. But no platform in the market combined those questions with proper analytics or quality solutions. Students were left juggling GMAT Club, the Official Guide, and other scattered sources — getting the questions, but no visibility into where they were actually stuck.',
+        },
+        {
+          eyebrow: 'Problem statement',
+          title: 'What students were struggling with',
+          body: "The platform-juggling wasn't just inconvenient. It broke the practice → review → re-practice loop students needed in the final weeks of prep. Switching tools meant losing context, mistakes weren't tracked across sources, and methodology was always one tab away from the question that needed it.",
+        },
+      ],
+      solutionObjectives: {
+        items: [
+          {
+            icon: 'loop',
+            title: 'Seamless practice and revision',
+            body: "Students don't study in a line — they solve, review, bookmark, return, retry under the timer. Neuron treats questions, sessions, timed and untimed modes, and bookmarks as one continuous loop, not separate features.",
+          },
+          {
+            icon: 'doubt',
+            title: 'Seamless doubt-clearing',
+            body: 'A doubt gets resolved where it arises. The e-GMAT methodology lives inside the solution view, and the forums are one click from the question — "I don\'t understand why" is answered without leaving the screen.',
+          },
         ],
+        thesis: 'Every platform had the questions. None had the loop — practice, review, doubt-clearing, retry — without switching tools. Neuron is the workspace where that loop lives.',
       },
       roleParagraph: 'I designed the product end-to-end. I built the design system, the component library, and every screen in Figma, then handed the files to engineering for implementation. I did not write code; every visual and interaction decision in the product is mine.',
       notesCard: {
@@ -814,6 +837,13 @@ const standaloneMoreWorkDetails = [
                 },
               ],
             },
+            inlineQuote: {
+              author: 'madhavsawhney',
+              meta: '665 (Q87, V83, DI79) — GMAT Club review',
+              quoteHtml: '<mark>Neuron let me drill official GMAT questions on my exact weak areas</mark>, reducing my solve time while improving accuracy.',
+              href: 'https://gmatclub.com/reviews/comments/e-gmat-online-360-345365274#:~:text=Neuron%20let%20me%20drill%20official%20GMAT%20questions%20on%20my%20exact%20weak%20areas%20with%20e%2DGMAT%27s%20superior%20explanations.%20What%20made%20it%20invaluable%20was%20the%20Error%20Log%E2%80%94I%20could%20revisit%20every%20incorrect%20question%20before%20test%20day%2C%20reducing%20my%20solve%20time%20while%20improving%20accuracy.',
+              modalTitle: 'GMAT Club review — madhavsawhney',
+            },
           },
           {
             number: '02',
@@ -834,6 +864,13 @@ const standaloneMoreWorkDetails = [
                   caption: 'Method, timing, and review all live inside the same solution surface.',
                 },
               ],
+            },
+            inlineQuote: {
+              author: 'aliquamdolorem',
+              meta: '715 (Q88, V85, DI84) — GMAT Club review',
+              quoteHtml: 'This targeted approach <mark>drove my CR hard accuracy from 60% to 82%.</mark>',
+              href: 'https://gmatclub.com/reviews/comments/e-gmat-online-360-345365268#:~:text=This%20targeted%20approach%20drove%20my%20CR%20hard%20accuracy%20from%2060%25%20to%2082%25',
+              modalTitle: 'GMAT Club review — aliquamdolorem',
             },
           },
           {
@@ -863,6 +900,13 @@ const standaloneMoreWorkDetails = [
                 },
               ],
             },
+            inlineQuote: {
+              author: 'madhavsawhney',
+              meta: '665 (Q87, V83, DI79) — GMAT Club review',
+              quoteHtml: 'Identify weakness → study module → practice official questions on Neuron, retest — <mark>created measurable improvement between each mock attempt.</mark>',
+              href: 'https://gmatclub.com/reviews/comments/e-gmat-online-360-345365274#:~:text=created%20measurable%20improvement%20between%20each%20mock%20attempt',
+              modalTitle: 'GMAT Club review — madhavsawhney',
+            },
           },
           {
             number: '05',
@@ -873,50 +917,29 @@ const standaloneMoreWorkDetails = [
       },
       testimonials: {
         title: 'Public reception',
-        intro: 'After launch, public feedback on GMAT Club and Reddit started landing on the same things the product was designed to do - measurable score lifts traced back to specific behaviors, targeted weak-area drilling, and a practice loop tight enough to use between mock attempts.',
-        note: 'Quotes below are verbatim from publicly posted reviews and debriefs on GMAT Club and Reddit. Emphasis is mine, to mark the part most relevant to the product design. Each quote links to its original source - these are public observations, not solicited testimonials.',
+        intro: 'After launch, public feedback on GMAT Club and Reddit started landing on the same things the product was designed to do — measurable score lifts traced back to specific behaviors, targeted weak-area drilling, and a practice loop tight enough to use between mock attempts.',
+        note: 'Quotes below are verbatim from publicly posted reviews and debriefs on GMAT Club and Reddit. Emphasis is mine, to mark the part most relevant to the product design. Each quote links to its original source — these are public observations, not solicited testimonials.',
         sourceBrand: 'GMAT Club',
         items: [
           {
-            author: 'aliquamdolorem',
-            meta: '715 (Q88, V85, DI84) - GMAT Club review',
-            quoteHtml: 'This targeted approach <mark>drove my CR hard accuracy from 60% to 82%.</mark>',
-            href: 'https://gmatclub.com/reviews/comments/e-gmat-online-360-345365268',
-            modalTitle: 'GMAT Club review — aliquamdolorem',
-          },
-          {
-            author: 'madhavsawhney',
-            meta: '665 (Q87, V83, DI79) - GMAT Club review',
-            quoteHtml: 'Identify weakness -> study module -> practice official questions on Neuron, retest - <mark>created measurable improvement between each mock attempt.</mark>',
-            href: 'https://gmatclub.com/reviews/comments/e-gmat-online-360-345365274',
-            modalTitle: 'GMAT Club review — madhavsawhney',
-          },
-          {
-            author: 'madhavsawhney',
-            meta: '665 (Q87, V83, DI79) - GMAT Club review',
-            quoteHtml: '<mark>Neuron let me drill official GMAT questions on my exact weak areas</mark>, reducing my solve time while improving accuracy.',
-            href: 'https://gmatclub.com/reviews/comments/e-gmat-online-360-345365274',
-            modalTitle: 'GMAT Club review — madhavsawhney',
-          },
-          {
             author: 'nikkhil22',
-            meta: '685, +100-point improvement - GMAT Club forum',
+            meta: '685, +100-point improvement — GMAT Club forum',
             quoteHtml: 'When I had specific gaps in hard questions, <mark>Neuron was perfect for targeted practice.</mark> I used it to fill knowledge gaps without time pressure.',
-            href: 'https://gmatclub.com/forum/from-585-to-685-my-gmat-focus-journey-100-point-improvement-448777.html',
+            href: 'https://gmatclub.com/forum/from-585-to-685-my-gmat-focus-journey-100-point-improvement-448777.html#:~:text=Neuron%20was%20perfect%20for%20targeted%20practice',
             modalTitle: 'GMAT Club forum — nikkhil22',
           },
           {
             author: 'kalashjain',
-            meta: '685 (V85, Q88, DI79) - GMAT Club forum',
+            meta: '685 (V85, Q88, DI79) — GMAT Club forum',
             quoteHtml: 'Neuron <mark>helped me identify consistent patterns in my mistakes</mark> and fix the behavioural errors that I had identified.',
-            href: 'https://gmatclub.com/forum/gmat-685-with-e-gmat-447885.html',
+            href: 'https://gmatclub.com/forum/gmat-685-with-e-gmat-447885.html#:~:text=helped%20me%20identify%20consistent%20patterns%20in%20my%20mistakes',
             modalTitle: 'GMAT Club forum — kalashjain',
           },
           {
             author: 'Suhani5236',
-            meta: '655 (Q88, V82, DI77) - GMAT Club forum',
+            meta: '655 (Q88, V82, DI77) — GMAT Club forum',
             quoteHtml: 'I started using Neuron for <mark>15-20 minute warm-up sessions before cementing, gradually building my attention span.</mark>',
-            href: 'https://gmatclub.com/forum/from-555-to-655-a-100-point-gmat-journey-v82-q88-di77-454575.html',
+            href: 'https://gmatclub.com/forum/from-555-to-655-a-100-point-gmat-journey-v82-q88-di77-454575.html#:~:text=gradually%20building%20my%20attention%20span',
             modalTitle: 'GMAT Club forum — Suhani5236',
           },
         ],

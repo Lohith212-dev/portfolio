@@ -6,49 +6,49 @@
 .screenTabs {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.65rem;
+  gap: 0.55rem;
 }
 
+/* Same geometry and treatment as the compare stage's fullscreen view
+   buttons (CompareCard .viewButton) — one button family per page. The
+   active tab keeps a yellow tint so the selected screen stays legible. */
 .screenTab {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.55rem 0.95rem;
+  padding: 0.5rem 0.9rem;
   border: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
-  border-radius: 999px;
+  border-radius: 0.45rem;
   background: var(--color-surface-white);
-  color: var(--color-ink-600);
+  color: var(--color-ink-950);
   cursor: pointer;
   font-family: var(--font-dm);
-  font-size: 0.78rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 500;
   line-height: 1.2;
-  transition:
-    border-color 0.16s ease,
-    background 0.16s ease,
-    color 0.16s ease,
-    transform 0.16s ease;
+  transition: background 0.2s ease;
 }
 
 .screenTab:hover,
 .screenTab:focus-visible {
-  border-color: color-mix(in srgb, var(--color-accent-yellow) 32%, var(--color-ink-100));
-  transform: translateY(-1px);
+  background: var(--color-surface-light);
 }
 
 .screenTabActive {
   border-color: color-mix(in srgb, var(--color-accent-yellow) 36%, transparent);
   background: color-mix(in srgb, var(--color-accent-yellow) 10%, var(--color-surface-white));
-  color: var(--color-ink-950);
+  font-weight: 700;
 }
 
 .screenFrame {
   overflow: hidden;
 }
 
+/* 16:9 window — the body derives from the frame width so the chrome and
+   the UI inside stay at one scale; taller captures scroll inside it. */
 .screenFrameBody {
-  min-height: clamp(25rem, 70vh, 42rem);
-  height: clamp(25rem, 70vh, 42rem);
+  aspect-ratio: 16 / 9;
+  min-height: 0;
   background: var(--color-surface-light);
 }
 
@@ -66,12 +66,16 @@
 }
 
 .screenFrame:fullscreen .screenFrameBody {
+  aspect-ratio: auto;
   height: 100%;
   min-height: 0;
 }
 
+/* Narrow screens: a 16:9 slice of a phone-width frame is too short to
+   read a product screen — fall back to a fixed scroll window. */
 @media (max-width: 47.999rem) {
   .screenFrameBody {
+    aspect-ratio: auto;
     min-height: clamp(21rem, 66vh, 34rem);
     height: clamp(21rem, 66vh, 34rem);
   }
