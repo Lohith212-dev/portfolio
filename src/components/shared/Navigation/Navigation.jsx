@@ -1,8 +1,10 @@
 import { useRef, useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import Tooltip from '../Tooltip';
 import { useTheme } from '../ThemeContext';
+import { readBackReturn } from '../backReturn';
 import {
   NavIconWork,
   NavIconSkills,
@@ -39,6 +41,7 @@ export default function Navigation({
   backLabel = 'Back',
 }) {
   const { isFunMode, toggleMode, toggleStage } = useTheme();
+  const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
   const iconRefs = useRef({});
   const islandRef = useRef(null);
@@ -57,6 +60,31 @@ export default function Navigation({
   const tooltipText = toggleStage === 'complete'
     ? null
     : (isFunMode ? 'Back to the day job' : 'Resist if you can');
+
+  // Dynamic back: if we know which page (and scroll position) the
+  // visitor arrived from, return them to that exact spot. Otherwise the
+  // link falls through to its static backHref — e.g. a case study
+  // opened from a shared link still has somewhere to go.
+  const handleBackClick = (event) => {
+    const stored = readBackReturn();
+
+    if (!stored || stored.path === router.asPath) {
+      return;
+    }
+
+    event.preventDefault();
+
+    const { path, scrollY } = stored;
+    const restoreScroll = () => {
+      router.events.off('routeChangeComplete', restoreScroll);
+      // Wait one frame so the destination page has laid out before
+      // jumping to the remembered position.
+      requestAnimationFrame(() => window.scrollTo(0, scrollY));
+    };
+
+    router.events.on('routeChangeComplete', restoreScroll);
+    router.push(path, undefined, { scroll: false });
+  };
 
   const handleNavLinkClick = (event, href) => {
     if (!href?.startsWith('#') || typeof window === 'undefined') {
@@ -136,6 +164,7 @@ export default function Navigation({
                 <Link
                   href={backHref}
                   className={`${styles.navLink} ${isFunMode ? styles.navLinkFun : styles.navLinkNormal}`}
+                  onClick={handleBackClick}
                 >
                   <ChevronLeft color={isFunMode ? 'var(--color-fun-ink-50)' : 'var(--color-ink-950)'} />
                   {backLabel}

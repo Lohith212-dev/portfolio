@@ -21,9 +21,28 @@ import '../components/case-study/sat-lms-demo/styles/SkipIndicator.css';
 import '../components/case-study/sat-lms-demo/styles/TimeBadge.css';
 import '../components/case-study/sat-lms-demo/styles/UnitBlock.css';
 import '../components/case-study/sat-lms-demo/components/ui/GradeMedal.css';
+import { useEffect } from 'react';
+import Router from 'next/router';
 import { ThemeProvider } from '../components/shared/ThemeContext';
+import { saveBackReturn } from '../components/shared/backReturn';
 
 export default function App({ Component, pageProps }) {
+  // Before every internal navigation, remember the page being left and
+  // its scroll position so back buttons can return the visitor to the
+  // exact spot they came from (see shared/backReturn.js).
+  useEffect(() => {
+    const handleRouteChangeStart = () => {
+      saveBackReturn(
+        window.location.pathname + window.location.search,
+        window.scrollY,
+      );
+    };
+
+    Router.events.on('routeChangeStart', handleRouteChangeStart);
+
+    return () => Router.events.off('routeChangeStart', handleRouteChangeStart);
+  }, []);
+
   return (
     <ThemeProvider>
       <Component {...pageProps} />

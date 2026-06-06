@@ -31,7 +31,6 @@ export default function MoreWorkPage({ item }) {
         links={leanPageLinks}
         showToggle={false}
         backHref="/#more-from-desk"
-        backLabel="Back to range"
       />
       <ShowcaseTemplate item={item} detail={detail} relatedProjects={laneProjects} />
       <Footer variant="lean" />
