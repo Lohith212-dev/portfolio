@@ -32,13 +32,13 @@
 
 .tab:hover,
 .tab:focus-visible {
-  border-color: color-mix(in srgb, var(--color-accent-green) 32%, var(--color-ink-100));
+  border-color: color-mix(in srgb, var(--color-accent-yellow) 32%, var(--color-ink-100));
   transform: translateY(-1px);
 }
 
 .tabActive {
-  border-color: color-mix(in srgb, var(--color-accent-green) 36%, transparent);
-  background: color-mix(in srgb, var(--color-accent-green) 10%, var(--color-surface-white));
+  border-color: color-mix(in srgb, var(--color-accent-yellow) 36%, transparent);
+  background: color-mix(in srgb, var(--color-accent-yellow) 10%, var(--color-surface-white));
   color: var(--color-ink-950);
 }
 

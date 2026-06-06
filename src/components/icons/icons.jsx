@@ -1799,15 +1799,51 @@ export function InfoIcon({ className = '', ...props }) {
 export function CircleTickIcon({ className = '' }) {
   return (
     <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
-      <circle cx="10" cy="10" r="9" fill="var(--color-accent-green)" />
+      <circle cx="10" cy="10" r="9" fill="var(--color-accent-yellow)" />
       <polyline
         points="6 10.5 9 13.5 14.5 7.5"
         fill="none"
-        stroke="var(--color-surface-white)"
+        stroke="var(--color-ink-950)"
         strokeWidth="2"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
+    </svg>
+  );
+}
+
+/* Solution-objective icons (showcase pages): currentColor strokes so the
+   consuming component controls the color. */
+export function ObjectiveWelcomeIcon({ className = '' }) {
+  /* Open door — welcome in, before any selling. */
+  return (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+      <path d="M15 20.5h3.5v-17H15" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M15 22 7.5 20V4L15 2v20z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round" />
+      <circle cx="12.4" cy="12" r="0.9" fill="currentColor" />
+    </svg>
+  );
+}
+
+export function ObjectiveVerifyIcon({ className = '' }) {
+  /* Magnifier with a check — claims you can inspect and confirm. */
+  return (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+      <circle cx="10.5" cy="10.5" r="6.5" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M15.4 15.4 21 21" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M7.8 10.7l2 2 3.4-4.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function ObjectiveDecideIcon({ className = '' }) {
+  /* Many paths converging into one arrow — options collapse to a decision. */
+  return (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+      <path d="M4 5h2.5c3.8 0 4.7 7 8.5 7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M4 19h2.5c3.8 0 4.7-7 8.5-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M4 12h16" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <path d="M17.5 9.5 20 12l-2.5 2.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   );
 }

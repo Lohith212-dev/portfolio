@@ -15,7 +15,7 @@
 }
 
 .contextEyebrow {
-  color: var(--color-accent-orange);
+  color: var(--color-ink-500);
   font-family: var(--font-dm);
   font-size: var(--text-caption);
   font-weight: 700;
@@ -39,6 +39,24 @@
   font-family: var(--font-dm);
   font-size: var(--text-small);
   line-height: 1.8;
+}
+
+.contextQuestions {
+  /* Tailwind preflight strips list markers — restore them explicitly. */
+  list-style: decimal;
+  margin: 0;
+  padding-left: 1.25rem;
+  display: grid;
+  gap: 0.45rem;
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: var(--text-small);
+  line-height: 1.6;
+}
+
+.contextQuestions li::marker {
+  color: var(--color-accent-yellow);
+  font-weight: 700;
 }
 
 @media (max-width: 63.999rem) {

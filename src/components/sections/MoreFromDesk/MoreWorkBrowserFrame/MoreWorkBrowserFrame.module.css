@@ -129,7 +129,7 @@
 }
 
 .controlButton:focus-visible {
-  outline: 2px solid var(--color-accent-green);
+  outline: 2px solid var(--color-accent-yellow);
   outline-offset: 3px;
 }
 

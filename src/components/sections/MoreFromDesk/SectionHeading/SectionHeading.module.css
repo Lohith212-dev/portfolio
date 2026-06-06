@@ -5,9 +5,9 @@
 }
 
 .sectionNumber {
-  color: var(--color-accent-green);
+  color: var(--color-accent-yellow);
   font-family: var(--font-cabinet);
-  font-size: var(--heading-32);
+  font-size: var(--text-case-study-statement);
   font-weight: 800;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.03em;
@@ -20,7 +20,7 @@
   font-family: var(--font-cabinet);
   font-weight: 800;
   letter-spacing: -0.03em;
-  font-size: var(--heading-32);
+  font-size: var(--text-case-study-statement);
   line-height: 1.05;
 }
 

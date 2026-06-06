@@ -8,6 +8,14 @@ export default function ContextCardGrid({ cards }) {
           <span className={styles.contextEyebrow}>{card.eyebrow}</span>
           <h3>{card.title}</h3>
           <p>{card.body}</p>
+          {card.questions?.length ? (
+            <ol className={styles.contextQuestions}>
+              {card.questions.map((question) => (
+                <li key={question}>{question}</li>
+              ))}
+            </ol>
+          ) : null}
+          {card.closing ? <p>{card.closing}</p> : null}
         </article>
       ))}
     </div>

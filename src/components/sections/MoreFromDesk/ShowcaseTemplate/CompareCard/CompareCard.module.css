@@ -1,3 +1,10 @@
+/* The whole compare stage is one visual group — buttons, hint, and frame
+   stay tight inside it while the decision grid separates the groups. */
+.compareBlock {
+  display: grid;
+  gap: 1.45rem;
+}
+
 .compareViewActions {
   display: flex;
   gap: 0.55rem;
@@ -9,9 +16,9 @@
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 0.9rem;
-  border: none;
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
   border-radius: 0.45rem;
-  background: var(--color-surface-light);
+  background: var(--color-surface-white);
   color: var(--color-ink-950);
   font-family: var(--font-dm);
   font-weight: 500;
@@ -21,7 +28,7 @@
 }
 
 .viewButton:hover {
-  background: var(--color-ink-100);
+  background: var(--color-surface-light);
 }
 
 .viewButtonIcon {
@@ -30,31 +37,10 @@
   color: var(--color-ink-700);
 }
 
-.compareHint {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.55rem;
-  margin: 0;
-  padding: 0.6rem 0.85rem;
-  background: var(--color-surface-light);
-  border-radius: 0.45rem;
-  color: var(--color-ink-700);
-  font-family: var(--font-dm);
-  font-size: 0.78rem;
-  line-height: 1.5;
-}
-
-.hintIcon {
-  width: 0.95rem;
-  height: 0.95rem;
-  color: var(--color-ink-500);
-  flex-shrink: 0;
-  margin-top: 0.15rem;
-}
-
-/* --reveal must inherit: the animation runs on .compareFrame, and the clipped
-   Before layer, divider, and handle all read var(--reveal) from it. With
-   inherits: false the children never see the animated value and the wipe
+/* --reveal drives MANUAL mode only (autoplay keyframes clip-path/left
+   directly — see below). It must inherit: it's set on .compareFrame and the
+   clipped Before layer, divider, and handle all read var(--reveal) from it.
+   With inherits: false the children never see the value and the wipe
    appears stuck at 50%. */
 @property --reveal {
   syntax: '<percentage>';
@@ -68,7 +54,9 @@
   aspect-ratio: 16 / 10;
   border-radius: 0.95rem;
   overflow: hidden;
-  border: 1px solid color-mix(in srgb, var(--color-ink-100) 70%, transparent);
+  /* Long shadow instead of an outline — lifts the compare stage off the
+     page so it reads as the section's focal point. */
+  box-shadow: 0 1.6rem 3.2rem -0.8rem color-mix(in srgb, var(--color-ink-950) 30%, transparent);
   background: var(--color-ink-100);
   --reveal: 50%;
   user-select: none;
@@ -90,8 +78,13 @@
 .compareBefore {
   z-index: 2;
   clip-path: inset(0 calc(100% - var(--reveal)) 0 0);
+  /* Opaque canvas: short captures (e.g. a lone modal) don't fill the frame,
+     and without this the After layer bleeds through underneath. */
+  background: var(--color-surface-white);
 }
 
+/* Natural height, no object-fit: cover forces a re-raster of the huge
+   screenshot on every animation frame and the sweep turns to stop-motion. */
 .compareLayer img {
   position: absolute;
   top: 0;
@@ -125,7 +118,7 @@
 
 .compareLabelAfter {
   right: 0.95rem;
-  background: var(--color-accent-green);
+  background: var(--color-accent-yellow);
   color: var(--color-ink-950);
 }
 
@@ -134,8 +127,8 @@
   top: 0;
   bottom: 0;
   left: var(--reveal);
-  width: 2px;
-  background: rgba(255, 255, 255, 0.96);
+  width: 4px;
+  background: var(--color-accent-yellow);
   transform: translateX(-50%);
   box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.18);
   pointer-events: none;
@@ -150,8 +143,8 @@
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 999px;
-  background: var(--color-surface-white);
-  border: 1px solid var(--color-ink-300);
+  background: var(--color-accent-yellow);
+  border: 1px solid color-mix(in srgb, var(--color-ink-950) 18%, transparent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -169,40 +162,63 @@
 .handleIcon {
   width: 1.1rem;
   height: 1.1rem;
-  color: var(--color-ink-700);
+  color: var(--color-ink-950);
   pointer-events: none;
 }
 
-/* Seamless loop: 100% matches 0%, with holds at each end. Returning to 50%
-   between cycles reads as a stall at the midpoint — don't. */
-@keyframes compareSweep {
-  0% {
-    --reveal: 0%;
-  }
-
+/* Autoplay keyframes clip-path and left directly instead of sweeping
+   --reveal: a custom-property animation restyles and repaints the huge
+   screenshot layers on the main thread every frame, which reads as
+   stop-motion on long captures. Keyframed clip-path is compositor-eligible.
+   Both animations share one duration and easing so the divider stays glued
+   to the wipe edge. Seamless loop: 100% matches 0%, with holds at each end;
+   returning to 50% between cycles reads as a stall at the midpoint — don't. */
+@keyframes compareSweepClip {
+  0%,
   15% {
-    --reveal: 0%;
+    clip-path: inset(0 100% 0 0);
   }
 
-  50% {
-    --reveal: 100%;
-  }
-
+  50%,
   65% {
-    --reveal: 100%;
+    clip-path: inset(0 0 0 0);
   }
 
   100% {
-    --reveal: 0%;
+    clip-path: inset(0 100% 0 0);
   }
 }
 
-.autoplay {
-  animation: compareSweep 9s ease-in-out infinite;
+@keyframes compareSweepLeft {
+  0%,
+  15% {
+    left: 0%;
+  }
+
+  50%,
+  65% {
+    left: 100%;
+  }
+
+  100% {
+    left: 0%;
+  }
+}
+
+.autoplay .compareBefore {
+  animation: compareSweepClip 9s ease-in-out infinite;
+  will-change: clip-path;
+}
+
+.autoplay .compareDivider,
+.autoplay .compareDividerHandle {
+  animation: compareSweepLeft 9s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .autoplay {
+  .autoplay .compareBefore,
+  .autoplay .compareDivider,
+  .autoplay .compareDividerHandle {
     animation: none;
   }
 }

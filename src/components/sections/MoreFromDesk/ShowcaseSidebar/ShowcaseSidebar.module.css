@@ -97,9 +97,10 @@
 }
 
 .projectChipActive {
-  background: color-mix(in srgb, var(--color-accent-green) 14%, var(--color-surface-white));
+  background: color-mix(in srgb, var(--color-accent-yellow) 14%, var(--color-surface-white));
 }
 
+/* Live dot stays green — "live" semantics, not theme accent. */
 .projectChipDot {
   width: 0.42rem;
   height: 0.42rem;

@@ -594,20 +594,30 @@ const standaloneMoreWorkDetails = [
         {
           eyebrow: 'Problem statement',
           title: 'Visitors couldn\'t find themselves on the page',
-          body: 'The site didn\'t answer the four questions a prospective student arrives with: is this for someone at my level, what does it actually cost, can I trust these claims, and what do I do next. The substance was there. The surface forced visitors to work for it — or to leave and wait for a sales call.',
+          body: 'The site didn\'t answer the four questions a prospective student arrives with:',
+          questions: [
+            'Is this for someone at my level?',
+            'What does it actually cost?',
+            'Can I trust these claims?',
+            'What do I do next?',
+          ],
+          closing: 'The substance was there. The surface forced visitors to work for it — or to leave and wait for a sales call.',
         },
       ],
       solutionObjectives: {
         items: [
           {
+            icon: 'welcome',
             title: 'Welcome before you sell',
             body: 'Make the first viewport reach a student at any starting point, not just one who already identifies as a high-achiever. Show faces and scores that look like their own future.',
           },
           {
+            icon: 'verify',
             title: 'Verify, don\'t claim',
             body: 'Replace aspirational stats with specifics visitors can verify on platforms they already trust — GMAT Club, YouTube, Reddit. Credibility shifts from rhetoric to evidence.',
           },
           {
+            icon: 'decide',
             title: 'Decide, don\'t compare',
             body: 'Collapse six pricing SKUs into three durations of one course. Reduce decision fatigue at the moment intent is highest, without hiding what\'s being bought.',
           },

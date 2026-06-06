@@ -23,26 +23,3 @@
   line-height: 1.8;
 }
 
-.heroNote {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  width: fit-content;
-  margin: 0;
-  padding: 0.45rem 0.75rem;
-  border: 1px solid color-mix(in srgb, var(--color-accent-yellow) 36%, var(--color-ink-100));
-  border-radius: 0.875rem;
-  background: color-mix(in srgb, var(--color-accent-yellow) 18%, var(--color-surface-white));
-  color: var(--color-ink-800);
-  font-family: var(--font-dm);
-  font-size: 0.84rem;
-  line-height: 1.35;
-}
-
-.heroNoteIcon {
-  display: inline-flex;
-  width: 0.9rem;
-  height: 0.9rem;
-  flex: 0 0 auto;
-  color: color-mix(in srgb, var(--color-accent-yellow) 48%, var(--color-ink-800));
-}

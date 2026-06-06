@@ -57,7 +57,7 @@ col.after {
 }
 
 .shiftTable thead th.after {
-  color: var(--color-accent-green);
+  color: color-mix(in srgb, var(--color-accent-yellow) 55%, var(--color-ink-950));
 }
 
 .shiftTable tbody td {

@@ -30,9 +30,9 @@
   flex-direction: column;
   gap: 1.05rem;
   border-radius: 1rem;
-  border: 1px solid color-mix(in srgb, var(--color-accent-green) 16%, var(--color-ink-100));
+  border: 1px solid color-mix(in srgb, var(--color-accent-yellow) 16%, var(--color-ink-100));
   background:
-    linear-gradient(180deg, color-mix(in srgb, var(--color-accent-green) 11%, var(--color-surface-white)) 0%, var(--color-surface-white) 50%),
+    linear-gradient(180deg, color-mix(in srgb, var(--color-accent-yellow) 11%, var(--color-surface-white)) 0%, var(--color-surface-white) 50%),
     var(--color-surface-white);
   box-shadow: 0 1.25rem 3rem color-mix(in srgb, var(--color-ink-950) 12%, transparent);
   padding: 1.45rem 1.45rem 1.3rem;
@@ -56,7 +56,7 @@
 
 .testimonialQuoteMark {
   height: 1.8rem;
-  color: var(--color-accent-green);
+  color: var(--color-accent-yellow);
   font-family: Georgia, 'Times New Roman', serif;
   font-size: 3.8rem;
   line-height: 0.6;
@@ -94,8 +94,8 @@
 }
 
 .testimonialQuote mark {
-  background: var(--color-accent-green);
-  color: var(--color-surface-white);
+  background: var(--color-accent-yellow);
+  color: var(--color-ink-950);
   font-weight: 700;
   padding: 0.05rem 0.28rem;
   border-radius: 0.26rem;
@@ -120,7 +120,7 @@
   width: 2.55rem;
   height: 2.55rem;
   flex: 0 0 auto;
-  color: color-mix(in srgb, var(--color-accent-green) 76%, var(--color-ink-950));
+  color: color-mix(in srgb, var(--color-accent-yellow) 76%, var(--color-ink-950));
 }
 
 .testimonialAvatar svg {
@@ -150,7 +150,7 @@
 
 .testimonialSource {
   margin-top: 0.15rem;
-  color: var(--color-accent-orange);
+  color: color-mix(in srgb, var(--color-accent-yellow) 55%, var(--color-ink-950));
   border: 0;
   background: transparent;
   cursor: pointer;

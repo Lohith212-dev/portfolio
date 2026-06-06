@@ -140,10 +140,15 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                 </div>
 
                 <div className={styles.decisionGroup}>
-                  {notesCard.decisions.map((decision) => (
+                  {notesCard.decisions.map((decision, index) => (
                     <article key={decision.number} className={styles.decisionItem}>
                       <div className={styles.decisionText}>
-                        <h3>{decision.title}</h3>
+                        <h3>
+                          <span className={styles.decisionNumber}>
+                            {`${Number(sectionNumbers.shipped)}.${index + 1}`}
+                          </span>
+                          {decision.title}
+                        </h3>
                         <p>{decision.body}</p>
                       </div>
 

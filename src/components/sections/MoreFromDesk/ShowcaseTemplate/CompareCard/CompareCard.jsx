@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
-import { CompareHandleIcon, InfoIcon, VideoEnterFullscreenIcon } from '../../../../icons/icons';
+import { CompareHandleIcon, VideoEnterFullscreenIcon } from '../../../../icons/icons';
+import InfoNote from '../../../../shared/InfoNote';
 import { useFullPageModal } from '../FullPageModal';
 import styles from './CompareCard.module.css';
 
@@ -22,13 +23,16 @@ export default function CompareCard({
       return undefined;
     }
 
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    if (reducedMotion) {
       // No autoplay sweep; the wipe rests at the midpoint, drag still works.
       frame.classList.remove(styles.autoplay);
       frame.style.setProperty('--reveal', '50%');
     }
 
     let dragging = false;
+    let hovering = false;
 
     const setReveal = (pct) => {
       frame.style.setProperty('--reveal', `${pct}%`);
@@ -43,17 +47,36 @@ export default function CompareCard({
       return Math.max(0, Math.min(100, (centerX / frameRect.width) * 100));
     };
 
-    // Freeze autoplay at the in-flight position; once a user engages, the
-    // card stays in manual mode.
-    const activateManual = () => {
+    // Freeze autoplay at the in-flight position while the pointer is over the
+    // card; manual control lasts only as long as the hover or drag.
+    const pauseAuto = () => {
       if (!frame.classList.contains(styles.autoplay)) return;
       const inFlight = currentRevealPct();
       frame.classList.remove(styles.autoplay);
       setReveal(inFlight);
     };
 
+    // Resume the sweep once the pointer has left and no drag is in flight.
+    // The keyframes restart from 0% — the dropped inline --reveal falls back
+    // to the stylesheet value, and the animation overrides it anyway.
+    const maybeResume = () => {
+      if (reducedMotion || dragging || hovering) return;
+      frame.style.removeProperty('--reveal');
+      frame.classList.add(styles.autoplay);
+    };
+
+    const onPointerEnter = () => {
+      hovering = true;
+      pauseAuto();
+    };
+
+    const onPointerLeave = () => {
+      hovering = false;
+      maybeResume();
+    };
+
     const startDrag = (event) => {
-      activateManual();
+      pauseAuto();
       dragging = true;
       handle.setPointerCapture(event.pointerId);
       event.preventDefault();
@@ -75,18 +98,21 @@ export default function CompareCard({
       } catch {
         // Pointer capture already released — nothing to do.
       }
+      maybeResume();
     };
 
-    frame.addEventListener('pointerenter', activateManual);
-    frame.addEventListener('pointerdown', activateManual);
+    frame.addEventListener('pointerenter', onPointerEnter);
+    frame.addEventListener('pointerleave', onPointerLeave);
+    frame.addEventListener('pointerdown', pauseAuto);
     handle.addEventListener('pointerdown', startDrag);
     handle.addEventListener('pointermove', onMove);
     handle.addEventListener('pointerup', endDrag);
     handle.addEventListener('pointercancel', endDrag);
 
     return () => {
-      frame.removeEventListener('pointerenter', activateManual);
-      frame.removeEventListener('pointerdown', activateManual);
+      frame.removeEventListener('pointerenter', onPointerEnter);
+      frame.removeEventListener('pointerleave', onPointerLeave);
+      frame.removeEventListener('pointerdown', pauseAuto);
       handle.removeEventListener('pointerdown', startDrag);
       handle.removeEventListener('pointermove', onMove);
       handle.removeEventListener('pointerup', endDrag);
@@ -95,7 +121,7 @@ export default function CompareCard({
   }, []);
 
   return (
-    <>
+    <div className={styles.compareBlock}>
       <div className={styles.compareViewActions}>
         <button
           type="button"
@@ -117,13 +143,10 @@ export default function CompareCard({
         </button>
       </div>
 
-      <p className={styles.compareHint}>
-        <InfoIcon className={styles.hintIcon} />
-        <span>
-          Drag the slider to compare before and after. Use the buttons above to view either page
-          in full screen.
-        </span>
-      </p>
+      <InfoNote>
+        Drag the slider to compare before and after. Use the buttons above to view either page
+        in full screen.
+      </InfoNote>
 
       <div
         ref={frameRef}
@@ -149,6 +172,6 @@ export default function CompareCard({
           <CompareHandleIcon className={styles.handleIcon} />
         </button>
       </div>
-    </>
+    </div>
   );
 }

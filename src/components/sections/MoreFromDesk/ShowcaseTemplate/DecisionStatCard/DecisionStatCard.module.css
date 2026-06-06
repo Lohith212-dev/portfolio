@@ -1,17 +1,17 @@
-/* Side-banded stat card: bright accent-green band with dark content on the
-   left, light card body on the right. The band uses --color-accent-green
+/* Side-banded stat card: bright accent-yellow band with dark content on the
+   left, light card body on the right. The band uses --color-accent-yellow
    as-is — no darker derivation, no cross-mode fun tokens. */
 .statCard {
   display: grid;
   grid-template-columns: 5.5rem 1fr;
   overflow: hidden;
   border-radius: 1rem;
-  background: var(--color-surface-light);
+  background: var(--color-surface-white);
   border: 1px solid color-mix(in srgb, var(--color-ink-100) 70%, transparent);
 }
 
 .band {
-  background: var(--color-accent-green);
+  background: var(--color-accent-yellow);
   color: var(--color-ink-950);
   padding: 1.65rem 1rem 1.2rem;
   display: flex;
@@ -29,8 +29,8 @@
   position: absolute;
   inset: 0;
   background-image:
-    linear-gradient(to right, color-mix(in srgb, var(--color-ink-950) 14%, transparent) 1px, transparent 1px),
-    linear-gradient(to bottom, color-mix(in srgb, var(--color-ink-950) 14%, transparent) 1px, transparent 1px);
+    linear-gradient(to right, color-mix(in srgb, var(--color-surface-white) 45%, transparent) 1px, transparent 1px),
+    linear-gradient(to bottom, color-mix(in srgb, var(--color-surface-white) 45%, transparent) 1px, transparent 1px);
   background-size: 18px 18px;
   -webkit-mask-image: linear-gradient(to bottom, black, transparent 80%);
           mask-image: linear-gradient(to bottom, black, transparent 80%);
@@ -84,7 +84,7 @@
   font-variant-numeric: tabular-nums;
   display: inline-block;
   color: var(--color-ink-950);
-  font-size: clamp(3.5rem, 8.5vw, 4.75rem);
+  font-size: var(--text-case-study-statement);
 }
 
 .baseline {
@@ -101,7 +101,6 @@
   font-size: 0.95rem;
   line-height: 1.45;
   color: var(--color-ink-700);
-  max-width: 22rem;
 }
 
 @media (max-width: 47.999rem) {
