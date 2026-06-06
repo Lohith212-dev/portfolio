@@ -31,8 +31,9 @@ const projects = [
       text: 'I had not thought about UX at this level before. The minute decisions Lohith made made the flow surprisingly easy to follow.',
       person: 'Sanchari',
       role: 'Technical Lead, e-GMAT',
-      image: '/images/testimonials/testimonial-sanchari-portrait.png',
-      imageStyle: { transform: 'scale(1.4)', transformOrigin: 'center 22%' },
+      image: '/images/work/work-sanchari-portrait.png',
+      // Portrait source; face sits in the upper third — keep the framing loose.
+      imageStyle: { transform: 'scale(1.15)', transformOrigin: 'center 28%' },
       linkedinUrl: 'https://www.linkedin.com/in/shomesanchari/',
     },
     funSticker: 'The path finds the student.',
@@ -89,12 +90,12 @@ const projects = [
     ],
     metrics: [
       {
-        value: '2.4x',
-        label: 'faster time-to-trial',
+        value: '25%',
+        label: 'visitor return rate, up from 15%',
       },
       {
-        value: '38%',
-        label: 'drop in pricing-page bounce',
+        value: '50%',
+        label: 'cart-to-purchase rate, up from 45%',
       },
     ],
     summary: 'I reorganized messaging, proof, and action paths so visitors could understand the offering faster and move forward with more confidence.',
@@ -102,9 +103,9 @@ const projects = [
       text: "The site speaks more clearly than it ever has, and that's because Lohith owned the message, not just the visuals. He restructured how we talk about the platform - the hero line, the pricing frame, the success-stories pitch - and built each page around those decisions. The difference shows on every scroll.",
       person: 'Sundeep Eddu',
       role: 'Head of Marketing & Sales, e-GMAT',
-      image: '/images/testimonials/testimonial-sundeep-portrait.png',
-      // Source is a wider headshot (face sits high, lots of shirt below); zoom in on the face.
-      imageStyle: { transform: 'scale(1.5)', transformOrigin: 'center 32%' },
+      image: '/images/work/work-sundeep-portrait.png',
+      // Square headshot, face in the upper half; zoom in tight on the face.
+      imageStyle: { transform: 'scale(1.7)', transformOrigin: 'center 30%' },
       linkedinUrl: 'https://www.linkedin.com/in/eddu-sundeep/',
     },
     funSticker: 'The front door got serious.',
