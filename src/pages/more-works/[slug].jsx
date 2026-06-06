@@ -1,6 +1,7 @@
 import MetaTags from '../../components/shared/MetaTags';
 import Navigation from '../../components/shared/Navigation';
 import Footer from '../../components/shared/Footer';
+import CaseStudySecondaryNav from '../../components/case-study/CaseStudySecondaryNav';
 import ShowcaseTemplate from '../../components/sections/MoreFromDesk/ShowcaseTemplate';
 import {
   getMoreWorkBySlug,
@@ -27,11 +28,15 @@ export default function MoreWorkPage({ item }) {
         title={`${detail.title || item.title} | Lohith Savala`}
         description={detail.intro || item.note}
       />
+      {/* Same pattern as the LMS case study: the bottom-sticky section nav
+          owns section links on tablet/mobile, so the hamburger is hidden. */}
       <Navigation
         links={leanPageLinks}
         showToggle={false}
+        showMobileMenu={false}
         backHref="/#more-from-desk"
       />
+      <CaseStudySecondaryNav links={leanPageLinks} />
       <ShowcaseTemplate item={item} detail={detail} relatedProjects={laneProjects} />
       <Footer variant="lean" />
     </>

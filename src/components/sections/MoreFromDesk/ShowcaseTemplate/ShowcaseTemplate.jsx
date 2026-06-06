@@ -6,6 +6,7 @@ import WorkPreview from '../WorkPreview';
 import SectionHeading from '../SectionHeading';
 import ScreenSetShowcase from '../ScreenSetShowcase';
 import ShowcaseSidebar from '../ShowcaseSidebar';
+import ShowcaseSpecStrip from '../ShowcaseSpecStrip';
 import TestimonialMarquee from '../TestimonialMarquee';
 import StakeholderQuoteCard from '../../../shared/StakeholderQuoteCard';
 import TestimonialCard from '../../../shared/TestimonialCard';
@@ -75,6 +76,7 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
 
             <div className={styles.heroBandInner}>
               <ShowcaseHero title={detail.title} note={comingSoonNote} summary={summary} />
+              <ShowcaseSpecStrip sidebar={sidebar} />
               <WorkPreview
                 title={detail.previewTitle || detail.title}
                 embedUrl={detail.embedUrl}
@@ -88,6 +90,7 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
           <>
             <section className={styles.hero}>
               <ShowcaseHero title={detail.title} note={comingSoonNote} summary={summary} />
+              <ShowcaseSpecStrip sidebar={sidebar} />
             </section>
 
             {hasPreview ? (

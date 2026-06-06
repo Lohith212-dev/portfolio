@@ -50,6 +50,9 @@
   height: 100%;
 }
 
+/* Micro-label sized to the 4.4–5.5rem band geometry — the caption token
+   would clip wide-tracked words like "LAUNCH" on mobile. Intentionally off
+   the type-token scale. */
 .bandLabel {
   font-family: var(--font-dm);
   font-size: 0.6rem;
@@ -89,7 +92,7 @@
 
 .baseline {
   font-family: var(--font-dm);
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   font-weight: 500;
   color: var(--color-ink-500);
 }
@@ -98,7 +101,7 @@
   margin: 0.3rem 0 0;
   font-family: var(--font-dm);
   font-weight: 400;
-  font-size: 0.95rem;
+  font-size: var(--text-small);
   line-height: 1.45;
   color: var(--color-ink-700);
 }

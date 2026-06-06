@@ -20,6 +20,12 @@
   white-space: nowrap;
 }
 
+/* Decorative handwritten annotation — sized like an illustration, not body
+   type, so it intentionally stays off the type-token scale. */
+.liveBadgeSide .liveBadgeLabel {
+  font-size: 2rem;
+}
+
 /* Side variant — hidden until there's room in the gutter (see media query). */
 .liveBadgeSide {
   display: none;
@@ -38,7 +44,7 @@
   background-color: color-mix(in srgb, var(--color-ink-950) 76%, transparent);
   color: var(--color-surface-white);
   font-family: var(--font-dm);
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   font-weight: 600;
   white-space: nowrap;
   backdrop-filter: blur(6px);
@@ -86,7 +92,6 @@
   }
 
   .liveBadgeSide .liveBadgeLabel {
-    font-size: 2rem;
     transform: rotate(-6deg);
   }
 
@@ -208,7 +213,7 @@
   margin: 1.25rem 0 0;
   color: var(--color-ink-500);
   font-family: var(--font-dm);
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   line-height: 1.6;
 }
 

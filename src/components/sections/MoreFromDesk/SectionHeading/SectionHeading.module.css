@@ -28,8 +28,4 @@
   .sectionHeading {
     gap: 0.7rem;
   }
-
-  .sectionNumber {
-    font-size: var(--text-h3);
-  }
 }

@@ -47,7 +47,8 @@
   margin: 0;
   color: var(--color-ink-700);
   font-family: var(--font-dm);
-  font-size: 0.94rem;
+  /* Same step as the context-card body copy. */
+  font-size: var(--text-small);
   line-height: 1.65;
 }
 

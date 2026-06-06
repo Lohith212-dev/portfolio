@@ -22,7 +22,7 @@
   color: var(--color-ink-950);
   font-family: var(--font-dm);
   font-weight: 500;
-  font-size: 0.82rem;
+  font-size: var(--text-caption);
   cursor: pointer;
   transition: background 0.2s ease;
 }
@@ -101,7 +101,7 @@
   border-radius: 0.4rem;
   font-family: var(--font-dm);
   font-weight: 700;
-  font-size: 0.72rem;
+  font-size: var(--text-caption);
   letter-spacing: 0.08em;
   text-transform: uppercase;
   pointer-events: none;

@@ -39,7 +39,7 @@
   overflow: hidden;
   color: var(--color-ink-700);
   font-family: var(--font-dm);
-  font-size: 0.75rem;
+  font-size: var(--text-caption);
   font-weight: 800;
   line-height: 1.2;
   text-overflow: ellipsis;
@@ -94,7 +94,7 @@
 
 .controlButton span {
   font-family: var(--font-dm);
-  font-size: 1rem;
+  font-size: var(--text-small);
   font-weight: 900;
   line-height: 1;
 }
