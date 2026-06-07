@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import Link from 'next/link';
 import { useTheme } from '../../shared/ThemeContext';
 import { WhiteSwirlyArrow, HandDrawnCircleArrow, SmallArrow } from '../../icons/icons';
 import styles from './Hero.module.css';
@@ -179,7 +180,11 @@ export default function Hero() {
               <ul className={styles.roleList}>
                 {projects.map(project => (
                   <li key={project.num} className={styles.roleItem}>
-                    <a href={project.href} className={styles.roleLink}>
+                    {/* next/link, not <a>: a client-side navigation fires
+                        routeChangeStart so the dynamic back button can save
+                        where the visitor left from (a plain <a> full-reloads
+                        and nothing gets recorded). */}
+                    <Link href={project.href} className={styles.roleLink}>
                       <span className={`${styles.roleNumber} ${isFunMode
                         ? 'font-caveat text-fun-accent-red'
                         : 'font-dm font-extrabold text-surface-white'
@@ -206,7 +211,7 @@ export default function Hero() {
                       <span className={styles.roleArrowWrap}>
                         <HandDrawnCircleArrow className={styles.roleArrow} />
                       </span>
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
