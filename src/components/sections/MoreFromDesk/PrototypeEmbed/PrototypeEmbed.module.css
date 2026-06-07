@@ -1,0 +1,220 @@
+/* Chrome mirrors WorkPreview.module.css (badge, fullscreen dock, walkthrough
+   note) so prototype embeds read identically to live embeds — minus the
+   per-breakpoint device switching and the design-viewport scaler. */
+
+.frameShell {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* The desktop frame carries a fixed pixel width; without this the hero
+     grid's track is forced to that width on narrow viewports (min-width:auto)
+     and the shell keeps measuring itself at the stuck size — the frame can
+     then never shrink to fit. */
+  min-width: 0;
+}
+
+/* ---- "prototype embed" annotation ---- */
+.liveBadgeLabel {
+  font-family: var(--font-caveat);
+  font-weight: 700;
+  line-height: 0.9;
+  color: inherit;
+  white-space: nowrap;
+}
+
+/* Decorative handwritten annotation — sized like an illustration, not body
+   type, so it intentionally stays off the type-token scale. */
+.liveBadgeSide .liveBadgeLabel {
+  font-size: 2rem;
+}
+
+/* Side variant — hidden until there's room in the gutter (see media query). */
+.liveBadgeSide {
+  display: none;
+}
+
+.liveBadgeChip {
+  position: absolute;
+  top: 0.65rem;
+  left: 0.65rem;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.3rem 0.62rem;
+  border-radius: 999px;
+  background-color: color-mix(in srgb, var(--color-ink-950) 76%, transparent);
+  color: var(--color-surface-white);
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  white-space: nowrap;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  box-shadow: 0 0.5rem 1.25rem color-mix(in srgb, var(--color-ink-950) 25%, transparent);
+}
+
+/* Live dot stays green — "live" semantics, not theme accent. */
+.liveBadgeChipDot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 999px;
+  background-color: var(--color-accent-green);
+  box-shadow: 0 0 0 0.18rem color-mix(in srgb, var(--color-accent-green) 30%, transparent);
+  animation: liveBadgePulse 1.8s ease-in-out infinite;
+}
+
+@keyframes liveBadgePulse {
+  50% {
+    opacity: 0.4;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .liveBadgeChipDot {
+    animation: none;
+  }
+}
+
+@media (min-width: 85rem) {
+  .liveBadgeChip {
+    display: none;
+  }
+
+  .liveBadgeSide {
+    position: absolute;
+    left: calc(100% + 1.5rem);
+    top: 5.75rem;
+    z-index: 5;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: max-content;
+    color: #E63A2E;
+  }
+
+  .liveBadgeSide .liveBadgeLabel {
+    transform: rotate(-6deg);
+  }
+
+  .liveBadgeSideArrow {
+    width: 3.75rem;
+    height: auto;
+    margin: 0.1rem 0 0 1.25rem;
+    transform: rotate(180deg);
+  }
+}
+
+/* Wraps the liquid-glass device frame; anchors the floating fullscreen control. */
+.frameStage {
+  position: relative;
+  display: inline-flex;
+  max-width: 100%;
+}
+
+.deviceFrame {
+  max-width: 100%;
+}
+
+/* Fills the device frame's screen area; the frame supplies the bezel + rounding. */
+.previewViewport {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: var(--color-surface-white);
+  isolation: isolate;
+}
+
+.previewViewportFullscreen {
+  width: 100vw;
+  height: 100vh;
+  background: var(--color-surface-white);
+}
+
+.previewEmbed {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  background: var(--color-surface-white);
+}
+
+/* ---- Fullscreen control (mirrors the LMS demo dock) ---- */
+.controlButton {
+  position: absolute;
+  z-index: 6;
+  display: grid;
+  place-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border: 1px solid color-mix(in srgb, var(--color-surface-white) 14%, transparent);
+  border-radius: 0.7rem;
+  background-color: var(--color-ink-950);
+  color: var(--color-surface-white);
+  box-shadow: 0 0.75rem 1.75rem color-mix(in srgb, var(--color-ink-950) 22%, transparent);
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease;
+}
+
+.controlButton:hover,
+.controlButton:focus-visible {
+  transform: translateY(-1px);
+  background-color: color-mix(in srgb, var(--color-ink-950) 88%, var(--color-accent-yellow));
+}
+
+.controlButton:focus-visible {
+  outline: 2px solid var(--color-accent-yellow);
+  outline-offset: 3px;
+}
+
+.controlButton svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Mobile: dock sits inside the frame (no room outside). */
+.controlDockOutside {
+  top: 1rem;
+  right: 1rem;
+}
+
+/* Desktop + tablet: the button tabs onto the frame's right edge, just outside. */
+@media (min-width: 48rem) {
+  .controlDockOutside {
+    left: 100%;
+    right: auto;
+    border-radius: 0 0.7rem 0.7rem 0;
+  }
+}
+
+/* Fullscreen exit lives inside the fullscreen surface. */
+.controlDockInside {
+  top: 1rem;
+  right: 1rem;
+}
+
+/* ---- Walkthrough link below the frame ---- */
+.walkthroughNote {
+  margin: 1.25rem 0 0;
+  color: var(--color-ink-500);
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  line-height: 1.6;
+}
+
+.walkthroughButton {
+  border: 0;
+  background: transparent;
+  color: color-mix(in srgb, var(--color-accent-yellow) 55%, var(--color-ink-950));
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+  text-decoration: none;
+}
+
+.walkthroughButton:hover,
+.walkthroughButton:focus-visible {
+  text-decoration: underline;
+}

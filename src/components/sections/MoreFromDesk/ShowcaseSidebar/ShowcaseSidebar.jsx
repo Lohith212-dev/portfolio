@@ -32,24 +32,43 @@ export default function ShowcaseSidebar({ sidebar }) {
 
           {sidebar?.projectChips?.length ? (
             <div className={styles.projectChipRow}>
-              {sidebar.projectChips.map((chip) => (
-                <span
-                  key={chip.label}
-                  className={`${styles.projectChip} ${chip.active ? styles.projectChipActive : ''}`}
-                >
-                  {chip.dot ? <span className={styles.projectChipDot} aria-hidden="true" /> : null}
-                  {chip.logo ? (
-                    // eslint-disable-next-line @next/next/no-img-element
-                    <img
-                      src={chip.logo}
-                      alt=""
-                      className={styles.projectChipLogo}
-                      aria-hidden="true"
-                    />
-                  ) : null}
-                  {chip.label}
-                </span>
-              ))}
+              {sidebar.projectChips.map((chip) => {
+                const chipContent = (
+                  <>
+                    {chip.dot ? <span className={styles.projectChipDot} aria-hidden="true" /> : null}
+                    {chip.logo ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={chip.logo}
+                        alt=""
+                        className={styles.projectChipLogo}
+                        aria-hidden="true"
+                      />
+                    ) : null}
+                    {chip.label}
+                    {chip.href ? <span aria-hidden="true">{'↗'}</span> : null}
+                  </>
+                );
+                const chipClass = `${styles.projectChip} ${chip.active ? styles.projectChipActive : ''} ${chip.href ? styles.projectChipLink : ''}`;
+
+                /* External product links only — internal routes would need
+                   next/link, but these chips always point off-site. */
+                return chip.href ? (
+                  <a
+                    key={chip.label}
+                    href={chip.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={chipClass}
+                  >
+                    {chipContent}
+                  </a>
+                ) : (
+                  <span key={chip.label} className={chipClass}>
+                    {chipContent}
+                  </span>
+                );
+              })}
             </div>
           ) : null}
 

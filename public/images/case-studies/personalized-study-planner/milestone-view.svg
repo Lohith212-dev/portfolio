@@ -1,0 +1,680 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="850.01" height="1573.6" viewBox="0 0 850.01 1573.6">
+  <defs>
+    <filter id="Control_shade" x="35.502" y="196.49" width="780" height="321" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Control_shade-2" x="35.502" y="512.49" width="780" height="321" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-2"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Control_shade-3" x="35.502" y="828.49" width="780" height="401" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-3"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Control_shade-4" x="35.502" y="196.49" width="780" height="321" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-4"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path">
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Control_shade)" style="mix-blend-mode: multiply;isolation: isolate">
+        <rect id="Control_shade-5" data-name="Control shade" width="750" height="291" rx="7" transform="translate(422 275)" fill="#fff"/>
+      </g>
+    </clipPath>
+    <filter id="Callout" x="271.001" y="213.99" width="100" height="45.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-5"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Callout-2" x="251" y="322.99" width="100" height="45.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-6"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Callout-3" x="300" y="402.99" width="100" height="45.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-7"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Control_shade-6" x="35.502" y="512.49" width="780" height="321" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-8"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur-8"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Callout-4" x="387.001" y="529.99" width="100" height="45.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-9"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-9"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Callout-5" x="366" y="638.99" width="100" height="45.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-10"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-10"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Callout-6" x="427" y="718.99" width="100" height="45.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-11"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-11"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Control_shade-8" x="35.502" y="828.49" width="780" height="401" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-12"/>
+      <feFlood flood-opacity="0.078"/>
+      <feComposite operator="in" in2="blur-12"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-3">
+      <g transform="matrix(1, 0, 0, 1, 0, 0)" filter="url(#Control_shade-3)" style="mix-blend-mode: multiply;isolation: isolate">
+        <rect id="Control_shade-9" data-name="Control shade" width="750" height="371" rx="7" transform="translate(422 497)" fill="#fff"/>
+      </g>
+    </clipPath>
+    <filter id="Callout-7" x="466.501" y="845.99" width="100" height="45.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-13"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-13"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Callout-8" x="457" y="954.99" width="100" height="45.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-14"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-14"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Callout-9" x="472" y="1034.99" width="100" height="45.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-15"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-15"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Callout-10" x="487" y="1114.99" width="100" height="45.001" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-16"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-16"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Gauge" x="216.236" y="1255.226" width="426.527" height="76.527" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-17"/>
+      <feFlood flood-opacity="0.051"/>
+      <feComposite operator="in" in2="blur-17"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <linearGradient id="linear-gradient" y1="0.5" x2="0.966" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#ffc766" stop-opacity="0.102"/>
+      <stop offset="1" stop-color="#ffc766"/>
+    </linearGradient>
+    <filter id="Ellipse_8" x="347.75" y="1266.393" width="52.5" height="52.5" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-18"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-18"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_8-2" x="473.501" y="1266.393" width="52.5" height="52.5" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-19"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-19"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <clipPath id="clip-path-4">
+      <path id="Union_1" data-name="Union 1" d="M-8575.01-478.2v-82.572l15.8,11.911a3.487,3.487,0,0,1,2.469-1.02,3.5,3.5,0,0,1,3.5,3.5,3.479,3.479,0,0,1-.436,1.693l26.937,20.307v-33.643a3.5,3.5,0,0,1-2.5-3.357,3.5,3.5,0,0,1,2.5-3.355v-9.048h47.314V-478.2Z" transform="translate(8570.23 656.097)" fill="#1e90ff"/>
+    </clipPath>
+    <clipPath id="clip-path-5">
+      <path id="Union_1-2" data-name="Union 1" d="M-8575.01-478.2V-573.78h25.179l6.1,13.047a3.507,3.507,0,0,1,.993-.143,3.5,3.5,0,0,1,3.5,3.5,3.5,3.5,0,0,1-1.561,2.914l14.063,30.086v-33.5a3.5,3.5,0,0,1-3.5-3.5,3.5,3.5,0,0,1,3.5-3.5v-8.9h47.314V-478.2Z" transform="translate(8570.23 656.097)" fill="#fda40a"/>
+    </clipPath>
+  </defs>
+  <g id="milestone-view" transform="translate(-384.5 -71.51)">
+    <g id="Tab_nav" data-name="Tab nav" transform="translate(0 5)">
+      <path id="Tab_content_bg" data-name="Tab content bg" d="M-1591,53.01h829.01a10,10,0,0,1,10,10v1552.6a10,10,0,0,1-10,10H-1591a10,10,0,0,1-10-10V63.01A10,10,0,0,1-1591,53.01Z" transform="translate(1986 14)" fill="#fff" stroke="rgba(0,0,0,0)" stroke-miterlimit="10" stroke-width="1"/>
+    </g>
+    <g id="Head_and_description" data-name="Head and description" transform="translate(0 -15)">
+      <text id="Your_Overall_Prep_journey" data-name="Your Overall Prep journey" transform="translate(435 162.01)" font-size="30" font-family="NunitoSans-Bold, Nunito Sans" font-weight="700"><tspan x="0" y="0">Your Overall Prep journey</tspan></text>
+    </g>
+    <g id="Milestone_view" data-name="Milestone view" transform="translate(13 8)">
+      <g id="Header_row" data-name="Header row" transform="translate(0 -5)">
+        <rect id="Control_shade-10" data-name="Control shade" width="750" height="60" rx="7" transform="translate(422.5 198)" fill="#fafafa" stroke="#f2f2f2" stroke-width="1"/>
+        <g id="Months" transform="translate(0 4.5)">
+          <g id="month" transform="translate(619.599 205.5)">
+            <rect id="Rectangle_921_copy_10" data-name="Rectangle 921 copy 10" width="121.667" height="35" rx="7.5" transform="translate(2.9)" fill="rgba(242,242,242,0.5)" stroke="#d2d2d2" stroke-width="1" style="mix-blend-mode: multiply;isolation: isolate"/>
+            <text id="AUG" transform="translate(62.213 22.5)" font-size="14" font-family="Inter-SemiBold, Inter" font-weight="600" letter-spacing="0.025em"><tspan x="-15.837" y="0">AUG</tspan></text>
+          </g>
+          <g id="month-2" data-name="month" transform="translate(741.3 205.5)">
+            <rect id="Rectangle_921_copy_10-2" data-name="Rectangle 921 copy 10" width="121.667" height="35" rx="7.5" transform="translate(2.2)" fill="rgba(242,242,242,0.5)" stroke="#d2d2d2" stroke-width="1" style="mix-blend-mode: multiply;isolation: isolate"/>
+            <text id="SEP" transform="translate(62.21 22.5)" font-size="14" font-family="Inter-SemiBold, Inter" font-weight="600" letter-spacing="0.025em"><tspan x="-13.651" y="0">SEP</tspan></text>
+          </g>
+          <g id="month-3" data-name="month" transform="translate(865 205.5)">
+            <rect id="Rectangle_921_copy_10-3" data-name="Rectangle 921 copy 10" width="121.667" height="35" rx="7.5" fill="rgba(242,242,242,0.5)" stroke="#d2d2d2" stroke-width="1" style="mix-blend-mode: multiply;isolation: isolate"/>
+            <text id="OCT" transform="translate(61.145 22.5)" font-size="14" font-family="Inter-SemiBold, Inter" font-weight="600" letter-spacing="0.025em"><tspan x="-15.598" y="0">OCT</tspan></text>
+          </g>
+        </g>
+        <g id="Starting_score" data-name="Starting score" transform="translate(-43)">
+          <text id="Starting_Score-2" data-name="Starting 
+Score" transform="translate(607 220)" font-size="14" font-family="Inter-Regular, Inter" letter-spacing="0.025em"><tspan x="-29.738" y="0">Starting </tspan><tspan x="-19.811" y="18.2">Score</tspan></text>
+          <line id="Line_2" data-name="Line 2" x2="38" transform="translate(588.5 248)" fill="none" stroke="#00aeef" stroke-linecap="round" stroke-width="1.5"/>
+        </g>
+        <g id="Target_Score" data-name="Target Score" transform="translate(-46)">
+          <text id="Target_Score-2" data-name="Target
+Score" transform="translate(1084 220)" font-size="14" font-family="Inter-Regular, Inter" letter-spacing="0.025em"><tspan x="-22.173" y="0">Target</tspan><tspan x="-19.811" y="18.2">Score</tspan></text>
+          <line id="Line_3" data-name="Line 3" x2="38" transform="translate(1065.5 248)" fill="none" stroke="#fda40a" stroke-linecap="round" stroke-width="1.5"/>
+        </g>
+      </g>
+      <g id="Expanded_states" data-name="Expanded states">
+        <g id="Verbal">
+          <g transform="matrix(1, 0, 0, 1, 371.5, 63.51)" filter="url(#Control_shade-4)" style="mix-blend-mode: multiply;isolation: isolate">
+            <rect id="Control_shade-11" data-name="Control shade" width="750" height="291" rx="7" transform="translate(50.5 211.49)" fill="#fff"/>
+          </g>
+          <g id="Seperators" opacity="0.75" clip-path="url(#clip-path)">
+            <g id="Connecting_lines" data-name="Connecting lines">
+              <line id="Shape_1038" data-name="Shape 1038" y2="1037" transform="translate(744.5 242)" fill="none" stroke="#d2d2d2" stroke-width="1" stroke-dasharray="4 5"/>
+              <line id="Shape_1038-2" data-name="Shape 1038" y2="1037" transform="translate(865.5 242)" fill="none" stroke="#d2d2d2" stroke-width="1" stroke-dasharray="4 5"/>
+            </g>
+          </g>
+          <g id="Sectional_row" data-name="Sectional row" transform="translate(0.001 -14)">
+            <path id="Control_shade-12" data-name="Control shade" d="M7,0H743a7,7,0,0,1,7,7V86a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V7A7,7,0,0,1,7,0Z" transform="translate(422 289)" fill="#e5f2ff" style="mix-blend-mode: multiply;isolation: isolate"/>
+            <g id="Plot_texts" data-name="Plot + texts" transform="translate(-5 1)">
+              <text id="Verbal-2" data-name="Verbal" transform="translate(451 341)" font-size="18" font-family="PlusJakartaSans-Bold, Plus Jakarta Sans" font-weight="700"><tspan x="0" y="0">Verbal</tspan></text>
+              <text id="V82" transform="translate(548 342)" fill="#1e90ff" font-size="22" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">V82</tspan></text>
+              <text id="V83" transform="translate(1022 342)" fill="#fda40a" font-size="22" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">V83</tspan></text>
+              <g id="Time_plot" data-name="Time plot" transform="translate(27.64 -4)">
+                <rect id="Gauge-2" data-name="Gauge" width="365" height="15" rx="7.5" transform="translate(599.36 331.5)" fill="#fff" stroke="#f2f2f2" stroke-width="1.527"/>
+                <rect id="Time_-_fill" data-name="Time - fill" width="106.47" height="15" rx="7.5" transform="translate(616.36 332)" fill="#8fe5ce" style="mix-blend-mode: multiply;isolation: isolate"/>
+                <g id="Time_-_callout" data-name="Time - callout" transform="translate(627.36 302)">
+                  <g transform="matrix(1, 0, 0, 1, -278.5, -221.49)" filter="url(#Callout)">
+                    <g id="Callout-11" data-name="Callout" transform="translate(278.5 218.49)" fill="#fff">
+                      <path d="M39.062,25H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H82a3,3,0,0,1,3,3V22a3,3,0,0,1-3,3H45.937L42.5,30Z" stroke="none"/>
+                      <path d="M 42.49980163574219 28.23543739318848 L 45.41143798828125 24.00020599365234 L 81.99990844726562 24.00020599365234 C 83.1025390625 24.00020599365234 83.99960327148438 23.10314750671387 83.99960327148438 22.0004997253418 L 83.99960327148438 3.000594615936279 C 83.99960327148438 1.897465109825134 83.1025390625 1.000006318092346 81.99990844726562 1.000006318092346 L 2.999695777893066 1.000006318092346 C 1.897060513496399 1.000006318092346 1.000001668930054 1.897465109825134 1.000001668930054 3.000594615936279 L 1.000001668930054 22.0004997253418 C 1.000001668930054 23.10314750671387 1.897060513496399 24.00020599365234 2.999695777893066 24.00020599365234 L 39.58816528320312 24.00020599365234 L 42.49980163574219 28.23543739318848 M 42.49980163574219 30.00060653686523 L 39.06212997436523 25.00020599365234 L 2.999695777893066 25.00020599365234 C 1.342801690101624 25.00020599365234 1.635742137295892e-06 23.65740585327148 1.635742137295892e-06 22.0004997253418 L 1.635742137295892e-06 3.000594615936279 C 1.635742137295892e-06 1.343700408935547 1.342801690101624 6.289762495725881e-06 2.999695777893066 6.289762495725881e-06 L 81.99990844726562 6.289762495725881e-06 C 83.65679931640625 6.289762495725881e-06 84.99960327148438 1.343700408935547 84.99960327148438 3.000594615936279 L 84.99960327148438 22.0004997253418 C 84.99960327148438 23.65740585327148 83.65679931640625 25.00020599365234 81.99990844726562 25.00020599365234 L 45.93747329711914 25.00020599365234 L 42.49980163574219 30.00060653686523 Z" stroke="none" fill="rgba(210,210,210,0.5)"/>
+                    </g>
+                  </g>
+                  <text id="_3.5_weeks1" data-name="3.5 weeks1" transform="translate(42.5 14.231)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-35.425" y="0">3.5 weeks</tspan><tspan y="0" font-size="8.166" baseline-shift="4.666199819518059">1</tspan></text>
+                </g>
+              </g>
+            </g>
+            <g id="Collapse_control" data-name="Collapse control" transform="translate(1114.998 322)">
+              <path id="Normal" d="M15.21,2.812A12.747,12.747,0,0,0,2.71,15.793a12.747,12.747,0,0,0,12.5,12.981,12.747,12.747,0,0,0,12.5-12.981h0A12.742,12.742,0,0,0,15.22,2.812Zm5.8,14.136H9.411v-2.31h11.6Z" transform="translate(-2.71 -2.812)" fill="#00aeef"/>
+            </g>
+          </g>
+          <g id="Subsectional" transform="translate(0 19)">
+            <g id="Child_1" data-name="Child 1" transform="translate(0 76)">
+              <g id="Plot_texts-2" data-name="Plot + texts" transform="translate(-5 1)">
+                <g id="Name" transform="translate(461 320)">
+                  <g id="Normal-2" data-name="Normal" transform="translate(-461 -320)">
+                    <g id="Name-2" data-name="Name" transform="translate(10)">
+                      <g id="Rectangle_35" data-name="Rectangle 35" transform="translate(451 320)" fill="#f1fafe" stroke="#f2f2f2" stroke-width="1">
+                        <rect width="34" height="30" rx="2" stroke="none"/>
+                        <rect x="0.5" y="0.5" width="33" height="29" rx="1.5" fill="none"/>
+                      </g>
+                      <text id="CR" transform="translate(456 341)" font-size="18" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">CR</tspan></text>
+                    </g>
+                  </g>
+                </g>
+                <text id="_70_ile" data-name="70%ile" transform="translate(548 342)" fill="#1e90ff" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">70</tspan><tspan y="0" font-size="12">%ile</tspan></text>
+                <text id="_80_ile" data-name="80%ile" transform="translate(1022 342)" fill="#fda40a" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">80</tspan><tspan y="0" font-size="13">%ile</tspan></text>
+                <g id="Time_plot-2" data-name="Time plot" transform="translate(27.64 -4)">
+                  <rect id="Gauge-3" data-name="Gauge" width="365" height="15" rx="7.5" transform="translate(599.36 331.5)" fill="#f7f9f8" stroke="#f2f2f2" stroke-width="1.527"/>
+                  <rect id="Time_-_fill-2" data-name="Time - fill" width="66.924" height="15" rx="7.5" transform="translate(616.36 332)" fill="#b3ecdc"/>
+                  <g id="Time_-_callout-2" data-name="Time - callout" transform="translate(607.36 302)">
+                    <g transform="matrix(1, 0, 0, 1, -258.5, -330.49)" filter="url(#Callout-2)">
+                      <g id="Callout-12" data-name="Callout" transform="translate(258.5 327.49)" fill="#f2f2f2">
+                        <path d="M39.062,25H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H82a3,3,0,0,1,3,3V22a3,3,0,0,1-3,3H45.937L42.5,30Z" stroke="none"/>
+                        <path d="M 42.49980163574219 28.23543739318848 L 45.41143798828125 24.00020599365234 L 81.99990844726562 24.00020599365234 C 83.1025390625 24.00020599365234 83.99960327148438 23.10314750671387 83.99960327148438 22.0004997253418 L 83.99960327148438 3.000594615936279 C 83.99960327148438 1.897465109825134 83.1025390625 1.000006318092346 81.99990844726562 1.000006318092346 L 2.999695777893066 1.000006318092346 C 1.897060513496399 1.000006318092346 1.000001668930054 1.897465109825134 1.000001668930054 3.000594615936279 L 1.000001668930054 22.0004997253418 C 1.000001668930054 23.10314750671387 1.897060513496399 24.00020599365234 2.999695777893066 24.00020599365234 L 39.58816528320312 24.00020599365234 L 42.49980163574219 28.23543739318848 M 42.49980163574219 30.00060653686523 L 39.06212997436523 25.00020599365234 L 2.999695777893066 25.00020599365234 C 1.342801690101624 25.00020599365234 1.635742137295892e-06 23.65740585327148 1.635742137295892e-06 22.0004997253418 L 1.635742137295892e-06 3.000594615936279 C 1.635742137295892e-06 1.343700408935547 1.342801690101624 6.289762495725881e-06 2.999695777893066 6.289762495725881e-06 L 81.99990844726562 6.289762495725881e-06 C 83.65679931640625 6.289762495725881e-06 84.99960327148438 1.343700408935547 84.99960327148438 3.000594615936279 L 84.99960327148438 22.0004997253418 C 84.99960327148438 23.65740585327148 83.65679931640625 25.00020599365234 81.99990844726562 25.00020599365234 L 45.93747329711914 25.00020599365234 L 42.49980163574219 30.00060653686523 Z" stroke="none" fill="rgba(210,210,210,0.5)"/>
+                      </g>
+                    </g>
+                    <text id="_2.2_weeks" data-name="2.2 weeks" transform="translate(42.5 14.231)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-33.548" y="0">2.2 weeks</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g id="Child_2" data-name="Child 2" transform="translate(0 156)">
+              <g id="Plot_texts-3" data-name="Plot + texts" transform="translate(-5 1)">
+                <g id="Name-3" data-name="Name" transform="translate(461 320)">
+                  <g id="Normal-3" data-name="Normal" transform="translate(-461 -320)">
+                    <g id="Name-4" data-name="Name" transform="translate(10)">
+                      <g id="Rectangle_35-2" data-name="Rectangle 35" transform="translate(451 320)" fill="#f1fafe" stroke="#f2f2f2" stroke-width="1">
+                        <rect width="34" height="30" rx="2" stroke="none"/>
+                        <rect x="0.5" y="0.5" width="33" height="29" rx="1.5" fill="none"/>
+                      </g>
+                      <text id="RC" transform="translate(456 341)" font-size="18" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">RC</tspan></text>
+                    </g>
+                  </g>
+                </g>
+                <text id="_80_ile-2" data-name="80%ile" transform="translate(548 342)" fill="#1e90ff" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">80</tspan><tspan y="0" font-size="12">%ile</tspan></text>
+                <text id="_82_ile" data-name="82%ile" transform="translate(1022 342)" fill="#fda40a" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">82</tspan><tspan y="0" font-size="13">%ile</tspan></text>
+                <g id="Time_plot-3" data-name="Time plot" transform="translate(27.64 -4)">
+                  <rect id="Gauge-4" data-name="Gauge" width="365" height="15" rx="7.5" transform="translate(599.36 331.5)" fill="#f7f9f8" stroke="#f2f2f2" stroke-width="1.527"/>
+                  <rect id="Time_-_fill-3" data-name="Time - fill" width="30.42" height="15" rx="7.5" transform="translate(683.28 332)" fill="#b3ecdc"/>
+                  <g id="Time_-_callout-3" data-name="Time - callout" transform="translate(656.36 302)">
+                    <g transform="matrix(1, 0, 0, 1, -307.5, -410.49)" filter="url(#Callout-3)">
+                      <g id="Callout-13" data-name="Callout" transform="translate(307.5 407.49)" fill="#f2f2f2">
+                        <path d="M39.062,25H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H82a3,3,0,0,1,3,3V22a3,3,0,0,1-3,3H45.937L42.5,30Z" stroke="none"/>
+                        <path d="M 42.49980163574219 28.23543739318848 L 45.41143798828125 24.00020599365234 L 81.99990844726562 24.00020599365234 C 83.1025390625 24.00020599365234 83.99960327148438 23.10314750671387 83.99960327148438 22.0004997253418 L 83.99960327148438 3.000594615936279 C 83.99960327148438 1.897465109825134 83.1025390625 1.000006318092346 81.99990844726562 1.000006318092346 L 2.999695777893066 1.000006318092346 C 1.897060513496399 1.000006318092346 1.000001668930054 1.897465109825134 1.000001668930054 3.000594615936279 L 1.000001668930054 22.0004997253418 C 1.000001668930054 23.10314750671387 1.897060513496399 24.00020599365234 2.999695777893066 24.00020599365234 L 39.58816528320312 24.00020599365234 L 42.49980163574219 28.23543739318848 M 42.49980163574219 30.00060653686523 L 39.06212997436523 25.00020599365234 L 2.999695777893066 25.00020599365234 C 1.342801690101624 25.00020599365234 1.635742137295892e-06 23.65740585327148 1.635742137295892e-06 22.0004997253418 L 1.635742137295892e-06 3.000594615936279 C 1.635742137295892e-06 1.343700408935547 1.342801690101624 6.289762495725881e-06 2.999695777893066 6.289762495725881e-06 L 81.99990844726562 6.289762495725881e-06 C 83.65679931640625 6.289762495725881e-06 84.99960327148438 1.343700408935547 84.99960327148438 3.000594615936279 L 84.99960327148438 22.0004997253418 C 84.99960327148438 23.65740585327148 83.65679931640625 25.00020599365234 81.99990844726562 25.00020599365234 L 45.93747329711914 25.00020599365234 L 42.49980163574219 30.00060653686523 Z" stroke="none" fill="rgba(210,210,210,0.5)"/>
+                      </g>
+                    </g>
+                    <text id="_1_week" data-name="1 week" transform="translate(42.5 14.231)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-22.74" y="0">1 week</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g id="Time_tile" data-name="Time tile">
+              <path id="Control_shade-13" data-name="Control shade" d="M0,0H89a0,0,0,0,1,0,0V198a7,7,0,0,1-7,7H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(1083 342)" fill="#f7f9f8" style="mix-blend-mode: multiply;isolation: isolate"/>
+              <text id="Total_time_in_hrs_" data-name="Total time
+(in hrs)" transform="translate(1128 371)" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="-33.916" y="0">Total time</tspan><tspan font-size="10" font-family="Inter-Regular, Inter" font-weight="400"><tspan x="-16.57" y="13">(in hrs)</tspan></tspan></text>
+              <g id="Time" transform="translate(263.5 -33.5)">
+                <circle id="Ellipse_2" data-name="Ellipse 2" cx="30" cy="30" r="30" transform="translate(834.5 451.5)" fill="#c8efe4"/>
+                <text id="_64h" data-name="64h" transform="translate(864.5 487.5)" font-size="18" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="-17.661" y="0">64h</tspan></text>
+              </g>
+              <g id="Rate" transform="translate(0 1)">
+                <g id="Rectangle_36" data-name="Rectangle 36" transform="translate(1095 492)" fill="#fff" stroke="#f2f2f2" stroke-width="1">
+                  <rect width="65" height="20" rx="2" stroke="none"/>
+                  <rect x="0.5" y="0.5" width="64" height="19" rx="1.5" fill="none"/>
+                </g>
+                <text id="_20h_week" data-name="20h/week" transform="translate(1128 505)" font-size="10" font-family="Inter-Regular, Inter"><tspan x="-23.402" y="0">20h/week</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Quant" transform="translate(0 316)">
+          <g transform="matrix(1, 0, 0, 1, 371.5, -252.49)" filter="url(#Control_shade-6)" style="mix-blend-mode: multiply;isolation: isolate">
+            <rect id="Control_shade-14" data-name="Control shade" width="750" height="291" rx="7" transform="translate(50.5 527.49)" fill="#fff"/>
+          </g>
+          <g id="Seperators-2" data-name="Seperators" opacity="0.75" clip-path="url(#clip-path)">
+            <g id="Connecting_lines-2" data-name="Connecting lines" transform="translate(0 -316)">
+              <line id="Shape_1038-3" data-name="Shape 1038" y2="1037" transform="translate(744.5 242)" fill="none" stroke="#d2d2d2" stroke-width="1" stroke-dasharray="4 5"/>
+              <line id="Shape_1038-4" data-name="Shape 1038" y2="1037" transform="translate(865.5 242)" fill="none" stroke="#d2d2d2" stroke-width="1" stroke-dasharray="4 5"/>
+            </g>
+          </g>
+          <g id="Sectional_row-2" data-name="Sectional row" transform="translate(0.001 -14)">
+            <path id="Control_shade-15" data-name="Control shade" d="M7,0H743a7,7,0,0,1,7,7V86a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V7A7,7,0,0,1,7,0Z" transform="translate(422 289)" fill="#e5f2ff" style="mix-blend-mode: multiply;isolation: isolate"/>
+            <g id="Plot_texts-4" data-name="Plot + texts" transform="translate(-5 1)">
+              <text id="Quant-2" data-name="Quant" transform="translate(451 341)" font-size="18" font-family="PlusJakartaSans-Bold, Plus Jakarta Sans" font-weight="700"><tspan x="0" y="0">Quant</tspan></text>
+              <text id="Q83" transform="translate(547 342)" fill="#1e90ff" font-size="22" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">Q83</tspan></text>
+              <text id="Q87" transform="translate(1021 342)" fill="#fda40a" font-size="22" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">Q87</tspan></text>
+              <g id="Time_plot-4" data-name="Time plot" transform="translate(28.64 -4)">
+                <rect id="Gauge-5" data-name="Gauge" width="365" height="15" rx="7.5" transform="translate(598.36 331.5)" fill="#fff" stroke="#f2f2f2" stroke-width="1.527"/>
+                <rect id="Time_-_fill-4" data-name="Time - fill" width="126.243" height="15" rx="7.5" transform="translate(721.359 332)" fill="#8fe5ce"/>
+                <g id="Time_-_callout-4" data-name="Time - callout" transform="translate(742.36 302)">
+                  <g transform="matrix(1, 0, 0, 1, -394.5, -537.49)" filter="url(#Callout-4)">
+                    <g id="Callout-14" data-name="Callout" transform="translate(394.5 534.49)" fill="#fff">
+                      <path d="M39.062,25H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H82a3,3,0,0,1,3,3V22a3,3,0,0,1-3,3H45.937L42.5,30Z" stroke="none"/>
+                      <path d="M 42.49980163574219 28.23543739318848 L 45.41143798828125 24.00020599365234 L 81.99990844726562 24.00020599365234 C 83.1025390625 24.00020599365234 83.99960327148438 23.10314750671387 83.99960327148438 22.0004997253418 L 83.99960327148438 3.000594615936279 C 83.99960327148438 1.897465109825134 83.1025390625 1.000006318092346 81.99990844726562 1.000006318092346 L 2.999695777893066 1.000006318092346 C 1.897060513496399 1.000006318092346 1.000001668930054 1.897465109825134 1.000001668930054 3.000594615936279 L 1.000001668930054 22.0004997253418 C 1.000001668930054 23.10314750671387 1.897060513496399 24.00020599365234 2.999695777893066 24.00020599365234 L 39.58816528320312 24.00020599365234 L 42.49980163574219 28.23543739318848 M 42.49980163574219 30.00060653686523 L 39.06212997436523 25.00020599365234 L 2.999695777893066 25.00020599365234 C 1.342801690101624 25.00020599365234 1.635742137295892e-06 23.65740585327148 1.635742137295892e-06 22.0004997253418 L 1.635742137295892e-06 3.000594615936279 C 1.635742137295892e-06 1.343700408935547 1.342801690101624 6.289762495725881e-06 2.999695777893066 6.289762495725881e-06 L 81.99990844726562 6.289762495725881e-06 C 83.65679931640625 6.289762495725881e-06 84.99960327148438 1.343700408935547 84.99960327148438 3.000594615936279 L 84.99960327148438 22.0004997253418 C 84.99960327148438 23.65740585327148 83.65679931640625 25.00020599365234 81.99990844726562 25.00020599365234 L 45.93747329711914 25.00020599365234 L 42.49980163574219 30.00060653686523 Z" stroke="none" fill="rgba(210,210,210,0.5)"/>
+                    </g>
+                  </g>
+                  <text id="_4.2_weeks1" data-name="4.2 weeks1" transform="translate(42.5 14.231)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-35.465" y="0">4.2 weeks</tspan><tspan y="0" font-size="8.166" baseline-shift="4.666199819518059">1</tspan></text>
+                </g>
+              </g>
+            </g>
+            <g id="Collapse_control-2" data-name="Collapse control" transform="translate(1114.999 322)">
+              <path id="Normal-4" data-name="Normal" d="M15.21,2.812A12.747,12.747,0,0,0,2.71,15.793a12.747,12.747,0,0,0,12.5,12.981,12.747,12.747,0,0,0,12.5-12.981h0A12.742,12.742,0,0,0,15.22,2.812Zm5.8,14.136H9.411v-2.31h11.6Z" transform="translate(-2.71 -2.812)" fill="#00aeef"/>
+            </g>
+          </g>
+          <g id="Subsectional-2" data-name="Subsectional" transform="translate(0 19)">
+            <g id="Child_1-2" data-name="Child 1" transform="translate(0 76)">
+              <g id="Plot_texts-5" data-name="Plot + texts" transform="translate(-5 1)">
+                <g id="Name-5" data-name="Name" transform="translate(461 320)">
+                  <g id="Normal-5" data-name="Normal" transform="translate(-461 -320)">
+                    <g id="Name-6" data-name="Name" transform="translate(10)">
+                      <g id="Rectangle_35-3" data-name="Rectangle 35" transform="translate(451 320)" fill="#f1fafe" stroke="#f2f2f2" stroke-width="1">
+                        <rect width="35" height="30" rx="2" stroke="none"/>
+                        <rect x="0.5" y="0.5" width="34" height="29" rx="1.5" fill="none"/>
+                      </g>
+                      <text id="AR" transform="translate(456 341)" font-size="18" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">AR</tspan></text>
+                    </g>
+                  </g>
+                </g>
+                <text id="_60_ile" data-name="60%ile" transform="translate(548 342)" fill="#1e90ff" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">60</tspan><tspan y="0" font-size="12">%ile</tspan></text>
+                <text id="_88_ile" data-name="88%ile" transform="translate(1022 342)" fill="#fda40a" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">88</tspan><tspan y="0" font-size="13">%ile</tspan></text>
+                <g id="Time_plot-5" data-name="Time plot" transform="translate(27.64 -4)">
+                  <rect id="Gauge-6" data-name="Gauge" width="365" height="15" rx="7.5" transform="translate(599.36 331.5)" fill="#f7f9f8" stroke="#f2f2f2" stroke-width="1.527"/>
+                  <rect id="Time_-_fill-5" data-name="Time - fill" width="91.26" height="15" rx="7.5" transform="translate(722.36 332)" fill="#b3ecdc"/>
+                  <g id="Time_-_callout-5" data-name="Time - callout" transform="translate(722.36 302)">
+                    <g transform="matrix(1, 0, 0, 1, -373.5, -646.49)" filter="url(#Callout-5)">
+                      <g id="Callout-15" data-name="Callout" transform="translate(373.5 643.49)" fill="#f2f2f2">
+                        <path d="M39.062,25H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H82a3,3,0,0,1,3,3V22a3,3,0,0,1-3,3H45.937L42.5,30Z" stroke="none"/>
+                        <path d="M 42.49980163574219 28.23543739318848 L 45.41143798828125 24.00020599365234 L 81.99990844726562 24.00020599365234 C 83.1025390625 24.00020599365234 83.99960327148438 23.10314750671387 83.99960327148438 22.0004997253418 L 83.99960327148438 3.000594615936279 C 83.99960327148438 1.897465109825134 83.1025390625 1.000006318092346 81.99990844726562 1.000006318092346 L 2.999695777893066 1.000006318092346 C 1.897060513496399 1.000006318092346 1.000001668930054 1.897465109825134 1.000001668930054 3.000594615936279 L 1.000001668930054 22.0004997253418 C 1.000001668930054 23.10314750671387 1.897060513496399 24.00020599365234 2.999695777893066 24.00020599365234 L 39.58816528320312 24.00020599365234 L 42.49980163574219 28.23543739318848 M 42.49980163574219 30.00060653686523 L 39.06212997436523 25.00020599365234 L 2.999695777893066 25.00020599365234 C 1.342801690101624 25.00020599365234 1.635742137295892e-06 23.65740585327148 1.635742137295892e-06 22.0004997253418 L 1.635742137295892e-06 3.000594615936279 C 1.635742137295892e-06 1.343700408935547 1.342801690101624 6.289762495725881e-06 2.999695777893066 6.289762495725881e-06 L 81.99990844726562 6.289762495725881e-06 C 83.65679931640625 6.289762495725881e-06 84.99960327148438 1.343700408935547 84.99960327148438 3.000594615936279 L 84.99960327148438 22.0004997253418 C 84.99960327148438 23.65740585327148 83.65679931640625 25.00020599365234 81.99990844726562 25.00020599365234 L 45.93747329711914 25.00020599365234 L 42.49980163574219 30.00060653686523 Z" stroke="none" fill="rgba(210,210,210,0.5)"/>
+                      </g>
+                    </g>
+                    <text id="_3_weeks" data-name="3 weeks" transform="translate(42.5 14.231)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-27.602" y="0">3 weeks</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g id="Child_2-2" data-name="Child 2" transform="translate(0 156)">
+              <g id="Plot_texts-6" data-name="Plot + texts" transform="translate(-5 1)">
+                <g id="Name-7" data-name="Name" transform="translate(461 320)">
+                  <g id="Normal-6" data-name="Normal" transform="translate(-461 -320)">
+                    <g id="Name-8" data-name="Name" transform="translate(10)">
+                      <g id="Rectangle_35-4" data-name="Rectangle 35" transform="translate(451 320)" fill="#f1fafe" stroke="#f2f2f2" stroke-width="1">
+                        <rect width="46" height="30" rx="2" stroke="none"/>
+                        <rect x="0.5" y="0.5" width="45" height="29" rx="1.5" fill="none"/>
+                      </g>
+                      <text id="ALG" transform="translate(456 341)" font-size="18" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">ALG</tspan></text>
+                    </g>
+                  </g>
+                </g>
+                <text id="_85_ile" data-name="85%ile" transform="translate(548 342)" fill="#1e90ff" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">85</tspan><tspan y="0" font-size="12">%ile</tspan></text>
+                <text id="_91_ile" data-name="91%ile" transform="translate(1022 342)" fill="#fda40a" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">91</tspan><tspan y="0" font-size="13">%ile</tspan></text>
+                <g id="Time_plot-6" data-name="Time plot" transform="translate(27.64 -4)">
+                  <rect id="Gauge-7" data-name="Gauge" width="365" height="15" rx="7.5" transform="translate(599.36 331.5)" fill="#f7f9f8" stroke="#f2f2f2" stroke-width="1.527"/>
+                  <rect id="Time_-_fill-6" data-name="Time - fill" width="24.336" height="15" rx="7.5" transform="translate(813.62 332)" fill="#b3ecdc"/>
+                  <g id="Time_-_callout-6" data-name="Time - callout" transform="translate(783.36 302)">
+                    <g transform="matrix(1, 0, 0, 1, -434.5, -726.49)" filter="url(#Callout-6)">
+                      <g id="Callout-16" data-name="Callout" transform="translate(434.5 723.49)" fill="#f2f2f2">
+                        <path d="M39.062,25H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H82a3,3,0,0,1,3,3V22a3,3,0,0,1-3,3H45.937L42.5,30Z" stroke="none"/>
+                        <path d="M 42.49980163574219 28.23543739318848 L 45.41143798828125 24.00020599365234 L 81.99990844726562 24.00020599365234 C 83.1025390625 24.00020599365234 83.99960327148438 23.10314750671387 83.99960327148438 22.0004997253418 L 83.99960327148438 3.000594615936279 C 83.99960327148438 1.897465109825134 83.1025390625 1.000006318092346 81.99990844726562 1.000006318092346 L 2.999695777893066 1.000006318092346 C 1.897060513496399 1.000006318092346 1.000001668930054 1.897465109825134 1.000001668930054 3.000594615936279 L 1.000001668930054 22.0004997253418 C 1.000001668930054 23.10314750671387 1.897060513496399 24.00020599365234 2.999695777893066 24.00020599365234 L 39.58816528320312 24.00020599365234 L 42.49980163574219 28.23543739318848 M 42.49980163574219 30.00060653686523 L 39.06212997436523 25.00020599365234 L 2.999695777893066 25.00020599365234 C 1.342801690101624 25.00020599365234 1.635742137295892e-06 23.65740585327148 1.635742137295892e-06 22.0004997253418 L 1.635742137295892e-06 3.000594615936279 C 1.635742137295892e-06 1.343700408935547 1.342801690101624 6.289762495725881e-06 2.999695777893066 6.289762495725881e-06 L 81.99990844726562 6.289762495725881e-06 C 83.65679931640625 6.289762495725881e-06 84.99960327148438 1.343700408935547 84.99960327148438 3.000594615936279 L 84.99960327148438 22.0004997253418 C 84.99960327148438 23.65740585327148 83.65679931640625 25.00020599365234 81.99990844726562 25.00020599365234 L 45.93747329711914 25.00020599365234 L 42.49980163574219 30.00060653686523 Z" stroke="none" fill="rgba(210,210,210,0.5)"/>
+                      </g>
+                    </g>
+                    <text id="_0.8_week" data-name="0.8 week" transform="translate(42.5 14.231)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-29.77" y="0">0.8 week</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g id="Time_tile-2" data-name="Time tile">
+              <path id="Control_shade-16" data-name="Control shade" d="M0,0H89a0,0,0,0,1,0,0V198a7,7,0,0,1-7,7H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(1083 342)" fill="#fafafa" style="mix-blend-mode: multiply;isolation: isolate"/>
+              <text id="Total_time_in_hrs_2" data-name="Total time
+(in hrs)" transform="translate(1128 371)" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="-33.916" y="0">Total time</tspan><tspan font-size="10" font-family="Inter-Regular, Inter" font-weight="400"><tspan x="-16.57" y="13">(in hrs)</tspan></tspan></text>
+              <g id="Time-2" data-name="Time" transform="translate(263.5 -33.5)">
+                <circle id="Ellipse_2-2" data-name="Ellipse 2" cx="30" cy="30" r="30" transform="translate(834.5 451.5)" fill="#c8efe4"/>
+                <text id="_76h" data-name="76h" transform="translate(864.5 487.5)" font-size="18" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="-16.773" y="0">76h</tspan></text>
+              </g>
+              <g id="Rate-2" data-name="Rate" transform="translate(0 1)">
+                <g id="Rectangle_36-2" data-name="Rectangle 36" transform="translate(1095 492)" fill="#fff" stroke="#f2f2f2" stroke-width="1">
+                  <rect width="65" height="20" rx="2" stroke="none"/>
+                  <rect x="0.5" y="0.5" width="64" height="19" rx="1.5" fill="none"/>
+                </g>
+                <text id="_20h_week-2" data-name="20h/week" transform="translate(1128 505)" font-size="10" font-family="Inter-Regular, Inter"><tspan x="-23.402" y="0">20h/week</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="DI" transform="translate(0 410)">
+          <g transform="matrix(1, 0, 0, 1, 371.5, -346.49)" filter="url(#Control_shade-8)" style="mix-blend-mode: multiply;isolation: isolate">
+            <rect id="Control_shade-17" data-name="Control shade" width="750" height="371" rx="7" transform="translate(50.5 843.49)" fill="#fff"/>
+          </g>
+          <g id="Seperators-3" data-name="Seperators" opacity="0.75" clip-path="url(#clip-path-3)">
+            <g id="Connecting_lines-3" data-name="Connecting lines" transform="translate(0 -410)">
+              <line id="Shape_1038-5" data-name="Shape 1038" y2="1037" transform="translate(744.5 242)" fill="none" stroke="#d2d2d2" stroke-width="1" stroke-dasharray="4 5"/>
+              <line id="Shape_1038-6" data-name="Shape 1038" y2="1037" transform="translate(865.5 242)" fill="none" stroke="#d2d2d2" stroke-width="1" stroke-dasharray="4 5"/>
+            </g>
+          </g>
+          <g id="Sectional" transform="translate(0.001 208)">
+            <path id="Control_shade-18" data-name="Control shade" d="M7,0H743a7,7,0,0,1,7,7V86a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V7A7,7,0,0,1,7,0Z" transform="translate(422.5 289)" fill="#e5f2ff" style="mix-blend-mode: multiply;isolation: isolate"/>
+            <g id="Plot_texts-7" data-name="Plot + texts" transform="translate(-5 1)">
+              <text id="Data_Insights" data-name="Data
+Insights" transform="translate(451 330)" font-size="18" font-family="PlusJakartaSans-Bold, Plus Jakarta Sans" font-weight="700"><tspan x="0" y="0">Data</tspan><tspan x="0" y="22">Insights</tspan></text>
+              <text id="D78" transform="translate(548 342)" fill="#1e90ff" font-size="22" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">D78</tspan></text>
+              <text id="D79" transform="translate(1022 342)" fill="#fda40a" font-size="22" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">D79</tspan></text>
+              <g id="Time_plot-7" data-name="Time plot" transform="translate(28.64 -4)">
+                <rect id="Gauge-8" data-name="Gauge" width="365" height="15" rx="7.5" transform="translate(598.36 331.5)" fill="#fff" stroke="#f2f2f2" stroke-width="1.527"/>
+                <rect id="Time_-_fill-7" data-name="Time - fill" width="33.462" height="15" rx="7.5" transform="translate(847.359 332)" fill="#8fe5ce"/>
+                <g id="Time_-_callout-7" data-name="Time - callout" transform="translate(821.86 302)">
+                  <g transform="matrix(1, 0, 0, 1, -474, -853.49)" filter="url(#Callout-7)">
+                    <g id="Callout-17" data-name="Callout" transform="translate(474 850.49)" fill="#fff">
+                      <path d="M39.062,25H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H82a3,3,0,0,1,3,3V22a3,3,0,0,1-3,3H45.937L42.5,30Z" stroke="none"/>
+                      <path d="M 42.49980163574219 28.23543739318848 L 45.41143798828125 24.00020599365234 L 81.99990844726562 24.00020599365234 C 83.1025390625 24.00020599365234 83.99960327148438 23.10314750671387 83.99960327148438 22.0004997253418 L 83.99960327148438 3.000594615936279 C 83.99960327148438 1.897465109825134 83.1025390625 1.000006318092346 81.99990844726562 1.000006318092346 L 2.999695777893066 1.000006318092346 C 1.897060513496399 1.000006318092346 1.000001668930054 1.897465109825134 1.000001668930054 3.000594615936279 L 1.000001668930054 22.0004997253418 C 1.000001668930054 23.10314750671387 1.897060513496399 24.00020599365234 2.999695777893066 24.00020599365234 L 39.58816528320312 24.00020599365234 L 42.49980163574219 28.23543739318848 M 42.49980163574219 30.00060653686523 L 39.06212997436523 25.00020599365234 L 2.999695777893066 25.00020599365234 C 1.342801690101624 25.00020599365234 1.635742137295892e-06 23.65740585327148 1.635742137295892e-06 22.0004997253418 L 1.635742137295892e-06 3.000594615936279 C 1.635742137295892e-06 1.343700408935547 1.342801690101624 6.289762495725881e-06 2.999695777893066 6.289762495725881e-06 L 81.99990844726562 6.289762495725881e-06 C 83.65679931640625 6.289762495725881e-06 84.99960327148438 1.343700408935547 84.99960327148438 3.000594615936279 L 84.99960327148438 22.0004997253418 C 84.99960327148438 23.65740585327148 83.65679931640625 25.00020599365234 81.99990844726562 25.00020599365234 L 45.93747329711914 25.00020599365234 L 42.49980163574219 30.00060653686523 Z" stroke="none" fill="rgba(210,210,210,0.5)"/>
+                    </g>
+                  </g>
+                  <text id="_1.1_weeks1" data-name="1.1 weeks1" transform="translate(42.5 14.231)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-32.571" y="0">1.1 weeks</tspan><tspan y="0" font-size="8.166" baseline-shift="4.666199819518059">1</tspan></text>
+                </g>
+              </g>
+            </g>
+            <g id="Collapse_control-3" data-name="Collapse control" transform="translate(1114.999 322)">
+              <path id="Normal-7" data-name="Normal" d="M15.21,2.812A12.747,12.747,0,0,0,2.71,15.793a12.747,12.747,0,0,0,12.5,12.981,12.747,12.747,0,0,0,12.5-12.981h0A12.742,12.742,0,0,0,15.22,2.812Zm5.8,14.136H9.411v-2.31h11.6Z" transform="translate(-2.71 -2.812)" fill="#00aeef"/>
+            </g>
+          </g>
+          <g id="Subsectional-3" data-name="Subsectional" transform="translate(0 241)">
+            <g id="Child_1-3" data-name="Child 1" transform="translate(0 76)">
+              <g id="Plot_texts-8" data-name="Plot + texts" transform="translate(-5 1)">
+                <g id="Name-9" data-name="Name" transform="translate(461 320)">
+                  <g id="Normal-8" data-name="Normal" transform="translate(-461 -320)">
+                    <g id="Name-10" data-name="Name" transform="translate(10)">
+                      <g id="Rectangle_35-5" data-name="Rectangle 35" transform="translate(451 320)" fill="#f1fafe" stroke="#f2f2f2" stroke-width="1">
+                        <rect width="68" height="30" rx="2" stroke="none"/>
+                        <rect x="0.5" y="0.5" width="67" height="29" rx="1.5" fill="none"/>
+                      </g>
+                      <text id="GI_TA" data-name="GI &amp; TA" transform="translate(456 341)" font-size="18" font-family="NunitoSans-Regular, Nunito Sans" letter-spacing="-0.05em"><tspan x="0" y="0">GI &amp; TA</tspan></text>
+                    </g>
+                  </g>
+                </g>
+                <text id="_67_ile" data-name="67%ile" transform="translate(548 342)" fill="#1e90ff" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">67</tspan><tspan y="0" font-size="12">%ile</tspan></text>
+                <text id="_68_ile" data-name="68%ile" transform="translate(1022 342)" fill="#fda40a" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">68</tspan><tspan y="0" font-size="13">%ile</tspan></text>
+                <g id="Time_plot-8" data-name="Time plot" transform="translate(27.64 -4)">
+                  <rect id="Gauge-9" data-name="Gauge" width="365" height="15" rx="7.5" transform="translate(599.36 331.5)" fill="#f7f9f8" stroke="#f2f2f2" stroke-width="1.527"/>
+                  <rect id="Time_-_fill-8" data-name="Time - fill" width="15" height="15" rx="7.5" transform="translate(848.36 332)" fill="#b3ecdc"/>
+                  <g id="Time_-_callout-8" data-name="Time - callout" transform="translate(813.36 302)">
+                    <g transform="matrix(1, 0, 0, 1, -464.5, -962.49)" filter="url(#Callout-8)">
+                      <g id="Callout-18" data-name="Callout" transform="translate(464.5 959.49)" fill="#f2f2f2">
+                        <path d="M39.062,25H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H82a3,3,0,0,1,3,3V22a3,3,0,0,1-3,3H45.937L42.5,30Z" stroke="none"/>
+                        <path d="M 42.49980163574219 28.23543739318848 L 45.41143798828125 24.00020599365234 L 81.99990844726562 24.00020599365234 C 83.1025390625 24.00020599365234 83.99960327148438 23.10314750671387 83.99960327148438 22.0004997253418 L 83.99960327148438 3.000594615936279 C 83.99960327148438 1.897465109825134 83.1025390625 1.000006318092346 81.99990844726562 1.000006318092346 L 2.999695777893066 1.000006318092346 C 1.897060513496399 1.000006318092346 1.000001668930054 1.897465109825134 1.000001668930054 3.000594615936279 L 1.000001668930054 22.0004997253418 C 1.000001668930054 23.10314750671387 1.897060513496399 24.00020599365234 2.999695777893066 24.00020599365234 L 39.58816528320312 24.00020599365234 L 42.49980163574219 28.23543739318848 M 42.49980163574219 30.00060653686523 L 39.06212997436523 25.00020599365234 L 2.999695777893066 25.00020599365234 C 1.342801690101624 25.00020599365234 1.635742137295892e-06 23.65740585327148 1.635742137295892e-06 22.0004997253418 L 1.635742137295892e-06 3.000594615936279 C 1.635742137295892e-06 1.343700408935547 1.342801690101624 6.289762495725881e-06 2.999695777893066 6.289762495725881e-06 L 81.99990844726562 6.289762495725881e-06 C 83.65679931640625 6.289762495725881e-06 84.99960327148438 1.343700408935547 84.99960327148438 3.000594615936279 L 84.99960327148438 22.0004997253418 C 84.99960327148438 23.65740585327148 83.65679931640625 25.00020599365234 81.99990844726562 25.00020599365234 L 45.93747329711914 25.00020599365234 L 42.49980163574219 30.00060653686523 Z" stroke="none" fill="rgba(210,210,210,0.5)"/>
+                      </g>
+                    </g>
+                    <text id="_0.2_week" data-name="0.2 week" transform="translate(42.5 14.231)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-29.849" y="0">0.2 week</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g id="Child_2-3" data-name="Child 2" transform="translate(0 156)">
+              <g id="Plot_texts-9" data-name="Plot + texts" transform="translate(-5 1)">
+                <g id="Name-11" data-name="Name" transform="translate(461 320)">
+                  <g id="Normal-9" data-name="Normal" transform="translate(-461 -320)">
+                    <g id="Name-12" data-name="Name" transform="translate(10)">
+                      <g id="Rectangle_35-6" data-name="Rectangle 35" transform="translate(451 320)" fill="#f1fafe" stroke="#f2f2f2" stroke-width="1">
+                        <rect width="45" height="30" rx="2" stroke="none"/>
+                        <rect x="0.5" y="0.5" width="44" height="29" rx="1.5" fill="none"/>
+                      </g>
+                      <text id="TPA" transform="translate(456 341)" font-size="18" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">TPA</tspan></text>
+                    </g>
+                  </g>
+                </g>
+                <text id="_65_ile" data-name="65%ile" transform="translate(548 342)" fill="#1e90ff" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">65</tspan><tspan y="0" font-size="12">%ile</tspan></text>
+                <text id="_67_ile-2" data-name="67%ile" transform="translate(1022 342)" fill="#fda40a" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">67</tspan><tspan y="0" font-size="13">%ile</tspan></text>
+                <g id="Time_plot-9" data-name="Time plot" transform="translate(27.64 -4)">
+                  <rect id="Gauge-10" data-name="Gauge" width="365" height="15" rx="7.5" transform="translate(599.36 331.5)" fill="#f7f9f8" stroke="#f2f2f2" stroke-width="1.527"/>
+                  <rect id="Time_-_fill-9" data-name="Time - fill" width="15" height="15" rx="7.5" transform="translate(863.36 332)" fill="#b3ecdc"/>
+                  <g id="Time_-_callout-9" data-name="Time - callout" transform="translate(828.36 302)">
+                    <g transform="matrix(1, 0, 0, 1, -479.5, -1042.49)" filter="url(#Callout-9)">
+                      <g id="Callout-19" data-name="Callout" transform="translate(479.5 1039.49)" fill="#f2f2f2">
+                        <path d="M39.062,25H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H82a3,3,0,0,1,3,3V22a3,3,0,0,1-3,3H45.937L42.5,30Z" stroke="none"/>
+                        <path d="M 42.49980163574219 28.23543739318848 L 45.41143798828125 24.00020599365234 L 81.99990844726562 24.00020599365234 C 83.1025390625 24.00020599365234 83.99960327148438 23.10314750671387 83.99960327148438 22.0004997253418 L 83.99960327148438 3.000594615936279 C 83.99960327148438 1.897465109825134 83.1025390625 1.000006318092346 81.99990844726562 1.000006318092346 L 2.999695777893066 1.000006318092346 C 1.897060513496399 1.000006318092346 1.000001668930054 1.897465109825134 1.000001668930054 3.000594615936279 L 1.000001668930054 22.0004997253418 C 1.000001668930054 23.10314750671387 1.897060513496399 24.00020599365234 2.999695777893066 24.00020599365234 L 39.58816528320312 24.00020599365234 L 42.49980163574219 28.23543739318848 M 42.49980163574219 30.00060653686523 L 39.06212997436523 25.00020599365234 L 2.999695777893066 25.00020599365234 C 1.342801690101624 25.00020599365234 1.635742137295892e-06 23.65740585327148 1.635742137295892e-06 22.0004997253418 L 1.635742137295892e-06 3.000594615936279 C 1.635742137295892e-06 1.343700408935547 1.342801690101624 6.289762495725881e-06 2.999695777893066 6.289762495725881e-06 L 81.99990844726562 6.289762495725881e-06 C 83.65679931640625 6.289762495725881e-06 84.99960327148438 1.343700408935547 84.99960327148438 3.000594615936279 L 84.99960327148438 22.0004997253418 C 84.99960327148438 23.65740585327148 83.65679931640625 25.00020599365234 81.99990844726562 25.00020599365234 L 45.93747329711914 25.00020599365234 L 42.49980163574219 30.00060653686523 Z" stroke="none" fill="rgba(210,210,210,0.5)"/>
+                      </g>
+                    </g>
+                    <text id="_0.2_week-2" data-name="0.2 week" transform="translate(42.5 14.231)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-29.849" y="0">0.2 week</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g id="Child_2-4" data-name="Child 2" transform="translate(0 236)">
+              <g id="Plot_texts-10" data-name="Plot + texts" transform="translate(-5 1)">
+                <g id="Name-13" data-name="Name" transform="translate(461 320)">
+                  <g id="Normal-10" data-name="Normal" transform="translate(-461 -320)">
+                    <g id="Name-14" data-name="Name" transform="translate(10)">
+                      <g id="Rectangle_35-7" data-name="Rectangle 35" transform="translate(451 320)" fill="#f1fafe" stroke="#f2f2f2" stroke-width="1">
+                        <rect width="49" height="30" rx="2" stroke="none"/>
+                        <rect x="0.5" y="0.5" width="48" height="29" rx="1.5" fill="none"/>
+                      </g>
+                      <text id="MSR" transform="translate(456 341)" font-size="18" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">MSR</tspan></text>
+                    </g>
+                  </g>
+                </g>
+                <text id="_81_ile" data-name="81%ile" transform="translate(548 342)" fill="#1e90ff" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">81</tspan><tspan y="0" font-size="12">%ile</tspan></text>
+                <text id="_82_ile-2" data-name="82%ile" transform="translate(1022 342)" fill="#fda40a" font-size="22" font-family="Inter-Bold, Inter" font-weight="700" letter-spacing="0.025em"><tspan x="0" y="0">82</tspan><tspan y="0" font-size="13">%ile</tspan></text>
+                <g id="Time_plot-10" data-name="Time plot" transform="translate(27.64 -4)">
+                  <rect id="Gauge-11" data-name="Gauge" width="365" height="15" rx="7.5" transform="translate(599.36 331.5)" fill="#f7f9f8" stroke="#f2f2f2" stroke-width="1.527"/>
+                  <rect id="Time_-_fill-10" data-name="Time - fill" width="15" height="15" rx="7.5" transform="translate(878.36 332)" fill="#b3ecdc"/>
+                  <g id="Time_-_callout-10" data-name="Time - callout" transform="translate(843.36 302)">
+                    <g transform="matrix(1, 0, 0, 1, -494.5, -1122.49)" filter="url(#Callout-10)">
+                      <g id="Callout-20" data-name="Callout" transform="translate(494.5 1119.49)" fill="#f2f2f2">
+                        <path d="M39.062,25H3a3,3,0,0,1-3-3V3A3,3,0,0,1,3,0H82a3,3,0,0,1,3,3V22a3,3,0,0,1-3,3H45.937L42.5,30Z" stroke="none"/>
+                        <path d="M 42.49980163574219 28.23543739318848 L 45.41143798828125 24.00020599365234 L 81.99990844726562 24.00020599365234 C 83.1025390625 24.00020599365234 83.99960327148438 23.10314750671387 83.99960327148438 22.0004997253418 L 83.99960327148438 3.000594615936279 C 83.99960327148438 1.897465109825134 83.1025390625 1.000006318092346 81.99990844726562 1.000006318092346 L 2.999695777893066 1.000006318092346 C 1.897060513496399 1.000006318092346 1.000001668930054 1.897465109825134 1.000001668930054 3.000594615936279 L 1.000001668930054 22.0004997253418 C 1.000001668930054 23.10314750671387 1.897060513496399 24.00020599365234 2.999695777893066 24.00020599365234 L 39.58816528320312 24.00020599365234 L 42.49980163574219 28.23543739318848 M 42.49980163574219 30.00060653686523 L 39.06212997436523 25.00020599365234 L 2.999695777893066 25.00020599365234 C 1.342801690101624 25.00020599365234 1.635742137295892e-06 23.65740585327148 1.635742137295892e-06 22.0004997253418 L 1.635742137295892e-06 3.000594615936279 C 1.635742137295892e-06 1.343700408935547 1.342801690101624 6.289762495725881e-06 2.999695777893066 6.289762495725881e-06 L 81.99990844726562 6.289762495725881e-06 C 83.65679931640625 6.289762495725881e-06 84.99960327148438 1.343700408935547 84.99960327148438 3.000594615936279 L 84.99960327148438 22.0004997253418 C 84.99960327148438 23.65740585327148 83.65679931640625 25.00020599365234 81.99990844726562 25.00020599365234 L 45.93747329711914 25.00020599365234 L 42.49980163574219 30.00060653686523 Z" stroke="none" fill="rgba(210,210,210,0.5)"/>
+                      </g>
+                    </g>
+                    <text id="_0.2_week-3" data-name="0.2 week" transform="translate(42.5 14.231)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-29.849" y="0">0.2 week</tspan></text>
+                  </g>
+                </g>
+              </g>
+            </g>
+            <g id="Time_tile-3" data-name="Time tile">
+              <path id="Control_shade-19" data-name="Control shade" d="M0,0H89a0,0,0,0,1,0,0V279a7,7,0,0,1-7,7H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(1083 342)" fill="#fafafa" style="mix-blend-mode: multiply;isolation: isolate"/>
+              <text id="Total_time_in_hrs_3" data-name="Total time
+(in hrs)" transform="translate(1128 371)" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="-33.916" y="0">Total time</tspan><tspan font-size="10" font-family="Inter-Regular, Inter" font-weight="400"><tspan x="-16.57" y="13">(in hrs)</tspan></tspan></text>
+              <g id="Time-3" data-name="Time" transform="translate(263.5 -3.5)">
+                <circle id="Ellipse_2-3" data-name="Ellipse 2" cx="30" cy="30" r="30" transform="translate(834.5 451.5)" fill="#c8efe4"/>
+                <text id="_12h" data-name="12h" transform="translate(864.5 487.5)" font-size="18" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="-15.692" y="0">12h</tspan></text>
+              </g>
+              <g id="Rate-3" data-name="Rate" transform="translate(0 31)">
+                <g id="Rectangle_36-3" data-name="Rectangle 36" transform="translate(1095 492)" fill="#fff" stroke="#f2f2f2" stroke-width="1">
+                  <rect width="65" height="20" rx="2" stroke="none"/>
+                  <rect x="0.5" y="0.5" width="64" height="19" rx="1.5" fill="none"/>
+                </g>
+                <text id="_20h_week-3" data-name="20h/week" transform="translate(1128 505)" font-size="10" font-family="Inter-Regular, Inter"><tspan x="-23.402" y="0">20h/week</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="final_milestones" data-name="final milestones" transform="translate(0 1015.903)">
+        <rect id="Control_shade-20" data-name="Control shade" width="750" height="134" rx="7" transform="translate(422.5 288.097)" fill="#fafafa" stroke="#f2f2f2" stroke-width="1" style="mix-blend-mode: multiply;isolation: isolate"/>
+        <g id="Connecting_lines-4" data-name="Connecting lines" transform="translate(0 46.097)" opacity="0.75">
+          <line id="Shape_1038-7" data-name="Shape 1038" y2="133.5" transform="translate(744.5 242)" fill="none" stroke="#d2d2d2" stroke-width="1" stroke-dasharray="4 5"/>
+          <line id="Shape_1038-8" data-name="Shape 1038" y2="133.5" transform="translate(865.5 242)" fill="none" stroke="#d2d2d2" stroke-width="1" stroke-dasharray="4 5"/>
+        </g>
+        <g id="Plot_texts-11" data-name="Plot + texts" transform="translate(-5 4)">
+          <g id="Milestones" transform="translate(17.639 -4)">
+            <g transform="matrix(1, 0, 0, 1, 358.86, -952.39)" filter="url(#Gauge)">
+              <rect id="Gauge-12" data-name="Gauge" width="365" height="15" rx="7.5" transform="translate(247 1285.99)" fill="#fff" stroke="#f2f2f2" stroke-width="1.527"/>
+            </g>
+            <rect id="Progress" width="147.975" height="15" rx="7.5" transform="translate(605.361 333.097)" fill="url(#linear-gradient)"/>
+            <g id="Mini_milestones" data-name="Mini milestones" transform="translate(-25.639 -951.903)">
+              <g id="Completed">
+                <circle id="Ellipse_9" data-name="Ellipse 9" cx="3.25" cy="3.25" r="3.25" transform="translate(713 1289)" fill="#fff"/>
+                <circle id="Ellipse_10" data-name="Ellipse 10" cx="3.25" cy="3.25" r="3.25" transform="translate(743 1289)" fill="#fff"/>
+              </g>
+              <g id="Incomplete">
+                <g id="Ellipse_11" data-name="Ellipse 11" transform="translate(842 1289)" fill="rgba(210,210,210,0.5)" stroke="#d2d2d2" stroke-width="0.5">
+                  <circle cx="3.25" cy="3.25" r="3.25" stroke="none"/>
+                  <circle cx="3.25" cy="3.25" r="3" fill="none"/>
+                </g>
+                <g id="Ellipse_12" data-name="Ellipse 12" transform="translate(867 1289)" fill="rgba(210,210,210,0.5)" stroke="#d2d2d2" stroke-width="0.5">
+                  <circle cx="3.25" cy="3.25" r="3.25" stroke="none"/>
+                  <circle cx="3.25" cy="3.25" r="3" fill="none"/>
+                </g>
+                <g id="Ellipse_13" data-name="Ellipse 13" transform="translate(892 1289)" fill="rgba(210,210,210,0.5)" stroke="#d2d2d2" stroke-width="0.5">
+                  <circle cx="3.25" cy="3.25" r="3.25" stroke="none"/>
+                  <circle cx="3.25" cy="3.25" r="3" fill="none"/>
+                </g>
+                <g id="Ellipse_14" data-name="Ellipse 14" transform="translate(906 1289)" fill="rgba(210,210,210,0.5)" stroke="#d2d2d2" stroke-width="0.5">
+                  <circle cx="3.25" cy="3.25" r="3.25" stroke="none"/>
+                  <circle cx="3.25" cy="3.25" r="3" fill="none"/>
+                </g>
+                <g id="Ellipse_15" data-name="Ellipse 15" transform="translate(922 1289)" fill="rgba(210,210,210,0.5)" stroke="#d2d2d2" stroke-width="0.5">
+                  <circle cx="3.25" cy="3.25" r="3.25" stroke="none"/>
+                  <circle cx="3.25" cy="3.25" r="3" fill="none"/>
+                </g>
+              </g>
+            </g>
+            <g id="Milestone_1" data-name="Milestone 1" transform="translate(721.611 329)">
+              <g id="Filled" transform="translate(-736 -692)">
+                <g transform="matrix(1, 0, 0, 1, 373.25, -589.39)" filter="url(#Ellipse_8)">
+                  <g id="Ellipse_8-3" data-name="Ellipse 8" transform="translate(362.75 1281.39)" fill="#fff" stroke="#d2d2d2" stroke-width="0.5">
+                    <circle cx="11.25" cy="11.25" r="11.25" stroke="none"/>
+                    <circle cx="11.25" cy="11.25" r="11" fill="none"/>
+                  </g>
+                </g>
+                <path id="star_3_" data-name="star (3)" d="M11.969,4.837A.637.637,0,0,0,11.42,4.4L7.956,4.084,6.587.878a.638.638,0,0,0-1.173,0L4.044,4.084.58,4.4A.639.639,0,0,0,.218,5.515l2.618,2.3-.772,3.4a.637.637,0,0,0,.949.689L6,10.115,8.987,11.9a.638.638,0,0,0,.949-.689l-.772-3.4,2.618-2.3a.638.638,0,0,0,.187-.678Zm0,0" transform="translate(741 696.759)" fill="#fda40a"/>
+              </g>
+            </g>
+            <g id="Milestone_2" data-name="Milestone 2" transform="translate(847.362 329)">
+              <g id="Unfilled" transform="translate(-736 -692)">
+                <g transform="matrix(1, 0, 0, 1, 247.5, -589.39)" filter="url(#Ellipse_8-2)">
+                  <g id="Ellipse_8-4" data-name="Ellipse 8" transform="translate(488.5 1281.39)" fill="#fff" stroke="#d2d2d2" stroke-width="0.5">
+                    <circle cx="11.25" cy="11.25" r="11.25" stroke="none"/>
+                    <circle cx="11.25" cy="11.25" r="11" fill="none"/>
+                  </g>
+                </g>
+                <path id="star_3_2" data-name="star (3)" d="M11.969,4.837A.637.637,0,0,0,11.42,4.4L7.956,4.084,6.587.878a.638.638,0,0,0-1.173,0L4.044,4.084.58,4.4A.639.639,0,0,0,.218,5.515l2.618,2.3-.772,3.4a.637.637,0,0,0,.949.689L6,10.115,8.987,11.9a.638.638,0,0,0,.949-.689l-.772-3.4,2.618-2.3a.638.638,0,0,0,.187-.678Zm0,0" transform="translate(741 696.759)" fill="#d2d2d2"/>
+              </g>
+            </g>
+          </g>
+          <g id="Donut_-_current" data-name="Donut - current" transform="translate(525.779 203.78)">
+            <g id="Ellipse_4" data-name="Ellipse 4" transform="translate(9.99 98.22)" fill="none" stroke="#00aeef" stroke-width="7" opacity="0.15">
+              <circle cx="33.5" cy="33.5" r="33.5" stroke="none"/>
+              <circle cx="33.5" cy="33.5" r="37" fill="none"/>
+            </g>
+            <g id="Group_1" data-name="Group 1" clip-path="url(#clip-path-4)">
+              <g id="Ellipse_5" data-name="Ellipse 5" transform="translate(9.99 98.22)" fill="none" stroke="#1e90ff" stroke-width="7">
+                <circle cx="33.5" cy="33.5" r="33.5" stroke="none"/>
+                <circle cx="33.5" cy="33.5" r="37" fill="none"/>
+              </g>
+            </g>
+            <text id="_625_83_ile" data-name="625
+83 %ile" transform="translate(43.99 134.22)" fill="#1e90ff" font-size="22" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="-21.281" y="0">625</tspan><tspan fill="#404040" font-size="12" font-family="Inter-Regular, Inter" font-weight="400"><tspan x="-20.42" y="14">83 %ile</tspan></tspan></text>
+          </g>
+          <g id="Donut_-_target" data-name="Donut - target" transform="translate(999.779 203.78)">
+            <g id="Ellipse_4-2" data-name="Ellipse 4" transform="translate(9.99 98.22)" fill="none" stroke="#fda40a" stroke-width="7" opacity="0.15">
+              <circle cx="33.5" cy="33.5" r="33.5" stroke="none"/>
+              <circle cx="33.5" cy="33.5" r="37" fill="none"/>
+            </g>
+            <g id="Mask_Group_1" data-name="Mask Group 1" clip-path="url(#clip-path-5)">
+              <g id="Ellipse_5-2" data-name="Ellipse 5" transform="translate(9.99 98.22)" fill="none" stroke="#fda40a" stroke-width="7">
+                <circle cx="33.5" cy="33.5" r="33.5" stroke="none"/>
+                <circle cx="33.5" cy="33.5" r="37" fill="none"/>
+              </g>
+            </g>
+            <text id="_665_94_ile" data-name="665
+94 %ile" transform="translate(43.99 134.22)" fill="#fda40a" font-size="22" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="-21.613" y="0">665</tspan><tspan fill="#404040" font-size="12" font-family="Inter-Regular, Inter" font-weight="400"><tspan x="-20.497" y="14">94 %ile</tspan></tspan></text>
+          </g>
+          <g id="Start_date" data-name="Start date" transform="translate(528.792 383.68)">
+            <g id="Rectangle_29" data-name="Rectangle 29" transform="translate(5 3)" fill="#e5f2ff" stroke="#f2f2f2" stroke-width="1">
+              <rect width="70" height="20" rx="3" stroke="none"/>
+              <rect x="0.5" y="0.5" width="69" height="19" rx="2.5" fill="none"/>
+            </g>
+            <text id="_4_Aug_23" data-name="4 Aug ‘23" transform="translate(40 17)" font-size="12" font-family="Inter-Regular, Inter"><tspan x="-27.068" y="0">4 Aug ‘23</tspan></text>
+          </g>
+          <g id="End_date" data-name="End date" transform="translate(1003 383.68)">
+            <g id="Rectangle_29-2" data-name="Rectangle 29" transform="translate(5 3)" fill="#fff1da" stroke="#f2f2f2" stroke-width="1">
+              <rect width="70" height="20" rx="3" stroke="none"/>
+              <rect x="0.5" y="0.5" width="69" height="19" rx="2.5" fill="none"/>
+            </g>
+            <text id="_31_Sep_23" data-name="31 Sep ‘23" transform="translate(40 17)" font-size="12" font-family="Inter-Regular, Inter"><tspan x="-29.599" y="0">31 Sep ‘23</tspan></text>
+          </g>
+        </g>
+      </g>
+      <text id="_1Note_that_these_are_the_total_sectional_prep_times_that_includes_not_only_sub_sectional_prep_times_but_also_Prep_time_needed_for_prerequisites_like_basic_skills_and_test_readiness_as_well." data-name="1Note that these are the total sectional prep times that includes not only sub sectional prep times but also Prep time needed for prerequisites like basic skills and test readiness as well." transform="translate(422 1452.5)" fill="#a6a6a6" font-size="7" font-family="NunitoSans-Regular, Nunito Sans" letter-spacing="-0.005em"><tspan x="0" y="12" fill="#a6a6a6" baseline-shift="3.9995999620726357">1</tspan><tspan y="12" font-size="12" fill="#000">Note </tspan><tspan y="12" fill="#a6a6a6" font-size="12">that these are the total sectional prep times that includes not only sub sectional prep times but also Prep time needed for prerequisites </tspan><tspan x="0" y="30" fill="#a6a6a6" font-size="12">like basic skills and test readiness as well.</tspan></text>
+    </g>
+    <g id="Primary_CTA" data-name="Primary CTA" transform="translate(886 1541.5)">
+      <g id="Normal-11" data-name="Normal" transform="translate(-863.34 -1207.49)">
+        <rect id="Rectangle_4_copy" data-name="Rectangle 4 copy" width="300" height="60" rx="4" transform="translate(863.34 1207.49)" fill="#1e90ff"/>
+        <text id="Understand_Verbal_Journey" data-name="Understand Verbal Journey" transform="translate(902.34 1243.49)" fill="#fff" font-size="17.992" font-family="NunitoSans-SemiBold, Nunito Sans" font-weight="600"><tspan x="0" y="0">Understand Verbal Journey</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,747 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="849.01" height="1081" viewBox="0 0 849.01 1081">
+  <defs>
+    <filter id="Top_component_bg" x="59.345" y="292.676" width="731.319" height="331.319" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Current_icon_circle" x="84.815" y="434.525" width="80.02" height="80.02" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-2"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Target_icon_circle" x="135.385" y="405.535" width="79.96" height="79.66" filterUnits="userSpaceOnUse">
+      <feOffset dy="6" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-3"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Current_marker" x="461.085" y="403.505" width="88" height="88" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-4"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Target_marker" x="592.565" y="403.505" width="88" height="88" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-5"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Current_marker-2" x="574.085" y="453.505" width="88" height="88" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-6"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Target_marker-2" x="592.565" y="453.505" width="88" height="88" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-7"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Current_marker-3" x="411.085" y="503.505" width="88" height="88" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-8"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-8"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Target_marker-3" x="480.565" y="503.505" width="88" height="88" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-9"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-9"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Toggle_container" x="538.355" y="313.096" width="231.319" height="67.319" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-10"/>
+      <feFlood flood-opacity="0.051"/>
+      <feComposite operator="in" in2="blur-10"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Background_dive_box" x="59.345" y="709.33" width="730.01" height="83.41" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-11"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-11"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Current_marker-4" x="264.295" y="705.612" width="88" height="87.74" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-12"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-12"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Target_marker-4" x="350.925" y="705.482" width="88" height="88" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-13"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-13"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Shape_1036" x="340.605" y="684.732" width="114" height="64" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-14"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-14"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Current_marker-5" x="215.295" y="779.612" width="88" height="87.74" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-15"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-15"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Target_marker-5" x="248.925" y="779.482" width="88" height="88" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-16"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-16"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Shape_1036-2" x="236.605" y="758.732" width="114.001" height="63.999" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-17"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-17"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_1036" x="629.345" y="722.08" width="129.02" height="118.99" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-18"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-18"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Control_shade" x="59.005" y="709" width="730" height="80" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-19"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-19"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Current_icon_circle-2" x="540.595" y="721.1" width="56.08" height="55.96" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-20"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-20"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Target_icon_circle-2" x="631.625" y="721.62" width="56.5" height="55.96" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-21"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-21"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Control_shade-2" x="59.005" y="780" width="730" height="80" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-22"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-22"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Current_icon_circle-3" x="540.595" y="792.1" width="56.08" height="55.96" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-23"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-23"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Target_icon_circle-3" x="631.625" y="792.62" width="56.5" height="55.96" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-24"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-24"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Control_shade-3" x="59.005" y="849" width="730" height="80" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-25"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-25"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Current_icon_circle-4" x="540.595" y="861.1" width="56.08" height="55.96" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-26"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-26"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Target_icon_circle-4" x="631.625" y="861.62" width="56.5" height="55.96" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-27"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-27"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="milestone-summary" transform="translate(-372 -22)">
+    <rect id="Background_dive_box-2" data-name="Background dive box" width="849.01" height="1081" rx="10" transform="translate(372 22)" fill="#fff"/>
+    <g id="S3.7_-_Overall_summary" data-name="S3.7 - Overall summary" transform="translate(-12.645 36.675)">
+      <g id="Step_description" data-name="Step description">
+        <g id="Heading">
+          <g id="Milstone_icon" data-name="Milstone icon" style="isolation: isolate">
+            <circle id="Ellipse_855" data-name="Ellipse 855" cx="35" cy="35" r="35" transform="translate(459 69)" fill="#22bf95"/>
+            <g id="Flag_icon" data-name="Flag icon">
+              <path id="Layer" d="M510.031,88.172c-.133.526-3.527,13.132-13.09,13.5-5.951.229-9.088,3.175-10.387,4.795l-5.517-15.943c2.636-1.227,7.825-3.008,13.268-1.456a18.186,18.186,0,0,0,14.1-2.044,1.058,1.058,0,0,1,1.627,1.147Z" fill="#ffdb31"/>
+              <path id="Layer-2" data-name="Layer" d="M481.014,90.458l10.2,29.474a1.418,1.418,0,1,1-2.68.927l-10.2-29.474a1.418,1.418,0,1,1,2.679-.927Z" fill="#fff"/>
+            </g>
+          </g>
+          <text id="All_milestones_set_" data-name="All milestones set!
+" transform="translate(553.053 114.56)" fill="#22bf95" font-size="29.987" font-family="PlusJakartaSans-SemiBold, Plus Jakarta Sans" font-weight="600"><tspan x="0" y="0">All milestones set!</tspan><tspan x="0" y="35.985"></tspan></text>
+        </g>
+        <text id="Just_one_more_step_to_get_your_Personalized_Study_Plan._Before_you_proceed_here_is_a_quick_summary_of_all_the_milestones_you_set_till_now._" data-name="Just one more step to get your Personalized Study Plan.
+Before you proceed, here is a quick summary of all the milestones you set till now.
+" transform="translate(462.053 163.954)" fill="#404040" font-size="16" font-family="Inter-Regular, Inter"><tspan x="0" y="16">Just one more step to get your Personalized Study Plan.</tspan><tspan x="0" y="42.989">Before you proceed, here is a quick summary of all the milestones you set till now.</tspan><tspan x="0" y="69.977"></tspan></text>
+      </g>
+      <g id="Overall_scores" data-name="Overall scores" transform="translate(0 10)" style="isolation: isolate">
+        <g transform="matrix(1, 0, 0, 1, 384.65, -24.68)" filter="url(#Top_component_bg)">
+          <rect id="Top_component_bg-2" data-name="Top component bg" width="700" height="300" rx="10" transform="translate(75 308.34)" fill="#fff" stroke="#f2f2f2" stroke-width="1.319"/>
+        </g>
+        <g id="Overall_block" data-name="Overall block" transform="translate(0 10)">
+          <path id="Layer-3" data-name="Layer" d="M10,0H150a0,0,0,0,1,0,0V296.66a3.33,3.33,0,0,1-3.33,3.33H3.33A3.33,3.33,0,0,1,0,296.66V10A10,10,0,0,1,10,0Z" transform="translate(460.01 274)" fill="#f7f9f8"/>
+          <text id="Total_scores" data-name="Total scores" transform="translate(481.717 318.117)" font-size="17.992" font-family="PlusJakartaSans-Bold, Plus Jakarta Sans" font-weight="700"><tspan x="0" y="0">Total scores</tspan></text>
+          <g id="Current_block" data-name="Current block">
+            <rect id="Current_unfilled" data-name="Current unfilled" width="50.43" height="163.08" rx="1.45" transform="translate(483.99 356.94)" fill="#bfebfb"/>
+            <rect id="Current_filled" data-name="Current filled" width="50.43" height="86.67" rx="1.41" transform="translate(483.99 433.87)" fill="#1e90ff"/>
+            <g id="Current_score" data-name="Current score">
+              <text id="_605" data-name="605" transform="translate(510.336 464.143)" font-size="17.992" font-family="NunitoSans-Bold, Nunito Sans" font-weight="700"><tspan x="-16.193" y="0">605</tspan></text>
+              <text id="_75_ile" data-name="75 %ile" transform="translate(510.385 476.778)" font-size="9.996" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-17.203" y="0">75 %ile</tspan></text>
+            </g>
+            <g id="Current_icon" data-name="Current icon">
+              <g transform="matrix(1, 0, 0, 1, 384.65, -34.68)" filter="url(#Current_icon_circle)">
+                <circle id="Current_icon_circle-5" data-name="Current icon circle" cx="10.01" cy="10.01" r="10.01" transform="translate(114.81 458.53)" fill="#fff"/>
+              </g>
+              <path id="Current_icon-2" data-name="Current icon" d="M505.524,440.547V429.509a.44.44,0,0,1,.879,0v11.038Zm1.465-11.082a3.341,3.341,0,0,1,1.861-.416c1.553,0,2.609.689,4.881.029v4.745c-1.8.8-3.327-.028-4.881-.028a3.284,3.284,0,0,0-1.861.416Z" fill="#00aeef"/>
+            </g>
+            <text id="Current" transform="translate(493.068 532.243)" font-size="9.996" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Current</tspan></text>
+          </g>
+          <g id="Target_block" data-name="Target block">
+            <rect id="Target_unfilled" data-name="Target unfilled" width="50.43" height="163.08" rx="1.45" transform="translate(534.58 357.01)" fill="#fee8c2"/>
+            <rect id="Target_fill" data-name="Target fill" width="50.43" height="115.28" rx="1.45" transform="translate(534.58 404.64)" fill="#fda40a"/>
+            <g id="Target_icon" data-name="Target icon">
+              <g transform="matrix(1, 0, 0, 1, 384.65, -34.68)" filter="url(#Target_icon_circle)">
+                <ellipse id="Target_icon_circle-5" data-name="Target icon circle" cx="9.98" cy="9.83" rx="9.98" ry="9.83" transform="translate(165.39 429.54)" fill="#fff"/>
+              </g>
+              <path id="Target_icon-2" data-name="Target icon" d="M554.481,404.748a5.408,5.408,0,0,1,5.469-5.35,5.644,5.644,0,0,1,2.577.619l-.1.1-.2.2.043.282.03.282a4.486,4.486,0,1,0,2.259,3.873,4.445,4.445,0,0,0-.647-2.3l.3.041.273.029.187-.2.1-.085a5.084,5.084,0,0,1,.648,2.507,5.471,5.471,0,0,1-10.94,0Zm2.015,0a3.428,3.428,0,0,1,3.454-3.38,3.506,3.506,0,0,1,1.627.394l-.648.634a2.813,2.813,0,0,0-.979-.184,2.535,2.535,0,1,0,2.591,2.535,2.367,2.367,0,0,0-.187-.958l.648-.634a3.31,3.31,0,0,1,.4,1.591,3.456,3.456,0,0,1-6.909,0Zm2,0a1.428,1.428,0,0,1,1.439-1.409,1.542,1.542,0,0,1,.677.169l2.3-2.253-.086-.733,1.583-1.549.144,1.267,1.3.141-1.583,1.549-.749-.085-2.3,2.253a1.394,1.394,0,0,1,.158.648,1.44,1.44,0,0,1-2.879,0Z" fill="#fda40a"/>
+            </g>
+            <g id="Target_score" data-name="Target score">
+              <text id="_665" data-name="665" transform="translate(559.899 435.182)" font-size="17.992" font-family="NunitoSans-Bold, Nunito Sans" font-weight="700"><tspan x="-16.193" y="0">665</tspan></text>
+              <text id="_94_ile" data-name="94 %ile" transform="translate(559.948 447.817)" font-size="9.996" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-17.203" y="0">94 %ile</tspan></text>
+            </g>
+            <text id="Target" transform="translate(545.143 532.403)" font-size="9.996" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Target</tspan></text>
+          </g>
+        </g>
+        <g id="Tabbed_view" data-name="Tabbed view" transform="translate(629.842 304.08)">
+          <g id="Tabs_content" data-name="Tabs content" transform="translate(-629.842 -294.08)">
+            <g id="Score_tab" data-name="Score tab">
+              <g id="Grid_lines" data-name="Grid lines">
+                <g id="_1" data-name="1">
+                  <line id="Layer-4" data-name="Layer" y2="148.2" transform="translate(800.38 376)" fill="none" stroke="#d9d9d9" stroke-miterlimit="8" stroke-width="0.764" stroke-dasharray="3.054 1.527"/>
+                  <text id="_70" data-name="70" transform="matrix(1, 0, 0, 1, 800.849, 369.24)" fill="#bfbfbf" font-size="9.969" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-5.981" y="0">70</tspan></text>
+                </g>
+                <g id="_2" data-name="2">
+                  <line id="Layer-5" data-name="Layer" y2="148.2" transform="translate(892.04 376)" fill="none" stroke="#d9d9d9" stroke-miterlimit="8" stroke-width="0.764" stroke-dasharray="3.054 1.527"/>
+                  <text id="_75" data-name="75" transform="matrix(1, 0, 0, 1, 891.722, 369.24)" fill="#bfbfbf" font-size="9.969" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-5.981" y="0">75</tspan></text>
+                </g>
+                <g id="_3" data-name="3">
+                  <line id="Layer-6" data-name="Layer" y2="148.2" transform="translate(983.2 376)" fill="none" stroke="#d9d9d9" stroke-miterlimit="8" stroke-width="0.764" stroke-dasharray="3.054 1.527"/>
+                  <text id="_80" data-name="80" transform="matrix(1, 0, 0, 1, 983.121, 369.24)" fill="#bfbfbf" font-size="9.969" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-5.981" y="0">80</tspan></text>
+                </g>
+                <g id="_4" data-name="4">
+                  <line id="Layer-7" data-name="Layer" y2="148.2" transform="translate(1074.63 376)" fill="none" stroke="#d9d9d9" stroke-miterlimit="8" stroke-width="0.764" stroke-dasharray="3.054 1.527"/>
+                  <text id="_85" data-name="85" transform="matrix(1, 0, 0, 1, 1073.69, 369.24)" fill="#bfbfbf" font-size="9.969" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-5.981" y="0">85</tspan></text>
+                </g>
+              </g>
+              <g id="Verbal">
+                <text id="Verbal-2" data-name="Verbal" transform="translate(629.842 417.534)" fill="#404040" font-size="14" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Verbal</tspan></text>
+                <text id="_83" data-name="83" transform="translate(1120.838 419.049)" fill="#fda40a" font-size="18" font-family="Inter-Regular, Inter"><tspan x="-11.276" y="0">83</tspan></text>
+                <rect id="Rectangle_954" data-name="Rectangle 954" width="275" height="20" rx="10" transform="translate(800.35 402.73)" fill="#f7f9f8" stroke="#f2f2f2" stroke-miterlimit="8" stroke-width="1.527"/>
+                <rect id="Rectangle_954_copy" data-name="Rectangle 954 copy" width="131" height="20" rx="10" transform="translate(890 403.01)" fill="#75e5c8" opacity="0.502"/>
+                <g transform="matrix(1, 0, 0, 1, 384.65, -34.68)" filter="url(#Current_marker)">
+                  <g id="Current_marker-6" data-name="Current marker" transform="translate(495.08 437.51)" fill="#00aeef" stroke="#fff" stroke-miterlimit="8" stroke-width="4">
+                    <circle cx="10" cy="10" r="10" stroke="none"/>
+                    <circle cx="10" cy="10" r="12" fill="none"/>
+                  </g>
+                </g>
+                <g transform="matrix(1, 0, 0, 1, 384.65, -34.68)" filter="url(#Target_marker)">
+                  <g id="Target_marker-6" data-name="Target marker" transform="translate(626.57 437.51)" fill="#fda40a" stroke="#fff" stroke-miterlimit="8" stroke-width="4">
+                    <circle cx="10" cy="10" r="10" stroke="none"/>
+                    <circle cx="10" cy="10" r="12" fill="none"/>
+                  </g>
+                </g>
+                <text id="_75-2" data-name="75" transform="translate(750.768 419.507)" fill="#1e90ff" font-size="17.974" font-family="Inter-Regular, Inter"><tspan x="-10.506" y="0">75</tspan></text>
+              </g>
+              <g id="Quant">
+                <text id="Quant-2" data-name="Quant" transform="translate(629.842 467.534)" fill="#404040" font-size="14" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Quant</tspan></text>
+                <text id="_82" data-name="82" transform="translate(1120.838 469.049)" fill="#fda40a" font-size="18" font-family="Inter-Regular, Inter"><tspan x="-10.994" y="0">82</tspan></text>
+                <rect id="Rectangle_954-2" data-name="Rectangle 954" width="275" height="20" rx="10" transform="translate(800.35 452.73)" fill="#f7f9f8" stroke="#f2f2f2" stroke-miterlimit="8" stroke-width="1.527"/>
+                <g transform="matrix(1, 0, 0, 1, 384.65, -34.68)" filter="url(#Current_marker-2)">
+                  <g id="Current_marker-7" data-name="Current marker" transform="translate(608.08 487.51)" fill="#00aeef" stroke="#fff" stroke-miterlimit="8" stroke-width="4">
+                    <circle cx="10" cy="10" r="10" stroke="none"/>
+                    <circle cx="10" cy="10" r="12" fill="none"/>
+                  </g>
+                </g>
+                <g transform="matrix(1, 0, 0, 1, 384.65, -34.68)" filter="url(#Target_marker-2)">
+                  <g id="Target_marker-7" data-name="Target marker" transform="translate(626.57 487.51)" fill="#fda40a" stroke="#fff" stroke-miterlimit="8" stroke-width="4">
+                    <circle cx="10" cy="10" r="10" stroke="none"/>
+                    <circle cx="10" cy="10" r="12" fill="none"/>
+                  </g>
+                </g>
+                <text id="_81" data-name="81" transform="translate(750.768 469.507)" fill="#1e90ff" font-size="17.974" font-family="Inter-Regular, Inter"><tspan x="-9.715" y="0">81</tspan></text>
+              </g>
+              <g id="DI">
+                <text id="Data_Insights" data-name="Data Insights" transform="translate(629.842 517.534)" fill="#404040" font-size="14" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Data Insights</tspan></text>
+                <text id="_76" data-name="76" transform="translate(1120.838 519.049)" fill="#fda40a" font-size="18" font-family="Inter-Regular, Inter"><tspan x="-10.611" y="0">76</tspan></text>
+                <rect id="Rectangle_954-3" data-name="Rectangle 954" width="275" height="20" rx="10" transform="translate(800.35 502.73)" fill="#f7f9f8" stroke="#f2f2f2" stroke-miterlimit="8" stroke-width="1.527"/>
+                <rect id="Rectangle_954_copy-2" data-name="Rectangle 954 copy" width="69" height="20" rx="10" transform="translate(840 503.01)" fill="#75e5c8" opacity="0.502"/>
+                <g transform="matrix(1, 0, 0, 1, 384.65, -34.68)" filter="url(#Current_marker-3)">
+                  <g id="Current_marker-8" data-name="Current marker" transform="translate(445.08 537.51)" fill="#00aeef" stroke="#fff" stroke-miterlimit="8" stroke-width="4">
+                    <circle cx="10" cy="10" r="10" stroke="none"/>
+                    <circle cx="10" cy="10" r="12" fill="none"/>
+                  </g>
+                </g>
+                <g transform="matrix(1, 0, 0, 1, 384.65, -34.68)" filter="url(#Target_marker-3)">
+                  <g id="Target_marker-8" data-name="Target marker" transform="translate(514.57 537.51)" fill="#fda40a" stroke="#fff" stroke-miterlimit="8" stroke-width="4">
+                    <circle cx="10" cy="10" r="10" stroke="none"/>
+                    <circle cx="10" cy="10" r="12" fill="none"/>
+                  </g>
+                </g>
+                <text id="_72" data-name="72" transform="translate(750.768 519.507)" fill="#1e90ff" font-size="17.974" font-family="Inter-Regular, Inter"><tspan x="-10.57" y="0">72</tspan></text>
+              </g>
+              <g id="Header_row" data-name="Header row">
+                <text id="Current_Scores" data-name="Current
+Scores" transform="translate(750.676 366.09)" fill="#7f7f7f" font-size="12" font-family="Inter-Regular, Inter"><tspan x="-21.401" y="0">Current</tspan><tspan x="-19.517" y="15.6">Scores</tspan></text>
+                <text id="Target_Scores_" data-name="Target
+Scores " transform="translate(1122.055 365.554)" fill="#7f7f7f" font-size="12" font-family="Inter-Regular, Inter"><tspan x="-18.256" y="0">Target</tspan><tspan x="-21.205" y="15.6">Scores </tspan></text>
+              </g>
+              <g id="Legend">
+                <g id="Current-2" data-name="Current">
+                  <rect id="Layer-8" data-name="Layer" width="8.11" height="8.12" rx="2" transform="translate(631.24 550.49)" fill="#1e90ff"/>
+                  <text id="Current-3" data-name="Current" transform="translate(642.854 556.738)" fill="#a6a6a6" font-size="9.985" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Current</tspan></text>
+                </g>
+                <g id="Target-2" data-name="Target">
+                  <rect id="Layer-9" data-name="Layer" width="8.11" height="8.12" rx="2" transform="translate(686.78 550.49)" fill="#fda40a"/>
+                  <text id="Target-3" data-name="Target" transform="translate(698.432 556.738)" fill="#a6a6a6" font-size="9.985" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Target</tspan></text>
+                </g>
+              </g>
+              <text id="Sectional_scores" data-name="Sectional scores" transform="translate(630.717 318.117)" font-size="17.992" font-family="PlusJakartaSans-Bold, Plus Jakarta Sans" font-weight="700"><tspan x="0" y="0">Sectional scores</tspan></text>
+            </g>
+          </g>
+          <g id="Tabs_toggle" data-name="Tabs toggle" transform="translate(-629.842 -294.08)">
+            <g transform="matrix(1, 0, 0, 1, 384.65, -34.68)" filter="url(#Toggle_container)">
+              <rect id="Toggle_container-2" data-name="Toggle container" width="200" height="36" rx="4" transform="translate(554.01 328.76)" fill="#fff" stroke="#f2f2f2" stroke-width="1.319"/>
+            </g>
+            <rect id="Shade" width="96" height="28" rx="4" transform="translate(942.93 298.41)" fill="#1e90ff"/>
+            <g id="Scores" transform="translate(942.93 298.41)" style="isolation: isolate">
+              <g id="Selected" transform="translate(-942.93 -298.41)">
+                <rect id="Shade-2" data-name="Shade" width="96" height="28" rx="14" transform="translate(942.93 298.41)" fill="none"/>
+                <g id="button_text" data-name="button text" style="isolation: isolate">
+                  <text id="Scores-2" data-name="Scores" transform="translate(984.005 316.123)" fill="#fff" font-size="12" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Scores</tspan></text>
+                  <path id="Score_icon.svg" data-name="Score icon.svg" d="M966.244,317.653a1.2,1.2,0,1,1,0-2.4,1.156,1.156,0,0,1,.214.023l2.08-3.644a1.185,1.185,0,0,1-.294-.779,1.2,1.2,0,0,1,2.4,0,1.189,1.189,0,0,1-.154.576l1.7,1.914a1.171,1.171,0,0,1,.451-.09,1.145,1.145,0,0,1,.146.015l2.192-4.385a1.2,1.2,0,1,1,.862.369,1.119,1.119,0,0,1-.145-.014l-2.192,4.384a1.2,1.2,0,1,1-2.063.832,1.184,1.184,0,0,1,.152-.576l-1.7-1.914a1.141,1.141,0,0,1-.664.068l-2.08,3.643a1.193,1.193,0,0,1-.905,1.978Zm0-1.6a.4.4,0,1,0,.4.4A.4.4,0,0,0,966.24,316.05Zm6.4-2a.4.4,0,1,0,.4.4A.4.4,0,0,0,972.64,314.05Zm-3.2-3.6a.4.4,0,1,0,.4.4A.4.4,0,0,0,969.44,310.45Zm6.4-2.8a.4.4,0,1,0,.4.4A.4.4,0,0,0,975.84,307.65Z" fill="#fff"/>
+                </g>
+              </g>
+            </g>
+            <g id="Times" transform="translate(1038.93 298.41)" style="mix-blend-mode: multiply;isolation: isolate">
+              <g id="Normal" transform="translate(-1038.93 -298.41)">
+                <rect id="Shade-3" data-name="Shade" width="96" height="28" rx="14" transform="translate(1038.93 298.41)" fill="#fff"/>
+                <g id="button_text-2" data-name="button text">
+                  <text id="Times-2" data-name="Times" transform="translate(1080.005 316.123)" fill="#a6a6a6" font-size="12" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Times</tspan></text>
+                  <path id="Time_icon.svg" data-name="Time icon.svg" d="M1066.357,318.432a5.952,5.952,0,0,1-2.389-1,6.13,6.13,0,0,1-.768-.642l0,0-.006-.006a5.949,5.949,0,0,1-1.677-3.224c-.021-.121-.038-.244-.051-.365,0-.008,0-.015,0-.023-.014-.121-.022-.243-.028-.364v-.013a5.933,5.933,0,0,1,.95-3.5c0-.008.008-.015.013-.023.041-.063.084-.126.127-.188.026-.038.054-.076.081-.112a.286.286,0,0,1,.021-.025,5.943,5.943,0,0,1,3.294-2.208l.017,0h0q.225-.057.456-.1a5.95,5.95,0,0,1,4.359.927l.377-.545c.105-.151.231-.13.28.048l.439,1.582a.269.269,0,0,1-.244.352l-1.634.147c-.184.016-.248-.095-.143-.246l.376-.544a5.037,5.037,0,0,0-5.644.045l-.017.013a5.026,5.026,0,0,0-.021,8.234,5.306,5.306,0,0,0,.479.3h0c.089.049.181.1.274.139l.014.008a4.969,4.969,0,0,0,1.236.392.482.482,0,1,1-.17.949Zm1.783-.085a.482.482,0,0,1,.19-.868c.1-.018.2-.04.3-.065a.482.482,0,1,1,.233.935c-.118.029-.238.055-.356.077a.489.489,0,0,1-.088.008A.481.481,0,0,1,1068.14,318.346Zm1.757-.648a.467.467,0,0,1-.14-.153.482.482,0,0,1,.176-.658c.088-.05.176-.105.261-.161a.482.482,0,0,1,.531.8c-.1.067-.206.131-.311.192a.479.479,0,0,1-.24.065A.485.485,0,0,1,1069.9,317.7Zm1.44-1.2a.362.362,0,0,1-.035-.028.482.482,0,0,1-.055-.679c.066-.077.13-.158.192-.239a.482.482,0,0,1,.77.578c-.073.1-.149.193-.229.286a.482.482,0,0,1-.643.082Zm1.058-1.557a.482.482,0,0,1-.278-.622c.036-.1.069-.193.1-.29a.482.482,0,0,1,.92.289c-.036.115-.076.231-.12.345a.482.482,0,0,1-.622.278Zm-2.11-.194-3.551-1.835v-3.884a.39.39,0,1,1,.779,0v3.408l3.13,1.618a.39.39,0,0,1-.18.736A.384.384,0,0,1,1070.285,314.751Zm2.632-1.612a.483.483,0,0,1-.472-.492c0-.1,0-.205,0-.307a.482.482,0,0,1,.963-.038c0,.121.005.245,0,.365a.482.482,0,0,1-.481.472Zm-.546-1.94a.476.476,0,0,1-.179-.242c-.032-.1-.068-.193-.105-.288a.482.482,0,1,1,.895-.357c.045.112.087.228.125.343a.481.481,0,0,1-.306.608.476.476,0,0,1-.152.025A.481.481,0,0,1,1072.371,311.2Z" fill="#a6a6a6"/>
+                </g>
+              </g>
+            </g>
+          </g>
+        </g>
+        <text id="Overall_scores_" data-name="Overall scores
+" transform="translate(460.133 253.49)" font-size="21.991" font-family="PlusJakartaSans-Bold, Plus Jakarta Sans" font-weight="700"><tspan x="0" y="0">Overall scores</tspan><tspan x="0" y="26.389"></tspan></text>
+      </g>
+      <g id="Sub_sectional_abilities" data-name="Sub sectional abilities" transform="translate(0 50)">
+        <text id="Sub_sectional_Abilities-2" data-name="Sub sectional Abilities" transform="translate(459.133 619.49)" font-size="21.991" font-family="PlusJakartaSans-Bold, Plus Jakarta Sans" font-weight="700"><tspan x="0" y="0">Sub sectional Abilities</tspan></text>
+        <g id="VR" transform="translate(0 19.665)" style="isolation: isolate">
+          <g transform="matrix(1, 0, 0, 1, 384.65, -84.34)" filter="url(#Background_dive_box)">
+            <rect id="Background_dive_box-3" data-name="Background dive box" width="700.01" height="53.41" rx="10" transform="translate(74.34 724.33)" fill="#fff" opacity="0"/>
+          </g>
+          <g id="Score_tab-2" data-name="Score tab" transform="translate(481.24 690.02)" opacity="0">
+            <g id="Left_part" data-name="Left part" transform="translate(0 -98.987)">
+              <g id="Grid_lines-2" data-name="Grid lines" transform="translate(129.433 2.787)">
+                <g id="_1-2" data-name="1">
+                  <line id="Layer-10" data-name="Layer" y2="137.99" transform="translate(6.707 15.582)" fill="none" stroke="#d9d9d9" stroke-miterlimit="8" stroke-width="0.764" stroke-dasharray="3.054 1.527"/>
+                  <text id="_40" data-name="40" transform="translate(6 10)" fill="#bfbfbf" font-size="10" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-6" y="0">40</tspan></text>
+                </g>
+                <g id="_2-2" data-name="2" transform="translate(93.226)">
+                  <line id="Layer-11" data-name="Layer" y2="137.99" transform="translate(4.891 15.582)" fill="none" stroke="#d9d9d9" stroke-miterlimit="8" stroke-width="0.764" stroke-dasharray="3.054 1.527"/>
+                  <text id="_60" data-name="60" transform="translate(6 10)" fill="#bfbfbf" font-size="10" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-6" y="0">60</tspan></text>
+                </g>
+                <g id="_3-2" data-name="3" transform="translate(185.901)">
+                  <line id="Layer-12" data-name="Layer" y2="137.99" transform="translate(4.626 15.582)" fill="none" stroke="#d9d9d9" stroke-miterlimit="8" stroke-width="0.764" stroke-dasharray="3.054 1.527"/>
+                  <text id="_80-2" data-name="80" transform="translate(6 10)" fill="#bfbfbf" font-size="10" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-6" y="0">80</tspan></text>
+                </g>
+                <g id="_4-2" data-name="4" transform="translate(274.127)">
+                  <line id="Layer-13" data-name="Layer" y2="137.99" transform="translate(7.81 15.582)" fill="none" stroke="#d9d9d9" stroke-miterlimit="8" stroke-width="0.764" stroke-dasharray="3.054 1.527"/>
+                  <text id="_100" data-name="100" transform="translate(9 10)" fill="#bfbfbf" font-size="10" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-9" y="0">100</tspan></text>
+                </g>
+              </g>
+              <g id="CR" transform="translate(2.76 24.359)">
+                <text id="CR-2" data-name="CR" transform="translate(0 54.5)" fill="#404040" font-size="14" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">CR</tspan></text>
+                <rect id="Gauge" width="271.52" height="18.87" rx="9.435" transform="translate(134.91 39.57)" fill="#f7f9f8" stroke="#f2f2f2" stroke-width="1.5"/>
+                <path id="Incremental" d="M694.735,871h87.237v19.193H694.735a9.6,9.6,0,0,1,0-19.193Z" transform="translate(-484 -831)" fill="#75e5c8" opacity="0.502"/>
+                <g transform="matrix(1, 0, 0, 1, -99.35, -699.73)" filter="url(#Current_marker-4)">
+                  <g id="Current_marker-9" data-name="Current marker" transform="translate(298.29 739.61)" fill="#00aeef" stroke="#fff" stroke-miterlimit="8" stroke-width="4">
+                    <ellipse cx="10" cy="9.87" rx="10" ry="9.87" stroke="none"/>
+                    <ellipse cx="10" cy="9.87" rx="12" ry="11.87" fill="none"/>
+                  </g>
+                </g>
+                <g transform="matrix(1, 0, 0, 1, -99.35, -699.73)" filter="url(#Target_marker-4)">
+                  <g id="Target_marker-9" data-name="Target marker" transform="translate(384.92 739.48)" fill="#fda40a" stroke="#fff" stroke-miterlimit="8" stroke-width="4">
+                    <circle cx="10" cy="10" r="10" stroke="none"/>
+                    <circle cx="10" cy="10" r="12" fill="none"/>
+                  </g>
+                </g>
+                <text id="_63" data-name="63" transform="translate(67.148 55.457)" fill="#00aeef" font-size="17.974" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">63</tspan></text>
+                <text id="_83-2" data-name="83" transform="translate(447.148 55.457)" fill="#fda40a" font-size="17.974" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">83</tspan></text>
+                <g id="Time" transform="translate(256.25)">
+                  <g transform="matrix(1, 0, 0, 1, -355.6, -699.73)" filter="url(#Shape_1036)">
+                    <path id="Shape_1036-3" data-name="Shape 1036" d="M37.555,26H4a4,4,0,0,1-4-4V4A4,4,0,0,1,4,0H80a4,4,0,0,1,4,4V22a4,4,0,0,1-4,4H46.444L42,34Z" transform="translate(355.6 699.73)" fill="#fff"/>
+                  </g>
+                  <text id="_1.8_weeks1" data-name="1.8 weeks1" transform="translate(9.598 17.48)" font-size="14" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">1.8 weeks</tspan><tspan y="0" font-size="8.166" baseline-shift="4.666199819518059">1</tspan></text>
+                </g>
+              </g>
+              <g id="RC" transform="translate(2.76 98.359)">
+                <text id="RC-2" data-name="RC" transform="translate(0 54.5)" fill="#404040" font-size="14" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">RC</tspan></text>
+                <rect id="Gauge-2" data-name="Gauge" width="271.52" height="18.87" rx="9.435" transform="translate(134.91 39.57)" fill="#f7f9f8" stroke="#f2f2f2" stroke-width="1.5"/>
+                <path id="Incremental-2" data-name="Incremental" d="M652.508,945H679v19.005H652.508a9.5,9.5,0,1,1,0-19.005Z" transform="translate(-484 -905)" fill="#75e5c8" opacity="0.502"/>
+                <g transform="matrix(1, 0, 0, 1, -99.35, -773.73)" filter="url(#Current_marker-5)">
+                  <g id="Current_marker-10" data-name="Current marker" transform="translate(249.29 813.61)" fill="#00aeef" stroke="#fff" stroke-miterlimit="8" stroke-width="4">
+                    <ellipse cx="10" cy="9.87" rx="10" ry="9.87" stroke="none"/>
+                    <ellipse cx="10" cy="9.87" rx="12" ry="11.87" fill="none"/>
+                  </g>
+                </g>
+                <g transform="matrix(1, 0, 0, 1, -99.35, -773.73)" filter="url(#Target_marker-5)">
+                  <g id="Target_marker-10" data-name="Target marker" transform="translate(282.92 813.48)" fill="#fda40a" stroke="#fff" stroke-miterlimit="8" stroke-width="4">
+                    <circle cx="10" cy="10" r="10" stroke="none"/>
+                    <circle cx="10" cy="10" r="12" fill="none"/>
+                  </g>
+                </g>
+                <text id="_50" data-name="50" transform="translate(67.148 55.457)" fill="#00aeef" font-size="17.974" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">50</tspan></text>
+                <text id="_60-2" data-name="60" transform="translate(447.148 55.457)" fill="#fda40a" font-size="17.974" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">60</tspan></text>
+                <g id="Time-2" data-name="Time" transform="translate(152.25)">
+                  <g transform="matrix(1, 0, 0, 1, -251.6, -773.73)" filter="url(#Shape_1036-2)">
+                    <path id="Shape_1036-4" data-name="Shape 1036" d="M37.555,26H4a4,4,0,0,1-4-4V4A4,4,0,0,1,4,0H80a4,4,0,0,1,4,4V22a4,4,0,0,1-4,4H46.444L42,34Z" transform="translate(251.6 773.73)" fill="#fff"/>
+                  </g>
+                  <text id="_0.4_weeks1" data-name="0.4 weeks1" transform="translate(7.598 17.48)" font-size="14" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">0.4 weeks</tspan><tspan y="0" font-size="8.166" baseline-shift="4.666199819518059">1</tspan></text>
+                </g>
+              </g>
+              <g id="Top_row" data-name="Top row" transform="translate(61.76)">
+                <text id="Current-4" data-name="Current" transform="translate(20 13.859)" fill="#7f7f7f" font-size="12" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-20.298" y="0">Current</tspan></text>
+                <text id="Target-4" data-name="Target" transform="translate(399.863 12)" fill="#7f7f7f" font-size="12" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-17.256" y="0">Target</tspan></text>
+              </g>
+              <g id="Legend-2" data-name="Legend" transform="translate(0 190.734)">
+                <g id="Current-5" data-name="Current">
+                  <rect id="Layer-14" data-name="Layer" width="8.11" height="8.12" rx="2" transform="translate(0 3.752)" fill="#00aeef"/>
+                  <text id="Current-6" data-name="Current" transform="translate(11.614 10)" fill="#a6a6a6" font-size="9.985" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Current</tspan></text>
+                </g>
+                <g id="Target-5" data-name="Target" transform="translate(55.54)">
+                  <rect id="Layer-15" data-name="Layer" width="8.11" height="8.12" rx="2" transform="translate(0 3.752)" fill="#fda40a"/>
+                  <text id="Target-6" data-name="Target" transform="translate(11.652 10)" fill="#a6a6a6" font-size="9.985" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Target</tspan></text>
+                </g>
+              </g>
+            </g>
+            <g id="Time_spend" data-name="Time spend" transform="translate(1.358)">
+              <rect id="grey_rectangle" data-name="grey rectangle" width="161" height="6.76" rx="3.38" transform="translate(515.402)" fill="#f7f9f8"/>
+              <g id="Calendar" transform="translate(546.392 -44.95)">
+                <g id="Calendar_icon" data-name="Calendar icon">
+                  <g transform="matrix(1, 0, 0, 1, -644.34, -729.41)" filter="url(#Rectangle_1036)">
+                    <rect id="Rectangle_1036-2" data-name="Rectangle 1036" width="99.02" height="88.99" rx="4" transform="translate(644.34 737.08)" fill="#fff"/>
+                  </g>
+                  <path id="Green" d="M4,0H96a4,4,0,0,1,4,4V15.01a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V4A4,4,0,0,1,4,0Z" transform="translate(0.01 7.66)" fill="#75e5c8"/>
+                  <g id="Grid" transform="translate(15.03 31.79)" opacity="0.051">
+                    <g id="Rectangle_1303_copy" data-name="Rectangle 1303 copy" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_2" data-name="Rectangle 1303 copy 2" transform="translate(0 13.51)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_3" data-name="Rectangle 1303 copy 3" transform="translate(0 28.15)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_4" data-name="Rectangle 1303 copy 4" transform="translate(0 41.67)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5" data-name="Rectangle 1303 copy 5" transform="translate(14.07)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-2" data-name="Rectangle 1303 copy 5" transform="translate(14.07 13.51)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-3" data-name="Rectangle 1303 copy 5" transform="translate(14.07 28.15)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-4" data-name="Rectangle 1303 copy 5" transform="translate(14.07 41.67)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-5" data-name="Rectangle 1303 copy 5" transform="translate(28.14)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-6" data-name="Rectangle 1303 copy 5" transform="translate(28.14 13.51)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-7" data-name="Rectangle 1303 copy 5" transform="translate(28.14 28.15)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-8" data-name="Rectangle 1303 copy 5" transform="translate(28.14 41.67)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-9" data-name="Rectangle 1303 copy 5" transform="translate(42.22)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-10" data-name="Rectangle 1303 copy 5" transform="translate(42.22 13.51)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-11" data-name="Rectangle 1303 copy 5" transform="translate(42.22 28.15)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-12" data-name="Rectangle 1303 copy 5" transform="translate(42.22 41.67)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-13" data-name="Rectangle 1303 copy 5" transform="translate(56.29)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-14" data-name="Rectangle 1303 copy 5" transform="translate(56.29 13.51)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-15" data-name="Rectangle 1303 copy 5" transform="translate(56.29 28.15)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                    <g id="Rectangle_1303_copy_5-16" data-name="Rectangle 1303 copy 5" transform="translate(56.29 41.67)" fill="#fff" stroke="#000" stroke-width="1">
+                      <rect width="14.67" height="14.08" stroke="none"/>
+                      <rect x="-0.5" y="-0.5" width="15.67" height="15.08" fill="none"/>
+                    </g>
+                  </g>
+                  <path id="Coil" d="M55.551,12.32V0H58V12.32ZM0,12.32V0H2.45V12.32Z" transform="translate(22.51)" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                </g>
+                <text id="_2.2_weeks1" data-name="2.2
+weeks1" transform="translate(49.608 59.14)" fill="#22bf95" font-size="30" font-family="NunitoSans-SemiBold, Nunito Sans" font-weight="600"><tspan x="-21.555" y="0">2.2</tspan><tspan fill="#404040" font-size="18" font-family="NunitoSans-Regular, Nunito Sans" font-weight="400"><tspan x="-28.98" y="20">weeks</tspan><tspan y="20" font-size="10.499" baseline-shift="5.999400079342301">1</tspan></tspan></text>
+              </g>
+              <text id="Total_effort_needed" data-name="Total effort
+needed" transform="translate(595 -1.62)" font-size="18" font-family="NunitoSans-Bold, Nunito Sans" font-weight="700"><tspan x="-47.214" y="0">Total effort</tspan><tspan x="-30.699" y="21.6">needed</tspan></text>
+              <text id="Sub_Sectional_Abilities_ile_" data-name="Sub Sectional Abilities (%ile)" transform="translate(0 9.38)" font-size="18" font-family="NunitoSans-Bold, Nunito Sans" font-weight="700"><tspan x="0" y="0">Sub Sectional Abilities (%ile)</tspan></text>
+              <text id="You_are_targeting_for_80_ile_point_improvement_in_Verbal_which_will_take_you_2.2_weeks_considering_20hrs_of_study_time_per_week._" data-name="You are targeting for 80 %ile point improvement in Verbal, 
+which will take you 2.2 weeks considering 20hrs of study time per week. " transform="translate(1 -1.62)" fill="#7f7f7f" font-size="12" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0" fill="#a6a6a6">You are targeting fo</tspan><tspan y="0" fill="#7f7f7f">r </tspan><tspan y="0" fill="#000">80 %ile point improvement</tspan><tspan y="0" fill="#7f7f7f"> </tspan><tspan y="0" fill="#a6a6a6">in Verbal, </tspan><tspan x="0" y="18" fill="#a6a6a6">which will take you </tspan><tspan y="18" fill="#000">2.2 weeks</tspan><tspan y="18" fill="#7f7f7f"> </tspan><tspan y="18" fill="#a6a6a6">considering 20hrs of study time per week.</tspan><tspan y="18" fill="#7f7f7f"> </tspan></text>
+            </g>
+            <g id="Instructions" transform="translate(334.623 -4.62)">
+              <text id="_1Consideration_20hrs_week" data-name="1Consideration 20hrs/week" transform="translate(144 12)" fill="#a6a6a6" font-size="6.997" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-144.407" y="0" baseline-shift="3.9979169352802995">1</tspan><tspan y="0" font-size="11.995">Consideration </tspan><tspan y="0" font-size="11.995" fill="#000">20hrs/week</tspan></text>
+            </g>
+          </g>
+          <g id="Control_group" data-name="Control group" transform="translate(458.65 639.66)" style="isolation: isolate">
+            <g id="Collapsed">
+              <g id="Collapsed_-_Normal" data-name="Collapsed - Normal">
+                <g transform="matrix(1, 0, 0, 1, -74, -724)" filter="url(#Control_shade)">
+                  <rect id="Control_shade-4" data-name="Control shade" width="700" height="50" rx="7" transform="translate(74 724)" fill="#fff"/>
+                </g>
+                <g id="Scores-3" data-name="Scores" transform="translate(481.59 6.224)">
+                  <g id="Current-7" data-name="Current">
+                    <g id="Current_score-2" data-name="Current score" transform="translate(34.564)">
+                      <text id="V72" transform="translate(17 18)" fill="#00aeef" font-size="17.909" font-family="PlusJakartaSans-SemiBold, Plus Jakarta Sans" font-weight="600"><tspan x="-16.422" y="0">V72</tspan></text>
+                      <text id="_35_ile" data-name="35 %ile" transform="translate(17.055 33.313)" font-size="9.949" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-17.123" y="0">35 %ile</tspan></text>
+                    </g>
+                    <g id="Current_icon-3" data-name="Current icon" transform="translate(0 5.876)">
+                      <g transform="matrix(1, 0, 0, 1, -555.59, -736.1)" filter="url(#Current_icon_circle-2)">
+                        <ellipse id="Current_icon_circle-6" data-name="Current icon circle" cx="13.04" cy="12.98" rx="13.04" ry="12.98" transform="translate(555.59 736.1)" fill="#fff"/>
+                      </g>
+                      <path id="Current_icon-4" data-name="Current icon" d="M0,14.981V.6A.556.556,0,0,1,.571.037.556.556,0,0,1,1.141.6V14.981ZM1.9.542A4.319,4.319,0,0,1,4.315,0C6.33,0,7.7.9,10.644.037V6.22c-2.338,1.046-4.315-.037-6.33-.037A4.25,4.25,0,0,0,1.9,6.724Z" transform="translate(7.921 6.708)" fill="#00aeef"/>
+                    </g>
+                  </g>
+                  <g id="Target-7" data-name="Target" transform="translate(91.03)">
+                    <g id="Target_icon-3" data-name="Target icon" transform="translate(0 6.396)">
+                      <g transform="matrix(1, 0, 0, 1, -646.63, -736.62)" filter="url(#Target_icon_circle-2)">
+                        <ellipse id="Target_icon_circle-6" data-name="Target icon circle" cx="13.25" cy="12.98" rx="13.25" ry="12.98" transform="translate(646.63 736.62)" fill="#fff"/>
+                      </g>
+                      <path id="Target_icon-4" data-name="Target icon" d="M0,7.658A7.158,7.158,0,0,1,7.222.561a7.426,7.426,0,0,1,3.4.822l-.132.13-.266.262.057.374.039.373A6.094,6.094,0,0,0,1.14,7.658a6.083,6.083,0,0,0,12.164,0,5.923,5.923,0,0,0-.855-3.044l.4.056.362.037.247-.261.133-.112a6.765,6.765,0,0,1,.855,3.325,7.158,7.158,0,0,1-7.223,7.1A7.158,7.158,0,0,1,0,7.658Zm2.661,0A4.536,4.536,0,0,1,7.222,3.175,4.621,4.621,0,0,1,9.371,3.7l-.856.841A3.689,3.689,0,0,0,7.222,4.3,3.4,3.4,0,0,0,3.8,7.658a3.422,3.422,0,0,0,6.843,0,3.158,3.158,0,0,0-.248-1.27l.855-.841a4.4,4.4,0,0,1,.533,2.11,4.562,4.562,0,0,1-9.123,0Zm2.641,0A1.89,1.89,0,0,1,7.2,5.791a2.042,2.042,0,0,1,.894.224l3.041-2.989-.114-.971L13.115,0l.19,1.681,1.711.187L12.925,3.922l-.988-.112L8.9,6.8a1.851,1.851,0,0,1,.209.859,1.9,1.9,0,0,1-3.8,0Z" transform="translate(5.942 5.4)" fill="#fda40a"/>
+                    </g>
+                    <g id="Target_score-2" data-name="Target score" transform="translate(33.678)">
+                      <text id="V80" transform="translate(17 18)" fill="#fda40a" font-size="17.909" font-family="PlusJakartaSans-SemiBold, Plus Jakarta Sans" font-weight="600"><tspan x="-18.168" y="0">V80</tspan></text>
+                      <text id="_80_ile" data-name="80 %ile" transform="translate(17.055 33.313)" font-size="9.949" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-17.123" y="0">80 %ile</tspan></text>
+                    </g>
+                  </g>
+                </g>
+                <g id="Drop_down_control" data-name="Drop down control">
+                  <g id="Normal-2" data-name="Normal" transform="translate(660)">
+                    <g id="Dropdown_arrow" data-name="Dropdown arrow" transform="translate(10.35 15.35)">
+                      <ellipse id="Dropdown_circle" data-name="Dropdown circle" cx="10.5" cy="10.49" rx="10.5" ry="10.49" fill="#1e90ff"/>
+                      <path id="Dropdown_arrow-2" data-name="Dropdown arrow" d="M1141.939,666.327l-4.541,4.613.254.258,4.8-4.871-4.8-4.871-.254.258Z" transform="translate(-1129 -655.01)" fill="#fff" stroke="#fff" stroke-width="1"/>
+                    </g>
+                  </g>
+                </g>
+                <text id="Verbal_Reasoning" data-name="Verbal Reasoning" transform="translate(22.143 30)" font-size="17.992" font-family="PlusJakartaSans-SemiBold, Plus Jakarta Sans" font-weight="600"><tspan x="0" y="0">Verbal Reasoning</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="QR" transform="translate(0 -302.336)" style="isolation: isolate">
+          <g id="Control_group-2" data-name="Control group" style="isolation: isolate">
+            <g id="Collapsed_-_Normal-2" data-name="Collapsed - Normal">
+              <g transform="matrix(1, 0, 0, 1, 384.65, 237.66)" filter="url(#Control_shade-2)">
+                <rect id="Control_shade-5" data-name="Control shade" width="700" height="50" rx="7" transform="translate(74 795)" fill="#fff"/>
+              </g>
+              <g id="Scores-4" data-name="Scores">
+                <g id="Current-8" data-name="Current">
+                  <g id="Current_score-3" data-name="Current score">
+                    <text id="Q72" transform="translate(991.804 1056.884)" fill="#1e90ff" font-size="17.909" font-family="PlusJakartaSans-SemiBold, Plus Jakarta Sans" font-weight="600"><tspan x="-18.177" y="0">Q72</tspan></text>
+                    <text id="_35_ile-2" data-name="35 %ile" transform="translate(991.859 1072.197)" font-size="9.949" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-17.123" y="0">35 %ile</tspan></text>
+                  </g>
+                  <g id="Current_icon-5" data-name="Current icon">
+                    <g transform="matrix(1, 0, 0, 1, 384.65, 237.66)" filter="url(#Current_icon_circle-3)">
+                      <ellipse id="Current_icon_circle-7" data-name="Current icon circle" cx="13.04" cy="12.98" rx="13.04" ry="12.98" transform="translate(555.59 807.1)" fill="#fff"/>
+                    </g>
+                    <path id="Current_icon-6" data-name="Current icon" d="M948.161,1066.449v-14.384a.571.571,0,0,1,1.141,0v14.384Zm1.9-14.44a4.319,4.319,0,0,1,2.414-.542c2.015,0,3.383.9,6.33.038v6.183c-2.338,1.046-4.315-.038-6.33-.038a4.244,4.244,0,0,0-2.414.542Z" fill="#00aeef"/>
+                  </g>
+                </g>
+                <g id="Target-8" data-name="Target">
+                  <g id="Target_icon-5" data-name="Target icon">
+                    <g transform="matrix(1, 0, 0, 1, 384.65, 237.66)" filter="url(#Target_icon_circle-3)">
+                      <ellipse id="Target_icon_circle-7" data-name="Target icon circle" cx="13.25" cy="12.98" rx="13.25" ry="12.98" transform="translate(646.63 807.62)" fill="#fff"/>
+                    </g>
+                    <path id="Target_icon-6" data-name="Target icon" d="M1037.212,1058.339a7.158,7.158,0,0,1,7.222-7.1,7.415,7.415,0,0,1,3.4.823l-.132.13-.266.261.057.374.039.374a5.955,5.955,0,1,0,2.984,5.137,5.927,5.927,0,0,0-.855-3.045l.4.056.362.038.247-.262.133-.112a6.765,6.765,0,0,1,.855,3.325,7.224,7.224,0,0,1-14.445,0Zm2.661,0a4.536,4.536,0,0,1,4.561-4.483,4.611,4.611,0,0,1,2.148.523l-.856.841a3.69,3.69,0,0,0-1.292-.243,3.363,3.363,0,1,0,3.422,3.362,3.155,3.155,0,0,0-.248-1.27l.855-.841a4.4,4.4,0,0,1,.533,2.111,4.562,4.562,0,0,1-9.123,0Zm2.641,0a1.89,1.89,0,0,1,1.9-1.868,2.029,2.029,0,0,1,.894.224l3.041-2.989-.114-.971,2.091-2.055.19,1.68,1.711.187-2.091,2.055-.988-.112-3.041,2.989a1.855,1.855,0,0,1,.209.859,1.9,1.9,0,0,1-3.8,0Z" fill="#fda40a"/>
+                  </g>
+                  <g id="Target_score-3" data-name="Target score">
+                    <text id="Q80" transform="translate(1081.948 1056.884)" fill="#fda40a" font-size="17.909" font-family="PlusJakartaSans-SemiBold, Plus Jakarta Sans" font-weight="600"><tspan x="-19.923" y="0">Q80</tspan></text>
+                    <text id="_80_ile-2" data-name="80 %ile" transform="translate(1082.003 1072.197)" font-size="9.949" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-17.123" y="0">80 %ile</tspan></text>
+                  </g>
+                </g>
+              </g>
+              <g id="Dropdown_control" data-name="Dropdown control">
+                <g id="Dropdown_arrow-3" data-name="Dropdown arrow">
+                  <ellipse id="Dropdown_circle-2" data-name="Dropdown circle" cx="10.5" cy="10.49" rx="10.5" ry="10.49" transform="translate(1129 1048.01)" fill="#1e90ff"/>
+                  <path id="Dropdown_arrow-4" data-name="Dropdown arrow" d="M1141.939,1059.327l-4.541,4.613.254.258,4.8-4.871-4.8-4.871-.254.258Z" fill="#fff" stroke="#fff" stroke-width="1"/>
+                </g>
+              </g>
+              <text id="Quantitative_Reasoning" data-name="Quantitative Reasoning" transform="translate(480.793 1062.66)" font-size="17.992" font-family="PlusJakartaSans-SemiBold, Plus Jakarta Sans" font-weight="600"><tspan x="0" y="0">Quantitative Reasoning</tspan></text>
+            </g>
+          </g>
+        </g>
+        <g id="DI-2" data-name="DI" transform="translate(0 -302.335)" style="isolation: isolate">
+          <g id="Control_group-3" data-name="Control group" style="isolation: isolate">
+            <g id="Collapsed_-_Normal-3" data-name="Collapsed - Normal">
+              <g transform="matrix(1, 0, 0, 1, 384.65, 237.66)" filter="url(#Control_shade-3)">
+                <rect id="Control_shade-6" data-name="Control shade" width="700" height="50" rx="7" transform="translate(74 864)" fill="#fff"/>
+              </g>
+              <g id="Scores-5" data-name="Scores">
+                <g id="Current-9" data-name="Current">
+                  <g id="Current_score-4" data-name="Current score">
+                    <text id="D72" transform="translate(991.804 1125.884)" fill="#1e90ff" font-size="17.909" font-family="PlusJakartaSans-SemiBold, Plus Jakarta Sans" font-weight="600"><tspan x="-16.95" y="0">D72</tspan></text>
+                    <text id="_35_ile-3" data-name="35 %ile" transform="translate(991.859 1141.197)" font-size="9.949" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-17.123" y="0">35 %ile</tspan></text>
+                  </g>
+                  <g id="Current_icon-7" data-name="Current icon">
+                    <g transform="matrix(1, 0, 0, 1, 384.65, 237.66)" filter="url(#Current_icon_circle-4)">
+                      <ellipse id="Current_icon_circle-8" data-name="Current icon circle" cx="13.04" cy="12.98" rx="13.04" ry="12.98" transform="translate(555.59 876.1)" fill="#fff"/>
+                    </g>
+                    <path id="Current_icon-8" data-name="Current icon" d="M948.161,1135.448v-14.383a.571.571,0,0,1,1.141,0v14.383Zm1.9-14.439a4.32,4.32,0,0,1,2.414-.542c2.015,0,3.383.9,6.33.038v6.182c-2.338,1.046-4.315-.037-6.33-.037a4.245,4.245,0,0,0-2.414.542Z" fill="#00aeef"/>
+                  </g>
+                </g>
+                <g id="Target-9" data-name="Target">
+                  <g id="Target_icon-7" data-name="Target icon">
+                    <g transform="matrix(1, 0, 0, 1, 384.65, 237.66)" filter="url(#Target_icon_circle-4)">
+                      <ellipse id="Target_icon_circle-8" data-name="Target icon circle" cx="13.25" cy="12.98" rx="13.25" ry="12.98" transform="translate(646.63 876.62)" fill="#fff"/>
+                    </g>
+                    <path id="Target_icon-8" data-name="Target icon" d="M1037.212,1127.339a7.158,7.158,0,0,1,7.222-7.1,7.427,7.427,0,0,1,3.4.822l-.132.13-.266.262.057.373.039.374a5.955,5.955,0,1,0,2.984,5.137,5.924,5.924,0,0,0-.855-3.045l.4.056.362.037.247-.261.133-.112a6.769,6.769,0,0,1,.855,3.325,7.224,7.224,0,0,1-14.445,0Zm2.661,0a4.536,4.536,0,0,1,4.561-4.483,4.61,4.61,0,0,1,2.148.523l-.856.841a3.69,3.69,0,0,0-1.292-.243,3.363,3.363,0,1,0,3.422,3.362,3.162,3.162,0,0,0-.248-1.271l.855-.841a4.4,4.4,0,0,1,.533,2.111,4.562,4.562,0,0,1-9.123,0Zm2.641,0a1.891,1.891,0,0,1,1.9-1.868,2.042,2.042,0,0,1,.894.224l3.041-2.988-.114-.972,2.091-2.055.19,1.681,1.711.187-2.091,2.055-.988-.113-3.041,2.989a1.855,1.855,0,0,1,.209.859,1.9,1.9,0,0,1-3.8,0Z" fill="#fda40a"/>
+                  </g>
+                  <g id="Target_score-4" data-name="Target score">
+                    <text id="D80" transform="translate(1081.948 1125.884)" fill="#fda40a" font-size="17.909" font-family="PlusJakartaSans-SemiBold, Plus Jakarta Sans" font-weight="600"><tspan x="-18.696" y="0">D80</tspan></text>
+                    <text id="_80_ile-3" data-name="80 %ile" transform="translate(1082.003 1141.197)" font-size="9.949" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="-17.123" y="0">80 %ile</tspan></text>
+                  </g>
+                </g>
+              </g>
+              <g id="Dropdown_control-2" data-name="Dropdown control">
+                <g id="Dropdown_arrow-5" data-name="Dropdown arrow">
+                  <ellipse id="Dropdown_circle-3" data-name="Dropdown circle" cx="10.5" cy="10.49" rx="10.5" ry="10.49" transform="translate(1129 1117.01)" fill="#1e90ff"/>
+                  <path id="Dropdown_arrow-6" data-name="Dropdown arrow" d="M1141.939,1128.327l-4.541,4.613.254.258,4.8-4.871-4.8-4.871-.254.258Z" fill="#fff" stroke="#fff" stroke-width="1"/>
+                </g>
+              </g>
+              <text id="Data_Insights-2" data-name="Data Insights" transform="translate(480.793 1131.66)" font-size="17.992" font-family="PlusJakartaSans-SemiBold, Plus Jakarta Sans" font-weight="600"><tspan x="0" y="0">Data Insights</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+      <g id="Button_group" data-name="Button group" transform="translate(0 -252)" style="isolation: isolate">
+        <g id="Primary_CTA" data-name="Primary CTA" transform="translate(808.89 1213.65)">
+          <g id="Primary_CTA-2" data-name="Primary CTA" transform="translate(-808.89 -1213.65)" style="isolation: isolate">
+            <g id="Normal-3" data-name="Normal">
+              <rect id="Rectangle_4_copy" data-name="Rectangle 4 copy" width="350" height="60" rx="4" transform="translate(808.89 1213.65)" fill="#1e90ff"/>
+              <text id="Let_s_discuss_your_time_commitments" data-name="Let’s discuss your time commitments" transform="translate(832.868 1249.832)" fill="#fff" font-size="17.992" font-family="NunitoSans-SemiBold, Nunito Sans" font-weight="600"><tspan x="0" y="0">Let’s discuss your time commitments</tspan></text>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Horizontal_progress_bar" data-name="Horizontal progress bar" transform="translate(1 -70.02)">
+      <rect id="Unfilled_progress" data-name="Unfilled progress" width="700" height="2" rx="1" transform="translate(459 132)" fill="#e8e8e8"/>
+      <rect id="Filled_progress" data-name="Filled progress" width="700" height="2" rx="1" transform="translate(459 132)" fill="#22bf95"/>
+      <g id="Completed_state" data-name="Completed state" transform="translate(154)">
+        <circle id="Completed_state-2" data-name="Completed state" cx="7.5" cy="7.5" r="7.5" transform="translate(532.28 125.28)" fill="#22bf95"/>
+        <path id="Tick_1119" data-name="Tick 1119" d="M543.519,130a.425.425,0,0,1,.375.7l-4.035,4.1c-.211.215-1.064,1.269-1.408,1.2-.28-.059-.494-.408-.673-.59l-1.486-1.5c-.172-.176-.446-.491-.188-.782.227-.255.557-.022.7.128l1.7,1.754,4.8-4.9Z" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+      </g>
+      <g id="Completed_state-3" data-name="Completed state" transform="translate(286.72)">
+        <circle id="Completed_state-4" data-name="Completed state" cx="7.5" cy="7.5" r="7.5" transform="translate(532.28 125.28)" fill="#22bf95"/>
+        <path id="Tick_1119-2" data-name="Tick 1119" d="M543.519,130a.425.425,0,0,1,.375.7l-4.035,4.1c-.211.215-1.064,1.269-1.408,1.2-.28-.059-.494-.408-.673-.59l-1.486-1.5c-.172-.176-.446-.491-.188-.782.227-.255.557-.022.7.128l1.7,1.754,4.8-4.9Z" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+      </g>
+      <g id="Completed_state-5" data-name="Completed state" transform="translate(419.72)">
+        <circle id="Completed_state-6" data-name="Completed state" cx="7.5" cy="7.5" r="7.5" transform="translate(532.28 125.28)" fill="#22bf95"/>
+        <path id="Tick_1119-3" data-name="Tick 1119" d="M543.519,130a.425.425,0,0,1,.375.7l-4.035,4.1c-.211.215-1.064,1.269-1.408,1.2-.28-.059-.494-.408-.673-.59l-1.486-1.5c-.172-.176-.446-.491-.188-.782.227-.255.557-.022.7.128l1.7,1.754,4.8-4.9Z" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+      </g>
+      <circle id="Ellipse_1_copy_4" data-name="Ellipse 1 copy 4" cx="7.77" cy="7.77" r="7.77" transform="translate(1086.28 125.28)" fill="#e8e8e8"/>
+      <g id="Selected_state" data-name="Selected state" transform="translate(554)">
+        <circle id="Ellipse_1" data-name="Ellipse 1" cx="20" cy="20" r="20" transform="translate(520 113.02)" fill="#22bf95"/>
+        <text id="Overall_Summary" data-name="Overall Summary" transform="translate(539.71 171.504)" fill="#22bf95" font-size="14" font-family="NunitoSans-Bold, Nunito Sans" font-weight="700"><tspan x="-57.015" y="0">Overall Summary</tspan></text>
+        <g id="Icon" transform="translate(528.267 122.604)">
+          <path id="Path_21" data-name="Path 21" d="M11.355,13.03a.7.7,0,0,1-.7-.7V10.251a.7.7,0,1,1,1.387,0v2.083a.7.7,0,0,1-.69.7Z" transform="translate(-2.602 -3.311)" fill="#fff"/>
+          <path id="Path_22" data-name="Path 22" d="M15.627,12.732a.7.7,0,0,1-.7-.7V9.263a.7.7,0,0,1,1.387,0v2.78a.7.7,0,0,1-.69.69Z" transform="translate(-4.094 -3.013)" fill="#fff"/>
+          <path id="Path_23" data-name="Path 23" d="M19.895,11.917a.7.7,0,0,1-.7-.7V7.061a.7.7,0,1,1,1.387,0v4.166a.7.7,0,0,1-.69.69Z" transform="translate(-5.582 -2.198)" fill="#fff"/>
+          <path id="Path_24" data-name="Path 24" d="M17.086,20.832H5.98a2.78,2.78,0,0,1-2.78-2.78V5.468A3.463,3.463,0,0,1,4.45,2.8L6.846.807A3.483,3.483,0,0,1,9.065,0h8.02a2.78,2.78,0,0,1,2.78,2.78V18.052A2.78,2.78,0,0,1,17.086,20.832ZM9.065,1.387a2.09,2.09,0,0,0-1.3.482l-2.428,2a2.077,2.077,0,0,0-.749,1.6V18.052a1.393,1.393,0,0,0,1.387,1.387H17.086a1.393,1.393,0,0,0,1.387-1.387V2.78a1.393,1.393,0,0,0-1.387-1.387Z" fill="#fff"/>
+          <path id="Path_25" data-name="Path 25" d="M17.523,24.855H9.191a.7.7,0,1,1,0-1.387h8.333a.7.7,0,1,1,0,1.387Z" transform="translate(-1.824 -8.189)" fill="#fff"/>
+          <path id="Path_26" data-name="Path 26" d="M17.6,19.525H9.263a.7.7,0,0,1,0-1.387H17.6a.7.7,0,1,1,0,1.387Z" transform="translate(-1.896 -6.329)" fill="#fff"/>
+        </g>
+      </g>
+      <g id="Dot">
+        <g id="Completed_state-7" data-name="Completed state">
+          <circle id="Completed_state-8" data-name="Completed state" cx="7.5" cy="7.5" r="7.5" transform="translate(532.28 125.28)" fill="#22bf95"/>
+          <path id="Tick_1119-4" data-name="Tick 1119" d="M543.519,130a.425.425,0,0,1,.375.7l-4.035,4.1c-.211.215-1.064,1.269-1.408,1.2-.28-.059-.494-.408-.673-.59l-1.486-1.5c-.172-.176-.446-.491-.188-.782.227-.255.557-.022.7.128l1.7,1.754,4.8-4.9Z" fill="#fff" stroke="#fff" stroke-width="0.5"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

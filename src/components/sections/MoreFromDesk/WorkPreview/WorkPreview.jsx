@@ -44,6 +44,7 @@ export default function WorkPreview({
   const shellRef = useRef(null);
   const viewportRef = useRef(null);
   const pageScrollTopRef = useRef(0);
+  const wasFullscreenRef = useRef(false);
   const [shellWidth, setShellWidth] = useState(0);
   const [deviceKind, setDeviceKind] = useState('desktop');
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -103,11 +104,15 @@ export default function WorkPreview({
     const handleFullscreenChange = () => {
       const isActive = document.fullscreenElement === viewportRef.current;
       setIsFullscreen(isActive);
-      if (!isActive) {
+      /* Restore only when THIS viewport exits fullscreen. Other elements'
+         fullscreen transitions fire this event too — restoring on those
+         would jump the page to a stale (initially 0 = hero) position. */
+      if (!isActive && wasFullscreenRef.current) {
         window.setTimeout(() => {
           window.scrollTo({ top: pageScrollTopRef.current, behavior: 'auto' });
         }, 0);
       }
+      wasFullscreenRef.current = isActive;
     };
     document.addEventListener('fullscreenchange', handleFullscreenChange);
     return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
@@ -152,7 +157,7 @@ export default function WorkPreview({
         className={styles.walkthroughButton}
         onClick={() => onOpenWalkthrough?.({
           title: walkthroughNote.modalTitle || walkthroughNote.label,
-          browserTitle: 'Neuron walkthrough',
+          browserTitle: walkthroughNote.browserTitle || walkthroughNote.modalTitle || walkthroughNote.label,
           url: walkthroughNote.embedUrl,
         })}
       >

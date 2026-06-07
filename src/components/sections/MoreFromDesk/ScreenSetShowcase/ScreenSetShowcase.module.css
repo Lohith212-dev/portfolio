@@ -57,6 +57,20 @@
   height: 100%;
 }
 
+/* Plain variant: supporting illustrations sit directly on the page at
+   their natural proportions — never stretched past their own width. */
+.plainPanel {
+  display: flex;
+  justify-content: center;
+}
+
+.plainImage {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+}
+
 .screenCaption {
   margin: 0;
   color: var(--color-ink-500);

@@ -6,7 +6,7 @@ import styles from '../MoreFromDesk.module.css';
 export default function WorkCard({ item, lane, index, onOpenModal, tabIndex = 0 }) {
   const cardContent = (
     <>
-      <MiniMock laneId={lane.id} index={index} />
+      <MiniMock laneId={lane.id} index={index} cover={item.cover} />
       <span className={styles.cardBody}>
         <span className={styles.cardTopline}>
           <span>

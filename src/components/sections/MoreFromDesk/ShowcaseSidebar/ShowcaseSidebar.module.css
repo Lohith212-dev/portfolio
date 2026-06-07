@@ -109,6 +109,19 @@
   animation: statusPulse 1.6s ease-in-out infinite;
 }
 
+/* Chip-as-link: same chrome, plus affordance on hover. */
+.projectChipLink {
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.18s ease;
+}
+
+.projectChipLink:hover,
+.projectChipLink:focus-visible {
+  background: color-mix(in srgb, var(--color-accent-yellow) 22%, var(--color-surface-white));
+  text-decoration: underline;
+}
+
 .projectChipLogo {
   width: 1.2rem;
   height: 1.2rem;

@@ -14,220 +14,313 @@ export const moreWorkLanes = [
         slug: 'personalized-study-planner',
         title: 'Personalized Study Planner',
         tag: 'Planning system',
-        note: 'A planning flow that converts goals into a usable prep path.',
+        note: 'Turns target score, current ability, and weekly hours into a day-by-day GMAT prep path that re-plans when life happens.',
         actionType: 'internal-route',
+        // Card cover: the dynamic-planning illustration (two students, two
+        // opposite plans) — the product's differentiation at a glance.
+        cover: {
+          src: '/images/case-studies/personalized-study-planner/dynamic-planning.svg',
+          position: 'center 18%',
+        },
         details: {
-          eyebrow: 'Product Systems',
-          title: 'Personalized Study Planner',
-          hook: 'A planner that turns GMAT ambition into a route a student can actually follow.',
-          intro: 'Instead of asking students to translate score goals, section strengths, and available hours into a spreadsheet, the product guides them from target-setting to an executable study plan in one connected flow.',
-          role: 'Product design',
-          contribution: 'I designed the flow that turns target score, current ability, sectional goals, time commitment, and study sequence into one clear planning experience.',
-          year: '2024',
-          status: 'Live tool',
-          projectType: 'Internal product',
-          meta: [
-            'Role: Product design',
-            'Scope: Planning workflow',
-            'Tools: Figma + flow logic',
-            'Status: Live',
-            'Timeline: 2024',
+          template: 'website-showcase',
+          eyebrow: 'Product Design',
+          title: 'Personalized Study Planner — a GMAT plan built around you',
+          previewTitle: 'Personalized Study Planner',
+          hook: 'Built to answer the three questions every GMAT student fights: what should I study today, am I making progress, and when will I be ready?',
+          summary: 'The Personalized Study Planner turns a student\'s target score, current ability, and weekly hours into a milestone-driven GMAT prep path. I designed the product end-to-end — the planning intelligence made usable, the setup flow, and the execution calendar it feeds.',
+          heroNote: 'This is just a display page and the full case study is coming soon.',
+          role: 'Product Designer (sole)',
+          year: 'Aug 2023 – 2025',
+          status: 'Live',
+          projectType: 'Planning system',
+          // XD share links block iframes on /view/ (X-Frame-Options: deny);
+          // the /embed/ form of the same share ID is the embeddable one.
+          embedUrl: 'https://xd.adobe.com/embed/0e075b18-9242-4e63-b64a-7cac4fd116ab-5b54/screen/a7ee07d1-f410-47a4-8396-e665fb972c67',
+          // Fixed-artboard XD prototype: desktop frame at every breakpoint,
+          // screen area at the artboard's 1536x728 resolution.
+          prototypeEmbed: { aspect: { width: 1536, height: 728 } },
+          externalUrl: 'https://gmatplanner.e-gmat.com/',
+          // XD prototype, not the live product (the product sits behind a
+          // paid login) — badge copy reflects that.
+          liveBadge: 'XD prototype',
+          walkthroughNote: {
+            lead: 'Want to see the real product in motion?',
+            label: 'Watch the product walkthrough',
+            embedUrl: 'https://www.youtube.com/embed/QgczAkIqJ7A?autoplay=1',
+            modalTitle: 'Personalized Study Planner product walkthrough',
+            browserTitle: 'PSP walkthrough',
+            trail: 'recorded by the e-GMAT team and used here as supporting content; I don\'t own the copyrights — all credits go to e-GMAT.',
+          },
+          websiteNavLinks: [
+            { href: '#website-preview', label: 'Product preview' },
+            { href: '#context', label: 'Context' },
+            { href: '#objectives', label: 'Objectives' },
+            { href: '#shipped', label: 'Approach' },
+            { href: '#testimonials', label: 'Testimonials' },
           ],
-          context: 'GMAT prep is full of moving pieces: target score, current level, section strengths, time available, and a test date that keeps getting closer. Most students know the destination, but not the path.',
-          problem: 'The design problem was not just showing more data. It was helping students answer three anxious questions quickly: Can I reach this score? How long will it take? What should I do first? Without that clarity, planning becomes guesswork or a spreadsheet chore.',
-          description: 'A planning flow that turns target score, available time, and prep intent into a path a student can actually follow.',
-          tools: ['Figma', 'Flow design', 'UX writing', 'Planning logic'],
-          heroMetrics: [
+          contextCards: [
             {
-              value: '3 questions',
-              label: 'answered up front',
+              eyebrow: 'The opportunity',
+              title: 'Why this product had to exist',
+              body: 'Every planning tool on the market handed students the same plan: a 3-month or 6-month cookie-cutter schedule keyed to nothing but a start score and a target. None of them looked at where a student actually stood inside each section, which gains were cheap and which were expensive, or how many hours a weekday really offered versus a weekend. Planning was the one part of GMAT prep nobody had personalized.',
             },
             {
-              value: '~10 min',
-              label: 'to draft a usable first plan',
-            },
-            {
-              value: '5 steps',
-              label: 'from target to execution',
-            },
-          ],
-          problemPoints: [
-            'Students know the score they want, but not the smartest path to get there.',
-            'Planning usually breaks when sectional goals, weekly hours, and test date are handled in separate places.',
-            'Dense planning logic feels intimidating unless the product keeps translating it into the next clear step.',
-          ],
-          heroShowcase: [
-            {
-              src: '/images/more-works/personalized-study-planner/more-work-psp-plan-view.webp',
-              alt: 'Personalized Study Planner summary view showing scores, milestones, and commitments.',
-              width: 1530,
-              height: 1721,
-            },
-            {
-              src: '/images/more-works/personalized-study-planner/more-work-psp-timeline-view.webp',
-              alt: 'Personalized Study Planner timeline view showing score journeys.',
-              width: 1530,
-              height: 1245,
-            },
-            {
-              src: '/images/more-works/personalized-study-planner/more-work-psp-calendar-view.webp',
-              alt: 'Personalized Study Planner calendar execution view.',
-              width: 1530,
-              height: 1543,
-            },
-          ],
-          objectives: [
-            {
-              title: 'Make the path feel concrete',
-              body: 'Help students see how a target score becomes sectional and sub-sectional milestones instead of abstract percentages.',
-            },
-            {
-              title: 'Turn strategy into execution',
-              body: 'Connect score goals to weekly study hours, study sequence, and a tentative test date that feels believable.',
-            },
-            {
-              title: 'Keep progress inspectable',
-              body: 'Let students revisit, edit, and understand the plan without needing an expert beside them every time.',
-            },
-          ],
-          solutionIntro: 'I broke the experience into a simple planning arc: understand the route, inspect the score journey, and carry it into day-to-day execution.',
-          solutionGroups: [
-            {
-              eyebrow: 'Product preview',
-              title: 'Start with clarity, not intimidation',
-              description: 'The opening planner summary gives students one answerable picture: current level, target milestones, sub-sectional abilities, and the commitments needed to reach them. This reduces the “where do I even begin?” moment.',
-              highlights: [
-                'Current and target scores sit side by side.',
-                'Milestones are grouped by overall, sectional, and sub-sectional levels.',
-                'The planning flow ends with concrete commitments instead of abstract advice.',
+              eyebrow: 'Problem statement',
+              title: 'What students were struggling with',
+              body: 'Three questions, every single day:',
+              questions: [
+                'What should I study today?',
+                'Am I making progress?',
+                'When will I be ready for the test?',
               ],
-              images: [
-                {
-                  src: '/images/more-works/personalized-study-planner/more-work-psp-plan-view.webp',
-                  alt: 'Personalized Study Planner summary view showing scores, milestones, and commitments.',
-                  width: 1530,
-                  height: 1721,
-                  title: 'Plan summary',
-                  caption: 'The full planner turns score goals into a structured route.',
-                  emphasis: 'feature',
+              closing: 'Students burned hours deciding what to do, had no checkpoint that told them whether effort was becoming ability, and picked test dates by guesswork. And when life happened — sickness, work deadlines, travel — the plan broke and they started over.',
+            },
+          ],
+          solutionObjectives: {
+            items: [
+              {
+                icon: 'decide',
+                title: 'Personal means subsection-deep',
+                body: 'Personalization that stops at "your target is 715" is still a template. This plan reads strengths and weaknesses subsection-deep and builds a path of least resistance — ambitious targets where the student is strong, foundations-first where they\'re weak.',
+              },
+              {
+                icon: 'verify',
+                title: 'Answer the three questions',
+                body: 'Every surface in the product answers one of the three questions students actually ask — daily tasks they wake up to, checkpoints that grade whether effort became ability, and a test date that is a calculation rather than a guess.',
+              },
+              {
+                icon: 'loop',
+                title: 'A plan that survives real life',
+                body: 'Rigid plans break; flexible plans adapt and win. This plan absorbs sick days, work crunches, and fast or slow weeks without sending the student back to square one — adaptation is what makes the plan worth trusting.',
+              },
+            ],
+            thesis: 'GMAT prep runs on guesswork — what to study today, whether it\'s working, when to test. This product was built to end it: read the student subsection-deep, grade every step, and re-plan the moment life interferes.',
+          },
+          notesCard: {
+            intro: 'The Personalized Study Planner takes three inputs — where the student stands, where they want to reach, and the hours their week can actually give — and turns them into a day-by-day path to the target score. Every decision below exists to keep that path personal, checkable, and alive.',
+            decisions: [
+              {
+                number: '01',
+                title: 'Built every plan on a path of least resistance',
+                body: 'Strong in Quant at Q84? The plan sets an ambitious Q88 and 40 hours to excel. Weak in Verbal at V78? A realistic V83 and 80 hours to build foundations first. Another student gets the exact opposite plan for the same goal — strengths are leveraged, weaknesses are protected, and effort goes only where it moves your score.',
+                screenSet: {
+                  frameTitle: 'PSP — Dynamic planning',
+                  // Supporting illustration, not product UI — no browser chrome.
+                  plain: true,
+                  tabs: [
+                    {
+                      label: 'Path of least resistance',
+                      src: '/images/case-studies/personalized-study-planner/dynamic-planning.svg',
+                      alt: 'Two students with the same goal receiving opposite plans, built from their sectional strengths and weaknesses.',
+                      caption: 'Same goal, opposite students, opposite plans — strengths are pushed ambitious, weaknesses get foundations first.',
+                    },
+                  ],
                 },
-                {
-                  src: '/images/more-works/personalized-study-planner/more-work-psp-overall-summary.webp',
-                  alt: 'Personalized Study Planner overall summary screen with score and subsection recap.',
-                  width: 1530,
-                  height: 1528,
-                  title: 'Milestone recap',
-                  caption: 'A compact checkpoint helps students confirm targets before moving on.',
+              },
+              {
+                number: '02',
+                title: 'Broke success into checkpoints you can actually check',
+                body: '"Am I making progress?" dies as a question when success is defined at the subsection level. The plan sets exact milestones and accuracy metrics per subsection — push the areas where the student naturally excels to the top percentiles, hold the weaker ones at achievable targets — so reaching the goal becomes a matter of execution, not luck.',
+                screenSet: {
+                  frameTitle: 'PSP — Milestones and journeys',
+                  tabs: [
+                    {
+                      label: 'Sectional milestones',
+                      src: '/images/case-studies/personalized-study-planner/sectional-milestones.svg',
+                      alt: 'PSP sectional milestones with score targets and hours per milestone.',
+                      caption: 'Each section\'s climb is staged into milestones with exact score targets and hours.',
+                    },
+                    {
+                      label: 'Milestone view',
+                      src: '/images/case-studies/personalized-study-planner/milestone-view.svg',
+                      alt: 'PSP milestone detail view showing the subsections and accuracy targets inside one milestone.',
+                      caption: 'One milestone, opened up — the subsections it covers and the accuracy that counts as done.',
+                    },
+                    {
+                      label: 'Milestone summary',
+                      src: '/images/case-studies/personalized-study-planner/milestone-summary.svg',
+                      alt: 'PSP milestone summary listing every milestone and its timeline.',
+                      caption: 'The full checkpoint view — every milestone and its timeline, before the plan is committed.',
+                    },
+                  ],
                 },
-              ],
-            },
-            {
-              eyebrow: 'Journeys',
-              title: 'Show the journey section by section',
-              description: 'Once the target is set, the planner visualizes how each section needs to move. Timelines and progress bars make improvement feel paced and believable instead of vague.',
-              highlights: [
-                'Each section gets its own visible journey.',
-                'Time estimates frame effort as a range, not a mystery.',
-                'Students can see where attention needs to shift first.',
-              ],
-              images: [
-                {
-                  src: '/images/more-works/personalized-study-planner/more-work-psp-timeline-view.webp',
-                  alt: 'Personalized Study Planner timeline view showing progress and sectional journeys.',
-                  width: 1530,
-                  height: 1245,
-                  title: 'Sectional journeys',
-                  caption: 'Verbal, Quant, and Data Insights each get a visible path from current score to target.',
-                  emphasis: 'feature',
+              },
+              {
+                number: '03',
+                title: 'Turned "when should I take the test?" into a calculation',
+                body: 'Not a guess — a calculation. The planner profiles the student across 25+ data points (daily commitment, current abilities, targets, preparation order), compares that profile against thousands of successful e-GMAT students who started in the same place, and recommends the test week with the highest probability of success. If 45 days is enough, it says 45 days; if four months, it says that.',
+                screenSet: {
+                  frameTitle: 'PSP — Test date prediction',
+                  plain: true,
+                  tabs: [
+                    {
+                      label: 'Test date prediction',
+                      src: '/images/case-studies/personalized-study-planner/test-date.svg',
+                      alt: 'PSP test-date prediction built from the student\'s profile, alongside successful e-GMAT students.',
+                      caption: 'The recommended test week, derived from the student\'s own data points. The students pictured are e-GMATers — I don\'t own the rights to their photographs.',
+                    },
+                  ],
                 },
-              ],
-            },
-            {
-              eyebrow: 'Execution',
-              title: 'Carry the plan into an execution calendar',
-              description: 'A plan only matters if it survives real life. I linked the strategy layer to a calendar-style execution tracker so weekly hours, no-study days, and course blocks feel operational, not theoretical.',
-              highlights: [
-                'Study blocks are distributed across actual calendar days.',
-                'The execution view keeps weekly hour commitments visible.',
-                'Mobile navigation keeps the flow easy to return to mid-prep.',
-              ],
-              images: [
-                {
-                  src: '/images/more-works/personalized-study-planner/more-work-psp-calendar-view.webp',
-                  alt: 'Personalized Study Planner execution tracker in calendar mode with study blocks and time commitments.',
-                  width: 1530,
-                  height: 1543,
-                  title: 'Execution tracker',
-                  caption: 'The plan becomes a weekly schedule with courses, hours, and study-free days.',
-                  emphasis: 'feature',
+              },
+              {
+                number: '04',
+                title: 'Made waking up the easiest part of prep',
+                body: 'The plan converts into days: each section\'s journey breaks into three stages — Learning, Cementing, Test Readiness, like levels in a game — and each stage into daily tasks. The student wakes up to "today: this module, this quiz, these five questions." And because this is a surface someone opens every single day, a focus mode strips everything but the current week.',
+                screenSet: {
+                  frameTitle: 'PSP — Daily execution',
+                  plain: true,
+                  tabs: [
+                    {
+                      label: 'Daily details',
+                      src: '/images/case-studies/personalized-study-planner/daily-details.svg',
+                      alt: 'PSP daily task detail: what to study today, for how long, in what order.',
+                      caption: 'One day, fully answered — what to study, for how long, in what order.',
+                    },
+                  ],
                 },
-                {
-                  src: '/images/more-works/personalized-study-planner/more-work-psp-mobile-menu.webp',
-                  alt: 'Personalized Study Planner mobile menu showing step navigation through the planning flow.',
-                  width: 400,
-                  height: 800,
-                  title: 'Mobile menu',
-                  caption: 'Key planner steps stay reachable on smaller screens without losing orientation.',
+              },
+              {
+                number: '05',
+                title: 'Graded every step and flagged the drift',
+                body: 'Completing tasks isn\'t mastering concepts, so the tracker grades each activity — good, proceed; average, revise first; poor, redo — and the calendar carries the verdicts. Fall behind or skip ahead, and color-coded alerts flag the deviation the moment it happens. It works like a GPS: it won\'t drive for you, but you never drift off course without knowing.',
+                screenSet: {
+                  frameTitle: 'PSP — Tracking states',
+                  plain: true,
+                  tabs: [
+                    {
+                      label: 'Grading steps',
+                      src: '/images/case-studies/personalized-study-planner/grading-steps.svg',
+                      alt: 'PSP grading states: every activity graded good, average, or poor, with the verdict carried on the calendar.',
+                      caption: 'Done isn\'t enough — every activity comes back graded: good, proceed; average, revise; poor, redo.',
+                    },
+                  ],
                 },
-              ],
-            },
-          ],
-          evidence: {
-            eyebrow: 'Why it works',
-            title: 'The interface keeps answering the same three questions',
-            body: 'Across screens, the planner keeps returning to the same student need: what is the goal, what is the route, and what do I do next. That consistency is what makes a dense planning system feel usable.',
-            points: [
-              'Goal visibility: target score, sectional milestones, and tentative date stay explicit.',
-              'Route visibility: timeline and summary screens show how the plan unfolds across sections.',
-              'Action visibility: the execution view translates strategy into hours, tasks, and study sequence.',
+              },
+              {
+                number: '06',
+                title: 'Handed the student the levers — through a conversation, not a form',
+                body: 'The plan runs on the student\'s reality: daily hours, prep sequence, test-date preference. But that\'s 10–12 inputs, and a long form would lose them. So the setup asks one thing at a time, confirms each step ("the target is set — now let\'s talk about your current score"), and shows progress visibly building. Every lever arrives as a recommendation with its reasoning shown upfront — the default is trustworthy, the edit is informed.',
+                screenSet: {
+                  frameTitle: 'PSP — The setup conversation',
+                  tabs: [
+                    {
+                      label: 'Time commitments',
+                      src: '/images/case-studies/personalized-study-planner/time-commitments.svg',
+                      alt: 'PSP screen collecting weekday and weekend study hours.',
+                      caption: 'Weekday and weekend hours are set separately — the plan respects real weeks.',
+                    },
+                    {
+                      label: 'Prep sequence',
+                      src: '/images/case-studies/personalized-study-planner/prep-sequence.svg',
+                      alt: 'PSP study-sequence recommendation with its reasoning shown.',
+                      caption: 'The recommended study order explains itself before the student edits it.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '07',
+                title: 'Designed for the week that goes wrong',
+                body: 'Life happens — sickness, a quarter-end crunch, a visit home — and that\'s exactly where every other plan died. Here the student adds "no study" days; the tracker re-analyzes the data points and recalculates the optimal path to the target in seconds. Replanning is a click, not a restart.',
+                screenSet: {
+                  frameTitle: 'PSP — Replanning',
+                  plain: true,
+                  // Auto-cycles like a 3-step animation; a tab click hands
+                  // control back to the reader.
+                  autoAdvance: 3200,
+                  tabs: [
+                    {
+                      label: 'Add no-study days',
+                      src: '/images/case-studies/personalized-study-planner/click-no-study.svg',
+                      alt: 'PSP calendar with the "Add no study days" action highlighted.',
+                      caption: 'Life happens — "no study" days are a first-class input, one click from the calendar.',
+                    },
+                    {
+                      label: 'Select the days',
+                      src: '/images/case-studies/personalized-study-planner/select-no-study.svg',
+                      alt: 'PSP no-study-day selection screen with days being marked.',
+                      caption: 'Mark the days life claims — sickness, a work crunch, a trip home.',
+                    },
+                    {
+                      label: 'Confirm — plan updates',
+                      src: '/images/case-studies/personalized-study-planner/confirm-nostudy.svg',
+                      alt: 'PSP calendar recalculated around the confirmed no-study days.',
+                      caption: 'One confirmation, and the path to the target recalculates in seconds.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '08',
+                title: 'Let the plan move at the student\'s rhythm',
+                body: 'Mastered a concept in 90 minutes instead of two hours? Mark it done and the next task unlocks now. Need more time on a stubborn module? Push the task out and the upcoming work redistributes smoothly. The timeline belongs to the student\'s cognitive rhythm, not to a calendar — quality understanding beats rushed completion.',
+                screenSet: {
+                  frameTitle: 'PSP — Pace control',
+                  plain: true,
+                  tabs: [
+                    {
+                      label: 'Finish early',
+                      src: '/images/case-studies/personalized-study-planner/early-completion.svg',
+                      alt: 'PSP pulling upcoming work in after a task is completed early.',
+                      caption: 'Mastered it in 90 minutes instead of two hours? The next task unlocks now.',
+                    },
+                    {
+                      label: 'Push out',
+                      src: '/images/case-studies/personalized-study-planner/push-out.svg',
+                      alt: 'PSP pushing a task out and redistributing the upcoming schedule.',
+                      caption: 'Need more time on a stubborn module? Push it out — upcoming work redistributes smoothly.',
+                    },
+                  ],
+                },
+              },
             ],
           },
-          impact: {
-            eyebrow: 'Impact / proof',
-            title: 'The value is not just planning advice. It is planning that becomes executable.',
-            body: 'From the product walkthrough and supporting material, the planner is positioned to help students answer the three biggest prep questions in minutes rather than relying on guesswork or an expert call. That is the product proof this design needed to make visible.',
-            metrics: [
+          testimonials: {
+            title: 'Student testimonials',
+            // Inline 9:16 video cards instead of the quote marquee.
+            variant: 'video',
+            intro: 'Students who used the planner keep pointing at the same things it was designed for — a path mapped out from the first mock to test day, and a daily milestone to wake up to.',
+            note: 'These videos were recorded by students who used e-GMAT and are used here as supporting content; I don\'t own the copyrights — all credits go to e-GMAT. Quotes are transcribed from the videos, and emphasis is mine.',
+            sourceBrand: 'YouTube',
+            items: [
               {
-                value: '4,000+ hrs',
-                label: 'of R&D behind the planning model',
+                author: 'Shrutav Donde',
+                meta: 'GMAT 805 — video testimonial',
+                quoteHtml: '<mark>The study plan really mapped out everything that I had to do</mark> from the day I took the mock until the day I would give the actual exam… it also highlighted the parts which I need to focus on, so that I wouldn\'t waste time on something which would be a strength.',
+                videoEmbedUrl: 'https://www.youtube.com/embed/9IYQTUc97g0',
+                href: 'https://youtu.be/9IYQTUc97g0',
+                modalTitle: 'Video testimonial — Shrutav Donde, GMAT 805',
               },
               {
-                value: '~10 min',
-                label: 'to generate the first plan',
-              },
-              {
-                value: '$500 / 10k INR',
-                label: 'expert-planning cost the tool can replace',
-              },
-            ],
-            proof: [
-              {
-                title: 'From target to milestones',
-                body: 'Students can move from a score goal to sectional and sub-sectional targets without doing the translation themselves.',
-              },
-              {
-                title: 'From milestones to calendar',
-                body: 'The product carries the plan into weekly execution instead of stopping at strategy.',
-              },
-              {
-                title: 'From one-time advice to an editable system',
-                body: 'Plans can be revisited and adjusted when time or goals change.',
+                author: 'e-GMAT student',
+                meta: 'GMAT 775 — video testimonial',
+                quoteHtml: 'One of the factors was definitely the study plan that we receive as soon as we sign up… they provided me a daily planner kind of a thing, so <mark>I had a milestone to achieve every day.</mark>',
+                videoEmbedUrl: 'https://www.youtube.com/embed/miH9X8UyA6c',
+                href: 'https://youtu.be/miH9X8UyA6c',
+                modalTitle: 'Video testimonial — GMAT 775 scorer',
               },
             ],
-            takeaway: 'This project shows how I turn dense decision logic into interfaces that feel calmer, more legible, and easier to act on.',
           },
-          takeawayCards: [
-            {
-              title: 'What this page should prove',
-              body: 'I can translate a messy planning engine into a flow that feels explainable before it feels complex.',
-            },
-            {
-              title: 'Why that matters',
-              body: 'For students, calm and clarity are not cosmetic. They are what make a difficult plan feel worth following.',
-            },
-          ],
-          outcome: 'Translated abstract prep goals into a visible plan structure.',
-          stats: ['Goal input', 'Prep path', 'Decision support'],
+          sidebar: {
+            categories: ['Product', 'Edtech', 'GMAT prep'],
+            facts: [
+              { label: 'Role', value: 'Product Designer (sole)' },
+              { label: 'Timeline', value: 'Aug 2023 — phased updates through 2025' },
+              { label: 'Access', value: 'Paid product — sits behind an e-GMAT subscription' },
+              { label: 'Status', value: 'Live' },
+            ],
+            factsVisibleCount: 3,
+            projectChips: [
+              { label: 'Live', active: true, dot: true },
+              {
+                label: 'gmatplanner.e-gmat.com',
+                logo: '/images/case-studies/sat-lms/e-gmat.png',
+                href: 'https://gmatplanner.e-gmat.com/',
+              },
+            ],
+            projectDisclaimer: 'Logos are the properties of the respective companies.',
+          },
         },
       },
       {
@@ -1056,6 +1149,9 @@ export function getMoreWorkDetailContent(item) {
     // custom string, or to false, when the embed is not a live product.
     liveBadge: details.liveBadge ?? ((item.embedUrl || details.embedUrl) ? 'live embed' : null),
     externalUrl: item.externalUrl || details.externalUrl || '',
+    // Fixed-artboard prototype embed (XD/Figma): { aspect: { width, height } }.
+    // Makes ShowcaseTemplate render PrototypeEmbed instead of WorkPreview.
+    prototypeEmbed: details.prototypeEmbed || null,
     overviewCard: details.overviewCard || null,
     contextCards: details.contextCards || null,
     solutionObjectives: details.solutionObjectives || null,

@@ -3,11 +3,13 @@ import Image from 'next/image';
 import MoreWorkEmbedModal from '../MoreWorkEmbedModal';
 import ShowcaseHero from '../ShowcaseHero';
 import WorkPreview from '../WorkPreview';
+import PrototypeEmbed from '../PrototypeEmbed';
 import SectionHeading from '../SectionHeading';
 import ScreenSetShowcase from '../ScreenSetShowcase';
 import ShowcaseSidebar from '../ShowcaseSidebar';
 import ShowcaseSpecStrip from '../ShowcaseSpecStrip';
 import TestimonialMarquee from '../TestimonialMarquee';
+import VideoTestimonialCard from '../VideoTestimonialCard';
 import StakeholderQuoteCard from '../../../shared/StakeholderQuoteCard';
 import TestimonialCard from '../../../shared/TestimonialCard';
 import ContextCardGrid from './ContextCardGrid';
@@ -77,13 +79,27 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
             <div className={styles.heroBandInner}>
               <ShowcaseHero title={detail.title} note={comingSoonNote} summary={summary} />
               <ShowcaseSpecStrip sidebar={sidebar} />
-              <WorkPreview
-                title={detail.previewTitle || detail.title}
-                embedUrl={detail.embedUrl}
-                liveBadge={detail.liveBadge}
-                walkthroughNote={walkthroughNote}
-                onOpenWalkthrough={setActiveEmbedModal}
-              />
+              {detail.prototypeEmbed ? (
+                /* Fixed-artboard prototype (XD/Figma): desktop frame on every
+                   breakpoint — the embed does not reflow like a live site. */
+                <PrototypeEmbed
+                  title={detail.previewTitle || detail.title}
+                  embedUrl={detail.embedUrl}
+                  liveBadge={detail.liveBadge}
+                  aspect={detail.prototypeEmbed.aspect}
+                  maxWidth={detail.prototypeEmbed.maxWidth}
+                  walkthroughNote={walkthroughNote}
+                  onOpenWalkthrough={setActiveEmbedModal}
+                />
+              ) : (
+                <WorkPreview
+                  title={detail.previewTitle || detail.title}
+                  embedUrl={detail.embedUrl}
+                  liveBadge={detail.liveBadge}
+                  walkthroughNote={walkthroughNote}
+                  onOpenWalkthrough={setActiveEmbedModal}
+                />
+              )}
             </div>
           </section>
         ) : (
@@ -220,10 +236,20 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                 ) : null}
                 {testimonials.note ? <p className={styles.sourceNote}>{testimonials.note}</p> : null}
 
-                <TestimonialMarquee
-                  testimonials={testimonials}
-                  onOpenSource={setActiveEmbedModal}
-                />
+                {testimonials.variant === 'video' ? (
+                  /* A couple of video testimonials don't need a scroller —
+                     each card embeds its 9:16 short directly. */
+                  <div className={styles.videoTestimonialStack}>
+                    {testimonials.items.map((item) => (
+                      <VideoTestimonialCard key={item.author} item={item} />
+                    ))}
+                  </div>
+                ) : (
+                  <TestimonialMarquee
+                    testimonials={testimonials}
+                    onOpenSource={setActiveEmbedModal}
+                  />
+                )}
               </section>
             ) : null}
 

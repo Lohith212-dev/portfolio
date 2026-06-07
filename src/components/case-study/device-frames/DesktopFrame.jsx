@@ -19,6 +19,11 @@ import React from 'react';
  *                           Sits inside the top bezel — does not overlap content.
  *   showStand     boolean — Renders the glass wedge stand below the screen. Default: true.
  *                           Without this the component reads as a floating rectangle.
+ *   screenAspectRatio number — Optional height/width ratio for the INNER screen
+ *                           area (e.g. 728 / 1536 for a fixed-size prototype
+ *                           artboard). The bezel padding is added on top. When
+ *                           omitted, the frame keeps its default 16:10 overall
+ *                           proportions.
  *   children      node    — Content rendered inside the screen area (used when `src` is not provided).
  *   className     string  — Extra className appended to the root element.
  *   style         object  — Extra inline styles merged onto the root.
@@ -34,6 +39,7 @@ export default function DesktopFrame({
   width = 800,
   showCamera = true,
   showStand = true,
+  screenAspectRatio,
   children,
   className = '',
   style = {},
@@ -41,9 +47,13 @@ export default function DesktopFrame({
 }) {
   // 16:10 — matches modern Mac displays and design-canvas conventions.
   const aspectRatio = 10 / 16;
-  const screenHeight = Math.round(width * aspectRatio);
   const outerRadius = Math.max(14, Math.round(width * 0.022));
   const framePadding = Math.max(12, Math.round(width * 0.018));
+  // With screenAspectRatio the inner screen honors the ratio exactly and the
+  // bezel padding is added back; otherwise the original frame-level 16:10.
+  const screenHeight = screenAspectRatio
+    ? Math.round((width - framePadding * 2) * screenAspectRatio) + framePadding * 2
+    : Math.round(width * aspectRatio);
   const innerRadius = Math.max(2, outerRadius - framePadding);
   const cameraSize = Math.max(6, Math.round(width * 0.009));
   const cameraTop = Math.max(3, Math.round(framePadding / 2.6));

@@ -19,16 +19,36 @@ export default function ShowcaseSpecStrip({ sidebar }) {
         {role ? <span className={styles.chip}>{role}</span> : null}
         {timeline ? <span className={styles.chip}>{timeline}</span> : null}
         {company ? (
-          <span className={styles.chip}>
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={company.logo}
-              alt=""
-              className={styles.chipLogo}
-              aria-hidden="true"
-            />
-            {company.label}
-          </span>
+          /* Clickable when the chip carries an external product link —
+             mirrors the desktop side rail. */
+          company.href ? (
+            <a
+              href={company.href}
+              target="_blank"
+              rel="noreferrer"
+              className={styles.chip}
+            >
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={company.logo}
+                alt=""
+                className={styles.chipLogo}
+                aria-hidden="true"
+              />
+              {company.label} <span aria-hidden="true">{'↗'}</span>
+            </a>
+          ) : (
+            <span className={styles.chip}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={company.logo}
+                alt=""
+                className={styles.chipLogo}
+                aria-hidden="true"
+              />
+              {company.label}
+            </span>
+          )
         ) : null}
       </div>
 

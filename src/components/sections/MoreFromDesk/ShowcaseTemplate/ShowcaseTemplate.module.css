@@ -247,6 +247,14 @@
   line-height: 1.65;
 }
 
+/* Video testimonials stack vertically — each card is wide (quote left,
+   inline 9:16 video right), so one per row. */
+.videoTestimonialStack {
+  display: grid;
+  gap: 1.15rem;
+  margin-top: 0.5rem;
+}
+
 @media (max-width: 63.999rem) {
   .bodyShell {
     grid-template-columns: 1fr;

@@ -1,0 +1,211 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="849.01" height="756" viewBox="0 0 849.01 756">
+  <defs>
+    <filter id="Scores_bg" x="60" y="285.02" width="730" height="330" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Layer" x="476.379" y="346.629" width="89.721" height="89.401" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-2"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Layer-2" x="559.039" y="346.469" width="89.721" height="89.721" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-3"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Layer-3" x="559.039" y="407.039" width="89.721" height="89.721" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-4"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Layer-4" x="573.869" y="407.039" width="89.721" height="89.721" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-5"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Layer-5" x="377.599" y="467.619" width="89.721" height="89.721" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-6"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Layer-6" x="474.929" y="467.619" width="89.721" height="89.721" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur-7"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Toggle_container" x="59.02" y="217.94" width="281.319" height="76.319" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-8"/>
+      <feFlood flood-opacity="0.051"/>
+      <feComposite operator="in" in2="blur-8"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="sectional-milestones" transform="translate(-383.99 -89.98)">
+    <rect id="Background_dive_box" data-name="Background dive box" width="849.01" height="756" rx="10" transform="translate(383.99 89.98)" fill="#fff"/>
+    <g id="S3.3_-_Sectional_journey_time_estimates" data-name="S3.3 - Sectional journey &amp; time estimates" transform="translate(0 1)">
+      <g id="Toggle_score_-_Jorney_time" data-name="Toggle score - Jorney &amp; time">
+        <g id="Question_block" data-name="Question block">
+          <g id="Question_1" data-name="Question 1">
+            <text id="Here_s_how_your_Current_sectional_scores_compare_to_your_Target_estimates._" data-name="Here&apos;s how your Current sectional scores compare to your Target estimates.
+" transform="translate(458.053 270.954)" fill="#404040" font-size="17.992" font-family="Inter-Regular, Inter"><tspan x="0" y="17">Here&apos;s how your Current sectional scores compare to your Target estimates.</tspan></text>
+            <g id="Heading">
+              <text id="Sectional_journey_and_time_estimates" data-name="Sectional journey and time estimates" transform="translate(457.053 246.56)" fill="#1e90ff" font-size="29.987" font-family="PlusJakartaSans-Bold, Plus Jakarta Sans" font-weight="700"><tspan x="0" y="0">Sectional journey and time estimates</tspan></text>
+              <g id="Numbering">
+                <text id="_3.1" data-name="3.1" transform="translate(404.427 242.12)" fill="#bfbfbf" font-size="15.833" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">3.1</tspan></text>
+                <path id="Arrow" d="M433.863,240.864a.656.656,0,0,1,.21-.906l3.322-2.078H428.92v-1.32h8.486l-3.333-2.083a.66.66,0,0,1,.7-1.12l6.172,3.859-6.172,3.859a.657.657,0,0,1-.909-.211Z" fill="#bfbfbf"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Info_button" data-name="Info button" transform="translate(906 341)">
+          <g id="Normal" transform="translate(-906 -341)">
+            <g id="Rectangle_1039" data-name="Rectangle 1039" transform="translate(906 341)" fill="#fff">
+              <path d="M 240.5 24.5 L 12.5 24.5 C 9.294687271118164 24.5 6.281218528747559 23.25178146362305 4.014718532562256 20.98528099060059 C 1.748218774795532 18.71878051757812 0.5 15.70531272888184 0.5 12.5 C 0.5 9.294687271118164 1.748218774795532 6.281218528747559 4.014718532562256 4.014718532562256 C 6.281218528747559 1.748218774795532 9.294687271118164 0.5 12.5 0.5 L 240.5 0.5 C 243.7053070068359 0.5 246.7187805175781 1.748218774795532 248.9852752685547 4.014718532562256 C 251.2517852783203 6.281218528747559 252.5 9.294687271118164 252.5 12.5 C 252.5 15.70531272888184 251.2517852783203 18.71878051757812 248.9852752685547 20.98528099060059 C 246.7187805175781 23.25178146362305 243.7053070068359 24.5 240.5 24.5 Z" stroke="none"/>
+              <path d="M 12.5 1 C 9.428237915039062 1 6.540328979492188 2.196199417114258 4.368270874023438 4.368267059326172 C 2.196197509765625 6.540332794189453 1 9.42823314666748 1 12.5 C 1 15.57176685333252 2.196197509765625 18.45966720581055 4.368270874023438 20.63173294067383 C 6.540328979492188 22.80380058288574 9.428237915039062 24 12.5 24 L 240.5 24 C 243.5717620849609 24 246.4596710205078 22.80380058288574 248.6317291259766 20.63173294067383 C 250.8038024902344 18.45966720581055 252 15.57176685333252 252 12.5 C 252 9.42823314666748 250.8038024902344 6.540332794189453 248.6317291259766 4.368267059326172 C 246.4596710205078 2.196199417114258 243.5717620849609 1 240.5 1 L 12.5 1 M 12.5 0 L 240.5 0 C 247.403564453125 0 253 5.596433639526367 253 12.5 C 253 19.40356636047363 247.403564453125 25 240.5 25 L 12.5 25 C 5.596435546875 25 0 19.40356636047363 0 12.5 C 0 5.596433639526367 5.596435546875 0 12.5 0 Z" stroke="none" fill="#1e90ff"/>
+            </g>
+            <g id="Button_content" data-name="Button content">
+              <path id="methodology_icon.svg" data-name="methodology icon.svg" d="M934,360H922v-.7h.74v-2.656h3.273v-2.3h3.272v-2.624h.817V348h2.784v2.233h-2.08v1.485h2.454V359.3H934v.7Zm-4.01-7.58v6.88h2.57v-6.88Zm-3.27,2.62h0v4.25h2.57v-4.25Zm-3.28,2.3h0v1.95h2.57v-1.95Zm7.37-8.64h0v.831h1.381V348.7Z" transform="translate(0 -1)" fill="#1e90ff"/>
+              <text id="Understand_3_stages_of_learning_methodology" data-name="Understand 3 stages of learning methodology" transform="translate(939.083 356)" fill="#1e90ff" font-size="9.996" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Understand 3 stages of learning methodology</tspan></text>
+            </g>
+          </g>
+        </g>
+        <g id="Tabs_content" data-name="Tabs content">
+          <g id="Score_tab" data-name="Score tab">
+            <g transform="matrix(1, 0, 0, 1, 383.99, 88.98)" filter="url(#Scores_bg)">
+              <rect id="Scores_bg-2" data-name="Scores bg" width="700" height="300" rx="10" transform="translate(75 300.02)" fill="#fff"/>
+            </g>
+            <g id="Gridlines">
+              <line id="Layer-7" data-name="Layer" y2="184.55" transform="translate(742.32 447.45)" fill="none" stroke="#d9d9d9" stroke-miterlimit="8" stroke-width="0.764" stroke-dasharray="3.054 1.527"/>
+              <line id="Layer-8" data-name="Layer" y2="184.55" transform="translate(840.61 447.45)" fill="none" stroke="#d9d9d9" stroke-miterlimit="8" stroke-width="0.764" stroke-dasharray="3.054 1.527"/>
+              <line id="Layer-9" data-name="Layer" y2="184.55" transform="translate(938.91 447.45)" fill="none" stroke="#d9d9d9" stroke-miterlimit="8" stroke-width="0.764" stroke-dasharray="3.054 1.527"/>
+              <line id="Layer-10" data-name="Layer" y2="184.55" transform="translate(1037.2 447.45)" fill="none" stroke="#d9d9d9" stroke-miterlimit="8" stroke-width="0.764" stroke-dasharray="3.054 1.527"/>
+              <text id="_70" data-name="70" transform="translate(735.673 438.428)" fill="#bfbfbf" font-size="12" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">70</tspan></text>
+              <text id="_75" data-name="75" transform="translate(833.899 438.428)" fill="#bfbfbf" font-size="12" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">75</tspan></text>
+              <text id="_80" data-name="80" transform="translate(931.574 438.428)" fill="#bfbfbf" font-size="12" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">80</tspan></text>
+              <text id="_85" data-name="85" transform="translate(1029.8 438.428)" fill="#bfbfbf" font-size="12" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">85</tspan></text>
+            </g>
+            <g id="Verbal">
+              <text id="Verbal-2" data-name="Verbal" transform="translate(494 486.5)" fill="#404040" font-size="18" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Verbal</tspan></text>
+              <text id="_83" data-name="83" transform="translate(1104.516 485.723)" fill="#fda40a" font-size="20" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="-12.976" y="0">83</tspan></text>
+              <path id="Layer-11" data-name="Layer" d="M1024.792,467.909a12.565,12.565,0,1,1,0,25.131H755.048a12.565,12.565,0,1,1,0-25.131Z" fill="#f7f9f8" stroke="#f2f2f2" stroke-miterlimit="8" stroke-width="1.527"/>
+              <path id="Layer-12" data-name="Layer" d="M987.891,467.748a12.565,12.565,0,1,1,0,25.131H919.247a12.565,12.565,0,1,1,0-25.131Z" fill="#75e5c8" opacity="0.502"/>
+              <g transform="matrix(1, 0, 0, 1, 383.99, 88.98)" filter="url(#Layer)">
+                <ellipse id="Layer-13" data-name="Layer" cx="12.57" cy="12.41" rx="12.57" ry="12.41" transform="translate(508.67 378.92)" fill="#1e90ff" stroke="#fff" stroke-miterlimit="8" stroke-width="4.581"/>
+              </g>
+              <g transform="matrix(1, 0, 0, 1, 383.99, 88.98)" filter="url(#Layer-2)">
+                <circle id="Layer-14" data-name="Layer" cx="12.57" cy="12.57" r="12.57" transform="translate(591.33 378.76)" fill="#fda40a" stroke="#fff" stroke-miterlimit="8" stroke-width="4.581"/>
+              </g>
+              <text id="_79" data-name="79" transform="translate(670.148 486.457)" fill="#1e90ff" font-size="19.971" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="-12.234" y="0">79</tspan></text>
+            </g>
+            <g id="Quant">
+              <text id="Quant-2" data-name="Quant" transform="translate(494 546.5)" fill="#404040" font-size="18" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Quant</tspan></text>
+              <path id="Layer-15" data-name="Layer" d="M1024.792,528.481a12.565,12.565,0,1,1,0,25.131H755.048a12.565,12.565,0,1,1,0-25.131Z" fill="#f7f9f8" stroke="#f2f2f2" stroke-miterlimit="8" stroke-width="1.527"/>
+              <g transform="matrix(1, 0, 0, 1, 383.99, 88.98)" filter="url(#Layer-3)">
+                <circle id="Layer-16" data-name="Layer" cx="12.57" cy="12.57" r="12.57" transform="translate(591.33 439.33)" fill="#1e90ff" stroke="#fff" stroke-miterlimit="8" stroke-width="4.581"/>
+              </g>
+              <g transform="matrix(1, 0, 0, 1, 383.99, 88.98)" filter="url(#Layer-4)">
+                <circle id="Layer-17" data-name="Layer" cx="12.57" cy="12.57" r="12.57" transform="translate(606.16 439.33)" fill="#fda40a" stroke="#fff" stroke-miterlimit="8" stroke-width="4.581"/>
+              </g>
+              <text id="_83-2" data-name="83" transform="translate(670.478 548.188)" fill="#1e90ff" font-size="19.971" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="-12.957" y="0">83</tspan></text>
+              <text id="_84" data-name="84" transform="translate(1104.055 548.295)" fill="#fda40a" font-size="20" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="-13.118" y="0">84</tspan></text>
+            </g>
+            <g id="Data_Insights" data-name="Data Insights">
+              <text id="Data_Insights-2" data-name="Data Insights" transform="translate(494 610.5)" fill="#404040" font-size="18" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Data Insights</tspan></text>
+              <path id="Layer-18" data-name="Layer" d="M1024.792,589.052a12.565,12.565,0,1,1,0,25.131H755.048a12.565,12.565,0,1,1,0-25.131Z" fill="#f7f9f8" stroke="#f2f2f2" stroke-miterlimit="8" stroke-width="1.527"/>
+              <rect id="Layer-19" data-name="Layer" width="93.78" height="25.13" rx="2.05" transform="translate(808.06 588.89)" fill="#75e5c8" opacity="0.502"/>
+              <g transform="matrix(1, 0, 0, 1, 383.99, 88.98)" filter="url(#Layer-5)">
+                <circle id="Layer-20" data-name="Layer" cx="12.57" cy="12.57" r="12.57" transform="translate(409.89 499.91)" fill="#1e90ff" stroke="#fff" stroke-miterlimit="8" stroke-width="4.581"/>
+              </g>
+              <g transform="matrix(1, 0, 0, 1, 383.99, 88.98)" filter="url(#Layer-6)">
+                <circle id="Layer-21" data-name="Layer" cx="12.57" cy="12.57" r="12.57" transform="translate(507.22 499.91)" fill="#fda40a" stroke="#fff" stroke-miterlimit="8" stroke-width="4.581"/>
+              </g>
+              <text id="_72" data-name="72" transform="translate(670.624 611.918)" fill="#1e90ff" font-size="19.971" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="-12.067" y="0">72</tspan></text>
+              <text id="_79-2" data-name="79" transform="translate(1104.164 611.867)" fill="#fda40a" font-size="20" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="-12.251" y="0">79</tspan></text>
+            </g>
+            <g id="Header_row" data-name="Header row">
+              <text id="Current_Scores" data-name="Current
+Scores" transform="translate(670 426.5)" fill="#7f7f7f" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-24.967" y="0">Current</tspan><tspan x="-22.77" y="18">Scores</tspan></text>
+              <text id="Target_Scores_" data-name="Target
+Scores " transform="translate(1104.863 425.641)" fill="#7f7f7f" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-21.298" y="0">Target</tspan><tspan x="-24.739" y="18">Scores </tspan></text>
+            </g>
+            <g id="Legend">
+              <g id="Current">
+                <rect id="Layer-22" data-name="Layer" width="12.99" height="13.01" rx="2.17" transform="translate(494.64 656.29)" fill="#1e90ff"/>
+                <text id="Current-2" data-name="Current" transform="translate(513.248 666.299)" fill="#a6a6a6" font-size="9.985" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Current</tspan></text>
+              </g>
+              <g id="Target">
+                <rect id="Layer-23" data-name="Layer" width="12.99" height="13.01" rx="2.17" transform="translate(567.61 656.29)" fill="#fda40a"/>
+                <text id="Target-2" data-name="Target" transform="translate(586.284 666.299)" fill="#a6a6a6" font-size="9.985" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Target</tspan></text>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Tabs_toggle" data-name="Tabs toggle">
+          <g transform="matrix(1, 0, 0, 1, 383.99, 88.98)" filter="url(#Toggle_container)">
+            <rect id="Toggle_container-2" data-name="Toggle container" width="250" height="45" rx="4" transform="translate(74.68 233.6)" fill="#fff" stroke="#f2f2f2" stroke-width="1.319"/>
+          </g>
+          <rect id="Shade" width="120" height="35" rx="4" transform="translate(464 328)" fill="#1e90ff"/>
+          <g id="Scores_-_default_selected" data-name="Scores - default selected">
+            <g id="Selected">
+              <g id="button_text" data-name="button text">
+                <text id="Scores" transform="translate(515.342 350.134)" fill="#fff" font-size="14" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Scores</tspan></text>
+                <path id="Score_icon.svg" data-name="Score icon.svg" d="M493.14,352.048a1.5,1.5,0,1,1,.268-2.974l2.6-4.554a1.5,1.5,0,1,1,2.441-.254l2.128,2.393a1.493,1.493,0,0,1,.564-.112,1.529,1.529,0,0,1,.182.019l2.741-5.481a1.5,1.5,0,1,1,1.078.462,1.354,1.354,0,0,1-.182-.019l-2.741,5.481a1.5,1.5,0,1,1-2.389.319l-2.128-2.393a1.42,1.42,0,0,1-.831.085l-2.6,4.555a1.492,1.492,0,0,1-1.132,2.473Zm0-2a.5.5,0,1,0,.5.5A.5.5,0,0,0,493.14,350.05Zm8-2.5a.5.5,0,1,0,.5.5A.5.5,0,0,0,501.14,347.55Zm-4-4.5a.5.5,0,1,0,.5.5A.5.5,0,0,0,497.14,343.05Zm8-3.5a.5.5,0,1,0,.5.5A.5.5,0,0,0,505.14,339.55Z" fill="#fff"/>
+              </g>
+            </g>
+          </g>
+          <g id="Times" transform="translate(612.119 336.134)">
+            <g id="Normal-2" data-name="Normal" transform="translate(-612.119 -336.134)">
+              <g id="button_text-2" data-name="button text">
+                <text id="Times-2" data-name="Times" transform="translate(635.342 350.134)" fill="#a6a6a6" font-size="14" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">Times</tspan></text>
+                <path id="Time_icon.svg" data-name="Time icon.svg" d="M618.282,353.02a7.427,7.427,0,0,1-2.985-1.249,7.651,7.651,0,0,1-.959-.8l0,0-.008-.008a7.428,7.428,0,0,1-2.1-4.03c-.027-.151-.048-.3-.065-.455,0-.01,0-.019,0-.029-.016-.15-.028-.3-.035-.454v-.015a7.426,7.426,0,0,1,1.187-4.379c.005-.009.01-.019.016-.029.051-.079.105-.158.159-.235.033-.048.068-.095.1-.14l.025-.031a7.428,7.428,0,0,1,4.117-2.759l.022-.006h0c.188-.047.378-.088.571-.121a7.436,7.436,0,0,1,5.45,1.159l.472-.681c.13-.19.288-.163.349.058l.549,1.977a.336.336,0,0,1-.3.44l-2.044.184c-.229.021-.31-.118-.179-.307l.471-.68a6.293,6.293,0,0,0-7.054.057l-.022.014a6.285,6.285,0,0,0-.027,10.293,6.649,6.649,0,0,0,.6.374h0c.112.06.227.119.342.173l.017.01a6.2,6.2,0,0,0,1.545.491.6.6,0,0,1-.107,1.195A.609.609,0,0,1,618.282,353.02Zm2.228-.106a.6.6,0,0,1,.238-1.085c.125-.023.25-.05.374-.081a.6.6,0,1,1,.291,1.168c-.148.037-.3.069-.446.1a.6.6,0,0,1-.456-.1Zm2.2-.81a.594.594,0,0,1-.175-.191.6.6,0,0,1,.221-.823c.111-.064.221-.132.327-.2a.6.6,0,0,1,.664,1c-.127.084-.257.165-.389.24a.6.6,0,0,1-.648-.03Zm1.8-1.5a.523.523,0,0,1-.044-.034.6.6,0,0,1-.068-.849c.082-.1.163-.2.239-.3a.6.6,0,1,1,.963.723c-.092.121-.187.242-.286.357a.6.6,0,0,1-.8.1Zm1.324-1.946a.6.6,0,0,1-.348-.777c.045-.12.087-.241.125-.363a.6.6,0,0,1,1.149.36c-.045.144-.1.29-.149.431a.6.6,0,0,1-.777.348Zm-2.639-.241-4.44-2.3V341.27a.487.487,0,0,1,.975,0v4.261l3.912,2.023a.487.487,0,0,1-.447.866Zm3.29-2.016a.6.6,0,0,1-.589-.616c0-.127,0-.256,0-.383a.6.6,0,0,1,1.2-.048c.006.152.007.305,0,.457a.6.6,0,0,1-.6.589Zm-.682-2.425a.6.6,0,0,1-.224-.3c-.041-.121-.085-.242-.131-.361a.6.6,0,1,1,1.118-.446c.056.14.109.284.157.428a.6.6,0,0,1-.919.681Z" fill="#a6a6a6"/>
+              </g>
+            </g>
+          </g>
+        </g>
+        <g id="Primary_CTA" data-name="Primary CTA" transform="translate(758.53 744.49)">
+          <g id="Normal-3" data-name="Normal" transform="translate(-758.53 -744.49)">
+            <rect id="Rectangle_4_copy" data-name="Rectangle 4 copy" width="400" height="60" rx="4" transform="translate(758.53 744.49)" fill="#1e90ff" stroke="#00aeef" stroke-width="1"/>
+            <text id="Let_s_get_your_Target_Sub_Sectional_scores_" data-name="Let’s get your Target Sub Sectional scores
+" transform="translate(786.868 778.832)" fill="#fff" font-size="17.992" font-family="NunitoSans-SemiBold, Nunito Sans" font-weight="600"><tspan x="0" y="0">Let’s get your Target Sub Sectional scores</tspan><tspan font-family="NunitoSans-SemiBold"><tspan x="0" y="21.591"></tspan></tspan></text>
+          </g>
+        </g>
+      </g>
+    </g>
+    <g id="Horizontal_progress_bar" data-name="Horizontal progress bar" transform="translate(1)">
+      <rect id="Unfilled_progress" data-name="Unfilled progress" width="700" height="2" rx="1" transform="translate(459 132)" fill="#e8e8e8"/>
+      <rect id="Filled_progress" data-name="Filled progress" width="83" height="2" rx="1" transform="translate(459 132)" fill="#00aeef"/>
+      <circle id="Ellipse_1_copy" data-name="Ellipse 1 copy" cx="7.77" cy="7.77" r="7.77" transform="translate(685.28 125.28)" fill="#e8e8e8"/>
+      <circle id="Ellipse_1_copy_2" data-name="Ellipse 1 copy 2" cx="7.77" cy="7.77" r="7.77" transform="translate(819.28 125.28)" fill="#e8e8e8"/>
+      <circle id="Ellipse_1_copy_3" data-name="Ellipse 1 copy 3" cx="7.77" cy="7.77" r="7.77" transform="translate(952.28 125.28)" fill="#e8e8e8"/>
+      <circle id="Ellipse_1_copy_4" data-name="Ellipse 1 copy 4" cx="7.77" cy="7.77" r="7.77" transform="translate(1086.28 125.28)" fill="#e8e8e8"/>
+      <g id="Dot">
+        <g id="Selected_state" data-name="Selected state">
+          <circle id="Ellipse_1" data-name="Ellipse 1" cx="20" cy="20" r="20" transform="translate(520 113)" fill="#1e90ff"/>
+          <text id="Set_Sectional_Milestones" data-name="Set Sectional Milestones" transform="translate(539.71 171.504)" fill="#1e90ff" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="-84.621" y="0">Set Sectional Milestones</tspan></text>
+          <g id="Icon" transform="translate(532.969 123.53)">
+            <path id="Path_19" data-name="Path 19" d="M.032,3.385V14.938H9.154" transform="translate(2.469 1.141)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+            <path id="Path_20" data-name="Path 20" d="M.032,3.385V14.938H9.154" transform="translate(-1 4.61)" fill="none" stroke="#fff" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25"/>
+            <rect id="Rectangle_7" data-name="Rectangle 7" width="10.408" height="13.877" rx="1" transform="translate(5.503 -0.53)" fill="#fff"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

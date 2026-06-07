@@ -16,11 +16,24 @@ export default function MoreWorkBrowserFrame({
   bodyClassName = '',
 }) {
   const frameRef = useRef(null);
+  const pageScrollTopRef = useRef(0);
+  const wasFullscreenRef = useRef(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
   useEffect(() => {
     const handleFullscreenChange = () => {
-      setIsFullscreen(document.fullscreenElement === frameRef.current);
+      const isActive = document.fullscreenElement === frameRef.current;
+      setIsFullscreen(isActive);
+
+      /* Chromium can drop the page scroll position when an element exits
+         fullscreen — restore the position captured at entry. Guarded so
+         only the frame that actually was fullscreen touches the scroll. */
+      if (!isActive && wasFullscreenRef.current) {
+        window.setTimeout(() => {
+          window.scrollTo({ top: pageScrollTopRef.current, behavior: 'auto' });
+        }, 0);
+      }
+      wasFullscreenRef.current = isActive;
     };
 
     document.addEventListener('fullscreenchange', handleFullscreenChange);
@@ -38,6 +51,7 @@ export default function MoreWorkBrowserFrame({
       return;
     }
 
+    pageScrollTopRef.current = window.scrollY;
     frame.requestFullscreen?.();
   };
 

@@ -26,6 +26,8 @@ const ControlledVideo = forwardRef(function ControlledVideo({
   const rootRef = useRef(null);
   const mediaRef = useRef(null);
   const videoRef = useRef(null);
+  const pageScrollTopRef = useRef(0);
+  const wasFullscreenRef = useRef(false);
   const [isPlaying, setIsPlaying] = useState(autoPlay || playWhen);
   const [isFullscreen, setIsFullscreen] = useState(false);
 
@@ -59,7 +61,18 @@ const ControlledVideo = forwardRef(function ControlledVideo({
 
   useEffect(() => {
     const handleFullscreenChange = () => {
-      setIsFullscreen(document.fullscreenElement === mediaRef.current);
+      const isActive = document.fullscreenElement === mediaRef.current;
+      setIsFullscreen(isActive);
+
+      /* Chromium can drop the page scroll position when an element exits
+         fullscreen — restore the position captured at entry. Guarded so
+         only the video that actually was fullscreen touches the scroll. */
+      if (!isActive && wasFullscreenRef.current) {
+        window.setTimeout(() => {
+          window.scrollTo({ top: pageScrollTopRef.current, behavior: 'auto' });
+        }, 0);
+      }
+      wasFullscreenRef.current = isActive;
     };
 
     document.addEventListener('fullscreenchange', handleFullscreenChange);
@@ -95,6 +108,7 @@ const ControlledVideo = forwardRef(function ControlledVideo({
     }
 
     if (media.requestFullscreen) {
+      pageScrollTopRef.current = window.scrollY;
       media.requestFullscreen();
       return;
     }

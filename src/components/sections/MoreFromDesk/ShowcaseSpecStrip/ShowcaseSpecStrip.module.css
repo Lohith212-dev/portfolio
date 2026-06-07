@@ -34,6 +34,16 @@
     text-align: center;
   }
 
+  /* Chip rendered as an external link keeps the chip chrome. */
+  a.chip {
+    text-decoration: none;
+  }
+
+  a.chip:hover,
+  a.chip:focus-visible {
+    text-decoration: underline;
+  }
+
   .chipLogo {
     width: 1.1rem;
     height: 1.1rem;

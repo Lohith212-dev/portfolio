@@ -118,6 +118,7 @@ export default function ShippedFlowSection() {
   const demoStageRef = useRef(null);
   const demoViewportRef = useRef(null);
   const pageScrollTopRef = useRef(0);
+  const wasDemoFullscreenRef = useRef(false);
   const resizeCleanupRef = useRef(null);
   const stageShellRef = useRef(null);
   const [shellWidth, setShellWidth] = useState(0);
@@ -161,11 +162,15 @@ export default function ShippedFlowSection() {
       const isActive = document.fullscreenElement === demoViewportRef.current;
       setIsDemoFullscreen(isActive);
 
-      if (!isActive) {
+      /* Restore only when THIS viewport exits fullscreen. Other elements'
+         fullscreen transitions (videos, browser frames) fire this event
+         too — restoring on those would jump the page to a stale position. */
+      if (!isActive && wasDemoFullscreenRef.current) {
         window.setTimeout(() => {
           window.scrollTo({ top: pageScrollTopRef.current, behavior: 'auto' });
         }, 0);
       }
+      wasDemoFullscreenRef.current = isActive;
     };
 
     document.addEventListener('fullscreenchange', handleFullscreenChange);

@@ -1,8 +1,16 @@
 import {
   GmatClubWordmarkIcon,
   TestimonialAvatarIcon,
+  VideoPlayIcon,
 } from '../../icons/icons';
 import styles from './TestimonialCard.module.css';
+
+/* Source-brand marks, keyed by the `sourceBrand` string the testimonials
+   block declares. Brands without dedicated wordmark art fall back to a
+   play-glyph + brand-name lockup (used for video testimonials). */
+const SOURCE_BRAND_MARKS = {
+  'GMAT Club': GmatClubWordmarkIcon,
+};
 
 /* One public-quote card — shared by the TestimonialMarquee scroller and the
    inline decision quotes on showcase pages. The card owns only its own
@@ -22,6 +30,8 @@ export default function TestimonialCard({
     });
   };
 
+  const BrandMark = SOURCE_BRAND_MARKS[sourceBrand];
+
   return (
     <article className={`${styles.testimonialCard} ${className}`.trim()}>
       <div className={styles.testimonialCardTop}>
@@ -32,7 +42,14 @@ export default function TestimonialCard({
           aria-label={`Open ${sourceBrand} for ${item.author}`}
           onClick={openSource}
         >
-          <GmatClubWordmarkIcon className={styles.testimonialSourceLogo} />
+          {BrandMark ? (
+            <BrandMark className={styles.testimonialSourceLogo} />
+          ) : (
+            <span className={styles.testimonialSourceText}>
+              <VideoPlayIcon className={styles.testimonialSourcePlay} />
+              {sourceBrand}
+            </span>
+          )}
         </button>
       </div>
       <blockquote

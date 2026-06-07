@@ -1,0 +1,395 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="849.01" height="1147.99" viewBox="0 0 849.01 1147.99">
+  <defs>
+    <filter id="Shade" x="44" y="267.985" width="760" height="698" filterUnits="userSpaceOnUse">
+      <feOffset dy="3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="10" result="blur"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_24" x="222" y="335.985" width="530" height="180" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-2"/>
+      <feFlood flood-opacity="0.051"/>
+      <feComposite operator="in" in2="blur-2"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Current_icon_circle" x="588.963" y="419.985" width="50" height="50" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-3"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-3"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Target_icon_circle" x="670" y="419.986" width="50.318" height="50" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-4"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-4"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_24-2" x="222" y="515.985" width="530" height="180" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-5"/>
+      <feFlood flood-opacity="0.051"/>
+      <feComposite operator="in" in2="blur-5"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Current_icon_circle-2" x="588.963" y="599.985" width="50" height="50" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-6"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-6"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Target_icon_circle-2" x="670" y="599.986" width="50.318" height="50" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-7"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-7"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Rectangle_24-3" x="222" y="695.985" width="530" height="180" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-8"/>
+      <feFlood flood-opacity="0.051"/>
+      <feComposite operator="in" in2="blur-8"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Current_icon_circle-3" x="588.963" y="779.985" width="50" height="50" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-9"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-9"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Target_icon_circle-3" x="670" y="779.986" width="50.318" height="50" filterUnits="userSpaceOnUse">
+      <feOffset input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="5" result="blur-10"/>
+      <feFlood flood-opacity="0.149"/>
+      <feComposite operator="in" in2="blur-10"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+    <filter id="Ellipse_13" x="706.5" y="303.485" width="35" height="35" filterUnits="userSpaceOnUse">
+      <feOffset dx="-3" input="SourceAlpha"/>
+      <feGaussianBlur stdDeviation="2.5" result="blur-11"/>
+      <feFlood flood-opacity="0.102"/>
+      <feComposite operator="in" in2="blur-11"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+  <g id="prep-sequence" transform="translate(-383 -97.015)">
+    <rect id="Background_dive_box" data-name="Background dive box" width="849.01" height="1147.99" rx="10" transform="translate(383 97.015)" fill="#fff"/>
+    <g id="Step_4.1.2_-_Sequence_of_study_-_recommendation" data-name="Step 4.1.2 - Sequence of study - recommendation" transform="translate(-24.427 96.44)">
+      <text id="Based_on_your_starting_level_and_the_target_milestones_you_have_set_below_is_the_most_optimal_sequence_of_study." data-name="Based on your starting level and the target milestones you have set, below is the most optimal sequence of study." transform="translate(483.063 174.644)" fill="#404040" font-size="18" font-family="Inter-Regular, Inter"><tspan x="0" y="17">Based on your starting level and the target milestones you have set, below is the </tspan><tspan x="0" y="44">most optimal sequence of study.</tspan></text>
+      <g id="Heading">
+        <text id="Your_sequence_of_preparation" data-name="Your sequence of preparation" transform="translate(482.053 152.56)" fill="#1e90ff" font-size="30" font-family="PlusJakartaSans-SemiBold, Plus Jakarta Sans" font-weight="600"><tspan x="0" y="0">Your sequence of preparation</tspan></text>
+        <g id="Numbering">
+          <text id="_4.1" data-name="4.1" transform="translate(429.427 148.12)" fill="#bfbfbf" font-size="16" font-family="NunitoSans-Regular, Nunito Sans"><tspan x="0" y="0">4.1</tspan></text>
+          <path id="Arrow" d="M460.863,146.865a.657.657,0,0,1,.21-.907l3.323-2.078H455.92V142.56h8.487l-3.335-2.084a.66.66,0,0,1,.7-1.12l6.173,3.859-6.173,3.859a.658.658,0,0,1-.909-.21Z" fill="#bfbfbf"/>
+        </g>
+      </g>
+      <g id="Info_button" data-name="Info button" transform="translate(483.427 242.56)">
+        <g id="Normal" transform="translate(-459 -334)">
+          <g id="Rectangle_1039" data-name="Rectangle 1039" transform="translate(459 334)" fill="#fff" stroke="#1e90ff" stroke-width="1">
+            <rect width="304" height="25" rx="12.5" stroke="none"/>
+            <rect x="0.5" y="0.5" width="303" height="24" rx="12" fill="none"/>
+          </g>
+          <g id="Button_content" data-name="Button content">
+            <text id="Understand_the_philosophy_behind_this_recommendation" data-name="Understand the philosophy behind this recommendation" transform="translate(492.083 349.601)" fill="#1e90ff" font-size="9.996" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Understand the philosophy behind this recommendation</tspan></text>
+            <path id="Triangle_2217" data-name="Triangle 2217" d="M479.907,406.688l-6.344,3.969v-7.937Z" transform="translate(4.937 -60.218)" fill="none" stroke="#1e90ff" stroke-width="1"/>
+          </g>
+        </g>
+      </g>
+      <g id="Recommended_sequence" data-name="Recommended sequence" transform="translate(24.427 -93.431)">
+        <g transform="matrix(1, 0, 0, 1, 383, 94)" filter="url(#Shade)">
+          <rect id="Shade-2" data-name="Shade" width="700" height="638" rx="5.45" transform="translate(74 294.99)" fill="#fff"/>
+        </g>
+        <g id="Tiles_-_more_info" data-name="Tiles - more info" transform="translate(514 444.99)">
+          <g id="Tile">
+            <g transform="matrix(1, 0, 0, 1, -131, -350.99)" filter="url(#Rectangle_24)">
+              <g id="Rectangle_24-4" data-name="Rectangle 24" transform="translate(237 350.99)" fill="#fff" stroke="#f2f2f2" stroke-width="1">
+                <rect width="500" height="150" rx="5" stroke="none"/>
+                <rect x="0.5" y="0.5" width="499" height="149" rx="4.5" fill="none"/>
+              </g>
+            </g>
+            <g id="Section_name" data-name="Section name" transform="translate(126 15)">
+              <text id="Verbal_Reasoning" data-name="Verbal Reasoning" transform="translate(70 34)" font-size="18" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Verbal Reasoning</tspan></text>
+              <g id="Tile-2" data-name="Tile">
+                <rect id="Rectangle_27" data-name="Rectangle 27" width="55" height="55" rx="5" fill="#1e90ff"/>
+                <text id="VR" transform="translate(28 37)" fill="#fff" font-size="30" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="-20.614" y="0">VR</tspan></text>
+              </g>
+            </g>
+            <g id="Sub_section_sequence" data-name="Sub section sequence" transform="translate(126 78)">
+              <g id="Sub_tile" data-name="Sub tile" transform="translate(0 22)">
+                <rect id="Rectangle_26" data-name="Rectangle 26" width="35" height="35" rx="3" transform="translate(-0.001)" fill="#f2f2f2"/>
+                <text id="CR" transform="translate(7.999 22)" fill="#1e90ff" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">CR</tspan></text>
+              </g>
+              <g id="Arrow_group" data-name="Arrow group" transform="translate(43 36.09)">
+                <path id="Dropdown_arrow" data-name="Dropdown arrow" d="M1243.982,44.437l-3.175,3.229.177.181,3.352-3.41-3.352-3.41-.177.181Z" transform="translate(-1240.807 -41.027)" fill="#a6a6a6" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                <path id="Dropdown_arrow-2" data-name="Dropdown arrow" d="M1243.982,44.437l-3.175,3.229.177.181,3.352-3.41-3.352-3.41-.177.181Z" transform="translate(-1235.807 -41.027)" fill="#a6a6a6" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              </g>
+              <g id="Sub_tile-2" data-name="Sub tile" transform="translate(60 22)">
+                <rect id="Rectangle_26-2" data-name="Rectangle 26" width="35" height="35" rx="3" transform="translate(0.001)" fill="#f2f2f2"/>
+                <text id="RC" transform="translate(8.001 22)" fill="#1e90ff" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">RC</tspan></text>
+              </g>
+            </g>
+            <g id="Details" transform="translate(441)">
+              <rect id="Rectangle_28" data-name="Rectangle 28" width="165" height="150" fill="#f7f9f8"/>
+              <g id="Journey" transform="translate(10 61)">
+                <rect id="Incremental" width="79.499" height="10" rx="5" transform="translate(32.015 28)" fill="#b6eedf"/>
+                <g id="Starting" transform="translate(0 23)">
+                  <text id="_69" data-name="69" transform="translate(0 14)" fill="#1e90ff" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">69</tspan></text>
+                  <g id="Current_icon" data-name="Current icon" transform="translate(21.963)">
+                    <g transform="matrix(1, 0, 0, 1, -603.96, -434.99)" filter="url(#Current_icon_circle)">
+                      <circle id="Current_icon_circle-4" data-name="Current icon circle" cx="10" cy="10" r="10" transform="translate(603.96 434.99)" fill="#fff"/>
+                    </g>
+                    <path id="Current_icon-2" data-name="Current icon" d="M0,11.49V.458A.427.427,0,0,1,.44.029a.427.427,0,0,1,.44.43V11.49ZM1.465.415A3.34,3.34,0,0,1,3.325,0C4.878,0,5.932.688,8.2.029V4.771c-1.8.8-3.325-.029-4.877-.029a3.283,3.283,0,0,0-1.861.415Z" transform="translate(6.056 5.191)" fill="#00aeef"/>
+                  </g>
+                </g>
+                <g id="Target" transform="translate(103.001 23)">
+                  <text id="_83" data-name="83" transform="translate(25 14.5)" fill="#fda40a" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">83</tspan></text>
+                  <g id="Target_icon" data-name="Target icon">
+                    <g transform="matrix(1, 0, 0, 1, -685, -434.99)" filter="url(#Target_icon_circle)">
+                      <ellipse id="Target_icon_circle-4" data-name="Target icon circle" cx="10.159" cy="10" rx="10.159" ry="10" transform="translate(685 434.99)" fill="#fff"/>
+                    </g>
+                    <path id="Target_icon-2" data-name="Target icon" d="M0,5.874A5.5,5.5,0,0,1,5.565.43a5.744,5.744,0,0,1,2.622.63l-.1.1-.205.2.044.287.029.287A4.7,4.7,0,0,0,.879,5.874a4.65,4.65,0,0,0,4.687,4.585,4.65,4.65,0,0,0,4.687-4.585,4.528,4.528,0,0,0-.659-2.335l.308.043.278.029.19-.2.1-.085a5.171,5.171,0,0,1,.659,2.55,5.5,5.5,0,0,1-5.566,5.445A5.5,5.5,0,0,1,0,5.874Zm2.051,0A3.487,3.487,0,0,1,5.565,2.436a3.569,3.569,0,0,1,1.655.4l-.659.645a2.86,2.86,0,0,0-1-.186A2.616,2.616,0,0,0,2.929,5.874a2.637,2.637,0,0,0,5.273,0A2.407,2.407,0,0,0,8.012,4.9l.659-.645a3.368,3.368,0,0,1,.41,1.619A3.488,3.488,0,0,1,5.565,9.313,3.487,3.487,0,0,1,2.051,5.874Zm2.036,0A1.453,1.453,0,0,1,5.551,4.441a1.575,1.575,0,0,1,.688.172L8.583,2.321,8.5,1.576,10.106,0l.146,1.289,1.319.143L9.96,3.009,9.2,2.923,6.855,5.215a1.422,1.422,0,0,1,.161.659,1.465,1.465,0,0,1-2.929,0Z" transform="translate(4.527 4.181)" fill="#fda40a"/>
+                  </g>
+                </g>
+                <text id="Milestones" transform="translate(0 12)" fill="#7f7f7f" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Milestones</tspan></text>
+              </g>
+              <g id="Starting_level" data-name="Starting level" transform="translate(10 15)">
+                <text id="Starting_level-2" data-name="Starting level" transform="translate(0 19)" fill="#7f7f7f" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Starting level</tspan></text>
+                <path id="up-arrow" d="M2,17A15,15,0,1,0,17,2,15,15,0,0,0,2,17Zm13.939,7.061a1.5,1.5,0,0,0,2.121,0l6-6a1.5,1.5,0,0,0-2.121-2.121L18.5,19.379V11a1.5,1.5,0,0,0-3,0v8.379l-3.439-3.439a1.5,1.5,0,1,0-2.121,2.121Z" transform="translate(113 -2)" fill="#e24c4b" fill-rule="evenodd" opacity="0.5"/>
+              </g>
+              <g id="Time" transform="translate(0 125)">
+                <rect id="Op_component_1" data-name="Op component 1" width="165" height="30" rx="2" transform="translate(0 -7)" fill="#f2f2f2" style="mix-blend-mode: multiply;isolation: isolate"/>
+                <text id="_2.8_weeks1" data-name="2.8 weeks1" transform="translate(82.71 14)" fill="#404040" font-size="18" font-family="Inter-Regular, Inter"><tspan x="-45.47" y="0">2.8 weeks</tspan><tspan y="0" font-size="10.499" baseline-shift="5.999400079342301">1</tspan></text>
+              </g>
+            </g>
+            <g id="Numbering-2" data-name="Numbering" transform="translate(-20 4)">
+              <rect id="Rectangle_29" data-name="Rectangle 29" width="80" height="25" rx="5" fill="#f2f2f2"/>
+              <text id="First" transform="translate(40 17)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-19.389" y="0">FIRST</tspan></text>
+            </g>
+          </g>
+          <line id="Connector" y2="150" transform="translate(20 34.5)" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-width="2" stroke-dasharray="0 4" opacity="0.5"/>
+          <g id="Tile-3" data-name="Tile" transform="translate(0 180)">
+            <g transform="matrix(1, 0, 0, 1, -131, -530.99)" filter="url(#Rectangle_24-2)">
+              <g id="Rectangle_24-5" data-name="Rectangle 24" transform="translate(237 530.99)" fill="#fff" stroke="#f2f2f2" stroke-width="1">
+                <rect width="500" height="150" rx="5" stroke="none"/>
+                <rect x="0.5" y="0.5" width="499" height="149" rx="4.5" fill="none"/>
+              </g>
+            </g>
+            <g id="Section_name-2" data-name="Section name" transform="translate(126 15)">
+              <text id="Quantitative_Reasoning" data-name="Quantitative Reasoning" transform="translate(70 34)" font-size="18" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Quantitative Reasoning</tspan></text>
+              <g id="Tile-4" data-name="Tile">
+                <rect id="Rectangle_27-2" data-name="Rectangle 27" width="55" height="55" rx="5" fill="#1e90ff"/>
+                <text id="QR" transform="translate(28 37)" fill="#fff" font-size="30" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="-21.392" y="0">QR</tspan></text>
+              </g>
+            </g>
+            <g id="Sub_section_sequence-2" data-name="Sub section sequence" transform="translate(126 78)">
+              <g id="Sub_tile-3" data-name="Sub tile" transform="translate(0 22)">
+                <rect id="Rectangle_26-3" data-name="Rectangle 26" width="35" height="35" rx="3" transform="translate(-0.001)" fill="#f2f2f2"/>
+                <text id="AR" transform="translate(7.999 22)" fill="#1e90ff" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">AR</tspan></text>
+              </g>
+              <g id="Arrow_group-2" data-name="Arrow group" transform="translate(43 36.09)">
+                <path id="Dropdown_arrow-3" data-name="Dropdown arrow" d="M1243.982,44.437l-3.175,3.229.177.181,3.352-3.41-3.352-3.41-.177.181Z" transform="translate(-1240.807 -41.027)" fill="#a6a6a6" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                <path id="Dropdown_arrow-4" data-name="Dropdown arrow" d="M1243.982,44.437l-3.175,3.229.177.181,3.352-3.41-3.352-3.41-.177.181Z" transform="translate(-1235.807 -41.027)" fill="#a6a6a6" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              </g>
+              <g id="Sub_tile-4" data-name="Sub tile" transform="translate(60.001 22)">
+                <rect id="Rectangle_26-4" data-name="Rectangle 26" width="43" height="35" rx="3" transform="translate(-0.001)" fill="#f2f2f2"/>
+                <text id="ALG" transform="translate(7.999 22)" fill="#1e90ff" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">ALG</tspan></text>
+              </g>
+            </g>
+            <g id="Details-2" data-name="Details" transform="translate(441)">
+              <rect id="Rectangle_28-2" data-name="Rectangle 28" width="165" height="150" fill="#f7f9f8"/>
+              <g id="Journey-2" data-name="Journey" transform="translate(10 61)">
+                <rect id="Incremental-2" data-name="Incremental" width="79.499" height="10" rx="5" transform="translate(32.015 28)" fill="#b6eedf"/>
+                <g id="Starting-2" data-name="Starting" transform="translate(0 23)">
+                  <text id="_79" data-name="79" transform="translate(0 14)" fill="#1e90ff" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">79</tspan></text>
+                  <g id="Current_icon-3" data-name="Current icon" transform="translate(21.963)">
+                    <g transform="matrix(1, 0, 0, 1, -603.96, -614.99)" filter="url(#Current_icon_circle-2)">
+                      <circle id="Current_icon_circle-5" data-name="Current icon circle" cx="10" cy="10" r="10" transform="translate(603.96 614.99)" fill="#fff"/>
+                    </g>
+                    <path id="Current_icon-4" data-name="Current icon" d="M0,11.49V.458A.427.427,0,0,1,.44.029a.427.427,0,0,1,.44.43V11.49ZM1.465.415A3.34,3.34,0,0,1,3.325,0C4.878,0,5.932.688,8.2.029V4.771c-1.8.8-3.325-.029-4.877-.029a3.283,3.283,0,0,0-1.861.415Z" transform="translate(6.056 5.191)" fill="#00aeef"/>
+                  </g>
+                </g>
+                <g id="Target-2" data-name="Target" transform="translate(103.001 23)">
+                  <text id="_85" data-name="85" transform="translate(25 14.5)" fill="#fda40a" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">85</tspan></text>
+                  <g id="Target_icon-3" data-name="Target icon">
+                    <g transform="matrix(1, 0, 0, 1, -685, -614.99)" filter="url(#Target_icon_circle-2)">
+                      <ellipse id="Target_icon_circle-5" data-name="Target icon circle" cx="10.159" cy="10" rx="10.159" ry="10" transform="translate(685 614.99)" fill="#fff"/>
+                    </g>
+                    <path id="Target_icon-4" data-name="Target icon" d="M0,5.874A5.5,5.5,0,0,1,5.565.43a5.744,5.744,0,0,1,2.622.63l-.1.1-.205.2.044.287.029.287A4.7,4.7,0,0,0,.879,5.874a4.65,4.65,0,0,0,4.687,4.585,4.65,4.65,0,0,0,4.687-4.585,4.528,4.528,0,0,0-.659-2.335l.308.043.278.029.19-.2.1-.085a5.171,5.171,0,0,1,.659,2.55,5.5,5.5,0,0,1-5.566,5.445A5.5,5.5,0,0,1,0,5.874Zm2.051,0A3.487,3.487,0,0,1,5.565,2.436a3.569,3.569,0,0,1,1.655.4l-.659.645a2.86,2.86,0,0,0-1-.186A2.616,2.616,0,0,0,2.929,5.874a2.637,2.637,0,0,0,5.273,0A2.407,2.407,0,0,0,8.012,4.9l.659-.645a3.368,3.368,0,0,1,.41,1.619A3.488,3.488,0,0,1,5.565,9.313,3.487,3.487,0,0,1,2.051,5.874Zm2.036,0A1.453,1.453,0,0,1,5.551,4.441a1.575,1.575,0,0,1,.688.172L8.583,2.321,8.5,1.576,10.106,0l.146,1.289,1.319.143L9.96,3.009,9.2,2.923,6.855,5.215a1.422,1.422,0,0,1,.161.659,1.465,1.465,0,0,1-2.929,0Z" transform="translate(4.527 4.181)" fill="#fda40a"/>
+                  </g>
+                </g>
+                <text id="Milestones-2" data-name="Milestones" transform="translate(0 12)" fill="#7f7f7f" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Milestones</tspan></text>
+              </g>
+              <g id="Starting_level-3" data-name="Starting level" transform="translate(10 15)">
+                <text id="Starting_level-4" data-name="Starting level" transform="translate(0 19)" fill="#7f7f7f" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Starting level</tspan></text>
+                <path id="up-arrow-2" data-name="up-arrow" d="M2,17A15,15,0,1,1,17,32,15,15,0,0,1,2,17ZM15.939,9.939a1.5,1.5,0,0,1,2.121,0l6,6a1.5,1.5,0,1,1-2.121,2.121L18.5,14.621V23a1.5,1.5,0,0,1-3,0V14.621l-3.439,3.439a1.5,1.5,0,1,1-2.121-2.121Z" transform="translate(113 -2)" fill="#22bf95" fill-rule="evenodd" opacity="0.5"/>
+              </g>
+              <g id="Time-2" data-name="Time" transform="translate(0 125)">
+                <rect id="Op_component_1-2" data-name="Op component 1" width="165" height="30" rx="2" transform="translate(0 -7)" fill="#f2f2f2" style="mix-blend-mode: multiply;isolation: isolate"/>
+                <text id="_1.8_weeks1" data-name="1.8 weeks1" transform="translate(82.71 14)" fill="#404040" font-size="18" font-family="Inter-Regular, Inter"><tspan x="-43.821" y="0">1.8 weeks</tspan><tspan y="0" font-size="10.499" baseline-shift="5.999400079342301">1</tspan></text>
+              </g>
+            </g>
+            <g id="Numbering-3" data-name="Numbering" transform="translate(-20 4)">
+              <rect id="Rectangle_29-2" data-name="Rectangle 29" width="80" height="25" rx="5" fill="#f2f2f2"/>
+              <text id="SECOND" transform="translate(40 17)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-29.372" y="0">SECOND</tspan></text>
+            </g>
+          </g>
+          <line id="Connector-2" data-name="Connector" y2="150" transform="translate(20 214.5)" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-width="2" stroke-dasharray="0 4" opacity="0.5"/>
+          <g id="Tile-5" data-name="Tile" transform="translate(0 360)">
+            <g transform="matrix(1, 0, 0, 1, -131, -710.99)" filter="url(#Rectangle_24-3)">
+              <g id="Rectangle_24-6" data-name="Rectangle 24" transform="translate(237 710.99)" fill="#fff" stroke="#f2f2f2" stroke-width="1">
+                <rect width="500" height="150" rx="5" stroke="none"/>
+                <rect x="0.5" y="0.5" width="499" height="149" rx="4.5" fill="none"/>
+              </g>
+            </g>
+            <g id="Section_name-3" data-name="Section name" transform="translate(126 15)">
+              <text id="Data_Insights" data-name="Data Insights" transform="translate(70 34)" font-size="18" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Data Insights</tspan></text>
+              <g id="Tile-6" data-name="Tile">
+                <rect id="Rectangle_27-3" data-name="Rectangle 27" width="55" height="55" rx="5" fill="#1e90ff"/>
+                <text id="DI" transform="translate(28 37)" fill="#fff" font-size="30" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="-14.989" y="0">DI</tspan></text>
+              </g>
+            </g>
+            <g id="Sub_section_sequence-3" data-name="Sub section sequence" transform="translate(66 78)">
+              <g id="Sub_tile-5" data-name="Sub tile" transform="translate(60 22)">
+                <rect id="Rectangle_26-5" data-name="Rectangle 26" width="66" height="35" rx="3" transform="translate(0.001)" fill="#f2f2f2"/>
+                <text id="GI_TA" data-name="GI &amp; TA" transform="translate(8.001 22)" fill="#1e90ff" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">GI &amp; TA</tspan></text>
+              </g>
+              <g id="Arrow_group-3" data-name="Arrow group" transform="translate(134 36.09)">
+                <path id="Dropdown_arrow-5" data-name="Dropdown arrow" d="M1243.982,44.437l-3.175,3.229.177.181,3.352-3.41-3.352-3.41-.177.181Z" transform="translate(-1240.807 -41.027)" fill="#a6a6a6" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                <path id="Dropdown_arrow-6" data-name="Dropdown arrow" d="M1243.982,44.437l-3.175,3.229.177.181,3.352-3.41-3.352-3.41-.177.181Z" transform="translate(-1235.807 -41.027)" fill="#a6a6a6" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              </g>
+              <g id="Sub_tile-6" data-name="Sub tile" transform="translate(150.001 22)">
+                <rect id="Rectangle_26-6" data-name="Rectangle 26" width="43" height="35" rx="3" transform="translate(-0.001)" fill="#f2f2f2"/>
+                <text id="TPA" transform="translate(7.999 22)" fill="#1e90ff" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">TPA</tspan></text>
+              </g>
+              <g id="Arrow_group-4" data-name="Arrow group" transform="translate(201 36.09)">
+                <path id="Dropdown_arrow-7" data-name="Dropdown arrow" d="M1243.982,44.437l-3.175,3.229.177.181,3.352-3.41-3.352-3.41-.177.181Z" transform="translate(-1240.807 -41.027)" fill="#a6a6a6" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+                <path id="Dropdown_arrow-8" data-name="Dropdown arrow" d="M1243.982,44.437l-3.175,3.229.177.181,3.352-3.41-3.352-3.41-.177.181Z" transform="translate(-1235.807 -41.027)" fill="#a6a6a6" stroke="#a6a6a6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1"/>
+              </g>
+              <g id="Sub_tile-7" data-name="Sub tile" transform="translate(218 22)">
+                <rect id="Rectangle_26-7" data-name="Rectangle 26" width="43" height="35" rx="3" fill="#f2f2f2"/>
+                <text id="MSR" transform="translate(8 22)" fill="#1e90ff" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">MSR</tspan></text>
+              </g>
+            </g>
+            <g id="Details-3" data-name="Details" transform="translate(441)">
+              <rect id="Rectangle_28-3" data-name="Rectangle 28" width="165" height="150" fill="#f7f9f8"/>
+              <g id="Journey-3" data-name="Journey" transform="translate(10 61)">
+                <rect id="Incremental-3" data-name="Incremental" width="79.499" height="10" rx="5" transform="translate(32.015 28)" fill="#b6eedf"/>
+                <g id="Starting-3" data-name="Starting" transform="translate(0 23)">
+                  <text id="_75" data-name="75" transform="translate(0 14)" fill="#1e90ff" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">75</tspan></text>
+                  <g id="Current_icon-5" data-name="Current icon" transform="translate(21.963)">
+                    <g transform="matrix(1, 0, 0, 1, -603.96, -794.99)" filter="url(#Current_icon_circle-3)">
+                      <circle id="Current_icon_circle-6" data-name="Current icon circle" cx="10" cy="10" r="10" transform="translate(603.96 794.99)" fill="#fff"/>
+                    </g>
+                    <path id="Current_icon-6" data-name="Current icon" d="M0,11.49V.458A.427.427,0,0,1,.44.029a.427.427,0,0,1,.44.43V11.49ZM1.465.415A3.34,3.34,0,0,1,3.325,0C4.878,0,5.932.688,8.2.029V4.771c-1.8.8-3.325-.029-4.877-.029a3.283,3.283,0,0,0-1.861.415Z" transform="translate(6.056 5.191)" fill="#00aeef"/>
+                  </g>
+                </g>
+                <g id="Target-3" data-name="Target" transform="translate(103.001 23)">
+                  <text id="_80" data-name="80" transform="translate(25 14.5)" fill="#fda40a" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="0" y="0">80</tspan></text>
+                  <g id="Target_icon-5" data-name="Target icon">
+                    <g transform="matrix(1, 0, 0, 1, -685, -794.99)" filter="url(#Target_icon_circle-3)">
+                      <ellipse id="Target_icon_circle-6" data-name="Target icon circle" cx="10.159" cy="10" rx="10.159" ry="10" transform="translate(685 794.99)" fill="#fff"/>
+                    </g>
+                    <path id="Target_icon-6" data-name="Target icon" d="M0,5.874A5.5,5.5,0,0,1,5.565.43a5.744,5.744,0,0,1,2.622.63l-.1.1-.205.2.044.287.029.287A4.7,4.7,0,0,0,.879,5.874a4.65,4.65,0,0,0,4.687,4.585,4.65,4.65,0,0,0,4.687-4.585,4.528,4.528,0,0,0-.659-2.335l.308.043.278.029.19-.2.1-.085a5.171,5.171,0,0,1,.659,2.55,5.5,5.5,0,0,1-5.566,5.445A5.5,5.5,0,0,1,0,5.874Zm2.051,0A3.487,3.487,0,0,1,5.565,2.436a3.569,3.569,0,0,1,1.655.4l-.659.645a2.86,2.86,0,0,0-1-.186A2.616,2.616,0,0,0,2.929,5.874a2.637,2.637,0,0,0,5.273,0A2.407,2.407,0,0,0,8.012,4.9l.659-.645a3.368,3.368,0,0,1,.41,1.619A3.488,3.488,0,0,1,5.565,9.313,3.487,3.487,0,0,1,2.051,5.874Zm2.036,0A1.453,1.453,0,0,1,5.551,4.441a1.575,1.575,0,0,1,.688.172L8.583,2.321,8.5,1.576,10.106,0l.146,1.289,1.319.143L9.96,3.009,9.2,2.923,6.855,5.215a1.422,1.422,0,0,1,.161.659,1.465,1.465,0,0,1-2.929,0Z" transform="translate(4.527 4.181)" fill="#fda40a"/>
+                  </g>
+                </g>
+                <text id="Milestones-3" data-name="Milestones" transform="translate(0 12)" fill="#7f7f7f" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Milestones</tspan></text>
+              </g>
+              <g id="Starting_level-5" data-name="Starting level" transform="translate(10 15)">
+                <text id="Starting_level-6" data-name="Starting level" transform="translate(0 19)" fill="#7f7f7f" font-size="12" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Starting level</tspan></text>
+                <path id="up-arrow-3" data-name="up-arrow" d="M2,17A15,15,0,1,1,17,32,15,15,0,0,1,2,17ZM15.939,9.939a1.5,1.5,0,0,1,2.121,0l6,6a1.5,1.5,0,1,1-2.121,2.121L18.5,14.621V23a1.5,1.5,0,0,1-3,0V14.621l-3.439,3.439a1.5,1.5,0,1,1-2.121-2.121Z" transform="translate(113 -2)" fill="#22bf95" fill-rule="evenodd" opacity="0.5"/>
+              </g>
+              <g id="Time-3" data-name="Time" transform="translate(0 125)">
+                <rect id="Op_component_1-3" data-name="Op component 1" width="165" height="30" rx="2" transform="translate(0 -7)" fill="#f2f2f2" style="mix-blend-mode: multiply;isolation: isolate"/>
+                <text id="_1.2_weeks1" data-name="1.2 weeks1" transform="translate(82.71 14)" fill="#404040" font-size="18" font-family="Inter-Regular, Inter"><tspan x="-43.923" y="0">1.2 weeks</tspan><tspan y="0" font-size="10.499" baseline-shift="5.999400079342301">1</tspan></text>
+              </g>
+            </g>
+            <g id="Numbering-4" data-name="Numbering" transform="translate(-20 4)">
+              <rect id="Rectangle_29-3" data-name="Rectangle 29" width="80" height="25" rx="5" fill="#f2f2f2"/>
+              <text id="LAST" transform="translate(40 17)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-17.947" y="0">LAST</tspan></text>
+            </g>
+          </g>
+          <line id="Connector-3" data-name="Connector" y2="119" transform="translate(20 394.5)" fill="none" stroke="#a6a6a6" stroke-linecap="round" stroke-width="2" stroke-dasharray="0 4" opacity="0.5"/>
+          <circle id="Ellipse_14" data-name="Ellipse 14" cx="5" cy="5" r="5" transform="translate(15 506)" fill="#e5f7fd"/>
+        </g>
+        <g id="Instructions" transform="translate(998.021 950.426)">
+          <text id="_1Consideration_20hrs_week" data-name="1Consideration 20hrs/week" transform="translate(144 52.564)" fill="#a6a6a6" font-size="6.997" font-family="Inter-Regular, Inter"><tspan x="-152.556" y="0" baseline-shift="3.9979169352802995">1</tspan><tspan y="0" font-size="11.995">Consideration </tspan><tspan y="0" font-size="11.995" fill="#000">20hrs/week</tspan></text>
+        </g>
+        <g id="Instructions_-_extra" data-name="Instructions - extra" transform="translate(457 1044.836)">
+          <circle id="Ellipse_1264" data-name="Ellipse 1264" cx="2.5" cy="2.5" r="2.5" transform="translate(0 4.998)" fill="#00aeef"/>
+          <circle id="Ellipse_1264_copy" data-name="Ellipse 1264 copy" cx="2.5" cy="2.5" r="2.5" transform="translate(0 26.998)" fill="#00aeef"/>
+          <text id="Note_that_the_Sub_sections_within_each_sections_are_pre-sequenced_and_cannot_be_changed._This_sequencing_is_done_in_such_a_way_that_you_follow_a_more_linear_path_of_study_acquiring_pre-requisite_skills_as_you_progress." data-name="Note that the Sub sections within each sections are pre-sequenced and cannot be changed.
+This sequencing is done in such a way that you follow a more linear path of study acquiring pre-requisite skills as you progress." transform="translate(17.044 12)" fill="#404040" font-size="11.995" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Note that the Sub sections within each sections are pre-sequenced and cannot be changed.</tspan><tspan x="0" y="20.991">This sequencing is done in such a way that you follow a more linear path of study acquiring pre-requisite skills as you progress.</tspan></text>
+        </g>
+        <g id="Legend" transform="translate(471.99 992.99)">
+          <g id="Low">
+            <text id="Low-2" data-name="Low" transform="translate(15.01 10)" fill="#a6a6a6" font-size="10" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Low</tspan></text>
+            <path id="up-arrow-4" data-name="up-arrow" d="M2,7A5,5,0,1,0,7,2,5,5,0,0,0,2,7ZM6.646,9.354a.5.5,0,0,0,.707,0l2-2a.5.5,0,0,0-.707-.707L7.5,7.793V5a.5.5,0,0,0-1,0V7.793L5.354,6.646a.5.5,0,0,0-.707.707Z" transform="translate(-1.99)" fill="#e24c4b" fill-rule="evenodd" opacity="0.5"/>
+          </g>
+          <g id="Low-3" data-name="Low" transform="translate(49)">
+            <text id="Medium" transform="translate(15.01 10)" fill="#a6a6a6" font-size="10" font-family="Inter-Regular, Inter"><tspan x="0" y="0">Medium</tspan></text>
+            <path id="up-arrow-5" data-name="up-arrow" d="M2,7a5,5,0,1,1,5,5A5,5,0,0,1,2,7ZM6.646,5.646a.5.5,0,0,1,.707,0l2,2a.5.5,0,1,1-.707.707L7.5,7.207V9a.5.5,0,0,1-1,0V7.207L5.354,8.354a.5.5,0,0,1-.707-.707Z" transform="translate(-1.99)" fill="#fda40a" fill-rule="evenodd" opacity="0.5"/>
+          </g>
+          <g id="Low-4" data-name="Low" transform="translate(115)">
+            <text id="High" transform="translate(15.01 10)" fill="#a6a6a6" font-size="10" font-family="Inter-Regular, Inter"><tspan x="0" y="0">High</tspan></text>
+            <path id="up-arrow-6" data-name="up-arrow" d="M2,7a5,5,0,1,1,5,5A5,5,0,0,1,2,7ZM6.646,4.646a.5.5,0,0,1,.707,0l2,2a.5.5,0,0,1-.707.707L7.5,6.207V9a.5.5,0,0,1-1,0V6.207L5.354,7.354a.5.5,0,0,1-.707-.707Z" transform="translate(-1.99 0)" fill="#22bf95" fill-rule="evenodd" opacity="0.5"/>
+          </g>
+        </g>
+        <g id="Info_control" data-name="Info control" transform="translate(16)">
+          <text id="Sub_Section_sequence_and_milestones" data-name="Sub Section sequence and milestones" transform="translate(1052 417.99)" font-size="14" font-family="Inter-Regular, Inter"><tspan x="-251.901" y="0">Sub Section sequence and milestones</tspan></text>
+          <g id="Toggle">
+            <rect id="Rectangle_25" data-name="Rectangle 25" width="35" height="15" rx="7.5" transform="translate(1069 407.99)" fill="#e5f7fd"/>
+            <g transform="matrix(1, 0, 0, 1, 367, 94)" filter="url(#Ellipse_13)">
+              <circle id="Ellipse_13-2" data-name="Ellipse 13" cx="10" cy="10" r="10" transform="translate(717 310.99)" fill="#1e90ff"/>
+            </g>
+          </g>
+        </g>
+        <g id="Badge">
+          <path id="Rectangle_2005" data-name="Rectangle 2005" d="M5,0H175a0,0,0,0,1,0,0V10a5,5,0,0,1-5,5H0a0,0,0,0,1,0,0V5A5,5,0,0,1,5,0Z" transform="translate(457 389)" fill="#ffc766"/>
+          <text id="Most_optimal_sequence_of_study" data-name="Most optimal sequence of study" transform="translate(545 400.217)" fill="#404040" font-size="10" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="-76.909" y="0">Most optimal </tspan><tspan y="0" font-family="Inter-Regular, Inter" font-weight="400">sequence of study</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g id="Horizontal_progress_bar" data-name="Horizontal progress bar" transform="translate(1)">
+      <rect id="Unfilled_progress" data-name="Unfilled progress" width="700" height="2" rx="1" transform="translate(459 132)" fill="#e8e8e8"/>
+      <rect id="Filled_progress" data-name="Filled progress" width="179" height="2" rx="1" transform="translate(459 132)" fill="#1e90ff"/>
+      <g id="Selected_state" data-name="Selected state" transform="translate(98)">
+        <circle id="Ellipse_1" data-name="Ellipse 1" cx="20" cy="20" r="20" transform="translate(520 113)" fill="#1e90ff"/>
+        <text id="Sequence_of_prep" data-name="Sequence of prep" transform="translate(539.71 171.504)" fill="#1e90ff" font-size="14" font-family="Inter-Bold, Inter" font-weight="700"><tspan x="-60.34" y="0">Sequence of prep</tspan></text>
+        <g id="Icon" transform="translate(515 108)">
+          <rect id="Rectangle_13" data-name="Rectangle 13" width="7.504" height="5.003" transform="translate(16.251 15)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.2"/>
+          <rect id="Rectangle_14" data-name="Rectangle 14" width="7.504" height="5.003" transform="translate(26.257 30.009)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.2"/>
+          <rect id="Rectangle_15" data-name="Rectangle 15" width="7.504" height="5.003" transform="translate(21.254 22.504)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.2"/>
+          <line id="Line_3" data-name="Line 3" x1="3.747" transform="translate(23.132 25.006)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.2"/>
+          <line id="Line_4" data-name="Line 4" x1="3.747" transform="translate(18.129 17.501)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.2"/>
+          <line id="Line_5" data-name="Line 5" x1="3.747" transform="translate(28.135 32.51)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.2"/>
+          <path id="Path_30" data-name="Path 30" d="M406.394,213.393l-1.769,1.769,1.769,1.769" transform="translate(-373.449 -190.156)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.2"/>
+          <path id="Path_31" data-name="Path 31" d="M275.709,82.754h1.959a1.876,1.876,0,0,0,1.876-1.876V77.126a1.876,1.876,0,0,0-1.876-1.876h-7.543" transform="translate(-244.533 -57.749)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.2"/>
+          <path id="Path_32" data-name="Path 32" d="M185.5,394.14l1.769,1.769-1.769,1.769" transform="translate(-163.419 -363.399)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.2"/>
+          <path id="Path_33" data-name="Path 33" d="M23.848,263.5H16.876A1.876,1.876,0,0,1,15,261.624v-3.752A1.876,1.876,0,0,1,16.876,256h2.54" transform="translate(0 -230.99)" fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="1.2"/>
+        </g>
+      </g>
+      <circle id="Ellipse_1_copy_3" data-name="Ellipse 1 copy 3" cx="7.77" cy="7.77" r="7.77" transform="translate(801 125.28)" fill="#e8e8e8"/>
+      <circle id="Ellipse_1_copy_4" data-name="Ellipse 1 copy 4" cx="7.77" cy="7.77" r="7.77" transform="translate(972 125.28)" fill="#e8e8e8"/>
+    </g>
+    <g id="Button_group" data-name="Button group" transform="translate(-24.427 602.74)">
+      <g id="Primary_CTA" data-name="Primary CTA" transform="translate(1032.927 542.26)">
+        <g id="Normal-2" data-name="Normal" transform="translate(-1008.89 -637.65)">
+          <rect id="Rectangle_4_copy" data-name="Rectangle 4 copy" width="150" height="60" rx="4" transform="translate(1008.89 637.65)" fill="#1e90ff" stroke="#f2f2f2" stroke-width="1"/>
+          <text id="Accept" transform="translate(1053.39 674.832)" fill="#fff" font-size="17.992" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="0" y="0">Accept</tspan></text>
+        </g>
+      </g>
+      <g id="Secondary_CTA" data-name="Secondary CTA" transform="translate(702.927 541.76)">
+        <g id="Normal-3" data-name="Normal" transform="translate(-678.5 -637.201)">
+          <rect id="Rectangle_4_copy-2" data-name="Rectangle 4 copy" width="300" height="60" rx="4" transform="translate(678.5 637.201)" fill="#fff" stroke="#7f7f7f" stroke-width="1"/>
+          <text id="Pick_a_different_sequence" data-name="Pick a different sequence" transform="translate(718 673.701)" fill="#7f7f7f" font-size="17.992" font-family="Inter-SemiBold, Inter" font-weight="600"><tspan x="0" y="0">Pick a different sequence</tspan></text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
