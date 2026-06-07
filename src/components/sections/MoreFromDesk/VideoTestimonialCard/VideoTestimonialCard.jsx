@@ -4,9 +4,9 @@ import styles from './VideoTestimonialCard.module.css';
 /* Wide testimonial card with the video inside it: quote + identity on the
    left, the 9:16 YouTube short playing on the right — no modal hop. Used
    when a testimonials block sets variant: 'video'. */
-export default function VideoTestimonialCard({ item }) {
+export default function VideoTestimonialCard({ item, className = '' }) {
   return (
-    <article className={styles.card}>
+    <article className={`${styles.card} ${className}`.trim()}>
       <div className={styles.content}>
         <div className={styles.top}>
           <div className={styles.quoteMark} aria-hidden="true">&ldquo;</div>

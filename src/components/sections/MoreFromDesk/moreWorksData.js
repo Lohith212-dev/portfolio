@@ -95,7 +95,7 @@ export const moreWorkLanes = [
                 body: 'Rigid plans break; flexible plans adapt and win. This plan absorbs sick days, work crunches, and fast or slow weeks without sending the student back to square one — adaptation is what makes the plan worth trusting.',
               },
             ],
-            thesis: 'GMAT prep runs on guesswork — what to study today, whether it\'s working, when to test. This product was built to end it: read the student subsection-deep, grade every step, and re-plan the moment life interferes.',
+            thesis: 'Every prep company handed out schedules. Nobody built strategy — a plan that reads the student, checks the progress, and bends with life. The Personalized Study Planner is that strategy.',
           },
           notesCard: {
             intro: 'The Personalized Study Planner takes three inputs — where the student stands, where they want to reach, and the hours their week can actually give — and turns them into a day-by-day path to the target score. Every decision below exists to keep that path personal, checkable, and alive.',
@@ -294,11 +294,11 @@ export const moreWorkLanes = [
               },
               {
                 author: 'e-GMAT student',
-                meta: 'GMAT 775 — video testimonial',
+                meta: 'GMAT 675 — video testimonial',
                 quoteHtml: 'One of the factors was definitely the study plan that we receive as soon as we sign up… they provided me a daily planner kind of a thing, so <mark>I had a milestone to achieve every day.</mark>',
                 videoEmbedUrl: 'https://www.youtube.com/embed/miH9X8UyA6c',
                 href: 'https://youtu.be/miH9X8UyA6c',
-                modalTitle: 'Video testimonial — GMAT 775 scorer',
+                modalTitle: 'Video testimonial — GMAT 675 scorer',
               },
             ],
           },

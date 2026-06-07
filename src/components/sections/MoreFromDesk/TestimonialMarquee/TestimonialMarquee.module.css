@@ -30,6 +30,12 @@
   flex: 0 0 min(22.5rem, calc(100vw - 4rem));
 }
 
+/* Video cards are wider — quote column plus the inline 9:16 player. */
+.marqueeVideoCard {
+  width: min(38rem, calc(100vw - 4rem));
+  flex: 0 0 min(38rem, calc(100vw - 4rem));
+}
+
 @keyframes testimonial-marquee {
   from {
     transform: translateX(0);

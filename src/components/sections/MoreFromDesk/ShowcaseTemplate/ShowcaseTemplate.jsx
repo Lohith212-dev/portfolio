@@ -9,7 +9,6 @@ import ScreenSetShowcase from '../ScreenSetShowcase';
 import ShowcaseSidebar from '../ShowcaseSidebar';
 import ShowcaseSpecStrip from '../ShowcaseSpecStrip';
 import TestimonialMarquee from '../TestimonialMarquee';
-import VideoTestimonialCard from '../VideoTestimonialCard';
 import StakeholderQuoteCard from '../../../shared/StakeholderQuoteCard';
 import TestimonialCard from '../../../shared/TestimonialCard';
 import ContextCardGrid from './ContextCardGrid';
@@ -236,20 +235,10 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                 ) : null}
                 {testimonials.note ? <p className={styles.sourceNote}>{testimonials.note}</p> : null}
 
-                {testimonials.variant === 'video' ? (
-                  /* A couple of video testimonials don't need a scroller —
-                     each card embeds its 9:16 short directly. */
-                  <div className={styles.videoTestimonialStack}>
-                    {testimonials.items.map((item) => (
-                      <VideoTestimonialCard key={item.author} item={item} />
-                    ))}
-                  </div>
-                ) : (
-                  <TestimonialMarquee
-                    testimonials={testimonials}
-                    onOpenSource={setActiveEmbedModal}
-                  />
-                )}
+                <TestimonialMarquee
+                  testimonials={testimonials}
+                  onOpenSource={setActiveEmbedModal}
+                />
               </section>
             ) : null}
 
