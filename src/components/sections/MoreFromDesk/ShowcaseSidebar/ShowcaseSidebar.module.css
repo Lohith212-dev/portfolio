@@ -13,15 +13,18 @@
   border-bottom: 0;
 }
 
+/* Dialed down: this rail is sticky and on screen the whole time, so the
+   headings read as quiet labels rather than full section headings — smaller
+   and muted, same DM Sans family as the rest of the rail. */
 .sideSection h3 {
-  margin: 0;
-  color: var(--color-ink-950);
+  margin: 0 0 0.8rem;
+  color: var(--color-ink-500);
   font-family: var(--font-dm);
   font-weight: 700;
-  letter-spacing: -0.02em;
-  margin-bottom: 0.95rem;
-  font-size: var(--text-h3);
-  line-height: 1.15;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: var(--text-caption);
+  line-height: 1.2;
 }
 
 .chipRow {

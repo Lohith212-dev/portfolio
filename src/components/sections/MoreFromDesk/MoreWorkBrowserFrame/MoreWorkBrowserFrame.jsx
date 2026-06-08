@@ -14,6 +14,7 @@ export default function MoreWorkBrowserFrame({
   onClose,
   className = '',
   bodyClassName = '',
+  bodyStyle,
 }) {
   const frameRef = useRef(null);
   const pageScrollTopRef = useRef(0);
@@ -90,7 +91,7 @@ export default function MoreWorkBrowserFrame({
           ) : null}
         </span>
       </div>
-      <div className={`${styles.body} ${bodyClassName}`}>
+      <div className={`${styles.body} ${bodyClassName}`} style={bodyStyle}>
         {children}
       </div>
     </div>

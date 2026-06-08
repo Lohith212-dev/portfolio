@@ -1620,6 +1620,14 @@ export function ChevronRight({ className = '', color = '#000000' }) {
   );
 }
 
+export function ChevronDown({ className = '', color = 'currentColor' }) {
+  return (
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+      <path d="M6 9 L12 15 L18 9" stroke={color} strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export function PlayIcon({ className = '' }) {
   return (
     <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-label="Play video">

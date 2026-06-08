@@ -3,10 +3,19 @@
   gap: 0.9rem;
 }
 
+/* One horizontal row that scrolls when the tabs don't fit, instead of
+   wrapping onto multiple lines. */
 .screenTabs {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.55rem;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.screenTabs::-webkit-scrollbar {
+  display: none;
 }
 
 /* Same geometry and treatment as the compare stage's fullscreen view
@@ -16,6 +25,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  flex: 0 0 auto;
+  white-space: nowrap;
   padding: 0.5rem 0.9rem;
   border: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
   border-radius: 0.45rem;
@@ -44,16 +55,31 @@
   overflow: hidden;
 }
 
-/* 16:9 window — the body derives from the frame width so the chrome and
-   the UI inside stay at one scale; taller captures scroll inside it. */
+/* The frame sizes to the captured screen's own height (image at full width,
+   natural height). A tall capture caps at --screen-cap and scrolls inside;
+   a short one takes only the height it needs — no fixed window, no letterbox.
+   --screen-cap / --screen-h inherit down to the scroller (ScreenAssetViewport). */
 .screenFrameBody {
-  aspect-ratio: 16 / 9;
   min-height: 0;
+  --screen-cap: min(38rem, 80vh);
+  --screen-h: auto;
   background: var(--color-surface-light);
 }
 
 .screenFrameInner {
   width: 100%;
+}
+
+/* Opt-in fixed-aspect window (the ratio comes via an inline aspect-ratio, e.g.
+   16/9): the capture fills the window and scrolls past it, rather than sizing
+   to its own height. Used where tall product captures should crop to a tidy
+   landscape pane (e.g. Neuron). */
+.screenFrameBodyFixed {
+  --screen-cap: none;
+  --screen-h: 100%;
+}
+
+.screenFrameBodyFixed .screenFrameInner {
   height: 100%;
 }
 
@@ -71,6 +97,63 @@
   height: auto;
 }
 
+/* Opt-in: supporting image fills the column and lifts off the page with a
+   soft shadow (3.7's calendar screens; also every side-by-side image). */
+.plainImageFull {
+  width: 100%;
+  border-radius: 0.75rem;
+  box-shadow: 0 1.5rem 3rem color-mix(in srgb, var(--color-ink-950) 12%, transparent);
+}
+
+/* Marks the tabbed single-image view as the mobile-only fallback for a
+   side-by-side set — hidden once there's room for both images. */
+@media (min-width: 48rem) {
+  .mobileOnly {
+    display: none;
+  }
+}
+
+/* Side-by-side popups: stacked tabs on mobile, two columns with a divider
+   from 48rem up. */
+.sideBySide {
+  display: none;
+}
+
+@media (min-width: 48rem) {
+  .sideBySide {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
+
+  .sideBySideItem {
+    margin: 0;
+    display: grid;
+    gap: 0.7rem;
+    padding-inline: 1.75rem;
+  }
+
+  .sideBySideItem:first-child {
+    padding-left: 0;
+  }
+
+  .sideBySideItem:last-child {
+    padding-right: 0;
+  }
+
+  .sideBySideItem + .sideBySideItem {
+    border-left: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
+  }
+}
+
+.sideBySideCaption {
+  margin: 0;
+  color: var(--color-ink-500);
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  line-height: 1.55;
+}
+
 .screenCaption {
   margin: 0;
   color: var(--color-ink-500);
@@ -79,20 +162,17 @@
   line-height: 1.55;
 }
 
+/* Fullscreen: fill the screen instead of capping (the scroller inherits
+   --screen-cap: none and --screen-h: 100%). */
 .screenFrame:fullscreen .screenFrameBody {
-  aspect-ratio: auto;
-  height: 100%;
   min-height: 0;
+  height: 100%;
+  --screen-cap: none;
+  --screen-h: 100%;
 }
 
-/* Narrow screens: a 16:9 slice of a phone-width frame is too short to
-   read a product screen — fall back to a fixed scroll window. */
-@media (max-width: 47.999rem) {
-  .screenFrameBody {
-    aspect-ratio: auto;
-    min-height: clamp(21rem, 66vh, 34rem);
-    height: clamp(21rem, 66vh, 34rem);
-  }
+.screenFrame:fullscreen .screenFrameInner {
+  height: 100%;
 }
 
 @media (max-width: 39.999rem) {

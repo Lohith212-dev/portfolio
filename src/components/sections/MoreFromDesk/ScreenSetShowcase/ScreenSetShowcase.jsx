@@ -42,10 +42,21 @@ export default function ScreenSetShowcase({ screenSet, sectionTitle }) {
   const activeTab = screenSet.tabs[activeTabIndex];
   const activeIdBase = `${sectionTitle}-${activeTabIndex}`.replace(/\s+/g, '-').toLowerCase();
 
+  // sideBySide (plain sets only): show every image at once with a divider on
+  // desktop, and fall back to the tabbed single-image view on mobile.
+  const isSideBySide = Boolean(screenSet.plain && screenSet.sideBySide && screenSet.tabs.length > 1);
+  // fullWidth opts a plain set into the full-width + shadow treatment; the
+  // side-by-side layout always uses it (the images read as lifted cards).
+  const imageFull = Boolean(screenSet.fullWidth) || isSideBySide;
+
   return (
     <div ref={rootRef} className={styles.screenShowcase}>
       {screenSet.tabs.length > 1 ? (
-        <div className={styles.screenTabs} role="tablist" aria-label={`${sectionTitle} screen variations`}>
+        <div
+          className={`${styles.screenTabs} ${isSideBySide ? styles.mobileOnly : ''}`}
+          role="tablist"
+          aria-label={`${sectionTitle} screen variations`}
+        >
           {screenSet.tabs.map((tab, index) => {
             const tabId = `${sectionTitle}-${index}`.replace(/\s+/g, '-').toLowerCase();
             const isActive = index === activeTabIndex;
@@ -75,33 +86,56 @@ export default function ScreenSetShowcase({ screenSet, sectionTitle }) {
       {screenSet.plain ? (
         /* Supporting illustration, not product UI — rendered as a simple
            image at its own proportions, no browser chrome around it. */
-        <div
-          id={`${activeIdBase}-panel`}
-          role="tabpanel"
-          aria-labelledby={screenSet.tabs.length > 1 ? `${activeIdBase}-tab` : undefined}
-          aria-label={screenSet.tabs.length === 1 ? sectionTitle : undefined}
-          className={styles.plainPanel}
-        >
-          {/* All tabs render (inactive ones hidden) so switching — manual or
-              auto — never waits on a fresh image fetch. Hidden + lazy would
-              never load, so multi-tab sets load eagerly. */}
-          {screenSet.tabs.map((tab, index) => (
-            /* eslint-disable-next-line @next/next/no-img-element */
-            <img
-              key={tab.label}
-              src={tab.src}
-              alt={tab.alt}
-              className={styles.plainImage}
-              loading={screenSet.tabs.length > 1 ? 'eager' : 'lazy'}
-              hidden={index !== activeTabIndex}
-            />
-          ))}
-        </div>
+        <>
+          <div
+            id={`${activeIdBase}-panel`}
+            role="tabpanel"
+            aria-labelledby={screenSet.tabs.length > 1 ? `${activeIdBase}-tab` : undefined}
+            aria-label={screenSet.tabs.length === 1 ? sectionTitle : undefined}
+            className={`${styles.plainPanel} ${isSideBySide ? styles.mobileOnly : ''}`}
+          >
+            {/* All tabs render (inactive ones hidden) so switching — manual or
+                auto — never waits on a fresh image fetch. Hidden + lazy would
+                never load, so multi-tab sets load eagerly. */}
+            {screenSet.tabs.map((tab, index) => (
+              /* eslint-disable-next-line @next/next/no-img-element */
+              <img
+                key={tab.label}
+                src={tab.src}
+                alt={tab.alt}
+                className={`${styles.plainImage} ${imageFull ? styles.plainImageFull : ''}`}
+                loading={screenSet.tabs.length > 1 ? 'eager' : 'lazy'}
+                hidden={index !== activeTabIndex}
+              />
+            ))}
+          </div>
+
+          {isSideBySide ? (
+            /* Desktop: both images shown together, divider between them. */
+            <div className={styles.sideBySide}>
+              {screenSet.tabs.map((tab) => (
+                <figure key={tab.label} className={styles.sideBySideItem}>
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src={tab.src}
+                    alt={tab.alt}
+                    className={`${styles.plainImage} ${styles.plainImageFull}`}
+                    loading="eager"
+                  />
+                  {tab.caption ? (
+                    <figcaption className={styles.sideBySideCaption}>{tab.caption}</figcaption>
+                  ) : null}
+                </figure>
+              ))}
+            </div>
+          ) : null}
+        </>
       ) : (
         <MoreWorkBrowserFrame
           title={screenSet.frameTitle || sectionTitle}
           className={styles.screenFrame}
-          bodyClassName={styles.screenFrameBody}
+          bodyClassName={`${styles.screenFrameBody} ${screenSet.aspect ? styles.screenFrameBodyFixed : ''}`}
+          bodyStyle={screenSet.aspect ? { aspectRatio: screenSet.aspect } : undefined}
         >
           <div
             id={`${activeIdBase}-panel`}
@@ -120,7 +154,7 @@ export default function ScreenSetShowcase({ screenSet, sectionTitle }) {
       )}
 
       {activeTab.caption ? (
-        <p className={styles.screenCaption}>{activeTab.caption}</p>
+        <p className={`${styles.screenCaption} ${isSideBySide ? styles.mobileOnly : ''}`}>{activeTab.caption}</p>
       ) : null}
     </div>
   );

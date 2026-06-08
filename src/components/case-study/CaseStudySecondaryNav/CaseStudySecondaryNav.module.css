@@ -13,10 +13,11 @@
     z-index: 40;
     display: block;
     /* Shrink to the tabs — the pill takes only the width it needs, centered
-       by the left/right insets + auto margins. Long link sets still cap at
-       30rem and scroll horizontally. */
+       by the left/right insets + auto margins. Long link sets cap at 30rem,
+       but never wider than the viewport minus the 0.85rem insets, so the pill
+       can't overflow the screen on small phones (it scrolls internally). */
     width: fit-content;
-    max-width: 30rem;
+    max-width: min(30rem, calc(100vw - 1.7rem));
     margin-inline: auto;
     border: 1px solid var(--color-ink-100);
     border-radius: 999px;

@@ -226,6 +226,8 @@ export const moreWorkLanes = [
                 screenSet: {
                   frameTitle: 'PSP — Replanning',
                   plain: true,
+                  // Supporting screens fill the column with a lifted shadow.
+                  fullWidth: true,
                   // Auto-cycles like a 3-step animation; a tab click hands
                   // control back to the reader.
                   autoAdvance: 3200,
@@ -258,6 +260,9 @@ export const moreWorkLanes = [
                 screenSet: {
                   frameTitle: 'PSP — Pace control',
                   plain: true,
+                  // Two popups shown together (divider between) on desktop,
+                  // tabbed on mobile.
+                  sideBySide: true,
                   tabs: [
                     {
                       label: 'Finish early',
@@ -915,6 +920,8 @@ const standaloneMoreWorkDetails = [
             body: 'The custom-quizzing flow walks a student through section -> topic -> subtype -> difficulty -> source -> question pool, then surfaces the matching question set. Each step narrows scope, so a student lands on the right thirty questions instead of staring at three thousand.',
             screenSet: {
               frameTitle: 'Neuron - Custom quiz creation',
+              // Tall product captures cropped to a tidy 16:9 pane (scroll for more).
+              aspect: '16 / 9',
               tabs: [
                 {
                   label: 'Base setup',
@@ -949,6 +956,7 @@ const standaloneMoreWorkDetails = [
             body: 'The proprietary frameworks - passage analysis, pre-thinking, answer-choice elimination - live inside the solution view of every question, not in a separate course. Methodology gets taught at the moment of error, where retention is highest.',
             screenSet: {
               frameTitle: 'Neuron - Solution workspace',
+              aspect: '16 / 9',
               tabs: [
                 {
                   label: 'RC time stats',
@@ -972,6 +980,7 @@ const standaloneMoreWorkDetails = [
             body: 'History is not a log. The attempts view filters by correct, incorrect, and bookmarked, links straight back to full solutions, and feeds back into custom quizzing - closing the loop between practice, review, and re-practice. Final-week prep was a core scenario in the design brief.',
             screenSet: {
               frameTitle: 'Neuron - Attempts workspace',
+              aspect: '16 / 9',
               tabs: [
                 {
                   label: 'Default view',

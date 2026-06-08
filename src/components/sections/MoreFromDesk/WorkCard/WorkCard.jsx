@@ -3,34 +3,23 @@ import { ExternalArrowIcon } from '../../../icons/icons';
 import MiniMock from '../MiniMock';
 import styles from '../MoreFromDesk.module.css';
 
-export default function WorkCard({ item, lane, index, onOpenModal, tabIndex = 0 }) {
-  const cardContent = (
-    <>
-      <MiniMock laneId={lane.id} index={index} cover={item.cover} />
-      <span className={styles.cardBody}>
-        <span className={styles.cardTopline}>
-          <span>
-            <span className={styles.cardTag}>{item.tag}</span>
-            <span className={styles.cardTitle}>{item.title}</span>
-          </span>
-          <span className={styles.cardIcon} aria-hidden="true">
-            <ExternalArrowIcon />
-          </span>
-        </span>
-        <span className={styles.cardNote}>{item.note}</span>
-      </span>
-    </>
-  );
+// Only the arrow is interactive — the rest of the card is a plain surface so a
+// drag started anywhere on it scrubs the marquee instead of triggering the
+// card (and a link/button wrapping the whole card would hijack the drag).
+function ActionArrow({ item, lane, onOpenModal, tabIndex }) {
+  const label = `Open ${item.title}`;
+  const icon = <ExternalArrowIcon />;
 
   if (item.actionType === 'internal-route') {
     return (
       <Link
         href={`/more-works/${item.slug}`}
-        className={styles.workCard}
-        aria-label={`Open ${item.title}`}
+        className={styles.cardIcon}
+        aria-label={label}
         tabIndex={tabIndex}
+        draggable={false}
       >
-        {cardContent}
+        {icon}
       </Link>
     );
   }
@@ -39,12 +28,12 @@ export default function WorkCard({ item, lane, index, onOpenModal, tabIndex = 0 
     return (
       <button
         type="button"
-        className={styles.workCard}
-        aria-label={`Open ${item.title}`}
+        className={styles.cardIcon}
+        aria-label={label}
         tabIndex={tabIndex}
         onClick={() => onOpenModal(item, lane)}
       >
-        {cardContent}
+        {icon}
       </button>
     );
   }
@@ -55,23 +44,42 @@ export default function WorkCard({ item, lane, index, onOpenModal, tabIndex = 0 
         href={item.href}
         target="_blank"
         rel="noopener noreferrer"
-        className={styles.workCard}
-        aria-label={`Open ${item.title}`}
+        className={styles.cardIcon}
+        aria-label={label}
         tabIndex={tabIndex}
+        draggable={false}
       >
-        {cardContent}
+        {icon}
       </a>
     );
   }
 
   return (
-    <button
-      type="button"
-      className={`${styles.workCard} ${styles.workCardDisabled}`}
-      aria-label={`${item.title} details coming soon`}
-      disabled
-    >
-      {cardContent}
-    </button>
+    <span className={`${styles.cardIcon} ${styles.cardIconDisabled}`} aria-hidden="true">
+      {icon}
+    </span>
+  );
+}
+
+export default function WorkCard({ item, lane, index, onOpenModal, tabIndex = 0 }) {
+  const isInteractive = item.actionType === 'internal-route'
+    || item.actionType === 'image-modal'
+    || item.actionType === 'video-modal'
+    || (item.actionType === 'external-link' && Boolean(item.href));
+
+  return (
+    <div className={`${styles.workCard} ${isInteractive ? '' : styles.workCardDisabled}`}>
+      <MiniMock laneId={lane.id} index={index} cover={item.cover} />
+      <span className={styles.cardBody}>
+        <span className={styles.cardTopline}>
+          <span>
+            <span className={styles.cardTag}>{item.tag}</span>
+            <span className={styles.cardTitle}>{item.title}</span>
+          </span>
+          <ActionArrow item={item} lane={lane} onOpenModal={onOpenModal} tabIndex={tabIndex} />
+        </span>
+        <span className={styles.cardNote}>{item.note}</span>
+      </span>
+    </div>
   );
 }

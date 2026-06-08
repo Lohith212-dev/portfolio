@@ -1,6 +1,51 @@
+.marqueeWrap {
+  display: grid;
+  gap: 0.5rem;
+}
+
+/* Play/pause control above the marquee — outside the draggable scroller so its
+   clicks aren't swallowed by the drag handling. */
+.marqueeControls {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.playToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.75rem;
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
+  border-radius: 999px;
+  background: var(--color-surface-white);
+  color: var(--color-ink-700);
+  cursor: pointer;
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  line-height: 1;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.playToggle:hover,
+.playToggle:focus-visible {
+  background: var(--color-surface-light);
+  color: var(--color-ink-950);
+}
+
+.playIcon {
+  width: 0.85rem;
+  height: 0.85rem;
+}
+
 .marquee {
   position: relative;
-  overflow: hidden;
+  /* Native horizontal scroller (auto-scrolled by JS, draggable by the reader),
+     with the scrollbar hidden. */
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
   margin-right: -1rem;
   margin-left: -1rem;
   padding: 0.5rem 0 1.9rem;
@@ -8,17 +53,24 @@
   mask-image: linear-gradient(to right, transparent 0, #000 2.5rem, #000 calc(100% - 2.5rem), transparent 100%);
 }
 
+.marquee::-webkit-scrollbar {
+  display: none;
+}
+
+/* Grab affordance only when the track loops (more than one card). */
+.interactive {
+  cursor: grab;
+}
+
+.interactive:active {
+  cursor: grabbing;
+}
+
 .marqueeTrack {
   display: flex;
   gap: 1.25rem;
   width: max-content;
   padding: 0.25rem 1rem 0.4rem;
-  animation: testimonial-marquee 42s linear infinite;
-}
-
-.marquee:hover .marqueeTrack,
-.marquee:focus-within .marqueeTrack {
-  animation-play-state: paused;
 }
 
 /* Marquee-specific sizing for the shared TestimonialCard — fixed basis and a
@@ -36,26 +88,12 @@
   flex: 0 0 min(38rem, calc(100vw - 4rem));
 }
 
-@keyframes testimonial-marquee {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-50%);
-  }
-}
-
+/* Reduced motion: JS skips the auto-scroll; drop the edge fade so every card
+   is fully legible while the reader scrolls manually. */
 @media (prefers-reduced-motion: reduce) {
   .marquee {
-    overflow-x: auto;
     -webkit-mask-image: none;
     mask-image: none;
-  }
-
-  .marqueeTrack {
-    width: auto;
-    animation: none;
   }
 }
 

@@ -208,26 +208,103 @@
   right: 1rem;
 }
 
-/* ---- Walkthrough link below the frame ---- */
+/* ---- Segmented toggle above the frame (live product / product walkthrough) ----
+   Same sliding-indicator pattern as the LMS product-demo toggle, but boxy
+   (small radius) and in the showcase yellow. Centered over the frame. */
+.previewTabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+}
+
+.previewToggle {
+  position: relative;
+  display: inline-flex;
+  max-width: 100%;
+  padding: 0.3rem;
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 80%, transparent);
+  border-radius: 0.6rem;
+  background-color: var(--color-surface-light);
+}
+
+.previewToggleIndicator {
+  position: absolute;
+  z-index: 0;
+  inset-block: 0.3rem;
+  inset-inline-start: 0.3rem;
+  width: calc((100% - 0.6rem) / 2);
+  border-radius: 0.4rem;
+  background-color: var(--color-accent-yellow);
+  transform: translateX(0);
+  transition: transform 260ms ease;
+}
+
+.previewToggle[data-active="walkthrough"] .previewToggleIndicator {
+  transform: translateX(100%);
+}
+
+.previewToggleButton {
+  position: relative;
+  z-index: 1;
+  /* Equal-width halves so the sliding indicator (half the track) lines up
+     exactly under either label regardless of their differing lengths. */
+  flex: 1 1 0;
+  min-width: 8.5rem;
+  border: 0;
+  border-radius: 0.4rem;
+  padding: 0.6rem 1.05rem;
+  background: transparent;
+  color: var(--color-ink-700);
+  cursor: pointer;
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  line-height: 1;
+  transition: color 180ms ease;
+}
+
+.previewToggleButton:focus-visible {
+  outline: 2px solid var(--color-accent-yellow);
+  outline-offset: 3px;
+}
+
+/* Dark text on the yellow indicator. */
+.previewToggleButtonActive {
+  color: var(--color-ink-950);
+  cursor: default;
+}
+
+@media (max-width: 39.999rem) {
+  .previewToggleButton {
+    min-width: 0;
+    flex: 1;
+    padding-inline: 0.7rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .previewToggleIndicator {
+    transition: none;
+  }
+}
+
+/* Single layout item: keeps the tabs, disclaimer and frame tightly grouped
+   even when the parent (hero band) is a grid with a large gap between items.
+   min-width:0 lets this grid item shrink below the device frame's fixed pixel
+   width — without it the frame forces the whole track (and its siblings) wider
+   than the viewport on tablet/mobile, so the frame can't shrink to fit. */
+.previewRoot {
+  width: 100%;
+  min-width: 0;
+}
+
+/* ---- Disclaimer shown just under the tabs on the walkthrough view ---- */
 .walkthroughNote {
-  margin: 1.25rem 0 0;
+  margin: 0 auto 0.6rem;
+  max-width: 60rem;
+  text-align: center;
   color: var(--color-ink-500);
   font-family: var(--font-dm);
   font-size: var(--text-caption);
   line-height: 1.6;
-}
-
-.walkthroughButton {
-  border: 0;
-  background: transparent;
-  color: color-mix(in srgb, var(--color-accent-yellow) 55%, var(--color-ink-950));
-  cursor: pointer;
-  font: inherit;
-  padding: 0;
-  text-decoration: none;
-}
-
-.walkthroughButton:hover,
-.walkthroughButton:focus-visible {
-  text-decoration: underline;
 }

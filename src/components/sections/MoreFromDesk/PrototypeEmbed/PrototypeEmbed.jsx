@@ -26,7 +26,6 @@ export default function PrototypeEmbed({
   aspect,
   maxWidth,
   walkthroughNote,
-  onOpenWalkthrough,
 }) {
   const shellRef = useRef(null);
   const viewportRef = useRef(null);
@@ -34,6 +33,9 @@ export default function PrototypeEmbed({
   const wasFullscreenRef = useRef(false);
   const [shellWidth, setShellWidth] = useState(0);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  // Two tabs above the frame (when a walkthrough video exists): the prototype
+  // and the product-walkthrough video, swapped inside the same frame.
+  const [activeTab, setActiveTab] = useState('preview');
 
   // Track the available width so the frame fills its container (capped).
   useEffect(() => {
@@ -88,20 +90,63 @@ export default function PrototypeEmbed({
   const frameWidth = shellWidth > 0
     ? Math.min(shellWidth, frameCap)
     : Math.min(FRAME_FALLBACK, frameCap);
-  const ratio = (aspect?.height || DEFAULT_ASPECT.height) / (aspect?.width || DEFAULT_ASPECT.width);
+
+  const hasWalkthrough = Boolean(walkthroughNote?.embedUrl);
+  const isWalkthrough = hasWalkthrough && activeTab === 'walkthrough';
+  // Prototype keeps its artboard proportions; the walkthrough video is 16:9.
+  const ratio = isWalkthrough
+    ? 9 / 16
+    : (aspect?.height || DEFAULT_ASPECT.height) / (aspect?.width || DEFAULT_ASPECT.width);
+  const walkthroughTabLabel = walkthroughNote?.tabLabel || 'Product walkthrough';
 
   return (
-    <>
-      <div ref={shellRef} className={styles.frameShell}>
-        {liveBadge ? (
-          <span className={styles.liveBadgeSide} aria-hidden="true">
-            <span className={styles.liveBadgeLabel}>{liveBadge}</span>
-            <LiveEmbedArrow className={styles.liveBadgeSideArrow} color="currentColor" />
-          </span>
-        ) : null}
+    <div className={styles.previewRoot}>
+      {hasWalkthrough ? (
+        <div className={styles.previewTabs}>
+          <div
+            className={styles.previewToggle}
+            data-active={isWalkthrough ? 'walkthrough' : 'preview'}
+            role="tablist"
+            aria-label={`${title} preview`}
+          >
+            <span className={styles.previewToggleIndicator} aria-hidden="true" />
+            <button
+              type="button"
+              role="tab"
+              aria-selected={!isWalkthrough}
+              className={`${styles.previewToggleButton} ${!isWalkthrough ? styles.previewToggleButtonActive : ''}`}
+              onClick={() => setActiveTab('preview')}
+            >
+              Prototype
+            </button>
+            <button
+              type="button"
+              role="tab"
+              aria-selected={isWalkthrough}
+              className={`${styles.previewToggleButton} ${isWalkthrough ? styles.previewToggleButtonActive : ''}`}
+              onClick={() => setActiveTab('walkthrough')}
+            >
+              {walkthroughTabLabel}
+            </button>
+          </div>
+        </div>
+      ) : null}
 
+      {/* Disclaimer sits with the walkthrough video, just under the tabs. */}
+      {isWalkthrough && walkthroughNote.trail ? (
+        <p className={styles.walkthroughNote}>{walkthroughNote.trail}</p>
+      ) : null}
+
+      <div ref={shellRef} className={styles.frameShell}>
         <div className={styles.frameStage}>
-          {liveBadge ? (
+          {liveBadge && !isWalkthrough ? (
+            <span className={styles.liveBadgeSide} aria-hidden="true">
+              <span className={styles.liveBadgeLabel}>{liveBadge}</span>
+              <LiveEmbedArrow className={styles.liveBadgeSideArrow} color="currentColor" />
+            </span>
+          ) : null}
+
+          {liveBadge && !isWalkthrough ? (
             <span className={styles.liveBadgeChip} aria-hidden="true">
               <span className={styles.liveBadgeChipDot} />
               {liveBadge}
@@ -140,39 +185,22 @@ export default function PrototypeEmbed({
                 </button>
               ) : null}
 
-              {/* No down-scaling wrapper: the prototype player sizes its
-                  artboard to the iframe, so the iframe just fills the screen. */}
+              {/* No down-scaling wrapper: the prototype player and the video
+                  player both size themselves to the iframe, so it just fills
+                  the screen. Switching tabs swaps the src (and reloads). */}
               <iframe
-                src={embedUrl}
-                title={`${title} prototype preview`}
+                src={isWalkthrough ? walkthroughNote.embedUrl : embedUrl}
+                title={`${title} ${isWalkthrough ? 'product walkthrough' : 'prototype preview'}`}
                 className={styles.previewEmbed}
                 loading="lazy"
                 referrerPolicy="strict-origin-when-cross-origin"
-                allow="fullscreen"
+                allow="autoplay; fullscreen"
                 allowFullScreen
               />
             </div>
           </DesktopFrame>
         </div>
       </div>
-
-      {walkthroughNote ? (
-        <p className={styles.walkthroughNote}>
-          <span>{walkthroughNote.lead} </span>
-          <button
-            type="button"
-            className={styles.walkthroughButton}
-            onClick={() => onOpenWalkthrough?.({
-              title: walkthroughNote.modalTitle || walkthroughNote.label,
-              browserTitle: walkthroughNote.browserTitle || walkthroughNote.modalTitle || walkthroughNote.label,
-              url: walkthroughNote.embedUrl,
-            })}
-          >
-            {walkthroughNote.label} <span aria-hidden="true">{'↗'}</span>
-          </button>
-          {walkthroughNote.trail ? <span> - {walkthroughNote.trail}</span> : null}
-        </p>
-      ) : null}
-    </>
+    </div>
   );
 }

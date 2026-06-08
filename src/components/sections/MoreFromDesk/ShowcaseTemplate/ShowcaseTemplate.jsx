@@ -4,7 +4,6 @@ import MoreWorkEmbedModal from '../MoreWorkEmbedModal';
 import ShowcaseHero from '../ShowcaseHero';
 import WorkPreview from '../WorkPreview';
 import PrototypeEmbed from '../PrototypeEmbed';
-import SectionHeading from '../SectionHeading';
 import ScreenSetShowcase from '../ScreenSetShowcase';
 import ShowcaseSidebar from '../ShowcaseSidebar';
 import ShowcaseSpecStrip from '../ShowcaseSpecStrip';
@@ -17,6 +16,7 @@ import ThesisCallout from './ThesisCallout';
 import CompareCard from './CompareCard';
 import DecisionStatCard from './DecisionStatCard';
 import ShiftTable from './ShiftTable';
+import CollapsibleSection from './CollapsibleSection';
 import FullPageModalProvider from './FullPageModal';
 import styles from './ShowcaseTemplate.module.css';
 
@@ -58,6 +58,16 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
     sectionOrder.map((section, index) => [section.id, String(index + 1).padStart(2, '0')])
   );
 
+  // Accordion state: every numbered section starts open, the heading toggles
+  // its own, and the global control flips all of them at once.
+  const [openSections, setOpenSections] = useState(() =>
+    Object.fromEntries(sectionOrder.map((section) => [section.id, true]))
+  );
+  const toggleSection = (id) =>
+    setOpenSections((prev) => ({ ...prev, [id]: !prev[id] }));
+  const setAllSections = (value) =>
+    setOpenSections(Object.fromEntries(sectionOrder.map((section) => [section.id, value])));
+
   return (
     <FullPageModalProvider>
       <main className={styles.page}>
@@ -88,7 +98,6 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                   aspect={detail.prototypeEmbed.aspect}
                   maxWidth={detail.prototypeEmbed.maxWidth}
                   walkthroughNote={walkthroughNote}
-                  onOpenWalkthrough={setActiveEmbedModal}
                 />
               ) : (
                 <WorkPreview
@@ -96,7 +105,6 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                   embedUrl={detail.embedUrl}
                   liveBadge={detail.liveBadge}
                   walkthroughNote={walkthroughNote}
-                  onOpenWalkthrough={setActiveEmbedModal}
                 />
               )}
             </div>
@@ -115,7 +123,6 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                   embedUrl={detail.embedUrl}
                   screenshots={screenshots}
                   walkthroughNote={walkthroughNote}
-                  onOpenWalkthrough={setActiveEmbedModal}
                 />
               </section>
             ) : null}
@@ -124,12 +131,34 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
 
         <div className={styles.bodyShell}>
           <div className={styles.contentColumn}>
+            {sectionOrder.length ? (
+              <div className={styles.collapseControls}>
+                <button
+                  type="button"
+                  className={styles.collapseControl}
+                  onClick={() => setAllSections(true)}
+                >
+                  Expand all
+                </button>
+                <span className={styles.collapseDivider} aria-hidden="true">|</span>
+                <button
+                  type="button"
+                  className={styles.collapseControl}
+                  onClick={() => setAllSections(false)}
+                >
+                  Collapse all
+                </button>
+              </div>
+            ) : null}
+
             {hasContext ? (
-              <section id="context" className={styles.mainSection}>
-                <SectionHeading
-                  number={sectionNumbers.context}
-                  title={contextCards?.length ? 'Setting the context' : 'Context'}
-                />
+              <CollapsibleSection
+                id="context"
+                number={sectionNumbers.context}
+                title={contextCards?.length ? 'Setting the context' : 'Context'}
+                open={openSections.context}
+                onToggle={() => toggleSection('context')}
+              >
                 {contextCards?.length ? (
                   <ContextCardGrid cards={contextCards} />
                 ) : (
@@ -139,20 +168,30 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                     ))}
                   </div>
                 )}
-              </section>
+              </CollapsibleSection>
             ) : null}
 
             {objectives ? (
-              <section id="objectives" className={styles.mainSection}>
-                <SectionHeading number={sectionNumbers.objectives} title="Solution objectives" />
+              <CollapsibleSection
+                id="objectives"
+                number={sectionNumbers.objectives}
+                title="Solution objectives"
+                open={openSections.objectives}
+                onToggle={() => toggleSection('objectives')}
+              >
                 <ObjectivesGrid items={objectives.items} />
                 {objectives.thesis ? <ThesisCallout text={objectives.thesis} /> : null}
-              </section>
+              </CollapsibleSection>
             ) : null}
 
             {notesCard ? (
-              <section id="shipped" className={styles.mainSection}>
-                <SectionHeading number={sectionNumbers.shipped} title="Approach" />
+              <CollapsibleSection
+                id="shipped"
+                number={sectionNumbers.shipped}
+                title="Approach"
+                open={openSections.shipped}
+                onToggle={() => toggleSection('shipped')}
+              >
                 <div className={styles.approachIntro}>
                   {roleParagraph ? <p>{roleParagraph}</p> : null}
                   {notesCard.intro ? <p>{notesCard.intro}</p> : null}
@@ -161,73 +200,85 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                 <div className={styles.decisionGroup}>
                   {notesCard.decisions.map((decision, index) => (
                     <article key={decision.number} className={styles.decisionItem}>
-                      <div className={styles.decisionText}>
-                        <h3>
-                          <span className={styles.decisionNumber}>
-                            {`${Number(sectionNumbers.shipped)}.${index + 1}`}
-                          </span>
-                          {decision.title}
-                        </h3>
-                        <p>{decision.body}</p>
+                      <div className={styles.decisionBody}>
+                        <div className={styles.decisionText}>
+                          <h3>
+                            <span className={styles.decisionNumber}>
+                              {`${Number(sectionNumbers.shipped)}.${index + 1}`}
+                            </span>
+                            {decision.title}
+                          </h3>
+                          <p>{decision.body}</p>
+                        </div>
+
+                        {decision.compare ? (
+                          <CompareCard
+                            beforeContent={comparePage(
+                              decision.compare.beforeSrc,
+                              decision.compare.beforeAlt,
+                            )}
+                            afterContent={comparePage(
+                              decision.compare.afterSrc,
+                              decision.compare.afterAlt,
+                            )}
+                            ariaLabel={decision.compare.ariaLabel}
+                          />
+                        ) : null}
+
+                        {decision.stat ? (
+                          <DecisionStatCard
+                            figure={decision.stat.figure}
+                            baseline={decision.stat.baseline}
+                            eyebrow={decision.stat.eyebrow}
+                            label={decision.stat.label}
+                            icon={decision.stat.icon}
+                          />
+                        ) : null}
+
+                        {decision.screenSet ? (
+                          <ScreenSetShowcase
+                            screenSet={decision.screenSet}
+                            sectionTitle={decision.title}
+                          />
+                        ) : null}
+
+                        {decision.inlineQuote ? (
+                          /* Same card as the public-reception marquee, just
+                             standalone and full-width — the decision grid
+                             stretches it; no marquee sizing class. */
+                          <TestimonialCard
+                            item={decision.inlineQuote}
+                            sourceBrand={testimonials?.sourceBrand}
+                            onOpenSource={setActiveEmbedModal}
+                          />
+                        ) : null}
                       </div>
-
-                      {decision.compare ? (
-                        <CompareCard
-                          beforeContent={comparePage(
-                            decision.compare.beforeSrc,
-                            decision.compare.beforeAlt,
-                          )}
-                          afterContent={comparePage(
-                            decision.compare.afterSrc,
-                            decision.compare.afterAlt,
-                          )}
-                          ariaLabel={decision.compare.ariaLabel}
-                        />
-                      ) : null}
-
-                      {decision.stat ? (
-                        <DecisionStatCard
-                          figure={decision.stat.figure}
-                          baseline={decision.stat.baseline}
-                          eyebrow={decision.stat.eyebrow}
-                          label={decision.stat.label}
-                          icon={decision.stat.icon}
-                        />
-                      ) : null}
-
-                      {decision.screenSet ? (
-                        <ScreenSetShowcase
-                          screenSet={decision.screenSet}
-                          sectionTitle={decision.title}
-                        />
-                      ) : null}
-
-                      {decision.inlineQuote ? (
-                        /* Same card as the public-reception marquee, just
-                           standalone and full-width — the decision grid
-                           stretches it; no marquee sizing class. */
-                        <TestimonialCard
-                          item={decision.inlineQuote}
-                          sourceBrand={testimonials?.sourceBrand}
-                          onOpenSource={setActiveEmbedModal}
-                        />
-                      ) : null}
                     </article>
                   ))}
                 </div>
-              </section>
+              </CollapsibleSection>
             ) : null}
 
             {notesCard?.shift ? (
-              <section id="shift" className={styles.mainSection}>
-                <SectionHeading number={sectionNumbers.shift} title="The Shift" />
+              <CollapsibleSection
+                id="shift"
+                number={sectionNumbers.shift}
+                title="The Shift"
+                open={openSections.shift}
+                onToggle={() => toggleSection('shift')}
+              >
                 <ShiftTable rows={notesCard.shift.rows} />
-              </section>
+              </CollapsibleSection>
             ) : null}
 
             {testimonials ? (
-              <section id="testimonials" className={styles.mainSection}>
-                <SectionHeading number={sectionNumbers.testimonials} title={testimonials.title || 'Testimonials'} />
+              <CollapsibleSection
+                id="testimonials"
+                number={sectionNumbers.testimonials}
+                title={testimonials.title || 'Testimonials'}
+                open={openSections.testimonials}
+                onToggle={() => toggleSection('testimonials')}
+              >
                 {testimonials.intro ? (
                   <div className={styles.paragraphStack}>
                     <p>{testimonials.intro}</p>
@@ -239,7 +290,7 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                   testimonials={testimonials}
                   onOpenSource={setActiveEmbedModal}
                 />
-              </section>
+              </CollapsibleSection>
             ) : null}
 
             {testimonial ? (

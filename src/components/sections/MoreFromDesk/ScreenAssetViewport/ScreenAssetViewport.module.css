@@ -1,6 +1,11 @@
+/* Height follows the image (natural height at full width); caps at the
+   inherited --screen-cap and scrolls past that. --screen-h is `auto`
+   normally and `100%` in fullscreen so the screen fills. Both are set by
+   the browser-frame body (ScreenSetShowcase). */
 .screenAssetViewport {
   width: 100%;
-  height: 100%;
+  height: var(--screen-h, auto);
+  max-height: var(--screen-cap, min(38rem, 80vh));
   overflow: auto;
   background: var(--color-surface-white);
 }

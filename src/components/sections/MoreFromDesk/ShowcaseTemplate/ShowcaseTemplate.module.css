@@ -11,7 +11,9 @@
 .hero,
 .previewSection,
 .bodyShell {
-  width: min(100%, 64rem);
+  /* Same container width as the home page (Footer / DesignForge use the
+     identical idiom): a 1200px cap that shrinks to 100% on narrow screens. */
+  width: min(100%, 75rem);
   margin: 0 auto;
 }
 
@@ -35,7 +37,7 @@
 .heroBandInner {
   position: relative;
   z-index: 2;
-  width: min(100%, 64rem);
+  width: min(100%, 75rem);
   margin-inline: auto;
   display: grid;
   gap: clamp(2rem, 4vw, 3rem);
@@ -133,8 +135,10 @@
 
 .bodyShell {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 17.5rem;
-  gap: clamp(2rem, 3.5vw, 3rem);
+  grid-template-columns: minmax(0, 1fr) 16rem;
+  /* Wider container (75rem) buys room — push the sticky rail further from the
+     content column so it reads as a quiet aside, not part of the column. */
+  gap: clamp(3rem, 5vw, 5.5rem);
   align-items: start;
 }
 
@@ -143,20 +147,35 @@
   gap: 4rem;
 }
 
-.mainSection[id] {
-  scroll-margin-top: 96px;
+/* Global accordion control — sits above the first section, right-aligned,
+   mirroring the "Expand all | Collapse all" pattern in the reference. */
+.collapseControls {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.75rem;
+  margin-bottom: -1.5rem;
 }
 
-.mainSection {
-  display: grid;
-  gap: 1.5rem;
+.collapseControl {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: var(--color-ink-700);
+  cursor: pointer;
+  font-family: var(--font-dm);
+  font-size: var(--text-small);
+  line-height: 1.2;
 }
 
-/* Separators between the main numbered sections (01 / 02 / 03 …) only —
-   sub-items inside a section get none. */
-.mainSection + .mainSection {
-  border-top: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
-  padding-top: 3.5rem;
+.collapseControl:hover,
+.collapseControl:focus-visible {
+  color: var(--color-ink-950);
+  text-decoration: underline;
+}
+
+.collapseDivider {
+  color: var(--color-ink-100);
 }
 
 /* Scope to the template's own paragraph containers — a bare `.mainSection p`
@@ -190,11 +209,7 @@
   margin-top: 0.5rem;
 }
 
-/* Generous group rhythm: heading+body, compare stage, and stat card are
-   each one group — the gap separates groups, not individual elements. */
 .decisionItem {
-  display: grid;
-  gap: 2.25rem;
   padding: 2.75rem 0;
 }
 
@@ -205,6 +220,13 @@
 
 .decisionItem:last-child {
   padding-bottom: 0;
+}
+
+/* Generous group rhythm: heading+body, compare stage, and stat card are
+   each one group — the gap separates groups, not individual elements. */
+.decisionBody {
+  display: grid;
+  gap: 2.25rem;
 }
 
 .decisionText {
@@ -222,12 +244,30 @@
   line-height: 1.15;
 }
 
+/* Mobile-first: the 3.x number sits inline before the title — no reserved
+   column, so the title and body use the full narrow width. */
 .decisionNumber {
-  margin-right: 0.55rem;
+  margin-right: 0.5rem;
   color: var(--color-accent-yellow);
   font-family: var(--font-cabinet);
   font-weight: 800;
   font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+}
+
+/* Tablet + desktop: hang the number into its own gutter so the title,
+   paragraph, and media all line up to one left edge. */
+@media (min-width: 48rem) {
+  .decisionBody {
+    padding-left: 2.75rem;
+  }
+
+  .decisionNumber {
+    display: inline-block;
+    width: 2.75rem;
+    margin-right: 0;
+    margin-left: -2.75rem;
+  }
 }
 
 /* The closing testimonial card stands alone — the content column's 4rem grid
@@ -262,20 +302,11 @@
     gap: 4.5rem;
   }
 
-  .mainSection {
-    gap: 1.85rem;
-  }
-
-  .mainSection + .mainSection {
-    padding-top: 4.25rem;
-  }
-
   .decisionItem {
     padding: 3.25rem 0;
   }
 
   /* Cap body paragraph measure on tablet so lines don't stretch beyond comfortable reading width. */
-  .mainSection p,
   .paragraphStack p,
   .approachIntro p,
   .decisionText p {
