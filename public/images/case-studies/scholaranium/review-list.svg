@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 960" role="img" aria-label="Review list placeholder">
+  <rect width="1536" height="960" fill="#f4f5f7"/>
+  <rect x="40" y="40" width="1456" height="880" rx="20" fill="#ffffff" stroke="#e2e5ea" stroke-width="2"/>
+  <text x="768" y="450" text-anchor="middle" font-family="DM Sans, Arial, sans-serif" font-size="40" fill="#9aa1ad" font-weight="600">Auto-curated review list</text>
+  <text x="768" y="510" text-anchor="middle" font-family="DM Sans, Arial, sans-serif" font-size="26" fill="#b6bcc6">Questions to review, each with its reason — to be supplied</text>
+</svg>

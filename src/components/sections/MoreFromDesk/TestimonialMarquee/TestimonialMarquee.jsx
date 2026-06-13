@@ -39,14 +39,19 @@ export default function TestimonialMarquee({ testimonials, onOpenSource }) {
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
 
     const state = stateRef.current;
-    const SPEED = 0.45; // px per frame — a slow, readable drift
+    // Consistent reading pace across every testimonial carousel: advance a
+    // fixed fraction of one card per frame, so the drift is the same
+    // cards-per-minute no matter how many cards there are or how wide they
+    // render (≈ one card every SECONDS_PER_CARD seconds at ~60fps).
+    const SECONDS_PER_CARD = 6;
     let raf = 0;
     const tick = () => {
       raf = window.requestAnimationFrame(tick);
       if (!state.playing || state.paused || state.dragging) return;
       const half = el.scrollWidth / 2;
       if (half <= 0) return;
-      const next = el.scrollLeft + SPEED;
+      const perItem = el.scrollWidth / trackItems.length; // ≈ one card + gap
+      const next = el.scrollLeft + perItem / (SECONDS_PER_CARD * 60);
       el.scrollLeft = next >= half ? next - half : next;
     };
     raf = window.requestAnimationFrame(tick);

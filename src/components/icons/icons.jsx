@@ -1898,6 +1898,17 @@ export function ObjectiveDoubtIcon({ className = '' }) {
   );
 }
 
+export function ObjectiveTargetIcon({ className = '' }) {
+  /* Concentric target with a center dot — weakness pinned to the exact spot. */
+  return (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+      <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.8" />
+      <circle cx="12" cy="12" r="4.2" stroke="currentColor" strokeWidth="1.8" />
+      <circle cx="12" cy="12" r="0.9" fill="currentColor" />
+    </svg>
+  );
+}
+
 export function CompareHandleIcon({ className = '' }) {
   return (
     <svg

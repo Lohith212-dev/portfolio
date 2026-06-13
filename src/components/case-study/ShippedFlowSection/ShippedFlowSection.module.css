@@ -1354,7 +1354,7 @@
   display: none;
 }
 
-@media (max-width: 64rem) {
+@media (max-width: 63.999rem) {
   .demoLayoutGuideOpen {
     display: grid;
     grid-template-columns: 1fr;
@@ -1439,7 +1439,7 @@
   }
 }
 
-@media (max-width: 48rem) {
+@media (max-width: 47.999rem) {
   .section {
     padding-inline: 1rem;
   }

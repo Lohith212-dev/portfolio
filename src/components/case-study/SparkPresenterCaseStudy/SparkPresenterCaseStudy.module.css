@@ -1310,7 +1310,7 @@
   }
 }
 
-@media (max-width: 47.9375rem) {
+@media (max-width: 47.999rem) {
   .heroStage::after {
     inset-inline-start: 50%;
     inset-inline-end: auto;
@@ -1653,7 +1653,7 @@
   }
 }
 
-@media (max-width: 47.9375rem) {
+@media (max-width: 47.999rem) {
   .buildTimelineSticky {
     padding-inline: 1.25rem;
     padding-block: 1.25rem 1.5rem;

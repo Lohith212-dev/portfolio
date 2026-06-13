@@ -322,13 +322,13 @@
   80% { transform: translateX(2px); }
 }
 
-@media (max-width: 767px) and (prefers-reduced-motion: no-preference) {
+@media (max-width: 47.999rem) and (prefers-reduced-motion: no-preference) {
   .togglePill {
     animation: navTogglePillWiggle 600ms ease-in-out 2.4s 2;
   }
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 63.999rem) {
   .navOuter {
     padding: 0.5rem 0.75rem 0;
   }

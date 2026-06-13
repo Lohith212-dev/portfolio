@@ -562,7 +562,7 @@
   }
 }
 
-@media (max-width: 1099px) {
+@media (max-width: 68.6875rem) {
   .stackItem {
     top: calc(clamp(5rem, 8vw, 6rem) + var(--stack-index, 0) * var(--work-stack-peek));
   }
@@ -691,7 +691,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.999rem) {
   .headlineLine {
     align-items: flex-start;
   }

@@ -375,7 +375,7 @@
   display: none;
 }
 
-@media (max-width: 1120px) {
+@media (max-width: 70rem) {
   .viewport {
     top: clamp(202px, 28vh, 248px);
     bottom: clamp(54px, 7vh, 72px);
@@ -411,7 +411,7 @@
   }
 }
 
-@media (max-width: 860px) {
+@media (max-width: 53.75rem) {
   .section {
     height: auto !important;
   }
@@ -686,7 +686,7 @@
   }
 }
 
-@media (max-width: 560px) {
+@media (max-width: 35rem) {
   .sticky {
     padding: 44px 16px;
   }

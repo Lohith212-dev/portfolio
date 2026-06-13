@@ -8,6 +8,12 @@
   overflow-x: clip;
 }
 
+/* Lead paragraph(s) above the Setting-the-context card pair — sets the
+   backstory before the two cards. Breathing room before the grid. */
+.contextIntro {
+  margin-bottom: clamp(1.25rem, 2.5vw, 1.75rem);
+}
+
 .hero,
 .previewSection,
 .bodyShell {

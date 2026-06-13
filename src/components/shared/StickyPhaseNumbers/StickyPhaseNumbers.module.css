@@ -68,7 +68,7 @@
   opacity: 0.5;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 48rem) and (max-width: 63.999rem) {
   .phaseBlock {
     grid-template-columns: 6rem minmax(0, 1fr);
     gap: 1.75rem;
@@ -79,7 +79,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
   .phaseBlock {
     grid-template-columns: 8rem minmax(0, 1fr);
     gap: 2.5rem;

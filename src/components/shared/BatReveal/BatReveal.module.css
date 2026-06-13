@@ -63,7 +63,7 @@
   will-change: transform;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 63.999rem) {
   .swarmOrigin {
     top: 1.5rem;
     right: 4rem;
@@ -81,7 +81,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.999rem) {
   .swarmOrigin {
     top: 1.25rem;
     right: 3rem;

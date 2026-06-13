@@ -72,6 +72,26 @@ export default function ShowcaseSidebar({ sidebar }) {
             </div>
           ) : null}
 
+          {sidebar?.access ? (
+            <details className={styles.accessDetails}>
+              <summary className={styles.accessSummary}>
+                {sidebar.access.summary || 'How to access'}
+              </summary>
+              <div className={styles.accessBody}>
+                {sidebar.access.body ? (
+                  <p className={styles.accessText}>{sidebar.access.body}</p>
+                ) : null}
+                {sidebar.access.steps?.length ? (
+                  <ol className={styles.accessSteps}>
+                    {sidebar.access.steps.map((step) => (
+                      <li key={step}>{step}</li>
+                    ))}
+                  </ol>
+                ) : null}
+              </div>
+            </details>
+          ) : null}
+
           {sidebar?.projectDisclaimer ? (
             <p className={styles.projectDisclaimer}>{sidebar.projectDisclaimer}</p>
           ) : null}

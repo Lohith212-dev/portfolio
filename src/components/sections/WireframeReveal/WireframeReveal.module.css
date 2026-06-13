@@ -128,7 +128,7 @@
   border: 0;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.999rem) {
   .brandHotspot {
     left: 12%;
     width: 21%;

@@ -613,7 +613,7 @@
 
 /* ── Responsive ── */
 
-@media (max-width: 767px) {
+@media (max-width: 47.999rem) {
   .heroInner {
     padding: 7rem 1.5rem 5rem;
     min-height: auto;
@@ -796,7 +796,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 48rem) and (max-width: 63.999rem) {
   /* Pass 4: tablet is a portrait-centered three-zone layout.
      Zone 1 = full-width headline (in .h1Row, above .midRow).
      Zone 2 = bio chips inline row (.zoneLeft, full-width top of .midRow).
@@ -1133,7 +1133,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
   .heroInner {
     padding: 8rem 3rem 0;
   }

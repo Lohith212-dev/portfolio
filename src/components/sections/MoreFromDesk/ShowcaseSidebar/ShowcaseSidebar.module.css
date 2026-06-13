@@ -154,6 +154,66 @@
 
 /* The rail is desktop-only — tablet/mobile show the compact ShowcaseSpecStrip
    (role / timeline / company chips) under the hero instead. */
+/* Expandable "how to access" disclosure — native <details>, custom caret. */
+.accessDetails {
+  margin-top: 0.2rem;
+}
+
+.accessSummary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  cursor: pointer;
+  list-style: none;
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+.accessSummary::-webkit-details-marker {
+  display: none;
+}
+
+.accessSummary::before {
+  content: '';
+  /* one-off caret glyph: a rotated corner border, not a system-level token */
+  width: 0.46rem;
+  height: 0.46rem;
+  border-right: 1.6px solid currentColor;
+  border-bottom: 1.6px solid currentColor;
+  transform: rotate(-45deg);
+  transition: transform 0.18s ease;
+}
+
+.accessDetails[open] .accessSummary::before {
+  transform: rotate(45deg);
+}
+
+.accessBody {
+  margin-top: 0.6rem;
+}
+
+.accessText {
+  margin: 0 0 0.5rem;
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  line-height: 1.5;
+}
+
+.accessSteps {
+  margin: 0;
+  padding-left: 1.1rem;
+  display: grid;
+  gap: 0.3rem;
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  line-height: 1.45;
+}
+
 @media (max-width: 63.999rem) {
   .sidebar {
     display: none;

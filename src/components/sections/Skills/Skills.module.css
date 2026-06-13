@@ -844,7 +844,7 @@
 
 /* ── Responsive ── */
 
-@media (max-width: 767px) {
+@media (max-width: 47.999rem) {
   .section {
     padding: clamp(4rem, 8vw, 6rem) clamp(1.25rem, 3vw, 2rem);
   }
@@ -907,7 +907,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 48rem) and (max-width: 63.999rem) {
   .mindMap {
     height: auto;
     min-height: auto;
@@ -1000,7 +1000,7 @@
   transition: color 0.15s ease;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.999rem) {
   .arcExpansion {
     padding: 2rem 0;
   }

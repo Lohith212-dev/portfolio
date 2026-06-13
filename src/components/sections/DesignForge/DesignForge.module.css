@@ -1549,7 +1549,7 @@
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 48rem) {
   .heroIntro {
     grid-template-columns: minmax(0, 1fr) minmax(20rem, 30rem);
   }
@@ -1577,7 +1577,7 @@
   }
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 48rem) and (max-width: 63.999rem) {
   .launchGraphic {
     display: none;
   }
@@ -1698,7 +1698,7 @@
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 64rem) {
   .dialSection {
     display: block;
     min-height: 520svh;
@@ -1709,7 +1709,7 @@
   }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 47.999rem) {
   .launchGraphic {
     display: none;
   }

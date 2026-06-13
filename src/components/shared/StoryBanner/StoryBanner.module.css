@@ -116,7 +116,7 @@
 
 /* ── Responsive ── */
 
-@media (max-width: 767px) {
+@media (max-width: 47.999rem) {
   .bannerWrap {
     top: 4.5rem;
     padding: 0 0.75rem;
