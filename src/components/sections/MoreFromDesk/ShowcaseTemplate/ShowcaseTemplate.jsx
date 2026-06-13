@@ -15,6 +15,7 @@ import ObjectivesGrid from './ObjectivesGrid';
 import ThesisCallout from './ThesisCallout';
 import CompareCard from './CompareCard';
 import DecisionStatCard from './DecisionStatCard';
+import PageGalleryGrid from './PageGalleryGrid';
 import ShiftTable from './ShiftTable';
 import CollapsibleSection from './CollapsibleSection';
 import FullPageModalProvider from './FullPageModal';
@@ -160,7 +161,16 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                 onToggle={() => toggleSection('context')}
               >
                 {contextCards?.length ? (
-                  <ContextCardGrid cards={contextCards} />
+                  <>
+                    {detail.contextIntro ? (
+                      <div className={`${styles.paragraphStack} ${styles.contextIntro}`}>
+                        {(Array.isArray(detail.contextIntro) ? detail.contextIntro : [detail.contextIntro]).map((paragraph) => (
+                          <p key={paragraph}>{paragraph}</p>
+                        ))}
+                      </div>
+                    ) : null}
+                    <ContextCardGrid cards={contextCards} />
+                  </>
                 ) : (
                   <div className={styles.paragraphStack}>
                     {overviewCard.paragraphs.map((paragraph) => (
@@ -240,6 +250,10 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                             screenSet={decision.screenSet}
                             sectionTitle={decision.title}
                           />
+                        ) : null}
+
+                        {decision.gallery ? (
+                          <PageGalleryGrid pages={decision.gallery} />
                         ) : null}
 
                         {decision.inlineQuote ? (

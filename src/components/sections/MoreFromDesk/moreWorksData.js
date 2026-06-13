@@ -349,19 +349,318 @@ export const moreWorkLanes = [
       {
         slug: 'scholaranium',
         title: 'Scholaranium',
-        tag: 'Learning UX revamp',
-        note: 'Practice, review, and learning loops rebuilt for clarity.',
+        tag: 'Practice & analytics',
+        note: 'A ground-up rebuild of e-GMAT\'s highest-traffic practice platform — turning every attempt into actionable insight on what to fix next.',
         actionType: 'internal-route',
+        // Card cover: the skill-data overall-performance chart — the analytics
+        // rebuild that is the heart of the case study.
+        cover: {
+          src: '/images/case-studies/scholaranium/skill-data-overall.png',
+          position: 'center top',
+        },
         details: {
-          eyebrow: 'Product Systems',
-          title: 'Scholaranium',
-          role: 'Learning UX revamp',
-          year: '2023',
-          context: 'A learning product surface where practice and review needed a clearer loop.',
-          description: 'A revamp pass around how students enter practice, understand review, and return to learning without losing their place.',
-          outcome: 'Clarified the learning loop and reduced ambiguity between practice and review.',
-          tools: ['Learning UX', 'Review flows', 'Visual hierarchy'],
-          stats: ['Practice loop', 'Review system', 'Learning clarity'],
+          template: 'website-showcase',
+          eyebrow: 'Product Design',
+          title: 'Scholaranium — practice that turns every attempt into actionable insight',
+          previewTitle: 'Scholaranium 2.0',
+          hook: 'An advanced practice platform that turns a student\'s attempt data into what other tools never showed — where you\'re strong, where you\'re weak, whether you\'re improving, and the exact gaps to fix next.',
+          summary: 'Scholaranium is e-GMAT\'s practice platform — it turns every quiz attempt into actionable insight, surfacing where a student is strong, where they\'re weak, whether they\'re improving, and the exact gaps to fix. As the sole product designer, I took the product and screen requirements, defined and visualized every flow, and delivered the working prototype the engineering team built into the live product.',
+          heroNote: 'This is just a display page and the full case study is coming soon.',
+          role: 'Product Designer (sole)',
+          year: 'May 2021',
+          status: 'Live',
+          projectType: 'Practice & analytics platform',
+          // XD prototype is still in progress, so the Prototype tab shows a
+          // placeholder window for now (swap embedUrl for the XD /embed/ link
+          // when ready); the walkthrough tab carries the product teaser video.
+          embedUrl: '/images/case-studies/scholaranium/xd-placeholder.html',
+          prototypeEmbed: { aspect: { width: 1536, height: 728 } },
+          externalUrl: 'https://scholaranium2.e-gmat.com/schol-20/verbal/dashboard',
+          liveBadge: 'XD prototype',
+          walkthroughNote: {
+            lead: 'Want to see the real product in motion?',
+            label: 'Watch the product walkthrough',
+            embedUrl: 'https://www.youtube.com/embed/DCKvm4tR3D0?autoplay=1',
+            modalTitle: 'Scholaranium 2.0 product teaser',
+            browserTitle: 'Scholaranium teaser',
+            trail: 'Recorded by the e-GMAT team and used here as supporting content; I don\'t own the copyrights — all credits go to e-GMAT.',
+          },
+          websiteNavLinks: [
+            { href: '#website-preview', label: 'Product preview' },
+            { href: '#context', label: 'Context' },
+            { href: '#objectives', label: 'Objectives' },
+            { href: '#shipped', label: 'Approach' },
+            { href: '#testimonials', label: 'Testimonials' },
+          ],
+          contextIntro: 'Scholaranium was e-GMAT\'s original practice platform — built years earlier through outsourced design and development, and carrying over 20 million attempts. It worked, which is exactly why it had become a monolith no one wanted to touch: a high-traffic product students relied on every day, where any change risked breaking something. Version 2.0 was the decision to rebuild it anyway — from the ground up, with nothing of the old platform carried over.',
+          contextCards: [
+            {
+              eyebrow: 'The opportunity',
+              title: 'Why the rebuild had to happen',
+              body: 'A practice platform earns its keep on the half of the job beyond serving questions — helping students see their strengths and weaknesses and actually improve. On that half, the old platform was thin: bare-minimum analytics that surfaced none of the things that move a score. The questions were strong; the intelligence around them was missing.',
+            },
+            {
+              eyebrow: 'Problem statement',
+              title: 'What students were doing wrong',
+              body: 'Without that intelligence, students practiced blind. The platform never clearly surfaced:',
+              questions: [
+                'Which areas were weak, and which were already strong',
+                'Whether their scores were trending up or flat',
+                'How many quality questions they had left',
+                'Whether a good score was earned — or just lucky',
+              ],
+              closing: 'So they reviewed only the questions they got wrong, mislabeled ability gaps as "timing problems," and kept practicing without improving. Only the few who already reviewed like a private tutor got the real value.',
+            },
+          ],
+          solutionObjectives: {
+            items: [
+              {
+                icon: 'verify',
+                title: 'Get more out of every quiz',
+                body: 'A score you can\'t trust is noise. Every attempt had to show whether a result was real — earned, rushed, or lucky — and hand back a precise list of what to review and why, the way a private tutor would.',
+              },
+              {
+                icon: 'target',
+                title: 'Make weakness precise',
+                body: 'Vague data is as useless as no data. The analytics had to take a student from "I\'m weak in Verbal" to "I\'m weak in hard LCM and GCD questions, this month" — weakness pinned to subsection, difficulty, and recency.',
+              },
+              {
+                icon: 'doubt',
+                title: 'Teach each metric where it lives',
+                body: 'None of these metrics existed in the market; students didn\'t know they needed them. So every new metric had to explain itself in place — the causal logic shown right on the chart, with tooltips, launchers, and worked examples — so it landed without a manual.',
+              },
+            ],
+            thesis: 'Most practice tools hand back a score and a pile of data. Scholaranium hands back a verdict you can trust, a weakness pinned to the exact block, and the reason behind both — practice that diagnoses, not just drills.',
+          },
+          notesCard: {
+            intro: 'Scholaranium is two products in one loop — a place to practice, and an analytics engine that reads what you did. The decisions below follow the student through it: from the dashboard, into an attempt and the verdict it earns, and out into the analytics that say exactly what to fix next.',
+            decisions: [
+              {
+                number: '01',
+                title: 'Gave the platform one home and two clear intents',
+                body: 'Everything starts at the dashboard. A student arrives with one of two intents — take an attempt, or understand how the last ones went — so the dashboard makes both first-class: question counts and quiz types on one side, the way into the analytics on the other. No hunting for where to go next.',
+                screenSet: {
+                  frameTitle: 'Scholaranium — Dashboard',
+                  tabs: [
+                    {
+                      label: 'Dashboard',
+                      src: '/images/case-studies/scholaranium/dashboard.png',
+                      alt: 'Scholaranium dashboard showing question counts and quiz types alongside the entry into analytics.',
+                      caption: 'One home, two intents — start a quiz, or go understand how the last ones went.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '02',
+                title: 'Let students build a quiz worth taking',
+                body: 'Practice only helps if it targets the right thing. The custom-quiz builder lets a student assemble exactly the set they need — by subsection, difficulty, and source, even pulling from their bookmarks and past mistakes — through a short, guided two-step flow instead of a wall of filters.',
+                screenSet: {
+                  frameTitle: 'Scholaranium — Custom quiz',
+                  tabs: [
+                    {
+                      label: 'Pick what to practice',
+                      src: '/images/case-studies/scholaranium/custom-quiz.png',
+                      alt: 'Scholaranium custom-quiz builder step one: choosing subsection, difficulty, and source.',
+                      caption: 'Choose exactly what to practice — subsection, difficulty, source, bookmarks, past mistakes.',
+                    },
+                    {
+                      label: 'Refine and start',
+                      src: '/images/case-studies/scholaranium/custom-quiz-2.png',
+                      alt: 'Scholaranium custom-quiz builder step two: refining the set before starting.',
+                      caption: 'A guided second step refines the set — then the quiz is ready to take.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '03',
+                title: 'Put "can you trust this score?" on the results screen',
+                body: 'When the attempt ends, the results screen answers one question first: is this score real? Three factors — timing influence, luck, and rush-through — are computed from how long the student took on each question versus the benchmark, and shown right on the timing chart so the cause is visible, not asserted. Get a hard question right in 40 seconds when most people need two minutes? That is flagged as luck, with the evidence beside it.',
+                screenSet: {
+                  frameTitle: 'Scholaranium — Results: can you trust this score?',
+                  tabs: [
+                    {
+                      label: 'Trust factors',
+                      src: '/images/case-studies/scholaranium/xpert-trust-score.svg',
+                      alt: 'Results screen surfacing timing influence, luck, and rush-through factors on the timing chart.',
+                      caption: 'Timing influence, luck, and rush-through — read straight off the timing chart, with the evidence in view.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '04',
+                title: 'Made the review list explain itself',
+                body: 'The auto-curated review list includes questions the student got correct — and that is the point. A question makes the list on two facts, not one: right or wrong, and in time or not. Spent too little (a guess) or too much (which forces rushing later), and it is on the list, grouped under a plain reason: "you got this right — make sure it was for the right reasons." The reason is what built trust in the list.',
+                screenSet: {
+                  frameTitle: 'Scholaranium — The review list',
+                  tabs: [
+                    {
+                      label: 'The review list',
+                      src: '/images/case-studies/scholaranium/review-list.svg',
+                      alt: 'Auto-curated review list with each question grouped under its reason for review.',
+                      caption: 'Each question carries its reason — including the ones the student got right.',
+                    },
+                    {
+                      label: 'Reviewing a question',
+                      src: '/images/case-studies/scholaranium/solution-screen.png',
+                      alt: 'Scholaranium solution screen with notes and analysis for reviewing a flagged question.',
+                      caption: 'And the solution screen makes the actual review — notes, analysis, strategy — fast.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '05',
+                title: 'Turned a 3-dimensional problem into one chart you read at a glance',
+                body: 'Performance lives across three axes — subsection, difficulty, and recency — which overwhelms if you draw it as a plane. So I moved two of them into controls: the student picks a recency window and a difficulty band, and the chart shows one clean breakdown by subsection. Dense data, single read.',
+                screenSet: {
+                  frameTitle: 'Scholaranium — Skill data: overall performance',
+                  tabs: [
+                    {
+                      label: 'Overall performance',
+                      src: '/images/case-studies/scholaranium/skill-data-overall.png',
+                      alt: 'Skill-data overall-performance chart broken down by subsection, with recency and difficulty as controls.',
+                      caption: 'Two axes become controls; the chart stays a single, readable breakdown by subsection.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '06',
+                title: 'Took weakness down to the block',
+                body: 'Topic-level data is too sparse to trust — a handful of questions per topic yields no real signal. So analysis groups questions into blocks large enough to be statistically honest, and flags the block, not the topic, where a student should spend energy. "Weak in word problems" becomes "weak in savings-and-interest, hard."',
+                screenSet: {
+                  frameTitle: 'Scholaranium — Block and topic analysis',
+                  tabs: [
+                    {
+                      label: 'Block-level analysis',
+                      src: '/images/case-studies/scholaranium/block-level-analysis.png',
+                      alt: 'Block-level analysis flagging the specific blocks where the student is weak.',
+                      caption: 'Blocks are sized to be statistically honest — the flag lands where effort actually pays.',
+                    },
+                    {
+                      label: 'Topic-level analysis',
+                      src: '/images/case-studies/scholaranium/topic-level-analysis.png',
+                      alt: 'Topic-level analysis breaking a block down into its constituent topics.',
+                      caption: 'Drill into a block to see the topics underneath it.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '07',
+                title: 'Gave weakness a single destination',
+                body: 'A dedicated weak-areas view collects every flagged block in one place, each with a recommended next action — so the student never has to assemble the picture themselves.',
+                screenSet: {
+                  frameTitle: 'Scholaranium — Weak areas',
+                  tabs: [
+                    {
+                      label: 'Weak areas',
+                      src: '/images/case-studies/scholaranium/weak-areas.png',
+                      alt: 'Weak-areas view listing every flagged block with a recommended action.',
+                      caption: 'Every flagged block in one place, each with a recommended next action.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '08',
+                title: 'Taught every new metric in place',
+                body: 'Luck factor, block-level recency, weighted score — none of it existed elsewhere, so students did not know what they were looking at. Each metric explains itself where it appears, through inline tooltips and contextual launchers, so the student understands it without leaving the screen.',
+                screenSet: {
+                  frameTitle: 'Scholaranium — Metrics that teach themselves',
+                  tabs: [
+                    {
+                      label: 'Explained in place',
+                      src: '/images/case-studies/scholaranium/weak-areas-tooltip.png',
+                      alt: 'A weak-areas metric with an inline tooltip explaining what it means and how to act on it.',
+                      caption: 'Tooltips and launchers explain each new metric the moment it appears.',
+                    },
+                  ],
+                },
+              },
+            ],
+            shift: {
+              eyebrow: 'The shift',
+              headline: 'From practice you sat through to practice that improves you.',
+              rows: [
+                { before: 'Practice you could not learn from', after: 'Every attempt scored for what to fix' },
+                { before: 'Review only the wrong answers', after: 'Review the right answers for the right reasons' },
+                { before: '"I have a timing problem"', after: 'A timing problem in this exact construct' },
+                { before: 'Topic data too thin to trust', after: 'Block-level data you can act on' },
+                { before: 'One static accuracy number', after: 'Subsection × difficulty × recency' },
+                { before: 'Analytics you needed a tutor to read', after: 'Metrics that teach themselves' },
+              ],
+            },
+          },
+          testimonials: {
+            title: 'What students said',
+            intro: 'These are from user-research interviews with students who used the rebuilt platform. They keep pointing at the same things it was designed for — data they can act on, weakness they can see, and scores they can trust.',
+            note: 'Quotes are transcribed from recorded student feedback interviews and lightly cleaned for readability; emphasis is mine. The recordings were made by e-GMAT and are used here as supporting content — all credits go to e-GMAT.',
+            sourceBrand: 'Student interviews',
+            items: [
+              {
+                author: 'Saloni',
+                meta: 'Student interview',
+                quoteHtml: 'What I loved was <mark>access to data</mark> — you can drill down to where you\'re lacking and what to improve. Especially the feature where you see the last 15 questions versus the previous 15, and the timing improvement on that.',
+              },
+              {
+                author: 'Michael',
+                meta: 'Student interview',
+                quoteHtml: 'The first thing that hit me was how user-friendly it is. <mark>It pinpoints which questions you should review the most, and then it tells you why</mark> — due to time, or incorrect answers.',
+              },
+              {
+                author: 'Siddharth',
+                meta: 'Student interview',
+                quoteHtml: 'It\'s not only the questions you got wrong, but also the ones <mark>you got right where you took more time.</mark> That targeted approach is very valuable — it saves a lot of time for a student.',
+              },
+              {
+                author: 'Punith',
+                meta: 'Student interview',
+                quoteHtml: 'The expert tab gives me <mark>analysis of questions I never thought I needed.</mark> The review list, the raw data, the weighted score — it\'s definitely an upgrade.',
+              },
+              {
+                author: 'Aditya',
+                meta: 'Student interview',
+                quoteHtml: '<mark>The data is presented in a way I can understand better</mark> — the percentages are right there, I don\'t need to go anywhere else. The last-15 plots show how my prep is going long-term.',
+              },
+              {
+                author: 'Tirush',
+                meta: 'Student interview',
+                quoteHtml: 'The best part is the metrics — <mark>I can see my weak areas and which areas to work on,</mark> which wasn\'t there before.',
+              },
+            ],
+          },
+          sidebar: {
+            categories: ['Product', 'Edtech', 'GMAT prep'],
+            facts: [
+              { label: 'Role', value: 'Product Designer (sole)' },
+              { label: 'Timeline', value: 'May 2021' },
+              { label: 'Status', value: 'Live' },
+              { label: 'Access', value: 'Free tier — sits behind an e-GMAT account' },
+            ],
+            factsVisibleCount: 4,
+            projectChips: [
+              { label: 'Live', active: true, dot: true },
+              {
+                label: 'scholaranium2.e-gmat.com',
+                logo: '/images/case-studies/sat-lms/e-gmat.png',
+                href: 'https://scholaranium2.e-gmat.com/schol-20/verbal/dashboard',
+              },
+            ],
+            access: {
+              summary: 'How to access Scholaranium',
+              body: 'Scholaranium has a free tier — you don\'t need a paid subscription to try it.',
+              steps: [
+                'Create a free e-GMAT account',
+                'Open the Scholaranium link above',
+                'Start practicing — the free tier is available right after sign-up',
+              ],
+            },
+            projectDisclaimer: 'Logos are the properties of the respective companies.',
+          },
         },
       },
       {
@@ -417,110 +716,846 @@ export const moreWorkLanes = [
         slug: 'egmat-blogs',
         title: 'e-GMAT Blogs',
         tag: 'SEO content system',
-        note: 'High-volume content pages shaped for readability and search intent.',
+        note: 'A WordPress blog turned into a content system — 150+ long-form pages that stay consistent, scannable, and built around what the reader came to find.',
         actionType: 'internal-route',
+        cover: {
+          src: '/images/case-studies/egmat-blogs/blog-landing.png',
+          position: 'center top',
+        },
         details: {
+          template: 'website-showcase',
           eyebrow: 'Web Services',
-          title: 'e-GMAT Blogs',
-          role: 'Web design, SEO content system',
-          year: '2023-2025',
-          context: 'A high-volume blog system where readability and search intent had to work together.',
-          description: 'A web system pass across content-heavy pages, focused on hierarchy, reusable sections, and making long-form pages easier to scan.',
-          outcome: 'Supported a scalable publishing surface for search-led content.',
-          tools: ['Web design', 'SEO structure', 'Reusable page patterns'],
-          stats: ['150+ pages', 'SEO intent', 'Content system'],
+          title: 'e-GMAT Blogs — a content system, not a pile of posts',
+          previewTitle: 'e-GMAT Blogs',
+          hook: 'A search-led blog where every page had to earn a ranking, read cleanly on the tenth scroll, and look like it belonged to the same brand — across 150+ articles that I could not hand-design one by one.',
+          summary: 'e-GMAT publishes long-form GMAT and MBA content at volume. I designed the blog as a system on WordPress — a browsable landing page organised by reader intent, and a reusable long-form article template — so the team could publish constantly without the design drifting. Where the prescribed theme could not do what the content needed, I extended it with custom CSS and injected code.',
+          heroNote: 'A lean case study — the design decisions behind the system, in brief.',
+          role: 'Web Designer (sole)',
+          year: '2023 – 2025',
+          status: 'Live',
+          projectType: 'SEO content system',
+          embedUrl: 'https://e-gmat.com/blogs/',
+          externalUrl: 'https://e-gmat.com/blogs/',
+          liveBadge: 'live embed',
+          websiteNavLinks: [
+            { href: '#website-preview', label: 'Live preview' },
+            { href: '#context', label: 'Context' },
+            { href: '#objectives', label: 'Objectives' },
+            { href: '#shipped', label: 'Approach' },
+          ],
+          contextCards: [
+            {
+              eyebrow: 'The opportunity',
+              title: 'A content engine with no design system',
+              body: 'e-GMAT was producing search content at a pace no designer could keep up with one page at a time — exam guides, prep strategy, success stories, MBA admissions. The writing was strong and the search intent was clear. What was missing was a design layer that could stretch across 150+ pages without me touching each one, and without the brand looking like ten different sites stitched together.',
+            },
+            {
+              eyebrow: 'Problem statement',
+              title: 'Where a reverse-chron blog falls down',
+              body: 'A default WordPress blog hands every visitor the same thing — the newest post first — and answers none of the questions a search visitor actually arrives with:',
+              questions: [
+                'Is there a page for the exact thing I searched?',
+                'Can I trust a 3,000-word page enough to keep scrolling?',
+                'Where do I go next once I have read this one?',
+              ],
+              closing: 'A feed sorted by date treats a buyer\'s-guide reader and a casual browser identically, buries evergreen pages under fresh ones, and leaves long articles as undifferentiated walls of text. The content deserved a structure that matched how people found it.',
+            },
+          ],
+          solutionObjectives: {
+            items: [
+              {
+                icon: 'target',
+                title: 'Organise by intent, not by date',
+                body: 'A search visitor lands with a goal, not a curiosity about what was published yesterday. The blog had to be a browsable directory — categories keyed to what people search for (Know the GMAT, Prepare for GMAT, Study Plans, Success Stories, MBA Admissions) — so the page they need is one obvious click away.',
+              },
+              {
+                icon: 'loop',
+                title: 'One template, 150+ consistent pages',
+                body: 'The design had to be a system the content team could pour into, not a custom job per post. A single long-form article template — hierarchy, read-time, in-content modules, related links — keeps every page on-brand and scannable whether it is article 5 or article 150.',
+              },
+              {
+                icon: 'welcome',
+                title: 'Make long-form survivable',
+                body: '3,000-word pages live or die on the tenth scroll. Clear heading rhythm, breathing room, pull-outs, and tables turn an intimidating wall into something a reader can skim, trust, and finish — which is also what keeps them on the page long enough to rank.',
+              },
+            ],
+            thesis: 'A blog at this volume is not a design project, it is a system. I designed the rules — landing structure and a long-form template — so that publishing the 150th page was as on-brand as the first, without a designer in the loop.',
+          },
+          roleParagraph: 'I designed and built this on WordPress with a prescribed theme as the foundation — the practical choice for a content team publishing daily. The decisions below are about making a general-purpose blog behave like a purpose-built content system; where the theme could not reach, I extended it with custom CSS and injected code rather than fighting it.',
+          notesCard: {
+            intro: 'The blog is two design problems in one: the landing page that routes a visitor to the right article, and the article template every page is poured into. The decisions below follow that split — first how people find a page, then how the page holds them once they are on it.',
+            decisions: [
+              {
+                number: '01',
+                title: 'Turned the landing page into a browsable directory',
+                body: 'Instead of a reverse-chronological feed, the landing page leads with a few featured stories, then breaks into intent-based category blocks — each showing its top three articles with a "view all" into the full category. A visitor scanning for "study plans" finds that lane immediately instead of scrolling past last week\'s post. The feed became a map.',
+                screenSet: {
+                  frameTitle: 'e-GMAT Blogs — Landing page',
+                  tabs: [
+                    {
+                      label: 'Featured + categories',
+                      src: '/images/case-studies/egmat-blogs/blog-landing.png',
+                      alt: 'e-GMAT blog landing page with featured stories and intent-based category blocks.',
+                      caption: 'Featured stories up top, then intent-based category lanes — the visitor routes themselves.',
+                    },
+                    {
+                      label: 'Category cards',
+                      src: '/images/case-studies/egmat-blogs/category-cards.png',
+                      alt: 'Icon-led category cards for browsing the blog by topic.',
+                      caption: 'Icon-led category cards make the blog\'s shape legible at a glance.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '02',
+                title: 'Built one long-form article template the whole team could reuse',
+                body: 'Every article runs on the same skeleton: a clear title and read-time up top, a consistent heading hierarchy, and content modules — callouts, comparison tables, step lists — that the writers drop in without breaking the design. It is the same idea as the case-study system on the success-story pages: design the rules once, and consistency stops depending on the designer.',
+                screenSet: {
+                  frameTitle: 'e-GMAT Blogs — Article template',
+                  tabs: [
+                    {
+                      label: 'Article header',
+                      src: '/images/case-studies/egmat-blogs/article-header.png',
+                      alt: 'Long-form article header with title, read-time, and meta.',
+                      caption: 'A consistent header — title, read-time, breadcrumb — sets the same expectation on every page.',
+                    },
+                    {
+                      label: 'In-content modules',
+                      src: '/images/case-studies/egmat-blogs/article-modules.png',
+                      alt: 'In-content modules: callouts, tables, and step lists inside a long-form article.',
+                      caption: 'Reusable modules — callouts, tables, step lists — break the wall without breaking the template.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '03',
+                title: 'Kept the reader moving — and converting',
+                body: 'A page that ranks is wasted if it dead-ends. Related-article links sit at the foot of every category and article, and a free-trial CTA is woven into the template at natural breaks — so a reader who came for one answer leaves with somewhere to go next, and the content surface quietly feeds the funnel.',
+                screenSet: {
+                  frameTitle: 'e-GMAT Blogs — Continuity and conversion',
+                  plain: true,
+                  tabs: [
+                    {
+                      label: 'Related + CTA',
+                      src: '/images/case-studies/egmat-blogs/related-cta.png',
+                      alt: 'Related articles and an in-content free-trial CTA at the end of a blog page.',
+                      caption: 'Related links and an in-template CTA turn the end of a page into a next step.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '04',
+                title: 'Pushed past the theme where the content needed more',
+                body: 'A prescribed theme gets you 80% of the way and then resists the last 20%. Rather than accept "good enough," I extended it with custom CSS and small code injections — for the category-block layout, the in-content modules, and spacing the theme would not give — so the design served the content instead of the content bending to the theme.',
+              },
+            ],
+          },
+          sidebar: {
+            categories: ['Web', 'Edtech', 'Content / SEO'],
+            facts: [
+              { label: 'Role', value: 'Web Designer (sole)' },
+              { label: 'Platform', value: 'WordPress + prescribed theme, extended with custom CSS' },
+              { label: 'Scale', value: '150+ long-form pages' },
+              { label: 'Status', value: 'Live' },
+            ],
+            factsVisibleCount: 3,
+            projectChips: [
+              { label: 'Live', active: true, dot: true },
+              {
+                label: 'e-gmat.com/blogs',
+                logo: '/images/case-studies/sat-lms/e-gmat.png',
+                href: 'https://e-gmat.com/blogs/',
+              },
+            ],
+            projectDisclaimer: 'Logos are the properties of the respective companies.',
+          },
         },
       },
       {
         slug: 'nerdypixel-studios',
         title: 'NerdyPixel Studios',
         tag: 'Agency landing page',
-        note: 'A focused brand surface for positioning, trust, and lead capture.',
+        note: 'The studio\'s own single-page site — built to prove a small team can deliver measurable outcomes, and to qualify the right leads before the first call.',
         actionType: 'internal-route',
         embedUrl: 'https://nerdypixelstudios.ca',
         externalUrl: 'https://nerdypixelstudios.ca',
+        cover: {
+          src: '/images/case-studies/nerdypixel-studios/hero.png',
+          position: 'center top',
+        },
         details: {
+          template: 'website-showcase',
           eyebrow: 'Web Services',
-          title: 'NerdyPixel Studios',
-          role: 'Landing page design and build',
+          title: 'NerdyPixel Studios — a studio site that sells the work, not adjectives',
+          previewTitle: 'NerdyPixel Studios',
+          hook: 'A boutique design studio has one credibility problem: prove a small team delivers real outcomes, fast, before a prospect clicks away. I designed and built our own site to answer that — with artifacts and numbers, not adjectives.',
+          summary: 'NerdyPixel Studios is the design studio behind this portfolio. I designed and built its single-page site end-to-end — positioning, structure, visual identity, and a lead-qualifying inquiry form. The whole page is one funnel: say what we do, prove it with real work and hard metrics, then capture a qualified lead.',
+          heroNote: 'A lean case study — the design decisions behind the studio site, in brief. You are looking at the live site embedded below.',
+          role: 'Designer & Frontend (sole)',
           year: '2025',
-          context: 'A studio landing page for positioning, trust, and lead capture.',
-          description: 'A focused brand surface built to explain what the studio does quickly, while keeping a path open for prospective clients.',
-          outcome: 'Turned a broad service story into a tighter public-facing surface.',
-          tools: ['Landing page', 'Brand positioning', 'Conversion UX'],
-          stats: ['Agency surface', 'Lead capture', 'Brand trust'],
+          status: 'Live',
+          projectType: 'Agency landing page',
+          embedUrl: 'https://nerdypixelstudios.ca',
+          externalUrl: 'https://nerdypixelstudios.ca',
+          liveBadge: 'live embed',
+          websiteNavLinks: [
+            { href: '#website-preview', label: 'Live preview' },
+            { href: '#context', label: 'Context' },
+            { href: '#objectives', label: 'Objectives' },
+            { href: '#shipped', label: 'Approach' },
+          ],
+          contextCards: [
+            {
+              eyebrow: 'The opportunity',
+              title: 'A small studio with big-studio work',
+              body: 'NerdyPixel does UI/UX, web and app design, and branding — and has the case studies to back it. But a boutique studio fights an instinct in every prospect: "are they big enough to handle this?" The site\'s job was to convert that doubt into confidence inside one scroll, using the work itself as the argument.',
+            },
+            {
+              eyebrow: 'Problem statement',
+              title: 'Why most agency sites fail to convince',
+              body: 'The default agency site over-promises and under-proves — a wall of services, a few logos, a contact form. It leaves a prospect asking:',
+              questions: [
+                'Have they actually shipped work like mine?',
+                'Did that work move a real number?',
+                'Will they take my project seriously?',
+              ],
+              closing: 'And the generic "Get in touch" form invites every tyre-kicker equally, so the studio spends its scarcest resource — time — on calls that go nowhere. The site had to both prove the work and filter the inbound.',
+            },
+          ],
+          solutionObjectives: {
+            items: [
+              {
+                icon: 'verify',
+                title: 'Prove with artifacts and numbers',
+                body: 'Lead with evidence a prospect can verify: real screenshots, logo boards, packaging photography, and hard case-study metrics. Proof-of-craft beats a testimonial carousel — show the work, then show what it did.',
+              },
+              {
+                icon: 'decide',
+                title: 'Qualify the lead at capture',
+                body: 'A budget selector, project description, and file upload sit inside the inquiry form itself. The form does the first round of qualification, so the studio walks into every call already knowing the shape of the project.',
+              },
+              {
+                icon: 'welcome',
+                title: 'One page, one identity',
+                body: 'A single-scroll page with a cohesive, slightly playful identity — branded accents over a whitespace base — that feels like the team made it, not a template. The site is itself a sample of the work.',
+              },
+            ],
+            thesis: 'An agency site is a sample of the agency. I built ours as the argument it needed to make: the work proves the craft, the numbers prove the outcome, and the form proves we respect the prospect\'s time — and ours.',
+          },
+          roleParagraph: 'I designed and built the site end-to-end — positioning and copy direction, structure, visual system, and the front-end build, including the parts the page builder could not do natively, which I finished with custom CSS and JavaScript.',
+          notesCard: {
+            intro: 'The site is one funnel collapsed into a single page. The decisions below follow a visitor down it — from the promise, through the proof, to the qualified hand-off.',
+            decisions: [
+              {
+                number: '01',
+                title: 'Built the whole page as one scroll-down funnel',
+                body: 'Hero promise → split services (web vs. branding) → proof → contact, in that order, on one page. No deep navigation, no sub-pages to lose people in. Every section moves the visitor one step closer to the form, and a "get in touch" CTA repeats at each natural stopping point so intent is never more than a tap from action.',
+                screenSet: {
+                  frameTitle: 'NerdyPixel — Hero and services',
+                  tabs: [
+                    {
+                      label: 'Hero',
+                      src: '/images/case-studies/nerdypixel-studios/hero.png',
+                      alt: 'NerdyPixel Studios hero with tagline and primary CTA.',
+                      caption: 'The hero states what the studio does and opens the funnel with a single CTA.',
+                    },
+                    {
+                      label: 'Services split',
+                      src: '/images/case-studies/nerdypixel-studios/services.png',
+                      alt: 'Two-column services split: web services and branding services.',
+                      caption: 'Web vs. branding in a two-column split — a visitor self-identifies their need fast.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '02',
+                title: 'Made the case studies carry hard numbers',
+                body: 'The flagship case study (Encubate) leads with quantified outcomes — conversion lift, signups, engagement, ROI — rendered as oversized numerals with small labels. The second (a restaurant brand) proves range with logo, packaging, and flex-display photography. Recognisable client logos do the trust work that words can\'t.',
+                screenSet: {
+                  frameTitle: 'NerdyPixel — Proof',
+                  tabs: [
+                    {
+                      label: 'Case-study metrics',
+                      src: '/images/case-studies/nerdypixel-studios/case-study-metrics.png',
+                      alt: 'Encubate case study with oversized result numerals and small labels.',
+                      caption: 'Outcomes as big numerals — the result is the headline, the label is the footnote.',
+                    },
+                    {
+                      label: 'Logo board',
+                      src: '/images/case-studies/nerdypixel-studios/logo-board.png',
+                      alt: 'A grid of client and local-business logos.',
+                      caption: 'A logo board proves range and gives the eye recognisable anchors.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '03',
+                title: 'Turned the contact form into a qualifier',
+                body: 'Name and email are table stakes. The form also asks for company, location, project description, a file upload, a budget band, and consent — so a serious lead self-selects and an idle one drops off. The studio gets fewer, better calls, and arrives at each one already knowing the budget and the brief.',
+                screenSet: {
+                  frameTitle: 'NerdyPixel — Inquiry form',
+                  plain: true,
+                  tabs: [
+                    {
+                      label: 'Qualifying form',
+                      src: '/images/case-studies/nerdypixel-studios/inquiry-form.png',
+                      alt: 'Project inquiry form with budget selector, file upload, and consent.',
+                      caption: 'Budget band, brief, and file upload qualify the lead before a single email is sent.',
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+          sidebar: {
+            categories: ['Web', 'Agency', 'Branding'],
+            facts: [
+              { label: 'Role', value: 'Designer & Frontend (sole)' },
+              { label: 'Timeline', value: '2025' },
+              { label: 'Type', value: 'Single-page studio site' },
+              { label: 'Status', value: 'Live' },
+            ],
+            factsVisibleCount: 3,
+            projectChips: [
+              { label: 'Live', active: true, dot: true },
+              {
+                label: 'nerdypixelstudios.ca',
+                href: 'https://nerdypixelstudios.ca',
+              },
+            ],
+            projectDisclaimer: 'Logos are the properties of the respective companies.',
+          },
         },
       },
       {
         slug: 'free-trial-page',
         title: 'Free Trial Page',
         tag: 'Conversion page',
-        note: 'Landing-page structure refined around clarity and action.',
+        note: 'A free-trial landing page built around one outcome — 735+ — with the proof to back it and a CTA in every block, so signing up is the path of least resistance.',
         actionType: 'internal-route',
+        cover: {
+          src: '/images/case-studies/free-trial/hero.png',
+          position: 'center top',
+        },
         details: {
+          template: 'website-showcase',
           eyebrow: 'Web Services',
-          title: 'Free Trial Page',
-          role: 'Conversion page design',
+          title: 'Free Trial Page — the outcome up front, the proof behind it',
+          previewTitle: 'Free Trial — GMAT Focus Prep',
+          hook: 'A cold visitor gives a landing page one question: what do I get, and can I believe you? I designed this free-trial page to answer both before they scroll — the outcome in the headline, verifiable proof underneath, and no friction between wanting in and being in.',
+          summary: 'This is the top-of-funnel acquisition page for e-GMAT\'s prep platform. I designed it to convert cold traffic into trial users by anchoring the whole page on the reader\'s goal — a 735+ score — surrounding it with proof a skeptic can verify, and removing every reason to hesitate before signing up.',
+          heroNote: 'A lean case study — the conversion decisions behind the page, in brief. The live page is embedded below.',
+          role: 'Web / Conversion Designer (sole)',
           year: '2024',
-          context: 'A conversion page where the offer, proof, and action needed to line up quickly.',
-          description: 'A landing-page structure designed around clarity, motivation, and a direct next action.',
-          outcome: 'Made the page easier to understand and act on.',
-          tools: ['Conversion UX', 'Landing-page structure', 'Copy hierarchy'],
-          stats: ['Offer clarity', 'Action path', 'Conversion page'],
+          status: 'Live',
+          projectType: 'Conversion landing page',
+          embedUrl: 'https://e-gmat.com/ft-gmat-focus-prep',
+          externalUrl: 'https://e-gmat.com/ft-gmat-focus-prep',
+          liveBadge: 'live embed',
+          websiteNavLinks: [
+            { href: '#website-preview', label: 'Live preview' },
+            { href: '#context', label: 'Context' },
+            { href: '#objectives', label: 'Objectives' },
+            { href: '#shipped', label: 'Approach' },
+          ],
+          contextCards: [
+            {
+              eyebrow: 'The opportunity',
+              title: 'Cold traffic, one shot to convert',
+              body: 'Paid and organic traffic lands on this page with no relationship to the brand and a low tolerance for being sold to. The product is genuinely strong and free to try — the design problem was getting a stranger to believe that and act on it inside a few seconds, before the back button wins.',
+            },
+            {
+              eyebrow: 'Problem statement',
+              title: 'What makes a stranger bounce',
+              body: 'A visitor who can\'t immediately answer three things leaves:',
+              questions: [
+                'What exactly do I get for free?',
+                'Why should I trust these claims?',
+                'How much effort is it to start?',
+              ],
+              closing: 'Vague benefit copy, unverifiable hype, and a single buried sign-up button each kill the conversion on their own. The page had to make the offer concrete, the proof checkable, and the action unmissable.',
+            },
+          ],
+          solutionObjectives: {
+            items: [
+              {
+                icon: 'target',
+                title: 'Anchor the page on the outcome',
+                body: 'The headline is the reader\'s goal, not the product\'s name — "Achieve 735+." That frame opens the page and closes it, so the entire scroll reads as a path to the thing the visitor already wants.',
+              },
+              {
+                icon: 'verify',
+                title: 'Lead trust with verifiable proof',
+                body: 'Replace adjectives with numbers a skeptic can check — market share, thousands of five-star reviews, #1 rankings on platforms they already trust, real score jumps. Credibility from evidence, not enthusiasm.',
+              },
+              {
+                icon: 'welcome',
+                title: 'Remove every reason to hesitate',
+                body: 'It\'s free, so the page never asks for commitment it doesn\'t need. Low-friction CTAs repeat throughout, and each feature block has its own entry point — a visitor can start from whatever they happen to care about.',
+              },
+            ],
+            thesis: 'A conversion page is a single argument, repeated until it lands: here is the outcome you want, here is the proof we deliver it, and here — again — is the frictionless way in.',
+          },
+          roleParagraph: 'I designed and built this as a marketing page in a page builder, extending it with custom CSS and JavaScript where the native components could not deliver the layout, the numbered-section rhythm, or the testimonial carousel.',
+          notesCard: {
+            intro: 'The page is one argument carried top to bottom. The decisions below trace it — how the offer is framed, how trust is built, and how the action is made the easiest thing on the page.',
+            decisions: [
+              {
+                number: '01',
+                title: 'Bookended the page with the outcome',
+                body: '"Achieve 735+" opens the hero and reappears at the closing CTA, with the concrete free inclusions (hours of video, hundreds of practice questions, webinars, a mock, mentor chat) listed as a value checklist right beside it. The reader sees the destination first and is reminded of it at the moment of decision.',
+                screenSet: {
+                  frameTitle: 'Free Trial — Outcome-anchored hero',
+                  tabs: [
+                    {
+                      label: 'Hero',
+                      src: '/images/case-studies/free-trial/hero.png',
+                      alt: 'Free-trial hero headlined "Achieve 735+" with a value checklist and CTA.',
+                      caption: 'The headline is the reader\'s goal; the checklist makes "free" concrete.',
+                    },
+                    {
+                      label: 'Closing CTA',
+                      src: '/images/case-studies/free-trial/closing-cta.png',
+                      alt: 'Closing call-to-action repeating the 735+ outcome with a signup form.',
+                      caption: 'The same outcome closes the page — the bookend that frames the whole scroll.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '02',
+                title: 'Put a CTA inside every feature block',
+                body: 'Rather than funnel everyone through one button, each free-trial feature — video lessons, practice questions, webinars, the mock, mentor chat — carries its own "try it free" entry. A visitor who only cares about the mock starts from the mock. The page meets intent wherever it shows up instead of forcing a single path.',
+                screenSet: {
+                  frameTitle: 'Free Trial — Feature cards',
+                  plain: true,
+                  tabs: [
+                    {
+                      label: 'Feature grid',
+                      src: '/images/case-studies/free-trial/feature-grid.png',
+                      alt: 'Grid of free-trial feature cards, each with its own CTA.',
+                      caption: 'Each feature is its own door in — intent never has to detour to a single button.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '03',
+                title: 'Made the proof checkable, not just loud',
+                body: 'The social-proof band leads with specifics a visitor can independently verify — market share, 2,100+ five-star reviews, #1 ratings, GMAT Club-verified score jumps — and a testimonial carousel keeps the human proof digestible instead of a wall of quotes. Numbered section markers and a consistent accent give the long page a scannable rhythm.',
+                screenSet: {
+                  frameTitle: 'Free Trial — Proof',
+                  tabs: [
+                    {
+                      label: 'Verifiable stats',
+                      src: '/images/case-studies/free-trial/proof-stats.png',
+                      alt: 'Social-proof band with market share, review count, and #1 rankings.',
+                      caption: 'Numbers a skeptic can check, on platforms they already trust.',
+                    },
+                    {
+                      label: 'Testimonial carousel',
+                      src: '/images/case-studies/free-trial/testimonials.png',
+                      alt: 'Rotating testimonial carousel with score jumps and quotes.',
+                      caption: 'A carousel keeps human proof present without becoming a wall of text.',
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+          sidebar: {
+            categories: ['Web', 'Edtech', 'Conversion'],
+            facts: [
+              { label: 'Role', value: 'Web / Conversion Designer (sole)' },
+              { label: 'Timeline', value: '2024' },
+              { label: 'Goal', value: 'Cold traffic → free-trial signups' },
+              { label: 'Status', value: 'Live' },
+            ],
+            factsVisibleCount: 3,
+            projectChips: [
+              { label: 'Live', active: true, dot: true },
+              {
+                label: 'e-gmat.com/ft-gmat-focus-prep',
+                logo: '/images/case-studies/sat-lms/e-gmat.png',
+                href: 'https://e-gmat.com/ft-gmat-focus-prep',
+              },
+            ],
+            projectDisclaimer: 'Logos are the properties of the respective companies.',
+          },
         },
       },
       {
         slug: 'coach-connect',
         title: 'Coach Connect',
-        tag: 'Product explainer',
-        note: 'A product page built to explain value quickly and visually.',
+        tag: 'Sales page + companion app',
+        note: 'Two surfaces for one product — a sales page that makes a $49 mentoring subscription legible at a glance, and a low-chrome companion app where enrolled students live day to day.',
         actionType: 'internal-route',
-        details: {
-          eyebrow: 'Web Services',
-          title: 'Coach Connect',
-          role: 'Product explainer page',
-          year: '2024',
-          context: 'A product page that needed to explain value before users lost patience.',
-          description: 'A page design focused on making the product promise, workflow, and reasons to believe clear in a quick scan.',
-          outcome: 'Improved the first-read story for a coaching product.',
-          tools: ['Product storytelling', 'Page design', 'Visual explanation'],
-          stats: ['Explainer page', 'Value clarity', 'Product story'],
+        cover: {
+          src: '/images/case-studies/coach-connect/sales-hero.png',
+          position: 'center top',
         },
-      },
-      {
-        slug: 'm7-admits-page',
-        title: 'M7 Admits Page',
-        tag: 'Interactive page',
-        note: 'A richer admissions story with carousel and card interactions.',
-        actionType: 'internal-route',
         details: {
+          template: 'website-showcase',
           eyebrow: 'Web Services',
-          title: 'M7 Admits Page',
-          role: 'Interactive web page',
+          title: 'Coach Connect — selling the subscription, then serving it',
+          previewTitle: 'Coach Connect',
+          hook: 'A recurring mentoring subscription has two design problems, not one: convince a stranger it\'s worth $49 a month, then give the people who say yes a place to actually use it. I designed both surfaces — the sell and the stay.',
+          summary: 'Coach Connect is e-GMAT\'s live-mentoring subscription. I designed two surfaces for it: a sales page that makes "what you get, who teaches it, what it costs" legible in one scroll, and a companion app — a low-chrome utility where enrolled students find their schedule, join sessions, and browse recordings. One product, two jobs, two very different design registers.',
+          heroNote: 'A lean case study — the design decisions behind both surfaces, in brief. The sales page is embedded below.',
+          role: 'Web & Product Designer (sole)',
           year: '2024',
-          context: 'An admissions story that needed richer browsing than a static page could give.',
-          description: 'A web page with carousel and card interactions to help outcomes, schools, and proof feel more inspectable.',
-          outcome: 'Created a more active way to explore admissions proof.',
-          tools: ['Interactive UI', 'Carousel UX', 'Proof design'],
-          stats: ['Interactive page', 'Admissions story', 'Card system'],
+          status: 'Live',
+          projectType: 'Sales page + companion app',
+          embedUrl: 'https://learn.e-gmat.com/products/coach-connect/',
+          externalUrl: 'https://learn.e-gmat.com/products/coach-connect/',
+          liveBadge: 'live embed',
+          websiteNavLinks: [
+            { href: '#website-preview', label: 'Live preview' },
+            { href: '#context', label: 'Context' },
+            { href: '#objectives', label: 'Objectives' },
+            { href: '#shipped', label: 'Approach' },
+          ],
+          contextCards: [
+            {
+              eyebrow: 'The opportunity',
+              title: 'A subscription is sold once and used forever',
+              body: 'Coach Connect pairs students with top-rated instructors in recurring live sessions for $49/month. Unlike a one-time course, it has to win the sale and then keep earning it week after week. That meant two surfaces with opposite jobs — a page that persuades, and an app that quietly works — and they had to feel like one product.',
+            },
+            {
+              eyebrow: 'Problem statement',
+              title: 'Where a single page would have failed',
+              body: 'Try to do both jobs on one page and both suffer. A prospect needs:',
+              questions: [
+                'What exactly do I get, and what does it cost?',
+                'Who is teaching me, and are they any good?',
+              ],
+              closing: 'But an enrolled student needs none of that — they need "when is my next session, how do I join, where are the recordings." A marketing page buries those daily tasks under a sales pitch; a utility app buries the pitch under tools. Each surface had to be designed for exactly one of these people.',
+            },
+          ],
+          solutionObjectives: {
+            items: [
+              {
+                icon: 'target',
+                title: 'Make the offer legible at a glance',
+                body: 'Anchor the sales page on the few numbers that decide the purchase — 15 sessions, $49, the target score — rendered big enough to read in a scan, so the value lands before the copy is read.',
+              },
+              {
+                icon: 'verify',
+                title: 'Earn trust with specifics',
+                body: 'Back the instructors with concrete authority — exact review counts, percentiles, research hours — and show testimonials whose outcomes match the exact promise. Specifics persuade where adjectives slide off.',
+              },
+              {
+                icon: 'loop',
+                title: 'Design the using, not just the buying',
+                body: 'Build the companion app around real student workflow — schedule, join, ask, review — as a low-chrome utility, so the product keeps delivering value long after the sale that a marketing page can\'t.',
+              },
+            ],
+            thesis: 'A subscription product is two designs in a trench coat. I gave each its own surface — a persuasive page for the stranger, a frictionless tool for the member — so neither compromised the other.',
+          },
+          roleParagraph: 'I designed both surfaces — the marketing page and the companion app. The sales page was built as a marketing page, extended with custom CSS where the builder fell short; the app surface was designed around the day-to-day tasks of an enrolled student rather than around the sell.',
+          notesCard: {
+            intro: 'The decisions split cleanly across the two surfaces — the first three are about persuading a stranger to subscribe, the last is about serving the student who did.',
+            decisions: [
+              {
+                number: '01',
+                title: 'Anchored the sales page on oversized proof-numbers',
+                body: 'The three numbers that actually decide the purchase — 15 sessions, $49/month, the 705+ target — are the visual anchors of the page, sized to be read in a glance. The value proposition is legible before a word of body copy, so a skim still converts.',
+                screenSet: {
+                  frameTitle: 'Coach Connect — Sales page',
+                  tabs: [
+                    {
+                      label: 'Hero + numbers',
+                      src: '/images/case-studies/coach-connect/sales-hero.png',
+                      alt: 'Coach Connect sales hero anchored on session count, price, and target score.',
+                      caption: 'The deciding numbers are the loudest thing on the page — value before copy.',
+                    },
+                    {
+                      label: 'Value props',
+                      src: '/images/case-studies/coach-connect/value-props.png',
+                      alt: 'Four icon-led value-proposition blocks on the Coach Connect sales page.',
+                      caption: 'One idea per block — sessions, flexibility, price, instructor quality.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '02',
+                title: 'Built credibility from instructor specifics',
+                body: 'The instructor spotlight trades adjectives for evidence — exact review counts, 99th–100th percentile scores, thousands of research hours — and the student testimonials are chosen so each one\'s outcome (score, percentile) mirrors the exact promise the page makes. The proof is specific enough to be checkable, which is what makes it land.',
+                screenSet: {
+                  frameTitle: 'Coach Connect — Authority and proof',
+                  plain: true,
+                  tabs: [
+                    {
+                      label: 'Instructor spotlight',
+                      src: '/images/case-studies/coach-connect/instructors.png',
+                      alt: 'Instructor spotlight with review counts, percentiles, and research hours.',
+                      caption: 'Authority in numbers — reviews, percentiles, hours — not in praise.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '03',
+                title: 'Tamed a 15-session calendar with progressive disclosure',
+                body: 'Fifteen recurring sessions across three subjects is a lot to show without overwhelming the first view. A "show more / show less" calendar reveals the first few and collapses the rest, so the page proves the breadth of the offering without drowning a first-time visitor in a wall of slots.',
+                screenSet: {
+                  frameTitle: 'Coach Connect — Session calendar',
+                  plain: true,
+                  tabs: [
+                    {
+                      label: 'Collapsible calendar',
+                      src: '/images/case-studies/coach-connect/calendar.png',
+                      alt: 'Session calendar with a show-more control collapsing the full 15-session list.',
+                      caption: 'Show a few, collapse the rest — breadth without the wall.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '04',
+                title: 'Designed the companion app as a low-chrome utility',
+                body: 'The app surface (a separate product, coachconnect.e-gmat.com) drops the sell entirely. It splits scheduling and recordings into a clean, tabbed layout with two task-specific CTAs — "join session" and "add to calendar" — instead of one ambiguous button, and organises the growing recordings archive into month tabs with named homework per session. It is built for a student\'s real workflow, not for conversion.',
+                screenSet: {
+                  frameTitle: 'Coach Connect — Companion app',
+                  tabs: [
+                    {
+                      label: 'Schedule + join',
+                      src: '/images/case-studies/coach-connect/app-schedule.png',
+                      alt: 'Companion app showing the live-session schedule with join and add-to-calendar CTAs.',
+                      caption: 'Two task-specific CTAs — join vs. add-to-calendar — match how students actually act.',
+                    },
+                    {
+                      label: 'Recordings archive',
+                      src: '/images/case-studies/coach-connect/app-recordings.png',
+                      alt: 'Month-tabbed recordings archive with discussion points and named homework.',
+                      caption: 'Month tabs keep a growing archive scannable; named homework adds accountability.',
+                    },
+                  ],
+                },
+              },
+            ],
+          },
+          sidebar: {
+            categories: ['Web', 'Product', 'Edtech'],
+            facts: [
+              { label: 'Role', value: 'Web & Product Designer (sole)' },
+              { label: 'Timeline', value: '2024' },
+              { label: 'Surfaces', value: 'Sales page + companion app' },
+              { label: 'Status', value: 'Live' },
+            ],
+            factsVisibleCount: 3,
+            projectChips: [
+              { label: 'Live', active: true, dot: true },
+              {
+                label: 'Sales page',
+                logo: '/images/case-studies/sat-lms/e-gmat.png',
+                href: 'https://learn.e-gmat.com/products/coach-connect/',
+              },
+              {
+                label: 'coachconnect.e-gmat.com',
+                logo: '/images/case-studies/sat-lms/e-gmat.png',
+                href: 'https://coachconnect.e-gmat.com/',
+              },
+            ],
+            projectDisclaimer: 'Logos are the properties of the respective companies.',
+          },
         },
       },
       {
         slug: 'growth-pages',
         title: 'Growth Pages',
-        tag: 'Marketing system',
-        note: 'Reusable interaction patterns across public-facing web pages.',
+        tag: 'Marketing page system',
+        note: 'A library of public-facing pages — product launches, success proof, sessions, careers — built on one visual system, dialled up or down to match each page\'s job in the funnel.',
         actionType: 'internal-route',
+        cover: {
+          src: '/images/case-studies/growth-pages/careers-home.png',
+          position: 'center top',
+        },
         details: {
+          template: 'website-showcase',
           eyebrow: 'Web Services',
-          title: 'Growth Pages',
-          role: 'Marketing page system',
-          year: '2023-2025',
-          context: 'A collection of public-facing pages that needed repeatable quality at volume.',
-          description: 'Reusable page patterns for marketing, content, proof, and conversion moments across web surfaces.',
-          outcome: 'Helped repeated page production stay visually and structurally consistent.',
-          tools: ['Web systems', 'Interaction patterns', 'Page production'],
-          stats: ['Reusable patterns', 'Growth pages', 'Public web'],
+          title: 'Growth Pages — one system, many pages, every funnel stage',
+          previewTitle: 'Growth Pages',
+          hook: 'Marketing doesn\'t need one perfect page — it needs dozens of good ones, fast, that all look like the same brand. This is the gallery: a single visual system stretched across product, proof, session, and careers pages, tuned to each page\'s job.',
+          summary: 'Most of my web work doesn\'t fit a single case study — it\'s a body of growth and marketing pages produced at volume. Rather than design each from scratch, I built one visual system and a set of reusable patterns, then dialled the conversion intensity up or down to match where each page sits in the funnel. This gallery groups that work into four families: student-success proof, product and program pages, sessions and events, and careers.',
+          heroNote: 'A lean case study — a gallery of the growth pages, grouped by the job each one does. Each card links to the live page.',
+          role: 'Web / Growth Designer (sole)',
+          year: '2023 – 2025',
+          status: 'Live',
+          projectType: 'Marketing page system',
+          externalUrl: 'https://learn.e-gmat.com/',
+          websiteNavLinks: [
+            { href: '#context', label: 'Context' },
+            { href: '#objectives', label: 'Objectives' },
+            { href: '#shipped', label: 'The gallery' },
+          ],
+          contextCards: [
+            {
+              eyebrow: 'The opportunity',
+              title: 'Growth runs on page volume',
+              body: 'A growth team ships constantly — a launch page this week, a success report next, a session registration, a careers post, a partner event. No single one of these is a flagship case study, but together they are the bulk of the public-facing web work, and they all have to feel like one brand while being produced far too fast to hand-craft individually.',
+            },
+            {
+              eyebrow: 'Problem statement',
+              title: 'Why volume breaks consistency',
+              body: 'Produce dozens of pages with no system and three things go wrong:',
+              questions: [
+                'Every page drifts visually until the brand looks fragmented',
+                'Each page is slow to build because nothing is reused',
+                'Pages forget which funnel stage they\'re for — selling when they should reassure, or vice versa',
+              ],
+              closing: 'The answer wasn\'t one beautiful page. It was a system — shared patterns and a visual language — that any of these pages could be poured into, then tuned to the specific job it had to do.',
+            },
+          ],
+          solutionObjectives: {
+            items: [
+              {
+                icon: 'loop',
+                title: 'One visual system, many pages',
+                body: 'A shared language — the same headers, footers, stat panels, icon-led explainer blocks, and proof patterns — so a launch page and a careers page read as the same brand even though no two are identical.',
+              },
+              {
+                icon: 'target',
+                title: 'Match the page to its funnel job',
+                body: 'Conversion intensity scales with intent: a free top-of-funnel page reassures and educates; a high-ticket program page leans on scarcity and proof; a post-registration page switches from selling to retaining. Same system, different dial settings.',
+              },
+              {
+                icon: 'decide',
+                title: 'Design for production, not one-offs',
+                body: 'Patterns reusable enough that the next page is fast to build and on-brand by default — using a page builder for speed, and dropping to custom CSS and JavaScript only where the interaction demanded it.',
+              },
+            ],
+            thesis: 'Growth design is a systems problem disguised as a page problem. I built the system once, then spent my time on the decision that actually varies per page: what job is this page doing, and how hard should it push?',
+          },
+          roleParagraph: 'I designed and built these pages on a page builder for production speed, extending them with custom CSS and JavaScript wherever the native components couldn\'t deliver the interaction — filters, carousels, countdowns, and the like. The gallery below groups the work by the job each page does; every card opens the live page.',
+          notesCard: {
+            intro: 'Four families of page, each tuned to a different moment in a prospect\'s journey — from proving the product works, to selling specific programs, to running live sessions, to hiring the team behind it all.',
+            decisions: [
+              {
+                number: '01',
+                title: 'Student-success proof — making outcomes browsable',
+                body: 'The proof pages turn a flood of student results into something a prospect can navigate and believe: an annual success report that re-cuts one dataset into several "wow" framings, a templated case-study system where only the names and numbers change, and a filterable admits wall. The design job is legibility at volume — proof that scales without reading as sameness.',
+                gallery: [
+                  {
+                    title: '2025 Success Report',
+                    note: 'A year of outcomes plus the product investment behind them — one dataset re-cut into several achievement lenses.',
+                    href: 'https://learn.e-gmat.com/products/egmat-2025-updates/',
+                    thumb: '/images/case-studies/growth-pages/success-report-2025.png',
+                    alt: 'e-GMAT 2025 success report page.',
+                  },
+                  {
+                    title: 'Success-story system',
+                    note: 'A reusable case-study template — hero score, before/after leap, per-section strategy, mentorship, recap. Only the numbers and names swap.',
+                    href: 'https://learn.e-gmat.com/success-story/divy-gmat-735/',
+                    thumb: '/images/case-studies/growth-pages/success-story-template.png',
+                    alt: 'A templated student success-story page.',
+                  },
+                  {
+                    title: 'M7 Admits proof-wall',
+                    note: 'Hundreds of elite-school admits turned into a filterable, self-segmenting credibility argument — a normalized outcome card plus a cohort filter.',
+                    href: 'https://learn.e-gmat.com/admits-and-scholarships/m7-admits/',
+                    thumb: '/images/case-studies/growth-pages/m7-admits.png',
+                    alt: 'M7 admits interactive proof-wall page.',
+                  },
+                ],
+              },
+              {
+                number: '02',
+                title: 'Product & program pages — complexity made scannable',
+                body: 'Each product page takes something genuinely complex — a 1-on-1 mentorship program, a question-adaptive mock engine, a three-stage learning method — and breaks it into icon-led blocks, big-number stat panels, and head-to-head comparisons. The conversion dial moves with the price: a free mock says "try it"; a $499 program leans on scarcity and alumni proof.',
+                gallery: [
+                  {
+                    title: 'Last Mile Push (LMP)',
+                    note: 'High-ticket 1-on-1 program — a dual scholarship/purchase funnel and relative-advantage stats ("3X the success, half the time").',
+                    href: 'https://learn.e-gmat.com/products/lmp/enroll/',
+                    thumb: '/images/case-studies/growth-pages/lmp.png',
+                    alt: 'Last Mile Push enrollment page.',
+                  },
+                  {
+                    title: 'Sigma-X Adaptive Mocks',
+                    note: 'A psychometric engine sold on insight, not score — translated into feature blocks and a comparison table against the official mock.',
+                    href: 'https://learn.e-gmat.com/products/sigma-x/',
+                    thumb: '/images/case-studies/growth-pages/sigma-x.png',
+                    alt: 'Sigma-X adaptive mocks product page.',
+                  },
+                  {
+                    title: 'GMAT Strategy Guidance',
+                    note: 'A top-of-funnel method page — a three-stage journey with a progression graph and free tools, soft-CTA instead of a sell.',
+                    href: 'https://learn.e-gmat.com/gmat-strategy-guidance/',
+                    thumb: '/images/case-studies/growth-pages/strategy-guidance.png',
+                    alt: 'GMAT strategy guidance methodology page.',
+                  },
+                ],
+              },
+              {
+                number: '03',
+                title: 'Sessions & events — one template, every state',
+                body: 'The live-session pages run on a single registration layout — hero, countdown, details card, expandable content modules, host bios — content-swapped per topic. The sharpest decision is the post-registration state: the same template repurposed from acquisition to retention, swapping the register CTA for add-to-calendar and a guided pre-session checklist. Partner events (like the CAT decision-makers session) reuse the same system co-branded.',
+                gallery: [
+                  {
+                    title: 'Weekly free sessions',
+                    note: 'A reusable webinar-registration template — countdown-driven, content-swapped per topic, with a post-registration retention variant.',
+                    href: 'https://learn.e-gmat.com/free-session/gmat-strategy/',
+                    thumb: '/images/case-studies/growth-pages/weekly-sessions.png',
+                    alt: 'Weekly free GMAT strategy session registration page.',
+                  },
+                  {
+                    title: 'Partner event — CAT decision-makers',
+                    note: 'The session system co-branded for a partner event — seats, schedule, and speaker line-up on the same layout.',
+                    href: 'https://learn.e-gmat.com/',
+                    thumb: '/images/case-studies/growth-pages/partner-event-cat.png',
+                    alt: 'CAT partner event landing page.',
+                  },
+                ],
+              },
+              {
+                number: '04',
+                title: 'Careers — selling the company to candidates',
+                body: 'The careers pages apply the same growth thinking to a different audience: a homepage that pitches the company\'s mission and culture with the same warmth as a product page, and a job-description template that keeps every opening scannable — role, responsibilities, qualifications, and "what you\'ll get" in a consistent, accordion-style structure a candidate can read in a minute.',
+                gallery: [
+                  {
+                    title: 'Careers homepage',
+                    note: 'Mission, what the team achieved, employee spotlights, and open roles — recruiting marketing built on the product visual system.',
+                    href: 'https://learn.e-gmat.com/',
+                    thumb: '/images/case-studies/growth-pages/careers-home.png',
+                    alt: 'e-GMAT careers homepage.',
+                  },
+                  {
+                    title: 'Job-description template',
+                    note: 'A reusable JD layout — overview, key responsibilities, qualifications, and what you\'ll get — scannable in a minute.',
+                    href: 'https://learn.e-gmat.com/',
+                    thumb: '/images/case-studies/growth-pages/careers-jd.png',
+                    alt: 'e-GMAT job description page template.',
+                  },
+                ],
+              },
+            ],
+          },
+          sidebar: {
+            categories: ['Web', 'Growth / Marketing', 'Edtech'],
+            facts: [
+              { label: 'Role', value: 'Web / Growth Designer (sole)' },
+              { label: 'Timeline', value: '2023 – 2025' },
+              { label: 'Scope', value: 'Product, proof, session & careers pages' },
+              { label: 'Status', value: 'Live' },
+            ],
+            factsVisibleCount: 3,
+            projectChips: [
+              { label: 'Live', active: true, dot: true },
+              {
+                label: 'learn.e-gmat.com',
+                logo: '/images/case-studies/sat-lms/e-gmat.png',
+                href: 'https://learn.e-gmat.com/',
+              },
+            ],
+            projectDisclaimer: 'Logos are the properties of the respective companies. Some pages are gated or run on rotating schedules, so a live link may show the current instance of a recurring page.',
+          },
         },
       },
     ],

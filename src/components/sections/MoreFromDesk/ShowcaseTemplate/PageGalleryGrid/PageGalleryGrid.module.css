@@ -1,0 +1,95 @@
+.galleryGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.galleryCard {
+  display: grid;
+  gap: 0.85rem;
+  padding: 0.85rem 0.85rem 1.15rem;
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 88%, transparent);
+  border-radius: 0.85rem;
+  background: var(--color-surface-white);
+  text-decoration: none;
+  color: inherit;
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+a.galleryCard:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--color-accent-lavender) 55%, transparent);
+  box-shadow: 0 0.75rem 1.75rem -1rem rgba(20, 20, 40, 0.45);
+}
+
+.thumbFrame {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 0.6rem;
+  /* Page thumbnails read best at a browser-window ratio. */
+  aspect-ratio: 16 / 10;
+  background: color-mix(in srgb, var(--color-surface-lilac) 60%, var(--color-surface-white));
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 70%, transparent);
+}
+
+.thumbFrame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  top: 0.6rem;
+  left: 0.6rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  background: var(--color-ink-950);
+  color: var(--color-surface-white);
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+}
+
+.cardBody {
+  display: grid;
+  gap: 0.4rem;
+  padding: 0 0.65rem;
+}
+
+.cardTitle {
+  color: var(--color-ink-950);
+  font-family: var(--font-cabinet);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  font-size: var(--text-body);
+  line-height: 1.2;
+}
+
+.cardNote {
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: var(--text-small);
+  line-height: 1.65;
+}
+
+.cardLink {
+  margin-top: 0.15rem;
+  color: color-mix(in srgb, var(--color-accent-lavender) 80%, var(--color-ink-950));
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 47.999rem) {
+  .galleryGrid {
+    grid-template-columns: 1fr;
+  }
+}
