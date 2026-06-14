@@ -19,7 +19,7 @@ export const moreWorkLanes = [
         // Card cover: the dynamic-planning illustration (two students, two
         // opposite plans) — the product's differentiation at a glance.
         cover: {
-          src: '/images/case-studies/personalized-study-planner/psp-thumbnail.png',
+          src: '/images/case-studies/personalized-study-planner/psp-thumbnail.webp',
           position: 'center 18%',
         },
         details: {
@@ -335,7 +335,7 @@ export const moreWorkLanes = [
         note: 'Complex capability translated into a usable operating interface.',
         actionType: 'internal-route',
         cover: {
-          src: '/images/case-studies/sigma-x/sigmax-thumbnail.svg',
+          src: '/images/case-studies/sigma-x/sigmax-thumbnail.webp',
           position: 'center',
         },
         details: {
@@ -357,7 +357,7 @@ export const moreWorkLanes = [
         note: 'A ground-up rebuild of e-GMAT\'s highest-traffic practice platform — turning every attempt into actionable insight on what to fix next.',
         actionType: 'internal-route',
         cover: {
-          src: '/images/case-studies/scholaranium/scholaranium-thumbnail.svg',
+          src: '/images/case-studies/scholaranium/scholaranium-thumbnail.webp',
           position: 'center',
         },
         details: {
@@ -672,7 +672,7 @@ export const moreWorkLanes = [
         note: 'Motivation mechanics designed around consistency and return behavior.',
         actionType: 'internal-route',
         cover: {
-          src: '/images/case-studies/streak-rings/streak-rings-thumbnail.svg',
+          src: '/images/case-studies/streak-rings/streak-rings-thumbnail.webp',
           position: 'center',
         },
         details: {
@@ -707,7 +707,7 @@ export const moreWorkLanes = [
         note: 'One WordPress theme made to behave like a system, so page 150 stays as on-brand as page 1.',
         actionType: 'internal-route',
         cover: {
-          src: '/images/case-studies/egmat-blogs/blog-landing.png',
+          src: '/images/case-studies/egmat-blogs/blog-landing-card.webp',
           position: 'center top',
         },
         details: {
@@ -909,7 +909,7 @@ export const moreWorkLanes = [
         embedUrl: 'https://nerdypixelstudios.ca',
         externalUrl: 'https://nerdypixelstudios.ca',
         cover: {
-          src: '/images/case-studies/nerdypixel-studios/hero.png',
+          src: '/images/case-studies/nerdypixel-studios/hero-card.webp',
           position: 'center top',
         },
         details: {
@@ -1065,7 +1065,7 @@ export const moreWorkLanes = [
         note: 'Anchored on one outcome (735+), with verifiable proof and a CTA in every block, so signing up is the easy path.',
         actionType: 'internal-route',
         cover: {
-          src: '/images/case-studies/free-trial/hero.png',
+          src: '/images/case-studies/free-trial/hero-card.webp',
           position: 'center top',
         },
         details: {
@@ -1222,7 +1222,7 @@ export const moreWorkLanes = [
         note: 'Two surfaces for one subscription: a page that persuades, and an app where members live day to day.',
         actionType: 'internal-route',
         cover: {
-          src: '/images/case-studies/coach-connect/sales-hero.png',
+          src: '/images/case-studies/coach-connect/sales-hero-card.webp',
           position: 'center top',
         },
         details: {
@@ -1400,7 +1400,7 @@ export const moreWorkLanes = [
         note: 'Product, proof, session and careers pages on one visual system, tuned to each page\'s job in the funnel.',
         actionType: 'internal-route',
         cover: {
-          src: '/images/case-studies/growth-pages/careers-home.png',
+          src: '/images/case-studies/growth-pages/careers-home-card.webp',
           position: 'center top',
         },
         details: {
