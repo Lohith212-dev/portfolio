@@ -41,7 +41,10 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
   const screenshots = detail.screenshots;
   const summary = detail.summary || 'This display page is using the shared lean wrapper while the full case study is still being prepared.';
   const roleParagraph = detail.roleParagraph || '';
-  const comingSoonNote = detail.heroNote || 'This is just a display page and the full case study is coming soon.';
+  // The yellow "lean / display page" badge under the title is opt-in: it only
+  // shows where the entry sets showHeroNote (the genuine placeholder pages).
+  // Lean case studies from the more-works section leave it off.
+  const comingSoonNote = detail.showHeroNote ? detail.heroNote : '';
   const [activeEmbedModal, setActiveEmbedModal] = useState(null);
 
   const hasEmbed = Boolean(detail.embedUrl);

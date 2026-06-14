@@ -16,6 +16,17 @@ export default function ShowcaseSidebar({ sidebar }) {
         </div>
       ) : null}
 
+      {sidebar?.responsibilities?.length ? (
+        <div className={styles.sideSection}>
+          <h3>Responsibilities</h3>
+          <ul className={styles.responsibilityList}>
+            {sidebar.responsibilities.map((item) => (
+              <li key={item} className={styles.responsibilityItem}>{item}</li>
+            ))}
+          </ul>
+        </div>
+      ) : null}
+
       {visibleFacts.length || sidebar?.projectChips?.length || sidebar?.projectDisclaimer ? (
         <div className={styles.sideSection}>
           <h3>Project</h3>

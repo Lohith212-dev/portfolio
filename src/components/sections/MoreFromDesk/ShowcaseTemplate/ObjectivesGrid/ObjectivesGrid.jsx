@@ -1,8 +1,11 @@
 import {
   ObjectiveDecideIcon,
   ObjectiveDoubtIcon,
+  ObjectiveHierarchyIcon,
   ObjectiveLoopIcon,
+  ObjectiveRouteIcon,
   ObjectiveTargetIcon,
+  ObjectiveUnlockIcon,
   ObjectiveVerifyIcon,
   ObjectiveWelcomeIcon,
 } from '../../../../icons/icons';
@@ -17,6 +20,9 @@ const OBJECTIVE_ICONS = {
   loop: ObjectiveLoopIcon,
   doubt: ObjectiveDoubtIcon,
   target: ObjectiveTargetIcon,
+  unlock: ObjectiveUnlockIcon,
+  route: ObjectiveRouteIcon,
+  hierarchy: ObjectiveHierarchyIcon,
 };
 
 export default function ObjectivesGrid({ items }) {

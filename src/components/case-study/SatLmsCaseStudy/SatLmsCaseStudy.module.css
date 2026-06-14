@@ -602,7 +602,9 @@
   background-size: 18rem 18rem;
   mix-blend-mode: screen;
   opacity: 0.5;
-  animation: tutorVideoStaticDrift 4.8s linear infinite alternate;
+  /* Stepped churn — matches the noise treatment on the home product cards,
+     which reads more like real TV static than the old smooth drift. */
+  animation: tutorVideoStaticDrift 0.56s steps(6) infinite;
   pointer-events: none;
 }
 
@@ -669,24 +671,8 @@
 }
 
 @keyframes tutorVideoStaticDrift {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  25% {
-    transform: translate3d(-2.5%, 1.75%, 0);
-  }
-
-  50% {
-    transform: translate3d(2%, -2.75%, 0);
-  }
-
-  75% {
-    transform: translate3d(-1.5%, -2%, 0);
-  }
-
-  100% {
-    transform: translate3d(2.75%, 2.25%, 0);
+  to {
+    transform: translate3d(-12%, -12%, 0);
   }
 }
 

@@ -372,7 +372,9 @@
 
 .workCard {
   display: block;
-  width: 19.4rem;
+  /* Bumped from the original 19.4rem so the (unchanged) image proportion reads
+     bigger and headlines wrap less — the only change from the initial design. */
+  width: 22.5rem;
   flex-shrink: 0;
   border: 0;
   border-radius: 2rem 1rem 2.4rem 1.15rem;
@@ -441,7 +443,9 @@
   font-size: 1.36rem;
   font-weight: 800;
   letter-spacing: 0;
-  line-height: 1;
+  /* Headlines can run to two lines now (name + transformation); 1.05 keeps
+     them tight like the original single-line look without the lines touching. */
+  line-height: 1.05;
 }
 
 .cardIcon {
@@ -490,7 +494,9 @@
 
 .miniMock {
   position: relative;
-  height: 9rem;
+  /* Bumped from the original 9rem in step with the wider card, so the image
+     scales up while keeping the original ~2.1:1 proportion and rounded mask. */
+  height: 10.5rem;
   overflow: hidden;
   border-radius: 1.75rem 0.9rem 2.1rem 1.1rem;
   background: color-mix(in srgb, var(--color-ink-100) 70%, var(--color-surface-light));
@@ -504,6 +510,88 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+/* Old-TV treatment (hover-capable devices only — touch always gets clean
+   colour, per the design decision). Default: a lane-coloured duotone with an
+   animated noise overlay; hover reveals the clean colour image with no noise
+   and no tint. Stack from the bottom up is image → tint → noise, ordered by
+   z-index. All values here are one-off decorative tuning dials, kept local. */
+@media (hover: hover) {
+  .miniMockCover {
+    z-index: 0;
+    /* Grayscale but kept bright so the muted state reads as styled, not
+       disabled; the lane hue comes from the tint layer below. */
+    filter: grayscale(1) brightness(1.06) contrast(1.04);
+    transition: filter 0.35s ease;
+  }
+
+  .workCard:hover .miniMockCover,
+  .workCard:focus-visible .miniMockCover {
+    filter: grayscale(0) brightness(1) contrast(1);
+  }
+
+  /* Tint layer — recolours the grayscale cover into the lane accent
+     (orange / lavender / green, supplied per lane via --more-work-accent).
+     `color` blend keeps the photo's light/dark structure and only swaps in
+     the hue, giving a clean duotone rather than a flat wash. */
+  .miniMock:has(> .miniMockCover)::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: var(--more-work-accent);
+    mix-blend-mode: color;
+    opacity: 0.85;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+  }
+
+  /* TV-static overlay — only where a cover image exists (plain tinted
+     placeholders are left alone). The layer is oversized and driven by a
+     stepped transform so the motion stays on the compositor (cheap) and never
+     exposes an edge as it jitters. */
+  .miniMock:has(> .miniMockCover)::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    width: 150%;
+    height: 150%;
+    /* Same snow texture shipped on the SAT-LMS case study. Tiled small so the
+       grain stays fine and sharp (scaling the PNG down keeps it crisp);
+       `screen` makes the white grains sparkle over the duotone like real
+       static. The stepped transform jumps the pattern so it reads as churning
+       snow rather than a sliding sheet. */
+    background-image: url('/images/case-studies/sat-lms/noise-texture.png');
+    background-repeat: repeat;
+    background-size: 14rem 14rem;
+    mix-blend-mode: screen;
+    opacity: 0.5;
+    pointer-events: none;
+    animation: tvStatic 0.56s steps(6) infinite;
+    transition: opacity 0.35s ease;
+  }
+
+  .workCard:hover .miniMock::before,
+  .workCard:focus-visible .miniMock::before,
+  .workCard:hover .miniMock::after,
+  .workCard:focus-visible .miniMock::after {
+    opacity: 0;
+  }
+
+  @keyframes tvStatic {
+    to {
+      transform: translate(-12%, -12%);
+    }
+  }
+
+  /* Reduced-motion users keep the grain look but lose the perpetual jitter. */
+  @media (prefers-reduced-motion: reduce) {
+    .miniMock:has(> .miniMockCover)::after {
+      animation: none;
+    }
+  }
 }
 
 .modalOverlay {
@@ -754,7 +842,7 @@
   }
 
   .workCard {
-    width: min(82vw, 19.4rem);
+    width: min(86vw, 22.5rem);
   }
 
   .modalOverlay {

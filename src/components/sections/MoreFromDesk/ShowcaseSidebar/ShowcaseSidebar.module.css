@@ -46,6 +46,36 @@
   line-height: 1.2;
 }
 
+/* Responsibilities: a tight list that expands on the Role fact — what the
+   lead role actually covered, one line each. */
+.responsibilityList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 0.6rem;
+}
+
+.responsibilityItem {
+  position: relative;
+  padding-left: 1.05rem;
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: var(--text-small);
+  line-height: 1.45;
+}
+
+.responsibilityItem::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 0.34rem;
+  height: 0.34rem;
+  border-radius: 9999px;
+  background: var(--color-accent-yellow);
+}
+
 .factList {
   display: grid;
   gap: 0.8rem;

@@ -19,7 +19,7 @@ export const moreWorkLanes = [
         // Card cover: the dynamic-planning illustration (two students, two
         // opposite plans) — the product's differentiation at a glance.
         cover: {
-          src: '/images/case-studies/personalized-study-planner/dynamic-planning.svg',
+          src: '/images/case-studies/personalized-study-planner/psp-thumbnail.png',
           position: 'center 18%',
         },
         details: {
@@ -334,6 +334,10 @@ export const moreWorkLanes = [
         tag: 'Internal product',
         note: 'Complex capability translated into a usable operating interface.',
         actionType: 'internal-route',
+        cover: {
+          src: '/images/case-studies/sigma-x/sigmax-thumbnail.svg',
+          position: 'center',
+        },
         details: {
           eyebrow: 'Product Systems',
           title: 'SIGma-X',
@@ -352,11 +356,9 @@ export const moreWorkLanes = [
         tag: 'Practice & analytics',
         note: 'A ground-up rebuild of e-GMAT\'s highest-traffic practice platform — turning every attempt into actionable insight on what to fix next.',
         actionType: 'internal-route',
-        // Card cover: the skill-data overall-performance chart — the analytics
-        // rebuild that is the heart of the case study.
         cover: {
-          src: '/images/case-studies/scholaranium/skill-data-overall.png',
-          position: 'center top',
+          src: '/images/case-studies/scholaranium/scholaranium-thumbnail.svg',
+          position: 'center',
         },
         details: {
           template: 'website-showcase',
@@ -669,6 +671,10 @@ export const moreWorkLanes = [
         tag: 'Behavior loop',
         note: 'Motivation mechanics designed around consistency and return behavior.',
         actionType: 'internal-route',
+        cover: {
+          src: '/images/case-studies/streak-rings/streak-rings-thumbnail.svg',
+          position: 'center',
+        },
         details: {
           eyebrow: 'Product Systems',
           title: 'Study Streak Rings',
@@ -679,24 +685,6 @@ export const moreWorkLanes = [
           outcome: 'Gave consistency a visible product language.',
           tools: ['Behavior design', 'Gamified UX', 'Progress states'],
           stats: ['Consistency loop', 'Return cue', 'Progress memory'],
-        },
-      },
-      {
-        slug: 'execution-tracker',
-        title: 'Execution Tracker',
-        tag: 'Progress visibility',
-        note: 'A tracking layer for making effort, gaps, and next actions visible.',
-        actionType: 'internal-route',
-        details: {
-          eyebrow: 'Product Systems',
-          title: 'Execution Tracker',
-          role: 'Progress system UX',
-          year: '2024',
-          context: 'A tracker for turning messy execution into visible progress and gaps.',
-          description: 'A visibility layer that helps users understand what moved, what is stuck, and what deserves attention next.',
-          outcome: 'Made progress easier to inspect without reading through scattered notes.',
-          tools: ['Tracking UX', 'Status design', 'Progress systems'],
-          stats: ['Effort visible', 'Gap tracking', 'Next actions'],
         },
       },
     ],
@@ -714,9 +702,9 @@ export const moreWorkLanes = [
     cards: [
       {
         slug: 'egmat-blogs',
-        title: 'e-GMAT Blogs',
+        title: 'e-GMAT Blogs — one system, 150+ pages',
         tag: 'SEO content system',
-        note: 'A WordPress blog turned into a content system — 150+ long-form pages that stay consistent, scannable, and built around what the reader came to find.',
+        note: 'One WordPress theme made to behave like a system, so page 150 stays as on-brand as page 1.',
         actionType: 'internal-route',
         cover: {
           src: '/images/case-studies/egmat-blogs/blog-landing.png',
@@ -727,11 +715,10 @@ export const moreWorkLanes = [
           eyebrow: 'Web Services',
           title: 'e-GMAT Blogs — a content system, not a pile of posts',
           previewTitle: 'e-GMAT Blogs',
-          hook: 'A search-led blog where every page had to earn a ranking, read cleanly on the tenth scroll, and look like it belonged to the same brand — across 150+ articles that I could not hand-design one by one.',
-          summary: 'e-GMAT publishes long-form GMAT and MBA content at volume. I designed the blog as a system on WordPress — a browsable landing page organised by reader intent, and a reusable long-form article template — so the team could publish constantly without the design drifting. Where the prescribed theme could not do what the content needed, I extended it with custom CSS and injected code.',
-          heroNote: 'A lean case study — the design decisions behind the system, in brief.',
-          role: 'Web Designer (sole)',
-          year: '2023 – 2025',
+          hook: 'A search-led blog rebuilt so the team could publish forever without an engineer in the loop — and so every article actually routed its reader onward instead of dead-ending.',
+          summary: 'e-GMAT ranked well but couldn\'t move: every blog change waited on the engineering queue. I led a full rebuild on WordPress with the Extra theme — turning a flat list of posts into a system with real hierarchy, a conversion-minded article page, and a custom-built sidebar, extended with code wherever the theme fell short.',
+          role: 'Lead designer',
+          year: '2023',
           status: 'Live',
           projectType: 'SEO content system',
           embedUrl: 'https://e-gmat.com/blogs/',
@@ -742,126 +729,165 @@ export const moreWorkLanes = [
             { href: '#context', label: 'Context' },
             { href: '#objectives', label: 'Objectives' },
             { href: '#shipped', label: 'Approach' },
+            { href: '#shift', label: 'The Shift' },
           ],
           contextCards: [
             {
-              eyebrow: 'The opportunity',
-              title: 'A content engine with no design system',
-              body: 'e-GMAT was producing search content at a pace no designer could keep up with one page at a time — exam guides, prep strategy, success stories, MBA admissions. The writing was strong and the search intent was clear. What was missing was a design layer that could stretch across 150+ pages without me touching each one, and without the brand looking like ten different sites stitched together.',
+              eyebrow: 'The trigger',
+              title: 'Every fix waited on engineering',
+              body: 'The old blog was hand-coded, so any change sat in the engineering queue behind the actual product. Improvements we knew would work couldn\'t ship — and we watched rankings slip while we waited.',
             },
             {
               eyebrow: 'Problem statement',
-              title: 'Where a reverse-chron blog falls down',
-              body: 'A default WordPress blog hands every visitor the same thing — the newest post first — and answers none of the questions a search visitor actually arrives with:',
+              title: 'Ranking well, converting nothing',
+              body: 'Strong content pulled readers onto article pages. The pages then did nothing with them — no recommendations, no path onward, no reason to sign up. Three gaps on every page:',
               questions: [
-                'Is there a page for the exact thing I searched?',
-                'Can I trust a 3,000-word page enough to keep scrolling?',
-                'Where do I go next once I have read this one?',
+                'Where do I go after this article?',
+                'What else here is worth reading?',
+                'Why would I sign up?',
               ],
-              closing: 'A feed sorted by date treats a buyer\'s-guide reader and a casual browser identically, buries evergreen pages under fresh ones, and leaves long articles as undifferentiated walls of text. The content deserved a structure that matched how people found it.',
             },
           ],
           solutionObjectives: {
             items: [
               {
-                icon: 'target',
-                title: 'Organise by intent, not by date',
-                body: 'A search visitor lands with a goal, not a curiosity about what was published yesterday. The blog had to be a browsable directory — categories keyed to what people search for (Know the GMAT, Prepare for GMAT, Study Plans, Success Stories, MBA Admissions) — so the page they need is one obvious click away.',
+                icon: 'unlock',
+                title: 'Cut the engineering dependency',
+                body: 'A setup anyone could edit — no code, no queue, no bottleneck.',
               },
               {
-                icon: 'loop',
-                title: 'One template, 150+ consistent pages',
-                body: 'The design had to be a system the content team could pour into, not a custom job per post. A single long-form article template — hierarchy, read-time, in-content modules, related links — keeps every page on-brand and scannable whether it is article 5 or article 150.',
+                icon: 'route',
+                title: 'Make every article a path forward',
+                body: 'Each page had to recommend, cross-sell, and convert — not dead-end the reader it earned.',
               },
               {
-                icon: 'welcome',
-                title: 'Make long-form survivable',
-                body: '3,000-word pages live or die on the tenth scroll. Clear heading rhythm, breathing room, pull-outs, and tables turn an intimidating wall into something a reader can skim, trust, and finish — which is also what keeps them on the page long enough to rank.',
+                icon: 'hierarchy',
+                title: 'Give the blog a real spine',
+                body: 'A true structure — home to category to subcategory to article — readers and search both follow.',
               },
             ],
-            thesis: 'A blog at this volume is not a design project, it is a system. I designed the rules — landing structure and a long-form template — so that publishing the 150th page was as on-brand as the first, without a designer in the loop.',
+            thesis: 'The article page is the front door. People search a problem, not "e-GMAT blogs" — so they land mid-site, on an article. I designed everything around that page earning the next click.',
           },
-          roleParagraph: 'I designed and built this on WordPress with a prescribed theme as the foundation — the practical choice for a content team publishing daily. The decisions below are about making a general-purpose blog behave like a purpose-built content system; where the theme could not reach, I extended it with custom CSS and injected code rather than fighting it.',
+          roleParagraph: 'I led this end-to-end on WordPress with Elegant Themes\' Extra — coordinating with SEO, architecting the flows, and driving the junior designers. Where the theme couldn\'t reach, I took the code route rather than settle.',
           notesCard: {
-            intro: 'The blog is two design problems in one: the landing page that routes a visitor to the right article, and the article template every page is poured into. The decisions below follow that split — first how people find a page, then how the page holds them once they are on it.',
+            intro: 'Two problems in one: how a reader finds the right page, and what that page does once they are on it. The decisions follow that split — and a few places where I had to out-build the theme.',
             decisions: [
               {
                 number: '01',
-                title: 'Turned the landing page into a browsable directory',
-                body: 'Instead of a reverse-chronological feed, the landing page leads with a few featured stories, then breaks into intent-based category blocks — each showing its top three articles with a "view all" into the full category. A visitor scanning for "study plans" finds that lane immediately instead of scrolling past last week\'s post. The feed became a map.',
+                title: 'Chose the engine on purpose',
+                body: 'I researched ten well-rated blog themes, shortlisted three, and picked Extra on three tests: how easily a non-coder could update it, whether it shipped the pieces a blog needs, and how far it could be customised.',
                 screenSet: {
-                  frameTitle: 'e-GMAT Blogs — Landing page',
+                  plain: true,
+                  fullWidth: true,
                   tabs: [
                     {
-                      label: 'Featured + categories',
-                      src: '/images/case-studies/egmat-blogs/blog-landing.png',
-                      alt: 'e-GMAT blog landing page with featured stories and intent-based category blocks.',
-                      caption: 'Featured stories up top, then intent-based category lanes — the visitor routes themselves.',
-                    },
-                    {
-                      label: 'Category cards',
-                      src: '/images/case-studies/egmat-blogs/category-cards.png',
-                      alt: 'Icon-led category cards for browsing the blog by topic.',
-                      caption: 'Icon-led category cards make the blog\'s shape legible at a glance.',
+                      src: '/images/case-studies/egmat-blogs/theme-selection.png',
+                      alt: 'Theme shortlist narrowing from ten options to Extra against three criteria.',
+                      caption: 'Ten themes, three finalists, one pick — scored on editability, capability, and customisability.',
                     },
                   ],
                 },
               },
               {
                 number: '02',
-                title: 'Built one long-form article template the whole team could reuse',
-                body: 'Every article runs on the same skeleton: a clear title and read-time up top, a consistent heading hierarchy, and content modules — callouts, comparison tables, step lists — that the writers drop in without breaking the design. It is the same idea as the case-study system on the success-story pages: design the rules once, and consistency stops depending on the designer.',
+                title: 'Treated the article page as the front door',
+                body: 'Search visitors land on articles, not the home page — so that is where the work went. A register-free hook, sibling-category cross-links, and visual in-content link blocks turn a single answer into a reason to stay.',
                 screenSet: {
-                  frameTitle: 'e-GMAT Blogs — Article template',
+                  plain: true,
+                  fullWidth: true,
                   tabs: [
                     {
-                      label: 'Article header',
-                      src: '/images/case-studies/egmat-blogs/article-header.png',
-                      alt: 'Long-form article header with title, read-time, and meta.',
-                      caption: 'A consistent header — title, read-time, breadcrumb — sets the same expectation on every page.',
-                    },
-                    {
-                      label: 'In-content modules',
-                      src: '/images/case-studies/egmat-blogs/article-modules.png',
-                      alt: 'In-content modules: callouts, tables, and step lists inside a long-form article.',
-                      caption: 'Reusable modules — callouts, tables, step lists — break the wall without breaking the template.',
+                      src: '/images/case-studies/egmat-blogs/article-front-door.png',
+                      alt: 'Article page with a register hook, sibling-category links, and in-content link blocks.',
+                      caption: 'The article page does the converting — hooks and cross-links built into the template.',
                     },
                   ],
                 },
               },
               {
                 number: '03',
-                title: 'Kept the reader moving — and converting',
-                body: 'A page that ranks is wasted if it dead-ends. Related-article links sit at the foot of every category and article, and a free-trial CTA is woven into the template at natural breaks — so a reader who came for one answer leaves with somewhere to go next, and the content surface quietly feeds the funnel.',
+                title: 'Built a custom sidebar app',
+                body: 'The theme\'s sidebar was too thin for the job, so I built my own. It adapts to the article — relevant reads, parallel categories, and the platform resources that match what the visitor came for.',
                 screenSet: {
-                  frameTitle: 'e-GMAT Blogs — Continuity and conversion',
                   plain: true,
                   tabs: [
                     {
-                      label: 'Related + CTA',
-                      src: '/images/case-studies/egmat-blogs/related-cta.png',
-                      alt: 'Related articles and an in-content free-trial CTA at the end of a blog page.',
-                      caption: 'Related links and an in-template CTA turn the end of a page into a next step.',
+                      src: '/images/case-studies/egmat-blogs/custom-sidebar.png',
+                      alt: 'Custom dynamic sidebar showing related articles, sibling categories, and resources.',
+                      caption: 'A sidebar I coded from scratch — it changes with the article it sits beside.',
                     },
                   ],
                 },
               },
               {
                 number: '04',
-                title: 'Pushed past the theme where the content needed more',
-                body: 'A prescribed theme gets you 80% of the way and then resists the last 20%. Rather than accept "good enough," I extended it with custom CSS and small code injections — for the category-block layout, the in-content modules, and spacing the theme would not give — so the design served the content instead of the content bending to the theme.',
+                title: 'Closed every dead end',
+                body: 'Three featured reads from the same category at the foot of each article, author pages to follow a writer, and breadcrumbs plus a secondary nav so a reader can always go up, across, or onward.',
+                screenSet: {
+                  plain: true,
+                  sideBySide: true,
+                  tabs: [
+                    {
+                      src: '/images/case-studies/egmat-blogs/related-reads.png',
+                      alt: 'Three related featured articles at the end of an article.',
+                      caption: 'End of article: three featured reads from the same category.',
+                    },
+                    {
+                      src: '/images/case-studies/egmat-blogs/breadcrumbs-nav.png',
+                      alt: 'Breadcrumbs and secondary navigation at the top of an article page.',
+                      caption: 'Breadcrumbs and a secondary nav — orientation on every page.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '05',
+                title: 'Gave the blog a spine',
+                body: 'Home to category to subcategory to article, each level earning its place. The home page leads with featured and recent picks then fans into category chips; category and subcategory pages do the same one rung down.',
+                screenSet: {
+                  plain: true,
+                  fullWidth: true,
+                  tabs: [
+                    {
+                      src: '/images/case-studies/egmat-blogs/hierarchy.png',
+                      alt: 'Blog hierarchy from home page to category to subcategory to article.',
+                      caption: 'A four-level hierarchy where a flat list of posts used to be.',
+                    },
+                  ],
+                },
+              },
+              {
+                number: '06',
+                title: 'Out-built the theme where it mattered',
+                body: 'A prescribed theme gets you most of the way, then resists the last stretch. Rather than settle for "good enough," I extended it with custom CSS and injected code — the sidebar app, the in-content modules, the spacing — so the design served the content, not the other way round.',
               },
             ],
+            shift: {
+              rows: [
+                { before: 'Every update waited on the engineering queue', after: 'The content team publishes and edits on its own' },
+                { before: 'A flat, reverse-chron list of posts', after: 'Home to category to subcategory to article' },
+                { before: 'Articles dead-ended the reader', after: 'Related reads, author pages, and links onward' },
+                { before: 'No reason or route to sign up', after: 'Register hooks woven into the template' },
+                { before: 'A thin, generic theme sidebar', after: 'A custom sidebar that adapts to each article' },
+              ],
+            },
           },
           sidebar: {
             categories: ['Web', 'Edtech', 'Content / SEO'],
+            responsibilities: [
+              'Coordinated with the SEO team on content needs',
+              'Shaped the design language for the content',
+              'Architected the user flows — ranking-aware, user-first',
+              'Drove the junior designers to the envisioned output',
+            ],
             facts: [
-              { label: 'Role', value: 'Web Designer (sole)' },
-              { label: 'Platform', value: 'WordPress + prescribed theme, extended with custom CSS' },
-              { label: 'Scale', value: '150+ long-form pages' },
+              { label: 'Role', value: 'Lead designer' },
+              { label: 'Platform', value: 'WordPress + Extra (Elegant Themes), extended with code' },
+              { label: 'Scope', value: 'Full rebuild — 150+ pages' },
+              { label: 'Timeline', value: '2023, maintained since' },
               { label: 'Status', value: 'Live' },
             ],
-            factsVisibleCount: 3,
+            factsVisibleCount: 5,
             projectChips: [
               { label: 'Live', active: true, dot: true },
               {
@@ -876,9 +902,9 @@ export const moreWorkLanes = [
       },
       {
         slug: 'nerdypixel-studios',
-        title: 'NerdyPixel Studios',
+        title: 'NerdyPixel — the work as the pitch',
         tag: 'Agency landing page',
-        note: 'The studio\'s own single-page site — built to prove a small team can deliver measurable outcomes, and to qualify the right leads before the first call.',
+        note: 'The studio\'s own site, built to prove a small team ships real outcomes and to qualify leads before the first call.',
         actionType: 'internal-route',
         embedUrl: 'https://nerdypixelstudios.ca',
         externalUrl: 'https://nerdypixelstudios.ca',
@@ -1034,9 +1060,9 @@ export const moreWorkLanes = [
       },
       {
         slug: 'free-trial-page',
-        title: 'Free Trial Page',
+        title: 'Free Trial — the outcome, up front',
         tag: 'Conversion page',
-        note: 'A free-trial landing page built around one outcome — 735+ — with the proof to back it and a CTA in every block, so signing up is the path of least resistance.',
+        note: 'Anchored on one outcome (735+), with verifiable proof and a CTA in every block, so signing up is the easy path.',
         actionType: 'internal-route',
         cover: {
           src: '/images/case-studies/free-trial/hero.png',
@@ -1191,9 +1217,9 @@ export const moreWorkLanes = [
       },
       {
         slug: 'coach-connect',
-        title: 'Coach Connect',
-        tag: 'Sales page + companion app',
-        note: 'Two surfaces for one product — a sales page that makes a $49 mentoring subscription legible at a glance, and a low-chrome companion app where enrolled students live day to day.',
+        title: 'Coach Connect — sell it, then serve it',
+        tag: 'Sales page + app',
+        note: 'Two surfaces for one subscription: a page that persuades, and an app where members live day to day.',
         actionType: 'internal-route',
         cover: {
           src: '/images/case-studies/coach-connect/sales-hero.png',
@@ -1211,8 +1237,8 @@ export const moreWorkLanes = [
           year: '2024',
           status: 'Live',
           projectType: 'Sales page + companion app',
-          embedUrl: 'https://learn.e-gmat.com/products/coach-connect/',
-          externalUrl: 'https://learn.e-gmat.com/products/coach-connect/',
+          embedUrl: 'https://lohith-learn-pages.netlify.app/products/coach-connect',
+          externalUrl: 'https://lohith-learn-pages.netlify.app/products/coach-connect',
           liveBadge: 'live embed',
           websiteNavLinks: [
             { href: '#website-preview', label: 'Live preview' },
@@ -1355,7 +1381,7 @@ export const moreWorkLanes = [
               {
                 label: 'Sales page',
                 logo: '/images/case-studies/sat-lms/e-gmat.png',
-                href: 'https://learn.e-gmat.com/products/coach-connect/',
+                href: 'https://lohith-learn-pages.netlify.app/products/coach-connect',
               },
               {
                 label: 'coachconnect.e-gmat.com',
@@ -1369,9 +1395,9 @@ export const moreWorkLanes = [
       },
       {
         slug: 'growth-pages',
-        title: 'Growth Pages',
+        title: 'Growth Pages — one system, many pages',
         tag: 'Marketing page system',
-        note: 'A library of public-facing pages — product launches, success proof, sessions, careers — built on one visual system, dialled up or down to match each page\'s job in the funnel.',
+        note: 'Product, proof, session and careers pages on one visual system, tuned to each page\'s job in the funnel.',
         actionType: 'internal-route',
         cover: {
           src: '/images/case-studies/growth-pages/careers-home.png',
@@ -1389,7 +1415,7 @@ export const moreWorkLanes = [
           year: '2023 – 2025',
           status: 'Live',
           projectType: 'Marketing page system',
-          externalUrl: 'https://learn.e-gmat.com/',
+          externalUrl: 'https://lohith-learn-pages.netlify.app/',
           websiteNavLinks: [
             { href: '#context', label: 'Context' },
             { href: '#objectives', label: 'Objectives' },
@@ -1440,26 +1466,47 @@ export const moreWorkLanes = [
               {
                 number: '01',
                 title: 'Student-success proof — making outcomes browsable',
-                body: 'The proof pages turn a flood of student results into something a prospect can navigate and believe: an annual success report that re-cuts one dataset into several "wow" framings, a templated case-study system where only the names and numbers change, and a filterable admits wall. The design job is legibility at volume — proof that scales without reading as sameness.',
+                body: 'The proof pages turn a flood of student results into something a prospect can navigate and believe: an annual success report that re-cuts one dataset into several "wow" framings, a templated success-story system where only the names and numbers change — shown here across four students from a 705 to an 805-equivalent journey — and a filterable admits wall. The design job is legibility at volume: proof that scales without reading as sameness.',
                 gallery: [
                   {
                     title: '2025 Success Report',
                     note: 'A year of outcomes plus the product investment behind them — one dataset re-cut into several achievement lenses.',
-                    href: 'https://learn.e-gmat.com/products/egmat-2025-updates/',
+                    href: 'https://lohith-learn-pages.netlify.app/products/egmat-2025-updates',
                     thumb: '/images/case-studies/growth-pages/success-report-2025.png',
                     alt: 'e-GMAT 2025 success report page.',
                   },
                   {
-                    title: 'Success-story system',
-                    note: 'A reusable case-study template — hero score, before/after leap, per-section strategy, mentorship, recap. Only the numbers and names swap.',
-                    href: 'https://learn.e-gmat.com/success-story/divy-gmat-735/',
-                    thumb: '/images/case-studies/growth-pages/success-story-template.png',
-                    alt: 'A templated student success-story page.',
+                    title: 'Success story — Divy, 735',
+                    note: 'The templated case-study layout — hero score, before/after leap, per-section strategy, mentorship, recap.',
+                    href: 'https://lohith-learn-pages.netlify.app/success-story/divy-gmat-735',
+                    thumb: '/images/case-studies/growth-pages/success-divy-735.png',
+                    alt: 'Divy GMAT 735 success-story page.',
+                  },
+                  {
+                    title: 'Success story — Anirudh, 765',
+                    note: 'Same template, a different student — the 765 journey poured into the identical skeleton.',
+                    href: 'https://lohith-learn-pages.netlify.app/success-story/anirudh-gmat-765',
+                    thumb: '/images/case-studies/growth-pages/success-anirudh-765.png',
+                    alt: 'Anirudh GMAT 765 success-story page.',
+                  },
+                  {
+                    title: 'Success story — Maria, 705',
+                    note: 'The same system flexing to an international scorer\'s story — names and numbers swap, structure holds.',
+                    href: 'https://lohith-learn-pages.netlify.app/success-story/maria-gmat-705',
+                    thumb: '/images/case-studies/growth-pages/success-maria-705.png',
+                    alt: 'Maria GMAT 705 success-story page.',
+                  },
+                  {
+                    title: 'Success story — Sankha, 715 (GFE)',
+                    note: 'A GMAT Focus Edition variant of the same template — proof the system spans formats.',
+                    href: 'https://lohith-learn-pages.netlify.app/success-story/sankha-gfe-715',
+                    thumb: '/images/case-studies/growth-pages/success-sankha-715.png',
+                    alt: 'Sankha GFE 715 success-story page.',
                   },
                   {
                     title: 'M7 Admits proof-wall',
                     note: 'Hundreds of elite-school admits turned into a filterable, self-segmenting credibility argument — a normalized outcome card plus a cohort filter.',
-                    href: 'https://learn.e-gmat.com/admits-and-scholarships/m7-admits/',
+                    href: 'https://lohith-learn-pages.netlify.app/admits-and-scholarships/m7-admits',
                     thumb: '/images/case-studies/growth-pages/m7-admits.png',
                     alt: 'M7 admits interactive proof-wall page.',
                   },
@@ -1473,21 +1520,21 @@ export const moreWorkLanes = [
                   {
                     title: 'Last Mile Push (LMP)',
                     note: 'High-ticket 1-on-1 program — a dual scholarship/purchase funnel and relative-advantage stats ("3X the success, half the time").',
-                    href: 'https://learn.e-gmat.com/products/lmp/enroll/',
+                    href: 'https://lohith-learn-pages.netlify.app/products/lmp/enroll',
                     thumb: '/images/case-studies/growth-pages/lmp.png',
                     alt: 'Last Mile Push enrollment page.',
                   },
                   {
                     title: 'Sigma-X Adaptive Mocks',
                     note: 'A psychometric engine sold on insight, not score — translated into feature blocks and a comparison table against the official mock.',
-                    href: 'https://learn.e-gmat.com/products/sigma-x/',
+                    href: 'https://lohith-learn-pages.netlify.app/products/sigma-x',
                     thumb: '/images/case-studies/growth-pages/sigma-x.png',
                     alt: 'Sigma-X adaptive mocks product page.',
                   },
                   {
                     title: 'GMAT Strategy Guidance',
                     note: 'A top-of-funnel method page — a three-stage journey with a progression graph and free tools, soft-CTA instead of a sell.',
-                    href: 'https://learn.e-gmat.com/gmat-strategy-guidance/',
+                    href: 'https://lohith-learn-pages.netlify.app/gmat-strategy-guidance',
                     thumb: '/images/case-studies/growth-pages/strategy-guidance.png',
                     alt: 'GMAT strategy guidance methodology page.',
                   },
@@ -1501,14 +1548,14 @@ export const moreWorkLanes = [
                   {
                     title: 'Weekly free sessions',
                     note: 'A reusable webinar-registration template — countdown-driven, content-swapped per topic, with a post-registration retention variant.',
-                    href: 'https://learn.e-gmat.com/free-session/gmat-strategy/',
+                    href: 'https://lohith-learn-pages.netlify.app/free-session/gmat-strategy',
                     thumb: '/images/case-studies/growth-pages/weekly-sessions.png',
                     alt: 'Weekly free GMAT strategy session registration page.',
                   },
                   {
                     title: 'Partner event — CAT decision-makers',
                     note: 'The session system co-branded for a partner event — seats, schedule, and speaker line-up on the same layout.',
-                    href: 'https://learn.e-gmat.com/',
+                    href: 'https://lohith-learn-pages.netlify.app/archived-pages/cat-mega-event/event-registration',
                     thumb: '/images/case-studies/growth-pages/partner-event-cat.png',
                     alt: 'CAT partner event landing page.',
                   },
@@ -1522,14 +1569,14 @@ export const moreWorkLanes = [
                   {
                     title: 'Careers homepage',
                     note: 'Mission, what the team achieved, employee spotlights, and open roles — recruiting marketing built on the product visual system.',
-                    href: 'https://learn.e-gmat.com/',
+                    href: 'https://lohith-career-pages.netlify.app/',
                     thumb: '/images/case-studies/growth-pages/careers-home.png',
                     alt: 'e-GMAT careers homepage.',
                   },
                   {
                     title: 'Job-description template',
                     note: 'A reusable JD layout — overview, key responsibilities, qualifications, and what you\'ll get — scannable in a minute.',
-                    href: 'https://learn.e-gmat.com/',
+                    href: 'https://lohith-career-pages.netlify.app/marketing-director',
                     thumb: '/images/case-studies/growth-pages/careers-jd.png',
                     alt: 'e-GMAT job description page template.',
                   },
@@ -1551,7 +1598,7 @@ export const moreWorkLanes = [
               {
                 label: 'learn.e-gmat.com',
                 logo: '/images/case-studies/sat-lms/e-gmat.png',
-                href: 'https://learn.e-gmat.com/',
+                href: 'https://lohith-learn-pages.netlify.app/',
               },
             ],
             projectDisclaimer: 'Logos are the properties of the respective companies. Some pages are gated or run on rotating schedules, so a live link may show the current instance of a recurring page.',
@@ -1703,6 +1750,7 @@ const standaloneMoreWorkDetails = [
       hook: 'A marketing-site redesign that traded aspirational claims for legible structure and verifiable proof.',
       summary: 'e-GMAT is a GMAT-prep platform with one of the strongest track records in the category. I led an end-to-end redesign of the marketing site and built a new success-stories layer so prospective students can find themselves in the product, the proof, and the price.',
       heroNote: 'This is just a display page and the full case study is coming soon.',
+      showHeroNote: true,
       roleParagraph: 'I led the redesign end-to-end - repositioning, information architecture, content system, copywriting, and visual design - across three surfaces: the homepage, the pricing page, and a new success-stories section that did not exist before.',
       role: 'Lead Product Designer',
       year: '2023-2025',
@@ -1898,6 +1946,7 @@ const standaloneMoreWorkDetails = [
       hook: 'An OG-practice workspace, designed from scratch.',
       summary: 'Neuron is e-GMAT\'s official-question practice platform. I designed it end-to-end - design system, components, and every screen - so students stop juggling platforms to solve official GMAT questions.',
       heroNote: 'This is just a display page and the full case study is coming soon.',
+      showHeroNote: true,
       role: 'Product Designer (sole)',
       year: 'June to July 2025',
       status: 'Live',
@@ -2203,6 +2252,9 @@ export function getMoreWorkDetailContent(item) {
     testimonial: details.testimonial || null,
     sidebar: details.sidebar || null,
     heroNote: details.heroNote || '',
+    // Opt-in flag for the lean/placeholder badge under the hero title; off for
+    // the more-works lean case studies, on only for true coming-soon pages.
+    showHeroNote: details.showHeroNote || false,
     roleParagraph: details.roleParagraph || '',
     previewTitle: details.previewTitle || '',
     preview: details.preview || null,

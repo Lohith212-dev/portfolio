@@ -1909,6 +1909,41 @@ export function ObjectiveTargetIcon({ className = '' }) {
   );
 }
 
+export function ObjectiveUnlockIcon({ className = '' }) {
+  /* Open padlock — the work no longer waits on an engineering key. */
+  return (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+      <rect x="4.5" y="10.5" width="15" height="10" rx="2.2" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M8 10.5V7.2A4 4 0 0 1 15.6 5.3" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+      <circle cx="12" cy="14.6" r="1.15" fill="currentColor" />
+      <path d="M12 15.7v2.1" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" />
+    </svg>
+  );
+}
+
+export function ObjectiveRouteIcon({ className = '' }) {
+  /* A path leading from this page onward — every article a route forward. */
+  return (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+      <circle cx="5" cy="18.5" r="1.7" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M6.7 17.6C9.2 15.4 8.6 8.5 13.4 8.5H18.5" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M16.2 6.3 18.8 8.5l-2.6 2.2" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
+export function ObjectiveHierarchyIcon({ className = '' }) {
+  /* One parent, two children — the blog finally has a spine. */
+  return (
+    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className} aria-hidden="true">
+      <rect x="9" y="3" width="6" height="4.4" rx="1.2" stroke="currentColor" strokeWidth="1.8" />
+      <rect x="3" y="16.6" width="6" height="4.4" rx="1.2" stroke="currentColor" strokeWidth="1.8" />
+      <rect x="15" y="16.6" width="6" height="4.4" rx="1.2" stroke="currentColor" strokeWidth="1.8" />
+      <path d="M12 7.4V12M6 12h12M6 12v4.6M18 12v4.6" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  );
+}
+
 export function CompareHandleIcon({ className = '' }) {
   return (
     <svg

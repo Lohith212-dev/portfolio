@@ -21,7 +21,7 @@ export default function ShowcaseHero({ title, note, summary }) {
   return (
     <div className={styles.titleBlock}>
       <h1>{renderTitle(title)}</h1>
-      <InfoNote>{note}</InfoNote>
+      {note ? <InfoNote>{note}</InfoNote> : null}
       <p className={styles.heroSummary}>{summary}</p>
     </div>
   );

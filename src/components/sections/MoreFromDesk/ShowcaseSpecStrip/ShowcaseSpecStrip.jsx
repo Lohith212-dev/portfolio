@@ -8,8 +8,9 @@ export default function ShowcaseSpecStrip({ sidebar }) {
   const role = sidebar?.facts?.find((fact) => fact.label === 'Role')?.value;
   const timeline = sidebar?.facts?.find((fact) => fact.label === 'Timeline')?.value;
   const company = sidebar?.projectChips?.find((chip) => chip.logo);
+  const responsibilities = sidebar?.responsibilities || [];
 
-  if (!role && !timeline && !company) {
+  if (!role && !timeline && !company && !responsibilities.length) {
     return null;
   }
 
@@ -51,6 +52,16 @@ export default function ShowcaseSpecStrip({ sidebar }) {
           )
         ) : null}
       </div>
+
+      {responsibilities.length ? (
+        /* The side rail is desktop-only, so the role detail rides along here on
+           tablet/mobile — a compact list under the chips. */
+        <ul className={styles.responsibilityList}>
+          {responsibilities.map((item) => (
+            <li key={item} className={styles.responsibilityItem}>{item}</li>
+          ))}
+        </ul>
+      ) : null}
 
       {sidebar?.projectDisclaimer ? (
         <p className={styles.disclaimer}>{sidebar.projectDisclaimer}</p>
