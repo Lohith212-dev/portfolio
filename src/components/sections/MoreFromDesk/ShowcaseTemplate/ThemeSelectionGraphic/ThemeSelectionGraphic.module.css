@@ -1,0 +1,156 @@
+/* The whole graphic is a 16:9 box that scales with its column. cqi units
+   (1cqi = 1% of this box's width) drive every size, so logos and text shrink
+   and grow together at any breakpoint — no fixed pixels, no media queries.
+   Background stays transparent and nothing is lifted off the page. */
+.graphic {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin: 0;
+  container-type: inline-size;
+}
+
+/* ---- rejected themes ---- */
+.reject {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 0.9cqi;
+  /* Desaturated and faded well back — there to show the field was surveyed,
+     not to compete with the pick. */
+  filter: grayscale(1);
+  opacity: 0.26;
+  white-space: nowrap;
+}
+
+/* Struck through — the line is the "rejected" signal. */
+.reject::after {
+  content: '';
+  position: absolute;
+  left: -0.7cqi;
+  right: -0.7cqi;
+  top: 52%;
+  height: 0.28cqi;
+  border-radius: 0.28cqi;
+  background: var(--color-ink-700);
+  transform: rotate(-7deg);
+}
+
+.logo {
+  display: block;
+  width: auto;
+}
+
+.word {
+  font-family: var(--font-dm);
+  font-weight: 800;
+  font-size: 2.1cqi;
+  letter-spacing: -0.01em;
+  color: var(--color-ink-800);
+}
+
+.word small {
+  font-weight: 600;
+  font-size: 1.15cqi;
+  color: var(--color-ink-600);
+}
+
+.mark {
+  flex: none;
+  width: 2.9cqi;
+  height: 2.9cqi;
+}
+
+/* ---- the pick ---- */
+.winner {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 30cqi;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 3.3cqi 3cqi 2.9cqi;
+  border-radius: 2cqi;
+  background: var(--color-surface-white);
+  /* Lifted off the faded field with a soft shadow — scales with the graphic
+     since the blur/offset are in container units. */
+  box-shadow:
+    0 0.4cqi 1cqi color-mix(in srgb, var(--color-ink-950) 8%, transparent),
+    0 1.8cqi 4cqi color-mix(in srgb, var(--color-ink-950) 16%, transparent);
+}
+
+.pick {
+  position: absolute;
+  top: -1.45cqi;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-accent-green);
+  color: var(--color-surface-white);
+  font-family: var(--font-dm);
+  font-weight: 700;
+  font-size: 1.2cqi;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 0.62cqi 1.4cqi;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.extraMark {
+  width: 5.8cqi;
+  height: 5.8cqi;
+  margin-bottom: 1.3cqi;
+}
+
+.extraName {
+  font-family: var(--font-dm);
+  font-weight: 800;
+  font-size: 3cqi;
+  letter-spacing: -0.02em;
+  color: var(--color-ink-950);
+  line-height: 1.05;
+}
+
+.extraBy {
+  font-family: var(--font-dm);
+  font-weight: 600;
+  font-size: 1.25cqi;
+  color: var(--color-ink-500);
+  margin-top: 0.3cqi;
+}
+
+.divider {
+  width: 100%;
+  height: 0.07cqi;
+  background: var(--color-ink-100);
+  margin: 1.7cqi 0 1.5cqi;
+}
+
+.feats {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 1.25cqi;
+  width: 100%;
+}
+
+.feats li {
+  display: flex;
+  align-items: center;
+  gap: 1.1cqi;
+  font-family: var(--font-dm);
+  font-weight: 600;
+  font-size: 1.62cqi;
+  color: var(--color-ink-800);
+}
+
+.check {
+  flex: none;
+  width: 2.35cqi;
+  height: 2.35cqi;
+}

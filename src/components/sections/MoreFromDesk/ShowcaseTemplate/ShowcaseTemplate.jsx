@@ -16,7 +16,13 @@ import ThesisCallout from './ThesisCallout';
 import CompareCard from './CompareCard';
 import DecisionStatCard from './DecisionStatCard';
 import PageGalleryGrid from './PageGalleryGrid';
+import ThemeSelectionGraphic from './ThemeSelectionGraphic';
 import ShiftTable from './ShiftTable';
+
+// Bespoke per-decision graphics keyed by `decision.graphic` in the data.
+const DECISION_GRAPHICS = {
+  'theme-selection': ThemeSelectionGraphic,
+};
 import CollapsibleSection from './CollapsibleSection';
 import FullPageModalProvider from './FullPageModal';
 import styles from './ShowcaseTemplate.module.css';
@@ -254,6 +260,13 @@ export default function ShowcaseTemplate({ item, detail, relatedProjects }) {
                             sectionTitle={decision.title}
                           />
                         ) : null}
+
+                        {decision.graphic && DECISION_GRAPHICS[decision.graphic]
+                          ? (() => {
+                            const Graphic = DECISION_GRAPHICS[decision.graphic];
+                            return <Graphic />;
+                          })()
+                          : null}
 
                         {decision.gallery ? (
                           <PageGalleryGrid pages={decision.gallery} />

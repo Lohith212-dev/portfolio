@@ -776,17 +776,7 @@ export const moreWorkLanes = [
                 number: '01',
                 title: 'Chose the engine on purpose',
                 body: 'I researched ten well-rated blog themes, shortlisted three, and picked Extra on three tests: how easily a non-coder could update it, whether it shipped the pieces a blog needs, and how far it could be customised.',
-                screenSet: {
-                  plain: true,
-                  fullWidth: true,
-                  tabs: [
-                    {
-                      src: '/images/case-studies/egmat-blogs/theme-selection.png',
-                      alt: 'Theme shortlist narrowing from ten options to Extra against three criteria.',
-                      caption: 'Ten themes, three finalists, one pick — scored on editability, capability, and customisability.',
-                    },
-                  ],
-                },
+                graphic: 'theme-selection',
               },
               {
                 number: '02',
