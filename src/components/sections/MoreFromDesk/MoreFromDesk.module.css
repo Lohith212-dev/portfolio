@@ -512,85 +512,87 @@
   object-fit: cover;
 }
 
-/* Old-TV treatment (hover-capable devices only — touch always gets clean
-   colour, per the design decision). Default: a lane-coloured duotone with an
-   animated noise overlay; hover reveals the clean colour image with no noise
-   and no tint. Stack from the bottom up is image → tint → noise, ordered by
-   z-index. All values here are one-off decorative tuning dials, kept local. */
-@media (hover: hover) {
-  .miniMockCover {
-    z-index: 0;
-    /* Grayscale but kept bright so the muted state reads as styled, not
-       disabled; the lane hue comes from the tint layer below. */
-    filter: grayscale(1) brightness(1.06) contrast(1.04);
-    transition: filter 0.35s ease;
-  }
+/* Old-TV treatment (all devices — touch included, per the updated decision).
+   Default: a lane-coloured duotone with an animated noise overlay; hover (or a
+   tap on touch, which holds the :hover state briefly) reveals the clean colour
+   image with no noise and no tint. Stack from the bottom up is
+   image → tint → noise, ordered by z-index. All values here are one-off
+   decorative tuning dials, kept local. */
+.miniMockCover {
+  z-index: 0;
+  /* Grayscale but kept bright so the muted state reads as styled, not
+     disabled; the lane hue comes from the tint layer below. */
+  filter: grayscale(1) brightness(1.06) contrast(1.04);
+  transition: filter 0.35s ease;
+}
 
-  .workCard:hover .miniMockCover,
-  .workCard:focus-visible .miniMockCover {
-    filter: grayscale(0) brightness(1) contrast(1);
-  }
+.workCard:hover .miniMockCover,
+.workCard:focus-visible .miniMockCover,
+.workCard:active .miniMockCover {
+  filter: grayscale(0) brightness(1) contrast(1);
+}
 
-  /* Tint layer — recolours the grayscale cover into the lane accent
-     (orange / lavender / green, supplied per lane via --more-work-accent).
-     `color` blend keeps the photo's light/dark structure and only swaps in
-     the hue, giving a clean duotone rather than a flat wash. */
-  .miniMock:has(> .miniMockCover)::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 1;
-    background: var(--more-work-accent);
-    mix-blend-mode: color;
-    opacity: 0.85;
-    pointer-events: none;
-    transition: opacity 0.35s ease;
-  }
+/* Tint layer — recolours the grayscale cover into the lane accent
+   (orange / lavender / green, supplied per lane via --more-work-accent).
+   `color` blend keeps the photo's light/dark structure and only swaps in
+   the hue, giving a clean duotone rather than a flat wash. */
+.miniMock:has(> .miniMockCover)::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: var(--more-work-accent);
+  mix-blend-mode: color;
+  opacity: 0.85;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+}
 
-  /* TV-static overlay — only where a cover image exists (plain tinted
-     placeholders are left alone). The layer is oversized and driven by a
-     stepped transform so the motion stays on the compositor (cheap) and never
-     exposes an edge as it jitters. */
+/* TV-static overlay — only where a cover image exists (plain tinted
+   placeholders are left alone). The layer is oversized and driven by a
+   stepped transform so the motion stays on the compositor (cheap) and never
+   exposes an edge as it jitters. */
+.miniMock:has(> .miniMockCover)::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  width: 150%;
+  height: 150%;
+  /* Same snow texture shipped on the SAT-LMS case study. Tiled small so the
+     grain stays fine and sharp (scaling the PNG down keeps it crisp);
+     `screen` makes the white grains sparkle over the duotone like real
+     static. The stepped transform jumps the pattern so it reads as churning
+     snow rather than a sliding sheet. */
+  background-image: url('/images/case-studies/sat-lms/noise-texture.png');
+  background-repeat: repeat;
+  background-size: 14rem 14rem;
+  mix-blend-mode: screen;
+  opacity: 0.5;
+  pointer-events: none;
+  animation: tvStatic 0.56s steps(6) infinite;
+  transition: opacity 0.35s ease;
+}
+
+.workCard:hover .miniMock::before,
+.workCard:focus-visible .miniMock::before,
+.workCard:active .miniMock::before,
+.workCard:hover .miniMock::after,
+.workCard:focus-visible .miniMock::after,
+.workCard:active .miniMock::after {
+  opacity: 0;
+}
+
+@keyframes tvStatic {
+  to {
+    transform: translate(-12%, -12%);
+  }
+}
+
+/* Reduced-motion users keep the grain look but lose the perpetual jitter. */
+@media (prefers-reduced-motion: reduce) {
   .miniMock:has(> .miniMockCover)::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 2;
-    width: 150%;
-    height: 150%;
-    /* Same snow texture shipped on the SAT-LMS case study. Tiled small so the
-       grain stays fine and sharp (scaling the PNG down keeps it crisp);
-       `screen` makes the white grains sparkle over the duotone like real
-       static. The stepped transform jumps the pattern so it reads as churning
-       snow rather than a sliding sheet. */
-    background-image: url('/images/case-studies/sat-lms/noise-texture.png');
-    background-repeat: repeat;
-    background-size: 14rem 14rem;
-    mix-blend-mode: screen;
-    opacity: 0.5;
-    pointer-events: none;
-    animation: tvStatic 0.56s steps(6) infinite;
-    transition: opacity 0.35s ease;
-  }
-
-  .workCard:hover .miniMock::before,
-  .workCard:focus-visible .miniMock::before,
-  .workCard:hover .miniMock::after,
-  .workCard:focus-visible .miniMock::after {
-    opacity: 0;
-  }
-
-  @keyframes tvStatic {
-    to {
-      transform: translate(-12%, -12%);
-    }
-  }
-
-  /* Reduced-motion users keep the grain look but lose the perpetual jitter. */
-  @media (prefers-reduced-motion: reduce) {
-    .miniMock:has(> .miniMockCover)::after {
-      animation: none;
-    }
+    animation: none;
   }
 }
 
