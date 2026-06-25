@@ -3,6 +3,7 @@ import Navigation from '../../components/shared/Navigation';
 import Footer from '../../components/shared/Footer';
 import CaseStudySecondaryNav from '../../components/case-study/CaseStudySecondaryNav';
 import ShowcaseTemplate from '../../components/sections/MoreFromDesk/ShowcaseTemplate';
+import VisualSystemTemplate from '../../components/sections/MoreFromDesk/VisualSystemTemplate';
 import {
   getMoreWorkBySlug,
   getMoreWorkDetailItems,
@@ -13,7 +14,10 @@ import {
 export default function MoreWorkPage({ item }) {
   const detail = getMoreWorkDetailContent(item);
   const laneProjects = getMoreWorkLaneCards(item.laneId);
-  const leanPageLinks = detail.websiteNavLinks?.length
+  const isVisualSystem = detail.template === 'visual-system';
+  const leanPageLinks = isVisualSystem
+    ? (detail.sections || []).map((section) => ({ href: `#${section.id}`, label: section.navLabel || section.title }))
+    : detail.websiteNavLinks?.length
     ? detail.websiteNavLinks
     : [
       detail.overviewCard ? { href: '#context', label: 'Context' } : null,
@@ -37,7 +41,11 @@ export default function MoreWorkPage({ item }) {
         backHref="/#more-from-desk"
       />
       <CaseStudySecondaryNav links={leanPageLinks} />
-      <ShowcaseTemplate item={item} detail={detail} relatedProjects={laneProjects} />
+      {isVisualSystem ? (
+        <VisualSystemTemplate detail={detail} />
+      ) : (
+        <ShowcaseTemplate item={item} detail={detail} relatedProjects={laneProjects} />
+      )}
       <Footer variant="lean" />
     </>
   );

@@ -1,0 +1,174 @@
+.groupStack {
+  display: grid;
+  gap: 2.75rem;
+}
+
+.group {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.groupHead {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.groupLabel {
+  margin: 0;
+  color: var(--color-ink-950);
+  font-family: var(--font-cabinet);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  font-size: var(--text-h4);
+  line-height: 1.2;
+}
+
+.groupIntro {
+  margin: 0;
+  max-width: 64ch;
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: var(--text-small);
+  line-height: 1.7;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  /* Mobile-first: one column. Wide banners carry text, so they stay full-width
+     on a phone; square socials get two. */
+  grid-template-columns: 1fr;
+}
+
+.grid[data-layout='social'] {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+/* Square social tiles pack three across on desktop; wide banners go two-up. */
+@media (min-width: 48rem) {
+  .grid[data-layout='social'] {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .grid[data-layout='wide'] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.grid[data-layout='page'] {
+  grid-template-columns: 1fr;
+}
+
+/* Full-page windows sit two-up only when there's real width to spare. */
+@media (min-width: 64rem) {
+  .grid[data-layout='page'] {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  display: grid;
+  gap: 0.65rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+  color: inherit;
+  font: inherit;
+}
+
+.frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.85rem;
+  /* Padded neutral tile so every creative shows whole (object-fit: contain) —
+     uncropped is the honest way to present design work in a gallery. */
+  padding: 0.7rem;
+  background: var(--color-surface-light);
+  border: 1px solid color-mix(in srgb, var(--color-ink-100) 80%, transparent);
+  transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+}
+
+.frameSocial { aspect-ratio: 1 / 1; }
+.frameWide { aspect-ratio: 16 / 10; }
+.frameTall { aspect-ratio: 4 / 5; }
+
+/* Full-page screenshots are far too tall to show whole; frame a readable
+   window onto the top and let the lightbox carry the full scroll. */
+.framePage { aspect-ratio: 3 / 4; padding: 0; }
+
+.frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* Long pages: fill the window and anchor to the top — a true scroll preview. */
+.framePage img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+.zoomHint {
+  position: absolute;
+  bottom: 0.6rem;
+  right: 0.6rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-ink-950) 78%, transparent);
+  color: var(--color-surface-white);
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0;
+  transform: translateY(0.25rem);
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.card:hover .frame,
+.card:focus-visible .frame {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--color-accent-green) 55%, transparent);
+  box-shadow: 0 0.85rem 1.9rem -1rem rgba(20, 30, 25, 0.5);
+}
+
+.card:hover .zoomHint,
+.card:focus-visible .zoomHint {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.caption {
+  color: var(--color-ink-700);
+  font-family: var(--font-dm);
+  font-size: var(--text-caption);
+  line-height: 1.55;
+}
+
+/* ---- Lightbox figure (rendered into the shared FullPageModal) ---- */
+.lightboxFigure {
+  margin: 0;
+  display: grid;
+  gap: 0.9rem;
+  justify-items: center;
+}
+
+.lightboxFigure img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem;
+  display: block;
+}
+
+.lightboxFigure figcaption {
+  max-width: 60ch;
+  text-align: center;
+  color: var(--color-ink-500);
+  font-family: var(--font-dm);
+  font-size: var(--text-small);
+  line-height: 1.6;
+}
