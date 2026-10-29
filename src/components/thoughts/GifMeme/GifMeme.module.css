@@ -1,0 +1,78 @@
+/* Reaction GIF as a taped-in print: white border, slight tilt, joke caption
+   in handwriting, small credit line underneath. */
+
+.meme {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+  width: 100%;
+  max-width: 26rem;
+}
+
+.frame {
+  background: var(--color-surface-white);
+  padding: 0.5rem;
+  border: 1px solid var(--color-ink-100);
+}
+
+.tiltLeft .frame {
+  transform: rotate(-1.5deg);
+}
+
+.tiltRight .frame {
+  transform: rotate(1.5deg);
+}
+
+.video {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--color-ink-950);
+}
+
+.caption {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+  padding-inline: 0.25rem;
+}
+
+/* Handwritten annotation — documented decorative exception to the type
+   tokens (Caveat reads too small at --text-body). */
+.joke {
+  font-family: var(--font-caveat);
+  font-size: 1.625rem;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-accent-orange);
+}
+
+.credit {
+  font-size: var(--text-caption);
+  color: var(--color-ink-700);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  width: fit-content;
+}
+
+.credit:focus-visible {
+  outline: 2px solid var(--color-ink-950);
+  outline-offset: 2px;
+}
+
+/* The tilted frame needs a sliver of room so its corner doesn't kiss the
+   screen edge on phones. */
+@media (max-width: 39.999rem) {
+  .meme {
+    max-width: calc(100% - 0.5rem);
+    margin-inline: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tiltLeft .frame,
+  .tiltRight .frame {
+    transform: none;
+  }
+}

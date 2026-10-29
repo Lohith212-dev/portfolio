@@ -1,0 +1,141 @@
+WEBVTT
+
+1
+00:00:00.310 --> 00:00:01.770
+Nine forty-one.
+
+2
+00:00:01.770 --> 00:00:03.210
+Checkout slows.
+
+3
+00:00:03.210 --> 00:00:04.510
+Orders start to fail.
+
+4
+00:00:04.510 --> 00:00:06.110
+So the hunt begins.
+
+5
+00:00:06.110 --> 00:00:07.010
+Metrics.
+
+6
+00:00:07.010 --> 00:00:07.990
+Kubernetes.
+
+7
+00:00:07.990 --> 00:00:09.130
+The database.
+
+8
+00:00:09.130 --> 00:00:09.930
+Logs.
+
+9
+00:00:09.930 --> 00:00:10.870
+Deploys.
+
+10
+00:00:10.870 --> 00:00:12.090
+The status page.
+
+11
+00:00:12.090 --> 00:00:12.860
+The wiki.
+
+12
+00:00:12.860 --> 00:00:14.040
+One engineer.
+
+13
+00:00:14.040 --> 00:00:15.080
+Seven tools.
+
+14
+00:00:15.430 --> 00:00:16.970
+The hour goes to looking,
+
+15
+00:00:16.970 --> 00:00:17.970
+not deciding.
+
+16
+00:00:19.520 --> 00:00:21.510
+Now give that ticket to one agent.
+
+17
+00:00:21.510 --> 00:00:22.890
+It connects the signals.
+
+18
+00:00:22.890 --> 00:00:24.490
+The payment provider slowed.
+
+19
+00:00:24.490 --> 00:00:25.570
+Not your deploy.
+
+20
+00:00:25.760 --> 00:00:28.320
+It picks a runbook your team already tested.
+
+21
+00:00:28.460 --> 00:00:30.060
+Then it asks a person,
+
+22
+00:00:30.060 --> 00:00:31.940
+with the evidence and an undo,
+
+23
+00:00:31.940 --> 00:00:34.019
+in the ticket, Slack or Teams.
+
+24
+00:00:34.330 --> 00:00:36.690
+Nothing runs until someone says yes.
+
+25
+00:00:36.960 --> 00:00:39.560
+It runs the fix, checks checkout recovered,
+
+26
+00:00:39.560 --> 00:00:41.160
+and logs every step.
+
+27
+00:00:41.260 --> 00:00:43.360
+Risk decides what runs on its own.
+
+28
+00:00:43.360 --> 00:00:44.400
+Not the AI.
+
+29
+00:00:44.610 --> 00:00:46.810
+You start on recommendations only.
+
+30
+00:00:46.810 --> 00:00:48.330
+We baseline thirty days,
+
+31
+00:00:48.330 --> 00:00:49.870
+then report every month.
+
+32
+00:00:50.110 --> 00:00:52.270
+Crozaint builds it on the tools you already
+
+33
+00:00:52.270 --> 00:00:52.830
+run.
+
+34
+00:00:53.260 --> 00:00:54.980
+The agent does the legwork.
+
+35
+00:00:54.980 --> 00:00:56.660
+Your engineer makes the call.

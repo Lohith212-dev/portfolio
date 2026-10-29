@@ -1,6 +1,13 @@
 import { Html, Head, Main, NextScript } from "next/document";
 
-export default function Document() {
+// Pages that set their own share card (title, description, image) in
+// their <Head>. The site-wide defaults below are skipped for them, so a
+// crawler never sees two og:image tags and picks the wrong one.
+const OWN_SHARE_CARD = ['/thoughts/meanwhile-web-pages'];
+
+export default function Document({ __NEXT_DATA__ }) {
+  const ownShareCard = OWN_SHARE_CARD.includes(__NEXT_DATA__?.page);
+
   return (
     <Html lang="en">
       <Head>
@@ -9,6 +16,7 @@ export default function Document() {
         <link rel="icon" type="image/png" href="/favicons/favicon-normal.png" />
         <link rel="apple-touch-icon" href="/favicons/favicon-normal.png" />
 
+        {!ownShareCard && (<>
         {/* Open Graph — static; crawlers read this before JS runs */}
         <meta property="og:title" content="Lohith Savala — AI-Enabled Product Designer" />
         <meta property="og:description" content="I am a product designer who designs, builds, and ships — 4 production apps in 6 months, 7+ years of design at scale. See the work and the method behind it." />
@@ -23,6 +31,7 @@ export default function Document() {
         <meta name="twitter:title" content="Lohith Savala — AI-Enabled Product Designer" />
         <meta name="twitter:description" content="I am a product designer who designs, builds, and ships — 4 production apps in 6 months, 7+ years of design at scale. See the work and the method behind it." />
         <meta name="twitter:image" content="https://vigilante-designer.nerdypixelstudios.ca/images/global/og-image-normal.webp" />
+        </>)}
 
         {/* Google Fonts — DM Sans, Rock Salt, Caveat */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

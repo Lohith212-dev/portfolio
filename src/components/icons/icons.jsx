@@ -2107,3 +2107,116 @@ export const StatIconCartCheck = forwardRef(function StatIconCartCheck(
     </motion.div>
   );
 });
+
+// ── Thoughts · "Meanwhile, web pages" ────────────────────────────────────────
+// Line icons for the seven rules (viewBox 24, stroke currentColor 1.8), and
+// the two real brand marks the team cards use (simple-icons paths, CC0).
+
+function ThoughtsIcon({ className = '', children }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.8"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      {children}
+    </svg>
+  );
+}
+
+export function ThoughtsSpineIcon(props) {
+  return (
+    <ThoughtsIcon {...props}>
+      <path d="M12 3v18" />
+      <circle cx="12" cy="6" r="2" />
+      <circle cx="12" cy="12" r="2" />
+      <circle cx="12" cy="18" r="2" />
+    </ThoughtsIcon>
+  );
+}
+
+export function ThoughtsClockIcon(props) {
+  return (
+    <ThoughtsIcon {...props}>
+      <circle cx="12" cy="13" r="8" />
+      <path d="M12 9v4l3 2M9 2h6" />
+    </ThoughtsIcon>
+  );
+}
+
+export function ThoughtsLiveUiIcon(props) {
+  return (
+    <ThoughtsIcon {...props}>
+      <rect x="4" y="4" width="16" height="16" rx="1.5" />
+      <path d="M2 11h20v4H2zM7 8h6M7 18h4" />
+    </ThoughtsIcon>
+  );
+}
+
+export function ThoughtsProofIcon(props) {
+  return (
+    <ThoughtsIcon {...props}>
+      <path d="M6 3h9l4 4v14H6z" />
+      <path d="M15 3v4h4M9 13l2 2 4-4" />
+    </ThoughtsIcon>
+  );
+}
+
+export function ThoughtsInventionIcon(props) {
+  return (
+    <ThoughtsIcon {...props}>
+      <rect x="3" y="3" width="7" height="7" rx="1" />
+      <rect x="14" y="3" width="7" height="7" rx="1" />
+      <rect x="3" y="14" width="7" height="7" rx="1" />
+      <path d="M17.5 13.5l1.2 2.5 2.8.4-2 2 .5 2.8-2.5-1.3-2.5 1.3.5-2.8-2-2 2.8-.4z" />
+    </ThoughtsIcon>
+  );
+}
+
+export function ThoughtsFramesIcon(props) {
+  return (
+    <ThoughtsIcon {...props}>
+      <rect x="2" y="6" width="20" height="12" rx="1" />
+      <path d="M8 6v12M16 6v12M10.5 12l1.2 1.2 2.3-2.4" />
+    </ThoughtsIcon>
+  );
+}
+
+export function ThoughtsNewRuleIcon(props) {
+  return (
+    <ThoughtsIcon {...props}>
+      <path d="M4 6l1.5 1.5L8 5M11 6h9M4 12l1.5 1.5L8 11M11 12h9M6 16v5M3.5 18.5h5M11 18.5h9" />
+    </ThoughtsIcon>
+  );
+}
+
+export function ThoughtsCheckIcon(props) {
+  return <ThoughtsIcon {...props}><path d="M5 12.5l4.5 4.5L19 7.5" /></ThoughtsIcon>;
+}
+
+export function ThoughtsClaudeCodeLogo({ className = '' }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        fill="#D97757"
+        d="M21 10.5h3v3h-3v3h-1.5v3H18v-3h-1.5v3H15v-3H9v3H7.5v-3H6v3H4.5v-3H3v-3H0v-3h3v-6h18Zm-15 0h1.5v-3H6Zm10.5 0H18v-3h-1.5z"
+      />
+    </svg>
+  );
+}
+
+export function ThoughtsOpenRouterLogo({ className = '' }) {
+  return (
+    <svg viewBox="0 0 24 24" className={className} aria-hidden="true">
+      <path
+        fill="currentColor"
+        d="M16.778 1.844v1.919q-.569-.026-1.138-.032-.708-.008-1.415.037c-1.93.126-4.023.728-6.149 2.237-2.911 2.066-2.731 1.95-4.14 2.75-.396.223-1.342.574-2.185.798-.841.225-1.753.333-1.751.333v4.229s.768.108 1.61.333c.842.224 1.789.575 2.185.799 1.41.798 1.228.683 4.14 2.75 2.126 1.509 4.22 2.11 6.148 2.236.88.058 1.716.041 2.555.005v1.918l7.222-4.168-7.222-4.17v2.176c-.86.038-1.611.065-2.278.021-1.364-.09-2.417-.357-3.979-1.465-2.244-1.593-2.866-2.027-3.68-2.508.889-.518 1.449-.906 3.822-2.59 1.56-1.109 2.614-1.377 3.978-1.466.667-.044 1.418-.017 2.278.02v2.176L24 6.014Z"
+      />
+    </svg>
+  );
+}

@@ -1,0 +1,991 @@
+/* Thoughts No. 01 — told in beats: one idea per screen, plenty of air.
+   Portfolio tokens only; local aliases below, no new theme tokens.
+   Orange pencil = a person deciding; sky = agent work; yellow = highlighter. */
+
+.page {
+  --human: var(--color-accent-orange);
+  --human-soft: var(--color-surface-peach);
+  --agent: var(--color-accent-sky);
+  --agent-soft: var(--color-surface-ice);
+  --rule: var(--color-ink-100);
+  --gutter: 1.5rem;
+
+  color: var(--color-ink-950);
+  font-family: var(--font-dm);
+  font-size: var(--text-body);
+  line-height: 1.55;
+  overflow-x: clip;
+}
+
+.page :where(h1, h2, h3, p, ul, ol, figure, blockquote) {
+  margin: 0;
+}
+
+.inner {
+  width: 100%;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-inline: var(--gutter);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(2rem, 5vh, 3.5rem);
+}
+
+.center {
+  align-items: center;
+  text-align: center;
+}
+
+.dark {
+  background: var(--color-fun-surface-dark);
+  color: var(--color-fun-ink-50);
+}
+
+/* ── Beats ────────────────────────────────────────────────────────── */
+
+.beat {
+  min-height: 100svh;
+  display: flex;
+  align-items: center;
+  padding-block: clamp(5rem, 12vh, 8rem);
+}
+
+.gifBeat {
+  min-height: 85svh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(4rem, 10vh, 6rem) var(--gutter);
+}
+
+.gifHolder {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.dark :global(figcaption) a {
+  color: var(--color-fun-ink-300);
+}
+
+.gifHolder .narrowGif {
+  max-width: 17rem;
+}
+
+/* ── Type ─────────────────────────────────────────────────────────── */
+
+/* Handwritten annotations — documented decorative exception to the type
+   tokens; each use sets its own size below. */
+.hand {
+  font-family: var(--font-caveat);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--human);
+}
+
+.kicker {
+  font-size: 2rem;
+  rotate: -3deg;
+  width: fit-content;
+  margin-bottom: 0.5rem;
+}
+
+.h2 {
+  font-family: var(--font-cabinet);
+  font-size: var(--text-h2);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.025em;
+  text-wrap: balance;
+  max-width: 16ch;
+}
+
+.h3 {
+  font-size: var(--text-h4);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.body {
+  font-size: var(--text-body);
+  color: var(--color-ink-700);
+  max-width: 34rem;
+}
+
+.bodyDark {
+  font-size: var(--text-small);
+  color: var(--color-fun-ink-300);
+  max-width: 34rem;
+}
+
+.small {
+  font-size: var(--text-small);
+  color: var(--color-ink-700);
+}
+
+.accent {
+  color: var(--human);
+  font-weight: 800;
+}
+
+/* ── Why: headline left, small copy offset right (the reference's rhythm) */
+
+.offset {
+  gap: clamp(2.5rem, 8vh, 5rem);
+}
+
+.aside {
+  align-self: flex-end;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  max-width: 30rem;
+}
+
+/* ── Stats: 14 tiles vs 6 ticks ──────────────────────────────────── */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(3rem, 8vw, 6rem);
+  align-items: end;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.statNum {
+  font-family: var(--font-cabinet);
+  font-size: var(--text-hero-display);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  color: var(--color-ink-950);
+}
+
+.statHuman {
+  color: var(--human);
+}
+
+.statLabel {
+  font-size: var(--text-h4);
+  font-weight: 500;
+  color: var(--color-ink-700);
+}
+
+.tiles,
+.ticks {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(7, 2.25rem);
+  gap: 0.5rem;
+}
+
+.ticks {
+  grid-template-columns: repeat(6, 2.25rem);
+}
+
+.tile {
+  height: 2.25rem;
+  border-radius: 4px;
+  background: var(--agent);
+}
+
+.tick {
+  height: 2.25rem;
+  border-radius: 50%;
+  background: var(--human);
+  color: var(--color-surface-white);
+  display: grid;
+  place-items: center;
+}
+
+.tickIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  stroke-width: 3;
+}
+
+/* ── Section heads: one left edge for every beat ─────────────────── */
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 44rem;
+}
+
+/* ── Full-page tour (pinned pan) ─────────────────────────────────── */
+
+.tour {
+  position: relative;
+  height: 320svh;
+  background: var(--color-surface-light);
+}
+
+.tourStage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 7rem var(--gutter) 2.5rem;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.3fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+
+.browser {
+  height: 100%;
+  max-height: 46rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 6px;
+  overflow: hidden;
+  background: var(--color-surface-white);
+  box-shadow: 0 24px 60px color-mix(in srgb, var(--color-ink-950) 18%, transparent);
+}
+
+.browserBar {
+  display: flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.625rem 0.875rem;
+  background: var(--color-ink-800);
+  color: var(--color-fun-ink-300);
+  font-size: var(--text-caption);
+}
+
+.browserBar i {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: var(--color-ink-500);
+}
+
+.browserBar span {
+  margin-left: 0.75rem;
+  padding: 0.125rem 0.75rem;
+  border-radius: 999px;
+  background: var(--color-ink-700);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.browserView {
+  flex: 1;
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+}
+
+.browserScroll {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.browserScroll img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.tourStill {
+  height: auto;
+}
+
+.tourStill .tourStage {
+  position: static;
+  height: 100svh;
+}
+
+/* ── Team: grouped by who does the work ─────────────────────────── */
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.groupHead {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+
+.groupLogo,
+.memberLogo {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.groupLogo {
+  width: 2rem;
+  height: 2rem;
+}
+
+.memberLogo {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 0.75rem;
+  border-radius: 50%;
+  background: var(--color-surface-white);
+}
+
+.logo {
+  width: 70%;
+  height: 70%;
+  color: var(--color-ink-950);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.groupNote {
+  font-family: var(--font-caveat);
+  font-weight: 700;
+  font-size: 1.5rem;
+  line-height: 1;
+  color: var(--human);
+}
+
+.team {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+  padding: 1.25rem;
+  background: var(--color-surface-light);
+  border-radius: 4px;
+}
+
+.memberHuman {
+  grid-column: span 2;
+  background: var(--human-soft);
+}
+
+.memberName {
+  font-size: var(--text-small);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.role {
+  font-size: var(--text-caption);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-700);
+}
+
+.memberLine {
+  margin-top: 0.375rem;
+  font-size: var(--text-small);
+  color: var(--color-ink-700);
+  line-height: 1.45;
+}
+
+/* ── Flow ─────────────────────────────────────────────────────────── */
+
+.flowCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.625rem 1.375rem;
+  font-size: var(--text-small);
+  color: var(--color-ink-700);
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend i {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.keyHuman {
+  background: var(--human);
+}
+
+.keyAgent {
+  background: var(--agent);
+}
+
+.legend .keyBack {
+  width: 22px;
+  height: 0;
+  border-top: 2px dashed var(--human);
+  border-radius: 0;
+}
+
+.flowWide {
+  display: block;
+  width: 100%;
+  height: auto;
+  min-width: 55rem;
+}
+
+.flowTall {
+  display: none;
+  width: 100%;
+  max-width: 26rem;
+  height: auto;
+  margin: 0 auto;
+}
+
+/* SVG micro-labels — geometry-bound, so px sizes are the documented
+   exception to the type tokens. */
+.flowCard :global(.lane-h) { fill: var(--human-soft); }
+.flowCard :global(.lane-a) { fill: var(--agent-soft); }
+.flowCard :global(.lane-t) { font: 800 12px var(--font-dm); letter-spacing: 0.08em; fill: var(--color-ink-700); }
+.flowCard :global(.bx) { fill: var(--color-surface-white); stroke-width: 2; }
+.flowCard :global(.bx-h) { stroke: var(--human); }
+.flowCard :global(.bx-a) { stroke: var(--agent); }
+.flowCard :global(.chip) { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1; }
+.flowCard :global(.t) { font: 800 16px var(--font-cabinet); fill: var(--color-ink-950); }
+.flowCard :global(.t2) { font: 500 12.5px var(--font-dm); fill: var(--color-ink-950); }
+.flowCard :global(.s) { font: 400 12px var(--font-dm); fill: var(--color-ink-700); }
+.flowCard :global(.sh) { font: 700 18px var(--font-caveat); fill: var(--human); }
+.flowCard :global(.gate) { fill: var(--human); }
+.flowCard :global(.tick) { fill: none; stroke: var(--color-surface-white); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
+.flowCard :global(.ln) { fill: none; stroke: var(--color-ink-700); stroke-width: 1.5; }
+.flowCard :global(.ln-back) { fill: none; stroke: var(--human); stroke-width: 1.5; stroke-dasharray: 5 5; }
+.flowCard :global(.ah) { fill: var(--color-ink-700); }
+.flowCard :global(.ah-p) { fill: var(--human); }
+
+/* ── Rules ────────────────────────────────────────────────────────── */
+
+.rules {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.rule {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1.5rem 1.25rem 1.375rem;
+  background: var(--color-surface-light);
+  border-radius: 4px;
+}
+
+/* Decorative hand-numbering. */
+.ruleNum {
+  position: absolute;
+  top: 0.75rem;
+  right: 1rem;
+  font-family: var(--font-caveat);
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--human);
+}
+
+.ruleIcon {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--color-ink-950);
+}
+
+.but {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  justify-content: center;
+  max-width: 40rem;
+  margin: 0 auto;
+  font-size: var(--text-body);
+  color: var(--color-ink-700);
+}
+
+/* Decorative. */
+.butWord {
+  font-size: 2.25rem;
+  rotate: -6deg;
+}
+
+/* ── Receipt (pinned chart) ──────────────────────────────────────── */
+
+.receipt {
+  position: relative;
+  height: 260svh;
+  background: var(--color-surface-light);
+}
+
+.receiptStage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 7rem var(--gutter) 3rem;
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.4fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: end;
+}
+
+.receiptHead {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-bottom: 3rem;
+}
+
+.receiptTotal {
+  font-family: var(--font-cabinet);
+  font-size: var(--text-h1);
+  font-weight: 800;
+  line-height: 0.85;
+  letter-spacing: -0.04em;
+  font-variant-numeric: tabular-nums;
+}
+
+.chartWrap {
+  position: relative;
+  height: 100%;
+  max-height: 34rem;
+  min-height: 0;
+}
+
+.chart {
+  list-style: none;
+  padding: 0;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.chartCol {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto auto;
+  gap: 0.375rem;
+  text-align: center;
+  min-width: 0;
+}
+
+.chartValue {
+  font-weight: 800;
+  font-size: var(--text-small);
+  font-variant-numeric: tabular-nums;
+}
+
+.chartTrack {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.375rem;
+  padding-top: 1.5rem;
+  border-bottom: 2px solid var(--color-ink-950);
+}
+
+.chartBar {
+  display: block;
+  width: 100%;
+  background: var(--agent);
+  flex-shrink: 0;
+  border-radius: 4px 4px 0 0;
+}
+
+.chartName {
+  font-size: var(--text-caption);
+  font-weight: 500;
+  line-height: 1.25;
+}
+
+.chartCalls {
+  font-size: var(--text-caption);
+  color: var(--color-ink-700);
+}
+
+/* Decorative: points back at the tall video bar. */
+.chartNote {
+  position: absolute;
+  left: 24%;
+  top: 18%;
+  font-size: clamp(1.5rem, 2.6vw, 2.25rem);
+  rotate: -4deg;
+  white-space: nowrap;
+}
+
+.receiptStill {
+  height: auto;
+}
+
+.receiptStill .receiptStage {
+  position: static;
+  height: auto;
+  min-height: 100svh;
+}
+
+.receiptStill .chartWrap {
+  height: 30rem;
+}
+
+/* Photo takes: a stack under the total, dealt out over the chart. */
+
+.stack {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.75rem;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.stack:focus-visible {
+  outline: 2px solid var(--color-ink-950);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+.stackPile {
+  position: relative;
+  width: 6.5rem;
+  height: 5rem;
+  flex-shrink: 0;
+}
+
+.stackCard {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: 3px solid var(--color-surface-white);
+  border-radius: 3px;
+  rotate: calc((var(--i) - 1.5) * 5deg);
+  translate: calc(var(--i) * 3px) calc(var(--i) * -3px);
+  transition: rotate 0.2s ease, translate 0.2s ease;
+}
+
+.stack:hover .stackCard {
+  rotate: calc((var(--i) - 1.5) * 9deg);
+  translate: calc(var(--i) * 6px) calc(var(--i) * -5px);
+}
+
+.stackText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.125rem;
+}
+
+/* Decorative call to action. */
+.stackHand {
+  font-family: var(--font-caveat);
+  font-weight: 700;
+  font-size: 1.625rem;
+  line-height: 1.1;
+  color: var(--human);
+}
+
+.stackSmall {
+  font-size: var(--text-caption);
+  color: var(--color-ink-700);
+}
+
+.takes {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding: 0.75rem;
+  border-radius: 4px;
+  background: color-mix(in srgb, var(--color-surface-light) 94%, transparent);
+  overflow-y: auto;
+}
+
+.takesList {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.5rem;
+}
+
+.take {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.takeImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+}
+
+.takeLabel {
+  font-size: var(--text-caption);
+  color: var(--color-ink-700);
+}
+
+.takesClose {
+  align-self: flex-end;
+  padding: 0.375rem 0.875rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-ink-950);
+  color: var(--color-surface-white);
+  font: inherit;
+  font-size: var(--text-caption);
+  cursor: pointer;
+}
+
+/* ── Film ─────────────────────────────────────────────────────────── */
+
+.film {
+  width: 100%;
+}
+
+.filmVideo {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  background: var(--color-ink-950);
+}
+
+.loops {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.loopVideo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+/* ── Closer ───────────────────────────────────────────────────────── */
+
+.closer {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(4rem, 10vh, 6rem);
+  padding-block: clamp(6rem, 14vh, 9rem) 4rem;
+}
+
+.closerBig {
+  font-family: var(--font-cabinet);
+  font-size: var(--text-h1);
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+  max-width: 14ch;
+}
+
+.closerBig span {
+  color: var(--color-ink-950);
+  background: var(--color-accent-yellow);
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+  padding: 0 0.08em;
+}
+
+.sources {
+  gap: 0.75rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--color-fun-ink-900);
+}
+
+.sourcesTitle {
+  font-size: var(--text-small);
+  font-weight: 800;
+}
+
+.sourceList {
+  list-style: decimal;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  font-size: var(--text-small);
+  color: var(--color-fun-ink-300);
+  max-width: 62ch;
+}
+
+.sourceList a,
+.credits a {
+  color: inherit;
+  text-underline-offset: 3px;
+}
+
+.sourceList li:target {
+  color: var(--color-fun-ink-50);
+}
+
+.credits {
+  font-size: var(--text-small);
+  color: var(--color-fun-ink-300);
+  max-width: 62ch;
+}
+
+.page a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* ── Responsive ───────────────────────────────────────────────────── */
+
+@media (max-width: 63.999rem) {
+  .team {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rules {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 47.999rem) {
+  .stats {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .aside {
+    align-self: flex-start;
+  }
+
+  .flowWide {
+    display: none;
+  }
+
+  .flowTall {
+    display: block;
+  }
+
+  .flowCard {
+    overflow: visible;
+  }
+
+  .receiptStage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    align-items: stretch;
+    padding-top: 6rem;
+  }
+
+  .receiptHead {
+    padding-bottom: 0;
+  }
+
+  .tourStage {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto minmax(0, 1fr);
+    align-items: stretch;
+    padding-top: 6rem;
+  }
+
+  .takesList {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .chartNote {
+    left: 26%;
+    top: 12%;
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .page {
+    --gutter: max(1rem, env(safe-area-inset-left, 0px));
+  }
+
+  .tiles {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .ticks {
+    grid-template-columns: repeat(6, minmax(0, 1fr));
+  }
+
+  .tile,
+  .tick {
+    height: auto;
+    aspect-ratio: 1;
+  }
+
+  .rules {
+    gap: 0.625rem;
+  }
+
+  .rule {
+    padding: 1.25rem 1rem 1rem;
+  }
+
+  .rule:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .team {
+    gap: 0.5rem;
+  }
+
+  .member {
+    padding: 1rem 0.875rem;
+  }
+
+  .beat {
+    min-height: 90svh;
+  }
+
+  .gifBeat {
+    min-height: 70svh;
+  }
+}
