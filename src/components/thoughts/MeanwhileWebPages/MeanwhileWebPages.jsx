@@ -1,7 +1,5 @@
-import Image from 'next/image';
 import { motion, useReducedMotion } from 'motion/react';
 import GifMeme from '../GifMeme';
-import GifLoop from '../GifMeme/GifLoop';
 import {
   ThoughtsSpineIcon,
   ThoughtsClockIcon,
@@ -11,15 +9,13 @@ import {
   ThoughtsFramesIcon,
   ThoughtsNewRuleIcon,
   ThoughtsCheckIcon,
-  ThoughtsClaudeCodeLogo,
-  ThoughtsOpenRouterLogo,
 } from '../../icons/icons';
 import QuoteHero from './QuoteHero';
 import FullPageTour from './FullPageTour';
+import PipelineTeam from './PipelineTeam';
 import ReceiptChart from './ReceiptChart';
 import Reveal from './Reveal';
-import { FlowWide, FlowTall } from './FlowDiagram';
-import { gifs, teamGroups, rules, film, sources, photoCredits } from './meanwhileData';
+import { gifs, rules, sources, photoCredits } from './meanwhileData';
 import styles from './MeanwhileWebPages.module.css';
 
 // Thoughts No. 01, told in beats: one idea per screen, a reaction GIF on
@@ -36,12 +32,6 @@ const RULE_ICONS = {
   frames: ThoughtsFramesIcon,
   rule: ThoughtsNewRuleIcon,
 };
-
-function GroupLogo({ logo }) {
-  if (logo === 'claude') return <ThoughtsClaudeCodeLogo className={styles.logo} />;
-  if (logo === 'openrouter') return <ThoughtsOpenRouterLogo className={styles.logo} />;
-  return <Image src="/images/footer/footer-avatar-circled.png" alt="" width={56} height={56} className={styles.avatar} />;
-}
 
 function GifBeat({ gif, tilt }) {
   return (
@@ -75,10 +65,10 @@ function StatBeat() {
           </ul>
         </div>
         <div className={styles.stat}>
-          <p className={`${styles.statNum} ${styles.statHuman}`}>6</p>
-          <p className={styles.statLabel}>decisions, made by me 🙋</p>
+          <p className={`${styles.statNum} ${styles.statHuman}`}>5</p>
+          <p className={styles.statLabel}>gates where I decide 🙋</p>
           <ul className={styles.ticks} aria-hidden="true">
-            {Array.from({ length: 6 }, (_, i) => (
+            {Array.from({ length: 5 }, (_, i) => (
               <motion.li key={i} className={styles.tick} {...pop(i + 4)}>
                 <ThoughtsCheckIcon className={styles.tickIcon} />
               </motion.li>
@@ -118,60 +108,7 @@ export default function MeanwhileWebPages() {
 
       <FullPageTour />
 
-      <GifBeat gif={gifs.team} tilt="right" />
-
-      <section className={styles.beat} aria-labelledby="team-h">
-        <div className={styles.inner}>
-          <Reveal className={styles.head}>
-            <h2 id="team-h" className={styles.h2}>Meet the team</h2>
-            <p className={styles.body}>Stand-ups are short. Most of the team doesn’t have a body. 👻</p>
-          </Reveal>
-          {teamGroups.map((g) => (
-            <div key={g.id} className={styles.group}>
-              <Reveal className={styles.groupHead}>
-                <span className={styles.groupLogo}><GroupLogo logo={g.logo} /></span>
-                <h3 className={styles.h3}>{g.title}</h3>
-                <span className={styles.groupNote}>{g.note}</span>
-              </Reveal>
-              <ul className={styles.team}>
-                {g.members.map((m, i) => (
-                  <Reveal
-                    as="li"
-                    key={m.name}
-                    delay={i * 0.06}
-                    className={`${styles.member} ${g.id === 'human' ? styles.memberHuman : ''}`}
-                  >
-                    <span className={styles.memberLogo}><GroupLogo logo={g.logo} /></span>
-                    <h4 className={styles.memberName}>{m.name}</h4>
-                    <p className={styles.role}>{m.role}</p>
-                    <p className={styles.memberLine}>{m.line}</p>
-                  </Reveal>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <GifBeat gif={gifs.yes} />
-
-      <section className={styles.beat} aria-labelledby="flow-h">
-        <div className={styles.inner}>
-          <Reveal className={styles.head}>
-            <h2 id="flow-h" className={styles.h2}>I said yes six times.</h2>
-            <p className={styles.body}>That’s my whole job. 👑 Agents do the legwork, and nothing moves past an orange mark without a yes.</p>
-          </Reveal>
-          <Reveal delay={0.15} className={styles.flowCard}>
-            <div className={styles.legend} aria-hidden="true">
-              <span><i className={styles.keyHuman} />I decide</span>
-              <span><i className={styles.keyAgent} />Agents work</span>
-              <span><i className={styles.keyBack} />Sent back to fix</span>
-            </div>
-            <FlowWide className={styles.flowWide} />
-            <FlowTall className={styles.flowTall} />
-          </Reveal>
-        </div>
-      </section>
+      <PipelineTeam />
 
       <GifBeat gif={gifs.raw} tilt="right" />
 
@@ -205,39 +142,6 @@ export default function MeanwhileWebPages() {
 
       <ReceiptChart />
 
-      <section className={styles.beat} aria-labelledby="film-h">
-        <div className={styles.inner}>
-          <Reveal className={styles.head}>
-            <p className={`${styles.hand} ${styles.kicker}`}>where the $9.60 went 🎬</p>
-            <h2 id="film-h" className={styles.h2}>The video receipt</h2>
-            <p className={styles.body}>
-              A one-minute narrated film (motion graphics in code, AI voiceover, original score) and five-second loops of the engineers on the page. Sound on. 🔊
-            </p>
-          </Reveal>
-          <Reveal delay={0.1} className={styles.film}>
-            <video
-              className={styles.filmVideo}
-              controls
-              playsInline
-              preload="none"
-              poster={film.poster}
-              width={1920}
-              height={1080}
-            >
-              <source src={film.src} type="video/mp4" />
-              <track kind="captions" src={film.captions} srcLang="en" label="English" default />
-            </video>
-          </Reveal>
-          <ul className={styles.loops}>
-            {film.loops.map((l, i) => (
-              <Reveal as="li" key={l.src} delay={0.1 + i * 0.08} className={styles.loop}>
-                <GifLoop {...l} className={styles.loopVideo} />
-              </Reveal>
-            ))}
-          </ul>
-        </div>
-      </section>
-
       <footer className={`${styles.closer} ${styles.dark}`}>
         <div className={`${styles.inner} ${styles.center}`}>
           <Reveal>
@@ -251,28 +155,29 @@ export default function MeanwhileWebPages() {
           <p className={styles.bodyDark}>No download here, sorry. 🙏 The playbook is tuned to one company. The principles travel anywhere.</p>
         </div>
 
-        <div className={`${styles.inner} ${styles.sources}`}>
-          <h2 className={styles.sourcesTitle}>Sources and credits</h2>
-          <ol className={styles.sourceList}>
-            {sources.map((s) => (
-              <li key={s.id} id={`src-${s.id}`}>
-                <a href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a>
-              </li>
-            ))}
-          </ol>
-          <p className={styles.credits}>
-            Portraits from Wikimedia Commons, CC BY 2.0, cropped and shown in greyscale:{' '}
-            {photoCredits.map((c, i) => (
-              <span key={c.who}>
-                <a href={c.href} target="_blank" rel="noopener noreferrer">{c.who} by {c.by}</a>
-                {i < photoCredits.length - 1 ? ', ' : '. '}
-              </span>
-            ))}
-            GIFs via GIPHY, each credited and linked under the clip; all rights stay with their owners.
-            Claude Code and OpenRouter logos belong to Anthropic and OpenRouter.
-            The page, film, photos and loops were made for Crozaint’s AI observability page; the L1–L3 engineers are AI-generated, real staff photos are pixelated and the screens show sample data. Built with Claude Code.
-          </p>
-        </div>
+        <details className={`${styles.inner} ${styles.sources}`}>
+          <summary className={styles.sourcesTitle}>Sources and credits</summary>
+          <div className={styles.finePrint}>
+            <ol className={styles.sourceList}>
+              {sources.map((s) => (
+                <li key={s.id} id={`src-${s.id}`}>
+                  <a href={s.href} target="_blank" rel="noopener noreferrer">{s.label}</a>
+                </li>
+              ))}
+            </ol>
+            <p>
+              Portraits: Wikimedia Commons, CC BY 2.0, cropped, greyscale (
+              {photoCredits.map((c, i) => (
+                <span key={c.who}>
+                  <a href={c.href} target="_blank" rel="noopener noreferrer">{c.who} by {c.by}</a>
+                  {i < photoCredits.length - 1 ? '; ' : ''}
+                </span>
+              ))}
+              ). GIFs via GIPHY, credited under each clip; rights stay with their owners. Claude Code and OpenRouter logos belong to Anthropic and OpenRouter.
+              The page, film and photos were made for Crozaint’s AI observability page; the L1–L3 engineers are AI-generated, real staff photos are pixelated and the screens show sample data. Built with Claude Code.
+            </p>
+          </div>
+        </details>
       </footer>
     </main>
   );

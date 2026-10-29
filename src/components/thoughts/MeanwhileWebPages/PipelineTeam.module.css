@@ -1,0 +1,346 @@
+/* "How I did it" → "Meet the team". Stage cards flip to the teammate who
+   did the stage. Orange = my gates; plain = agents. */
+
+.section {
+  padding-block: clamp(4rem, 10vh, 7rem);
+}
+
+.inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-inline: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(1.75rem, 4vh, 2.75rem);
+}
+
+.head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+  max-width: 44rem;
+}
+
+.head + .row {
+  margin-top: 0.5rem;
+}
+
+/* Decorative kicker. */
+.kicker {
+  margin: 0;
+  font-family: var(--font-caveat);
+  font-weight: 700;
+  font-size: 1.75rem;
+  line-height: 1.1;
+  color: var(--color-accent-orange);
+  rotate: -2deg;
+}
+
+.h2 {
+  margin: 0;
+  font-family: var(--font-cabinet);
+  font-size: var(--text-h2);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.body {
+  margin: 0;
+  font-size: var(--text-body);
+  color: var(--color-ink-700);
+  max-width: 34rem;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.25rem;
+  font-size: var(--text-small);
+  color: var(--color-ink-700);
+}
+
+.legend span {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.legend i {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  display: inline-block;
+}
+
+.keyMine {
+  background: var(--color-surface-peach);
+  box-shadow: inset 0 0 0 2px var(--color-accent-orange);
+}
+
+.keyAgent {
+  background: var(--color-surface-light);
+  box-shadow: inset 0 0 0 2px var(--color-ink-100);
+}
+
+/* ── Pipeline rows ─────────────────────────────────────────────── */
+
+.row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.rowLabel {
+  margin: 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--color-ink-100);
+  font-size: var(--text-caption);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-ink-700);
+}
+
+.cards {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.card {
+  perspective: 1200px;
+  display: flex;
+}
+
+.flipper {
+  position: relative;
+  width: 100%;
+  display: grid;
+  transform-style: preserve-3d;
+}
+
+.face {
+  grid-area: 1 / 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  padding: 1.125rem 1.125rem 1.25rem;
+  border-radius: 4px;
+  background: var(--color-surface-light);
+  box-shadow: inset 0 0 0 1px var(--color-ink-100);
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.mine {
+  background: var(--color-surface-peach);
+  box-shadow: inset 0 0 0 2px var(--color-accent-orange);
+}
+
+.back {
+  transform: rotateY(180deg);
+  background: var(--color-surface-ice);
+  box-shadow: none;
+}
+
+.backMe {
+  background: var(--color-accent-yellow);
+}
+
+.backLogo {
+  width: 2.25rem;
+  height: 2.25rem;
+  margin-bottom: 0.375rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--color-surface-white);
+}
+
+.logo {
+  width: 70%;
+  height: 70%;
+  color: var(--color-ink-950);
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+.logoSmall {
+  width: 1.25rem;
+  height: 1.25rem;
+  flex-shrink: 0;
+}
+
+.stageLabel {
+  margin: 0;
+  font-size: var(--text-caption);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-ink-700);
+}
+
+.stageTitle {
+  margin: 0;
+  font-size: var(--text-h4);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.stageLine {
+  margin: 0;
+  font-size: var(--text-small);
+  line-height: 1.45;
+  color: var(--color-ink-700);
+}
+
+.bullets {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: var(--text-small);
+  line-height: 1.45;
+  color: var(--color-ink-700);
+}
+
+.stillCard {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.stillCard .face {
+  flex: 1;
+}
+
+.stillWho {
+  margin: 0;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.125rem;
+  font-size: var(--text-small);
+  font-weight: 800;
+  background: var(--color-surface-ice);
+  border-radius: 0 0 4px 4px;
+}
+
+/* ── The team it turned into ──────────────────────────────────── */
+
+.groups {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1.5rem, 3vw, 2.5rem);
+  align-items: start;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.groupGif {
+  max-width: 100%;
+}
+
+.groupHead {
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  padding-bottom: 0.625rem;
+  border-bottom: 1px solid var(--color-ink-100);
+}
+
+.groupLogo {
+  width: 2rem;
+  height: 2rem;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+}
+
+.groupTitle {
+  margin: 0;
+  font-size: var(--text-h4);
+  font-weight: 800;
+}
+
+/* Decorative aside. */
+.groupNote {
+  font-family: var(--font-caveat);
+  font-weight: 700;
+  font-size: 1.375rem;
+  line-height: 1;
+  color: var(--color-accent-orange);
+}
+
+.chips {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem;
+}
+
+.chip {
+  margin: 0;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: var(--color-surface-light);
+  font-size: var(--text-small);
+  width: fit-content;
+}
+
+.groupMe .chip {
+  background: var(--color-surface-peach);
+  font-weight: 800;
+}
+
+.meText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.625rem;
+}
+
+/* ── Responsive ───────────────────────────────────────────────── */
+
+@media (max-width: 63.999rem) {
+  .cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .groups {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 30rem;
+  }
+}
+
+@media (max-width: 39.999rem) {
+  .inner {
+    padding-left: max(1rem, env(safe-area-inset-left, 0px));
+    padding-right: max(1rem, env(safe-area-inset-right, 0px));
+  }
+
+  .cards {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kicker {
+    rotate: none;
+  }
+}

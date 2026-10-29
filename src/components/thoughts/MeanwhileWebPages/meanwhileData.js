@@ -93,6 +93,26 @@ export const gifs = {
     credit: 'Futurama, “Attack of the Killer App” (2010)',
     href: 'https://giphy.com/gifs/yAYZnhvY3fflS',
   },
+  agents: {
+    src: `${VID}/office-papers.mp4`,
+    poster: `${IMG}/office-papers-poster.webp`,
+    width: 480,
+    height: 240,
+    alt: 'A busy office: people at desks throw papers in the air as a man in a suit walks through.',
+    caption: 'The agents, at 9:01am.',
+    credit: 'The Beaverton, CraveTV',
+    href: 'https://giphy.com/gifs/l3q2XOZGN48et1i6Y',
+  },
+  crew: {
+    src: `${VID}/roll-camera.mp4`,
+    poster: `${IMG}/roll-camera-poster.webp`,
+    width: 480,
+    height: 480,
+    alt: 'Illustration: a tiny film crew wheels a camera dolly, one of them shouting Roll camera!',
+    caption: 'The media crew, rolling.',
+    credit: 'Robertas Nevecka',
+    href: 'https://giphy.com/gifs/h9fBq3xOk99ycznOKp',
+  },
   thumbs: {
     src: `${VID}/thumbs-up.mp4`,
     poster: `${IMG}/thumbs-up-poster.webp`,
@@ -105,43 +125,66 @@ export const gifs = {
   },
 };
 
-// Who did the work. Agents run in Claude Code; every photo, loop, voice and
-// music cue came from a model called through one OpenRouter account.
+// How the page got made: the real pipeline, stage by stage, in plain
+// words. `mine` marks the five gates where I decide; `who` is the back of
+// the card, the teammate that stage turns into as you scroll.
+export const pipeline = [
+  {
+    row: 'Plan and research',
+    stages: [
+      { id: 'kickoff', label: 'Stage 0', title: 'Kick-off', line: 'Sets up a fresh workspace and a control board I can check from my phone. 📱', who: { name: 'Orchestrator', line: 'Runs the show and keeps the board current. Never sleeps. 🫡' } },
+      { id: 'brief', label: 'Stage 1', title: 'Brief', line: 'Turns the sales call or my notes into a one-page brief, then freezes it so nobody drifts. 🧊', who: { name: 'Orchestrator, again', line: 'Also writes the brief. Many hats, no head. 🎩' } },
+      { id: 'research', label: 'Stage 2 · 3 agents at once', title: 'Market research', bullets: ['Reads the platform we build on', 'Reads the rivals', 'Reads the firms selling the same thing'], foot: 'All of it as a buyer would. 🔎', who: { name: 'Researchers ×3', line: 'Read the market like buyers, in parallel. 🕵️' } },
+      { id: 'script', label: 'Stage 3', title: 'Script', bullets: ['A writer drafts the story', 'A checker traces every claim to a source', 'A critic pokes holes'], foot: 'Loops until every claim is sourced. 🔁', who: { name: 'Writer, fact-checker, critic', line: '31 claims checked. Unsourced? Cut. ✂️' } },
+    ],
+  },
+  {
+    row: 'Direction',
+    stages: [
+      { id: 'direction', mine: true, label: 'Stage 4 · me', title: 'Direction', line: 'One question for me: reuse our reference library, or name 2–5 new sites to learn from?', who: { me: true, name: 'Me', line: 'Picked where the look comes from. 👑' } },
+      { id: 'refs', label: 'Brand-blind scout', title: 'References pass', line: 'Captures live pages, not thumbnails, and tags each with the one move worth stealing. 📸', who: { name: 'Scout', line: 'Brand-blind on purpose, so it can’t copy us to ourselves. 🙈' } },
+      { id: 'skin', label: 'Director agent', title: 'Skin pass', line: 'Maps each move onto our brand without sanding it down. 🎨', who: { name: 'Director', line: 'Taste, written down. 🎬' } },
+    ],
+  },
+  {
+    row: 'Build, review, ship',
+    stages: [
+      { id: 'hero', mine: true, label: 'Gate A · me', title: 'Hero', line: 'Built alone, round after round, until I say yes. 🙅 → 🙆', who: { me: true, name: 'Me', line: 'Said no a lot. Then yes. ✅' } },
+      { id: 'signature', mine: true, label: 'Gate B · me', title: 'Signature section', line: 'Then the part that shows the product working. Same deal.', who: { me: true, name: 'Me', line: 'Same deal, second time. ✅' } },
+      { id: 'lanes', label: 'Up to 3 agents at once', title: 'Section lanes', bullets: ['Build it', 'Screenshot it on desktop and phone', 'Grade it against the checklist', 'Fix it (three rounds, max)'], who: { name: 'Builders ×3 + the media crew', line: 'Code from Claude; photos, loops, voice and music through OpenRouter. 🧱' } },
+      { id: 'review', label: 'Stage 6', title: 'Review', line: 'A reviewer who’s never seen the page reads it cold, plus an SEO check. One fix round.', who: { name: 'Critic', line: 'Nobody likes it. Everyone needs it. 🧐' } },
+      { id: 'feedback', mine: true, label: 'Me', title: 'Feedback round', line: 'My notes go to the agents word for word, then back into the lanes. 📝', who: { me: true, name: 'Me', line: 'Notes, verbatim, every round. 📝' } },
+      { id: 'ship', mine: true, label: 'Stage 7 · me', title: 'Ship', line: 'I say “ship it” and it goes live. 🚀', who: { me: true, name: 'Me', line: 'Pressed the button. 🚀' } },
+    ],
+  },
+];
+
+// The team, once the pipeline has turned into people. Agents run in Claude
+// Code; every photo, loop, voice and music cue came through OpenRouter.
 export const teamGroups = [
   {
     id: 'agents',
     logo: 'claude',
+    gif: 'agents',
     title: 'The agents',
     note: 'all Claude Code',
-    members: [
-      { name: 'Researchers ×3', role: 'Market', line: 'Read the market like a buyer: the partner, the competitors, the firms selling the same thing. 🔎' },
-      { name: 'Scriptwriter', role: 'Story', line: 'One story, section by section. Every number traced to a source. ✍️' },
-      { name: 'Fact-checker', role: 'Claims', line: '31 claims checked against primary sources. Unsourced? Cut. ✂️' },
-      { name: 'Director', role: 'Look', line: 'Maps reference sites onto the brand without sanding off what made them good. 🎬' },
-      { name: 'Builders ×3', role: 'Code', line: 'One section each: build it, screenshot it on desktop and phone, grade it, fix it. 🧱' },
-      { name: 'Critic', role: 'Review', line: 'Reviews every section cold, against a written checklist. Nobody likes it. Everyone needs it. 🧐' },
-    ],
+    members: ['Orchestrator', 'Researchers ×3', 'Writer', 'Fact-checker', 'Critic', 'Scout', 'Director', 'Builders ×3', 'Reviewer'],
   },
   {
     id: 'media',
     logo: 'openrouter',
+    gif: 'crew',
     title: 'The media crew',
     note: 'all through OpenRouter',
-    members: [
-      { name: 'Photographer', role: 'Krea 2 · FLUX · GPT Image', line: 'Shot every engineer on the page. Has never held a camera. 📸' },
-      { name: 'Camera crew', role: 'Kling 3 · Veo 3.1', line: 'Five-second loops of those engineers, plus the film’s plates. 🎥' },
-      { name: 'Narrator', role: 'ElevenLabs v4', line: 'Two voices auditioned, one hired. 🎙️' },
-      { name: 'Composer', role: 'Google Lyria 3', line: 'Wrote the score. Second take: darker, no vocals. 🎹' },
-    ],
+    members: ['Photographer · Krea 2, FLUX, GPT Image', 'Camera · Kling 3, Veo 3.1', 'Narrator · ElevenLabs v4', 'Composer · Google Lyria 3'],
   },
   {
     id: 'human',
     logo: 'me',
+    gif: 'yes',
     title: 'The human',
     note: 'that’s me',
-    members: [
-      { name: 'Creative director', role: 'Six decisions', line: 'Wrote the brief, signed off the story, picked the look, approved the hero, sent fixes back, shipped it. Taking credit for all 14 sections. 😎' },
-    ],
+    members: ['Creative director', 'Five gates: the look, the hero, the signature section, every feedback round, and ship. 😎'],
   },
 ];
 
@@ -164,13 +207,6 @@ export const film = {
   src: `${VID}/film.mp4`,
   captions: `${VID}/film.vtt`,
   poster: `${IMG}/film-poster.webp`,
-  loops: ['l1', 'l2', 'l3'].map((t) => ({
-    src: `${VID}/loop-${t}.mp4`,
-    poster: `${IMG}/loop-${t}-poster.webp`,
-    width: 720,
-    height: 720,
-    alt: `Five-second generated loop of the ${t.toUpperCase()} engineer from the page.`,
-  })),
 };
 
 export const rules = [

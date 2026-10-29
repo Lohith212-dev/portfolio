@@ -8,6 +8,7 @@ import styles from './MeanwhileWebPages.module.css';
 // Reduced motion: no pin; the window scrolls on its own like a normal box.
 
 const SRC = '/images/thoughts/meanwhile-web-pages/full-page.webp';
+const LIVE = 'https://www.crozaint.com/service/ai-observability';
 
 export default function FullPageTour() {
   const ref = useRef(null);
@@ -23,13 +24,14 @@ export default function FullPageTour() {
           <p className={styles.body}>
             The service page the agents built: one incident followed from the alert at 09:41 to the approved fix. Keep scrolling and it scrolls with you. 🖱️
           </p>
+          <a className={styles.liveLink} href={LIVE} target="_blank" rel="noopener noreferrer">Open the live page ↗</a>
           <p className={styles.small}>Product screens show sample data. Real staff photos are pixelated here.</p>
         </div>
 
         <div className={styles.browser}>
-          <div className={styles.browserBar} aria-hidden="true">
-            <i /><i /><i />
-            <span>crozaint.com/service/ai-observability</span>
+          <div className={styles.browserBar}>
+            <i aria-hidden="true" /><i aria-hidden="true" /><i aria-hidden="true" />
+            <a href={LIVE} target="_blank" rel="noopener noreferrer">crozaint.com/service/ai-observability ↗</a>
           </div>
           {still ? (
             <div className={styles.browserScroll}>

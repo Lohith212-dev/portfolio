@@ -44,18 +44,16 @@
 /* ── Beats ────────────────────────────────────────────────────────── */
 
 .beat {
-  min-height: 100svh;
   display: flex;
   align-items: center;
-  padding-block: clamp(5rem, 12vh, 8rem);
+  padding-block: clamp(4rem, 10vh, 7rem);
 }
 
 .gifBeat {
-  min-height: 85svh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: clamp(4rem, 10vh, 6rem) var(--gutter);
+  padding: clamp(3rem, 8vh, 5rem) var(--gutter) clamp(1rem, 3vh, 2rem);
 }
 
 .gifHolder {
@@ -131,7 +129,7 @@
 /* ── Why: headline left, small copy offset right (the reference's rhythm) */
 
 .offset {
-  gap: clamp(2.5rem, 8vh, 5rem);
+  gap: clamp(1.5rem, 4vh, 2.5rem);
 }
 
 .aside {
@@ -269,7 +267,9 @@
   background: var(--color-ink-500);
 }
 
-.browserBar span {
+.browserBar a {
+  color: inherit;
+  text-decoration: none;
   margin-left: 0.75rem;
   padding: 0.125rem 0.75rem;
   border-radius: 999px;
@@ -277,6 +277,24 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+.liveLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  width: fit-content;
+  padding: 0.625rem 1.125rem;
+  border-radius: 999px;
+  background: var(--color-ink-950);
+  color: var(--color-surface-white);
+  font-size: var(--text-small);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+.liveLink:hover {
+  background: var(--color-ink-800);
 }
 
 .browserView {
@@ -304,187 +322,6 @@
   position: static;
   height: 100svh;
 }
-
-/* ── Team: grouped by who does the work ─────────────────────────── */
-
-.group {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-}
-
-.groupHead {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  padding-bottom: 0.75rem;
-  border-bottom: 1px solid var(--rule);
-}
-
-.groupLogo,
-.memberLogo {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-}
-
-.groupLogo {
-  width: 2rem;
-  height: 2rem;
-}
-
-.memberLogo {
-  width: 2.25rem;
-  height: 2.25rem;
-  margin-bottom: 0.75rem;
-  border-radius: 50%;
-  background: var(--color-surface-white);
-}
-
-.logo {
-  width: 70%;
-  height: 70%;
-  color: var(--color-ink-950);
-}
-
-.avatar {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-}
-
-.groupNote {
-  font-family: var(--font-caveat);
-  font-weight: 700;
-  font-size: 1.5rem;
-  line-height: 1;
-  color: var(--human);
-}
-
-.team {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
-.member {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.25rem;
-  padding: 1.25rem;
-  background: var(--color-surface-light);
-  border-radius: 4px;
-}
-
-.memberHuman {
-  grid-column: span 2;
-  background: var(--human-soft);
-}
-
-.memberName {
-  font-size: var(--text-small);
-  font-weight: 800;
-  line-height: 1.25;
-}
-
-.role {
-  font-size: var(--text-caption);
-  font-weight: 500;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--color-ink-700);
-}
-
-.memberLine {
-  margin-top: 0.375rem;
-  font-size: var(--text-small);
-  color: var(--color-ink-700);
-  line-height: 1.45;
-}
-
-/* ── Flow ─────────────────────────────────────────────────────────── */
-
-.flowCard {
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  overflow-x: auto;
-}
-
-.legend {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 0.625rem 1.375rem;
-  font-size: var(--text-small);
-  color: var(--color-ink-700);
-}
-
-.legend span {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.legend i {
-  width: 14px;
-  height: 14px;
-  border-radius: 3px;
-  display: inline-block;
-}
-
-.keyHuman {
-  background: var(--human);
-}
-
-.keyAgent {
-  background: var(--agent);
-}
-
-.legend .keyBack {
-  width: 22px;
-  height: 0;
-  border-top: 2px dashed var(--human);
-  border-radius: 0;
-}
-
-.flowWide {
-  display: block;
-  width: 100%;
-  height: auto;
-  min-width: 55rem;
-}
-
-.flowTall {
-  display: none;
-  width: 100%;
-  max-width: 26rem;
-  height: auto;
-  margin: 0 auto;
-}
-
-/* SVG micro-labels — geometry-bound, so px sizes are the documented
-   exception to the type tokens. */
-.flowCard :global(.lane-h) { fill: var(--human-soft); }
-.flowCard :global(.lane-a) { fill: var(--agent-soft); }
-.flowCard :global(.lane-t) { font: 800 12px var(--font-dm); letter-spacing: 0.08em; fill: var(--color-ink-700); }
-.flowCard :global(.bx) { fill: var(--color-surface-white); stroke-width: 2; }
-.flowCard :global(.bx-h) { stroke: var(--human); }
-.flowCard :global(.bx-a) { stroke: var(--agent); }
-.flowCard :global(.chip) { fill: var(--agent-soft); stroke: var(--agent); stroke-width: 1; }
-.flowCard :global(.t) { font: 800 16px var(--font-cabinet); fill: var(--color-ink-950); }
-.flowCard :global(.t2) { font: 500 12.5px var(--font-dm); fill: var(--color-ink-950); }
-.flowCard :global(.s) { font: 400 12px var(--font-dm); fill: var(--color-ink-700); }
-.flowCard :global(.sh) { font: 700 18px var(--font-caveat); fill: var(--human); }
-.flowCard :global(.gate) { fill: var(--human); }
-.flowCard :global(.tick) { fill: none; stroke: var(--color-surface-white); stroke-width: 2.4; stroke-linecap: round; stroke-linejoin: round; }
-.flowCard :global(.ln) { fill: none; stroke: var(--color-ink-700); stroke-width: 1.5; }
-.flowCard :global(.ln-back) { fill: none; stroke: var(--human); stroke-width: 1.5; stroke-dasharray: 5 5; }
-.flowCard :global(.ah) { fill: var(--color-ink-700); }
-.flowCard :global(.ah-p) { fill: var(--human); }
 
 /* ── Rules ────────────────────────────────────────────────────────── */
 
@@ -638,14 +475,129 @@
   color: var(--color-ink-700);
 }
 
-/* Decorative: points back at the tall video bar. */
+/* Points back at the tall video bar, with the film underneath it. */
 .chartNote {
   position: absolute;
   left: 24%;
-  top: 18%;
+  top: 12%;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.625rem;
+}
+
+/* Decorative annotation size. */
+.chartNote .hand {
+  margin: 0;
   font-size: clamp(1.5rem, 2.6vw, 2.25rem);
   rotate: -4deg;
   white-space: nowrap;
+}
+
+.filmThumb {
+  position: relative;
+  display: grid;
+  grid-template-columns: 8.5rem auto;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.375rem 0.875rem 0.375rem 0.375rem;
+  border: 0;
+  border-radius: 6px;
+  background: var(--color-surface-white);
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  box-shadow: 0 10px 30px color-mix(in srgb, var(--color-ink-950) 14%, transparent);
+  transition: translate 0.2s ease;
+}
+
+.filmThumb:hover {
+  translate: 0 -2px;
+}
+
+.filmThumb:focus-visible,
+.stack:focus-visible {
+  outline: 2px solid var(--color-ink-950);
+  outline-offset: 3px;
+}
+
+.filmThumbImg {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.play {
+  position: absolute;
+  left: 4.6rem;
+  top: 50%;
+  translate: -50% -50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-size: 0.875rem;
+  background: var(--color-accent-orange);
+  color: var(--color-surface-white);
+}
+
+.filmThumbText {
+  display: flex;
+  flex-direction: column;
+  font-size: var(--text-small);
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.filmThumbText small {
+  font-size: var(--text-caption);
+  font-weight: 500;
+  color: var(--color-ink-700);
+}
+
+/* The photo stack sits over the short bars and points at Images. */
+.stackSpot {
+  position: absolute;
+  left: 44%;
+  bottom: 30%;
+  z-index: 1;
+}
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 3.5rem 1rem 1rem;
+  background: color-mix(in srgb, var(--color-fun-surface-black) 92%, transparent);
+}
+
+.modalVideo {
+  display: block;
+  width: min(100%, 72rem);
+  max-height: 85vh;
+  height: auto;
+  border-radius: 6px;
+  background: var(--color-fun-surface-black);
+}
+
+.modalClose {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem 1rem;
+  border: 0;
+  border-radius: 999px;
+  background: var(--color-surface-white);
+  color: var(--color-ink-950);
+  font: inherit;
+  font-size: var(--text-small);
+  cursor: pointer;
 }
 
 .receiptStill {
@@ -667,8 +619,7 @@
 .stack {
   display: flex;
   align-items: center;
-  gap: 1.25rem;
-  margin-top: 0.75rem;
+  gap: 0.875rem;
   padding: 0;
   border: 0;
   background: none;
@@ -779,37 +730,6 @@
   cursor: pointer;
 }
 
-/* ── Film ─────────────────────────────────────────────────────────── */
-
-.film {
-  width: 100%;
-}
-
-.filmVideo {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 6px;
-  background: var(--color-ink-950);
-}
-
-.loops {
-  list-style: none;
-  padding: 0;
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.75rem;
-}
-
-.loopVideo {
-  display: block;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 1;
-  object-fit: cover;
-  border-radius: 4px;
-}
-
 /* ── Closer ───────────────────────────────────────────────────────── */
 
 .closer {
@@ -838,41 +758,51 @@
 }
 
 .sources {
-  gap: 0.75rem;
-  padding-top: 2rem;
+  padding-top: 1.5rem;
   border-top: 1px solid var(--color-fun-ink-900);
 }
 
 .sourcesTitle {
-  font-size: var(--text-small);
+  cursor: pointer;
+  width: fit-content;
+  font-size: var(--text-caption);
   font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-fun-ink-500);
+}
+
+.finePrint {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+  max-width: 72ch;
+  font-size: var(--text-caption);
+  line-height: 1.5;
+  color: var(--color-fun-ink-500);
+}
+
+.finePrint p {
+  margin: 0;
 }
 
 .sourceList {
   list-style: decimal;
-  padding-left: 1.25rem;
+  margin: 0;
+  padding-left: 1.1rem;
   display: flex;
   flex-direction: column;
-  gap: 0.375rem;
-  font-size: var(--text-small);
-  color: var(--color-fun-ink-300);
-  max-width: 62ch;
+  gap: 0.25rem;
 }
 
-.sourceList a,
-.credits a {
+.finePrint a {
   color: inherit;
-  text-underline-offset: 3px;
+  text-underline-offset: 2px;
 }
 
 .sourceList li:target {
   color: var(--color-fun-ink-50);
-}
-
-.credits {
-  font-size: var(--text-small);
-  color: var(--color-fun-ink-300);
-  max-width: 62ch;
 }
 
 .page a:focus-visible {
@@ -884,10 +814,6 @@
 /* ── Responsive ───────────────────────────────────────────────────── */
 
 @media (max-width: 63.999rem) {
-  .team {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .rules {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -900,18 +826,6 @@
 
   .aside {
     align-self: flex-start;
-  }
-
-  .flowWide {
-    display: none;
-  }
-
-  .flowTall {
-    display: block;
-  }
-
-  .flowCard {
-    overflow: visible;
   }
 
   .receiptStage {
@@ -937,8 +851,28 @@
   }
 
   .chartNote {
-    left: 26%;
-    top: 12%;
+    left: 24%;
+    top: 4%;
+  }
+
+  .filmThumb {
+    grid-template-columns: 5.5rem auto;
+  }
+
+  .play {
+    left: 3.1rem;
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+
+  .stackSpot {
+    left: 30%;
+    bottom: 26%;
+  }
+
+  .stackPile {
+    width: 4.5rem;
+    height: 3.5rem;
   }
 }
 
@@ -973,19 +907,5 @@
     grid-column: 1 / -1;
   }
 
-  .team {
-    gap: 0.5rem;
-  }
 
-  .member {
-    padding: 1rem 0.875rem;
-  }
-
-  .beat {
-    min-height: 90svh;
-  }
-
-  .gifBeat {
-    min-height: 70svh;
-  }
 }

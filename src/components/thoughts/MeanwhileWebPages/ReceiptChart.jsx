@@ -1,14 +1,16 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 import Image from 'next/image';
 import { AnimatePresence, motion, useScroll, useTransform } from 'motion/react';
-import { receipt, takes } from './meanwhileData';
+import { film, receipt, takes } from './meanwhileData';
 import { ramp, useStill } from './QuoteHero';
 import styles from './MeanwhileWebPages.module.css';
 
 // The bill, as a pinned chart: the total counts up and the bars rise as you
-// scroll, so the video bar towering over the rest is the punchline. A stack
-// of photo takes sits under the total; tap it and the takes deal out, in
-// order, as tiles over the chart.
+// scroll, so the video bar towering over the rest is the punchline. Under
+// "video eats the budget" sits the film itself (tap: full-screen player).
+// A stack of photo takes points at the Images bar; tap it and the takes
+// deal out, in order, as tiles over the chart.
 // Reduced motion: no pin, bars at full height, tiles appear without motion.
 
 const TOTAL = 11.2;
@@ -48,10 +50,49 @@ function TakesStack({ open, onToggle }) {
         ))}
       </span>
       <span className={styles.stackText}>
-        <span className={styles.stackHand}>{open ? 'stack them back ↩' : 'spread the photo takes 👆'}</span>
+        <span className={styles.stackHand}>{open ? 'stack them back ↩' : '↙ the photo takes, tap to spread 👆'}</span>
         <span className={styles.stackSmall}>{takes.length} takes, in the order they were made</span>
       </span>
     </button>
+  );
+}
+
+function FilmModal({ onClose }) {
+  const closeRef = useRef(null);
+
+  useEffect(() => {
+    closeRef.current?.focus();
+    const onKey = (e) => { if (e.key === 'Escape') onClose(); };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [onClose]);
+
+  return (
+    <motion.div
+      className={styles.modal}
+      role="dialog"
+      aria-modal="true"
+      aria-label="The one-minute film"
+      onClick={onClose}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+    >
+      <button ref={closeRef} type="button" className={styles.modalClose} onClick={onClose}>Close ×</button>
+      <video
+        className={styles.modalVideo}
+        controls
+        autoPlay
+        playsInline
+        poster={film.poster}
+        width={1920}
+        height={1080}
+        onClick={(e) => e.stopPropagation()}
+      >
+        <source src={film.src} type="video/mp4" />
+        <track kind="captions" src={film.captions} srcLang="en" label="English" default />
+      </video>
+    </motion.div>
   );
 }
 
@@ -87,6 +128,7 @@ export default function ReceiptChart() {
   const ref = useRef(null);
   const still = useStill();
   const [open, setOpen] = useState(false);
+  const [playing, setPlaying] = useState(false);
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
   const totalText = useTransform(scrollYProgress, (v) => `$${ramp(0.05, 0.55, 0, TOTAL)(v).toFixed(2)}`);
   const noteOpacity = useTransform(scrollYProgress, ramp(0.6, 0.7));
@@ -102,7 +144,6 @@ export default function ReceiptChart() {
           <p className={styles.small}>
             {receipt.calls} model calls across the last two rounds, every one logged. Once the agents fired three retakes at once and went 20 cents over budget. That’s a rule now too. 🙃
           </p>
-          <TakesStack open={open} onToggle={() => setOpen((o) => !o)} />
         </div>
 
         <div className={styles.chartWrap}>
@@ -111,12 +152,28 @@ export default function ReceiptChart() {
               <Bar key={bar.name} bar={bar} index={i} progress={scrollYProgress} still={still} />
             ))}
           </ol>
-          <motion.p className={`${styles.hand} ${styles.chartNote}`} style={{ opacity: still ? 1 : noteOpacity }}>
-            ← video eats the budget
-          </motion.p>
+          <motion.div className={styles.chartNote} style={{ opacity: still ? 1 : noteOpacity }}>
+            <p className={styles.hand}>← video eats the budget</p>
+            <button type="button" className={styles.filmThumb} onClick={() => setPlaying(true)}>
+              <Image src={film.poster} alt="" width={320} height={180} className={styles.filmThumbImg} />
+              <span className={styles.play} aria-hidden="true">▶</span>
+              <span className={styles.filmThumbText}>this is the $9.60 receipt 🎬<small>play the one-minute film</small></span>
+            </button>
+          </motion.div>
+          <div className={styles.stackSpot}>
+            <TakesStack open={open} onToggle={() => setOpen((o) => !o)} />
+          </div>
           <AnimatePresence>
             {open && <TakesGrid onClose={() => setOpen(false)} still={still} />}
           </AnimatePresence>
+          {/* Portalled to <body>: the pinned stage is its own stacking
+              context, which would trap the player under the nav. */}
+          {playing && createPortal(
+            <AnimatePresence>
+              <FilmModal onClose={() => setPlaying(false)} />
+            </AnimatePresence>,
+            document.body,
+          )}
         </div>
       </div>
     </section>

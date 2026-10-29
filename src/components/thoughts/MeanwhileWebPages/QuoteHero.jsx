@@ -8,9 +8,11 @@ import styles from './QuoteHero.module.css';
 // The opening beat. A wide strip of Terminator footage (the forecast) over
 // three people who build AI, quoted on AI ending us. The stage pins while
 // you scroll and all three quotes go through the shredder at once: cut
-// into strips, the strips fall away, then "fine. let it happen." and the
-// headline take their place.
-// Reduced motion: no pin; the cards show as cut strips, headline below.
+// into strips, the strips fall away while the footage grows to fill the
+// screen, then it darkens and "fine. let it happen." and the headline
+// land on top of it.
+// Reduced motion: no pin; the tall footage carries the headline, with the
+// cards below as cut strips.
 
 const STRIPS = 9;
 const CUT = [0.04, 0.16];
@@ -99,6 +101,12 @@ export default function QuoteHero() {
   const still = useStill();
   const { scrollYProgress } = useScroll({ target: ref, offset: ['start start', 'end end'] });
 
+  // Slate grows from a thin strip to the full stage while the cards fall.
+  const slateHeight = useTransform(
+    scrollYProgress,
+    (v) => `calc(var(--slate-min) + ${ramp(0.18, 0.62)(v)} * (100svh - var(--slate-chrome) - var(--slate-min)))`,
+  );
+  const shade = useTransform(scrollYProgress, ramp(0.56, 0.68));
   const fineOpacity = useTransform(scrollYProgress, ramp(0.6, 0.68));
   const fineScale = useTransform(scrollYProgress, ramp(0.6, 0.68, 1.25, 1));
   const headOpacity = useTransform(scrollYProgress, ramp(0.68, 0.8));
@@ -112,13 +120,29 @@ export default function QuoteHero() {
           <p className={styles.intro}>The people building AI, on AI 🔮</p>
         </div>
 
-        <figure className={styles.slate}>
+        <motion.figure className={styles.slate} style={{ height: still ? 'min(36rem, 70svh)' : slateHeight }}>
           <GifLoop {...gifs.march} className={styles.slateVideo} />
+          <motion.div className={styles.shade} style={{ opacity: still ? 1 : shade }} aria-hidden="true" />
           <figcaption className={styles.slateCap}>
             <span className={styles.slateLive}>● Live forecast</span>
           </figcaption>
           <a className={styles.slateCredit} href={gifs.march.href} target="_blank" rel="noopener noreferrer">{gifs.march.credit} · via GIPHY</a>
-        </figure>
+
+          <div className={styles.answer}>
+            <motion.p
+              className={styles.fine}
+              style={still ? { opacity: 1, scale: 1 } : { opacity: fineOpacity, scale: fineScale }}
+            >
+              fine. let it happen.
+            </motion.p>
+            <motion.h1
+              className={styles.headline}
+              style={still ? { opacity: 1, y: 0 } : { opacity: headOpacity, y: headY }}
+            >
+              Meanwhile, I’m building <em>web pages</em> with it. <span className={styles.emoji} role="img" aria-label="relieved face">😌</span>
+            </motion.h1>
+          </div>
+        </motion.figure>
 
         <div className={styles.desk}>
           <ol className={styles.cards}>
@@ -138,20 +162,6 @@ export default function QuoteHero() {
             ))}
           </ol>
 
-          <div className={styles.answer}>
-            <motion.p
-              className={styles.fine}
-              style={still ? { opacity: 1, scale: 1 } : { opacity: fineOpacity, scale: fineScale }}
-            >
-              fine. let it happen.
-            </motion.p>
-            <motion.h1
-              className={styles.headline}
-              style={still ? { opacity: 1, y: 0 } : { opacity: headOpacity, y: headY }}
-            >
-              Meanwhile, I’m building <em>web pages</em> with it. <span className={styles.emoji} role="img" aria-label="relieved face">😌</span>
-            </motion.h1>
-          </div>
         </div>
       </div>
     </header>
